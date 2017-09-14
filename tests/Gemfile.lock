@@ -1,0 +1,38 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    diff-lcs (1.3)
+    docusign_esign (0.0.2)
+      json (~> 1.8, >= 1.8.3)
+      jwt (~> 2.0, >= 2.0.0)
+      typhoeus (~> 1.0, >= 1.0.1)
+    ethon (0.10.1)
+      ffi (>= 1.3.0)
+    ffi (1.9.18)
+    json (1.8.6)
+    jwt (2.0.0)
+    rspec (3.6.0)
+      rspec-core (~> 3.6.0)
+      rspec-expectations (~> 3.6.0)
+      rspec-mocks (~> 3.6.0)
+    rspec-core (3.6.0)
+      rspec-support (~> 3.6.0)
+    rspec-expectations (3.6.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.6.0)
+    rspec-mocks (3.6.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.6.0)
+    rspec-support (3.6.0)
+    typhoeus (1.3.0)
+      ethon (>= 0.9.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  docusign_esign
+  rspec
+
+BUNDLED WITH
+   1.11.2
