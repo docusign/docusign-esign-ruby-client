@@ -19,7 +19,7 @@ describe 'DocuSign Ruby Client Tests' do
 
 			login_information = authentication_api.login(login_options)
 
-			if !login_information.nil?
+			unless login_information.nil?
 				login_information.login_accounts.each do |login_account|
 					if login_account.is_default == "true"
 						$base_url = login_account.base_url
