@@ -1,5 +1,9 @@
 # The Official DocuSign Ruby Client
 
+[![RubyGems version][rubygems-image]][rubygems-url]
+[![RubyGems downloads][downloads-image]][downloads-url]
+[![Build status][travis-image]][travis-url]
+
 You can sign up for a free [developer sandbox](https://www.docusign.com/developer-center).
 
 Requirements
@@ -94,3 +98,10 @@ License
 =======
 
 The DocuSign Ruby Client is licensed under the following [License](LICENSE).
+
+[rubygems-image]: https://img.shields.io/gem/v/docusign_esign.svg?style=flat
+[rubygems-url]: https://rubygems.org/gems/docusign_esign
+[downloads-image]: https://img.shields.io/gem/dm/docusign_esign.svg?style=flat
+[downloads-url]: https://rubygems.org/gems/docusign_esign
+[travis-image]: https://img.shields.io/travis/docusign/docusign-ruby-client.svg?style=flat
+[travis-url]: https://travis-ci.org/docusign/docusign-ruby-client

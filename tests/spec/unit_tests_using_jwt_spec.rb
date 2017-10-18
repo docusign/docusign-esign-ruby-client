@@ -107,19 +107,19 @@ describe 'DocuSign Ruby Client Tests' do
     # run before each test
     $host = "https://demo.docusign.net/restapi"
 
-  	$integrator_key = '[REQUIRED]'
-  	$user_id = '[REQUIRED]'
-  	$expires_in_seconds = [REQUIRED] #3600 - 1 hour
-  	$auth_server = 'account-d.docusign.com'
-  	$private_key_filename = '[REQUIRED]'
+  	$integrator_key = ENV['INTEGRATOR_KEY']
+  	$user_id = ENV['USER_ID']
+  	$expires_in_seconds = ENV['EXPIRES_IN_SECONDS'] || 3600 #3600 - 1 hour
+  	$auth_server = ENV['AUTH_SERVER'] || 'account-d.docusign.com'
+  	$private_key_filename = ENV['PRIVATE_KEY_FILENAME']
 
 
-    $recipient_email = "[REQUIRED]"
-    $recipient_name = "[REQUIRED]"
+    $recipient_email = ENV['RECIPIENT_EMAIL']
+    $recipient_name = ENV['RECIPIENT_NAME']
 
     # Required for embedded signing url
-    $client_user_id = '[REQUIRED]'
-    $return_url = 'https://www.docusign.com/devcenter'
+    $client_user_id = 2939
+    $return_url = ENV['REDIRECT_URI'] || 'https://www.docusign.com/devcenter'
     $authentication_method = 'email'
 	    
     $template_id = ''
