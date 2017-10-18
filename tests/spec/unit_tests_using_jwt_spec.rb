@@ -109,10 +109,9 @@ describe 'DocuSign Ruby Client Tests' do
 
   	$integrator_key = ENV['INTEGRATOR_KEY']
   	$user_id = ENV['USER_ID']
-  	$expires_in_seconds = ENV['EXPIRES_IN_SECONDS'] || 3600 #3600 - 1 hour
+  	$expires_in_seconds = ENV['EXPIRES_IN_SECONDS'].to_i || 3600 #3600 - 1 hour
   	$auth_server = ENV['AUTH_SERVER'] || 'account-d.docusign.com'
   	$private_key_filename = ENV['PRIVATE_KEY_FILENAME']
-
 
     $recipient_email = ENV['RECIPIENT_EMAIL']
     $recipient_name = ENV['RECIPIENT_NAME']
