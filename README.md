@@ -24,9 +24,7 @@ Or install it yourself as:
 
 ## JWT Authorization Example
 
-See the [JWT Ruby example](https://github.com/docusign/eg-01-ruby-jwt).
-
-See [unit_tests_using_jwt_spec.rb](./tests/spec/unit_tests_using_jwt_spec.rb) for additional examples.
+See the [JWT Ruby example](https://github.com/docusign/eg-01-ruby-jwt) for an example Ruby SDK implementation that uses the JWT bearer grant to authenticate. For additional authentication and Ruby SDK examples, see [unit_tests_using_jwt_spec.rb](./tests/spec/unit_tests_using_jwt_spec.rb).
 
 ## Testing
 
