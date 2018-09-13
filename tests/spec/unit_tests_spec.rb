@@ -108,24 +108,24 @@ describe 'DocuSign Ruby Client Tests' do
 
   before(:all) do
     # run before each test
-    $username = 'gsnavin@gmail.com'
-    $password = 'gopala'
+    $username = 'node_sdk@mailinator.com'
+    $password = '***REMOVED***asd'
     $integrator_key = '***REMOVED***'
 
     $auth_header = '{"Username": "%s", "Password": "%s", "IntegratorKey": "%s"}' %[$username, $password, $integrator_key]
 
-    $recipient_email = "naveen.gopala@docusign.com"
-    $recipient_name = "Naveen Gopala"
+    $recipient_email = "node_sdk@mailinator.com"
+    $recipient_name = "Pat Developer"
 
     # Required for embedded signing url
     $client_user_id = '1234'
-    $return_url = 'https://www.docusign.com/devcenter'
+    $return_url = 'https://developers.docusign.com/'
     $authentication_method = 'email'
 	    
-    $template_id = ''
+    $template_id = '***REMOVED***'
     $envelope_id = nil
 
-    $base_url = nil
+    $base_url = 'https://demo.docusign.net/restapi'
     $account_id = nil
   end
 
