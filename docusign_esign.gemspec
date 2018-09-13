@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.summary     = "DocuSign REST API Ruby Gem"
   s.description = "The DocuSign package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-ruby-client repository. Join the eSign revolution!"
   # TODO uncommnet and update below with a proper license 
-  #s.license     = "Apache 2.0"
+  s.license     = "MIT"
   s.required_ruby_version = ">= 2.1"
 
   s.add_dependency 'jwt', '~> 1.0', '>= 1.5.2'
