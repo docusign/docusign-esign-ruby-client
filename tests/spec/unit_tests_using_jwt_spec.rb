@@ -107,21 +107,21 @@ describe 'DocuSign Ruby Client Tests' do
     # run before each test
     $host = "https://demo.docusign.net/restapi"
 
-  	$integrator_key = ENV['INTEGRATOR_KEY']
-  	$user_id = ENV['USER_ID']
-  	$expires_in_seconds = ENV['EXPIRES_IN_SECONDS'].to_i || 3600 #3600 - 1 hour
-  	$auth_server = ENV['AUTH_SERVER'] || 'account-d.docusign.com'
-  	$private_key_filename = ENV['PRIVATE_KEY_FILENAME']
+  	$integrator_key = 'ae30ea4e-3959-4d1c-b867-fcb57d2dc4df'
+  	$user_id = 'fcc5726c-cd73-4844-b580-40bbbe6ca126'
+  	$expires_in_seconds = 3600 #3600 - 1 hour
+  	$auth_server = 'account-d.docusign.com'
+  	$private_key_filename = '../rsa_keys/private.pem'
 
-    $recipient_email = ENV['RECIPIENT_EMAIL']
-    $recipient_name = ENV['RECIPIENT_NAME']
+    $recipient_email = "node_sdk@mailinator.com"
+    $recipient_name = "Pat Developer"
 
     # Required for embedded signing url
     $client_user_id = 2939
-    $return_url = ENV['REDIRECT_URI'] || 'https://www.docusign.com/devcenter'
+    $return_url = 'https://developers.docusign.com/'
     $authentication_method = 'email'
 	    
-    $template_id = ''
+    $template_id = 'cf2a46c2-8d6e-4258-9d62-752547b1a419'
     $envelope_id = nil
 
     $base_url = nil
