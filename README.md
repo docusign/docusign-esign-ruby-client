@@ -4,7 +4,7 @@
 [![RubyGems downloads][downloads-image]][downloads-url]
 [![Build status][travis-image]][travis-url]
 
-You can sign up for a free [developer sandbox](https://www.docusign.com/developer-center).
+You can sign up for a free [developer sandbox](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16536).
 
 ## Requirements
 Ruby 2.1.0 or higher [https://www.ruby-lang.org/en/].
