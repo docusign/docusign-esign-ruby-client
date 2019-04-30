@@ -19,19 +19,19 @@ This open-source SDK is provided for cases where you would like to make addition
 
 ## Installation
 
-### Install via your application's **Gemfile** :
+### Install via your application's **Gemfile**:
 
-1. In your application's **Gemfile** , add:
-gem 'docusign_esign'
+1. In your application's **Gemfile**, add:  
+   **gem 'docusign_esign'**
 2. Open your preferred console.
-3. In your project directory, execute the installer by typing:
-**bundle install**
+3. In your project directory, execute the installer by typing:  
+   **bundle install**
 
 ### Manual install:
 
 1. Open your preferred console.
-2. In the console, type:
-**gem install docusign_esign**
+2. In the console, type:  
+   **gem install docusign_esign**
 
 ### Dependencies
 
