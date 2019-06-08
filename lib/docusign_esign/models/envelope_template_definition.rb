@@ -15,6 +15,9 @@ module DocuSign_eSign
   # A complex element containing the following information:  templateId: Unique identifier of the template. If this is not provided, DocuSign will generate a value.   name: Name of the template. Maximum length: 100 characters.  shared: When set to **true**, the template is shared with the Everyone group in the account. If false, the template is only shared with the Administrator group.  password: Password, if the template is locked.  description: Description of the template. Maximum Length: 500 characters.  pageCount: Number of document pages in the template.  folderName: The name of the folder the template is located in.  folderId: The ID for the folder.  owner: The userName, email, userId, userType, and userStatus for the template owner.
   class EnvelopeTemplateDefinition
     # 
+    attr_accessor :created
+
+    # 
     attr_accessor :description
 
     # The ID for the folder.
@@ -61,6 +64,7 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'created' => :'created',
         :'description' => :'description',
         :'folder_id' => :'folderId',
         :'folder_name' => :'folderName',
@@ -82,6 +86,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'created' => :'String',
         :'description' => :'String',
         :'folder_id' => :'String',
         :'folder_name' => :'String',
@@ -107,6 +112,10 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'created')
+        self.created = attributes[:'created']
+      end
 
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
@@ -188,6 +197,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          created == o.created &&
           description == o.description &&
           folder_id == o.folder_id &&
           folder_name == o.folder_name &&
@@ -214,7 +224,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [description, folder_id, folder_name, folder_uri, last_modified, last_modified_by, name, new_password, owner, page_count, parent_folder_uri, password, shared, template_id, uri].hash
+      [created, description, folder_id, folder_name, folder_uri, last_modified, last_modified_by, name, new_password, owner, page_count, parent_folder_uri, password, shared, template_id, uri].hash
     end
 
     # Builds the object from hash

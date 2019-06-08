@@ -18,9 +18,6 @@ module DocuSign_eSign
     attr_accessor :include
 
     # 
-    attr_accessor :include_items
-
-    # 
     attr_accessor :start_position
 
     # Specifies the items that are returned. Valid values are:   * include - The folder list will return normal folders plus template folders.  * only - Only the list of template folders are returned.
@@ -37,9 +34,6 @@ module DocuSign_eSign
   class ListItemsOptions
     #  Only return items on or after this date. If no value is provided, the default search is the previous 30 days. 
     attr_accessor :from_date
-
-    # 
-    attr_accessor :include_items
 
     #  The email of the folder owner. 
     attr_accessor :owner_email
@@ -129,7 +123,6 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'include'] = options.include if !options.include.nil?
-      query_params[:'include_items'] = options.include_items if !options.include_items.nil?
       query_params[:'start_position'] = options.start_position if !options.start_position.nil?
       query_params[:'template'] = options.template if !options.template.nil?
       query_params[:'user_filter'] = options.user_filter if !options.user_filter.nil?
@@ -189,7 +182,6 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'from_date'] = options.from_date if !options.from_date.nil?
-      query_params[:'include_items'] = options.include_items if !options.include_items.nil?
       query_params[:'owner_email'] = options.owner_email if !options.owner_email.nil?
       query_params[:'owner_name'] = options.owner_name if !options.owner_name.nil?
       query_params[:'search_text'] = options.search_text if !options.search_text.nil?
@@ -226,10 +218,10 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param folder_id The ID of the folder being accessed.
     # @param folders_request  (optional parameter)
-    # @return [FoldersResponse]
+    # @return [nil]
     def move_envelopes(account_id, folder_id, folders_request)
-      data, _status_code, _headers = move_envelopes_with_http_info(account_id, folder_id,  folders_request)
-      return data
+      move_envelopes_with_http_info(account_id, folder_id,  folders_request)
+      return nil
     end
 
     # Moves an envelope from its current folder to the specified folder.
@@ -237,7 +229,7 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param folder_id The ID of the folder being accessed.
     # @param folders_request  (optional parameter)
-    # @return [Array<(FoldersResponse, Fixnum, Hash)>] FoldersResponse data, response status code and response headers
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def move_envelopes_with_http_info(account_id, folder_id, folders_request)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: FoldersApi.move_envelopes ..."
@@ -268,8 +260,7 @@ module DocuSign_eSign
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'FoldersResponse')
+        :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FoldersApi#move_envelopes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

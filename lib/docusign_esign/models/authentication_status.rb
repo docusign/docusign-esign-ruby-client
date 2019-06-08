@@ -40,6 +40,8 @@ module DocuSign_eSign
 
     attr_accessor :salesforce_result
 
+    attr_accessor :signature_provider_result
+
     attr_accessor :sms_auth_result
 
     attr_accessor :s_tan_pin_result
@@ -65,6 +67,7 @@ module DocuSign_eSign
         :'open_id_result' => :'openIDResult',
         :'phone_auth_result' => :'phoneAuthResult',
         :'salesforce_result' => :'salesforceResult',
+        :'signature_provider_result' => :'signatureProviderResult',
         :'sms_auth_result' => :'smsAuthResult',
         :'s_tan_pin_result' => :'sTANPinResult',
         :'twitter_result' => :'twitterResult',
@@ -88,6 +91,7 @@ module DocuSign_eSign
         :'open_id_result' => :'EventResult',
         :'phone_auth_result' => :'EventResult',
         :'salesforce_result' => :'EventResult',
+        :'signature_provider_result' => :'EventResult',
         :'sms_auth_result' => :'EventResult',
         :'s_tan_pin_result' => :'EventResult',
         :'twitter_result' => :'EventResult',
@@ -155,6 +159,10 @@ module DocuSign_eSign
         self.salesforce_result = attributes[:'salesforceResult']
       end
 
+      if attributes.has_key?(:'signatureProviderResult')
+        self.signature_provider_result = attributes[:'signatureProviderResult']
+      end
+
       if attributes.has_key?(:'smsAuthResult')
         self.sms_auth_result = attributes[:'smsAuthResult']
       end
@@ -204,6 +212,7 @@ module DocuSign_eSign
           open_id_result == o.open_id_result &&
           phone_auth_result == o.phone_auth_result &&
           salesforce_result == o.salesforce_result &&
+          signature_provider_result == o.signature_provider_result &&
           sms_auth_result == o.sms_auth_result &&
           s_tan_pin_result == o.s_tan_pin_result &&
           twitter_result == o.twitter_result &&
@@ -219,7 +228,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code_result, age_verify_result, any_social_id_result, facebook_result, google_result, id_lookup_result, id_questions_result, linkedin_result, live_id_result, ofac_result, open_id_result, phone_auth_result, salesforce_result, sms_auth_result, s_tan_pin_result, twitter_result, yahoo_result].hash
+      [access_code_result, age_verify_result, any_social_id_result, facebook_result, google_result, id_lookup_result, id_questions_result, linkedin_result, live_id_result, ofac_result, open_id_result, phone_auth_result, salesforce_result, signature_provider_result, sms_auth_result, s_tan_pin_result, twitter_result, yahoo_result].hash
     end
 
     # Builds the object from hash

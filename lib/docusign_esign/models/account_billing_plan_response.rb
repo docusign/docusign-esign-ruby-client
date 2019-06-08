@@ -23,6 +23,8 @@ module DocuSign_eSign
 
     attr_accessor :credit_card_information
 
+    attr_accessor :payment_processor_information
+
     attr_accessor :referral_information
 
     # 
@@ -36,6 +38,7 @@ module DocuSign_eSign
         :'billing_address_is_credit_card_address' => :'billingAddressIsCreditCardAddress',
         :'billing_plan' => :'billingPlan',
         :'credit_card_information' => :'creditCardInformation',
+        :'payment_processor_information' => :'paymentProcessorInformation',
         :'referral_information' => :'referralInformation',
         :'successor_plans' => :'successorPlans'
       }
@@ -48,6 +51,7 @@ module DocuSign_eSign
         :'billing_address_is_credit_card_address' => :'String',
         :'billing_plan' => :'AccountBillingPlan',
         :'credit_card_information' => :'CreditCardInformation',
+        :'payment_processor_information' => :'PaymentProcessorInformation',
         :'referral_information' => :'ReferralInformation',
         :'successor_plans' => :'Array<BillingPlan>'
       }
@@ -75,6 +79,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'creditCardInformation')
         self.credit_card_information = attributes[:'creditCardInformation']
+      end
+
+      if attributes.has_key?(:'paymentProcessorInformation')
+        self.payment_processor_information = attributes[:'paymentProcessorInformation']
       end
 
       if attributes.has_key?(:'referralInformation')
@@ -111,6 +119,7 @@ module DocuSign_eSign
           billing_address_is_credit_card_address == o.billing_address_is_credit_card_address &&
           billing_plan == o.billing_plan &&
           credit_card_information == o.credit_card_information &&
+          payment_processor_information == o.payment_processor_information &&
           referral_information == o.referral_information &&
           successor_plans == o.successor_plans
     end
@@ -124,7 +133,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [billing_address, billing_address_is_credit_card_address, billing_plan, credit_card_information, referral_information, successor_plans].hash
+      [billing_address, billing_address_is_credit_card_address, billing_plan, credit_card_information, payment_processor_information, referral_information, successor_plans].hash
     end
 
     # Builds the object from hash

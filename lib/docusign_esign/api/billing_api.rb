@@ -118,8 +118,57 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Get metadata for a given credit card.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [CreditCardInformation]
+    def get_credit_card_info(account_id)
+      data, _status_code, _headers = get_credit_card_info_with_http_info(account_id)
+      return data
+    end
+
+    # Get metadata for a given credit card.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [Array<(CreditCardInformation, Fixnum, Hash)>] CreditCardInformation data, response status code and response headers
+    def get_credit_card_info_with_http_info(account_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BillingApi.get_credit_card_info ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling BillingApi.get_credit_card_info" if account_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/billing_plan/credit_card".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CreditCardInformation')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BillingApi#get_credit_card_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Retrieves a billing invoice.
-    # Retrieves the specified invoice.   ###### Note: If the `pdfAvailable` property in the response is set to *true*, you can download a PDF version of the invoice. To download the PDF, make the call again and change the value of the `Accept` property in the header to `Accept: application/pdf`.  Privileges required: account administrator  The response returns a list of charges and information about the charges. Quantities are usually shown as ‘unlimited’ or an integer. Amounts are shown in the currency set for the account.  **Response** The following table provides a description of the different `chargeName` property values. The information will grow as more chargeable items are added to the system.  | chargeName | Description | | --- | --- | | id_check | ID Check Charge | | in_person_signing | In Person Signing charge | | envelopes Included | Sent Envelopes for the account | | age_verify | Age verification check | | ofac | OFAC Check | | id_confirm | ID confirmation check | | student_authentication | STAN PIN authentication check | | wet_sign_fax | Pages for returning signed documents by fax | | attachment_fax | Pages for returning attachments by fax | | phone_authentication | Phone authentication charge | | powerforms | PowerForm envelopes sent | | signer_payments | Payment processing charge | | outbound_fax | Send by fax charge | | bulk_recipient_envelopes | Bulk Recipient Envelopes sent | | sms_authentications | SMS authentication charge | | saml_authentications | SAML authentication charge | | express_signer_certificate | DocuSign Express Certificate charge | | personal_signer_certificate | Personal Signer Certificate charge | | safe_certificate | SAFE BioPharma Signer Certificate charge | | seats | Included active seats charge | | open_trust_certificate | OpenTrust Signer Certificate charge | 
+    # Retrieves the specified invoice.   ###### Note: If the `pdfAvailable` property in the response is set to *true*, you can download a PDF version of the invoice. To download the PDF, make the call again and change the value of the `Accept` property in the header to `Accept: application/pdf`.  Privileges required: account administrator  The response returns a list of charges and information about the charges. Quantities are usually shown as 'unlimited' or an integer. Amounts are shown in the currency set for the account.  **Response** The following table provides a description of the different `chargeName` property values. The information will grow as more chargeable items are added to the system.  | chargeName | Description | | --- | --- | | id_check | IDÃÂÃÂÃÂÃÂ Check Charge | | in_person_signing | In Person Signing charge | | envelopes Included | Sent Envelopes for the account | | age_verify | Age verification check | | ofac | OFAC Check | | id_confirm | ID confirmation check | | student_authentication | STAN PIN authentication check | | wet_sign_fax | Pages for returning signed documents by fax | | attachment_fax | Pages for returning attachments by fax | | phone_authentication | Phone authentication charge | | powerforms | PowerForm envelopes sent | | signer_payments | Payment processing charge | | outbound_fax | Send by fax charge | | bulk_recipient_envelopes | Bulk Recipient Envelopes sent | | sms_authentications | SMS authentication charge | | saml_authentications | SAML authentication charge | | express_signer_certificate | DocuSign Express Certificate charge | | personal_signer_certificate | Personal Signer Certificate charge | | safe_certificate | SAFE BioPharma Signer Certificate charge | | seats | Included active seats charge | | open_trust_certificate | OpenTrust Signer Certificate charge | 
     # @param account_id The external account number (int) or account ID Guid.
     # @param invoice_id 
     # @return [BillingInvoice]
@@ -129,7 +178,7 @@ module DocuSign_eSign
     end
 
     # Retrieves a billing invoice.
-    # Retrieves the specified invoice.   ###### Note: If the &#x60;pdfAvailable&#x60; property in the response is set to *true*, you can download a PDF version of the invoice. To download the PDF, make the call again and change the value of the &#x60;Accept&#x60; property in the header to &#x60;Accept: application/pdf&#x60;.  Privileges required: account administrator  The response returns a list of charges and information about the charges. Quantities are usually shown as ‘unlimited’ or an integer. Amounts are shown in the currency set for the account.  **Response** The following table provides a description of the different &#x60;chargeName&#x60; property values. The information will grow as more chargeable items are added to the system.  | chargeName | Description | | --- | --- | | id_check | ID Check Charge | | in_person_signing | In Person Signing charge | | envelopes Included | Sent Envelopes for the account | | age_verify | Age verification check | | ofac | OFAC Check | | id_confirm | ID confirmation check | | student_authentication | STAN PIN authentication check | | wet_sign_fax | Pages for returning signed documents by fax | | attachment_fax | Pages for returning attachments by fax | | phone_authentication | Phone authentication charge | | powerforms | PowerForm envelopes sent | | signer_payments | Payment processing charge | | outbound_fax | Send by fax charge | | bulk_recipient_envelopes | Bulk Recipient Envelopes sent | | sms_authentications | SMS authentication charge | | saml_authentications | SAML authentication charge | | express_signer_certificate | DocuSign Express Certificate charge | | personal_signer_certificate | Personal Signer Certificate charge | | safe_certificate | SAFE BioPharma Signer Certificate charge | | seats | Included active seats charge | | open_trust_certificate | OpenTrust Signer Certificate charge | 
+    # Retrieves the specified invoice.   ###### Note: If the &#x60;pdfAvailable&#x60; property in the response is set to *true*, you can download a PDF version of the invoice. To download the PDF, make the call again and change the value of the &#x60;Accept&#x60; property in the header to &#x60;Accept: application/pdf&#x60;.  Privileges required: account administrator  The response returns a list of charges and information about the charges. Quantities are usually shown as &#39;unlimited&#39; or an integer. Amounts are shown in the currency set for the account.  **Response** The following table provides a description of the different &#x60;chargeName&#x60; property values. The information will grow as more chargeable items are added to the system.  | chargeName | Description | | --- | --- | | id_check | IDÃÂÃÂÃÂÃÂ Check Charge | | in_person_signing | In Person Signing charge | | envelopes Included | Sent Envelopes for the account | | age_verify | Age verification check | | ofac | OFAC Check | | id_confirm | ID confirmation check | | student_authentication | STAN PIN authentication check | | wet_sign_fax | Pages for returning signed documents by fax | | attachment_fax | Pages for returning attachments by fax | | phone_authentication | Phone authentication charge | | powerforms | PowerForm envelopes sent | | signer_payments | Payment processing charge | | outbound_fax | Send by fax charge | | bulk_recipient_envelopes | Bulk Recipient Envelopes sent | | sms_authentications | SMS authentication charge | | saml_authentications | SAML authentication charge | | express_signer_certificate | DocuSign Express Certificate charge | | personal_signer_certificate | Personal Signer Certificate charge | | safe_certificate | SAFE BioPharma Signer Certificate charge | | seats | Included active seats charge | | open_trust_certificate | OpenTrust Signer Certificate charge | 
     # @param account_id The external account number (int) or account ID Guid.
     # @param invoice_id 
     # @return [Array<(BillingInvoice, Fixnum, Hash)>] BillingInvoice data, response status code and response headers

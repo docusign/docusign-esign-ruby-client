@@ -20,7 +20,15 @@ module DocuSign_eSign
     # Indicates the date and time the item was created.
     attr_accessor :created_date_time
 
+    attr_accessor :date_stamp_properties
+
     attr_accessor :error_details
+
+    # 
+    attr_accessor :external_id
+
+    # 
+    attr_accessor :image_type
 
     # 
     attr_accessor :initials150_image_id
@@ -30,6 +38,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :is_default
+
+    # 
+    attr_accessor :phonetic_name
 
     # 
     attr_accessor :signature150_image_id
@@ -52,23 +63,43 @@ module DocuSign_eSign
     # 
     attr_accessor :signature_type
 
+    # 
+    attr_accessor :stamp_format
+
+    # 
+    attr_accessor :stamp_image_uri
+
+    # 
+    attr_accessor :stamp_size_mm
+
+    # 
+    attr_accessor :stamp_type
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'adopted_date_time' => :'adoptedDateTime',
         :'created_date_time' => :'createdDateTime',
+        :'date_stamp_properties' => :'dateStampProperties',
         :'error_details' => :'errorDetails',
+        :'external_id' => :'externalID',
+        :'image_type' => :'imageType',
         :'initials150_image_id' => :'initials150ImageId',
         :'initials_image_uri' => :'initialsImageUri',
         :'is_default' => :'isDefault',
+        :'phonetic_name' => :'phoneticName',
         :'signature150_image_id' => :'signature150ImageId',
         :'signature_font' => :'signatureFont',
         :'signature_id' => :'signatureId',
         :'signature_image_uri' => :'signatureImageUri',
         :'signature_initials' => :'signatureInitials',
         :'signature_name' => :'signatureName',
-        :'signature_type' => :'signatureType'
+        :'signature_type' => :'signatureType',
+        :'stamp_format' => :'stampFormat',
+        :'stamp_image_uri' => :'stampImageUri',
+        :'stamp_size_mm' => :'stampSizeMM',
+        :'stamp_type' => :'stampType'
       }
     end
 
@@ -77,17 +108,25 @@ module DocuSign_eSign
       {
         :'adopted_date_time' => :'String',
         :'created_date_time' => :'String',
+        :'date_stamp_properties' => :'DateStampProperties',
         :'error_details' => :'ErrorDetails',
+        :'external_id' => :'String',
+        :'image_type' => :'String',
         :'initials150_image_id' => :'String',
         :'initials_image_uri' => :'String',
         :'is_default' => :'String',
+        :'phonetic_name' => :'String',
         :'signature150_image_id' => :'String',
         :'signature_font' => :'String',
         :'signature_id' => :'String',
         :'signature_image_uri' => :'String',
         :'signature_initials' => :'String',
         :'signature_name' => :'String',
-        :'signature_type' => :'String'
+        :'signature_type' => :'String',
+        :'stamp_format' => :'String',
+        :'stamp_image_uri' => :'String',
+        :'stamp_size_mm' => :'String',
+        :'stamp_type' => :'String'
       }
     end
 
@@ -107,8 +146,20 @@ module DocuSign_eSign
         self.created_date_time = attributes[:'createdDateTime']
       end
 
+      if attributes.has_key?(:'dateStampProperties')
+        self.date_stamp_properties = attributes[:'dateStampProperties']
+      end
+
       if attributes.has_key?(:'errorDetails')
         self.error_details = attributes[:'errorDetails']
+      end
+
+      if attributes.has_key?(:'externalID')
+        self.external_id = attributes[:'externalID']
+      end
+
+      if attributes.has_key?(:'imageType')
+        self.image_type = attributes[:'imageType']
       end
 
       if attributes.has_key?(:'initials150ImageId')
@@ -121,6 +172,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'isDefault')
         self.is_default = attributes[:'isDefault']
+      end
+
+      if attributes.has_key?(:'phoneticName')
+        self.phonetic_name = attributes[:'phoneticName']
       end
 
       if attributes.has_key?(:'signature150ImageId')
@@ -151,6 +206,22 @@ module DocuSign_eSign
         self.signature_type = attributes[:'signatureType']
       end
 
+      if attributes.has_key?(:'stampFormat')
+        self.stamp_format = attributes[:'stampFormat']
+      end
+
+      if attributes.has_key?(:'stampImageUri')
+        self.stamp_image_uri = attributes[:'stampImageUri']
+      end
+
+      if attributes.has_key?(:'stampSizeMM')
+        self.stamp_size_mm = attributes[:'stampSizeMM']
+      end
+
+      if attributes.has_key?(:'stampType')
+        self.stamp_type = attributes[:'stampType']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -173,17 +244,25 @@ module DocuSign_eSign
       self.class == o.class &&
           adopted_date_time == o.adopted_date_time &&
           created_date_time == o.created_date_time &&
+          date_stamp_properties == o.date_stamp_properties &&
           error_details == o.error_details &&
+          external_id == o.external_id &&
+          image_type == o.image_type &&
           initials150_image_id == o.initials150_image_id &&
           initials_image_uri == o.initials_image_uri &&
           is_default == o.is_default &&
+          phonetic_name == o.phonetic_name &&
           signature150_image_id == o.signature150_image_id &&
           signature_font == o.signature_font &&
           signature_id == o.signature_id &&
           signature_image_uri == o.signature_image_uri &&
           signature_initials == o.signature_initials &&
           signature_name == o.signature_name &&
-          signature_type == o.signature_type
+          signature_type == o.signature_type &&
+          stamp_format == o.stamp_format &&
+          stamp_image_uri == o.stamp_image_uri &&
+          stamp_size_mm == o.stamp_size_mm &&
+          stamp_type == o.stamp_type
     end
 
     # @see the `==` method
@@ -195,7 +274,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [adopted_date_time, created_date_time, error_details, initials150_image_id, initials_image_uri, is_default, signature150_image_id, signature_font, signature_id, signature_image_uri, signature_initials, signature_name, signature_type].hash
+      [adopted_date_time, created_date_time, date_stamp_properties, error_details, external_id, image_type, initials150_image_id, initials_image_uri, is_default, phonetic_name, signature150_image_id, signature_font, signature_id, signature_image_uri, signature_initials, signature_name, signature_type, stamp_format, stamp_image_uri, stamp_size_mm, stamp_type].hash
     end
 
     # Builds the object from hash
