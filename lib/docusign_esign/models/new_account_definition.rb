@@ -32,6 +32,8 @@ module DocuSign_eSign
 
     attr_accessor :initial_user
 
+    attr_accessor :payment_processor_information
+
     attr_accessor :plan_information
 
     attr_accessor :referral_information
@@ -49,6 +51,7 @@ module DocuSign_eSign
         :'distributor_code' => :'distributorCode',
         :'distributor_password' => :'distributorPassword',
         :'initial_user' => :'initialUser',
+        :'payment_processor_information' => :'PaymentProcessorInformation',
         :'plan_information' => :'planInformation',
         :'referral_information' => :'referralInformation',
         :'social_account_information' => :'socialAccountInformation'
@@ -65,6 +68,7 @@ module DocuSign_eSign
         :'distributor_code' => :'String',
         :'distributor_password' => :'String',
         :'initial_user' => :'UserInformation',
+        :'payment_processor_information' => :'PaymentProcessorInformation',
         :'plan_information' => :'PlanInformation',
         :'referral_information' => :'ReferralInformation',
         :'social_account_information' => :'SocialAccountInformation'
@@ -109,6 +113,10 @@ module DocuSign_eSign
         self.initial_user = attributes[:'initialUser']
       end
 
+      if attributes.has_key?(:'PaymentProcessorInformation')
+        self.payment_processor_information = attributes[:'PaymentProcessorInformation']
+      end
+
       if attributes.has_key?(:'planInformation')
         self.plan_information = attributes[:'planInformation']
       end
@@ -148,6 +156,7 @@ module DocuSign_eSign
           distributor_code == o.distributor_code &&
           distributor_password == o.distributor_password &&
           initial_user == o.initial_user &&
+          payment_processor_information == o.payment_processor_information &&
           plan_information == o.plan_information &&
           referral_information == o.referral_information &&
           social_account_information == o.social_account_information
@@ -162,7 +171,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_name, account_settings, address_information, credit_card_information, distributor_code, distributor_password, initial_user, plan_information, referral_information, social_account_information].hash
+      [account_name, account_settings, address_information, credit_card_information, distributor_code, distributor_password, initial_user, payment_processor_information, plan_information, referral_information, social_account_information].hash
     end
 
     # Builds the object from hash

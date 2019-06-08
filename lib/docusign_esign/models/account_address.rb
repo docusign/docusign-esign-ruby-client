@@ -32,7 +32,7 @@ module DocuSign_eSign
     # 
     attr_accessor :fax
 
-    # The user’s first name.  Maximum Length: 50 characters.
+    # The user's first name.  Maximum Length: 50 characters.
     attr_accessor :first_name
 
     # 

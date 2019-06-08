@@ -19,6 +19,9 @@ module DocuSign_eSign
     # The activation code the new user must enter when activating their account.
     attr_accessor :activation_access_code
 
+    # 
+    attr_accessor :country_code
+
     # Indicates the date and time the item was created.
     attr_accessor :created_date_time
 
@@ -33,12 +36,12 @@ module DocuSign_eSign
 
     attr_accessor :error_details
 
-    # The user’s first name.  Maximum Length: 50 characters.
+    # The user's first name.  Maximum Length: 50 characters.
     attr_accessor :first_name
 
     attr_accessor :forgotten_password_info
 
-    # A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId – The DocuSign group ID for the group. * groupName – The name of the group * permissionProfileId – The ID of the permission profile associated with the group. * groupType – The group type. 
+    # A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId - The DocuSign group ID for the group. * groupName - The name of the group * permissionProfileId - The ID of the permission profile associated with the group. * groupType - The group type. 
     attr_accessor :group_list
 
     attr_accessor :home_address
@@ -49,16 +52,19 @@ module DocuSign_eSign
     # Determines if the feature set is actively set as part of the plan.
     attr_accessor :is_admin
 
+    # 
+    attr_accessor :job_title
+
     # Shows the date-time when the user last logged on to the system.
     attr_accessor :last_login
 
-    # The user’s last name.  Maximum Length: 50 characters.
+    # The user's last name.  Maximum Length: 50 characters.
     attr_accessor :last_name
 
-    # Shows the current status of the user’s password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  
+    # Shows the current status of the user's password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  
     attr_accessor :login_status
 
-    # The user’s middle name.  Maximum Length: 50 characters.
+    # The user's middle name.  Maximum Length: 50 characters.
     attr_accessor :middle_name
 
     # 
@@ -76,11 +82,17 @@ module DocuSign_eSign
     # 
     attr_accessor :profile_image_uri
 
+    # 
+    attr_accessor :send_activation_email
+
     # When set to **true**, specifies that an additional activation email is sent to the user if they fail a log on before activating their account. 
     attr_accessor :send_activation_on_invalid_login
 
     # Contains the URI for an endpoint that you can use to retrieve the signature image.
     attr_accessor :signature_image_uri
+
+    # 
+    attr_accessor :subscribe
 
     # The suffix for the user's name.   Maximum Length: 50 characters. 
     attr_accessor :suffix_name
@@ -117,6 +129,7 @@ module DocuSign_eSign
       {
         :'account_management_granular' => :'accountManagementGranular',
         :'activation_access_code' => :'activationAccessCode',
+        :'country_code' => :'countryCode',
         :'created_date_time' => :'createdDateTime',
         :'custom_settings' => :'customSettings',
         :'email' => :'email',
@@ -128,6 +141,7 @@ module DocuSign_eSign
         :'home_address' => :'homeAddress',
         :'initials_image_uri' => :'initialsImageUri',
         :'is_admin' => :'isAdmin',
+        :'job_title' => :'jobTitle',
         :'last_login' => :'lastLogin',
         :'last_name' => :'lastName',
         :'login_status' => :'loginStatus',
@@ -137,8 +151,10 @@ module DocuSign_eSign
         :'permission_profile_id' => :'permissionProfileId',
         :'permission_profile_name' => :'permissionProfileName',
         :'profile_image_uri' => :'profileImageUri',
+        :'send_activation_email' => :'sendActivationEmail',
         :'send_activation_on_invalid_login' => :'sendActivationOnInvalidLogin',
         :'signature_image_uri' => :'signatureImageUri',
+        :'subscribe' => :'subscribe',
         :'suffix_name' => :'suffixName',
         :'title' => :'title',
         :'uri' => :'uri',
@@ -157,6 +173,7 @@ module DocuSign_eSign
       {
         :'account_management_granular' => :'UserAccountManagementGranularInformation',
         :'activation_access_code' => :'String',
+        :'country_code' => :'String',
         :'created_date_time' => :'String',
         :'custom_settings' => :'Array<NameValue>',
         :'email' => :'String',
@@ -168,6 +185,7 @@ module DocuSign_eSign
         :'home_address' => :'AddressInformationV2',
         :'initials_image_uri' => :'String',
         :'is_admin' => :'String',
+        :'job_title' => :'String',
         :'last_login' => :'String',
         :'last_name' => :'String',
         :'login_status' => :'String',
@@ -177,8 +195,10 @@ module DocuSign_eSign
         :'permission_profile_id' => :'String',
         :'permission_profile_name' => :'String',
         :'profile_image_uri' => :'String',
+        :'send_activation_email' => :'String',
         :'send_activation_on_invalid_login' => :'String',
         :'signature_image_uri' => :'String',
+        :'subscribe' => :'String',
         :'suffix_name' => :'String',
         :'title' => :'String',
         :'uri' => :'String',
@@ -206,6 +226,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'activationAccessCode')
         self.activation_access_code = attributes[:'activationAccessCode']
+      end
+
+      if attributes.has_key?(:'countryCode')
+        self.country_code = attributes[:'countryCode']
       end
 
       if attributes.has_key?(:'createdDateTime')
@@ -256,6 +280,10 @@ module DocuSign_eSign
         self.is_admin = attributes[:'isAdmin']
       end
 
+      if attributes.has_key?(:'jobTitle')
+        self.job_title = attributes[:'jobTitle']
+      end
+
       if attributes.has_key?(:'lastLogin')
         self.last_login = attributes[:'lastLogin']
       end
@@ -292,12 +320,20 @@ module DocuSign_eSign
         self.profile_image_uri = attributes[:'profileImageUri']
       end
 
+      if attributes.has_key?(:'sendActivationEmail')
+        self.send_activation_email = attributes[:'sendActivationEmail']
+      end
+
       if attributes.has_key?(:'sendActivationOnInvalidLogin')
         self.send_activation_on_invalid_login = attributes[:'sendActivationOnInvalidLogin']
       end
 
       if attributes.has_key?(:'signatureImageUri')
         self.signature_image_uri = attributes[:'signatureImageUri']
+      end
+
+      if attributes.has_key?(:'subscribe')
+        self.subscribe = attributes[:'subscribe']
       end
 
       if attributes.has_key?(:'suffixName')
@@ -364,6 +400,7 @@ module DocuSign_eSign
       self.class == o.class &&
           account_management_granular == o.account_management_granular &&
           activation_access_code == o.activation_access_code &&
+          country_code == o.country_code &&
           created_date_time == o.created_date_time &&
           custom_settings == o.custom_settings &&
           email == o.email &&
@@ -375,6 +412,7 @@ module DocuSign_eSign
           home_address == o.home_address &&
           initials_image_uri == o.initials_image_uri &&
           is_admin == o.is_admin &&
+          job_title == o.job_title &&
           last_login == o.last_login &&
           last_name == o.last_name &&
           login_status == o.login_status &&
@@ -384,8 +422,10 @@ module DocuSign_eSign
           permission_profile_id == o.permission_profile_id &&
           permission_profile_name == o.permission_profile_name &&
           profile_image_uri == o.profile_image_uri &&
+          send_activation_email == o.send_activation_email &&
           send_activation_on_invalid_login == o.send_activation_on_invalid_login &&
           signature_image_uri == o.signature_image_uri &&
+          subscribe == o.subscribe &&
           suffix_name == o.suffix_name &&
           title == o.title &&
           uri == o.uri &&
@@ -407,7 +447,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_management_granular, activation_access_code, created_date_time, custom_settings, email, enable_connect_for_user, error_details, first_name, forgotten_password_info, group_list, home_address, initials_image_uri, is_admin, last_login, last_name, login_status, middle_name, password, password_expiration, permission_profile_id, permission_profile_name, profile_image_uri, send_activation_on_invalid_login, signature_image_uri, suffix_name, title, uri, user_id, user_name, user_profile_last_modified_date, user_settings, user_status, user_type, work_address].hash
+      [account_management_granular, activation_access_code, country_code, created_date_time, custom_settings, email, enable_connect_for_user, error_details, first_name, forgotten_password_info, group_list, home_address, initials_image_uri, is_admin, job_title, last_login, last_name, login_status, middle_name, password, password_expiration, permission_profile_id, permission_profile_name, profile_image_uri, send_activation_email, send_activation_on_invalid_login, signature_image_uri, subscribe, suffix_name, title, uri, user_id, user_name, user_profile_last_modified_date, user_settings, user_status, user_type, work_address].hash
     end
 
     # Builds the object from hash

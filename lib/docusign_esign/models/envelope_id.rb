@@ -32,10 +32,10 @@ module DocuSign_eSign
     # Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches.
     attr_accessor :anchor_units
 
-    # Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.
+    # Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.
     attr_accessor :anchor_x_offset
 
-    # Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.
+    # Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.
     attr_accessor :anchor_y_offset
 
     # When set to **true**, the information in the tab is bold.
@@ -81,6 +81,9 @@ module DocuSign_eSign
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
     attr_accessor :status
 
+    # 
+    attr_accessor :tab_group_labels
+
     # The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     
     attr_accessor :tab_id
 
@@ -95,6 +98,9 @@ module DocuSign_eSign
 
     # When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.
     attr_accessor :template_required
+
+    # 
+    attr_accessor :tooltip
 
     # When set to **true**, the information in the tab is underlined.
     attr_accessor :underline
@@ -132,11 +138,13 @@ module DocuSign_eSign
         :'page_number' => :'pageNumber',
         :'recipient_id' => :'recipientId',
         :'status' => :'status',
+        :'tab_group_labels' => :'tabGroupLabels',
         :'tab_id' => :'tabId',
         :'tab_label' => :'tabLabel',
         :'tab_order' => :'tabOrder',
         :'template_locked' => :'templateLocked',
         :'template_required' => :'templateRequired',
+        :'tooltip' => :'tooltip',
         :'underline' => :'underline',
         :'x_position' => :'xPosition',
         :'y_position' => :'yPosition'
@@ -169,11 +177,13 @@ module DocuSign_eSign
         :'page_number' => :'String',
         :'recipient_id' => :'String',
         :'status' => :'String',
+        :'tab_group_labels' => :'Array<String>',
         :'tab_id' => :'String',
         :'tab_label' => :'String',
         :'tab_order' => :'String',
         :'template_locked' => :'String',
         :'template_required' => :'String',
+        :'tooltip' => :'String',
         :'underline' => :'String',
         :'x_position' => :'String',
         :'y_position' => :'String'
@@ -280,6 +290,12 @@ module DocuSign_eSign
         self.status = attributes[:'status']
       end
 
+      if attributes.has_key?(:'tabGroupLabels')
+        if (value = attributes[:'tabGroupLabels']).is_a?(Array)
+          self.tab_group_labels = value
+        end
+      end
+
       if attributes.has_key?(:'tabId')
         self.tab_id = attributes[:'tabId']
       end
@@ -298,6 +314,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'templateRequired')
         self.template_required = attributes[:'templateRequired']
+      end
+
+      if attributes.has_key?(:'tooltip')
+        self.tooltip = attributes[:'tooltip']
       end
 
       if attributes.has_key?(:'underline')
@@ -355,11 +375,13 @@ module DocuSign_eSign
           page_number == o.page_number &&
           recipient_id == o.recipient_id &&
           status == o.status &&
+          tab_group_labels == o.tab_group_labels &&
           tab_id == o.tab_id &&
           tab_label == o.tab_label &&
           tab_order == o.tab_order &&
           template_locked == o.template_locked &&
           template_required == o.template_required &&
+          tooltip == o.tooltip &&
           underline == o.underline &&
           x_position == o.x_position &&
           y_position == o.y_position
@@ -374,7 +396,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_string, anchor_units, anchor_x_offset, anchor_y_offset, bold, conditional_parent_label, conditional_parent_value, custom_tab_id, document_id, error_details, font, font_color, font_size, italic, merge_field, name, page_number, recipient_id, status, tab_id, tab_label, tab_order, template_locked, template_required, underline, x_position, y_position].hash
+      [anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_string, anchor_units, anchor_x_offset, anchor_y_offset, bold, conditional_parent_label, conditional_parent_value, custom_tab_id, document_id, error_details, font, font_color, font_size, italic, merge_field, name, page_number, recipient_id, status, tab_group_labels, tab_id, tab_label, tab_order, template_locked, template_required, tooltip, underline, x_position, y_position].hash
     end
 
     # Builds the object from hash
