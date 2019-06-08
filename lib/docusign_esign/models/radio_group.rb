@@ -41,6 +41,15 @@ module DocuSign_eSign
     # When set to **true**, this custom tab is shared.
     attr_accessor :shared
 
+    # When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
+    attr_accessor :template_locked
+
+    # When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.
+    attr_accessor :template_required
+
+    # 
+    attr_accessor :tooltip
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -53,7 +62,10 @@ module DocuSign_eSign
         :'recipient_id' => :'recipientId',
         :'require_all' => :'requireAll',
         :'require_initial_on_shared_change' => :'requireInitialOnSharedChange',
-        :'shared' => :'shared'
+        :'shared' => :'shared',
+        :'template_locked' => :'templateLocked',
+        :'template_required' => :'templateRequired',
+        :'tooltip' => :'tooltip'
       }
     end
 
@@ -68,7 +80,10 @@ module DocuSign_eSign
         :'recipient_id' => :'String',
         :'require_all' => :'String',
         :'require_initial_on_shared_change' => :'String',
-        :'shared' => :'String'
+        :'shared' => :'String',
+        :'template_locked' => :'String',
+        :'template_required' => :'String',
+        :'tooltip' => :'String'
       }
     end
 
@@ -118,6 +133,18 @@ module DocuSign_eSign
         self.shared = attributes[:'shared']
       end
 
+      if attributes.has_key?(:'templateLocked')
+        self.template_locked = attributes[:'templateLocked']
+      end
+
+      if attributes.has_key?(:'templateRequired')
+        self.template_required = attributes[:'templateRequired']
+      end
+
+      if attributes.has_key?(:'tooltip')
+        self.tooltip = attributes[:'tooltip']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -146,7 +173,10 @@ module DocuSign_eSign
           recipient_id == o.recipient_id &&
           require_all == o.require_all &&
           require_initial_on_shared_change == o.require_initial_on_shared_change &&
-          shared == o.shared
+          shared == o.shared &&
+          template_locked == o.template_locked &&
+          template_required == o.template_required &&
+          tooltip == o.tooltip
     end
 
     # @see the `==` method
@@ -158,7 +188,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [conditional_parent_label, conditional_parent_value, document_id, group_name, radios, recipient_id, require_all, require_initial_on_shared_change, shared].hash
+      [conditional_parent_label, conditional_parent_value, document_id, group_name, radios, recipient_id, require_all, require_initial_on_shared_change, shared, template_locked, template_required, tooltip].hash
     end
 
     # Builds the object from hash

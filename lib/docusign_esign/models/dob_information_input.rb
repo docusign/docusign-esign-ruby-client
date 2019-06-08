@@ -14,7 +14,7 @@ require 'date'
 module DocuSign_eSign
   # Complex type containing:  * dateOfBirth * displayLevelCode * receiveInResponse
   class DobInformationInput
-    # Specifies the recipient’s date, month, and year of birth.
+    # Specifies the recipient's date, month, and year of birth.
     attr_accessor :date_of_birth
 
     # Specifies the display level for the recipient.  Valid values are:   * ReadOnly * Editable * DoNotDisplay

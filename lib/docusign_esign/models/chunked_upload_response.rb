@@ -33,6 +33,12 @@ module DocuSign_eSign
     attr_accessor :expiration_date_time
 
     # 
+    attr_accessor :max_chunked_upload_parts
+
+    # 
+    attr_accessor :max_total_size
+
+    # 
     attr_accessor :total_size
 
 
@@ -45,6 +51,8 @@ module DocuSign_eSign
         :'chunked_upload_uri' => :'chunkedUploadUri',
         :'committed' => :'committed',
         :'expiration_date_time' => :'expirationDateTime',
+        :'max_chunked_upload_parts' => :'maxChunkedUploadParts',
+        :'max_total_size' => :'maxTotalSize',
         :'total_size' => :'totalSize'
       }
     end
@@ -58,6 +66,8 @@ module DocuSign_eSign
         :'chunked_upload_uri' => :'String',
         :'committed' => :'String',
         :'expiration_date_time' => :'String',
+        :'max_chunked_upload_parts' => :'String',
+        :'max_total_size' => :'String',
         :'total_size' => :'String'
       }
     end
@@ -96,6 +106,14 @@ module DocuSign_eSign
         self.expiration_date_time = attributes[:'expirationDateTime']
       end
 
+      if attributes.has_key?(:'maxChunkedUploadParts')
+        self.max_chunked_upload_parts = attributes[:'maxChunkedUploadParts']
+      end
+
+      if attributes.has_key?(:'maxTotalSize')
+        self.max_total_size = attributes[:'maxTotalSize']
+      end
+
       if attributes.has_key?(:'totalSize')
         self.total_size = attributes[:'totalSize']
       end
@@ -126,6 +144,8 @@ module DocuSign_eSign
           chunked_upload_uri == o.chunked_upload_uri &&
           committed == o.committed &&
           expiration_date_time == o.expiration_date_time &&
+          max_chunked_upload_parts == o.max_chunked_upload_parts &&
+          max_total_size == o.max_total_size &&
           total_size == o.total_size
     end
 
@@ -138,7 +158,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [checksum, chunked_upload_id, chunked_upload_parts, chunked_upload_uri, committed, expiration_date_time, total_size].hash
+      [checksum, chunked_upload_id, chunked_upload_parts, chunked_upload_uri, committed, expiration_date_time, max_chunked_upload_parts, max_total_size, total_size].hash
     end
 
     # Builds the object from hash

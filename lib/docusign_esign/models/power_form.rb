@@ -14,6 +14,9 @@ require 'date'
 module DocuSign_eSign
 
   class PowerForm
+    # 
+    attr_accessor :created_by
+
     # Indicates the date and time the item was created.
     attr_accessor :created_date_time
 
@@ -89,6 +92,7 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'created_by' => :'createdBy',
         :'created_date_time' => :'createdDateTime',
         :'email_body' => :'emailBody',
         :'email_subject' => :'emailSubject',
@@ -119,6 +123,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'created_by' => :'String',
         :'created_date_time' => :'String',
         :'email_body' => :'String',
         :'email_subject' => :'String',
@@ -153,6 +158,10 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'createdBy')
+        self.created_by = attributes[:'createdBy']
+      end
 
       if attributes.has_key?(:'createdDateTime')
         self.created_date_time = attributes[:'createdDateTime']
@@ -274,6 +283,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          created_by == o.created_by &&
           created_date_time == o.created_date_time &&
           email_body == o.email_body &&
           email_subject == o.email_subject &&
@@ -309,7 +319,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [created_date_time, email_body, email_subject, envelopes, error_details, instructions, is_active, last_used, limit_use_interval, limit_use_interval_enabled, limit_use_interval_units, max_use_enabled, name, power_form_id, power_form_url, recipients, sender_name, sender_user_id, signing_mode, template_id, template_name, times_used, uri, uses_remaining].hash
+      [created_by, created_date_time, email_body, email_subject, envelopes, error_details, instructions, is_active, last_used, limit_use_interval, limit_use_interval_enabled, limit_use_interval_units, max_use_enabled, name, power_form_id, power_form_url, recipients, sender_name, sender_user_id, signing_mode, template_id, template_name, times_used, uri, uses_remaining].hash
     end
 
     # Builds the object from hash

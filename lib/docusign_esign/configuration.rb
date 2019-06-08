@@ -189,6 +189,13 @@ module DocuSign_eSign
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
+        'docusignAccessCode' =>
+          {
+            type: 'oauth2',
+            in: 'header',
+            key: 'Authorization',
+            value: "Bearer #{access_token}"
+          },
       }
     end
   end

@@ -14,7 +14,7 @@ require 'date'
 module DocuSign_eSign
 
   class InPersonSigner
-    # If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account’s access code format setting.  If blank, but the signer `accessCode` property is set in the envelope, then that value is used.  If blank and the signer `accessCode` property is not set, then the access code is not required.
+    # If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account's access code format setting.  If blank, but the signer `accessCode` property is set in the envelope, then that value is used.  If blank and the signer `accessCode` property is not set, then the access code is not required.
     attr_accessor :access_code
 
     # This Optional attribute indicates that the access code will be added to the email sent to the recipient; this nullifies the Security measure of Access Code on the recipient.
@@ -28,6 +28,9 @@ module DocuSign_eSign
 
     # Specifies whether the recipient is embedded or remote.   If the `clientUserId` property is not null then the recipient is embedded. Note that if the `ClientUserId` property is set and either `SignerMustHaveAccount` or `SignerMustLoginToSign` property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. 
     attr_accessor :client_user_id
+
+    # 
+    attr_accessor :creation_reason
 
     # An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
     attr_accessor :custom_fields
@@ -50,12 +53,18 @@ module DocuSign_eSign
     # 
     attr_accessor :document_visibility
 
+    # 
+    attr_accessor :email
+
     attr_accessor :email_notification
 
-    # Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender’s system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to `SIGN_AT_DOCUSIGN`, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient’s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets `EmbeddedRecipientStartURL=SIGN_AT_DOCUSIGN`, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the `clientUserId` property is NOT set, and the `embeddedRecipientStartURL` is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The `customFields` property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   `http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&[[mergeField3]]` 
+    # Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender's system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to `SIGN_AT_DOCUSIGN`, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient's identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets `EmbeddedRecipientStartURL=SIGN_AT_DOCUSIGN`, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the `clientUserId` property is NOT set, and the `embeddedRecipientStartURL` is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The `customFields` property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   `http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&[[mergeField3]]` 
     attr_accessor :embedded_recipient_start_url
 
     attr_accessor :error_details
+
+    # Specifies the documents that are not visible to this recipient. Document Visibility must be enabled for the account and the `enforceSignerVisibility` property must be set to **true** for the envelope to use this.  When enforce signer visibility is enabled, documents with tabs can only be viewed by signers that have a tab on that document. Recipients that have an administrative role (Agent, Editor, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent.
+    attr_accessor :excluded_documents
 
     # Reserved:
     attr_accessor :fax_number
@@ -76,6 +85,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :in_person_signing_type
+
+    # 
+    attr_accessor :name
 
     attr_accessor :notary_host
 
@@ -177,6 +189,7 @@ module DocuSign_eSign
         :'auto_navigation' => :'autoNavigation',
         :'can_sign_offline' => :'canSignOffline',
         :'client_user_id' => :'clientUserId',
+        :'creation_reason' => :'creationReason',
         :'custom_fields' => :'customFields',
         :'declined_date_time' => :'declinedDateTime',
         :'declined_reason' => :'declinedReason',
@@ -184,9 +197,11 @@ module DocuSign_eSign
         :'delivered_date_time' => :'deliveredDateTime',
         :'delivery_method' => :'deliveryMethod',
         :'document_visibility' => :'documentVisibility',
+        :'email' => :'email',
         :'email_notification' => :'emailNotification',
         :'embedded_recipient_start_url' => :'embeddedRecipientStartURL',
         :'error_details' => :'errorDetails',
+        :'excluded_documents' => :'excludedDocuments',
         :'fax_number' => :'faxNumber',
         :'host_email' => :'hostEmail',
         :'host_name' => :'hostName',
@@ -194,6 +209,7 @@ module DocuSign_eSign
         :'id_check_information_input' => :'idCheckInformationInput',
         :'inherit_email_notification_configuration' => :'inheritEmailNotificationConfiguration',
         :'in_person_signing_type' => :'inPersonSigningType',
+        :'name' => :'name',
         :'notary_host' => :'notaryHost',
         :'note' => :'note',
         :'offline_attributes' => :'offlineAttributes',
@@ -238,6 +254,7 @@ module DocuSign_eSign
         :'auto_navigation' => :'String',
         :'can_sign_offline' => :'String',
         :'client_user_id' => :'String',
+        :'creation_reason' => :'String',
         :'custom_fields' => :'Array<String>',
         :'declined_date_time' => :'String',
         :'declined_reason' => :'String',
@@ -245,9 +262,11 @@ module DocuSign_eSign
         :'delivered_date_time' => :'String',
         :'delivery_method' => :'String',
         :'document_visibility' => :'Array<DocumentVisibility>',
+        :'email' => :'String',
         :'email_notification' => :'RecipientEmailNotification',
         :'embedded_recipient_start_url' => :'String',
         :'error_details' => :'ErrorDetails',
+        :'excluded_documents' => :'Array<String>',
         :'fax_number' => :'String',
         :'host_email' => :'String',
         :'host_name' => :'String',
@@ -255,6 +274,7 @@ module DocuSign_eSign
         :'id_check_information_input' => :'IdCheckInformationInput',
         :'inherit_email_notification_configuration' => :'String',
         :'in_person_signing_type' => :'String',
+        :'name' => :'String',
         :'notary_host' => :'NotaryHost',
         :'note' => :'String',
         :'offline_attributes' => :'OfflineAttributes',
@@ -319,6 +339,10 @@ module DocuSign_eSign
         self.client_user_id = attributes[:'clientUserId']
       end
 
+      if attributes.has_key?(:'creationReason')
+        self.creation_reason = attributes[:'creationReason']
+      end
+
       if attributes.has_key?(:'customFields')
         if (value = attributes[:'customFields']).is_a?(Array)
           self.custom_fields = value
@@ -351,6 +375,10 @@ module DocuSign_eSign
         end
       end
 
+      if attributes.has_key?(:'email')
+        self.email = attributes[:'email']
+      end
+
       if attributes.has_key?(:'emailNotification')
         self.email_notification = attributes[:'emailNotification']
       end
@@ -361,6 +389,12 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'errorDetails')
         self.error_details = attributes[:'errorDetails']
+      end
+
+      if attributes.has_key?(:'excludedDocuments')
+        if (value = attributes[:'excludedDocuments']).is_a?(Array)
+          self.excluded_documents = value
+        end
       end
 
       if attributes.has_key?(:'faxNumber')
@@ -389,6 +423,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'inPersonSigningType')
         self.in_person_signing_type = attributes[:'inPersonSigningType']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'notaryHost')
@@ -556,6 +594,7 @@ module DocuSign_eSign
           auto_navigation == o.auto_navigation &&
           can_sign_offline == o.can_sign_offline &&
           client_user_id == o.client_user_id &&
+          creation_reason == o.creation_reason &&
           custom_fields == o.custom_fields &&
           declined_date_time == o.declined_date_time &&
           declined_reason == o.declined_reason &&
@@ -563,9 +602,11 @@ module DocuSign_eSign
           delivered_date_time == o.delivered_date_time &&
           delivery_method == o.delivery_method &&
           document_visibility == o.document_visibility &&
+          email == o.email &&
           email_notification == o.email_notification &&
           embedded_recipient_start_url == o.embedded_recipient_start_url &&
           error_details == o.error_details &&
+          excluded_documents == o.excluded_documents &&
           fax_number == o.fax_number &&
           host_email == o.host_email &&
           host_name == o.host_name &&
@@ -573,6 +614,7 @@ module DocuSign_eSign
           id_check_information_input == o.id_check_information_input &&
           inherit_email_notification_configuration == o.inherit_email_notification_configuration &&
           in_person_signing_type == o.in_person_signing_type &&
+          name == o.name &&
           notary_host == o.notary_host &&
           note == o.note &&
           offline_attributes == o.offline_attributes &&
@@ -617,7 +659,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, add_access_code_to_email, auto_navigation, can_sign_offline, client_user_id, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, document_visibility, email_notification, embedded_recipient_start_url, error_details, fax_number, host_email, host_name, id_check_configuration_name, id_check_information_input, inherit_email_notification_configuration, in_person_signing_type, notary_host, note, offline_attributes, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, require_id_lookup, require_signer_certificate, require_sign_on_paper, role_name, routing_order, saml_authentication, sent_date_time, signature_info, signed_date_time, signer_email, signer_name, sign_in_each_location, signing_group_id, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, tabs, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, add_access_code_to_email, auto_navigation, can_sign_offline, client_user_id, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, document_visibility, email, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, host_email, host_name, id_check_configuration_name, id_check_information_input, inherit_email_notification_configuration, in_person_signing_type, name, notary_host, note, offline_attributes, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, require_id_lookup, require_signer_certificate, require_sign_on_paper, role_name, routing_order, saml_authentication, sent_date_time, signature_info, signed_date_time, signer_email, signer_name, sign_in_each_location, signing_group_id, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, tabs, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash

@@ -2,4 +2,4 @@ source 'https://rubygems.org'
 
 gem 'rspec'
 
-gem 'docusign_esign'
+gem 'docusign_esign', path: '../'

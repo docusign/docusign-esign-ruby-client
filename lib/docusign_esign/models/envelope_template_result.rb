@@ -20,6 +20,9 @@ module DocuSign_eSign
     # When set to **true**, the recipient can redirect an envelope to a more appropriate recipient.
     attr_accessor :allow_reassign
 
+    # 
+    attr_accessor :allow_view_history
+
     # When set to **true**, the envelope is queued for processing and the value of the `status` property is set to 'Processing'. Additionally, get status calls return 'Processing' until completed.
     attr_accessor :asynchronous
 
@@ -28,6 +31,9 @@ module DocuSign_eSign
 
     # Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
     attr_accessor :authoritative_copy
+
+    # 
+    attr_accessor :authoritative_copy_default
 
     # 
     attr_accessor :auto_navigation
@@ -43,6 +49,9 @@ module DocuSign_eSign
 
     # Specifies the date and time this item was completed.
     attr_accessor :completed_date_time
+
+    # 
+    attr_accessor :created
 
     # Indicates the date and time the item was created.
     attr_accessor :created_date_time
@@ -161,6 +170,9 @@ module DocuSign_eSign
     # When set to **true**, this custom tab is shared.
     attr_accessor :shared
 
+    # 
+    attr_accessor :signer_can_sign_on_mobile
+
     # Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.
     attr_accessor :signing_location
 
@@ -182,7 +194,7 @@ module DocuSign_eSign
     # 
     attr_accessor :uri
 
-    # When set to **true**, the disclosure is shown to recipients in accordance with the account’s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the `useDisclosure` property is not set, then the account's normal disclosure setting is used and the value of the `useDisclosure` property is not returned in responses when getting envelope information.
+    # When set to **true**, the disclosure is shown to recipients in accordance with the account's Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the `useDisclosure` property is not set, then the account's normal disclosure setting is used and the value of the `useDisclosure` property is not returned in responses when getting envelope information.
     attr_accessor :use_disclosure
 
     # The date and time the envelope or template was voided.
@@ -197,14 +209,17 @@ module DocuSign_eSign
       {
         :'allow_markup' => :'allowMarkup',
         :'allow_reassign' => :'allowReassign',
+        :'allow_view_history' => :'allowViewHistory',
         :'asynchronous' => :'asynchronous',
         :'attachments_uri' => :'attachmentsUri',
         :'authoritative_copy' => :'authoritativeCopy',
+        :'authoritative_copy_default' => :'authoritativeCopyDefault',
         :'auto_navigation' => :'autoNavigation',
         :'brand_id' => :'brandId',
         :'brand_lock' => :'brandLock',
         :'certificate_uri' => :'certificateUri',
         :'completed_date_time' => :'completedDateTime',
+        :'created' => :'created',
         :'created_date_time' => :'createdDateTime',
         :'custom_fields' => :'customFields',
         :'custom_fields_uri' => :'customFieldsUri',
@@ -246,6 +261,7 @@ module DocuSign_eSign
         :'recipients_uri' => :'recipientsUri',
         :'sent_date_time' => :'sentDateTime',
         :'shared' => :'shared',
+        :'signer_can_sign_on_mobile' => :'signerCanSignOnMobile',
         :'signing_location' => :'signingLocation',
         :'status' => :'status',
         :'status_changed_date_time' => :'statusChangedDateTime',
@@ -264,14 +280,17 @@ module DocuSign_eSign
       {
         :'allow_markup' => :'String',
         :'allow_reassign' => :'String',
+        :'allow_view_history' => :'String',
         :'asynchronous' => :'String',
         :'attachments_uri' => :'String',
         :'authoritative_copy' => :'String',
+        :'authoritative_copy_default' => :'String',
         :'auto_navigation' => :'String',
         :'brand_id' => :'String',
         :'brand_lock' => :'String',
         :'certificate_uri' => :'String',
         :'completed_date_time' => :'String',
+        :'created' => :'String',
         :'created_date_time' => :'String',
         :'custom_fields' => :'CustomFields',
         :'custom_fields_uri' => :'String',
@@ -313,6 +332,7 @@ module DocuSign_eSign
         :'recipients_uri' => :'String',
         :'sent_date_time' => :'String',
         :'shared' => :'String',
+        :'signer_can_sign_on_mobile' => :'String',
         :'signing_location' => :'String',
         :'status' => :'String',
         :'status_changed_date_time' => :'String',
@@ -342,6 +362,10 @@ module DocuSign_eSign
         self.allow_reassign = attributes[:'allowReassign']
       end
 
+      if attributes.has_key?(:'allowViewHistory')
+        self.allow_view_history = attributes[:'allowViewHistory']
+      end
+
       if attributes.has_key?(:'asynchronous')
         self.asynchronous = attributes[:'asynchronous']
       end
@@ -352,6 +376,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'authoritativeCopy')
         self.authoritative_copy = attributes[:'authoritativeCopy']
+      end
+
+      if attributes.has_key?(:'authoritativeCopyDefault')
+        self.authoritative_copy_default = attributes[:'authoritativeCopyDefault']
       end
 
       if attributes.has_key?(:'autoNavigation')
@@ -372,6 +400,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'completedDateTime')
         self.completed_date_time = attributes[:'completedDateTime']
+      end
+
+      if attributes.has_key?(:'created')
+        self.created = attributes[:'created']
       end
 
       if attributes.has_key?(:'createdDateTime')
@@ -540,6 +572,10 @@ module DocuSign_eSign
         self.shared = attributes[:'shared']
       end
 
+      if attributes.has_key?(:'signerCanSignOnMobile')
+        self.signer_can_sign_on_mobile = attributes[:'signerCanSignOnMobile']
+      end
+
       if attributes.has_key?(:'signingLocation')
         self.signing_location = attributes[:'signingLocation']
       end
@@ -602,14 +638,17 @@ module DocuSign_eSign
       self.class == o.class &&
           allow_markup == o.allow_markup &&
           allow_reassign == o.allow_reassign &&
+          allow_view_history == o.allow_view_history &&
           asynchronous == o.asynchronous &&
           attachments_uri == o.attachments_uri &&
           authoritative_copy == o.authoritative_copy &&
+          authoritative_copy_default == o.authoritative_copy_default &&
           auto_navigation == o.auto_navigation &&
           brand_id == o.brand_id &&
           brand_lock == o.brand_lock &&
           certificate_uri == o.certificate_uri &&
           completed_date_time == o.completed_date_time &&
+          created == o.created &&
           created_date_time == o.created_date_time &&
           custom_fields == o.custom_fields &&
           custom_fields_uri == o.custom_fields_uri &&
@@ -651,6 +690,7 @@ module DocuSign_eSign
           recipients_uri == o.recipients_uri &&
           sent_date_time == o.sent_date_time &&
           shared == o.shared &&
+          signer_can_sign_on_mobile == o.signer_can_sign_on_mobile &&
           signing_location == o.signing_location &&
           status == o.status &&
           status_changed_date_time == o.status_changed_date_time &&
@@ -672,7 +712,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_markup, allow_reassign, asynchronous, attachments_uri, authoritative_copy, auto_navigation, brand_id, brand_lock, certificate_uri, completed_date_time, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, description, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_id, envelope_id_stamping, envelope_uri, folder_id, folder_name, folder_uri, initial_sent_date_time, is21_cfr_part11, is_signature_provider_envelope, last_modified, last_modified_date_time, lock_information, message_lock, name, notification, notification_uri, owner, page_count, parent_folder_uri, password, purge_state, recipients, recipients_lock, recipients_uri, sent_date_time, shared, signing_location, status, status_changed_date_time, template_id, templates_uri, transaction_id, uri, use_disclosure, voided_date_time, voided_reason].hash
+      [allow_markup, allow_reassign, allow_view_history, asynchronous, attachments_uri, authoritative_copy, authoritative_copy_default, auto_navigation, brand_id, brand_lock, certificate_uri, completed_date_time, created, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, description, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_id, envelope_id_stamping, envelope_uri, folder_id, folder_name, folder_uri, initial_sent_date_time, is21_cfr_part11, is_signature_provider_envelope, last_modified, last_modified_date_time, lock_information, message_lock, name, notification, notification_uri, owner, page_count, parent_folder_uri, password, purge_state, recipients, recipients_lock, recipients_uri, sent_date_time, shared, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, template_id, templates_uri, transaction_id, uri, use_disclosure, voided_date_time, voided_reason].hash
     end
 
     # Builds the object from hash

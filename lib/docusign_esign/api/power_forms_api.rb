@@ -15,6 +15,9 @@ module DocuSign_eSign
 
   class GetPowerFormDataOptions
     # 
+    attr_accessor :data_layout
+
+    # 
     attr_accessor :from_date
 
     # 
@@ -297,6 +300,7 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'data_layout'] = options.data_layout if !options.data_layout.nil?
       query_params[:'from_date'] = options.from_date if !options.from_date.nil?
       query_params[:'to_date'] = options.to_date if !options.to_date.nil?
 
