@@ -32,10 +32,10 @@ module DocuSign_eSign
     # Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches.
     attr_accessor :anchor_units
 
-    # Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.
+    # Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.
     attr_accessor :anchor_x_offset
 
-    # Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.
+    # Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.
     attr_accessor :anchor_y_offset
 
     # When set to **true**, the information in the tab is bold.
@@ -111,6 +111,9 @@ module DocuSign_eSign
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
     attr_accessor :status
 
+    # 
+    attr_accessor :tab_group_labels
+
     # The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     
     attr_accessor :tab_id
 
@@ -126,6 +129,9 @@ module DocuSign_eSign
     # When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.
     attr_accessor :template_required
 
+    # 
+    attr_accessor :tooltip
+
     # When set to **true**, the information in the tab is underlined.
     attr_accessor :underline
 
@@ -135,7 +141,7 @@ module DocuSign_eSign
     # The message displayed if the custom tab fails input validation (either custom of embedded).
     attr_accessor :validation_message
 
-    # A regular expressionn used to validate input for the tab.
+    # A regular expression used to validate input for the tab.
     attr_accessor :validation_pattern
 
     # Specifies the value of the tab. 
@@ -187,11 +193,13 @@ module DocuSign_eSign
         :'sender_required' => :'senderRequired',
         :'shared' => :'shared',
         :'status' => :'status',
+        :'tab_group_labels' => :'tabGroupLabels',
         :'tab_id' => :'tabId',
         :'tab_label' => :'tabLabel',
         :'tab_order' => :'tabOrder',
         :'template_locked' => :'templateLocked',
         :'template_required' => :'templateRequired',
+        :'tooltip' => :'tooltip',
         :'underline' => :'underline',
         :'use_dash4' => :'useDash4',
         :'validation_message' => :'validationMessage',
@@ -239,11 +247,13 @@ module DocuSign_eSign
         :'sender_required' => :'String',
         :'shared' => :'String',
         :'status' => :'String',
+        :'tab_group_labels' => :'Array<String>',
         :'tab_id' => :'String',
         :'tab_label' => :'String',
         :'tab_order' => :'String',
         :'template_locked' => :'String',
         :'template_required' => :'String',
+        :'tooltip' => :'String',
         :'underline' => :'String',
         :'use_dash4' => :'String',
         :'validation_message' => :'String',
@@ -395,6 +405,12 @@ module DocuSign_eSign
         self.status = attributes[:'status']
       end
 
+      if attributes.has_key?(:'tabGroupLabels')
+        if (value = attributes[:'tabGroupLabels']).is_a?(Array)
+          self.tab_group_labels = value
+        end
+      end
+
       if attributes.has_key?(:'tabId')
         self.tab_id = attributes[:'tabId']
       end
@@ -413,6 +429,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'templateRequired')
         self.template_required = attributes[:'templateRequired']
+      end
+
+      if attributes.has_key?(:'tooltip')
+        self.tooltip = attributes[:'tooltip']
       end
 
       if attributes.has_key?(:'underline')
@@ -500,11 +520,13 @@ module DocuSign_eSign
           sender_required == o.sender_required &&
           shared == o.shared &&
           status == o.status &&
+          tab_group_labels == o.tab_group_labels &&
           tab_id == o.tab_id &&
           tab_label == o.tab_label &&
           tab_order == o.tab_order &&
           template_locked == o.template_locked &&
           template_required == o.template_required &&
+          tooltip == o.tooltip &&
           underline == o.underline &&
           use_dash4 == o.use_dash4 &&
           validation_message == o.validation_message &&
@@ -524,7 +546,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_string, anchor_units, anchor_x_offset, anchor_y_offset, bold, conceal_value_on_document, conditional_parent_label, conditional_parent_value, custom_tab_id, disable_auto_size, document_id, error_details, font, font_color, font_size, italic, locked, max_length, merge_field, name, original_value, page_number, recipient_id, require_all, required, require_initial_on_shared_change, sender_required, shared, status, tab_id, tab_label, tab_order, template_locked, template_required, underline, use_dash4, validation_message, validation_pattern, value, width, x_position, y_position].hash
+      [anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_string, anchor_units, anchor_x_offset, anchor_y_offset, bold, conceal_value_on_document, conditional_parent_label, conditional_parent_value, custom_tab_id, disable_auto_size, document_id, error_details, font, font_color, font_size, italic, locked, max_length, merge_field, name, original_value, page_number, recipient_id, require_all, required, require_initial_on_shared_change, sender_required, shared, status, tab_group_labels, tab_id, tab_label, tab_order, template_locked, template_required, tooltip, underline, use_dash4, validation_message, validation_pattern, value, width, x_position, y_position].hash
     end
 
     # Builds the object from hash

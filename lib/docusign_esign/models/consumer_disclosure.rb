@@ -20,6 +20,8 @@ module DocuSign_eSign
     # Indicates whether the customer can withdraw their acceptance of the consumer disclosure.
     attr_accessor :allow_cd_withdraw
 
+    attr_accessor :allow_cd_withdraw_metadata
+
     # 
     attr_accessor :change_email
 
@@ -68,6 +70,8 @@ module DocuSign_eSign
     # 
     attr_accessor :use_consumer_disclosure_within_account
 
+    attr_accessor :use_consumer_disclosure_within_account_metadata
+
     # Contains the first address line of the postal address to which a customer can send a consent withdrawal notification.  Maximum length: 100 characters. 
     attr_accessor :withdraw_address_line1
 
@@ -110,6 +114,7 @@ module DocuSign_eSign
       {
         :'account_esign_id' => :'accountEsignId',
         :'allow_cd_withdraw' => :'allowCDWithdraw',
+        :'allow_cd_withdraw_metadata' => :'allowCDWithdrawMetadata',
         :'change_email' => :'changeEmail',
         :'change_email_other' => :'changeEmailOther',
         :'company_name' => :'companyName',
@@ -126,6 +131,7 @@ module DocuSign_eSign
         :'pdf_id' => :'pdfId',
         :'use_brand' => :'useBrand',
         :'use_consumer_disclosure_within_account' => :'useConsumerDisclosureWithinAccount',
+        :'use_consumer_disclosure_within_account_metadata' => :'useConsumerDisclosureWithinAccountMetadata',
         :'withdraw_address_line1' => :'withdrawAddressLine1',
         :'withdraw_address_line2' => :'withdrawAddressLine2',
         :'withdraw_by_email' => :'withdrawByEmail',
@@ -146,6 +152,7 @@ module DocuSign_eSign
       {
         :'account_esign_id' => :'String',
         :'allow_cd_withdraw' => :'String',
+        :'allow_cd_withdraw_metadata' => :'SettingsMetadata',
         :'change_email' => :'String',
         :'change_email_other' => :'String',
         :'company_name' => :'String',
@@ -162,6 +169,7 @@ module DocuSign_eSign
         :'pdf_id' => :'String',
         :'use_brand' => :'String',
         :'use_consumer_disclosure_within_account' => :'String',
+        :'use_consumer_disclosure_within_account_metadata' => :'SettingsMetadata',
         :'withdraw_address_line1' => :'String',
         :'withdraw_address_line2' => :'String',
         :'withdraw_by_email' => :'String',
@@ -191,6 +199,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'allowCDWithdraw')
         self.allow_cd_withdraw = attributes[:'allowCDWithdraw']
+      end
+
+      if attributes.has_key?(:'allowCDWithdrawMetadata')
+        self.allow_cd_withdraw_metadata = attributes[:'allowCDWithdrawMetadata']
       end
 
       if attributes.has_key?(:'changeEmail')
@@ -255,6 +267,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'useConsumerDisclosureWithinAccount')
         self.use_consumer_disclosure_within_account = attributes[:'useConsumerDisclosureWithinAccount']
+      end
+
+      if attributes.has_key?(:'useConsumerDisclosureWithinAccountMetadata')
+        self.use_consumer_disclosure_within_account_metadata = attributes[:'useConsumerDisclosureWithinAccountMetadata']
       end
 
       if attributes.has_key?(:'withdrawAddressLine1')
@@ -327,6 +343,7 @@ module DocuSign_eSign
       self.class == o.class &&
           account_esign_id == o.account_esign_id &&
           allow_cd_withdraw == o.allow_cd_withdraw &&
+          allow_cd_withdraw_metadata == o.allow_cd_withdraw_metadata &&
           change_email == o.change_email &&
           change_email_other == o.change_email_other &&
           company_name == o.company_name &&
@@ -343,6 +360,7 @@ module DocuSign_eSign
           pdf_id == o.pdf_id &&
           use_brand == o.use_brand &&
           use_consumer_disclosure_within_account == o.use_consumer_disclosure_within_account &&
+          use_consumer_disclosure_within_account_metadata == o.use_consumer_disclosure_within_account_metadata &&
           withdraw_address_line1 == o.withdraw_address_line1 &&
           withdraw_address_line2 == o.withdraw_address_line2 &&
           withdraw_by_email == o.withdraw_by_email &&
@@ -366,7 +384,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_esign_id, allow_cd_withdraw, change_email, change_email_other, company_name, company_phone, copy_cost_per_page, copy_fee_collection_method, copy_request_email, custom, enable_esign, esign_agreement, esign_text, language_code, must_agree_to_esign, pdf_id, use_brand, use_consumer_disclosure_within_account, withdraw_address_line1, withdraw_address_line2, withdraw_by_email, withdraw_by_mail, withdraw_by_phone, withdraw_city, withdraw_consequences, withdraw_email, withdraw_other, withdraw_phone, withdraw_postal_code, withdraw_state].hash
+      [account_esign_id, allow_cd_withdraw, allow_cd_withdraw_metadata, change_email, change_email_other, company_name, company_phone, copy_cost_per_page, copy_fee_collection_method, copy_request_email, custom, enable_esign, esign_agreement, esign_text, language_code, must_agree_to_esign, pdf_id, use_brand, use_consumer_disclosure_within_account, use_consumer_disclosure_within_account_metadata, withdraw_address_line1, withdraw_address_line2, withdraw_by_email, withdraw_by_mail, withdraw_by_phone, withdraw_city, withdraw_consequences, withdraw_email, withdraw_other, withdraw_phone, withdraw_postal_code, withdraw_state].hash
     end
 
     # Builds the object from hash

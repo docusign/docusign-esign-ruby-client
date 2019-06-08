@@ -15,6 +15,12 @@ module DocuSign_eSign
 
   class RecipientSignatureProvider
     # 
+    attr_accessor :seal_documents_with_tabs_only
+
+    # 
+    attr_accessor :seal_name
+
+    # 
     attr_accessor :signature_provider_name
 
     attr_accessor :signature_provider_options
@@ -23,6 +29,8 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'seal_documents_with_tabs_only' => :'sealDocumentsWithTabsOnly',
+        :'seal_name' => :'sealName',
         :'signature_provider_name' => :'signatureProviderName',
         :'signature_provider_options' => :'signatureProviderOptions'
       }
@@ -31,6 +39,8 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'seal_documents_with_tabs_only' => :'String',
+        :'seal_name' => :'String',
         :'signature_provider_name' => :'String',
         :'signature_provider_options' => :'RecipientSignatureProviderOptions'
       }
@@ -43,6 +53,14 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'sealDocumentsWithTabsOnly')
+        self.seal_documents_with_tabs_only = attributes[:'sealDocumentsWithTabsOnly']
+      end
+
+      if attributes.has_key?(:'sealName')
+        self.seal_name = attributes[:'sealName']
+      end
 
       if attributes.has_key?(:'signatureProviderName')
         self.signature_provider_name = attributes[:'signatureProviderName']
@@ -72,6 +90,8 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          seal_documents_with_tabs_only == o.seal_documents_with_tabs_only &&
+          seal_name == o.seal_name &&
           signature_provider_name == o.signature_provider_name &&
           signature_provider_options == o.signature_provider_options
     end
@@ -85,7 +105,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [signature_provider_name, signature_provider_options].hash
+      [seal_documents_with_tabs_only, seal_name, signature_provider_name, signature_provider_options].hash
     end
 
     # Builds the object from hash

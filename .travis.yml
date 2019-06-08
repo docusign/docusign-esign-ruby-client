@@ -6,4 +6,4 @@ before_install: openssl aes-256-cbc -K $encrypted_7aa52200b8fc_key -iv $encrypte
 # command to install dependencies
 install: cd tests/spec && bundle install
 # command to run tests
-script: bundle exec rspec unit_tests_using_jwt_spec.rb
+script: bundle exec rspec unit_tests_using_jwt_spec.rb --format documentation && bundle exec rspec unit_tests_spec.rb --format documentation
