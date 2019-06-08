@@ -23,6 +23,12 @@ module DocuSign_eSign
     # When set to **true**, the user receives notifications of certified deliveries.
     attr_accessor :certified_delivery_notification
 
+    # 
+    attr_accessor :comments_only_private_and_mention
+
+    # 
+    attr_accessor :comments_receive_all
+
     # When set to **true**, the user receives notification that document markup has been activated.
     attr_accessor :document_markup_activation
 
@@ -63,6 +69,8 @@ module DocuSign_eSign
         :'agent_notification' => :'agentNotification',
         :'carbon_copy_notification' => :'carbonCopyNotification',
         :'certified_delivery_notification' => :'certifiedDeliveryNotification',
+        :'comments_only_private_and_mention' => :'commentsOnlyPrivateAndMention',
+        :'comments_receive_all' => :'commentsReceiveAll',
         :'document_markup_activation' => :'documentMarkupActivation',
         :'envelope_activation' => :'envelopeActivation',
         :'envelope_complete' => :'envelopeComplete',
@@ -83,6 +91,8 @@ module DocuSign_eSign
         :'agent_notification' => :'String',
         :'carbon_copy_notification' => :'String',
         :'certified_delivery_notification' => :'String',
+        :'comments_only_private_and_mention' => :'String',
+        :'comments_receive_all' => :'String',
         :'document_markup_activation' => :'String',
         :'envelope_activation' => :'String',
         :'envelope_complete' => :'String',
@@ -115,6 +125,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'certifiedDeliveryNotification')
         self.certified_delivery_notification = attributes[:'certifiedDeliveryNotification']
+      end
+
+      if attributes.has_key?(:'commentsOnlyPrivateAndMention')
+        self.comments_only_private_and_mention = attributes[:'commentsOnlyPrivateAndMention']
+      end
+
+      if attributes.has_key?(:'commentsReceiveAll')
+        self.comments_receive_all = attributes[:'commentsReceiveAll']
       end
 
       if attributes.has_key?(:'documentMarkupActivation')
@@ -184,6 +202,8 @@ module DocuSign_eSign
           agent_notification == o.agent_notification &&
           carbon_copy_notification == o.carbon_copy_notification &&
           certified_delivery_notification == o.certified_delivery_notification &&
+          comments_only_private_and_mention == o.comments_only_private_and_mention &&
+          comments_receive_all == o.comments_receive_all &&
           document_markup_activation == o.document_markup_activation &&
           envelope_activation == o.envelope_activation &&
           envelope_complete == o.envelope_complete &&
@@ -206,7 +226,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [agent_notification, carbon_copy_notification, certified_delivery_notification, document_markup_activation, envelope_activation, envelope_complete, envelope_corrected, envelope_declined, envelope_voided, fax_received, offline_signing_failed, purge_documents, reassigned_signer, when_signing_group_member].hash
+      [agent_notification, carbon_copy_notification, certified_delivery_notification, comments_only_private_and_mention, comments_receive_all, document_markup_activation, envelope_activation, envelope_complete, envelope_corrected, envelope_declined, envelope_voided, fax_received, offline_signing_failed, purge_documents, reassigned_signer, when_signing_group_member].hash
     end
 
     # Builds the object from hash

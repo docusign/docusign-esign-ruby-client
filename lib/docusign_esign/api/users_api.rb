@@ -13,6 +13,15 @@ require "uri"
 
 module DocuSign_eSign
 
+  class DeleteOptions
+    # 
+    attr_accessor :delete
+
+    def self.default
+      @@default ||= DeleteOptions.new
+    end
+  end
+
   class GetInformationOptions
     # When set to **true**, the full list of user information is returned for each user in the account.
     attr_accessor :additional_info
@@ -60,9 +69,6 @@ module DocuSign_eSign
     attr_accessor :group_id
 
     # 
-    attr_accessor :include_usersettings_for_csv
-
-    # 
     attr_accessor :login_status
 
     # 
@@ -79,6 +85,15 @@ module DocuSign_eSign
 
     def self.default
       @@default ||= ListOptions.new
+    end
+  end
+
+  class ListSignaturesOptions
+    # 
+    attr_accessor :stamp_type
+
+    def self.default
+      @@default ||= ListSignaturesOptions.new
     end
   end
 
@@ -209,9 +224,10 @@ module DocuSign_eSign
     # This closes one or more user records in the account. Users are never deleted from an account, but closing a user prevents them from using account functions.  The response returns whether the API execution was successful (200 - OK) or  if it failed. The response contains a user structure similar to the request and includes the user changes. If an error occurred during the DELETE operation for any of the users, the response for that user contains an `errorDetails` node with `errorCode` and `message` properties.
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_info_list  (optional parameter)
+    # @param DocuSign_eSign::DeleteOptions Options for modifying the behavior of the function.
     # @return [UsersResponse]
-    def delete(account_id, user_info_list)
-      data, _status_code, _headers = delete_with_http_info(account_id,  user_info_list)
+    def delete(account_id, user_info_list, options = DocuSign_eSign::DeleteOptions.default)
+      data, _status_code, _headers = delete_with_http_info(account_id,  user_info_list, options)
       return data
     end
 
@@ -219,8 +235,9 @@ module DocuSign_eSign
     # This closes one or more user records in the account. Users are never deleted from an account, but closing a user prevents them from using account functions.  The response returns whether the API execution was successful (200 - OK) or  if it failed. The response contains a user structure similar to the request and includes the user changes. If an error occurred during the DELETE operation for any of the users, the response for that user contains an &#x60;errorDetails&#x60; node with &#x60;errorCode&#x60; and &#x60;message&#x60; properties.
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_info_list  (optional parameter)
+    # @param DocuSign_eSign::DeleteOptions Options for modifying the behavior of the function.
     # @return [Array<(UsersResponse, Fixnum, Hash)>] UsersResponse data, response status code and response headers
-    def delete_with_http_info(account_id, user_info_list)
+    def delete_with_http_info(account_id, user_info_list, options = DocuSign_eSign::DeleteOptions.default)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UsersApi.delete ..."
       end
@@ -231,6 +248,7 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'delete'] = options.delete if !options.delete.nil?
 
       # header parameters
       header_params = {}
@@ -1008,7 +1026,6 @@ module DocuSign_eSign
       query_params[:'email'] = options.email if !options.email.nil?
       query_params[:'email_substring'] = options.email_substring if !options.email_substring.nil?
       query_params[:'group_id'] = options.group_id if !options.group_id.nil?
-      query_params[:'include_usersettings_for_csv'] = options.include_usersettings_for_csv if !options.include_usersettings_for_csv.nil?
       query_params[:'login_status'] = options.login_status if !options.login_status.nil?
       query_params[:'not_group_id'] = options.not_group_id if !options.not_group_id.nil?
       query_params[:'start_position'] = options.start_position if !options.start_position.nil?
@@ -1096,9 +1113,10 @@ module DocuSign_eSign
     # Retrieves the signature definitions for the specified user.  The userId parameter specified in the endpoint must match the authenticated user's user ID and the user must be a member of the account.  The `signatureId` parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \"Bob Smith\" as \"Bob%20Smith\".
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param DocuSign_eSign::ListSignaturesOptions Options for modifying the behavior of the function.
     # @return [UserSignaturesInformation]
-    def list_signatures(account_id, user_id)
-      data, _status_code, _headers = list_signatures_with_http_info(account_id, user_id)
+    def list_signatures(account_id, user_id, options = DocuSign_eSign::ListSignaturesOptions.default)
+      data, _status_code, _headers = list_signatures_with_http_info(account_id, user_id, options)
       return data
     end
 
@@ -1106,8 +1124,9 @@ module DocuSign_eSign
     # Retrieves the signature definitions for the specified user.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param DocuSign_eSign::ListSignaturesOptions Options for modifying the behavior of the function.
     # @return [Array<(UserSignaturesInformation, Fixnum, Hash)>] UserSignaturesInformation data, response status code and response headers
-    def list_signatures_with_http_info(account_id, user_id)
+    def list_signatures_with_http_info(account_id, user_id, options = DocuSign_eSign::ListSignaturesOptions.default)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UsersApi.list_signatures ..."
       end
@@ -1120,6 +1139,7 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'stamp_type'] = options.stamp_type if !options.stamp_type.nil?
 
       # header parameters
       header_params = {}
@@ -1389,6 +1409,8 @@ module DocuSign_eSign
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['image/gif'])
 
       # form parameters
       form_params = {}
@@ -1565,6 +1587,8 @@ module DocuSign_eSign
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['image/gif'])
 
       # form parameters
       form_params = {}
@@ -1581,6 +1605,61 @@ module DocuSign_eSign
         :return_type => 'UserSignature')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#update_signature_image\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Adds/updates a user signature.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param user_signatures_information  (optional parameter)
+    # @return [UserSignaturesInformation]
+    def update_signatures(account_id, user_id, user_signatures_information)
+      data, _status_code, _headers = update_signatures_with_http_info(account_id, user_id,  user_signatures_information)
+      return data
+    end
+
+    # Adds/updates a user signature.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param user_signatures_information  (optional parameter)
+    # @return [Array<(UserSignaturesInformation, Fixnum, Hash)>] UserSignaturesInformation data, response status code and response headers
+    def update_signatures_with_http_info(account_id, user_id, user_signatures_information)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: UsersApi.update_signatures ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling UsersApi.update_signatures" if account_id.nil?
+      # verify the required parameter 'user_id' is set
+      fail ArgumentError, "Missing the required parameter 'user_id' when calling UsersApi.update_signatures" if user_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/users/{userId}/signatures".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(user_signatures_information)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'UserSignaturesInformation')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: UsersApi#update_signatures\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -17,10 +17,13 @@ module DocuSign_eSign
     # Reserved: TBD
     attr_accessor :apply_anchor_tabs
 
+    # Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
+    attr_accessor :authoritative_copy
+
     # 
     attr_accessor :display
 
-    # The document’s bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding.
+    # The document's bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding.
     attr_accessor :document_base64
 
     # 
@@ -37,6 +40,11 @@ module DocuSign_eSign
 
     # The file extension type of the document. If the document is not a PDF it is converted to a PDF.  
     attr_accessor :file_extension
+
+    # 
+    attr_accessor :file_format_hint
+
+    attr_accessor :html_definition
 
     # 
     attr_accessor :include_in_download
@@ -79,6 +87,7 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'apply_anchor_tabs' => :'applyAnchorTabs',
+        :'authoritative_copy' => :'authoritativeCopy',
         :'display' => :'display',
         :'document_base64' => :'documentBase64',
         :'document_fields' => :'documentFields',
@@ -86,6 +95,8 @@ module DocuSign_eSign
         :'document_id' => :'documentId',
         :'encrypted_with_key_manager' => :'encryptedWithKeyManager',
         :'file_extension' => :'fileExtension',
+        :'file_format_hint' => :'fileFormatHint',
+        :'html_definition' => :'htmlDefinition',
         :'include_in_download' => :'includeInDownload',
         :'match_boxes' => :'matchBoxes',
         :'name' => :'name',
@@ -105,6 +116,7 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'apply_anchor_tabs' => :'String',
+        :'authoritative_copy' => :'BOOLEAN',
         :'display' => :'String',
         :'document_base64' => :'String',
         :'document_fields' => :'Array<NameValue>',
@@ -112,6 +124,8 @@ module DocuSign_eSign
         :'document_id' => :'String',
         :'encrypted_with_key_manager' => :'String',
         :'file_extension' => :'String',
+        :'file_format_hint' => :'String',
+        :'html_definition' => :'DocumentHtmlDefinition',
         :'include_in_download' => :'String',
         :'match_boxes' => :'Array<MatchBox>',
         :'name' => :'String',
@@ -137,6 +151,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'applyAnchorTabs')
         self.apply_anchor_tabs = attributes[:'applyAnchorTabs']
+      end
+
+      if attributes.has_key?(:'authoritativeCopy')
+        self.authoritative_copy = attributes[:'authoritativeCopy']
       end
 
       if attributes.has_key?(:'display')
@@ -167,6 +185,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'fileExtension')
         self.file_extension = attributes[:'fileExtension']
+      end
+
+      if attributes.has_key?(:'fileFormatHint')
+        self.file_format_hint = attributes[:'fileFormatHint']
+      end
+
+      if attributes.has_key?(:'htmlDefinition')
+        self.html_definition = attributes[:'htmlDefinition']
       end
 
       if attributes.has_key?(:'includeInDownload')
@@ -240,6 +266,7 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           apply_anchor_tabs == o.apply_anchor_tabs &&
+          authoritative_copy == o.authoritative_copy &&
           display == o.display &&
           document_base64 == o.document_base64 &&
           document_fields == o.document_fields &&
@@ -247,6 +274,8 @@ module DocuSign_eSign
           document_id == o.document_id &&
           encrypted_with_key_manager == o.encrypted_with_key_manager &&
           file_extension == o.file_extension &&
+          file_format_hint == o.file_format_hint &&
+          html_definition == o.html_definition &&
           include_in_download == o.include_in_download &&
           match_boxes == o.match_boxes &&
           name == o.name &&
@@ -270,7 +299,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [apply_anchor_tabs, display, document_base64, document_fields, document_group, document_id, encrypted_with_key_manager, file_extension, include_in_download, match_boxes, name, order, pages, password, remote_url, signer_must_acknowledge, template_locked, template_required, transform_pdf_fields, uri].hash
+      [apply_anchor_tabs, authoritative_copy, display, document_base64, document_fields, document_group, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, match_boxes, name, order, pages, password, remote_url, signer_must_acknowledge, template_locked, template_required, transform_pdf_fields, uri].hash
     end
 
     # Builds the object from hash

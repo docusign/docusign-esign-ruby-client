@@ -15,6 +15,16 @@ module DocuSign_eSign
 
   class UserAccountManagementGranularInformation
     # 
+    attr_accessor :can_manage_account_security_settings
+
+    attr_accessor :can_manage_account_security_settings_metadata
+
+    # 
+    attr_accessor :can_manage_account_settings
+
+    attr_accessor :can_manage_account_settings_metadata
+
+    # 
     attr_accessor :can_manage_admins
 
     attr_accessor :can_manage_admins_metadata
@@ -25,9 +35,19 @@ module DocuSign_eSign
     attr_accessor :can_manage_groups_metadata
 
     # 
+    attr_accessor :can_manage_reporting
+
+    attr_accessor :can_manage_reporting_metadata
+
+    # 
     attr_accessor :can_manage_sharing
 
     attr_accessor :can_manage_sharing_metadata
+
+    # 
+    attr_accessor :can_manage_signing_groups
+
+    attr_accessor :can_manage_signing_groups_metadata
 
     # 
     attr_accessor :can_manage_users
@@ -38,12 +58,20 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'can_manage_account_security_settings' => :'canManageAccountSecuritySettings',
+        :'can_manage_account_security_settings_metadata' => :'canManageAccountSecuritySettingsMetadata',
+        :'can_manage_account_settings' => :'canManageAccountSettings',
+        :'can_manage_account_settings_metadata' => :'canManageAccountSettingsMetadata',
         :'can_manage_admins' => :'canManageAdmins',
         :'can_manage_admins_metadata' => :'canManageAdminsMetadata',
         :'can_manage_groups' => :'canManageGroups',
         :'can_manage_groups_metadata' => :'canManageGroupsMetadata',
+        :'can_manage_reporting' => :'canManageReporting',
+        :'can_manage_reporting_metadata' => :'canManageReportingMetadata',
         :'can_manage_sharing' => :'canManageSharing',
         :'can_manage_sharing_metadata' => :'canManageSharingMetadata',
+        :'can_manage_signing_groups' => :'canManageSigningGroups',
+        :'can_manage_signing_groups_metadata' => :'canManageSigningGroupsMetadata',
         :'can_manage_users' => :'canManageUsers',
         :'can_manage_users_metadata' => :'canManageUsersMetadata'
       }
@@ -52,12 +80,20 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'can_manage_account_security_settings' => :'String',
+        :'can_manage_account_security_settings_metadata' => :'SettingsMetadata',
+        :'can_manage_account_settings' => :'String',
+        :'can_manage_account_settings_metadata' => :'SettingsMetadata',
         :'can_manage_admins' => :'String',
         :'can_manage_admins_metadata' => :'SettingsMetadata',
         :'can_manage_groups' => :'String',
         :'can_manage_groups_metadata' => :'SettingsMetadata',
+        :'can_manage_reporting' => :'String',
+        :'can_manage_reporting_metadata' => :'SettingsMetadata',
         :'can_manage_sharing' => :'String',
         :'can_manage_sharing_metadata' => :'SettingsMetadata',
+        :'can_manage_signing_groups' => :'String',
+        :'can_manage_signing_groups_metadata' => :'SettingsMetadata',
         :'can_manage_users' => :'String',
         :'can_manage_users_metadata' => :'SettingsMetadata'
       }
@@ -70,6 +106,22 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'canManageAccountSecuritySettings')
+        self.can_manage_account_security_settings = attributes[:'canManageAccountSecuritySettings']
+      end
+
+      if attributes.has_key?(:'canManageAccountSecuritySettingsMetadata')
+        self.can_manage_account_security_settings_metadata = attributes[:'canManageAccountSecuritySettingsMetadata']
+      end
+
+      if attributes.has_key?(:'canManageAccountSettings')
+        self.can_manage_account_settings = attributes[:'canManageAccountSettings']
+      end
+
+      if attributes.has_key?(:'canManageAccountSettingsMetadata')
+        self.can_manage_account_settings_metadata = attributes[:'canManageAccountSettingsMetadata']
+      end
 
       if attributes.has_key?(:'canManageAdmins')
         self.can_manage_admins = attributes[:'canManageAdmins']
@@ -87,12 +139,28 @@ module DocuSign_eSign
         self.can_manage_groups_metadata = attributes[:'canManageGroupsMetadata']
       end
 
+      if attributes.has_key?(:'canManageReporting')
+        self.can_manage_reporting = attributes[:'canManageReporting']
+      end
+
+      if attributes.has_key?(:'canManageReportingMetadata')
+        self.can_manage_reporting_metadata = attributes[:'canManageReportingMetadata']
+      end
+
       if attributes.has_key?(:'canManageSharing')
         self.can_manage_sharing = attributes[:'canManageSharing']
       end
 
       if attributes.has_key?(:'canManageSharingMetadata')
         self.can_manage_sharing_metadata = attributes[:'canManageSharingMetadata']
+      end
+
+      if attributes.has_key?(:'canManageSigningGroups')
+        self.can_manage_signing_groups = attributes[:'canManageSigningGroups']
+      end
+
+      if attributes.has_key?(:'canManageSigningGroupsMetadata')
+        self.can_manage_signing_groups_metadata = attributes[:'canManageSigningGroupsMetadata']
       end
 
       if attributes.has_key?(:'canManageUsers')
@@ -123,12 +191,20 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          can_manage_account_security_settings == o.can_manage_account_security_settings &&
+          can_manage_account_security_settings_metadata == o.can_manage_account_security_settings_metadata &&
+          can_manage_account_settings == o.can_manage_account_settings &&
+          can_manage_account_settings_metadata == o.can_manage_account_settings_metadata &&
           can_manage_admins == o.can_manage_admins &&
           can_manage_admins_metadata == o.can_manage_admins_metadata &&
           can_manage_groups == o.can_manage_groups &&
           can_manage_groups_metadata == o.can_manage_groups_metadata &&
+          can_manage_reporting == o.can_manage_reporting &&
+          can_manage_reporting_metadata == o.can_manage_reporting_metadata &&
           can_manage_sharing == o.can_manage_sharing &&
           can_manage_sharing_metadata == o.can_manage_sharing_metadata &&
+          can_manage_signing_groups == o.can_manage_signing_groups &&
+          can_manage_signing_groups_metadata == o.can_manage_signing_groups_metadata &&
           can_manage_users == o.can_manage_users &&
           can_manage_users_metadata == o.can_manage_users_metadata
     end
@@ -142,7 +218,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [can_manage_admins, can_manage_admins_metadata, can_manage_groups, can_manage_groups_metadata, can_manage_sharing, can_manage_sharing_metadata, can_manage_users, can_manage_users_metadata].hash
+      [can_manage_account_security_settings, can_manage_account_security_settings_metadata, can_manage_account_settings, can_manage_account_settings_metadata, can_manage_admins, can_manage_admins_metadata, can_manage_groups, can_manage_groups_metadata, can_manage_reporting, can_manage_reporting_metadata, can_manage_sharing, can_manage_sharing_metadata, can_manage_signing_groups, can_manage_signing_groups_metadata, can_manage_users, can_manage_users_metadata].hash
     end
 
     # Builds the object from hash

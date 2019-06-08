@@ -1,14 +1,18 @@
+PATH
+  remote: ..
+  specs:
+    docusign_esign (2.0.0)
+      json (~> 1.8, >= 1.8.3)
+      jwt (~> 1.0, >= 1.5.2)
+      typhoeus (~> 1.0, >= 1.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.3)
-    docusign_esign (1.0.1)
-      json (~> 1.8, >= 1.8.3)
-      jwt (~> 1.0, >= 1.5.2)
-      typhoeus (~> 1.0, >= 1.0.1)
-    ethon (0.11.0)
+    ethon (0.12.0)
       ffi (>= 1.3.0)
-    ffi (1.9.25)
+    ffi (1.11.1)
     json (1.8.6)
     jwt (1.5.6)
     rspec (3.8.0)
@@ -17,22 +21,22 @@ GEM
       rspec-mocks (~> 3.8.0)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
-    rspec-expectations (3.8.2)
+    rspec-expectations (3.8.3)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
     rspec-mocks (3.8.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
-    typhoeus (1.3.0)
+    typhoeus (1.3.1)
       ethon (>= 0.9.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  docusign_esign
+  docusign_esign!
   rspec
 
 BUNDLED WITH
-   1.16.0
+   2.0.1
