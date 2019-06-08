@@ -29,9 +29,6 @@ module DocuSign_eSign
     # Number of records to return. The number must be greater than 1 and less than or equal to 100.
     attr_accessor :count
 
-    # Filters the groups returned by the group name or a sub-string of group name.
-    attr_accessor :group_name
-
     # 
     attr_accessor :group_type
 
@@ -403,7 +400,6 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'count'] = options.count if !options.count.nil?
-      query_params[:'group_name'] = options.group_name if !options.group_name.nil?
       query_params[:'group_type'] = options.group_type if !options.group_type.nil?
       query_params[:'search_text'] = options.search_text if !options.search_text.nil?
       query_params[:'start_position'] = options.start_position if !options.start_position.nil?

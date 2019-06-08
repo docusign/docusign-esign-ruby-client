@@ -14,6 +14,9 @@ require 'date'
 module DocuSign_eSign
   # Defines a billing plan update response object.
   class BillingPlanUpdateResponse
+    # 
+    attr_accessor :account_payment_method
+
     attr_accessor :billing_plan_preview
 
     # Specifies the ISO currency code for the account.
@@ -38,6 +41,7 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'account_payment_method' => :'accountPaymentMethod',
         :'billing_plan_preview' => :'billingPlanPreview',
         :'currency_code' => :'currencyCode',
         :'included_seats' => :'includedSeats',
@@ -51,6 +55,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'account_payment_method' => :'String',
         :'billing_plan_preview' => :'BillingPlanPreview',
         :'currency_code' => :'String',
         :'included_seats' => :'String',
@@ -68,6 +73,10 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'accountPaymentMethod')
+        self.account_payment_method = attributes[:'accountPaymentMethod']
+      end
 
       if attributes.has_key?(:'billingPlanPreview')
         self.billing_plan_preview = attributes[:'billingPlanPreview']
@@ -117,6 +126,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          account_payment_method == o.account_payment_method &&
           billing_plan_preview == o.billing_plan_preview &&
           currency_code == o.currency_code &&
           included_seats == o.included_seats &&
@@ -135,7 +145,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [billing_plan_preview, currency_code, included_seats, payment_cycle, payment_method, plan_id, plan_name].hash
+      [account_payment_method, billing_plan_preview, currency_code, included_seats, payment_cycle, payment_method, plan_id, plan_name].hash
     end
 
     # Builds the object from hash

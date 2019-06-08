@@ -15,13 +15,28 @@ module DocuSign_eSign
 
   class PaymentDetails
     # 
+    attr_accessor :allowed_payment_methods
+
+    # 
+    attr_accessor :charge_id
+
+    # 
     attr_accessor :currency_code
 
     # 
     attr_accessor :gateway_account_id
 
     # 
+    attr_accessor :gateway_display_name
+
+    # 
+    attr_accessor :gateway_name
+
+    # 
     attr_accessor :line_items
+
+    # 
+    attr_accessor :payment_option
 
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
     attr_accessor :status
@@ -32,9 +47,14 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'allowed_payment_methods' => :'allowedPaymentMethods',
+        :'charge_id' => :'chargeId',
         :'currency_code' => :'currencyCode',
         :'gateway_account_id' => :'gatewayAccountId',
+        :'gateway_display_name' => :'gatewayDisplayName',
+        :'gateway_name' => :'gatewayName',
         :'line_items' => :'lineItems',
+        :'payment_option' => :'paymentOption',
         :'status' => :'status',
         :'total' => :'total'
       }
@@ -43,9 +63,14 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'allowed_payment_methods' => :'Array<String>',
+        :'charge_id' => :'String',
         :'currency_code' => :'String',
         :'gateway_account_id' => :'String',
+        :'gateway_display_name' => :'String',
+        :'gateway_name' => :'String',
         :'line_items' => :'Array<PaymentLineItem>',
+        :'payment_option' => :'String',
         :'status' => :'String',
         :'total' => :'Money'
       }
@@ -59,6 +84,16 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
+      if attributes.has_key?(:'allowedPaymentMethods')
+        if (value = attributes[:'allowedPaymentMethods']).is_a?(Array)
+          self.allowed_payment_methods = value
+        end
+      end
+
+      if attributes.has_key?(:'chargeId')
+        self.charge_id = attributes[:'chargeId']
+      end
+
       if attributes.has_key?(:'currencyCode')
         self.currency_code = attributes[:'currencyCode']
       end
@@ -67,10 +102,22 @@ module DocuSign_eSign
         self.gateway_account_id = attributes[:'gatewayAccountId']
       end
 
+      if attributes.has_key?(:'gatewayDisplayName')
+        self.gateway_display_name = attributes[:'gatewayDisplayName']
+      end
+
+      if attributes.has_key?(:'gatewayName')
+        self.gateway_name = attributes[:'gatewayName']
+      end
+
       if attributes.has_key?(:'lineItems')
         if (value = attributes[:'lineItems']).is_a?(Array)
           self.line_items = value
         end
+      end
+
+      if attributes.has_key?(:'paymentOption')
+        self.payment_option = attributes[:'paymentOption']
       end
 
       if attributes.has_key?(:'status')
@@ -101,9 +148,14 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          allowed_payment_methods == o.allowed_payment_methods &&
+          charge_id == o.charge_id &&
           currency_code == o.currency_code &&
           gateway_account_id == o.gateway_account_id &&
+          gateway_display_name == o.gateway_display_name &&
+          gateway_name == o.gateway_name &&
           line_items == o.line_items &&
+          payment_option == o.payment_option &&
           status == o.status &&
           total == o.total
     end
@@ -117,7 +169,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [currency_code, gateway_account_id, line_items, status, total].hash
+      [allowed_payment_methods, charge_id, currency_code, gateway_account_id, gateway_display_name, gateway_name, line_items, payment_option, status, total].hash
     end
 
     # Builds the object from hash

@@ -71,6 +71,9 @@ module DocuSign_eSign
     # 
     attr_accessor :envelope_unit_price
 
+    # 
+    attr_accessor :external_account_id
+
     #  A complex element that contains up to four Question/Answer pairs for forgotten password information for a user.
     attr_accessor :forgotten_password_questions_count
 
@@ -130,6 +133,7 @@ module DocuSign_eSign
         :'docu_sign_landing_url' => :'docuSignLandingUrl',
         :'envelope_sending_blocked' => :'envelopeSendingBlocked',
         :'envelope_unit_price' => :'envelopeUnitPrice',
+        :'external_account_id' => :'externalAccountId',
         :'forgotten_password_questions_count' => :'forgottenPasswordQuestionsCount',
         :'is_downgrade' => :'isDowngrade',
         :'payment_method' => :'paymentMethod',
@@ -167,6 +171,7 @@ module DocuSign_eSign
         :'docu_sign_landing_url' => :'String',
         :'envelope_sending_blocked' => :'String',
         :'envelope_unit_price' => :'String',
+        :'external_account_id' => :'String',
         :'forgotten_password_questions_count' => :'String',
         :'is_downgrade' => :'String',
         :'payment_method' => :'String',
@@ -266,6 +271,10 @@ module DocuSign_eSign
         self.envelope_unit_price = attributes[:'envelopeUnitPrice']
       end
 
+      if attributes.has_key?(:'externalAccountId')
+        self.external_account_id = attributes[:'externalAccountId']
+      end
+
       if attributes.has_key?(:'forgottenPasswordQuestionsCount')
         self.forgotten_password_questions_count = attributes[:'forgottenPasswordQuestionsCount']
       end
@@ -353,6 +362,7 @@ module DocuSign_eSign
           docu_sign_landing_url == o.docu_sign_landing_url &&
           envelope_sending_blocked == o.envelope_sending_blocked &&
           envelope_unit_price == o.envelope_unit_price &&
+          external_account_id == o.external_account_id &&
           forgotten_password_questions_count == o.forgotten_password_questions_count &&
           is_downgrade == o.is_downgrade &&
           payment_method == o.payment_method &&
@@ -376,7 +386,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id_guid, account_name, allow_transaction_rooms, billing_period_days_remaining, billing_period_end_date, billing_period_envelopes_allowed, billing_period_envelopes_sent, billing_period_start_date, billing_profile, can_cancel_renewal, can_upgrade, connect_permission, created_date, currency_code, current_plan_id, distributor_code, docu_sign_landing_url, envelope_sending_blocked, envelope_unit_price, forgotten_password_questions_count, is_downgrade, payment_method, plan_classification, plan_end_date, plan_name, plan_start_date, seats_allowed, seats_in_use, status21_cfr_part11, suspension_date, suspension_status].hash
+      [account_id_guid, account_name, allow_transaction_rooms, billing_period_days_remaining, billing_period_end_date, billing_period_envelopes_allowed, billing_period_envelopes_sent, billing_period_start_date, billing_profile, can_cancel_renewal, can_upgrade, connect_permission, created_date, currency_code, current_plan_id, distributor_code, docu_sign_landing_url, envelope_sending_blocked, envelope_unit_price, external_account_id, forgotten_password_questions_count, is_downgrade, payment_method, plan_classification, plan_end_date, plan_name, plan_start_date, seats_allowed, seats_in_use, status21_cfr_part11, suspension_date, suspension_status].hash
     end
 
     # Builds the object from hash

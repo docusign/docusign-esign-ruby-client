@@ -17,6 +17,9 @@ module DocuSign_eSign
     # 
     attr_accessor :attachment_tab_id
 
+    # Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
+    attr_accessor :authoritative_copy
+
     # 
     attr_accessor :available_document_types
 
@@ -52,12 +55,6 @@ module DocuSign_eSign
     # 
     attr_accessor :signer_must_acknowledge
 
-    # When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
-    attr_accessor :template_locked
-
-    # When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.
-    attr_accessor :template_required
-
     # 
     attr_accessor :type
 
@@ -69,6 +66,7 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'attachment_tab_id' => :'attachmentTabId',
+        :'authoritative_copy' => :'authoritativeCopy',
         :'available_document_types' => :'availableDocumentTypes',
         :'contains_pdf_form_fields' => :'containsPdfFormFields',
         :'display' => :'display',
@@ -81,8 +79,6 @@ module DocuSign_eSign
         :'order' => :'order',
         :'pages' => :'pages',
         :'signer_must_acknowledge' => :'signerMustAcknowledge',
-        :'template_locked' => :'templateLocked',
-        :'template_required' => :'templateRequired',
         :'type' => :'type',
         :'uri' => :'uri'
       }
@@ -92,6 +88,7 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'attachment_tab_id' => :'String',
+        :'authoritative_copy' => :'String',
         :'available_document_types' => :'Array<SignatureType>',
         :'contains_pdf_form_fields' => :'String',
         :'display' => :'String',
@@ -104,8 +101,6 @@ module DocuSign_eSign
         :'order' => :'String',
         :'pages' => :'String',
         :'signer_must_acknowledge' => :'String',
-        :'template_locked' => :'String',
-        :'template_required' => :'String',
         :'type' => :'String',
         :'uri' => :'String'
       }
@@ -121,6 +116,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'attachmentTabId')
         self.attachment_tab_id = attributes[:'attachmentTabId']
+      end
+
+      if attributes.has_key?(:'authoritativeCopy')
+        self.authoritative_copy = attributes[:'authoritativeCopy']
       end
 
       if attributes.has_key?(:'availableDocumentTypes')
@@ -175,14 +174,6 @@ module DocuSign_eSign
         self.signer_must_acknowledge = attributes[:'signerMustAcknowledge']
       end
 
-      if attributes.has_key?(:'templateLocked')
-        self.template_locked = attributes[:'templateLocked']
-      end
-
-      if attributes.has_key?(:'templateRequired')
-        self.template_required = attributes[:'templateRequired']
-      end
-
       if attributes.has_key?(:'type')
         self.type = attributes[:'type']
       end
@@ -212,6 +203,7 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           attachment_tab_id == o.attachment_tab_id &&
+          authoritative_copy == o.authoritative_copy &&
           available_document_types == o.available_document_types &&
           contains_pdf_form_fields == o.contains_pdf_form_fields &&
           display == o.display &&
@@ -224,8 +216,6 @@ module DocuSign_eSign
           order == o.order &&
           pages == o.pages &&
           signer_must_acknowledge == o.signer_must_acknowledge &&
-          template_locked == o.template_locked &&
-          template_required == o.template_required &&
           type == o.type &&
           uri == o.uri
     end
@@ -239,7 +229,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [attachment_tab_id, available_document_types, contains_pdf_form_fields, display, document_fields, document_group, document_id, error_details, include_in_download, name, order, pages, signer_must_acknowledge, template_locked, template_required, type, uri].hash
+      [attachment_tab_id, authoritative_copy, available_document_types, contains_pdf_form_fields, display, document_fields, document_group, document_id, error_details, include_in_download, name, order, pages, signer_must_acknowledge, type, uri].hash
     end
 
     # Builds the object from hash

@@ -14,6 +14,9 @@ require 'date'
 module DocuSign_eSign
 
   class EnvelopesInformation
+    # 
+    attr_accessor :continuation_token
+
     # The last position in the result set. 
     attr_accessor :end_position
 
@@ -22,6 +25,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :envelope_transaction_statuses
+
+    # 
+    attr_accessor :last_queried_date_time
 
     # The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
     attr_accessor :next_uri
@@ -42,9 +48,11 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'continuation_token' => :'continuationToken',
         :'end_position' => :'endPosition',
         :'envelopes' => :'envelopes',
         :'envelope_transaction_statuses' => :'envelopeTransactionStatuses',
+        :'last_queried_date_time' => :'lastQueriedDateTime',
         :'next_uri' => :'nextUri',
         :'previous_uri' => :'previousUri',
         :'result_set_size' => :'resultSetSize',
@@ -56,9 +64,11 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'continuation_token' => :'String',
         :'end_position' => :'String',
         :'envelopes' => :'Array<Envelope>',
         :'envelope_transaction_statuses' => :'Array<EnvelopeTransactionStatus>',
+        :'last_queried_date_time' => :'String',
         :'next_uri' => :'String',
         :'previous_uri' => :'String',
         :'result_set_size' => :'String',
@@ -75,6 +85,10 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
+      if attributes.has_key?(:'continuationToken')
+        self.continuation_token = attributes[:'continuationToken']
+      end
+
       if attributes.has_key?(:'endPosition')
         self.end_position = attributes[:'endPosition']
       end
@@ -89,6 +103,10 @@ module DocuSign_eSign
         if (value = attributes[:'envelopeTransactionStatuses']).is_a?(Array)
           self.envelope_transaction_statuses = value
         end
+      end
+
+      if attributes.has_key?(:'lastQueriedDateTime')
+        self.last_queried_date_time = attributes[:'lastQueriedDateTime']
       end
 
       if attributes.has_key?(:'nextUri')
@@ -131,9 +149,11 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          continuation_token == o.continuation_token &&
           end_position == o.end_position &&
           envelopes == o.envelopes &&
           envelope_transaction_statuses == o.envelope_transaction_statuses &&
+          last_queried_date_time == o.last_queried_date_time &&
           next_uri == o.next_uri &&
           previous_uri == o.previous_uri &&
           result_set_size == o.result_set_size &&
@@ -150,7 +170,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [end_position, envelopes, envelope_transaction_statuses, next_uri, previous_uri, result_set_size, start_position, total_set_size].hash
+      [continuation_token, end_position, envelopes, envelope_transaction_statuses, last_queried_date_time, next_uri, previous_uri, result_set_size, start_position, total_set_size].hash
     end
 
     # Builds the object from hash

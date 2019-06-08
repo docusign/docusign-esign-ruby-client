@@ -17,6 +17,9 @@ module DocuSign_eSign
     # 
     attr_accessor :cdse_mode
 
+    # 
+    attr_accessor :change_routing_order
+
     # If set to true then we want to set the sourceEnvelopeId to indicate that this is a\"forward\" envelope action
     attr_accessor :completed_documents_only
 
@@ -29,7 +32,7 @@ module DocuSign_eSign
   end
 
   class CreateRecipientOptions
-    # When set to **true**, resends the   envelope if the new recipient's routing order is before or the same as the envelope’s next recipient.
+    # When set to **true**, resends the   envelope if the new recipient's routing order is before or the same as the envelope's next recipient.
     attr_accessor :resend_envelope
 
     def self.default
@@ -109,6 +112,15 @@ module DocuSign_eSign
     end
   end
 
+  class GetDocumentTabsOptions
+    # 
+    attr_accessor :page_numbers
+
+    def self.default
+      @@default ||= GetDocumentTabsOptions.new
+    end
+  end
+
   class GetEnvelopeOptions
     # When true, envelope information can be added or modified.
     attr_accessor :advanced_update
@@ -118,6 +130,33 @@ module DocuSign_eSign
 
     def self.default
       @@default ||= GetEnvelopeOptions.new
+    end
+  end
+
+  class GetPagesOptions
+    # 
+    attr_accessor :count
+
+    # 
+    attr_accessor :dpi
+
+    # 
+    attr_accessor :max_height
+
+    # 
+    attr_accessor :max_width
+
+    # 
+    attr_accessor :nocache
+
+    # 
+    attr_accessor :show_changes
+
+    # 
+    attr_accessor :start_position
+
+    def self.default
+      @@default ||= GetPagesOptions.new
     end
   end
 
@@ -139,24 +178,12 @@ module DocuSign_eSign
     end
   end
 
-  class ListDocumentsOptions
-    # 
-    attr_accessor :include_metadata
-
-    def self.default
-      @@default ||= ListDocumentsOptions.new
-    end
-  end
-
   class ListRecipientsOptions
     #  When set to **true** and `include_tabs` is set to **true**, all tabs with anchor tab properties are included in the response. 
     attr_accessor :include_anchor_tab_locations
 
     #  When set to **true**, the extended properties are included in the response. 
     attr_accessor :include_extended
-
-    # 
-    attr_accessor :include_metadata
 
     # When set to **true**, the tab information associated with the recipient is included in the response.
     attr_accessor :include_tabs
@@ -168,16 +195,40 @@ module DocuSign_eSign
 
   class ListStatusOptions
     # 
+    attr_accessor :ac_status
+
+    # 
+    attr_accessor :block
+
+    # 
+    attr_accessor :count
+
+    # 
     attr_accessor :email
+
+    # 
+    attr_accessor :envelope_ids
 
     # 
     attr_accessor :from_date
 
     # 
+    attr_accessor :from_to_status
+
+    # 
     attr_accessor :start_position
 
     # 
+    attr_accessor :status
+
+    # 
     attr_accessor :to_date
+
+    # 
+    attr_accessor :transaction_ids
+
+    # 
+    attr_accessor :user_name
 
     def self.default
       @@default ||= ListStatusOptions.new
@@ -203,38 +254,11 @@ module DocuSign_eSign
     # 
     attr_accessor :envelope_ids
 
-    # 
-    attr_accessor :exclude
-
-    # 
-    attr_accessor :folder_ids
-
-    # 
-    attr_accessor :folder_types
-
     # The date/time setting that specifies the date/time when the request begins checking for status changes for envelopes in the account.  This is required unless 'envelopeId's are used.
     attr_accessor :from_date
 
     # This is the status type checked for in the `from_date`/`to_date` period. If `changed` is specified, then envelopes that changed status during the period are found. If for example, `created` is specified, then envelopes created during the period are found. Default is `changed`.   Possible values are: Voided, Changed, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.
     attr_accessor :from_to_status
-
-    # 
-    attr_accessor :include
-
-    # 
-    attr_accessor :intersecting_folder_ids
-
-    # 
-    attr_accessor :order
-
-    # 
-    attr_accessor :order_by
-
-    # 
-    attr_accessor :powerformids
-
-    # 
-    attr_accessor :search_text
 
     # 
     attr_accessor :start_position
@@ -247,12 +271,6 @@ module DocuSign_eSign
 
     # If included in the query string, this is a comma separated list of envelope `transactionId`s.   If included in the `request_body`, this is a list of envelope `transactionId`s.   ###### Note: `transactionId`s are only valid in the DocuSign system for seven days. 
     attr_accessor :transaction_ids
-
-    # 
-    attr_accessor :user_filter
-
-    # 
-    attr_accessor :user_id
 
     # 
     attr_accessor :user_name
@@ -275,7 +293,7 @@ module DocuSign_eSign
   end
 
   class ListTemplatesOptions
-    # The possible values are:  matching_applied – This returns template matching information for the template.
+    # The possible values are:  matching_applied - This returns template matching information for the template.
     attr_accessor :include
 
     def self.default
@@ -326,13 +344,19 @@ module DocuSign_eSign
     # When true, Document fields can be added or modified while adding or modifying envelope documents.
     attr_accessor :apply_document_fields
 
+    # 
+    attr_accessor :persist_tabs
+
     def self.default
       @@default ||= UpdateDocumentsOptions.new
     end
   end
 
   class UpdateRecipientsOptions
-    # When set to **true**, resends the   envelope if the new recipient's routing order is before or the same as the envelope’s next recipient.
+    # 
+    attr_accessor :offline_signing
+
+    # When set to **true**, resends the   envelope if the new recipient's routing order is before or the same as the envelope's next recipient.
     attr_accessor :resend_envelope
 
     def self.default
@@ -733,6 +757,65 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Get Responsive HTML Preview for a document in an envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param document_html_definition  (optional parameter)
+    # @return [DocumentHtmlDefinitions]
+    def create_document_responsive_html_preview(account_id, document_id, envelope_id, document_html_definition)
+      data, _status_code, _headers = create_document_responsive_html_preview_with_http_info(account_id, document_id, envelope_id,  document_html_definition)
+      return data
+    end
+
+    # Get Responsive HTML Preview for a document in an envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param document_html_definition  (optional parameter)
+    # @return [Array<(DocumentHtmlDefinitions, Fixnum, Hash)>] DocumentHtmlDefinitions data, response status code and response headers
+    def create_document_responsive_html_preview_with_http_info(account_id, document_id, envelope_id, document_html_definition)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_document_responsive_html_preview ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_document_responsive_html_preview" if account_id.nil?
+      # verify the required parameter 'document_id' is set
+      fail ArgumentError, "Missing the required parameter 'document_id' when calling EnvelopesApi.create_document_responsive_html_preview" if document_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.create_document_responsive_html_preview" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/responsive_html_preview".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(document_html_definition)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DocumentHtmlDefinitions')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_document_responsive_html_preview\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Returns a URL to the edit view UI.
     # Returns a URL that allows you to embed the edit view of the DocuSign UI in your applications. This is a one-time use login token that allows the user to be placed into the DocuSign editing view.   Upon sending completion, the user is returned to the return URL provided by the API application.  Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView. 
     # @param account_id The external account number (int) or account ID Guid.
@@ -844,7 +927,7 @@ module DocuSign_eSign
     end
 
     # Creates an envelope.
-    # Creates an envelope.   Using this function you can: * Create an envelope and send it. * Create an envelope from an existing template and send it.  In either case, you can choose to save the envelope as a draft envelope instead of sending it by setting the request’s `status` property to `created` instead of `sent`.  ## Sending Envelopes  Documents can be included with the Envelopes::create call itself or a template can include documents. Documents can be added by using a multi-part/form request or by using the `documentBase64` field of the [`document` object](#/definitions/document)  ### Recipient Types An [`envelopeDefinition` object](#/definitions/envelopeDefinition) is used as the method’s body. Envelope recipients can be defined in the envelope or in templates. The `envelopeDefinition` object’s `recipients` field is an [`EnvelopeRecipients` resource object](#/definitions/EnvelopeRecipients). It includes arrays of the seven types of recipients defined by DocuSign:  Recipient type | Object definition -------------- | ----------------- agent (can add name and email information for later recipients/signers) | [`agent`](#/definitions/agent) carbon copy (receives a copy of the documents) | [`carbonCopy`](#/definitions/carbonCopy) certified delivery  (receives a copy of the documents and must acknowledge receipt) | [`certifiedDelivery`](#/definitions/certifiedDelivery) editor (can change recipients and document fields for later recipients/signers) | [`editor`](#/definitions/editor) in-person signer (“hosts” someone who signs in-person) | [`inPersonSigner`](#/definitions/inPersonSigner) intermediary (can add name and email information for some later recipients/signers.) | [`intermediary`](#/definitions/intermediary) signer (signs and/or updates document fields) | [`signer`](#/definitions/signer)  Additional information about the different types of recipients is available from the [`EnvelopeRecipients` resource page](../../EnvelopeRecipients) and from the [Developer Center](https://www.docusign.com/developer-center/explore/features/recipients)  ### Tabs Tabs (also referred to as `tags` and as `fields` in the web sending user interface), can be defined in the `envelopeDefinition`, in templates, by transforming PDF Form Fields, or by using Composite Templates (see below).  Defining tabs: the `inPersonSigner`, and `signer` recipient objects include a `tabs` field. It is an [`EnvelopeTabs` resource object](#/definitions/EnvelopeTabs). It includes arrays of the 24 different tab types available. See the [`EnvelopeTabs` resource](../../EnvelopeTabs) for more information.  ## Using Templates Envelopes use specific people or groups as recipients. Templates can specify a role, eg `account_manager.` When a template is used in an envelope, the roles must be replaced with specific people or groups.  When you create an envelope using a `templateId`, the different recipient type objects within the [`EnvelopeRecipients` object](#/definitions/EnvelopeRecipients) are used to assign recipients to the template’s roles via the `roleName` property. The recipient objects can also override settings that were specified in the template, and set values for tab fields that were defined in the template.  ### Message Lock When a template is added or applied to an envelope and the template has a locked email subject and message, that subject and message are used for the envelope and cannot be changed even if another locked template is subsequently added or applied to the envelope. The field `messageLock` is used to lock the email subject and message.  If an email subject or message is entered before adding or applying a template with `messageLock` **true**, the email subject and message is overwritten with the locked email subject and message from the template.  ## Envelope Status The status of sent envelopes can be determined through the DocuSign webhook system or by polling. Webhooks are highly recommended: they provide your application with the quickest updates when an envelope’s status changes. DocuSign limits polling to once every 15 minutes or less frequently.  When a webhook is used, DocuSign calls your application, via the URL you provide, with a notification XML message.   See the [Webhook recipe](https://www.docusign.com/developer-center/recipes/webhook-status) for examples and live demos of using webhooks.  ## Webhook Options The two webhook options, *eventNotification* and *Connect* use the same notification mechanism and message formats. eventNotification is used to create a webhook for a specific envelope sent via the API. Connect webhooks can be used for any envelope sent from an account, from any user, from any client.   ### eventNotification Webhooks The Envelopes::create method includes an optional [eventNotification object](#definition-eventNotification) that adds a webhook to the envelope. eventNotification webhooks are available for all DocuSign accounts with API access.  ### Connect Webhooks Connect can be used to create a webhook for all envelopes sent by all users in an account, either through the API or via other DocuSign clients (web, mobile, etc). Connect configurations are independent of specific envelopes. A Connect configuration includes a filter that may be used to limit the webhook to specific users, envelope statuses, etc.   Connect configurations may be created and managed using the [ConnectConfigurations resource](../../Connect/ConnectConfigurations). Configurations can also be created and managed from the Administration tool accessed by selecting “Go to Admin” from the menu next to your picture on the DocuSign web app. See the Integrations/Connect section of the Admin tool. For repeatability, and to minimize support questions, creating Connect configurations via the API is recommended, especially for ISVs.  Connect is available for some DocuSign account types. Please contact DocuSign Sales for more information.  ## Composite Templates  The Composite Templates feature, like [compositing in film production](https://en.wikipedia.org/wiki/Compositing), enables you to *overlay* document, recipient, and tab definitions from multiple sources, including PDF Form Field definitions, templates defined on the server, and more.  Each Composite Template consists of optional elements: server templates, inline templates, PDF Metadata templates, and documents.  * The Composite Template ID is an optional element used to identify the composite template. It is used as a reference when adding document object information via a multi-part HTTP message. If used, the document content-disposition must include the `compositeTemplateId` to which the document should be added. If `compositeTemplateId` is not specified in the content-disposition, the document is applied based on the `documentId` only. If no document object is specified, the composite template inherits the first document.  * Server Templates are server-side templates stored on the DocuSign platform. If supplied, they are overlaid into the envelope in the order of their Sequence value.  * Inline Templates provide a container to add documents, recipients, tabs, and custom fields. If inline templates are supplied, they are overlaid into the envelope in the order of their Sequence value.  * Document objects are optional structures that provide a container to pass in a document or form. If this object is not included, the composite template inherits the *first* document it finds from a server template or inline template, starting with the lowest sequence value.  PDF Form objects are only transformed from the document object. DocuSign does not derive PDF form properties from server templates or inline templates. To instruct DocuSign to transform fields from the PDF form, set `transformPdfFields` to \"true\" for the document. See the Transform PDF Fields section for more information about process.  * PDF Metadata Templates provide a container to embed design-time template information into a PDF document. DocuSign uses this information when processing the Envelope. This convention allows the document to carry the signing instructions with it, so that less information needs to be provided at run-time through an inline template or synchronized with an external structure like a server template. PDF Metadata templates are stored in the Metadata layer of a PDF in accordance with Acrobat's XMP specification. DocuSign will only find PDF Metadata templates inside documents passed in the Document object (see below). If supplied, the PDF metadata template will be overlaid into the envelope in the order of its Sequence value.  ### Compositing the definitions Each Composite Template adds a new document and templates overlay into the envelope. For each Composite Template these rules are applied:  * Templates are overlaid in the order of their Sequence value. * If Document is not passed into the Composite Template’s `document` field, the *first* template’s document (based on the template’s Sequence value) is used. * Last in wins in all cases except for the document (i.e. envelope information, recipient information, secure field information). There is no special casing.  For example, if you want higher security on a tab, then that needs to be specified in a later template (by sequence number) then where the tab is included. If you want higher security on a role recipient, then it needs to be in a later template then where that role recipient is specified.  * Recipient matching is based on Recipient Role and Routing Order. If there are matches, the recipient information is merged together. A final pass is done on all Composite Templates, after all template overlays have been applied, to collapse recipients with the same email, username and routing order. This prevents having the same recipients at the same routing order.  * If you specify in a template that a recipient is locked, once that recipient is overlaid the recipient attributes can no longer be changed. The only items that can be changed for the recipient in this case are the email, username, access code and IDCheckInformationInput.  * Tab matching is based on Tab Labels, Tab Types and Documents. If a Tab Label matches but the Document is not supplied, the Tab is overlaid for all the Documents.  For example, if you have a simple inline template with only one tab in it with a label and a value, the Signature, Initial, Company, Envelope ID, User Name tabs will only be matched and collapsed if they fall in the exact same X and Y locations.  * roleName and tabLabel matching is case sensitive.  * The defaultRecipient field enables you to specify which recipient the generated tabs from a PDF form are mapped to. You can also set PDF form generated tabs to a recipient other than the DefaultRecipient by specifying the mapping of the tab label that is created to one of the template recipients.  * You can use tabLabel wild carding to map a series of tabs from the PDF form. To use this you must end a tab label with “\\*” and then the system matches tabs that start with the label.  * If no DefaultRecipient is specified, tabs must be explicitly mapped to recipients in order to be generated from the form. Unmapped form objects will not be generated into their DocuSign equivalents. (In the case of Signature/Initials, the tabs will be disregarded entirely; in the case of pdf text fields, the field data will be flattened on the Envelope document, but there will not be a corresponding DocuSign data tab.)  ### Including the Document Content for Composite Templates Document content can be supplied inline, using the `documentBase64` or can be included in a multi-part HTTP message.  If a multi-part message is used and there are multiple Composite Templates, the document content-disposition can include the `compositeTemplateId` to which the document should be added. Using the `compositeTemplateId` sets which documents are associated with particular composite templates. An example of this usage is:  ```    --5cd3320a-5aac-4453-b3a4-cbb52a4cba5d    Content-Type: application/pdf    Content-Disposition: file; filename=\"eula.pdf\"; documentId=1; compositeTemplateId=\"1\"    Content-Transfer-Encoding: base64 ```  ### PDF Form Field Transformation Only the following PDF Form FieldTypes will be transformed to DocuSign tabs: CheckBox, DateTime, ListBox, Numeric, Password, Radio, Signature, and Text  Field Properties that will be transformed: Read Only, Required, Max Length, Positions, and Initial Data.  When transforming a *PDF Form Digital Signature Field,* the following rules are used:  If the PDF Field Name Contains | Then the DocuSign Tab Will be ------- | -------- DocuSignSignHere or eSignSignHere | Signature DocuSignSignHereOptional or eSignSignHereOptional | Optional Signature DocuSignInitialHere or eSignInitialHere | Initials DocuSignInitialHereOptional or eSignInitialHereOptional | Optional Initials  Any other PDF Form Digital Signature Field will be transformed to a DocuSign Signature tab  When transforming *PDF Form Text Fields,* the following rules are used:  If the PDF Field Name Contains | Then the DocuSign Tab Will be ------- | -------- DocuSignSignHere or eSignSignHere | Signature DocuSignSignHereOptional or eSignSignHereOptional | Optional Signature DocuSignInitialHere or eSignInitialHere | Initials DocuSignInitialHereOptional or eSignInitialHereOptional | Optional Initials DocuSignEnvelopeID or eSignEnvelopeID | EnvelopeID DocuSignCompany or eSignCompany | Company DocuSignDateSigned or eSignDateSigned | Date Signed DocuSignTitle or eSignTitle | Title DocuSignFullName or eSignFullName |  Full Name DocuSignSignerAttachmentOptional or eSignSignerAttachmentOptional | Optional Signer Attachment  Any other PDF Form Text Field will be transformed to a DocuSign data (text) tab.  PDF Form Field Names that include “DocuSignIgnoreTransform” or “eSignIgnoreTransform” will not be transformed.  PDF Form Date fields will be transformed to Date Signed fields if their name includes DocuSignDateSigned or eSignDateSigned.  ## Template Email Subject Merge Fields This feature enables you to insert recipient name and email address merge fields into the email subject line when creating or sending from a template.  The merge fields, based on the recipient’s `roleName`, are added to the `emailSubject` when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.  Both the sender and the recipients will see the information in the email subject line for any emails associated with the template. This provides an easy way for senders to organize their envelope emails without having to open an envelope to check the recipient.  If merging the recipient information into the subject line causes the subject line to exceed 100 characters, then any characters over the 100 character limit are not included in the subject line. For cases where the recipient name or email is expected to be long, you should consider placing the merge field at the start of the email subject.  * To add a recipient’s name in the subject line add the following text in the `emailSubject` when creating the template or when sending an envelope from a template:     [[<roleName>_UserName]]     Example:     `\"emailSubject\":\"[[Signer 1_UserName]], Please sign this NDA\",`  * To add a recipient’s email address in the subject line add the following text in the emailSubject when creating the template or when sending an envelope from a template:     [[<roleName>_Email]]     Example:     `\"emailSubject\":\"[[Signer 1_Email]], Please sign this NDA\",`  In both cases the <roleName> is the recipient’s `roleName` in the template.  For cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[<roleName>_UserName]] or [[<roleName>_Email]] is shown in the email subject.  ## Branding an envelope The following rules are used to determine the `brandId` used in an envelope:  * If a `brandId` is specified in the envelope/template and that brandId is available to the account, that brand is used in the envelope. * If more than one template is used in an envelope and more than one `brandId` is specified, the first `brandId` specified is used throughout the envelope. * In cases where no brand is specified and the sender belongs to a Group; if there is only one brand associated with the Group, then that brand is used in the envelope. Otherwise, the account’s default signing brand is used. * For envelopes that do not meet any of the previous criteria, the account’s default signing brand is used for the envelope.  ## BCC Email address feature  The BCC Email address feature is designed to provide a copy of all email communications for external archiving purposes. DocuSign recommends that envelopes sent using the BCC for Email Archive feature, including the BCC Email Override option, include additional signer authentication options. To send a copy of the envelope to a recipient who does not need to sign, don’t use the BCC Email field. Use a Carbon Copy or Certified Delivery Recipient type.  ## Merge Recipient Roles for Draft Envelopes When an envelope with multiple templates is sent, the recipients from the templates are merged according to the template roles, and empty recipients are removed. When creating an envelope with multiple templates, but not sending it (keeping it in a created state), duplicate recipients are not merged, which could cause leave duplicate recipients in the envelope.  To prevent this, the query parameter `merge_roles_on_draft` should be added when posting a draft envelope (status=created) with multiple templates. Doing this will merge template roles and remove empty recipients.  ###### Note: DocuSign recommends that the `merge_roles_on_draft` query parameter be used anytime you are creating an envelope with multiple templates and keeping it in draft (created) status.
+    # Creates an envelope.   Using this function you can: * Create an envelope and send it. * Create an envelope from an existing template and send it.  In either case, you can choose to save the envelope as a draft envelope instead of sending it by setting the request's `status` property to `created` instead of `sent`.  ## Sending Envelopes  Documents can be included with the Envelopes::create call itself or a template can include documents. Documents can be added by using a multi-part/form request or by using the `documentBase64` field of the [`document` object](#/definitions/document)  ### Recipient Types An [`envelopeDefinition` object](#/definitions/envelopeDefinition) is used as the method's body. Envelope recipients can be defined in the envelope or in templates. The `envelopeDefinition` object's `recipients` field is an [`EnvelopeRecipients` resource object](#/definitions/EnvelopeRecipients). It includes arrays of the seven types of recipients defined by DocuSign:  Recipient type | Object definition -------------- | ----------------- agent (can add name and email information for later recipients/signers) | [`agent`](#/definitions/agent) carbon copy (receives a copy of the documents) | [`carbonCopy`](#/definitions/carbonCopy) certified delivery  (receives a copy of the documents and must acknowledge receipt) | [`certifiedDelivery`](#/definitions/certifiedDelivery) editor (can change recipients and document fields for later recipients/signers) | [`editor`](#/definitions/editor) in-person signer (\"hosts\" someone who signs in-person) | [`inPersonSigner`](#/definitions/inPersonSigner) intermediary (can add name and email information for some later recipients/signers.) | [`intermediary`](#/definitions/intermediary) signer (signs and/or updates document fields) | [`signer`](#/definitions/signer)  Additional information about the different types of recipients is available from the [`EnvelopeRecipients` resource page](../../EnvelopeRecipients) and from the [Developer Center](https://www.docusign.com/developer-center/explore/features/recipients)  ### Tabs Tabs (also referred to as `tags` and as `fields` in the web sending user interface), can be defined in the `envelopeDefinition`, in templates, by transforming PDF Form Fields, or by using Composite Templates (see below).  Defining tabs: the `inPersonSigner`, and `signer` recipient objects include a `tabs` field. It is an [`EnvelopeTabs` resource object](#/definitions/EnvelopeTabs). It includes arrays of the 24 different tab types available. See the [`EnvelopeTabs` resource](../../EnvelopeTabs) for more information.  ## Using Templates Envelopes use specific people or groups as recipients. Templates can specify a role, eg `account_manager.` When a template is used in an envelope, the roles must be replaced with specific people or groups.  When you create an envelope using a `templateId`, the different recipient type objects within the [`EnvelopeRecipients` object](#/definitions/EnvelopeRecipients) are used to assign recipients to the template's roles via the `roleName` property. The recipient objects can also override settings that were specified in the template, and set values for tab fields that were defined in the template.  ### Message Lock When a template is added or applied to an envelope and the template has a locked email subject and message, that subject and message are used for the envelope and cannot be changed even if another locked template is subsequently added or applied to the envelope. The field `messageLock` is used to lock the email subject and message.  If an email subject or message is entered before adding or applying a template with `messageLock` **true**, the email subject and message is overwritten with the locked email subject and message from the template.  ## Envelope Status The status of sent envelopes can be determined through the DocuSign webhook system or by polling. Webhooks are highly recommended: they provide your application with the quickest updates when an envelope's status changes. DocuSign limits polling to once every 15 minutes or less frequently.  When a webhook is used, DocuSign calls your application, via the URL you provide, with a notification XML message.   See the [Webhook recipe](https://www.docusign.com/developer-center/recipes/webhook-status) for examples and live demos of using webhooks.  ## Webhook Options The two webhook options, *eventNotification* and *Connect* use the same notification mechanism and message formats. eventNotification is used to create a webhook for a specific envelope sent via the API. Connect webhooks can be used for any envelope sent from an account, from any user, from any client.   ### eventNotification Webhooks The Envelopes::create method includes an optional [eventNotification object](#definition-eventNotification) that adds a webhook to the envelope. eventNotification webhooks are available for all DocuSign accounts with API access.  ### Connect Webhooks Connect can be used to create a webhook for all envelopes sent by all users in an account, either through the API or via other DocuSign clients (web, mobile, etc). Connect configurations are independent of specific envelopes. A Connect configuration includes a filter that may be used to limit the webhook to specific users, envelope statuses, etc.   Connect configurations may be created and managed using the [ConnectConfigurations resource](../../Connect/ConnectConfigurations). Configurations can also be created and managed from the Administration tool accessed by selecting \"Go to Admin\" from the menu next to your picture on the DocuSign web app. See the Integrations/Connect section of the Admin tool. For repeatability, and to minimize support questions, creating Connect configurations via the API is recommended, especially for ISVs.  Connect is available for some DocuSign account types. Please contact DocuSign Sales for more information.  ## Composite Templates  The Composite Templates feature, like [compositing in film production](https://en.wikipedia.org/wiki/Compositing), enables you to *overlay* document, recipient, and tab definitions from multiple sources, including PDF Form Field definitions, templates defined on the server, and more.  Each Composite Template consists of optional elements: server templates, inline templates, PDF Metadata templates, and documents.  * The Composite Template ID is an optional element used to identify the composite template. It is used as a reference when adding document object information via a multi-part HTTP message. If used, the document content-disposition must include the `compositeTemplateId` to which the document should be added. If `compositeTemplateId` is not specified in the content-disposition, the document is applied based on the `documentId` only. If no document object is specified, the composite template inherits the first document.  * Server Templates are server-side templates stored on the DocuSign platform. If supplied, they are overlaid into the envelope in the order of their Sequence value.  * Inline Templates provide a container to add documents, recipients, tabs, and custom fields. If inline templates are supplied, they are overlaid into the envelope in the order of their Sequence value.  * Document objects are optional structures that provide a container to pass in a document or form. If this object is not included, the composite template inherits the *first* document it finds from a server template or inline template, starting with the lowest sequence value.  PDF Form objects are only transformed from the document object. DocuSign does not derive PDF form properties from server templates or inline templates. To instruct DocuSign to transform fields from the PDF form, set `transformPdfFields` to \"true\" for the document. See the Transform PDF Fields section for more information about process.  * PDF Metadata Templates provide a container to embed design-time template information into a PDF document. DocuSign uses this information when processing the Envelope. This convention allows the document to carry the signing instructions with it, so that less information needs to be provided at run-time through an inline template or synchronized with an external structure like a server template. PDF Metadata templates are stored in the Metadata layer of a PDF in accordance with Acrobat's XMP specification. DocuSign will only find PDF Metadata templates inside documents passed in the Document object (see below). If supplied, the PDF metadata template will be overlaid into the envelope in the order of its Sequence value.  ### Compositing the definitions Each Composite Template adds a new document and templates overlay into the envelope. For each Composite Template these rules are applied:  * Templates are overlaid in the order of their Sequence value. * If Document is not passed into the Composite Template's `document` field, the *first* template's document (based on the template's Sequence value) is used. * Last in wins in all cases except for the document (i.e. envelope information, recipient information, secure field information). There is no special casing.  For example, if you want higher security on a tab, then that needs to be specified in a later template (by sequence number) then where the tab is included. If you want higher security on a role recipient, then it needs to be in a later template then where that role recipient is specified.  * Recipient matching is based on Recipient Role and Routing Order. If there are matches, the recipient information is merged together. A final pass is done on all Composite Templates, after all template overlays have been applied, to collapse recipients with the same email, username and routing order. This prevents having the same recipients at the same routing order.  * If you specify in a template that a recipient is locked, once that recipient is overlaid the recipient attributes can no longer be changed. The only items that can be changed for the recipient in this case are the email, username, access code and IDCheckInformationInput.  * Tab matching is based on Tab Labels, Tab Types and Documents. If a Tab Label matches but the Document is not supplied, the Tab is overlaid for all the Documents.  For example, if you have a simple inline template with only one tab in it with a label and a value, the Signature, Initial, Company, Envelope ID, User Name tabs will only be matched and collapsed if they fall in the exact same X and Y locations.  * roleName and tabLabel matching is case sensitive.  * The defaultRecipient field enables you to specify which recipient the generated tabs from a PDF form are mapped to. You can also set PDF form generated tabs to a recipient other than the DefaultRecipient by specifying the mapping of the tab label that is created to one of the template recipients.  * You can use tabLabel wild carding to map a series of tabs from the PDF form. To use this you must end a tab label with \"\\*\" and then the system matches tabs that start with the label.  * If no DefaultRecipient is specified, tabs must be explicitly mapped to recipients in order to be generated from the form. Unmapped form objects will not be generated into their DocuSign equivalents. (In the case of Signature/Initials, the tabs will be disregarded entirely; in the case of pdf text fields, the field data will be flattened on the Envelope document, but there will not be a corresponding DocuSign data tab.)  ### Including the Document Content for Composite Templates Document content can be supplied inline, using the `documentBase64` or can be included in a multi-part HTTP message.  If a multi-part message is used and there are multiple Composite Templates, the document content-disposition can include the `compositeTemplateId` to which the document should be added. Using the `compositeTemplateId` sets which documents are associated with particular composite templates. An example of this usage is:  ```    --5cd3320a-5aac-4453-b3a4-cbb52a4cba5d    Content-Type: application/pdf    Content-Disposition: file; filename=\"eula.pdf\"; documentId=1; compositeTemplateId=\"1\"    Content-Transfer-Encoding: base64 ```  ### PDF Form Field Transformation Only the following PDF Form FieldTypes will be transformed to DocuSign tabs: CheckBox, DateTime, ListBox, Numeric, Password, Radio, Signature, and Text  Field Properties that will be transformed: Read Only, Required, Max Length, Positions, and Initial Data.  When transforming a *PDF Form Digital Signature Field,* the following rules are used:  If the PDF Field Name Contains | Then the DocuSign Tab Will be ------- | -------- DocuSignSignHere or eSignSignHere | Signature DocuSignSignHereOptional or eSignSignHereOptional | Optional Signature DocuSignInitialHere or eSignInitialHere | Initials DocuSignInitialHereOptional or eSignInitialHereOptional | Optional Initials  Any other PDF Form Digital Signature Field will be transformed to a DocuSign Signature tab  When transforming *PDF Form Text Fields,* the following rules are used:  If the PDF Field Name Contains | Then the DocuSign Tab Will be ------- | -------- DocuSignSignHere or eSignSignHere | Signature DocuSignSignHereOptional or eSignSignHereOptional | Optional Signature DocuSignInitialHere or eSignInitialHere | Initials DocuSignInitialHereOptional or eSignInitialHereOptional | Optional Initials DocuSignEnvelopeID or eSignEnvelopeID | EnvelopeID DocuSignCompany or eSignCompany | Company DocuSignDateSigned or eSignDateSigned | Date Signed DocuSignTitle or eSignTitle | Title DocuSignFullName or eSignFullName |  Full Name DocuSignSignerAttachmentOptional or eSignSignerAttachmentOptional | Optional Signer Attachment  Any other PDF Form Text Field will be transformed to a DocuSign data (text) tab.  PDF Form Field Names that include \"DocuSignIgnoreTransform\" or \"eSignIgnoreTransform\" will not be transformed.  PDF Form Date fields will be transformed to Date Signed fields if their name includes DocuSignDateSigned or eSignDateSigned.  ## Template Email Subject Merge Fields This feature enables you to insert recipient name and email address merge fields into the email subject line when creating or sending from a template.  The merge fields, based on the recipient's `roleName`, are added to the `emailSubject` when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.  Both the sender and the recipients will see the information in the email subject line for any emails associated with the template. This provides an easy way for senders to organize their envelope emails without having to open an envelope to check the recipient.  If merging the recipient information into the subject line causes the subject line to exceed 100 characters, then any characters over the 100 character limit are not included in the subject line. For cases where the recipient name or email is expected to be long, you should consider placing the merge field at the start of the email subject.  * To add a recipient's name in the subject line add the following text in the `emailSubject` when creating the template or when sending an envelope from a template:     [[<roleName>_UserName]]     Example:     `\"emailSubject\":\"[[Signer 1_UserName]], Please sign this NDA\",`  * To add a recipient's email address in the subject line add the following text in the emailSubject when creating the template or when sending an envelope from a template:     [[<roleName>_Email]]     Example:     `\"emailSubject\":\"[[Signer 1_Email]], Please sign this NDA\",`  In both cases the <roleName> is the recipient's `roleName` in the template.  For cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[<roleName>_UserName]] or [[<roleName>_Email]] is shown in the email subject.  ## Branding an envelope The following rules are used to determine the `brandId` used in an envelope:  * If a `brandId` is specified in the envelope/template and that brandId is available to the account, that brand is used in the envelope. * If more than one template is used in an envelope and more than one `brandId` is specified, the first `brandId` specified is used throughout the envelope. * In cases where no brand is specified and the sender belongs to a Group; if there is only one brand associated with the Group, then that brand is used in the envelope. Otherwise, the account's default signing brand is used. * For envelopes that do not meet any of the previous criteria, the account's default signing brand is used for the envelope.  ## BCC Email address feature  The BCC Email address feature is designed to provide a copy of all email communications for external archiving purposes. DocuSign recommends that envelopes sent using the BCC for Email Archive feature, including the BCC Email Override option, include additional signer authentication options. To send a copy of the envelope to a recipient who does not need to sign, don't use the BCC Email field. Use a Carbon Copy or Certified Delivery Recipient type.  ## Merge Recipient Roles for Draft Envelopes When an envelope with multiple templates is sent, the recipients from the templates are merged according to the template roles, and empty recipients are removed. When creating an envelope with multiple templates, but not sending it (keeping it in a created state), duplicate recipients are not merged, which could cause leave duplicate recipients in the envelope.  To prevent this, the query parameter `merge_roles_on_draft` should be added when posting a draft envelope (status=created) with multiple templates. Doing this will merge template roles and remove empty recipients.  ###### Note: DocuSign recommends that the `merge_roles_on_draft` query parameter be used anytime you are creating an envelope with multiple templates and keeping it in draft (created) status.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_definition  (optional parameter)
     # @param DocuSign_eSign::CreateEnvelopeOptions Options for modifying the behavior of the function.
@@ -855,7 +938,7 @@ module DocuSign_eSign
     end
 
     # Creates an envelope.
-    # Creates an envelope.   Using this function you can: * Create an envelope and send it. * Create an envelope from an existing template and send it.  In either case, you can choose to save the envelope as a draft envelope instead of sending it by setting the request’s &#x60;status&#x60; property to &#x60;created&#x60; instead of &#x60;sent&#x60;.  ## Sending Envelopes  Documents can be included with the Envelopes::create call itself or a template can include documents. Documents can be added by using a multi-part/form request or by using the &#x60;documentBase64&#x60; field of the [&#x60;document&#x60; object](#/definitions/document)  ### Recipient Types An [&#x60;envelopeDefinition&#x60; object](#/definitions/envelopeDefinition) is used as the method’s body. Envelope recipients can be defined in the envelope or in templates. The &#x60;envelopeDefinition&#x60; object’s &#x60;recipients&#x60; field is an [&#x60;EnvelopeRecipients&#x60; resource object](#/definitions/EnvelopeRecipients). It includes arrays of the seven types of recipients defined by DocuSign:  Recipient type | Object definition -------------- | ----------------- agent (can add name and email information for later recipients/signers) | [&#x60;agent&#x60;](#/definitions/agent) carbon copy (receives a copy of the documents) | [&#x60;carbonCopy&#x60;](#/definitions/carbonCopy) certified delivery  (receives a copy of the documents and must acknowledge receipt) | [&#x60;certifiedDelivery&#x60;](#/definitions/certifiedDelivery) editor (can change recipients and document fields for later recipients/signers) | [&#x60;editor&#x60;](#/definitions/editor) in-person signer (“hosts” someone who signs in-person) | [&#x60;inPersonSigner&#x60;](#/definitions/inPersonSigner) intermediary (can add name and email information for some later recipients/signers.) | [&#x60;intermediary&#x60;](#/definitions/intermediary) signer (signs and/or updates document fields) | [&#x60;signer&#x60;](#/definitions/signer)  Additional information about the different types of recipients is available from the [&#x60;EnvelopeRecipients&#x60; resource page](../../EnvelopeRecipients) and from the [Developer Center](https://www.docusign.com/developer-center/explore/features/recipients)  ### Tabs Tabs (also referred to as &#x60;tags&#x60; and as &#x60;fields&#x60; in the web sending user interface), can be defined in the &#x60;envelopeDefinition&#x60;, in templates, by transforming PDF Form Fields, or by using Composite Templates (see below).  Defining tabs: the &#x60;inPersonSigner&#x60;, and &#x60;signer&#x60; recipient objects include a &#x60;tabs&#x60; field. It is an [&#x60;EnvelopeTabs&#x60; resource object](#/definitions/EnvelopeTabs). It includes arrays of the 24 different tab types available. See the [&#x60;EnvelopeTabs&#x60; resource](../../EnvelopeTabs) for more information.  ## Using Templates Envelopes use specific people or groups as recipients. Templates can specify a role, eg &#x60;account_manager.&#x60; When a template is used in an envelope, the roles must be replaced with specific people or groups.  When you create an envelope using a &#x60;templateId&#x60;, the different recipient type objects within the [&#x60;EnvelopeRecipients&#x60; object](#/definitions/EnvelopeRecipients) are used to assign recipients to the template’s roles via the &#x60;roleName&#x60; property. The recipient objects can also override settings that were specified in the template, and set values for tab fields that were defined in the template.  ### Message Lock When a template is added or applied to an envelope and the template has a locked email subject and message, that subject and message are used for the envelope and cannot be changed even if another locked template is subsequently added or applied to the envelope. The field &#x60;messageLock&#x60; is used to lock the email subject and message.  If an email subject or message is entered before adding or applying a template with &#x60;messageLock&#x60; **true**, the email subject and message is overwritten with the locked email subject and message from the template.  ## Envelope Status The status of sent envelopes can be determined through the DocuSign webhook system or by polling. Webhooks are highly recommended: they provide your application with the quickest updates when an envelope’s status changes. DocuSign limits polling to once every 15 minutes or less frequently.  When a webhook is used, DocuSign calls your application, via the URL you provide, with a notification XML message.   See the [Webhook recipe](https://www.docusign.com/developer-center/recipes/webhook-status) for examples and live demos of using webhooks.  ## Webhook Options The two webhook options, *eventNotification* and *Connect* use the same notification mechanism and message formats. eventNotification is used to create a webhook for a specific envelope sent via the API. Connect webhooks can be used for any envelope sent from an account, from any user, from any client.   ### eventNotification Webhooks The Envelopes::create method includes an optional [eventNotification object](#definition-eventNotification) that adds a webhook to the envelope. eventNotification webhooks are available for all DocuSign accounts with API access.  ### Connect Webhooks Connect can be used to create a webhook for all envelopes sent by all users in an account, either through the API or via other DocuSign clients (web, mobile, etc). Connect configurations are independent of specific envelopes. A Connect configuration includes a filter that may be used to limit the webhook to specific users, envelope statuses, etc.   Connect configurations may be created and managed using the [ConnectConfigurations resource](../../Connect/ConnectConfigurations). Configurations can also be created and managed from the Administration tool accessed by selecting “Go to Admin” from the menu next to your picture on the DocuSign web app. See the Integrations/Connect section of the Admin tool. For repeatability, and to minimize support questions, creating Connect configurations via the API is recommended, especially for ISVs.  Connect is available for some DocuSign account types. Please contact DocuSign Sales for more information.  ## Composite Templates  The Composite Templates feature, like [compositing in film production](https://en.wikipedia.org/wiki/Compositing), enables you to *overlay* document, recipient, and tab definitions from multiple sources, including PDF Form Field definitions, templates defined on the server, and more.  Each Composite Template consists of optional elements: server templates, inline templates, PDF Metadata templates, and documents.  * The Composite Template ID is an optional element used to identify the composite template. It is used as a reference when adding document object information via a multi-part HTTP message. If used, the document content-disposition must include the &#x60;compositeTemplateId&#x60; to which the document should be added. If &#x60;compositeTemplateId&#x60; is not specified in the content-disposition, the document is applied based on the &#x60;documentId&#x60; only. If no document object is specified, the composite template inherits the first document.  * Server Templates are server-side templates stored on the DocuSign platform. If supplied, they are overlaid into the envelope in the order of their Sequence value.  * Inline Templates provide a container to add documents, recipients, tabs, and custom fields. If inline templates are supplied, they are overlaid into the envelope in the order of their Sequence value.  * Document objects are optional structures that provide a container to pass in a document or form. If this object is not included, the composite template inherits the *first* document it finds from a server template or inline template, starting with the lowest sequence value.  PDF Form objects are only transformed from the document object. DocuSign does not derive PDF form properties from server templates or inline templates. To instruct DocuSign to transform fields from the PDF form, set &#x60;transformPdfFields&#x60; to \&quot;true\&quot; for the document. See the Transform PDF Fields section for more information about process.  * PDF Metadata Templates provide a container to embed design-time template information into a PDF document. DocuSign uses this information when processing the Envelope. This convention allows the document to carry the signing instructions with it, so that less information needs to be provided at run-time through an inline template or synchronized with an external structure like a server template. PDF Metadata templates are stored in the Metadata layer of a PDF in accordance with Acrobat&#39;s XMP specification. DocuSign will only find PDF Metadata templates inside documents passed in the Document object (see below). If supplied, the PDF metadata template will be overlaid into the envelope in the order of its Sequence value.  ### Compositing the definitions Each Composite Template adds a new document and templates overlay into the envelope. For each Composite Template these rules are applied:  * Templates are overlaid in the order of their Sequence value. * If Document is not passed into the Composite Template’s &#x60;document&#x60; field, the *first* template’s document (based on the template’s Sequence value) is used. * Last in wins in all cases except for the document (i.e. envelope information, recipient information, secure field information). There is no special casing.  For example, if you want higher security on a tab, then that needs to be specified in a later template (by sequence number) then where the tab is included. If you want higher security on a role recipient, then it needs to be in a later template then where that role recipient is specified.  * Recipient matching is based on Recipient Role and Routing Order. If there are matches, the recipient information is merged together. A final pass is done on all Composite Templates, after all template overlays have been applied, to collapse recipients with the same email, username and routing order. This prevents having the same recipients at the same routing order.  * If you specify in a template that a recipient is locked, once that recipient is overlaid the recipient attributes can no longer be changed. The only items that can be changed for the recipient in this case are the email, username, access code and IDCheckInformationInput.  * Tab matching is based on Tab Labels, Tab Types and Documents. If a Tab Label matches but the Document is not supplied, the Tab is overlaid for all the Documents.  For example, if you have a simple inline template with only one tab in it with a label and a value, the Signature, Initial, Company, Envelope ID, User Name tabs will only be matched and collapsed if they fall in the exact same X and Y locations.  * roleName and tabLabel matching is case sensitive.  * The defaultRecipient field enables you to specify which recipient the generated tabs from a PDF form are mapped to. You can also set PDF form generated tabs to a recipient other than the DefaultRecipient by specifying the mapping of the tab label that is created to one of the template recipients.  * You can use tabLabel wild carding to map a series of tabs from the PDF form. To use this you must end a tab label with “\\*” and then the system matches tabs that start with the label.  * If no DefaultRecipient is specified, tabs must be explicitly mapped to recipients in order to be generated from the form. Unmapped form objects will not be generated into their DocuSign equivalents. (In the case of Signature/Initials, the tabs will be disregarded entirely; in the case of pdf text fields, the field data will be flattened on the Envelope document, but there will not be a corresponding DocuSign data tab.)  ### Including the Document Content for Composite Templates Document content can be supplied inline, using the &#x60;documentBase64&#x60; or can be included in a multi-part HTTP message.  If a multi-part message is used and there are multiple Composite Templates, the document content-disposition can include the &#x60;compositeTemplateId&#x60; to which the document should be added. Using the &#x60;compositeTemplateId&#x60; sets which documents are associated with particular composite templates. An example of this usage is:  &#x60;&#x60;&#x60;    --5cd3320a-5aac-4453-b3a4-cbb52a4cba5d    Content-Type: application/pdf    Content-Disposition: file; filename&#x3D;\&quot;eula.pdf\&quot;; documentId&#x3D;1; compositeTemplateId&#x3D;\&quot;1\&quot;    Content-Transfer-Encoding: base64 &#x60;&#x60;&#x60;  ### PDF Form Field Transformation Only the following PDF Form FieldTypes will be transformed to DocuSign tabs: CheckBox, DateTime, ListBox, Numeric, Password, Radio, Signature, and Text  Field Properties that will be transformed: Read Only, Required, Max Length, Positions, and Initial Data.  When transforming a *PDF Form Digital Signature Field,* the following rules are used:  If the PDF Field Name Contains | Then the DocuSign Tab Will be ------- | -------- DocuSignSignHere or eSignSignHere | Signature DocuSignSignHereOptional or eSignSignHereOptional | Optional Signature DocuSignInitialHere or eSignInitialHere | Initials DocuSignInitialHereOptional or eSignInitialHereOptional | Optional Initials  Any other PDF Form Digital Signature Field will be transformed to a DocuSign Signature tab  When transforming *PDF Form Text Fields,* the following rules are used:  If the PDF Field Name Contains | Then the DocuSign Tab Will be ------- | -------- DocuSignSignHere or eSignSignHere | Signature DocuSignSignHereOptional or eSignSignHereOptional | Optional Signature DocuSignInitialHere or eSignInitialHere | Initials DocuSignInitialHereOptional or eSignInitialHereOptional | Optional Initials DocuSignEnvelopeID or eSignEnvelopeID | EnvelopeID DocuSignCompany or eSignCompany | Company DocuSignDateSigned or eSignDateSigned | Date Signed DocuSignTitle or eSignTitle | Title DocuSignFullName or eSignFullName |  Full Name DocuSignSignerAttachmentOptional or eSignSignerAttachmentOptional | Optional Signer Attachment  Any other PDF Form Text Field will be transformed to a DocuSign data (text) tab.  PDF Form Field Names that include “DocuSignIgnoreTransform” or “eSignIgnoreTransform” will not be transformed.  PDF Form Date fields will be transformed to Date Signed fields if their name includes DocuSignDateSigned or eSignDateSigned.  ## Template Email Subject Merge Fields This feature enables you to insert recipient name and email address merge fields into the email subject line when creating or sending from a template.  The merge fields, based on the recipient’s &#x60;roleName&#x60;, are added to the &#x60;emailSubject&#x60; when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.  Both the sender and the recipients will see the information in the email subject line for any emails associated with the template. This provides an easy way for senders to organize their envelope emails without having to open an envelope to check the recipient.  If merging the recipient information into the subject line causes the subject line to exceed 100 characters, then any characters over the 100 character limit are not included in the subject line. For cases where the recipient name or email is expected to be long, you should consider placing the merge field at the start of the email subject.  * To add a recipient’s name in the subject line add the following text in the &#x60;emailSubject&#x60; when creating the template or when sending an envelope from a template:     [[&lt;roleName&gt;_UserName]]     Example:     &#x60;\&quot;emailSubject\&quot;:\&quot;[[Signer 1_UserName]], Please sign this NDA\&quot;,&#x60;  * To add a recipient’s email address in the subject line add the following text in the emailSubject when creating the template or when sending an envelope from a template:     [[&lt;roleName&gt;_Email]]     Example:     &#x60;\&quot;emailSubject\&quot;:\&quot;[[Signer 1_Email]], Please sign this NDA\&quot;,&#x60;  In both cases the &lt;roleName&gt; is the recipient’s &#x60;roleName&#x60; in the template.  For cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[&lt;roleName&gt;_UserName]] or [[&lt;roleName&gt;_Email]] is shown in the email subject.  ## Branding an envelope The following rules are used to determine the &#x60;brandId&#x60; used in an envelope:  * If a &#x60;brandId&#x60; is specified in the envelope/template and that brandId is available to the account, that brand is used in the envelope. * If more than one template is used in an envelope and more than one &#x60;brandId&#x60; is specified, the first &#x60;brandId&#x60; specified is used throughout the envelope. * In cases where no brand is specified and the sender belongs to a Group; if there is only one brand associated with the Group, then that brand is used in the envelope. Otherwise, the account’s default signing brand is used. * For envelopes that do not meet any of the previous criteria, the account’s default signing brand is used for the envelope.  ## BCC Email address feature  The BCC Email address feature is designed to provide a copy of all email communications for external archiving purposes. DocuSign recommends that envelopes sent using the BCC for Email Archive feature, including the BCC Email Override option, include additional signer authentication options. To send a copy of the envelope to a recipient who does not need to sign, don’t use the BCC Email field. Use a Carbon Copy or Certified Delivery Recipient type.  ## Merge Recipient Roles for Draft Envelopes When an envelope with multiple templates is sent, the recipients from the templates are merged according to the template roles, and empty recipients are removed. When creating an envelope with multiple templates, but not sending it (keeping it in a created state), duplicate recipients are not merged, which could cause leave duplicate recipients in the envelope.  To prevent this, the query parameter &#x60;merge_roles_on_draft&#x60; should be added when posting a draft envelope (status&#x3D;created) with multiple templates. Doing this will merge template roles and remove empty recipients.  ###### Note: DocuSign recommends that the &#x60;merge_roles_on_draft&#x60; query parameter be used anytime you are creating an envelope with multiple templates and keeping it in draft (created) status.
+    # Creates an envelope.   Using this function you can: * Create an envelope and send it. * Create an envelope from an existing template and send it.  In either case, you can choose to save the envelope as a draft envelope instead of sending it by setting the request&#39;s &#x60;status&#x60; property to &#x60;created&#x60; instead of &#x60;sent&#x60;.  ## Sending Envelopes  Documents can be included with the Envelopes::create call itself or a template can include documents. Documents can be added by using a multi-part/form request or by using the &#x60;documentBase64&#x60; field of the [&#x60;document&#x60; object](#/definitions/document)  ### Recipient Types An [&#x60;envelopeDefinition&#x60; object](#/definitions/envelopeDefinition) is used as the method&#39;s body. Envelope recipients can be defined in the envelope or in templates. The &#x60;envelopeDefinition&#x60; object&#39;s &#x60;recipients&#x60; field is an [&#x60;EnvelopeRecipients&#x60; resource object](#/definitions/EnvelopeRecipients). It includes arrays of the seven types of recipients defined by DocuSign:  Recipient type | Object definition -------------- | ----------------- agent (can add name and email information for later recipients/signers) | [&#x60;agent&#x60;](#/definitions/agent) carbon copy (receives a copy of the documents) | [&#x60;carbonCopy&#x60;](#/definitions/carbonCopy) certified delivery  (receives a copy of the documents and must acknowledge receipt) | [&#x60;certifiedDelivery&#x60;](#/definitions/certifiedDelivery) editor (can change recipients and document fields for later recipients/signers) | [&#x60;editor&#x60;](#/definitions/editor) in-person signer (\&quot;hosts\&quot; someone who signs in-person) | [&#x60;inPersonSigner&#x60;](#/definitions/inPersonSigner) intermediary (can add name and email information for some later recipients/signers.) | [&#x60;intermediary&#x60;](#/definitions/intermediary) signer (signs and/or updates document fields) | [&#x60;signer&#x60;](#/definitions/signer)  Additional information about the different types of recipients is available from the [&#x60;EnvelopeRecipients&#x60; resource page](../../EnvelopeRecipients) and from the [Developer Center](https://www.docusign.com/developer-center/explore/features/recipients)  ### Tabs Tabs (also referred to as &#x60;tags&#x60; and as &#x60;fields&#x60; in the web sending user interface), can be defined in the &#x60;envelopeDefinition&#x60;, in templates, by transforming PDF Form Fields, or by using Composite Templates (see below).  Defining tabs: the &#x60;inPersonSigner&#x60;, and &#x60;signer&#x60; recipient objects include a &#x60;tabs&#x60; field. It is an [&#x60;EnvelopeTabs&#x60; resource object](#/definitions/EnvelopeTabs). It includes arrays of the 24 different tab types available. See the [&#x60;EnvelopeTabs&#x60; resource](../../EnvelopeTabs) for more information.  ## Using Templates Envelopes use specific people or groups as recipients. Templates can specify a role, eg &#x60;account_manager.&#x60; When a template is used in an envelope, the roles must be replaced with specific people or groups.  When you create an envelope using a &#x60;templateId&#x60;, the different recipient type objects within the [&#x60;EnvelopeRecipients&#x60; object](#/definitions/EnvelopeRecipients) are used to assign recipients to the template&#39;s roles via the &#x60;roleName&#x60; property. The recipient objects can also override settings that were specified in the template, and set values for tab fields that were defined in the template.  ### Message Lock When a template is added or applied to an envelope and the template has a locked email subject and message, that subject and message are used for the envelope and cannot be changed even if another locked template is subsequently added or applied to the envelope. The field &#x60;messageLock&#x60; is used to lock the email subject and message.  If an email subject or message is entered before adding or applying a template with &#x60;messageLock&#x60; **true**, the email subject and message is overwritten with the locked email subject and message from the template.  ## Envelope Status The status of sent envelopes can be determined through the DocuSign webhook system or by polling. Webhooks are highly recommended: they provide your application with the quickest updates when an envelope&#39;s status changes. DocuSign limits polling to once every 15 minutes or less frequently.  When a webhook is used, DocuSign calls your application, via the URL you provide, with a notification XML message.   See the [Webhook recipe](https://www.docusign.com/developer-center/recipes/webhook-status) for examples and live demos of using webhooks.  ## Webhook Options The two webhook options, *eventNotification* and *Connect* use the same notification mechanism and message formats. eventNotification is used to create a webhook for a specific envelope sent via the API. Connect webhooks can be used for any envelope sent from an account, from any user, from any client.   ### eventNotification Webhooks The Envelopes::create method includes an optional [eventNotification object](#definition-eventNotification) that adds a webhook to the envelope. eventNotification webhooks are available for all DocuSign accounts with API access.  ### Connect Webhooks Connect can be used to create a webhook for all envelopes sent by all users in an account, either through the API or via other DocuSign clients (web, mobile, etc). Connect configurations are independent of specific envelopes. A Connect configuration includes a filter that may be used to limit the webhook to specific users, envelope statuses, etc.   Connect configurations may be created and managed using the [ConnectConfigurations resource](../../Connect/ConnectConfigurations). Configurations can also be created and managed from the Administration tool accessed by selecting \&quot;Go to Admin\&quot; from the menu next to your picture on the DocuSign web app. See the Integrations/Connect section of the Admin tool. For repeatability, and to minimize support questions, creating Connect configurations via the API is recommended, especially for ISVs.  Connect is available for some DocuSign account types. Please contact DocuSign Sales for more information.  ## Composite Templates  The Composite Templates feature, like [compositing in film production](https://en.wikipedia.org/wiki/Compositing), enables you to *overlay* document, recipient, and tab definitions from multiple sources, including PDF Form Field definitions, templates defined on the server, and more.  Each Composite Template consists of optional elements: server templates, inline templates, PDF Metadata templates, and documents.  * The Composite Template ID is an optional element used to identify the composite template. It is used as a reference when adding document object information via a multi-part HTTP message. If used, the document content-disposition must include the &#x60;compositeTemplateId&#x60; to which the document should be added. If &#x60;compositeTemplateId&#x60; is not specified in the content-disposition, the document is applied based on the &#x60;documentId&#x60; only. If no document object is specified, the composite template inherits the first document.  * Server Templates are server-side templates stored on the DocuSign platform. If supplied, they are overlaid into the envelope in the order of their Sequence value.  * Inline Templates provide a container to add documents, recipients, tabs, and custom fields. If inline templates are supplied, they are overlaid into the envelope in the order of their Sequence value.  * Document objects are optional structures that provide a container to pass in a document or form. If this object is not included, the composite template inherits the *first* document it finds from a server template or inline template, starting with the lowest sequence value.  PDF Form objects are only transformed from the document object. DocuSign does not derive PDF form properties from server templates or inline templates. To instruct DocuSign to transform fields from the PDF form, set &#x60;transformPdfFields&#x60; to \&quot;true\&quot; for the document. See the Transform PDF Fields section for more information about process.  * PDF Metadata Templates provide a container to embed design-time template information into a PDF document. DocuSign uses this information when processing the Envelope. This convention allows the document to carry the signing instructions with it, so that less information needs to be provided at run-time through an inline template or synchronized with an external structure like a server template. PDF Metadata templates are stored in the Metadata layer of a PDF in accordance with Acrobat&#39;s XMP specification. DocuSign will only find PDF Metadata templates inside documents passed in the Document object (see below). If supplied, the PDF metadata template will be overlaid into the envelope in the order of its Sequence value.  ### Compositing the definitions Each Composite Template adds a new document and templates overlay into the envelope. For each Composite Template these rules are applied:  * Templates are overlaid in the order of their Sequence value. * If Document is not passed into the Composite Template&#39;s &#x60;document&#x60; field, the *first* template&#39;s document (based on the template&#39;s Sequence value) is used. * Last in wins in all cases except for the document (i.e. envelope information, recipient information, secure field information). There is no special casing.  For example, if you want higher security on a tab, then that needs to be specified in a later template (by sequence number) then where the tab is included. If you want higher security on a role recipient, then it needs to be in a later template then where that role recipient is specified.  * Recipient matching is based on Recipient Role and Routing Order. If there are matches, the recipient information is merged together. A final pass is done on all Composite Templates, after all template overlays have been applied, to collapse recipients with the same email, username and routing order. This prevents having the same recipients at the same routing order.  * If you specify in a template that a recipient is locked, once that recipient is overlaid the recipient attributes can no longer be changed. The only items that can be changed for the recipient in this case are the email, username, access code and IDCheckInformationInput.  * Tab matching is based on Tab Labels, Tab Types and Documents. If a Tab Label matches but the Document is not supplied, the Tab is overlaid for all the Documents.  For example, if you have a simple inline template with only one tab in it with a label and a value, the Signature, Initial, Company, Envelope ID, User Name tabs will only be matched and collapsed if they fall in the exact same X and Y locations.  * roleName and tabLabel matching is case sensitive.  * The defaultRecipient field enables you to specify which recipient the generated tabs from a PDF form are mapped to. You can also set PDF form generated tabs to a recipient other than the DefaultRecipient by specifying the mapping of the tab label that is created to one of the template recipients.  * You can use tabLabel wild carding to map a series of tabs from the PDF form. To use this you must end a tab label with \&quot;\\*\&quot; and then the system matches tabs that start with the label.  * If no DefaultRecipient is specified, tabs must be explicitly mapped to recipients in order to be generated from the form. Unmapped form objects will not be generated into their DocuSign equivalents. (In the case of Signature/Initials, the tabs will be disregarded entirely; in the case of pdf text fields, the field data will be flattened on the Envelope document, but there will not be a corresponding DocuSign data tab.)  ### Including the Document Content for Composite Templates Document content can be supplied inline, using the &#x60;documentBase64&#x60; or can be included in a multi-part HTTP message.  If a multi-part message is used and there are multiple Composite Templates, the document content-disposition can include the &#x60;compositeTemplateId&#x60; to which the document should be added. Using the &#x60;compositeTemplateId&#x60; sets which documents are associated with particular composite templates. An example of this usage is:  &#x60;&#x60;&#x60;    --5cd3320a-5aac-4453-b3a4-cbb52a4cba5d    Content-Type: application/pdf    Content-Disposition: file; filename&#x3D;\&quot;eula.pdf\&quot;; documentId&#x3D;1; compositeTemplateId&#x3D;\&quot;1\&quot;    Content-Transfer-Encoding: base64 &#x60;&#x60;&#x60;  ### PDF Form Field Transformation Only the following PDF Form FieldTypes will be transformed to DocuSign tabs: CheckBox, DateTime, ListBox, Numeric, Password, Radio, Signature, and Text  Field Properties that will be transformed: Read Only, Required, Max Length, Positions, and Initial Data.  When transforming a *PDF Form Digital Signature Field,* the following rules are used:  If the PDF Field Name Contains | Then the DocuSign Tab Will be ------- | -------- DocuSignSignHere or eSignSignHere | Signature DocuSignSignHereOptional or eSignSignHereOptional | Optional Signature DocuSignInitialHere or eSignInitialHere | Initials DocuSignInitialHereOptional or eSignInitialHereOptional | Optional Initials  Any other PDF Form Digital Signature Field will be transformed to a DocuSign Signature tab  When transforming *PDF Form Text Fields,* the following rules are used:  If the PDF Field Name Contains | Then the DocuSign Tab Will be ------- | -------- DocuSignSignHere or eSignSignHere | Signature DocuSignSignHereOptional or eSignSignHereOptional | Optional Signature DocuSignInitialHere or eSignInitialHere | Initials DocuSignInitialHereOptional or eSignInitialHereOptional | Optional Initials DocuSignEnvelopeID or eSignEnvelopeID | EnvelopeID DocuSignCompany or eSignCompany | Company DocuSignDateSigned or eSignDateSigned | Date Signed DocuSignTitle or eSignTitle | Title DocuSignFullName or eSignFullName |  Full Name DocuSignSignerAttachmentOptional or eSignSignerAttachmentOptional | Optional Signer Attachment  Any other PDF Form Text Field will be transformed to a DocuSign data (text) tab.  PDF Form Field Names that include \&quot;DocuSignIgnoreTransform\&quot; or \&quot;eSignIgnoreTransform\&quot; will not be transformed.  PDF Form Date fields will be transformed to Date Signed fields if their name includes DocuSignDateSigned or eSignDateSigned.  ## Template Email Subject Merge Fields This feature enables you to insert recipient name and email address merge fields into the email subject line when creating or sending from a template.  The merge fields, based on the recipient&#39;s &#x60;roleName&#x60;, are added to the &#x60;emailSubject&#x60; when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.  Both the sender and the recipients will see the information in the email subject line for any emails associated with the template. This provides an easy way for senders to organize their envelope emails without having to open an envelope to check the recipient.  If merging the recipient information into the subject line causes the subject line to exceed 100 characters, then any characters over the 100 character limit are not included in the subject line. For cases where the recipient name or email is expected to be long, you should consider placing the merge field at the start of the email subject.  * To add a recipient&#39;s name in the subject line add the following text in the &#x60;emailSubject&#x60; when creating the template or when sending an envelope from a template:     [[&lt;roleName&gt;_UserName]]     Example:     &#x60;\&quot;emailSubject\&quot;:\&quot;[[Signer 1_UserName]], Please sign this NDA\&quot;,&#x60;  * To add a recipient&#39;s email address in the subject line add the following text in the emailSubject when creating the template or when sending an envelope from a template:     [[&lt;roleName&gt;_Email]]     Example:     &#x60;\&quot;emailSubject\&quot;:\&quot;[[Signer 1_Email]], Please sign this NDA\&quot;,&#x60;  In both cases the &lt;roleName&gt; is the recipient&#39;s &#x60;roleName&#x60; in the template.  For cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[&lt;roleName&gt;_UserName]] or [[&lt;roleName&gt;_Email]] is shown in the email subject.  ## Branding an envelope The following rules are used to determine the &#x60;brandId&#x60; used in an envelope:  * If a &#x60;brandId&#x60; is specified in the envelope/template and that brandId is available to the account, that brand is used in the envelope. * If more than one template is used in an envelope and more than one &#x60;brandId&#x60; is specified, the first &#x60;brandId&#x60; specified is used throughout the envelope. * In cases where no brand is specified and the sender belongs to a Group; if there is only one brand associated with the Group, then that brand is used in the envelope. Otherwise, the account&#39;s default signing brand is used. * For envelopes that do not meet any of the previous criteria, the account&#39;s default signing brand is used for the envelope.  ## BCC Email address feature  The BCC Email address feature is designed to provide a copy of all email communications for external archiving purposes. DocuSign recommends that envelopes sent using the BCC for Email Archive feature, including the BCC Email Override option, include additional signer authentication options. To send a copy of the envelope to a recipient who does not need to sign, don&#39;t use the BCC Email field. Use a Carbon Copy or Certified Delivery Recipient type.  ## Merge Recipient Roles for Draft Envelopes When an envelope with multiple templates is sent, the recipients from the templates are merged according to the template roles, and empty recipients are removed. When creating an envelope with multiple templates, but not sending it (keeping it in a created state), duplicate recipients are not merged, which could cause leave duplicate recipients in the envelope.  To prevent this, the query parameter &#x60;merge_roles_on_draft&#x60; should be added when posting a draft envelope (status&#x3D;created) with multiple templates. Doing this will merge template roles and remove empty recipients.  ###### Note: DocuSign recommends that the &#x60;merge_roles_on_draft&#x60; query parameter be used anytime you are creating an envelope with multiple templates and keeping it in draft (created) status.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_definition  (optional parameter)
     # @param DocuSign_eSign::CreateEnvelopeOptions Options for modifying the behavior of the function.
@@ -872,6 +955,7 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'cdse_mode'] = options.cdse_mode if !options.cdse_mode.nil?
+      query_params[:'change_routing_order'] = options.change_routing_order if !options.change_routing_order.nil?
       query_params[:'completed_documents_only'] = options.completed_documents_only if !options.completed_documents_only.nil?
       query_params[:'merge_roles_on_draft'] = options.merge_roles_on_draft if !options.merge_roles_on_draft.nil?
 
@@ -895,6 +979,61 @@ module DocuSign_eSign
         :return_type => 'EnvelopeSummary')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#create_envelope\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Provides a URL to start a shared recipient view of the Envelope UI
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param recipient_view_request  (optional parameter)
+    # @return [ViewUrl]
+    def create_envelope_recipient_shared_view(account_id, envelope_id, recipient_view_request)
+      data, _status_code, _headers = create_envelope_recipient_shared_view_with_http_info(account_id, envelope_id,  recipient_view_request)
+      return data
+    end
+
+    # Provides a URL to start a shared recipient view of the Envelope UI
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param recipient_view_request  (optional parameter)
+    # @return [Array<(ViewUrl, Fixnum, Hash)>] ViewUrl data, response status code and response headers
+    def create_envelope_recipient_shared_view_with_http_info(account_id, envelope_id, recipient_view_request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_envelope_recipient_shared_view ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_envelope_recipient_shared_view" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.create_envelope_recipient_shared_view" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/envelopes/{envelopeId}/views/shared".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(recipient_view_request)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ViewUrl')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_envelope_recipient_shared_view\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1067,6 +1206,61 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Get Responsive HTML Preview for all documents in an envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param document_html_definition  (optional parameter)
+    # @return [DocumentHtmlDefinitions]
+    def create_responsive_html_preview(account_id, envelope_id, document_html_definition)
+      data, _status_code, _headers = create_responsive_html_preview_with_http_info(account_id, envelope_id,  document_html_definition)
+      return data
+    end
+
+    # Get Responsive HTML Preview for all documents in an envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param document_html_definition  (optional parameter)
+    # @return [Array<(DocumentHtmlDefinitions, Fixnum, Hash)>] DocumentHtmlDefinitions data, response status code and response headers
+    def create_responsive_html_preview_with_http_info(account_id, envelope_id, document_html_definition)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_responsive_html_preview ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_responsive_html_preview" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.create_responsive_html_preview" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/envelopes/{envelopeId}/responsive_html_preview".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(document_html_definition)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DocumentHtmlDefinitions')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_responsive_html_preview\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Returns a URL to the sender view UI.
     # Returns a URL that allows you to embed the sender view of the DocuSign UI in your applications. This is a one-time use login token that allows the user to be placed into the DocuSign sending view.   Upon sending completion, the user is returned to the return URL provided by the API application.  Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView. 
     # @param account_id The external account number (int) or account ID Guid.
@@ -1177,61 +1371,6 @@ module DocuSign_eSign
         :return_type => 'Tabs')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#create_tabs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Reserved: Returns a URL to the secure link view UI.
-    # Reserved: Returns a URL that allows you to embed the secure link view of the DocuSign UI in your applications.
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param view_link_request  (optional parameter)
-    # @return [ViewUrl]
-    def create_view_link(account_id, envelope_id, view_link_request)
-      data, _status_code, _headers = create_view_link_with_http_info(account_id, envelope_id,  view_link_request)
-      return data
-    end
-
-    # Reserved: Returns a URL to the secure link view UI.
-    # Reserved: Returns a URL that allows you to embed the secure link view of the DocuSign UI in your applications.
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param view_link_request  (optional parameter)
-    # @return [Array<(ViewUrl, Fixnum, Hash)>] ViewUrl data, response status code and response headers
-    def create_view_link_with_http_info(account_id, envelope_id, view_link_request)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_view_link ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_view_link" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.create_view_link" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2/accounts/{accountId}/envelopes/{envelopeId}/views/viewlink".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(view_link_request)
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'ViewUrl')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#create_view_link\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1910,58 +2049,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Reserved: Expires a secure view link.
-    # Reserved: Expires a secure view link
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [nil]
-    def delete_view_link(account_id, envelope_id)
-      delete_view_link_with_http_info(account_id, envelope_id)
-      return nil
-    end
-
-    # Reserved: Expires a secure view link.
-    # Reserved: Expires a secure view link
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def delete_view_link_with_http_info(account_id, envelope_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.delete_view_link ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.delete_view_link" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.delete_view_link" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2/accounts/{accountId}/envelopes/{envelopeId}/views/viewlink".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#delete_view_link\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Retrieves an attachment from the envelope.
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -2131,7 +2218,7 @@ module DocuSign_eSign
     # Reserved: Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to �browser� to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param recipient_id The ID of the recipient being accessed.
     # @param DocuSign_eSign::GetConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [ConsumerDisclosure]
@@ -2144,7 +2231,7 @@ module DocuSign_eSign
     # Reserved: Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to �browser� to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param recipient_id The ID of the recipient being accessed.
     # @param DocuSign_eSign::GetConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [Array<(ConsumerDisclosure, Fixnum, Hash)>] ConsumerDisclosure data, response status code and response headers
@@ -2384,6 +2471,66 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Returns tabs on the document.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param DocuSign_eSign::GetDocumentTabsOptions Options for modifying the behavior of the function.
+    # @return [Tabs]
+    def get_document_tabs(account_id, document_id, envelope_id, options = DocuSign_eSign::GetDocumentTabsOptions.default)
+      data, _status_code, _headers = get_document_tabs_with_http_info(account_id, document_id, envelope_id, options)
+      return data
+    end
+
+    # Returns tabs on the document.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param DocuSign_eSign::GetDocumentTabsOptions Options for modifying the behavior of the function.
+    # @return [Array<(Tabs, Fixnum, Hash)>] Tabs data, response status code and response headers
+    def get_document_tabs_with_http_info(account_id, document_id, envelope_id, options = DocuSign_eSign::GetDocumentTabsOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_document_tabs ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_document_tabs" if account_id.nil?
+      # verify the required parameter 'document_id' is set
+      fail ArgumentError, "Missing the required parameter 'document_id' when calling EnvelopesApi.get_document_tabs" if document_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_document_tabs" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'page_numbers'] = options.page_numbers if !options.page_numbers.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Tabs')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_document_tabs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Gets the email setting overrides for an envelope.
     # Retrieves the email override settings for the specified envelope.
     # @param account_id The external account number (int) or account ID Guid.
@@ -2490,6 +2637,116 @@ module DocuSign_eSign
         :return_type => 'Envelope')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#get_envelope\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get the Original HTML Definition used to generate the Responsive HTML for a given document.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [DocumentHtmlDefinitionOriginals]
+    def get_envelope_document_html_definitions(account_id, document_id, envelope_id)
+      data, _status_code, _headers = get_envelope_document_html_definitions_with_http_info(account_id, document_id, envelope_id)
+      return data
+    end
+
+    # Get the Original HTML Definition used to generate the Responsive HTML for a given document.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [Array<(DocumentHtmlDefinitionOriginals, Fixnum, Hash)>] DocumentHtmlDefinitionOriginals data, response status code and response headers
+    def get_envelope_document_html_definitions_with_http_info(account_id, document_id, envelope_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_envelope_document_html_definitions ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_envelope_document_html_definitions" if account_id.nil?
+      # verify the required parameter 'document_id' is set
+      fail ArgumentError, "Missing the required parameter 'document_id' when calling EnvelopesApi.get_envelope_document_html_definitions" if document_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_envelope_document_html_definitions" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/html_definitions".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DocumentHtmlDefinitionOriginals')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_envelope_document_html_definitions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get the Original HTML Definition used to generate the Responsive HTML for the envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [DocumentHtmlDefinitionOriginals]
+    def get_envelope_html_definitions(account_id, envelope_id)
+      data, _status_code, _headers = get_envelope_html_definitions_with_http_info(account_id, envelope_id)
+      return data
+    end
+
+    # Get the Original HTML Definition used to generate the Responsive HTML for the envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [Array<(DocumentHtmlDefinitionOriginals, Fixnum, Hash)>] DocumentHtmlDefinitionOriginals data, response status code and response headers
+    def get_envelope_html_definitions_with_http_info(account_id, envelope_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_envelope_html_definitions ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_envelope_html_definitions" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_envelope_html_definitions" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/envelopes/{envelopeId}/html_definitions".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DocumentHtmlDefinitionOriginals')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_envelope_html_definitions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2649,6 +2906,133 @@ module DocuSign_eSign
         :return_type => 'Notification')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#get_notification_settings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns tabs on the specified page.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param page_number The page number being accessed.
+    # @return [Tabs]
+    def get_page_tabs(account_id, document_id, envelope_id, page_number)
+      data, _status_code, _headers = get_page_tabs_with_http_info(account_id, document_id, envelope_id, page_number)
+      return data
+    end
+
+    # Returns tabs on the specified page.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param page_number The page number being accessed.
+    # @return [Array<(Tabs, Fixnum, Hash)>] Tabs data, response status code and response headers
+    def get_page_tabs_with_http_info(account_id, document_id, envelope_id, page_number)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_page_tabs ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_page_tabs" if account_id.nil?
+      # verify the required parameter 'document_id' is set
+      fail ArgumentError, "Missing the required parameter 'document_id' when calling EnvelopesApi.get_page_tabs" if document_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_page_tabs" if envelope_id.nil?
+      # verify the required parameter 'page_number' is set
+      fail ArgumentError, "Missing the required parameter 'page_number' when calling EnvelopesApi.get_page_tabs" if page_number.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/tabs".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'pageNumber' + '}', page_number.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Tabs')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_page_tabs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns document page image(s) based on input.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param DocuSign_eSign::GetPagesOptions Options for modifying the behavior of the function.
+    # @return [PageImages]
+    def get_pages(account_id, document_id, envelope_id, options = DocuSign_eSign::GetPagesOptions.default)
+      data, _status_code, _headers = get_pages_with_http_info(account_id, document_id, envelope_id, options)
+      return data
+    end
+
+    # Returns document page image(s) based on input.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param DocuSign_eSign::GetPagesOptions Options for modifying the behavior of the function.
+    # @return [Array<(PageImages, Fixnum, Hash)>] PageImages data, response status code and response headers
+    def get_pages_with_http_info(account_id, document_id, envelope_id, options = DocuSign_eSign::GetPagesOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_pages ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_pages" if account_id.nil?
+      # verify the required parameter 'document_id' is set
+      fail ArgumentError, "Missing the required parameter 'document_id' when calling EnvelopesApi.get_pages" if document_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_pages" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'count'] = options.count if !options.count.nil?
+      query_params[:'dpi'] = options.dpi if !options.dpi.nil?
+      query_params[:'max_height'] = options.max_height if !options.max_height.nil?
+      query_params[:'max_width'] = options.max_width if !options.max_width.nil?
+      query_params[:'nocache'] = options.nocache if !options.nocache.nil?
+      query_params[:'show_changes'] = options.show_changes if !options.show_changes.nil?
+      query_params[:'start_position'] = options.start_position if !options.start_position.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'PageImages')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_pages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3111,10 +3495,9 @@ module DocuSign_eSign
     # Retrieves a list of documents associated with the specified envelope.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param DocuSign_eSign::ListDocumentsOptions Options for modifying the behavior of the function.
     # @return [EnvelopeDocumentsResult]
-    def list_documents(account_id, envelope_id, options = DocuSign_eSign::ListDocumentsOptions.default)
-      data, _status_code, _headers = list_documents_with_http_info(account_id, envelope_id, options)
+    def list_documents(account_id, envelope_id)
+      data, _status_code, _headers = list_documents_with_http_info(account_id, envelope_id)
       return data
     end
 
@@ -3122,9 +3505,8 @@ module DocuSign_eSign
     # Retrieves a list of documents associated with the specified envelope.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param DocuSign_eSign::ListDocumentsOptions Options for modifying the behavior of the function.
     # @return [Array<(EnvelopeDocumentsResult, Fixnum, Hash)>] EnvelopeDocumentsResult data, response status code and response headers
-    def list_documents_with_http_info(account_id, envelope_id, options = DocuSign_eSign::ListDocumentsOptions.default)
+    def list_documents_with_http_info(account_id, envelope_id)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: EnvelopesApi.list_documents ..."
       end
@@ -3137,7 +3519,6 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
-      query_params[:'include_metadata'] = options.include_metadata if !options.include_metadata.nil?
 
       # header parameters
       header_params = {}
@@ -3195,7 +3576,6 @@ module DocuSign_eSign
       query_params = {}
       query_params[:'include_anchor_tab_locations'] = options.include_anchor_tab_locations if !options.include_anchor_tab_locations.nil?
       query_params[:'include_extended'] = options.include_extended if !options.include_extended.nil?
-      query_params[:'include_metadata'] = options.include_metadata if !options.include_metadata.nil?
       query_params[:'include_tabs'] = options.include_tabs if !options.include_tabs.nil?
 
       # header parameters
@@ -3250,10 +3630,18 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'ac_status'] = options.ac_status if !options.ac_status.nil?
+      query_params[:'block'] = options.block if !options.block.nil?
+      query_params[:'count'] = options.count if !options.count.nil?
       query_params[:'email'] = options.email if !options.email.nil?
+      query_params[:'envelope_ids'] = options.envelope_ids if !options.envelope_ids.nil?
       query_params[:'from_date'] = options.from_date if !options.from_date.nil?
+      query_params[:'from_to_status'] = options.from_to_status if !options.from_to_status.nil?
       query_params[:'start_position'] = options.start_position if !options.start_position.nil?
+      query_params[:'status'] = options.status if !options.status.nil?
       query_params[:'to_date'] = options.to_date if !options.to_date.nil?
+      query_params[:'transaction_ids'] = options.transaction_ids if !options.transaction_ids.nil?
+      query_params[:'user_name'] = options.user_name if !options.user_name.nil?
 
       # header parameters
       header_params = {}
@@ -3311,23 +3699,12 @@ module DocuSign_eSign
       query_params[:'custom_field'] = options.custom_field if !options.custom_field.nil?
       query_params[:'email'] = options.email if !options.email.nil?
       query_params[:'envelope_ids'] = options.envelope_ids if !options.envelope_ids.nil?
-      query_params[:'exclude'] = options.exclude if !options.exclude.nil?
-      query_params[:'folder_ids'] = options.folder_ids if !options.folder_ids.nil?
-      query_params[:'folder_types'] = options.folder_types if !options.folder_types.nil?
       query_params[:'from_date'] = options.from_date if !options.from_date.nil?
       query_params[:'from_to_status'] = options.from_to_status if !options.from_to_status.nil?
-      query_params[:'include'] = options.include if !options.include.nil?
-      query_params[:'intersecting_folder_ids'] = options.intersecting_folder_ids if !options.intersecting_folder_ids.nil?
-      query_params[:'order'] = options.order if !options.order.nil?
-      query_params[:'order_by'] = options.order_by if !options.order_by.nil?
-      query_params[:'powerformids'] = options.powerformids if !options.powerformids.nil?
-      query_params[:'search_text'] = options.search_text if !options.search_text.nil?
       query_params[:'start_position'] = options.start_position if !options.start_position.nil?
       query_params[:'status'] = options.status if !options.status.nil?
       query_params[:'to_date'] = options.to_date if !options.to_date.nil?
       query_params[:'transaction_ids'] = options.transaction_ids if !options.transaction_ids.nil?
-      query_params[:'user_filter'] = options.user_filter if !options.user_filter.nil?
-      query_params[:'user_id'] = options.user_id if !options.user_id.nil?
       query_params[:'user_name'] = options.user_name if !options.user_name.nil?
 
       # header parameters
@@ -4087,6 +4464,7 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'apply_document_fields'] = options.apply_document_fields if !options.apply_document_fields.nil?
+      query_params[:'persist_tabs'] = options.persist_tabs if !options.persist_tabs.nil?
 
       # header parameters
       header_params = {}
@@ -4373,6 +4751,8 @@ module DocuSign_eSign
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['image/gif'])
 
       # form parameters
       form_params = {}
@@ -4429,6 +4809,8 @@ module DocuSign_eSign
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['image/gif'])
 
       # form parameters
       form_params = {}
@@ -4480,6 +4862,7 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'offline_signing'] = options.offline_signing if !options.offline_signing.nil?
       query_params[:'resend_envelope'] = options.resend_envelope if !options.resend_envelope.nil?
 
       # header parameters
