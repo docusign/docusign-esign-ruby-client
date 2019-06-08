@@ -6,12 +6,12 @@
 
 ## Requirements
 
-- Ruby 2.1.0+
+- Ruby 1.9+
 - Free [Developer Sandbox](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531)
 
 ## Compatibility
 
-- Ruby 2.1.0+
+- Ruby 1.9+
 
 ## Note
 
@@ -37,10 +37,9 @@ This open-source SDK is provided for cases where you would like to make addition
 
 This client has the following external dependencies:
 
-- Jwt-1.5.6
-- Ffi-1.10.0-x64.mingw32
-- Ethon-0.12.0
-- Typhoeus-1.3.1
+- Jwt>=1.5.2
+- Json>=1.8.3
+- Typhoeus>=1.0.1
 
 ## Code Examples
 

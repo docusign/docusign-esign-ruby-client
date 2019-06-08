@@ -57,7 +57,7 @@ describe 'DocuSign Ruby Client Tests' do
 			# STEP 2: Create envelope definition
   		# Add a document to the envelope
 			document_path = "../docs/Test.pdf"
-			document_name = "Test.pdf"
+			document_name = "Test.docx"
 			document = DocuSign_eSign::Document.new
   		document.document_base64 = Base64.encode64(File.open(document_path).read)
   		document.name = document_name
@@ -114,18 +114,18 @@ describe 'DocuSign Ruby Client Tests' do
 
     $auth_header = '{"Username": "%s", "Password": "%s", "IntegratorKey": "%s"}' %[$username, $password, $integrator_key]
 
-    $recipient_email = "node_sdk@mailinator.com"
-    $recipient_name = "Pat Developer"
+		$recipient_email = "node_sdk@mailinator.com"
+		$recipient_name = "Ruby SDK"
 
     # Required for embedded signing url
     $client_user_id = '1234'
     $return_url = 'https://developers.docusign.com/'
     $authentication_method = 'email'
 	    
-    $template_id = 'cf2a46c2-xxxx-xxxx-xxxx-752547b1a419'
+    $template_id = ''
     $envelope_id = nil
 
-    $base_url = 'https://demo.docusign.net/restapi'
+    $base_url = nil
     $account_id = nil
   end
 
@@ -328,10 +328,8 @@ describe 'DocuSign Ruby Client Tests' do
   				if !$envelope_id.nil?
 						api_client = create_api_client()
 						envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
-						
-						options = DocuSign_eSign::ListDocumentsOptions.new
 
-						envelope_documents_result = envelopes_api.list_documents($account_id, $envelope_id, options)
+						envelope_documents_result = envelopes_api.list_documents($account_id, $envelope_id)
 					end
 
 					expect(envelope_documents_result).to be_truthy

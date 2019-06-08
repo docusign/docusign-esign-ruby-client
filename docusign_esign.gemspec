@@ -23,15 +23,15 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/docusign/docusign-ruby-client"
   s.summary     = "DocuSign REST API Ruby Gem"
   s.description = "The DocuSign package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-ruby-client repository. Join the eSign revolution!"
-  # TODO uncommnet and update below with a proper license 
   s.license     = "MIT"
-  s.required_ruby_version = ">= 2.1"
+  s.required_ruby_version = ">= 1.9"
 
-  s.add_dependency 'jwt', '~> 1.0', '>= 1.5.2'
-
+  s.add_runtime_dependency 'jwt', '~> 1.0', '>= 1.5.2'
   s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
-  s.add_runtime_dependency 'json', '~> 2.1', '>= 2.1.0'
+  s.add_runtime_dependency 'json', '~> 1.8', '>= 1.8.3'
 
+  s.add_development_dependency 'rspec-mocks', '~> 3.8', '>= 3.8.0'
+  s.add_development_dependency 'rspec-expectations', '~> 3.8', '>= 3.8.0'
   s.add_development_dependency 'rspec', '~> 3.4', '>= 3.4.0'
   s.add_development_dependency 'vcr', '~> 3.0', '>= 3.0.1'
   s.add_development_dependency 'webmock', '~> 1.24', '>= 1.24.3'

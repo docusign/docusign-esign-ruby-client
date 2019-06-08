@@ -7,29 +7,32 @@ describe 'DocuSign Ruby Client Tests' do
 		begin
 			if $api_client.nil?
 				configuration = DocuSign_eSign::Configuration.new
-		  	configuration.host = $host
+				configuration.host = $host
 
-		  	$api_client = DocuSign_eSign::ApiClient.new(configuration)
-		    $api_client.configure_jwt_authorization_flow($private_key_filename, $auth_server, $integrator_key, $user_id, $expires_in_seconds)
-		  end
+				$api_client = DocuSign_eSign::ApiClient.new(configuration)
+        			$api_client.set_oauth_base_path(DocuSign_eSign::OAuth::DEMO_OAUTH_BASE_PATH)
+				# $api_client.get_authorization_uri($integrator_key,'signature',$return_url,'code')
+				# $api_client.request_jwt_application_token($integrator_key,File.read($private_key_filename),$expires_in_seconds,'' )
+				# code = 'code_here'
+				# $api_client.generate_access_token($integrator_key,$secret,code)
+			end
 
-	  	authentication_api = DocuSign_eSign::AuthenticationApi.new($api_client)
+	  	token_obj = $api_client.request_jwt_user_token($integrator_key,$user_id, File.read($private_key_filename),$expires_in_seconds)
 
-	  	login_options = DocuSign_eSign::LoginOptions.new
+	  	user_info = $api_client.get_user_info(token_obj.access_token)
 
-			login_information = authentication_api.login(login_options)
 
-			if !login_information.nil?
-				login_information.login_accounts.each do |login_account|
-					if login_account.is_default == "true"
-						$base_url = login_account.base_url
-						$account_id = login_account.account_id
+			if !user_info.nil?
+				user_info.accounts.each do |account|
+					if account.is_default == "true"
+						$base_uri = account.base_uri
+						$account_id = account.account_id
 
-						# IMPORTANT: Use the base url from the login account to instantiant the api_client
-						base_uri = URI.parse($base_url)
-				  	$api_client.config.host = "%s://%s/restapi" % [base_uri.scheme, base_uri.host]
+            # IMPORTANT: Use the base url from the login account to instantiant the api_client
+						base_uri = URI.parse($base_uri)
+						$api_client.set_base_path( "%s://%s/restapi" % [base_uri.scheme, base_uri.host])
 
-						return login_account
+						return account
 					end
 				end
 			end
@@ -54,7 +57,7 @@ describe 'DocuSign Ruby Client Tests' do
 			# STEP 2: Create envelope definition
   		# Add a document to the envelope
 			document_path = "../docs/Test.pdf"
-			document_name = "Test.pdf"
+			document_name = "Test.docx"
 			document = DocuSign_eSign::Document.new
   		document.document_base64 = Base64.encode64(File.open(document_path).read)
   		document.name = document_name
@@ -109,22 +112,23 @@ describe 'DocuSign Ruby Client Tests' do
 
   	$integrator_key = 'ae30ea4e-xxxx-xxxx-xxxx-fcb57d2dc4df'
   	$user_id = 'fcc5726c-xxxx-xxxx-xxxx-40bbbe6ca126'
-  	$expires_in_seconds = 3600 #3600 - 1 hour
+  	$expires_in_seconds = 3600 #1 hour
   	$auth_server = 'account-d.docusign.com'
-  	$private_key_filename = '../rsa_keys/private.pem'
+  	$private_key_filename = '../docs/private.pem'
+    $secret = '3b61ffcf-xxxx-xxxx-xxxx-d49f7d82cb55'
 
     $recipient_email = "node_sdk@mailinator.com"
-    $recipient_name = "Pat Developer"
+    $recipient_name = "Ruby SDK"
 
     # Required for embedded signing url
-    $client_user_id = 2939
+    $client_user_id = '1234'
     $return_url = 'https://developers.docusign.com/'
     $authentication_method = 'email'
 	    
-    $template_id = 'cf2a46c2-xxxx-xxxx-xxxx-752547b1a419'
+    $template_id = ''
     $envelope_id = nil
 
-    $base_url = nil
+    $base_uri = nil
     $account_id = nil
     $api_client = nil
   end
@@ -133,19 +137,19 @@ describe 'DocuSign Ruby Client Tests' do
     # run after each test
   end
 
-  describe DocuSign_eSign::AuthenticationApi do
+  describe DocuSign_eSign::OAuth do
   	describe '.login' do
   		context 'given correct credentials' do
-  			it 'return LoginAccount' do
-  				login_account = login()
+  			it 'return Account' do
+  				account = login()
 
-					if !login_account.nil?
-						$base_url = login_account.base_url
-						$account_id = login_account.account_id
+					if !account.nil?
+						$base_uri = account.base_uri
+						$account_id = account.account_id
 					end
 
 		      expect($account_id).to be_truthy
-		      expect($base_url).to be_truthy
+		      expect($base_uri).to be_truthy
   			end
   		end
   	end
@@ -156,7 +160,7 @@ describe 'DocuSign Ruby Client Tests' do
   		context 'request signature on a document' do
   			it 'successfully create an envelope' do
 	  			
-	  			# STEP 1: Login and get the account_id & base_url
+	  			# STEP 1: Login and get the account_id & base_uri
 	  			login()
 
 	  			envelope_summary = create_envelope_on_document('created', true)
@@ -328,10 +332,8 @@ describe 'DocuSign Ruby Client Tests' do
   				if !$envelope_id.nil?
 						api_client = create_api_client()
 						envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
-						
-						options = DocuSign_eSign::ListDocumentsOptions.new
 
-						envelope_documents_result = envelopes_api.list_documents($account_id, $envelope_id, options)
+						envelope_documents_result = envelopes_api.list_documents($account_id, $envelope_id)
 					end
 
 					expect(envelope_documents_result).to be_truthy

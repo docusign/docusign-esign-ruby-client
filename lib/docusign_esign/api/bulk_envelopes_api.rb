@@ -17,7 +17,7 @@ module DocuSign_eSign
     # Specifies the number of entries to return.
     attr_accessor :count
 
-    # Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include=”failed,queued”)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent – This only returns entries with a sent status.  
+    # Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include=Ã¢â¬Âfailed,queuedÃ¢â¬Â)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent Ã¢â¬â This only returns entries with a sent status.  
     attr_accessor :include
 
     # Specifies the location in the list of envelopes from which to start.
@@ -332,6 +332,8 @@ module DocuSign_eSign
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['text/csv'])
 
       # form parameters
       form_params = {}

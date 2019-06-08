@@ -61,6 +61,42 @@ module DocuSign_eSign
     end
   end
 
+  class GetDocumentTabsOptions
+    # 
+    attr_accessor :page_numbers
+
+    def self.default
+      @@default ||= GetDocumentTabsOptions.new
+    end
+  end
+
+  class GetPagesOptions
+    # 
+    attr_accessor :count
+
+    # 
+    attr_accessor :dpi
+
+    # 
+    attr_accessor :max_height
+
+    # 
+    attr_accessor :max_width
+
+    # 
+    attr_accessor :nocache
+
+    # 
+    attr_accessor :show_changes
+
+    # 
+    attr_accessor :start_position
+
+    def self.default
+      @@default ||= GetPagesOptions.new
+    end
+  end
+
   class ListBulkRecipientsOptions
     # 
     attr_accessor :include_tabs
@@ -116,6 +152,12 @@ module DocuSign_eSign
     # A comma separated list of additional template attributes to include in the response. Valid values are: recipients, folders, documents, custom_fields, and notifications.
     attr_accessor :include
 
+    # 
+    attr_accessor :modified_from_date
+
+    # 
+    attr_accessor :modified_to_date
+
     # Sets the direction order used to sort the list. Valid values are: -asc = ascending sort order (a to z)  -desc = descending sort order (z to a)
     attr_accessor :order
 
@@ -124,9 +166,6 @@ module DocuSign_eSign
 
     # The search text used to search the names of templates.
     attr_accessor :search_text
-
-    # 
-    attr_accessor :shared
 
     # If true, the response only includes templates shared by the user. If false, the response only returns template not shared by the user. If not specified, the response is not affected.
     attr_accessor :shared_by_me
@@ -145,6 +184,9 @@ module DocuSign_eSign
 
     # Sets if the templates shown in the response Valid values are:  -owned_by_me: only shows templates the user owns.  -shared_with_me: only shows templates that are shared with the user.  -all: shows all templates owned or shared with the user.
     attr_accessor :user_filter
+
+    # 
+    attr_accessor :user_id
 
     def self.default
       @@default ||= ListTemplatesOptions.new
@@ -166,6 +208,9 @@ module DocuSign_eSign
   class UpdateDocumentsOptions
     # 
     attr_accessor :apply_document_fields
+
+    # 
+    attr_accessor :persist_tabs
 
     def self.default
       @@default ||= UpdateDocumentsOptions.new
@@ -531,7 +576,7 @@ module DocuSign_eSign
     end
 
     # Creates an envelope from a template.
-    # Creates a template definition using a multipart request.  ###Template Email Subject Merge Fields  Call this endpoint to insert a recipient name and email address merge fields into the email subject line when creating or sending from a template.  The merge fields, based on the recipient’s role name, are added to the `emailSubject` property when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.  Both the sender and the recipients will see the information in the email subject line for any emails associated with the template. This provides an easy way for senders to organize their envelope emails without having to open an envelope to check the recipient. ###### Note: If merging the recipient information into the subject line causes the subject line to exceed 100 characters, then any characters over the 100 character limit are not included in the subject line. For cases where the recipient name or email is expected to be long, you should consider placing the merge field at the start of the email subject.  To add a recipient’s name in the subject line add the following text in the `emailSubject` property when creating the template or when sending an envelope from a template:  [[<roleName>_UserName]]  Example:  `\"emailSubject\":\"[[Signer 1_UserName]], Please sign this NDA\",`  To add a recipient’s email address in the subject line add the following text in the `emailSubject` property when creating the template or when sending an envelope from a template:  [[<roleName>_Email]]  Example:  `\"emailSubject\":\"[[Signer 1_Email]], Please sign this NDA\",`   In both cases the <roleName> is the recipient's contents of the `roleName` property in the template.  For cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[<roleName>_UserName]] or [[<roleName>_Email]] is shown in the email subject.
+    # Creates a template definition using a multipart request.  ###Template Email Subject Merge Fields  Call this endpoint to insert a recipient name and email address merge fields into the email subject line when creating or sending from a template.  The merge fields, based on the recipient's role name, are added to the `emailSubject` property when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.  Both the sender and the recipients will see the information in the email subject line for any emails associated with the template. This provides an easy way for senders to organize their envelope emails without having to open an envelope to check the recipient. ###### Note: If merging the recipient information into the subject line causes the subject line to exceed 100 characters, then any characters over the 100 character limit are not included in the subject line. For cases where the recipient name or email is expected to be long, you should consider placing the merge field at the start of the email subject.  To add a recipient's name in the subject line add the following text in the `emailSubject` property when creating the template or when sending an envelope from a template:  [[<roleName>_UserName]]  Example:  `\"emailSubject\":\"[[Signer 1_UserName]], Please sign this NDA\",`  To add a recipient's email address in the subject line add the following text in the `emailSubject` property when creating the template or when sending an envelope from a template:  [[<roleName>_Email]]  Example:  `\"emailSubject\":\"[[Signer 1_Email]], Please sign this NDA\",`   In both cases the <roleName> is the recipient's contents of the `roleName` property in the template.  For cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[<roleName>_UserName]] or [[<roleName>_Email]] is shown in the email subject.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_template  (optional parameter)
     # @return [TemplateSummary]
@@ -541,7 +586,7 @@ module DocuSign_eSign
     end
 
     # Creates an envelope from a template.
-    # Creates a template definition using a multipart request.  ###Template Email Subject Merge Fields  Call this endpoint to insert a recipient name and email address merge fields into the email subject line when creating or sending from a template.  The merge fields, based on the recipient’s role name, are added to the &#x60;emailSubject&#x60; property when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.  Both the sender and the recipients will see the information in the email subject line for any emails associated with the template. This provides an easy way for senders to organize their envelope emails without having to open an envelope to check the recipient. ###### Note: If merging the recipient information into the subject line causes the subject line to exceed 100 characters, then any characters over the 100 character limit are not included in the subject line. For cases where the recipient name or email is expected to be long, you should consider placing the merge field at the start of the email subject.  To add a recipient’s name in the subject line add the following text in the &#x60;emailSubject&#x60; property when creating the template or when sending an envelope from a template:  [[&lt;roleName&gt;_UserName]]  Example:  &#x60;\&quot;emailSubject\&quot;:\&quot;[[Signer 1_UserName]], Please sign this NDA\&quot;,&#x60;  To add a recipient’s email address in the subject line add the following text in the &#x60;emailSubject&#x60; property when creating the template or when sending an envelope from a template:  [[&lt;roleName&gt;_Email]]  Example:  &#x60;\&quot;emailSubject\&quot;:\&quot;[[Signer 1_Email]], Please sign this NDA\&quot;,&#x60;   In both cases the &lt;roleName&gt; is the recipient&#39;s contents of the &#x60;roleName&#x60; property in the template.  For cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[&lt;roleName&gt;_UserName]] or [[&lt;roleName&gt;_Email]] is shown in the email subject.
+    # Creates a template definition using a multipart request.  ###Template Email Subject Merge Fields  Call this endpoint to insert a recipient name and email address merge fields into the email subject line when creating or sending from a template.  The merge fields, based on the recipient&#39;s role name, are added to the &#x60;emailSubject&#x60; property when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.  Both the sender and the recipients will see the information in the email subject line for any emails associated with the template. This provides an easy way for senders to organize their envelope emails without having to open an envelope to check the recipient. ###### Note: If merging the recipient information into the subject line causes the subject line to exceed 100 characters, then any characters over the 100 character limit are not included in the subject line. For cases where the recipient name or email is expected to be long, you should consider placing the merge field at the start of the email subject.  To add a recipient&#39;s name in the subject line add the following text in the &#x60;emailSubject&#x60; property when creating the template or when sending an envelope from a template:  [[&lt;roleName&gt;_UserName]]  Example:  &#x60;\&quot;emailSubject\&quot;:\&quot;[[Signer 1_UserName]], Please sign this NDA\&quot;,&#x60;  To add a recipient&#39;s email address in the subject line add the following text in the &#x60;emailSubject&#x60; property when creating the template or when sending an envelope from a template:  [[&lt;roleName&gt;_Email]]  Example:  &#x60;\&quot;emailSubject\&quot;:\&quot;[[Signer 1_Email]], Please sign this NDA\&quot;,&#x60;   In both cases the &lt;roleName&gt; is the recipient&#39;s contents of the &#x60;roleName&#x60; property in the template.  For cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[&lt;roleName&gt;_UserName]] or [[&lt;roleName&gt;_Email]] is shown in the email subject.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_template  (optional parameter)
     # @return [Array<(TemplateSummary, Fixnum, Hash)>] TemplateSummary data, response status code and response headers
@@ -577,6 +622,120 @@ module DocuSign_eSign
         :return_type => 'TemplateSummary')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TemplatesApi#create_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Post Responsive HTML Preview for a document in a template.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param template_id The ID of the template being accessed.
+    # @param document_html_definition  (optional parameter)
+    # @return [DocumentHtmlDefinitions]
+    def create_template_document_responsive_html_preview(account_id, document_id, template_id, document_html_definition)
+      data, _status_code, _headers = create_template_document_responsive_html_preview_with_http_info(account_id, document_id, template_id,  document_html_definition)
+      return data
+    end
+
+    # Post Responsive HTML Preview for a document in a template.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param template_id The ID of the template being accessed.
+    # @param document_html_definition  (optional parameter)
+    # @return [Array<(DocumentHtmlDefinitions, Fixnum, Hash)>] DocumentHtmlDefinitions data, response status code and response headers
+    def create_template_document_responsive_html_preview_with_http_info(account_id, document_id, template_id, document_html_definition)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: TemplatesApi.create_template_document_responsive_html_preview ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.create_template_document_responsive_html_preview" if account_id.nil?
+      # verify the required parameter 'document_id' is set
+      fail ArgumentError, "Missing the required parameter 'document_id' when calling TemplatesApi.create_template_document_responsive_html_preview" if document_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling TemplatesApi.create_template_document_responsive_html_preview" if template_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/responsive_html_preview".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(document_html_definition)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DocumentHtmlDefinitions')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TemplatesApi#create_template_document_responsive_html_preview\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Responsive HTML Preview for all documents in a template.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param document_html_definition  (optional parameter)
+    # @return [DocumentHtmlDefinitions]
+    def create_template_responsive_html_preview(account_id, template_id, document_html_definition)
+      data, _status_code, _headers = create_template_responsive_html_preview_with_http_info(account_id, template_id,  document_html_definition)
+      return data
+    end
+
+    # Get Responsive HTML Preview for all documents in a template.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param document_html_definition  (optional parameter)
+    # @return [Array<(DocumentHtmlDefinitions, Fixnum, Hash)>] DocumentHtmlDefinitions data, response status code and response headers
+    def create_template_responsive_html_preview_with_http_info(account_id, template_id, document_html_definition)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: TemplatesApi.create_template_responsive_html_preview ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.create_template_responsive_html_preview" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling TemplatesApi.create_template_responsive_html_preview" if template_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/templates/{templateId}/responsive_html_preview".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(document_html_definition)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DocumentHtmlDefinitions')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TemplatesApi#create_template_responsive_html_preview\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1340,6 +1499,66 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Returns tabs on the document.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param template_id The ID of the template being accessed.
+    # @param DocuSign_eSign::GetDocumentTabsOptions Options for modifying the behavior of the function.
+    # @return [Tabs]
+    def get_document_tabs(account_id, document_id, template_id, options = DocuSign_eSign::GetDocumentTabsOptions.default)
+      data, _status_code, _headers = get_document_tabs_with_http_info(account_id, document_id, template_id, options)
+      return data
+    end
+
+    # Returns tabs on the document.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param template_id The ID of the template being accessed.
+    # @param DocuSign_eSign::GetDocumentTabsOptions Options for modifying the behavior of the function.
+    # @return [Array<(Tabs, Fixnum, Hash)>] Tabs data, response status code and response headers
+    def get_document_tabs_with_http_info(account_id, document_id, template_id, options = DocuSign_eSign::GetDocumentTabsOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: TemplatesApi.get_document_tabs ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.get_document_tabs" if account_id.nil?
+      # verify the required parameter 'document_id' is set
+      fail ArgumentError, "Missing the required parameter 'document_id' when calling TemplatesApi.get_document_tabs" if document_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling TemplatesApi.get_document_tabs" if template_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'page_numbers'] = options.page_numbers if !options.page_numbers.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Tabs')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TemplatesApi#get_document_tabs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Gets template lock information.
     # Retrieves general information about the template lock.  If the call is made by the user who has the lock and the request has the same integrator key as original, then the `X-DocuSign-Edit` header  field and additional lock information is included in the response. This allows users to recover a lost editing session token and the `X-DocuSign-Edit` header.
     # @param account_id The external account number (int) or account ID Guid.
@@ -1442,6 +1661,243 @@ module DocuSign_eSign
         :return_type => 'Notification')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TemplatesApi#get_notification_settings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns tabs on the specified page.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param page_number The page number being accessed.
+    # @param template_id The ID of the template being accessed.
+    # @return [Tabs]
+    def get_page_tabs(account_id, document_id, page_number, template_id)
+      data, _status_code, _headers = get_page_tabs_with_http_info(account_id, document_id, page_number, template_id)
+      return data
+    end
+
+    # Returns tabs on the specified page.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param page_number The page number being accessed.
+    # @param template_id The ID of the template being accessed.
+    # @return [Array<(Tabs, Fixnum, Hash)>] Tabs data, response status code and response headers
+    def get_page_tabs_with_http_info(account_id, document_id, page_number, template_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: TemplatesApi.get_page_tabs ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.get_page_tabs" if account_id.nil?
+      # verify the required parameter 'document_id' is set
+      fail ArgumentError, "Missing the required parameter 'document_id' when calling TemplatesApi.get_page_tabs" if document_id.nil?
+      # verify the required parameter 'page_number' is set
+      fail ArgumentError, "Missing the required parameter 'page_number' when calling TemplatesApi.get_page_tabs" if page_number.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling TemplatesApi.get_page_tabs" if template_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/tabs".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s).sub('{' + 'pageNumber' + '}', page_number.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Tabs')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TemplatesApi#get_page_tabs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns document page image(s) based on input.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param template_id The ID of the template being accessed.
+    # @param DocuSign_eSign::GetPagesOptions Options for modifying the behavior of the function.
+    # @return [PageImages]
+    def get_pages(account_id, document_id, template_id, options = DocuSign_eSign::GetPagesOptions.default)
+      data, _status_code, _headers = get_pages_with_http_info(account_id, document_id, template_id, options)
+      return data
+    end
+
+    # Returns document page image(s) based on input.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param template_id The ID of the template being accessed.
+    # @param DocuSign_eSign::GetPagesOptions Options for modifying the behavior of the function.
+    # @return [Array<(PageImages, Fixnum, Hash)>] PageImages data, response status code and response headers
+    def get_pages_with_http_info(account_id, document_id, template_id, options = DocuSign_eSign::GetPagesOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: TemplatesApi.get_pages ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.get_pages" if account_id.nil?
+      # verify the required parameter 'document_id' is set
+      fail ArgumentError, "Missing the required parameter 'document_id' when calling TemplatesApi.get_pages" if document_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling TemplatesApi.get_pages" if template_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'count'] = options.count if !options.count.nil?
+      query_params[:'dpi'] = options.dpi if !options.dpi.nil?
+      query_params[:'max_height'] = options.max_height if !options.max_height.nil?
+      query_params[:'max_width'] = options.max_width if !options.max_width.nil?
+      query_params[:'nocache'] = options.nocache if !options.nocache.nil?
+      query_params[:'show_changes'] = options.show_changes if !options.show_changes.nil?
+      query_params[:'start_position'] = options.start_position if !options.start_position.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'PageImages')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TemplatesApi#get_pages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param template_id The ID of the template being accessed.
+    # @return [DocumentHtmlDefinitionOriginals]
+    def get_template_document_html_definitions(account_id, document_id, template_id)
+      data, _status_code, _headers = get_template_document_html_definitions_with_http_info(account_id, document_id, template_id)
+      return data
+    end
+
+    # Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param template_id The ID of the template being accessed.
+    # @return [Array<(DocumentHtmlDefinitionOriginals, Fixnum, Hash)>] DocumentHtmlDefinitionOriginals data, response status code and response headers
+    def get_template_document_html_definitions_with_http_info(account_id, document_id, template_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: TemplatesApi.get_template_document_html_definitions ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.get_template_document_html_definitions" if account_id.nil?
+      # verify the required parameter 'document_id' is set
+      fail ArgumentError, "Missing the required parameter 'document_id' when calling TemplatesApi.get_template_document_html_definitions" if document_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling TemplatesApi.get_template_document_html_definitions" if template_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/html_definitions".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DocumentHtmlDefinitionOriginals')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TemplatesApi#get_template_document_html_definitions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get the Original HTML Definition used to generate the Responsive HTML for the template.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @return [DocumentHtmlDefinitionOriginals]
+    def get_template_html_definitions(account_id, template_id)
+      data, _status_code, _headers = get_template_html_definitions_with_http_info(account_id, template_id)
+      return data
+    end
+
+    # Get the Original HTML Definition used to generate the Responsive HTML for the template.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @return [Array<(DocumentHtmlDefinitionOriginals, Fixnum, Hash)>] DocumentHtmlDefinitionOriginals data, response status code and response headers
+    def get_template_html_definitions_with_http_info(account_id, template_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: TemplatesApi.get_template_html_definitions ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.get_template_html_definitions" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling TemplatesApi.get_template_html_definitions" if template_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/templates/{templateId}/html_definitions".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DocumentHtmlDefinitionOriginals')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TemplatesApi#get_template_html_definitions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1820,16 +2276,18 @@ module DocuSign_eSign
       query_params[:'folder_ids'] = options.folder_ids if !options.folder_ids.nil?
       query_params[:'from_date'] = options.from_date if !options.from_date.nil?
       query_params[:'include'] = options.include if !options.include.nil?
+      query_params[:'modified_from_date'] = options.modified_from_date if !options.modified_from_date.nil?
+      query_params[:'modified_to_date'] = options.modified_to_date if !options.modified_to_date.nil?
       query_params[:'order'] = options.order if !options.order.nil?
       query_params[:'order_by'] = options.order_by if !options.order_by.nil?
       query_params[:'search_text'] = options.search_text if !options.search_text.nil?
-      query_params[:'shared'] = options.shared if !options.shared.nil?
       query_params[:'shared_by_me'] = options.shared_by_me if !options.shared_by_me.nil?
       query_params[:'start_position'] = options.start_position if !options.start_position.nil?
       query_params[:'to_date'] = options.to_date if !options.to_date.nil?
       query_params[:'used_from_date'] = options.used_from_date if !options.used_from_date.nil?
       query_params[:'used_to_date'] = options.used_to_date if !options.used_to_date.nil?
       query_params[:'user_filter'] = options.user_filter if !options.user_filter.nil?
+      query_params[:'user_id'] = options.user_id if !options.user_id.nil?
 
       # header parameters
       header_params = {}
@@ -2241,6 +2699,7 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'apply_document_fields'] = options.apply_document_fields if !options.apply_document_fields.nil?
+      query_params[:'persist_tabs'] = options.persist_tabs if !options.persist_tabs.nil?
 
       # header parameters
       header_params = {}

@@ -333,57 +333,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Reserved
-    # Reserved:
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param mobile_notifier_configuration_information  (optional parameter)
-    # @return [MobileNotifierConfigurationInformation]
-    def delete_mobile_notifiers(account_id, mobile_notifier_configuration_information)
-      data, _status_code, _headers = delete_mobile_notifiers_with_http_info(account_id,  mobile_notifier_configuration_information)
-      return data
-    end
-
-    # Reserved
-    # Reserved:
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param mobile_notifier_configuration_information  (optional parameter)
-    # @return [Array<(MobileNotifierConfigurationInformation, Fixnum, Hash)>] MobileNotifierConfigurationInformation data, response status code and response headers
-    def delete_mobile_notifiers_with_http_info(account_id, mobile_notifier_configuration_information)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ConnectApi.delete_mobile_notifiers ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.delete_mobile_notifiers" if account_id.nil?
-      # resource path
-      local_var_path = "/v2/accounts/{accountId}/connect/mobile_notifiers".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(mobile_notifier_configuration_information)
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'MobileNotifierConfigurationInformation')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ConnectApi#delete_mobile_notifiers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Get a Connect Configuration Information
     # Retrieves the information for the specified DocuSign Connect configuration.  ###### Note: Connect must be enabled for your account to use this function. 
     # @param account_id The external account number (int) or account ID Guid.
@@ -648,55 +597,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Reserved
-    # Reserved:
-    # @param account_id The external account number (int) or account ID Guid.
-    # @return [MobileNotifierConfigurationInformation]
-    def list_mobile_notifiers(account_id)
-      data, _status_code, _headers = list_mobile_notifiers_with_http_info(account_id)
-      return data
-    end
-
-    # Reserved
-    # Reserved:
-    # @param account_id The external account number (int) or account ID Guid.
-    # @return [Array<(MobileNotifierConfigurationInformation, Fixnum, Hash)>] MobileNotifierConfigurationInformation data, response status code and response headers
-    def list_mobile_notifiers_with_http_info(account_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ConnectApi.list_mobile_notifiers ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.list_mobile_notifiers" if account_id.nil?
-      # resource path
-      local_var_path = "/v2/accounts/{accountId}/connect/mobile_notifiers".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'MobileNotifierConfigurationInformation')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ConnectApi#list_mobile_notifiers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Returns users from the configured Connect service.
     # Returns users from the configured Connect service.
     # @param account_id The external account number (int) or account ID Guid.
@@ -909,57 +809,6 @@ module DocuSign_eSign
         :return_type => 'ConnectCustomConfiguration')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ConnectApi#update_configuration\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Reserved
-    # Reserved:
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param mobile_notifier_configuration_information  (optional parameter)
-    # @return [MobileNotifierConfigurationInformation]
-    def update_mobile_notifiers(account_id, mobile_notifier_configuration_information)
-      data, _status_code, _headers = update_mobile_notifiers_with_http_info(account_id,  mobile_notifier_configuration_information)
-      return data
-    end
-
-    # Reserved
-    # Reserved:
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param mobile_notifier_configuration_information  (optional parameter)
-    # @return [Array<(MobileNotifierConfigurationInformation, Fixnum, Hash)>] MobileNotifierConfigurationInformation data, response status code and response headers
-    def update_mobile_notifiers_with_http_info(account_id, mobile_notifier_configuration_information)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ConnectApi.update_mobile_notifiers ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.update_mobile_notifiers" if account_id.nil?
-      # resource path
-      local_var_path = "/v2/accounts/{accountId}/connect/mobile_notifiers".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(mobile_notifier_configuration_information)
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'MobileNotifierConfigurationInformation')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ConnectApi#update_mobile_notifiers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

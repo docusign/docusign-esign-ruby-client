@@ -14,11 +14,17 @@ require 'date'
 module DocuSign_eSign
 
   class Signer
-    # If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account’s access code format setting.  If blank, but the signer `accessCode` property is set in the envelope, then that value is used.  If blank and the signer `accessCode` property is not set, then the access code is not required.
+    # If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account's access code format setting.  If blank, but the signer `accessCode` property is set in the envelope, then that value is used.  If blank and the signer `accessCode` property is not set, then the access code is not required.
     attr_accessor :access_code
 
     # This Optional attribute indicates that the access code will be added to the email sent to the recipient; this nullifies the Security measure of Access Code on the recipient.
     attr_accessor :add_access_code_to_email
+
+    # 
+    attr_accessor :agent_can_edit_email
+
+    # 
+    attr_accessor :agent_can_edit_name
 
     # 
     attr_accessor :auto_navigation
@@ -64,7 +70,7 @@ module DocuSign_eSign
     # 
     attr_accessor :email_recipient_post_signing_url
 
-    # Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender’s system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to `SIGN_AT_DOCUSIGN`, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient’s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets `EmbeddedRecipientStartURL=SIGN_AT_DOCUSIGN`, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the `clientUserId` property is NOT set, and the `embeddedRecipientStartURL` is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The `customFields` property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   `http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&[[mergeField3]]` 
+    # Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender's system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to `SIGN_AT_DOCUSIGN`, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient's identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets `EmbeddedRecipientStartURL=SIGN_AT_DOCUSIGN`, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the `clientUserId` property is NOT set, and the `embeddedRecipientStartURL` is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The `customFields` property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   `http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&[[mergeField3]]` 
     attr_accessor :embedded_recipient_start_url
 
     attr_accessor :error_details
@@ -74,6 +80,12 @@ module DocuSign_eSign
 
     # Reserved:
     attr_accessor :fax_number
+
+    # The user's first name.  Maximum Length: 50 characters.
+    attr_accessor :first_name
+
+    # 
+    attr_accessor :full_name
 
     # Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as 'ID Check $' and 'SMS Auth $'. To use ID check in an envelope, the idCheckConfigurationName should be 'ID Check '. If you wanted to use SMS, it would be 'SMS Auth $' and you would need to add you would need to add phone number information to the `smsAuthentication` node.
     attr_accessor :id_check_configuration_name
@@ -85,6 +97,9 @@ module DocuSign_eSign
 
     # When set to **true**, this signer is a bulk recipient and the recipient information is contained in a bulk recipient file.   Note that when this is true the email and name for the recipient becomes bulk@recipient.com and \"Bulk Recipient\". These fields can not be changed for the bulk recipient.  
     attr_accessor :is_bulk_recipient
+
+    # 
+    attr_accessor :last_name
 
     # 
     attr_accessor :name
@@ -116,7 +131,7 @@ module DocuSign_eSign
     # When set to **true**, the recipient is required to use the specified ID check method (including Phone and SMS authentication) to validate their identity. 
     attr_accessor :require_id_lookup
 
-    # Sets the type of signer certificate required for signing. If left blank, no certificate is required. Only one type of certificate can be set for a signer. The possible values are:  * docusign_express – Requires a DocuSign Express certificate. * safe – Requires a SAFE-BioPharma certificate. * open_trust – Requires an OpenTrust certificate.   **Important**: There are certain rules and restrictions that must be followed when requiring OpenTrust digital signatures. See [ML:OpenTrust Rules and Restrictions] for more information.   
+    # Sets the type of signer certificate required for signing. If left blank, no certificate is required. Only one type of certificate can be set for a signer. The possible values are:  * docusign_express - Requires a DocuSign Express certificate. * safe - Requires a SAFE-BioPharma certificate. * open_trust - Requires an OpenTrust certificate.   **Important**: There are certain rules and restrictions that must be followed when requiring OpenTrust digital signatures. See [ML:OpenTrust Rules and Restrictions] for more information.   
     attr_accessor :require_signer_certificate
 
     # When set to **true**, the signer must print, sign, and upload or fax the signed documents to DocuSign.
@@ -178,6 +193,8 @@ module DocuSign_eSign
       {
         :'access_code' => :'accessCode',
         :'add_access_code_to_email' => :'addAccessCodeToEmail',
+        :'agent_can_edit_email' => :'agentCanEditEmail',
+        :'agent_can_edit_name' => :'agentCanEditName',
         :'auto_navigation' => :'autoNavigation',
         :'bulk_recipients_uri' => :'bulkRecipientsUri',
         :'can_sign_offline' => :'canSignOffline',
@@ -197,10 +214,13 @@ module DocuSign_eSign
         :'error_details' => :'errorDetails',
         :'excluded_documents' => :'excludedDocuments',
         :'fax_number' => :'faxNumber',
+        :'first_name' => :'firstName',
+        :'full_name' => :'fullName',
         :'id_check_configuration_name' => :'idCheckConfigurationName',
         :'id_check_information_input' => :'idCheckInformationInput',
         :'inherit_email_notification_configuration' => :'inheritEmailNotificationConfiguration',
         :'is_bulk_recipient' => :'isBulkRecipient',
+        :'last_name' => :'lastName',
         :'name' => :'name',
         :'note' => :'note',
         :'offline_attributes' => :'offlineAttributes',
@@ -240,6 +260,8 @@ module DocuSign_eSign
       {
         :'access_code' => :'String',
         :'add_access_code_to_email' => :'String',
+        :'agent_can_edit_email' => :'String',
+        :'agent_can_edit_name' => :'String',
         :'auto_navigation' => :'String',
         :'bulk_recipients_uri' => :'String',
         :'can_sign_offline' => :'String',
@@ -259,10 +281,13 @@ module DocuSign_eSign
         :'error_details' => :'ErrorDetails',
         :'excluded_documents' => :'Array<String>',
         :'fax_number' => :'String',
+        :'first_name' => :'String',
+        :'full_name' => :'String',
         :'id_check_configuration_name' => :'String',
         :'id_check_information_input' => :'IdCheckInformationInput',
         :'inherit_email_notification_configuration' => :'String',
         :'is_bulk_recipient' => :'String',
+        :'last_name' => :'String',
         :'name' => :'String',
         :'note' => :'String',
         :'offline_attributes' => :'OfflineAttributes',
@@ -311,6 +336,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'addAccessCodeToEmail')
         self.add_access_code_to_email = attributes[:'addAccessCodeToEmail']
+      end
+
+      if attributes.has_key?(:'agentCanEditEmail')
+        self.agent_can_edit_email = attributes[:'agentCanEditEmail']
+      end
+
+      if attributes.has_key?(:'agentCanEditName')
+        self.agent_can_edit_name = attributes[:'agentCanEditName']
       end
 
       if attributes.has_key?(:'autoNavigation')
@@ -395,6 +428,14 @@ module DocuSign_eSign
         self.fax_number = attributes[:'faxNumber']
       end
 
+      if attributes.has_key?(:'firstName')
+        self.first_name = attributes[:'firstName']
+      end
+
+      if attributes.has_key?(:'fullName')
+        self.full_name = attributes[:'fullName']
+      end
+
       if attributes.has_key?(:'idCheckConfigurationName')
         self.id_check_configuration_name = attributes[:'idCheckConfigurationName']
       end
@@ -409,6 +450,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'isBulkRecipient')
         self.is_bulk_recipient = attributes[:'isBulkRecipient']
+      end
+
+      if attributes.has_key?(:'lastName')
+        self.last_name = attributes[:'lastName']
       end
 
       if attributes.has_key?(:'name')
@@ -565,6 +610,8 @@ module DocuSign_eSign
       self.class == o.class &&
           access_code == o.access_code &&
           add_access_code_to_email == o.add_access_code_to_email &&
+          agent_can_edit_email == o.agent_can_edit_email &&
+          agent_can_edit_name == o.agent_can_edit_name &&
           auto_navigation == o.auto_navigation &&
           bulk_recipients_uri == o.bulk_recipients_uri &&
           can_sign_offline == o.can_sign_offline &&
@@ -584,10 +631,13 @@ module DocuSign_eSign
           error_details == o.error_details &&
           excluded_documents == o.excluded_documents &&
           fax_number == o.fax_number &&
+          first_name == o.first_name &&
+          full_name == o.full_name &&
           id_check_configuration_name == o.id_check_configuration_name &&
           id_check_information_input == o.id_check_information_input &&
           inherit_email_notification_configuration == o.inherit_email_notification_configuration &&
           is_bulk_recipient == o.is_bulk_recipient &&
+          last_name == o.last_name &&
           name == o.name &&
           note == o.note &&
           offline_attributes == o.offline_attributes &&
@@ -630,7 +680,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, add_access_code_to_email, auto_navigation, bulk_recipients_uri, can_sign_offline, client_user_id, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, document_visibility, email, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, id_check_configuration_name, id_check_information_input, inherit_email_notification_configuration, is_bulk_recipient, name, note, offline_attributes, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, require_id_lookup, require_signer_certificate, require_sign_on_paper, role_name, routing_order, saml_authentication, sent_date_time, signature_info, signed_date_time, sign_in_each_location, signing_group_id, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, tabs, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, add_access_code_to_email, agent_can_edit_email, agent_can_edit_name, auto_navigation, bulk_recipients_uri, can_sign_offline, client_user_id, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, document_visibility, email, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, first_name, full_name, id_check_configuration_name, id_check_information_input, inherit_email_notification_configuration, is_bulk_recipient, last_name, name, note, offline_attributes, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, require_id_lookup, require_signer_certificate, require_sign_on_paper, role_name, routing_order, saml_authentication, sent_date_time, signature_info, signed_date_time, sign_in_each_location, signing_group_id, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, tabs, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash

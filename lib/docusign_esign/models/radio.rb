@@ -32,10 +32,10 @@ module DocuSign_eSign
     # Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches.
     attr_accessor :anchor_units
 
-    # Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.
+    # Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.
     attr_accessor :anchor_x_offset
 
-    # Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.
+    # Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.
     attr_accessor :anchor_y_offset
 
     attr_accessor :error_details
