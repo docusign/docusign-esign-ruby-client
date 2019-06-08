@@ -32,7 +32,7 @@ module DocuSign_eSign
     # Specifies a tag on the document where you want to give the recipient the option of declining an envelope. If the recipient clicks the Decline tag during the signing process, the envelope is voided.
     attr_accessor :decline_tabs
 
-    # Specifies a location on the document where you want where you want the recipient’s email, as entered in the recipient information, to display.
+    # Specifies a location on the document where you want where you want the recipient's email, as entered in the recipient information, to display.
     attr_accessor :email_address_tabs
 
     # Specifies a tag on the document where you want the recipient to enter an email. Email tags are single-line fields that accept any characters. The system checks that a valid email format (i.e. xxx@yyy.zzz) is entered in the tag. It uses the same parameters as a Text tab, with the validation message and pattern set for email information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
@@ -53,11 +53,14 @@ module DocuSign_eSign
     # Specifies a tag location in the document at which a recipient will place their initials. The `optional` parameter specifies whether the initials are required or optional.
     attr_accessor :initial_here_tabs
 
-    # Specifies a tag on a document where you want the recipient’s last name to appear. This tag takes the recipient’s name, as entered in the recipient information, splits it into sections based on spaces and uses the last section as the last name.
+    # Specifies a tag on a document where you want the recipient's last name to appear. This tag takes the recipient's name, as entered in the recipient information, splits it into sections based on spaces and uses the last section as the last name.
     attr_accessor :last_name_tabs
 
     # Specify this tag to give your recipient a list of options, presented as a drop-down list, from which they can select.
     attr_accessor :list_tabs
+
+    # 
+    attr_accessor :notarize_tabs
 
     # Specifies a location on the document where you want to place additional information, in the form of a note, for a recipient.
     attr_accessor :note_tabs
@@ -73,6 +76,9 @@ module DocuSign_eSign
 
     # A complex type the contains information about the tag that specifies where the recipient places their signature in the document. The \"optional\" parameter sets if the signature is required or optional. 
     attr_accessor :sign_here_tabs
+
+    # 
+    attr_accessor :smart_section_tabs
 
     # Specifies a tag on the document where you want the recipient to enter a Social Security Number (SSN). A SSN can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for SSN information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
     attr_accessor :ssn_tabs
@@ -108,11 +114,13 @@ module DocuSign_eSign
         :'initial_here_tabs' => :'initialHereTabs',
         :'last_name_tabs' => :'lastNameTabs',
         :'list_tabs' => :'listTabs',
+        :'notarize_tabs' => :'notarizeTabs',
         :'note_tabs' => :'noteTabs',
         :'number_tabs' => :'numberTabs',
         :'radio_group_tabs' => :'radioGroupTabs',
         :'signer_attachment_tabs' => :'signerAttachmentTabs',
         :'sign_here_tabs' => :'signHereTabs',
+        :'smart_section_tabs' => :'smartSectionTabs',
         :'ssn_tabs' => :'ssnTabs',
         :'text_tabs' => :'textTabs',
         :'title_tabs' => :'titleTabs',
@@ -139,11 +147,13 @@ module DocuSign_eSign
         :'initial_here_tabs' => :'Array<InitialHere>',
         :'last_name_tabs' => :'Array<LastName>',
         :'list_tabs' => :'Array<Array>',
+        :'notarize_tabs' => :'Array<Notarize>',
         :'note_tabs' => :'Array<Note>',
         :'number_tabs' => :'Array<Number>',
         :'radio_group_tabs' => :'Array<RadioGroup>',
         :'signer_attachment_tabs' => :'Array<SignerAttachment>',
         :'sign_here_tabs' => :'Array<SignHere>',
+        :'smart_section_tabs' => :'Array<SmartSection>',
         :'ssn_tabs' => :'Array<Ssn>',
         :'text_tabs' => :'Array<Text>',
         :'title_tabs' => :'Array<Title>',
@@ -250,6 +260,12 @@ module DocuSign_eSign
         end
       end
 
+      if attributes.has_key?(:'notarizeTabs')
+        if (value = attributes[:'notarizeTabs']).is_a?(Array)
+          self.notarize_tabs = value
+        end
+      end
+
       if attributes.has_key?(:'noteTabs')
         if (value = attributes[:'noteTabs']).is_a?(Array)
           self.note_tabs = value
@@ -277,6 +293,12 @@ module DocuSign_eSign
       if attributes.has_key?(:'signHereTabs')
         if (value = attributes[:'signHereTabs']).is_a?(Array)
           self.sign_here_tabs = value
+        end
+      end
+
+      if attributes.has_key?(:'smartSectionTabs')
+        if (value = attributes[:'smartSectionTabs']).is_a?(Array)
+          self.smart_section_tabs = value
         end
       end
 
@@ -345,11 +367,13 @@ module DocuSign_eSign
           initial_here_tabs == o.initial_here_tabs &&
           last_name_tabs == o.last_name_tabs &&
           list_tabs == o.list_tabs &&
+          notarize_tabs == o.notarize_tabs &&
           note_tabs == o.note_tabs &&
           number_tabs == o.number_tabs &&
           radio_group_tabs == o.radio_group_tabs &&
           signer_attachment_tabs == o.signer_attachment_tabs &&
           sign_here_tabs == o.sign_here_tabs &&
+          smart_section_tabs == o.smart_section_tabs &&
           ssn_tabs == o.ssn_tabs &&
           text_tabs == o.text_tabs &&
           title_tabs == o.title_tabs &&
@@ -366,7 +390,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [approve_tabs, checkbox_tabs, company_tabs, date_signed_tabs, date_tabs, decline_tabs, email_address_tabs, email_tabs, envelope_id_tabs, first_name_tabs, formula_tabs, full_name_tabs, initial_here_tabs, last_name_tabs, list_tabs, note_tabs, number_tabs, radio_group_tabs, signer_attachment_tabs, sign_here_tabs, ssn_tabs, text_tabs, title_tabs, view_tabs, zip_tabs].hash
+      [approve_tabs, checkbox_tabs, company_tabs, date_signed_tabs, date_tabs, decline_tabs, email_address_tabs, email_tabs, envelope_id_tabs, first_name_tabs, formula_tabs, full_name_tabs, initial_here_tabs, last_name_tabs, list_tabs, notarize_tabs, note_tabs, number_tabs, radio_group_tabs, signer_attachment_tabs, sign_here_tabs, smart_section_tabs, ssn_tabs, text_tabs, title_tabs, view_tabs, zip_tabs].hash
     end
 
     # Builds the object from hash

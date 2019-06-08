@@ -29,7 +29,7 @@ module DocuSign_eSign
     # This turns Connect logging on or off. When set to **true**, logging is turned on.
     attr_accessor :enable_log
 
-    # A comma separated list of �Envelope� related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
+    # A comma separated list of Ã¯Â¿Â½EnvelopeÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
     attr_accessor :envelope_events
 
     # When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. 
@@ -47,6 +47,9 @@ module DocuSign_eSign
     # When set to **true**, Connect will include the voidedReason for voided envelopes.
     attr_accessor :include_envelope_void_reason
 
+    # 
+    attr_accessor :include_hmac
+
     # When set to **true**, Connect will include the sender account as Custom Field in the data.
     attr_accessor :include_sender_accountas_custom_field
 
@@ -56,7 +59,7 @@ module DocuSign_eSign
     # The name of the Connect configuration. The name helps identify the configuration in the list.
     attr_accessor :name
 
-    # A comma separated list of �Recipient� related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
+    # A comma separated list of Ã¯Â¿Â½RecipientÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
     attr_accessor :recipient_events
 
     # When set to **true**, and a publication message fails to be acknowledged, the message goes back into the queue and the system will retry delivery after a successful acknowledgement is received. If the delivery fails a second time, the message is not returned to the queue for sending until Connect receives a successful acknowledgement and it has been at least 24 hours since the previous retry. There is a maximum of ten retries Alternately, you can use Republish Connect Information to manually republish the envelope information.
@@ -71,7 +74,7 @@ module DocuSign_eSign
     # This is the web address and name of your listener or Retrieving Service endpoint. You need to include HTTPS:// in the web address.
     attr_accessor :url_to_publish_to
 
-    # A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to �false� then you must provide a list of user id�s.
+    # A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to Ã¯Â¿Â½falseÃ¯Â¿Â½ then you must provide a list of user idÃ¯Â¿Â½s.
     attr_accessor :user_ids
 
     # When set to **true**, indicates that the `urlToPublishTo` property contains a SOAP endpoint.
@@ -92,6 +95,7 @@ module DocuSign_eSign
         :'include_document_fields' => :'includeDocumentFields',
         :'include_documents' => :'includeDocuments',
         :'include_envelope_void_reason' => :'includeEnvelopeVoidReason',
+        :'include_hmac' => :'includeHMAC',
         :'include_sender_accountas_custom_field' => :'includeSenderAccountasCustomField',
         :'include_time_zone_information' => :'includeTimeZoneInformation',
         :'name' => :'name',
@@ -119,6 +123,7 @@ module DocuSign_eSign
         :'include_document_fields' => :'String',
         :'include_documents' => :'String',
         :'include_envelope_void_reason' => :'String',
+        :'include_hmac' => :'String',
         :'include_sender_accountas_custom_field' => :'String',
         :'include_time_zone_information' => :'String',
         :'name' => :'String',
@@ -182,6 +187,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'includeEnvelopeVoidReason')
         self.include_envelope_void_reason = attributes[:'includeEnvelopeVoidReason']
+      end
+
+      if attributes.has_key?(:'includeHMAC')
+        self.include_hmac = attributes[:'includeHMAC']
       end
 
       if attributes.has_key?(:'includeSenderAccountasCustomField')
@@ -255,6 +264,7 @@ module DocuSign_eSign
           include_document_fields == o.include_document_fields &&
           include_documents == o.include_documents &&
           include_envelope_void_reason == o.include_envelope_void_reason &&
+          include_hmac == o.include_hmac &&
           include_sender_accountas_custom_field == o.include_sender_accountas_custom_field &&
           include_time_zone_information == o.include_time_zone_information &&
           name == o.name &&
@@ -276,7 +286,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_envelope_publish, all_users, configuration_type, connect_id, enable_log, envelope_events, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_sender_accountas_custom_field, include_time_zone_information, name, recipient_events, requires_acknowledgement, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, use_soap_interface].hash
+      [allow_envelope_publish, all_users, configuration_type, connect_id, enable_log, envelope_events, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_accountas_custom_field, include_time_zone_information, name, recipient_events, requires_acknowledgement, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, use_soap_interface].hash
     end
 
     # Builds the object from hash

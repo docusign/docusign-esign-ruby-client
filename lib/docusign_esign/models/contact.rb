@@ -18,6 +18,9 @@ module DocuSign_eSign
     attr_accessor :contact_id
 
     # 
+    attr_accessor :contact_phone_numbers
+
+    # 
     attr_accessor :contact_uri
 
     # 
@@ -45,6 +48,7 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'contact_id' => :'contactId',
+        :'contact_phone_numbers' => :'contactPhoneNumbers',
         :'contact_uri' => :'contactUri',
         :'emails' => :'emails',
         :'error_details' => :'errorDetails',
@@ -60,6 +64,7 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'contact_id' => :'String',
+        :'contact_phone_numbers' => :'Array<ContactPhoneNumber>',
         :'contact_uri' => :'String',
         :'emails' => :'Array<String>',
         :'error_details' => :'ErrorDetails',
@@ -81,6 +86,12 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'contactId')
         self.contact_id = attributes[:'contactId']
+      end
+
+      if attributes.has_key?(:'contactPhoneNumbers')
+        if (value = attributes[:'contactPhoneNumbers']).is_a?(Array)
+          self.contact_phone_numbers = value
+        end
       end
 
       if attributes.has_key?(:'contactUri')
@@ -138,6 +149,7 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           contact_id == o.contact_id &&
+          contact_phone_numbers == o.contact_phone_numbers &&
           contact_uri == o.contact_uri &&
           emails == o.emails &&
           error_details == o.error_details &&
@@ -157,7 +169,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [contact_id, contact_uri, emails, error_details, name, organization, shared, signing_group, signing_group_name].hash
+      [contact_id, contact_phone_numbers, contact_uri, emails, error_details, name, organization, shared, signing_group, signing_group_name].hash
     end
 
     # Builds the object from hash

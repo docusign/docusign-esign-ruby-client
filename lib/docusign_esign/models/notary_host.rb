@@ -14,7 +14,7 @@ require 'date'
 module DocuSign_eSign
 
   class NotaryHost
-    # If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account’s access code format setting.  If blank, but the signer `accessCode` property is set in the envelope, then that value is used.  If blank and the signer `accessCode` property is not set, then the access code is not required.
+    # If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account's access code format setting.  If blank, but the signer `accessCode` property is set in the envelope, then that value is used.  If blank and the signer `accessCode` property is not set, then the access code is not required.
     attr_accessor :access_code
 
     # This Optional attribute indicates that the access code will be added to the email sent to the recipient; this nullifies the Security measure of Access Code on the recipient.
@@ -46,7 +46,7 @@ module DocuSign_eSign
 
     attr_accessor :email_notification
 
-    # Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender’s system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to `SIGN_AT_DOCUSIGN`, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient’s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets `EmbeddedRecipientStartURL=SIGN_AT_DOCUSIGN`, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the `clientUserId` property is NOT set, and the `embeddedRecipientStartURL` is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The `customFields` property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   `http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&[[mergeField3]]` 
+    # Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender's system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to `SIGN_AT_DOCUSIGN`, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient's identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets `EmbeddedRecipientStartURL=SIGN_AT_DOCUSIGN`, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the `clientUserId` property is NOT set, and the `embeddedRecipientStartURL` is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The `customFields` property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   `http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&[[mergeField3]]` 
     attr_accessor :embedded_recipient_start_url
 
     attr_accessor :error_details
@@ -67,10 +67,6 @@ module DocuSign_eSign
 
     # 
     attr_accessor :name
-
-    attr_accessor :notary_email_metadata
-
-    attr_accessor :notary_name_metadata
 
     # Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters.
     attr_accessor :note
@@ -113,6 +109,8 @@ module DocuSign_eSign
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
     attr_accessor :status
 
+    attr_accessor :tabs
+
     # When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
     attr_accessor :template_locked
 
@@ -148,8 +146,6 @@ module DocuSign_eSign
         :'id_check_information_input' => :'idCheckInformationInput',
         :'inherit_email_notification_configuration' => :'inheritEmailNotificationConfiguration',
         :'name' => :'name',
-        :'notary_email_metadata' => :'notaryEmailMetadata',
-        :'notary_name_metadata' => :'notaryNameMetadata',
         :'note' => :'note',
         :'phone_authentication' => :'phoneAuthentication',
         :'recipient_attachments' => :'recipientAttachments',
@@ -165,6 +161,7 @@ module DocuSign_eSign
         :'sms_authentication' => :'smsAuthentication',
         :'social_authentications' => :'socialAuthentications',
         :'status' => :'status',
+        :'tabs' => :'tabs',
         :'template_locked' => :'templateLocked',
         :'template_required' => :'templateRequired',
         :'total_tab_count' => :'totalTabCount',
@@ -194,8 +191,6 @@ module DocuSign_eSign
         :'id_check_information_input' => :'IdCheckInformationInput',
         :'inherit_email_notification_configuration' => :'String',
         :'name' => :'String',
-        :'notary_email_metadata' => :'PropertyMetadata',
-        :'notary_name_metadata' => :'PropertyMetadata',
         :'note' => :'String',
         :'phone_authentication' => :'RecipientPhoneAuthentication',
         :'recipient_attachments' => :'Array<RecipientAttachment>',
@@ -211,6 +206,7 @@ module DocuSign_eSign
         :'sms_authentication' => :'RecipientSMSAuthentication',
         :'social_authentications' => :'Array<SocialAuthentication>',
         :'status' => :'String',
+        :'tabs' => :'Tabs',
         :'template_locked' => :'String',
         :'template_required' => :'String',
         :'total_tab_count' => :'String',
@@ -306,14 +302,6 @@ module DocuSign_eSign
         self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'notaryEmailMetadata')
-        self.notary_email_metadata = attributes[:'notaryEmailMetadata']
-      end
-
-      if attributes.has_key?(:'notaryNameMetadata')
-        self.notary_name_metadata = attributes[:'notaryNameMetadata']
-      end
-
       if attributes.has_key?(:'note')
         self.note = attributes[:'note']
       end
@@ -378,6 +366,10 @@ module DocuSign_eSign
         self.status = attributes[:'status']
       end
 
+      if attributes.has_key?(:'tabs')
+        self.tabs = attributes[:'tabs']
+      end
+
       if attributes.has_key?(:'templateLocked')
         self.template_locked = attributes[:'templateLocked']
       end
@@ -433,8 +425,6 @@ module DocuSign_eSign
           id_check_information_input == o.id_check_information_input &&
           inherit_email_notification_configuration == o.inherit_email_notification_configuration &&
           name == o.name &&
-          notary_email_metadata == o.notary_email_metadata &&
-          notary_name_metadata == o.notary_name_metadata &&
           note == o.note &&
           phone_authentication == o.phone_authentication &&
           recipient_attachments == o.recipient_attachments &&
@@ -450,6 +440,7 @@ module DocuSign_eSign
           sms_authentication == o.sms_authentication &&
           social_authentications == o.social_authentications &&
           status == o.status &&
+          tabs == o.tabs &&
           template_locked == o.template_locked &&
           template_required == o.template_required &&
           total_tab_count == o.total_tab_count &&
@@ -465,7 +456,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, add_access_code_to_email, client_user_id, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, document_visibility, email, email_notification, embedded_recipient_start_url, error_details, fax_number, host_recipient_id, id_check_configuration_name, id_check_information_input, inherit_email_notification_configuration, name, notary_email_metadata, notary_name_metadata, note, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_id, recipient_id_guid, require_id_lookup, role_name, routing_order, saml_authentication, sent_date_time, signed_date_time, sms_authentication, social_authentications, status, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, add_access_code_to_email, client_user_id, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, document_visibility, email, email_notification, embedded_recipient_start_url, error_details, fax_number, host_recipient_id, id_check_configuration_name, id_check_information_input, inherit_email_notification_configuration, name, note, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_id, recipient_id_guid, require_id_lookup, role_name, routing_order, saml_authentication, sent_date_time, signed_date_time, sms_authentication, social_authentications, status, tabs, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash

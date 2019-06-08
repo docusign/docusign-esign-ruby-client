@@ -32,10 +32,10 @@ module DocuSign_eSign
     # Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches.
     attr_accessor :anchor_units
 
-    # Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.
+    # Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.
     attr_accessor :anchor_x_offset
 
-    # Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.
+    # Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.
     attr_accessor :anchor_y_offset
 
     # When set to **true**, the information in the tab is bold.
@@ -103,14 +103,31 @@ module DocuSign_eSign
     # 
     attr_accessor :name
 
+    # 
+    attr_accessor :payment_item_code
+
+    # 
+    attr_accessor :payment_item_description
+
+    # 
+    attr_accessor :payment_item_name
+
     # When set to **true**, the signer is required to fill out this tab
     attr_accessor :required
 
     # 
     attr_accessor :scale_value
 
+    # 
+    attr_accessor :selected
+
     # When set to **true**, this custom tab is shared.
     attr_accessor :shared
+
+    # 
+    attr_accessor :stamp_type
+
+    attr_accessor :stamp_type_metadata
 
     # The label string associated with the tab.
     attr_accessor :tab_label
@@ -124,7 +141,7 @@ module DocuSign_eSign
     # The message displayed if the custom tab fails input validation (either custom of embedded).
     attr_accessor :validation_message
 
-    # A regular expressionn used to validate input for the tab.
+    # A regular expression used to validate input for the tab.
     attr_accessor :validation_pattern
 
     # Width of the tab in pixels.
@@ -164,9 +181,15 @@ module DocuSign_eSign
         :'maximum_length' => :'maximumLength',
         :'merge_field' => :'mergeField',
         :'name' => :'name',
+        :'payment_item_code' => :'paymentItemCode',
+        :'payment_item_description' => :'paymentItemDescription',
+        :'payment_item_name' => :'paymentItemName',
         :'required' => :'required',
         :'scale_value' => :'scaleValue',
+        :'selected' => :'selected',
         :'shared' => :'shared',
+        :'stamp_type' => :'stampType',
+        :'stamp_type_metadata' => :'stampTypeMetadata',
         :'tab_label' => :'tabLabel',
         :'type' => :'type',
         :'underline' => :'underline',
@@ -209,9 +232,15 @@ module DocuSign_eSign
         :'maximum_length' => :'String',
         :'merge_field' => :'MergeField',
         :'name' => :'String',
+        :'payment_item_code' => :'String',
+        :'payment_item_description' => :'String',
+        :'payment_item_name' => :'String',
         :'required' => :'String',
         :'scale_value' => :'String',
+        :'selected' => :'String',
         :'shared' => :'String',
+        :'stamp_type' => :'String',
+        :'stamp_type_metadata' => :'PropertyMetadata',
         :'tab_label' => :'String',
         :'type' => :'String',
         :'underline' => :'String',
@@ -351,6 +380,18 @@ module DocuSign_eSign
         self.name = attributes[:'name']
       end
 
+      if attributes.has_key?(:'paymentItemCode')
+        self.payment_item_code = attributes[:'paymentItemCode']
+      end
+
+      if attributes.has_key?(:'paymentItemDescription')
+        self.payment_item_description = attributes[:'paymentItemDescription']
+      end
+
+      if attributes.has_key?(:'paymentItemName')
+        self.payment_item_name = attributes[:'paymentItemName']
+      end
+
       if attributes.has_key?(:'required')
         self.required = attributes[:'required']
       end
@@ -359,8 +400,20 @@ module DocuSign_eSign
         self.scale_value = attributes[:'scaleValue']
       end
 
+      if attributes.has_key?(:'selected')
+        self.selected = attributes[:'selected']
+      end
+
       if attributes.has_key?(:'shared')
         self.shared = attributes[:'shared']
+      end
+
+      if attributes.has_key?(:'stampType')
+        self.stamp_type = attributes[:'stampType']
+      end
+
+      if attributes.has_key?(:'stampTypeMetadata')
+        self.stamp_type_metadata = attributes[:'stampTypeMetadata']
       end
 
       if attributes.has_key?(:'tabLabel')
@@ -437,9 +490,15 @@ module DocuSign_eSign
           maximum_length == o.maximum_length &&
           merge_field == o.merge_field &&
           name == o.name &&
+          payment_item_code == o.payment_item_code &&
+          payment_item_description == o.payment_item_description &&
+          payment_item_name == o.payment_item_name &&
           required == o.required &&
           scale_value == o.scale_value &&
+          selected == o.selected &&
           shared == o.shared &&
+          stamp_type == o.stamp_type &&
+          stamp_type_metadata == o.stamp_type_metadata &&
           tab_label == o.tab_label &&
           type == o.type &&
           underline == o.underline &&
@@ -457,7 +516,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor, anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_units, anchor_x_offset, anchor_y_offset, bold, conceal_value_on_document, created_by_display_name, created_by_user_id, custom_tab_id, disable_auto_size, editable, font, font_color, font_size, height, included_in_email, initial_value, italic, items, last_modified, last_modified_by_display_name, last_modified_by_user_id, locked, maximum_length, merge_field, name, required, scale_value, shared, tab_label, type, underline, validation_message, validation_pattern, width].hash
+      [anchor, anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_units, anchor_x_offset, anchor_y_offset, bold, conceal_value_on_document, created_by_display_name, created_by_user_id, custom_tab_id, disable_auto_size, editable, font, font_color, font_size, height, included_in_email, initial_value, italic, items, last_modified, last_modified_by_display_name, last_modified_by_user_id, locked, maximum_length, merge_field, name, payment_item_code, payment_item_description, payment_item_name, required, scale_value, selected, shared, stamp_type, stamp_type_metadata, tab_label, type, underline, validation_message, validation_pattern, width].hash
     end
 
     # Builds the object from hash

@@ -17,6 +17,12 @@ module DocuSign_eSign
     # When set to **true**, the sender receives notification if the signer changes.
     attr_accessor :changed_signer
 
+    # 
+    attr_accessor :comments_only_private_and_mention
+
+    # 
+    attr_accessor :comments_receive_all
+
     # When set to **true**, the sender receives notification if the delivery of the envelope fails.
     attr_accessor :delivery_failed
 
@@ -40,6 +46,8 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'changed_signer' => :'changedSigner',
+        :'comments_only_private_and_mention' => :'commentsOnlyPrivateAndMention',
+        :'comments_receive_all' => :'commentsReceiveAll',
         :'delivery_failed' => :'deliveryFailed',
         :'envelope_complete' => :'envelopeComplete',
         :'offline_signing_failed' => :'offlineSigningFailed',
@@ -53,6 +61,8 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'changed_signer' => :'String',
+        :'comments_only_private_and_mention' => :'String',
+        :'comments_receive_all' => :'String',
         :'delivery_failed' => :'String',
         :'envelope_complete' => :'String',
         :'offline_signing_failed' => :'String',
@@ -72,6 +82,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'changedSigner')
         self.changed_signer = attributes[:'changedSigner']
+      end
+
+      if attributes.has_key?(:'commentsOnlyPrivateAndMention')
+        self.comments_only_private_and_mention = attributes[:'commentsOnlyPrivateAndMention']
+      end
+
+      if attributes.has_key?(:'commentsReceiveAll')
+        self.comments_receive_all = attributes[:'commentsReceiveAll']
       end
 
       if attributes.has_key?(:'deliveryFailed')
@@ -119,6 +137,8 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           changed_signer == o.changed_signer &&
+          comments_only_private_and_mention == o.comments_only_private_and_mention &&
+          comments_receive_all == o.comments_receive_all &&
           delivery_failed == o.delivery_failed &&
           envelope_complete == o.envelope_complete &&
           offline_signing_failed == o.offline_signing_failed &&
@@ -136,7 +156,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [changed_signer, delivery_failed, envelope_complete, offline_signing_failed, recipient_viewed, sender_envelope_declined, withdrawn_consent].hash
+      [changed_signer, comments_only_private_and_mention, comments_receive_all, delivery_failed, envelope_complete, offline_signing_failed, recipient_viewed, sender_envelope_declined, withdrawn_consent].hash
     end
 
     # Builds the object from hash
