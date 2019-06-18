@@ -109,8 +109,8 @@ describe 'DocuSign Ruby Client Tests' do
   before(:all) do
     # run before each test
     $username = 'node_sdk@mailinator.com'
-    $password = '***REMOVED***asd'
-    $integrator_key = '***REMOVED***'
+    $password = '{PASSWORD}'
+    $integrator_key = 'ae30ea4e-xxxx-xxxx-xxxx-fcb57d2dc4df'
 
     $auth_header = '{"Username": "%s", "Password": "%s", "IntegratorKey": "%s"}' %[$username, $password, $integrator_key]
 
