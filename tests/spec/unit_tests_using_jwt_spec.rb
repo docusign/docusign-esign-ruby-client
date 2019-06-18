@@ -110,12 +110,12 @@ describe 'DocuSign Ruby Client Tests' do
     # run before each test
     $host = "https://demo.docusign.net/restapi"
 
-  	$integrator_key = 'ae30ea4e-3959-4d1c-b867-fcb57d2dc4df'
-  	$user_id = 'fcc5726c-cd73-4844-b580-40bbbe6ca126'
+  	$integrator_key = 'ae30ea4e-xxxx-xxxx-xxxx-fcb57d2dc4df'
+  	$user_id = 'fcc5726c-xxxx-xxxx-xxxx-40bbbe6ca126'
   	$expires_in_seconds = 3600 #1 hour
   	$auth_server = 'account-d.docusign.com'
   	$private_key_filename = '../docs/private.pem'
-    $secret = '3b61ffcf-8f76-4cf8-b541-d49f7d82cb55'
+    $secret = '3b61ffcf-xxxx-xxxx-xxxx-d49f7d82cb55'
 
     $recipient_email = "node_sdk@mailinator.com"
     $recipient_name = "Ruby SDK"
