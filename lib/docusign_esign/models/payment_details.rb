@@ -24,6 +24,15 @@ module DocuSign_eSign
     attr_accessor :currency_code
 
     # 
+    attr_accessor :customer_id
+
+    # 
+    attr_accessor :custom_metadata
+
+    # 
+    attr_accessor :custom_metadata_required
+
+    # 
     attr_accessor :gateway_account_id
 
     # 
@@ -38,6 +47,9 @@ module DocuSign_eSign
     # 
     attr_accessor :payment_option
 
+    # 
+    attr_accessor :payment_source_id
+
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
     attr_accessor :status
 
@@ -50,11 +62,15 @@ module DocuSign_eSign
         :'allowed_payment_methods' => :'allowedPaymentMethods',
         :'charge_id' => :'chargeId',
         :'currency_code' => :'currencyCode',
+        :'customer_id' => :'customerId',
+        :'custom_metadata' => :'customMetadata',
+        :'custom_metadata_required' => :'customMetadataRequired',
         :'gateway_account_id' => :'gatewayAccountId',
         :'gateway_display_name' => :'gatewayDisplayName',
         :'gateway_name' => :'gatewayName',
         :'line_items' => :'lineItems',
         :'payment_option' => :'paymentOption',
+        :'payment_source_id' => :'paymentSourceId',
         :'status' => :'status',
         :'total' => :'total'
       }
@@ -66,11 +82,15 @@ module DocuSign_eSign
         :'allowed_payment_methods' => :'Array<String>',
         :'charge_id' => :'String',
         :'currency_code' => :'String',
+        :'customer_id' => :'String',
+        :'custom_metadata' => :'String',
+        :'custom_metadata_required' => :'BOOLEAN',
         :'gateway_account_id' => :'String',
         :'gateway_display_name' => :'String',
         :'gateway_name' => :'String',
         :'line_items' => :'Array<PaymentLineItem>',
         :'payment_option' => :'String',
+        :'payment_source_id' => :'String',
         :'status' => :'String',
         :'total' => :'Money'
       }
@@ -98,6 +118,18 @@ module DocuSign_eSign
         self.currency_code = attributes[:'currencyCode']
       end
 
+      if attributes.has_key?(:'customerId')
+        self.customer_id = attributes[:'customerId']
+      end
+
+      if attributes.has_key?(:'customMetadata')
+        self.custom_metadata = attributes[:'customMetadata']
+      end
+
+      if attributes.has_key?(:'customMetadataRequired')
+        self.custom_metadata_required = attributes[:'customMetadataRequired']
+      end
+
       if attributes.has_key?(:'gatewayAccountId')
         self.gateway_account_id = attributes[:'gatewayAccountId']
       end
@@ -118,6 +150,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'paymentOption')
         self.payment_option = attributes[:'paymentOption']
+      end
+
+      if attributes.has_key?(:'paymentSourceId')
+        self.payment_source_id = attributes[:'paymentSourceId']
       end
 
       if attributes.has_key?(:'status')
@@ -151,11 +187,15 @@ module DocuSign_eSign
           allowed_payment_methods == o.allowed_payment_methods &&
           charge_id == o.charge_id &&
           currency_code == o.currency_code &&
+          customer_id == o.customer_id &&
+          custom_metadata == o.custom_metadata &&
+          custom_metadata_required == o.custom_metadata_required &&
           gateway_account_id == o.gateway_account_id &&
           gateway_display_name == o.gateway_display_name &&
           gateway_name == o.gateway_name &&
           line_items == o.line_items &&
           payment_option == o.payment_option &&
+          payment_source_id == o.payment_source_id &&
           status == o.status &&
           total == o.total
     end
@@ -169,7 +209,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allowed_payment_methods, charge_id, currency_code, gateway_account_id, gateway_display_name, gateway_name, line_items, payment_option, status, total].hash
+      [allowed_payment_methods, charge_id, currency_code, customer_id, custom_metadata, custom_metadata_required, gateway_account_id, gateway_display_name, gateway_name, line_items, payment_option, payment_source_id, status, total].hash
     end
 
     # Builds the object from hash

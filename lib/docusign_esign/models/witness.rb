@@ -92,6 +92,8 @@ module DocuSign_eSign
 
     attr_accessor :id_check_information_input
 
+    attr_accessor :identity_verification
+
     # When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient's account. 
     attr_accessor :inherit_email_notification_configuration
 
@@ -224,6 +226,7 @@ module DocuSign_eSign
         :'full_name' => :'fullName',
         :'id_check_configuration_name' => :'idCheckConfigurationName',
         :'id_check_information_input' => :'idCheckInformationInput',
+        :'identity_verification' => :'identityVerification',
         :'inherit_email_notification_configuration' => :'inheritEmailNotificationConfiguration',
         :'is_bulk_recipient' => :'isBulkRecipient',
         :'last_name' => :'lastName',
@@ -293,6 +296,7 @@ module DocuSign_eSign
         :'full_name' => :'String',
         :'id_check_configuration_name' => :'String',
         :'id_check_information_input' => :'IdCheckInformationInput',
+        :'identity_verification' => :'RecipientIdentityVerification',
         :'inherit_email_notification_configuration' => :'String',
         :'is_bulk_recipient' => :'String',
         :'last_name' => :'String',
@@ -452,6 +456,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'idCheckInformationInput')
         self.id_check_information_input = attributes[:'idCheckInformationInput']
+      end
+
+      if attributes.has_key?(:'identityVerification')
+        self.identity_verification = attributes[:'identityVerification']
       end
 
       if attributes.has_key?(:'inheritEmailNotificationConfiguration')
@@ -653,6 +661,7 @@ module DocuSign_eSign
           full_name == o.full_name &&
           id_check_configuration_name == o.id_check_configuration_name &&
           id_check_information_input == o.id_check_information_input &&
+          identity_verification == o.identity_verification &&
           inherit_email_notification_configuration == o.inherit_email_notification_configuration &&
           is_bulk_recipient == o.is_bulk_recipient &&
           last_name == o.last_name &&
@@ -700,7 +709,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, add_access_code_to_email, agent_can_edit_email, agent_can_edit_name, auto_navigation, bulk_recipients_uri, can_sign_offline, client_user_id, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, document_visibility, email, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, first_name, full_name, id_check_configuration_name, id_check_information_input, inherit_email_notification_configuration, is_bulk_recipient, last_name, name, note, offline_attributes, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, require_id_lookup, require_signer_certificate, require_sign_on_paper, role_name, routing_order, saml_authentication, sent_date_time, signature_info, signed_date_time, sign_in_each_location, signing_group_id, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, tabs, template_locked, template_required, total_tab_count, user_id, witness_for, witness_for_guid].hash
+      [access_code, add_access_code_to_email, agent_can_edit_email, agent_can_edit_name, auto_navigation, bulk_recipients_uri, can_sign_offline, client_user_id, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, document_visibility, email, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, first_name, full_name, id_check_configuration_name, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, last_name, name, note, offline_attributes, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, require_id_lookup, require_signer_certificate, require_sign_on_paper, role_name, routing_order, saml_authentication, sent_date_time, signature_info, signed_date_time, sign_in_each_location, signing_group_id, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, tabs, template_locked, template_required, total_tab_count, user_id, witness_for, witness_for_guid].hash
     end
 
     # Builds the object from hash

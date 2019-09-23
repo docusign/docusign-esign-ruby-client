@@ -40,6 +40,11 @@ module DocuSign_eSign
     attr_accessor :allow_api_sequential_signing_metadata
 
     # 
+    attr_accessor :allow_auto_tagging
+
+    attr_accessor :allow_auto_tagging_metadata
+
+    # 
     attr_accessor :allow_bulk_sending
 
     attr_accessor :allow_bulk_sending_metadata
@@ -198,6 +203,8 @@ module DocuSign_eSign
         :'allow_api_sending_on_behalf_of_others_metadata' => :'allowApiSendingOnBehalfOfOthersMetadata',
         :'allow_api_sequential_signing' => :'allowApiSequentialSigning',
         :'allow_api_sequential_signing_metadata' => :'allowApiSequentialSigningMetadata',
+        :'allow_auto_tagging' => :'allowAutoTagging',
+        :'allow_auto_tagging_metadata' => :'allowAutoTaggingMetadata',
         :'allow_bulk_sending' => :'allowBulkSending',
         :'allow_bulk_sending_metadata' => :'allowBulkSendingMetadata',
         :'allow_docu_sign_desktop_client' => :'allowDocuSignDesktopClient',
@@ -272,6 +279,8 @@ module DocuSign_eSign
         :'allow_api_sending_on_behalf_of_others_metadata' => :'SettingsMetadata',
         :'allow_api_sequential_signing' => :'String',
         :'allow_api_sequential_signing_metadata' => :'SettingsMetadata',
+        :'allow_auto_tagging' => :'String',
+        :'allow_auto_tagging_metadata' => :'SettingsMetadata',
         :'allow_bulk_sending' => :'String',
         :'allow_bulk_sending_metadata' => :'SettingsMetadata',
         :'allow_docu_sign_desktop_client' => :'String',
@@ -379,6 +388,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'allowApiSequentialSigningMetadata')
         self.allow_api_sequential_signing_metadata = attributes[:'allowApiSequentialSigningMetadata']
+      end
+
+      if attributes.has_key?(:'allowAutoTagging')
+        self.allow_auto_tagging = attributes[:'allowAutoTagging']
+      end
+
+      if attributes.has_key?(:'allowAutoTaggingMetadata')
+        self.allow_auto_tagging_metadata = attributes[:'allowAutoTaggingMetadata']
       end
 
       if attributes.has_key?(:'allowBulkSending')
@@ -643,6 +660,8 @@ module DocuSign_eSign
           allow_api_sending_on_behalf_of_others_metadata == o.allow_api_sending_on_behalf_of_others_metadata &&
           allow_api_sequential_signing == o.allow_api_sequential_signing &&
           allow_api_sequential_signing_metadata == o.allow_api_sequential_signing_metadata &&
+          allow_auto_tagging == o.allow_auto_tagging &&
+          allow_auto_tagging_metadata == o.allow_auto_tagging_metadata &&
           allow_bulk_sending == o.allow_bulk_sending &&
           allow_bulk_sending_metadata == o.allow_bulk_sending_metadata &&
           allow_docu_sign_desktop_client == o.allow_docu_sign_desktop_client &&
@@ -712,7 +731,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_account_management, allow_account_management_metadata, allow_api_access, allow_api_access_metadata, allow_api_access_to_account, allow_api_access_to_account_metadata, allow_api_sending_on_behalf_of_others, allow_api_sending_on_behalf_of_others_metadata, allow_api_sequential_signing, allow_api_sequential_signing_metadata, allow_bulk_sending, allow_bulk_sending_metadata, allow_docu_sign_desktop_client, allow_docu_sign_desktop_client_metadata, allowed_address_book_access, allowed_address_book_access_metadata, allowed_template_access, allowed_template_access_metadata, allowed_to_be_envelope_transfer_recipient, allowed_to_be_envelope_transfer_recipient_metadata, allow_envelope_sending, allow_envelope_sending_metadata, allow_e_seal_recipients, allow_e_seal_recipients_metadata, allow_power_forms_admin_to_access_all_power_form_envelopes, allow_power_forms_admin_to_access_all_power_form_envelopes_metadata, allow_senders_to_set_recipient_email_language, allow_senders_to_set_recipient_email_language_metadata, allow_signer_attachments, allow_signer_attachments_metadata, allow_supplemental_documents, allow_supplemental_documents_metadata, allow_tagging_in_send_and_correct, allow_tagging_in_send_and_correct_metadata, allow_vaulting, allow_vaulting_metadata, allow_wet_signing_override, allow_wet_signing_override_metadata, can_create_workspaces, can_create_workspaces_metadata, disable_document_upload, disable_document_upload_metadata, disable_other_actions, disable_other_actions_metadata, enable_api_request_logging, enable_api_request_logging_metadata, enable_recipient_viewing_notifications, enable_recipient_viewing_notifications_metadata, enable_sequential_signing_interface, enable_sequential_signing_interface_metadata, enable_transaction_point_integration, enable_transaction_point_integration_metadata, power_form_role, power_form_role_metadata, receive_completed_self_signed_documents_as_email_links, receive_completed_self_signed_documents_as_email_links_metadata, supplemental_documents_must_accept, supplemental_documents_must_accept_metadata, supplemental_documents_must_read, supplemental_documents_must_read_metadata, supplemental_documents_must_view, supplemental_documents_must_view_metadata, use_new_docu_sign_experience_interface, use_new_docu_sign_experience_interface_metadata, use_new_sending_interface, use_new_sending_interface_metadata, vaulting_mode, vaulting_mode_metadata].hash
+      [allow_account_management, allow_account_management_metadata, allow_api_access, allow_api_access_metadata, allow_api_access_to_account, allow_api_access_to_account_metadata, allow_api_sending_on_behalf_of_others, allow_api_sending_on_behalf_of_others_metadata, allow_api_sequential_signing, allow_api_sequential_signing_metadata, allow_auto_tagging, allow_auto_tagging_metadata, allow_bulk_sending, allow_bulk_sending_metadata, allow_docu_sign_desktop_client, allow_docu_sign_desktop_client_metadata, allowed_address_book_access, allowed_address_book_access_metadata, allowed_template_access, allowed_template_access_metadata, allowed_to_be_envelope_transfer_recipient, allowed_to_be_envelope_transfer_recipient_metadata, allow_envelope_sending, allow_envelope_sending_metadata, allow_e_seal_recipients, allow_e_seal_recipients_metadata, allow_power_forms_admin_to_access_all_power_form_envelopes, allow_power_forms_admin_to_access_all_power_form_envelopes_metadata, allow_senders_to_set_recipient_email_language, allow_senders_to_set_recipient_email_language_metadata, allow_signer_attachments, allow_signer_attachments_metadata, allow_supplemental_documents, allow_supplemental_documents_metadata, allow_tagging_in_send_and_correct, allow_tagging_in_send_and_correct_metadata, allow_vaulting, allow_vaulting_metadata, allow_wet_signing_override, allow_wet_signing_override_metadata, can_create_workspaces, can_create_workspaces_metadata, disable_document_upload, disable_document_upload_metadata, disable_other_actions, disable_other_actions_metadata, enable_api_request_logging, enable_api_request_logging_metadata, enable_recipient_viewing_notifications, enable_recipient_viewing_notifications_metadata, enable_sequential_signing_interface, enable_sequential_signing_interface_metadata, enable_transaction_point_integration, enable_transaction_point_integration_metadata, power_form_role, power_form_role_metadata, receive_completed_self_signed_documents_as_email_links, receive_completed_self_signed_documents_as_email_links_metadata, supplemental_documents_must_accept, supplemental_documents_must_accept_metadata, supplemental_documents_must_read, supplemental_documents_must_read_metadata, supplemental_documents_must_view, supplemental_documents_must_view_metadata, use_new_docu_sign_experience_interface, use_new_docu_sign_experience_interface_metadata, use_new_sending_interface, use_new_sending_interface_metadata, vaulting_mode, vaulting_mode_metadata].hash
     end
 
     # Builds the object from hash

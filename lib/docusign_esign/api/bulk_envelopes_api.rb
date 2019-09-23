@@ -296,9 +296,9 @@ module DocuSign_eSign
     # Adds or replaces envelope bulk recipients.
     # Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
     # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param recipient_id The ID of the recipient being accessed.
-    # @param bulk_recipients_request  (optional parameter)
+    # @param envelope_id The envelope's GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec 
+    # @param recipient_id The `recipientId` used when the envelope or template was created.
+    # @param bulk_recipients_request  
     # @return [BulkRecipientsSummaryResponse]
     def update_recipients(account_id, envelope_id, recipient_id, bulk_recipients_request)
       data, _status_code, _headers = update_recipients_with_http_info(account_id, envelope_id, recipient_id,  bulk_recipients_request)
@@ -308,9 +308,9 @@ module DocuSign_eSign
     # Adds or replaces envelope bulk recipients.
     # Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
     # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param recipient_id The ID of the recipient being accessed.
-    # @param bulk_recipients_request  (optional parameter)
+    # @param envelope_id The envelope's GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec 
+    # @param recipient_id The `recipientId` used when the envelope or template was created.
+    # @param bulk_recipients_request  
     # @return [Array<(BulkRecipientsSummaryResponse, Fixnum, Hash)>] BulkRecipientsSummaryResponse data, response status code and response headers
     def update_recipients_with_http_info(account_id, envelope_id, recipient_id, bulk_recipients_request)
       if @api_client.config.debugging
@@ -322,6 +322,8 @@ module DocuSign_eSign
       fail ArgumentError, "Missing the required parameter 'envelope_id' when calling BulkEnvelopesApi.update_recipients" if envelope_id.nil?
       # verify the required parameter 'recipient_id' is set
       fail ArgumentError, "Missing the required parameter 'recipient_id' when calling BulkEnvelopesApi.update_recipients" if recipient_id.nil?
+      # verify the required parameter 'bulk_recipients_request' is set
+      fail ArgumentError, "Missing the required parameter 'bulk_recipients_request' when calling BulkEnvelopesApi.update_recipients" if bulk_recipients_request.nil?
       # resource path
       local_var_path = "/v2/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'recipientId' + '}', recipient_id.to_s)
 
