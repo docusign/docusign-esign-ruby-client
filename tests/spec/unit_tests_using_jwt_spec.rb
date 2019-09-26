@@ -10,14 +10,18 @@ describe 'DocuSign Ruby Client Tests' do
 				configuration.host = $host
 
 				$api_client = DocuSign_eSign::ApiClient.new(configuration)
-        			$api_client.set_oauth_base_path(DocuSign_eSign::OAuth::DEMO_OAUTH_BASE_PATH)
+        		$api_client.set_oauth_base_path(DocuSign_eSign::OAuth::DEMO_OAUTH_BASE_PATH)
 				# $api_client.get_authorization_uri($integrator_key,'signature',$return_url,'code')
 				# $api_client.request_jwt_application_token($integrator_key,File.read($private_key_filename),$expires_in_seconds,'' )
 				# code = 'code_here'
 				# $api_client.generate_access_token($integrator_key,$secret,code)
 			end
 
-	  	token_obj = $api_client.request_jwt_user_token($integrator_key,$user_id, File.read($private_key_filename),$expires_in_seconds)
+		decode_base64_content = Base64.decode64(ENV["PRIVATE_KEY"])
+		File.open($private_key_filename, "wb") do |f|
+		  f.write(decode_base64_content)
+		end 
+	  	token_obj = $api_client.request_jwt_user_token(ENV["INTEGRATOR_KEY_JWT"],ENV["USER_ID"], File.read($private_key_filename),$expires_in_seconds)
 
 	  	user_info = $api_client.get_user_info(token_obj.access_token)
 
@@ -110,14 +114,15 @@ describe 'DocuSign Ruby Client Tests' do
     # run before each test
     $host = "https://demo.docusign.net/restapi"
 
-  	$integrator_key = 'ae30ea4e-xxxx-xxxx-xxxx-fcb57d2dc4df'
-  	$user_id = 'fcc5726c-xxxx-xxxx-xxxx-40bbbe6ca126'
+  	# $integrator_key = '97617642-faf7-4b4d-a9fb-692bfa86bad0'
+  	# $user_id = 'f6c9e287-c8b0-4064-8c3f-7130f1a9ebcf'
   	$expires_in_seconds = 3600 #1 hour
   	$auth_server = 'account-d.docusign.com'
-  	$private_key_filename = '../docs/private.pem'
-    $secret = '3b61ffcf-xxxx-xxxx-xxxx-d49f7d82cb55'
+  	$private_key_filename= '../docs/private.pem'
+  	# $private_key = 'LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb2dJQkFBS0NBUUVBcTF5VXp3M293byt5SXVCbnRHNEVGUEVhZUpxZW1qZG5JS3U0SkpCOFZtNUxKUmFYCjY4c21oK3B6MkswR3RmcUIzZmlJYWd1dzNOc1ZaOHYrY2FyZnh6b1g1OGplaUlUaTZORFhLNmkzUSs5dHlDSnAKcnhjbVRseVBJaDFvK1I5QmFaQW43VWMwT0lra2NvbnJuY1JsREFqZ1J1c0JzNzlpekpJcU1IRStZRzV1U0NHKwpUTERQK0x0enpQSzhBNHJSQisvbERLb1hNK085MDVLQlNFSnlaMnhHWk9IWTRTRVdLSDV2akE1MHN5eTZvR3BNCkhwY3B4NHJydlJMZmNtSkRjU0h2WTFXVDNHYVBBT1huU29HelVEbndpT1BkUzFyY3puSDJud3J3K2tQV3hId2oKc0UyTy9qdkVMZHVWbDhIL1BQc1cxd3R5am5FdDdCN1E5d3JXY3dJREFRQUJBb0lCQUFNcG9IVzVCSmcrN0dtNQpUWmsxV2c0UktBUmhJMzJ1My9LVGkvUGhWb0tvaFB1NGN2WUJUVnlMM3o5V3NKQ3ZHa3czL1c4eXpjVnRMbnlOCnVmOTBoSjB0QThSVkJaYnNYR1dYLzBHeHdSeGt1M0lHVm03OTByZkRZd1ZwOW5sb2JlN1RzU09lWjZzTzZqeXcKaDFrcDNFaWdncVM5ZmdGSWhiTGd0bUVuYm0wVkJmQS8rOFVOWlF4Snh6dzB1WkNWb2pFb0Z0Ynh5djNpbkhTdQpjbEtHczNzRFExUkEyUERFM3h5T1I1MWE0UkxBV3VhdlFDMVRkeWRTL1FFbkNteEpuWjFlUVkrYmp0K0duSE9PCk9QemdDS0h1MVRkSnlQVDU3a1U3RlhNRWt1dWo1YUcxaS9VdFpTTkgrTDM4Nnk2blBtbzdiL21YeUZnTWlsN3IKbE5hVDgxRUNnWUVBNy9iMHVvdFpFbTNHejFPd05ZbVFTOGdOeEFxMVd0VzIyNVJDQnhpRVYrUzd4c2x1ZUNpRwpuQVRCaWR3TUkvOFhiTjhLdmJtVTJUTm5uZGNzVU50OXRhOHVmWDBHWFEwcGpFWE5MM1pmVEtvWkYwZS9CbjNXCkJxU1YxWUJscEU3QjgxTTc5bVNWWWJNU2NmenhDVmphVTUzSlJEellVWXhQUU5WK2lNa1lrOGtDZ1lFQXR0QUsKMlpLUG96bFdUUDZHTzF2M2VrbStRd1VmdHZKNDNYeVo1OVB6aGVnam0yaGtJRWJVdUlQQ1ZmdVFJVkN2ZlBJQgp5QW9UQys5aTRyQVBtQ3ZZWG9HWUF4OGw1WXV3ZmlVaDhhalRhdnpnckNrOXU5L3hPSDJ5cEl4Um5IenBlOTl0ClYra0xFRXVXK3VMY045K0QxMGJQMDRxVEhvK0RJR2g5TXVqMjNsc0NnWUFrWHF5Mi9WblJ0anUwdnIxdFQ5MUQKN3gxUEFrUjhjUG5YREFCNTdOaGFMZnZiNURuUEVtMWNoa2dES2d2WkJOZTdFNDhnTkZtQUZnOTFWK0NLbk1uUAoySzVXTExYak1wU0NneTNYTEx6QzlPRDZxMUFqbnJ6cW90Vm0xNkFRS0RPek9vRlRGZW1pTmk3c2dlYlNnTm9PClpGTFYrZGJiZlVXaDBQbnRwM1VIS1FLQmdGMS85RHlwVUJ1c1pLNUdjNE1DbTRXSkYrMlJQbEpFbTNxMGtzYlcKU2JRUU1iMzNXMWFDdzZPSGlDcVAybnlmbHRHeHVTV0Z1WTRlSnBaSWRBRmhVMjJxbklQa04yNjZ6azhHVU9FWApkdUkrYWU3RHZSWk5DRVBiVGpZSXFtaitIakRENmxuUEVHQ0tPTE1pdW4wOUxXSTZqbXJrY2pCc09DV29LM2lSClhFb0hBb0dBT1NYTzFrTTZwME1aRWhLeHJWdW5GNkhwVzhhSFJqY2RjampKSlJGZ2FwM2h4Q1QxT1o5WUIrU0QKUHJuK2NqRko3V1NNckhwSVJ0NTZGWkdVVWdtcCs5N1dxWXNJdUFKeDU2RVRLZEFWeDZDN1J1RXRiSm9xZFRFUgpoUzR2YUdxK0VXbWpWYy9wU01iQnpaOTlscElFYnlZQmsyakQzR3BDV2dTZDlDRHJ4R1k9Ci0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0t'
+    # $secret = '43ce55e1-e849-42cb-b32b-f78fb2d0e0f5'
 
-    $recipient_email = "node_sdk@mailinator.com"
+    $recipient_email = "node_sdk@mailinator.com" #"naveen.gopala@docusign.com"
     $recipient_name = "Ruby SDK"
 
     # Required for embedded signing url
