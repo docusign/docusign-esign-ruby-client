@@ -17,7 +17,12 @@ describe 'DocuSign Ruby Client Tests' do
 				# $api_client.generate_access_token($integrator_key,$secret,code)
 			end
 
-	  	token_obj = $api_client.request_jwt_user_token($integrator_key,$user_id, File.read($private_key_filename),$expires_in_seconds)
+		decode_base64_content = Base64.decode64(ENV["PRIVATE_KEY"])
+ 		File.open($private_key_filename, "wb") do |f|
+ 		  f.write(decode_base64_content)
+ 		end
+
+	  	token_obj = $api_client.request_jwt_user_token(ENV["INTEGRATOR_KEY_JWT"],ENV["USER_ID"], File.read($private_key_filename),$expires_in_seconds)
 
 	  	user_info = $api_client.get_user_info(token_obj.access_token)
 
@@ -110,13 +115,10 @@ describe 'DocuSign Ruby Client Tests' do
     # run before each test
     $host = "https://demo.docusign.net/restapi"
 
-  	$integrator_key = 'ae30ea4e-xxxx-xxxx-xxxx-fcb57d2dc4df'
-  	$user_id = 'fcc5726c-xxxx-xxxx-xxxx-40bbbe6ca126'
   	$expires_in_seconds = 3600 #1 hour
   	$auth_server = 'account-d.docusign.com'
   	$private_key_filename = '../docs/private.pem'
-    $secret = '3b61ffcf-xxxx-xxxx-xxxx-d49f7d82cb55'
-
+    
     $recipient_email = "node_sdk@mailinator.com"
     $recipient_name = "Ruby SDK"
 
