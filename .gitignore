@@ -52,3 +52,4 @@ build-iPhoneSimulator/
 .rvmrc
 
 tests/docs/private.pem
+Gemfile.*

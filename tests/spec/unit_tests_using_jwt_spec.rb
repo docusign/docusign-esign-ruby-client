@@ -10,7 +10,7 @@ describe 'DocuSign Ruby Client Tests' do
 				configuration.host = $host
 
 				$api_client = DocuSign_eSign::ApiClient.new(configuration)
-        		$api_client.set_oauth_base_path(DocuSign_eSign::OAuth::DEMO_OAUTH_BASE_PATH)
+        			$api_client.set_oauth_base_path(DocuSign_eSign::OAuth::DEMO_OAUTH_BASE_PATH)
 				# $api_client.get_authorization_uri($integrator_key,'signature',$return_url,'code')
 				# $api_client.request_jwt_application_token($integrator_key,File.read($private_key_filename),$expires_in_seconds,'' )
 				# code = 'code_here'
@@ -18,9 +18,10 @@ describe 'DocuSign Ruby Client Tests' do
 			end
 
 		decode_base64_content = Base64.decode64(ENV["PRIVATE_KEY"])
-		File.open($private_key_filename, "wb") do |f|
-		  f.write(decode_base64_content)
-		end 
+ 		File.open($private_key_filename, "wb") do |f|
+ 		  f.write(decode_base64_content)
+ 		end
+
 	  	token_obj = $api_client.request_jwt_user_token(ENV["INTEGRATOR_KEY_JWT"],ENV["USER_ID"], File.read($private_key_filename),$expires_in_seconds)
 
 	  	user_info = $api_client.get_user_info(token_obj.access_token)
@@ -59,13 +60,13 @@ describe 'DocuSign Ruby Client Tests' do
 	def create_envelope_on_document(status, is_embedded_signing)
 		if(!$account_id.nil?)
 			# STEP 2: Create envelope definition
-  		# Add a document to the envelope
+  			# Add a document to the envelope
 			document_path = "../docs/Test.pdf"
 			document_name = "Test.docx"
 			document = DocuSign_eSign::Document.new
-  		document.document_base64 = Base64.encode64(File.open(document_path).read)
-  		document.name = document_name
-  		document.document_id = '1'
+	  		document.document_base64 = Base64.encode64(File.open(document_path).read)
+	  		document.name = document_name
+	  		document.document_id = '1'
 
 			# Create a |SignHere| tab somewhere on the document for the recipient to sign
 			signHere = DocuSign_eSign::SignHere.new
@@ -114,15 +115,11 @@ describe 'DocuSign Ruby Client Tests' do
     # run before each test
     $host = "https://demo.docusign.net/restapi"
 
-  	# $integrator_key = '97617642-faf7-4b4d-a9fb-692bfa86bad0'
-  	# $user_id = 'f6c9e287-c8b0-4064-8c3f-7130f1a9ebcf'
   	$expires_in_seconds = 3600 #1 hour
   	$auth_server = 'account-d.docusign.com'
-  	$private_key_filename= '../docs/private.pem'
-  	# $private_key = 'LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb2dJQkFBS0NBUUVBcTF5VXp3M293byt5SXVCbnRHNEVGUEVhZUpxZW1qZG5JS3U0SkpCOFZtNUxKUmFYCjY4c21oK3B6MkswR3RmcUIzZmlJYWd1dzNOc1ZaOHYrY2FyZnh6b1g1OGplaUlUaTZORFhLNmkzUSs5dHlDSnAKcnhjbVRseVBJaDFvK1I5QmFaQW43VWMwT0lra2NvbnJuY1JsREFqZ1J1c0JzNzlpekpJcU1IRStZRzV1U0NHKwpUTERQK0x0enpQSzhBNHJSQisvbERLb1hNK085MDVLQlNFSnlaMnhHWk9IWTRTRVdLSDV2akE1MHN5eTZvR3BNCkhwY3B4NHJydlJMZmNtSkRjU0h2WTFXVDNHYVBBT1huU29HelVEbndpT1BkUzFyY3puSDJud3J3K2tQV3hId2oKc0UyTy9qdkVMZHVWbDhIL1BQc1cxd3R5am5FdDdCN1E5d3JXY3dJREFRQUJBb0lCQUFNcG9IVzVCSmcrN0dtNQpUWmsxV2c0UktBUmhJMzJ1My9LVGkvUGhWb0tvaFB1NGN2WUJUVnlMM3o5V3NKQ3ZHa3czL1c4eXpjVnRMbnlOCnVmOTBoSjB0QThSVkJaYnNYR1dYLzBHeHdSeGt1M0lHVm03OTByZkRZd1ZwOW5sb2JlN1RzU09lWjZzTzZqeXcKaDFrcDNFaWdncVM5ZmdGSWhiTGd0bUVuYm0wVkJmQS8rOFVOWlF4Snh6dzB1WkNWb2pFb0Z0Ynh5djNpbkhTdQpjbEtHczNzRFExUkEyUERFM3h5T1I1MWE0UkxBV3VhdlFDMVRkeWRTL1FFbkNteEpuWjFlUVkrYmp0K0duSE9PCk9QemdDS0h1MVRkSnlQVDU3a1U3RlhNRWt1dWo1YUcxaS9VdFpTTkgrTDM4Nnk2blBtbzdiL21YeUZnTWlsN3IKbE5hVDgxRUNnWUVBNy9iMHVvdFpFbTNHejFPd05ZbVFTOGdOeEFxMVd0VzIyNVJDQnhpRVYrUzd4c2x1ZUNpRwpuQVRCaWR3TUkvOFhiTjhLdmJtVTJUTm5uZGNzVU50OXRhOHVmWDBHWFEwcGpFWE5MM1pmVEtvWkYwZS9CbjNXCkJxU1YxWUJscEU3QjgxTTc5bVNWWWJNU2NmenhDVmphVTUzSlJEellVWXhQUU5WK2lNa1lrOGtDZ1lFQXR0QUsKMlpLUG96bFdUUDZHTzF2M2VrbStRd1VmdHZKNDNYeVo1OVB6aGVnam0yaGtJRWJVdUlQQ1ZmdVFJVkN2ZlBJQgp5QW9UQys5aTRyQVBtQ3ZZWG9HWUF4OGw1WXV3ZmlVaDhhalRhdnpnckNrOXU5L3hPSDJ5cEl4Um5IenBlOTl0ClYra0xFRXVXK3VMY045K0QxMGJQMDRxVEhvK0RJR2g5TXVqMjNsc0NnWUFrWHF5Mi9WblJ0anUwdnIxdFQ5MUQKN3gxUEFrUjhjUG5YREFCNTdOaGFMZnZiNURuUEVtMWNoa2dES2d2WkJOZTdFNDhnTkZtQUZnOTFWK0NLbk1uUAoySzVXTExYak1wU0NneTNYTEx6QzlPRDZxMUFqbnJ6cW90Vm0xNkFRS0RPek9vRlRGZW1pTmk3c2dlYlNnTm9PClpGTFYrZGJiZlVXaDBQbnRwM1VIS1FLQmdGMS85RHlwVUJ1c1pLNUdjNE1DbTRXSkYrMlJQbEpFbTNxMGtzYlcKU2JRUU1iMzNXMWFDdzZPSGlDcVAybnlmbHRHeHVTV0Z1WTRlSnBaSWRBRmhVMjJxbklQa04yNjZ6azhHVU9FWApkdUkrYWU3RHZSWk5DRVBiVGpZSXFtaitIakRENmxuUEVHQ0tPTE1pdW4wOUxXSTZqbXJrY2pCc09DV29LM2lSClhFb0hBb0dBT1NYTzFrTTZwME1aRWhLeHJWdW5GNkhwVzhhSFJqY2RjampKSlJGZ2FwM2h4Q1QxT1o5WUIrU0QKUHJuK2NqRko3V1NNckhwSVJ0NTZGWkdVVWdtcCs5N1dxWXNJdUFKeDU2RVRLZEFWeDZDN1J1RXRiSm9xZFRFUgpoUzR2YUdxK0VXbWpWYy9wU01iQnpaOTlscElFYnlZQmsyakQzR3BDV2dTZDlDRHJ4R1k9Ci0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0t'
-    # $secret = '43ce55e1-e849-42cb-b32b-f78fb2d0e0f5'
-
-    $recipient_email = "node_sdk@mailinator.com" #"naveen.gopala@docusign.com"
+  	$private_key_filename = '../docs/private.pem'
+    
+    $recipient_email = "docusignsdktest@mailinator.com"
     $recipient_name = "Ruby SDK"
 
     # Required for embedded signing url
@@ -272,23 +269,83 @@ describe 'DocuSign Ruby Client Tests' do
   				envelope_summary = nil
 
   				if !$envelope_id.nil?
-						api_client = create_api_client()
-						envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
-						
-						options = DocuSign_eSign::GetEnvelopeOptions.new
+					api_client = create_api_client()
+					envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
+					
+					options = DocuSign_eSign::GetEnvelopeOptions.new
 
-						envelope_summary = envelopes_api.get_envelope($account_id, $envelope_id, options)
-					end
+					envelope_summary = envelopes_api.get_envelope($account_id, $envelope_id, options)
+				end
 
-					expect(envelope_summary).to be_truthy
-					if !envelope_summary.nil?
-						expect(envelope_summary.envelope_id).to eq($envelope_id)
-					end
+				expect(envelope_summary).to be_truthy
+				if !envelope_summary.nil?
+					expect(envelope_summary.envelope_id).to eq($envelope_id)
+				end
+  			end
+  		end
+
+  		context 'get template information' do
+  			it 'successfully returns template' do
+  				template_summary = nil
+
+  				if !$envelope_id.nil?
+					api_client = create_api_client()
+					templates_api = DocuSign_eSign::TemplatesApi.new(api_client)
+					
+					options = DocuSign_eSign::GetEnvelopeOptions.new
+					$template_id = "bca85326-49b9-4faa-bcf5-f70094ac64e9" #ENV["TEMPLATE_ID"]
+
+					template_summary = templates_api.get($account_id, $template_id)
+				end
+
+				expect(template_summary).to be_truthy
+				if !template_summary.nil?
+					expect(template_summary.template_id).to eq($template_id)
+				end
   			end
   		end
   	end
 
   	describe '.list' do
+  		context 'list envelopes' do
+  			it 'successfully list envelope' do
+  				recipients = nil
+
+  				envelope_ids = ""
+				count1 = 0
+				count2 = 0
+						
+				if !$envelope_id.nil?
+  					api_client = create_api_client()
+					envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
+
+					options = DocuSign_eSign::ListStatusChangesOptions.new
+					options.count = "10"
+					options.from_date = (Date.today-30).strftime("%Y-%m-%d")
+
+					envelopes_information = envelopes_api.list_status_changes($account_id, options)
+					expect(envelopes_information).to be_truthy
+					if !envelopes_information.nil?
+						expect(envelopes_information.envelopes.length).to be > 0
+						count1 = envelopes_information.envelopes.length
+						envelope_ids = envelopes_information.envelopes.map { |f| f.envelope_id }.join ','
+					end
+
+					options = DocuSign_eSign::ListStatusChangesOptions.new
+					options.envelope_ids = envelope_ids
+
+					envelopes_information = envelopes_api.list_status_changes($account_id, options)
+				end
+
+				expect(envelopes_information).to be_truthy
+				if !envelopes_information.nil?
+					expect(envelopes_information.envelopes.length).to be > 0
+					count2 = envelopes_information.envelopes.length
+					expect(count1 == count2)
+				end
+  			end
+  		end
+
   		context 'list recipients' do
   			it 'successfully list envelope recipients' do
   				recipients = nil
@@ -360,8 +417,8 @@ describe 'DocuSign Ruby Client Tests' do
 							end
 						end
 					end
+  				end
   			end
-  		end
 		end
 	end
 end
