@@ -296,7 +296,7 @@ module DocuSign_eSign
   end
 
   class ListTemplatesOptions
-    # The possible values are:  matching_applied Ã¢â¬â This returns template matching information for the template.
+    # The possible values are:  matching_applied - This returns template matching information for the template.
     attr_accessor :include
 
     def self.default
