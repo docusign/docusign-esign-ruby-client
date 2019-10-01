@@ -299,7 +299,6 @@ describe 'DocuSign Ruby Client Tests' do
 					options.include = "tabs"
 
 					template_summary = templates_api.get($account_id, $template_id, options)
-					puts template_summary
 				end
 
 				expect(template_summary).to be_truthy
