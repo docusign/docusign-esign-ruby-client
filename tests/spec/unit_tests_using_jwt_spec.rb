@@ -295,7 +295,11 @@ describe 'DocuSign Ruby Client Tests' do
 					options = DocuSign_eSign::GetEnvelopeOptions.new
 					$template_id = "bca85326-49b9-4faa-bcf5-f70094ac64e9" #ENV["TEMPLATE_ID"]
 
-					template_summary = templates_api.get($account_id, $template_id)
+					options = DocuSign_eSign::GetOptions.new
+					options.include = "tabs"
+
+					template_summary = templates_api.get($account_id, $template_id, options)
+					puts template_summary
 				end
 
 				expect(template_summary).to be_truthy
