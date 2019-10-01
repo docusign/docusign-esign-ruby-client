@@ -67,6 +67,9 @@ module DocuSign_eSign
     # Reserved: For DocuSign use only.
     attr_accessor :delivered_date_time
 
+    # 
+    attr_accessor :disable_responsive_document
+
     # Complex element contains the details on the documents in the envelope.
     attr_accessor :documents
 
@@ -186,6 +189,7 @@ module DocuSign_eSign
         :'declined_date_time' => :'declinedDateTime',
         :'deleted_date_time' => :'deletedDateTime',
         :'delivered_date_time' => :'deliveredDateTime',
+        :'disable_responsive_document' => :'disableResponsiveDocument',
         :'documents' => :'documents',
         :'documents_combined_uri' => :'documentsCombinedUri',
         :'documents_uri' => :'documentsUri',
@@ -244,6 +248,7 @@ module DocuSign_eSign
         :'declined_date_time' => :'String',
         :'deleted_date_time' => :'String',
         :'delivered_date_time' => :'String',
+        :'disable_responsive_document' => :'String',
         :'documents' => :'Array<Document>',
         :'documents_combined_uri' => :'String',
         :'documents_uri' => :'String',
@@ -359,6 +364,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'deliveredDateTime')
         self.delivered_date_time = attributes[:'deliveredDateTime']
+      end
+
+      if attributes.has_key?(:'disableResponsiveDocument')
+        self.disable_responsive_document = attributes[:'disableResponsiveDocument']
       end
 
       if attributes.has_key?(:'documents')
@@ -537,6 +546,7 @@ module DocuSign_eSign
           declined_date_time == o.declined_date_time &&
           deleted_date_time == o.deleted_date_time &&
           delivered_date_time == o.delivered_date_time &&
+          disable_responsive_document == o.disable_responsive_document &&
           documents == o.documents &&
           documents_combined_uri == o.documents_combined_uri &&
           documents_uri == o.documents_uri &&
@@ -582,7 +592,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_markup, allow_reassign, allow_view_history, asynchronous, attachments_uri, authoritative_copy, authoritative_copy_default, auto_navigation, brand_id, brand_lock, certificate_uri, completed_date_time, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_id, envelope_id_stamping, envelope_template_definition, envelope_uri, initial_sent_date_time, is21_cfr_part11, is_signature_provider_envelope, last_modified_date_time, lock_information, message_lock, notification, notification_uri, purge_state, recipients, recipients_lock, recipients_uri, sent_date_time, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, templates_uri, transaction_id, use_disclosure, voided_date_time, voided_reason].hash
+      [allow_markup, allow_reassign, allow_view_history, asynchronous, attachments_uri, authoritative_copy, authoritative_copy_default, auto_navigation, brand_id, brand_lock, certificate_uri, completed_date_time, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, disable_responsive_document, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_id, envelope_id_stamping, envelope_template_definition, envelope_uri, initial_sent_date_time, is21_cfr_part11, is_signature_provider_envelope, last_modified_date_time, lock_information, message_lock, notification, notification_uri, purge_state, recipients, recipients_lock, recipients_uri, sent_date_time, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, templates_uri, transaction_id, use_disclosure, voided_date_time, voided_reason].hash
     end
 
     # Builds the object from hash

@@ -17,7 +17,12 @@ describe 'DocuSign Ruby Client Tests' do
 				# $api_client.generate_access_token($integrator_key,$secret,code)
 			end
 
-	  	token_obj = $api_client.request_jwt_user_token($integrator_key,$user_id, File.read($private_key_filename),$expires_in_seconds)
+		decode_base64_content = Base64.decode64(ENV["PRIVATE_KEY"])
+ 		File.open($private_key_filename, "wb") do |f|
+ 		  f.write(decode_base64_content)
+ 		end
+
+	  	token_obj = $api_client.request_jwt_user_token(ENV["INTEGRATOR_KEY_JWT"],ENV["USER_ID"], File.read($private_key_filename),$expires_in_seconds)
 
 	  	user_info = $api_client.get_user_info(token_obj.access_token)
 
@@ -55,13 +60,13 @@ describe 'DocuSign Ruby Client Tests' do
 	def create_envelope_on_document(status, is_embedded_signing)
 		if(!$account_id.nil?)
 			# STEP 2: Create envelope definition
-  		# Add a document to the envelope
+  			# Add a document to the envelope
 			document_path = "../docs/Test.pdf"
 			document_name = "Test.docx"
 			document = DocuSign_eSign::Document.new
-  		document.document_base64 = Base64.encode64(File.open(document_path).read)
-  		document.name = document_name
-  		document.document_id = '1'
+	  		document.document_base64 = Base64.encode64(File.open(document_path).read)
+	  		document.name = document_name
+	  		document.document_id = '1'
 
 			# Create a |SignHere| tab somewhere on the document for the recipient to sign
 			signHere = DocuSign_eSign::SignHere.new
@@ -75,7 +80,7 @@ describe 'DocuSign Ruby Client Tests' do
 			tabs.sign_here_tabs = Array(signHere)
 
 			signer = DocuSign_eSign::Signer.new
-			signer.email = $recipient_email
+			signer.email = ENV["RECIPIENT_EMAIL"]
 			signer.name = $recipient_name
 			signer.recipient_id = "1"
 
@@ -110,14 +115,10 @@ describe 'DocuSign Ruby Client Tests' do
     # run before each test
     $host = "https://demo.docusign.net/restapi"
 
-  	$integrator_key = 'ae30ea4e-xxxx-xxxx-xxxx-fcb57d2dc4df'
-  	$user_id = 'fcc5726c-xxxx-xxxx-xxxx-40bbbe6ca126'
   	$expires_in_seconds = 3600 #1 hour
   	$auth_server = 'account-d.docusign.com'
   	$private_key_filename = '../docs/private.pem'
-    $secret = '3b61ffcf-xxxx-xxxx-xxxx-d49f7d82cb55'
-
-    $recipient_email = "node_sdk@mailinator.com"
+    
     $recipient_name = "Ruby SDK"
 
     # Required for embedded signing url
@@ -226,7 +227,7 @@ describe 'DocuSign Ruby Client Tests' do
 						recipient_view_request.client_user_id = $client_user_id
 						recipient_view_request.authentication_method = $authentication_method
 						recipient_view_request.user_name = $recipient_name
-						recipient_view_request.email = $recipient_email
+						recipient_view_request.email = ENV["RECIPIENT_EMAIL"]
 
 						view_url = envelopes_api.create_recipient_view($account_id, $envelope_id, recipient_view_request)
   				end
@@ -267,23 +268,83 @@ describe 'DocuSign Ruby Client Tests' do
   				envelope_summary = nil
 
   				if !$envelope_id.nil?
-						api_client = create_api_client()
-						envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
-						
-						options = DocuSign_eSign::GetEnvelopeOptions.new
+					api_client = create_api_client()
+					envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
+					
+					options = DocuSign_eSign::GetEnvelopeOptions.new
 
-						envelope_summary = envelopes_api.get_envelope($account_id, $envelope_id, options)
-					end
+					envelope_summary = envelopes_api.get_envelope($account_id, $envelope_id, options)
+				end
 
-					expect(envelope_summary).to be_truthy
-					if !envelope_summary.nil?
-						expect(envelope_summary.envelope_id).to eq($envelope_id)
-					end
+				expect(envelope_summary).to be_truthy
+				if !envelope_summary.nil?
+					expect(envelope_summary.envelope_id).to eq($envelope_id)
+				end
+  			end
+  		end
+
+  		context 'get template information' do
+  			it 'successfully returns template' do
+  				template_summary = nil
+
+  				if !$envelope_id.nil?
+					api_client = create_api_client()
+					templates_api = DocuSign_eSign::TemplatesApi.new(api_client)
+					
+					options = DocuSign_eSign::GetEnvelopeOptions.new
+					$template_id = ENV["TEMPLATE_ID"]
+
+					template_summary = templates_api.get($account_id, $template_id)
+				end
+
+				expect(template_summary).to be_truthy
+				if !template_summary.nil? && !template_summary.envelope_template_definition.nil?
+					expect(template_summary.envelope_template_definition.template_id).to eq($template_id)
+				end
   			end
   		end
   	end
 
   	describe '.list' do
+  		context 'list envelopes' do
+  			it 'successfully list envelope' do
+  				recipients = nil
+
+  				envelope_ids = ""
+				count1 = 0
+				count2 = 0
+						
+				if !$envelope_id.nil?
+  					api_client = create_api_client()
+					envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
+
+					options = DocuSign_eSign::ListStatusChangesOptions.new
+					options.count = "10"
+					options.from_date = (Date.today-30).strftime("%Y-%m-%d")
+
+					envelopes_information = envelopes_api.list_status_changes($account_id, options)
+					expect(envelopes_information).to be_truthy
+					if !envelopes_information.nil?
+						expect(envelopes_information.envelopes.length).to be > 0
+						count1 = envelopes_information.envelopes.length
+						envelope_ids = envelopes_information.envelopes.map { |f| f.envelope_id }.join ','
+					end
+
+					options = DocuSign_eSign::ListStatusChangesOptions.new
+					options.envelope_ids = envelope_ids
+
+					envelopes_information = envelopes_api.list_status_changes($account_id, options)
+				end
+
+				expect(envelopes_information).to be_truthy
+				if !envelopes_information.nil?
+					expect(envelopes_information.envelopes.length).to be > 0
+					count2 = envelopes_information.envelopes.length
+					expect(count1 == count2)
+				end
+  			end
+  		end
+
   		context 'list recipients' do
   			it 'successfully list envelope recipients' do
   				recipients = nil
@@ -355,8 +416,8 @@ describe 'DocuSign Ruby Client Tests' do
 							end
 						end
 					end
+  				end
   			end
-  		end
 		end
 	end
 end

@@ -136,7 +136,7 @@ module DocuSign_eSign
         :'checkbox_tabs' => :'Array<Checkbox>',
         :'company_tabs' => :'Array<Company>',
         :'date_signed_tabs' => :'Array<DateSigned>',
-        :'date_tabs' => :'Array<Date>',
+        :'date_tabs' => :'Array<DocuSign_eSign::Date>',
         :'decline_tabs' => :'Array<Decline>',
         :'email_address_tabs' => :'Array<EmailAddress>',
         :'email_tabs' => :'Array<Email>',

@@ -13,86 +13,22 @@ require 'date'
 
 module DocuSign_eSign
 
-  class PaymentDetails
+  class RecipientIdentityVerification
     # 
-    attr_accessor :allowed_payment_methods
-
-    # 
-    attr_accessor :charge_id
-
-    # 
-    attr_accessor :currency_code
-
-    # 
-    attr_accessor :customer_id
-
-    # 
-    attr_accessor :custom_metadata
-
-    # 
-    attr_accessor :custom_metadata_required
-
-    # 
-    attr_accessor :gateway_account_id
-
-    # 
-    attr_accessor :gateway_display_name
-
-    # 
-    attr_accessor :gateway_name
-
-    # 
-    attr_accessor :line_items
-
-    # 
-    attr_accessor :payment_option
-
-    # 
-    attr_accessor :payment_source_id
-
-    # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
-    attr_accessor :status
-
-    attr_accessor :total
+    attr_accessor :workflow_id
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'allowed_payment_methods' => :'allowedPaymentMethods',
-        :'charge_id' => :'chargeId',
-        :'currency_code' => :'currencyCode',
-        :'customer_id' => :'customerId',
-        :'custom_metadata' => :'customMetadata',
-        :'custom_metadata_required' => :'customMetadataRequired',
-        :'gateway_account_id' => :'gatewayAccountId',
-        :'gateway_display_name' => :'gatewayDisplayName',
-        :'gateway_name' => :'gatewayName',
-        :'line_items' => :'lineItems',
-        :'payment_option' => :'paymentOption',
-        :'payment_source_id' => :'paymentSourceId',
-        :'status' => :'status',
-        :'total' => :'total'
+        :'workflow_id' => :'workflowId'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'allowed_payment_methods' => :'Array<String>',
-        :'charge_id' => :'String',
-        :'currency_code' => :'String',
-        :'customer_id' => :'String',
-        :'custom_metadata' => :'String',
-        :'custom_metadata_required' => :'BOOLEAN',
-        :'gateway_account_id' => :'String',
-        :'gateway_display_name' => :'String',
-        :'gateway_name' => :'String',
-        :'line_items' => :'Array<PaymentLineItem>',
-        :'payment_option' => :'String',
-        :'payment_source_id' => :'String',
-        :'status' => :'String',
-        :'total' => :'Money'
+        :'workflow_id' => :'String'
       }
     end
 
@@ -104,64 +40,8 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'allowedPaymentMethods')
-        if (value = attributes[:'allowedPaymentMethods']).is_a?(Array)
-          self.allowed_payment_methods = value
-        end
-      end
-
-      if attributes.has_key?(:'chargeId')
-        self.charge_id = attributes[:'chargeId']
-      end
-
-      if attributes.has_key?(:'currencyCode')
-        self.currency_code = attributes[:'currencyCode']
-      end
-
-      if attributes.has_key?(:'customerId')
-        self.customer_id = attributes[:'customerId']
-      end
-
-      if attributes.has_key?(:'customMetadata')
-        self.custom_metadata = attributes[:'customMetadata']
-      end
-
-      if attributes.has_key?(:'customMetadataRequired')
-        self.custom_metadata_required = attributes[:'customMetadataRequired']
-      end
-
-      if attributes.has_key?(:'gatewayAccountId')
-        self.gateway_account_id = attributes[:'gatewayAccountId']
-      end
-
-      if attributes.has_key?(:'gatewayDisplayName')
-        self.gateway_display_name = attributes[:'gatewayDisplayName']
-      end
-
-      if attributes.has_key?(:'gatewayName')
-        self.gateway_name = attributes[:'gatewayName']
-      end
-
-      if attributes.has_key?(:'lineItems')
-        if (value = attributes[:'lineItems']).is_a?(Array)
-          self.line_items = value
-        end
-      end
-
-      if attributes.has_key?(:'paymentOption')
-        self.payment_option = attributes[:'paymentOption']
-      end
-
-      if attributes.has_key?(:'paymentSourceId')
-        self.payment_source_id = attributes[:'paymentSourceId']
-      end
-
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.has_key?(:'total')
-        self.total = attributes[:'total']
+      if attributes.has_key?(:'workflowId')
+        self.workflow_id = attributes[:'workflowId']
       end
 
     end
@@ -184,20 +64,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          allowed_payment_methods == o.allowed_payment_methods &&
-          charge_id == o.charge_id &&
-          currency_code == o.currency_code &&
-          customer_id == o.customer_id &&
-          custom_metadata == o.custom_metadata &&
-          custom_metadata_required == o.custom_metadata_required &&
-          gateway_account_id == o.gateway_account_id &&
-          gateway_display_name == o.gateway_display_name &&
-          gateway_name == o.gateway_name &&
-          line_items == o.line_items &&
-          payment_option == o.payment_option &&
-          payment_source_id == o.payment_source_id &&
-          status == o.status &&
-          total == o.total
+          workflow_id == o.workflow_id
     end
 
     # @see the `==` method
@@ -209,7 +76,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allowed_payment_methods, charge_id, currency_code, customer_id, custom_metadata, custom_metadata_required, gateway_account_id, gateway_display_name, gateway_name, line_items, payment_option, payment_source_id, status, total].hash
+      [workflow_id].hash
     end
 
     # Builds the object from hash
