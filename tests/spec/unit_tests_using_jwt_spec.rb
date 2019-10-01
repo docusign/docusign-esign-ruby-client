@@ -80,7 +80,7 @@ describe 'DocuSign Ruby Client Tests' do
 			tabs.sign_here_tabs = Array(signHere)
 
 			signer = DocuSign_eSign::Signer.new
-			signer.email = $recipient_email
+			signer.email = ENV["RECIPIENT_EMAIL"]
 			signer.name = $recipient_name
 			signer.recipient_id = "1"
 
@@ -119,7 +119,6 @@ describe 'DocuSign Ruby Client Tests' do
   	$auth_server = 'account-d.docusign.com'
   	$private_key_filename = '../docs/private.pem'
     
-    $recipient_email = "docusignsdktest@mailinator.com"
     $recipient_name = "Ruby SDK"
 
     # Required for embedded signing url
@@ -228,7 +227,7 @@ describe 'DocuSign Ruby Client Tests' do
 						recipient_view_request.client_user_id = $client_user_id
 						recipient_view_request.authentication_method = $authentication_method
 						recipient_view_request.user_name = $recipient_name
-						recipient_view_request.email = $recipient_email
+						recipient_view_request.email = ENV["RECIPIENT_EMAIL"]
 
 						view_url = envelopes_api.create_recipient_view($account_id, $envelope_id, recipient_view_request)
   				end
@@ -293,7 +292,7 @@ describe 'DocuSign Ruby Client Tests' do
 					templates_api = DocuSign_eSign::TemplatesApi.new(api_client)
 					
 					options = DocuSign_eSign::GetEnvelopeOptions.new
-					$template_id = "bca85326-49b9-4faa-bcf5-f70094ac64e9" #ENV["TEMPLATE_ID"]
+					$template_id = ENV["TEMPLATE_ID"]
 
 					options = DocuSign_eSign::GetOptions.new
 					options.include = "tabs"
