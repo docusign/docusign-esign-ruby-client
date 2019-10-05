@@ -3,6 +3,31 @@ All notable changes to this project will be documented in this file.
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v3.0.0.rc1] - eSignature API v2.1-19.2.02 - 2019-10-05
+### BREAKING
+- The SDK now supports version 19.2.02 of the DocuSign eSignature v2.1 API.
+### Changed
+- SDK Release Version updated.
+## Fixed
+- Issue [`#23`](https://github.com/docusign/docusign-ruby-client/issues/23): Support for DocuSign API 2.1. (DCM-3546)
+- Issue [`#22`](https://github.com/docusign/docusign-ruby-client/issues/22): JSON version of version 2.0. (DCM-3375)
+- Issue [`#17`](https://github.com/docusign/docusign-ruby-client/issues/17): Client doesn't properly handle Dropdown. (DCM-3192)
+- Issue [`#16`](https://github.com/docusign/docusign-ruby-client/issues/16): Client doesn't properly handle Text tabs with Date Validation. (DCM-3193)
+- Issue [`#15`](https://github.com/docusign/docusign-ruby-client/issues/15): ListStatus not accepting envelope_ids. (DCM-3123)
+- Issue [`#7`](https://github.com/docusign/docusign-ruby-client/issues/7): Allow passing in JWT. (DCM-2312)
+
+## [v2.1.0.rc1] - eSignature API v2-19.2.02 - 2019-10-05
+### Changed
+- The SDK now supports version 19.2.02 of the DocuSign eSignature v2 API.
+- SDK Release Version updated.
+## Fixed
+- Issue [`#23`](https://github.com/docusign/docusign-ruby-client/issues/23): Support for DocuSign API 2.1. (DCM-3546)
+- Issue [`#22`](https://github.com/docusign/docusign-ruby-client/issues/22): JSON version of version 2.0. (DCM-3375)
+- Issue [`#17`](https://github.com/docusign/docusign-ruby-client/issues/17): Client doesn't properly handle Dropdown. (DCM-3192)
+- Issue [`#16`](https://github.com/docusign/docusign-ruby-client/issues/16): Client doesn't properly handle Text tabs with Date Validation. (DCM-3193)
+- Issue [`#15`](https://github.com/docusign/docusign-ruby-client/issues/15): ListStatus not accepting envelope_ids. (DCM-3123)
+- Issue [`#7`](https://github.com/docusign/docusign-ruby-client/issues/7): Allow passing in JWT. (DCM-2312)
+
 ## [2.0.0] - eSignature API v19.1.02 - 2019-06-08
 ### BREAKING
 * Moved ApiClient and ApiException under Client folder
