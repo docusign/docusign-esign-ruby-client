@@ -38,7 +38,7 @@ This open-source SDK is provided for cases where you would like to make addition
 This client has the following external dependencies:
 
 - Jwt>=1.5.2
-- Json>=1.8.3
+- Json>=2.1.0
 - Typhoeus>=1.0.1
 
 ## Code Examples
