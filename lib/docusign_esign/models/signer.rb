@@ -113,6 +113,8 @@ module DocuSign_eSign
 
     attr_accessor :phone_authentication
 
+    attr_accessor :proof_file
+
     # Reserved:
     attr_accessor :recipient_attachments
 
@@ -133,7 +135,7 @@ module DocuSign_eSign
     # When set to **true**, the recipient is required to use the specified ID check method (including Phone and SMS authentication) to validate their identity. 
     attr_accessor :require_id_lookup
 
-    # Sets the type of signer certificate required for signing. If left blank, no certificate is required. Only one type of certificate can be set for a signer. The possible values are:  * docusign_express - Requires a DocuSign Express certificate. * safe - Requires a SAFE-BioPharma certificate. * open_trust - Requires an OpenTrust certificate.   **Important**: There are certain rules and restrictions that must be followed when requiring OpenTrust digital signatures. See [ML:OpenTrust Rules and Restrictions] for more information.   
+    # Sets the type of signer certificate required for signing. If left blank, no certificate is required. Only one type of certificate can be set for a signer. The possible values are:  * docusign_express Ã¢â¬â Requires a DocuSign Express certificate. * safe Ã¢â¬â Requires a SAFE-BioPharma certificate. * open_trust Ã¢â¬â Requires an OpenTrust certificate.   **Important**: There are certain rules and restrictions that must be followed when requiring OpenTrust digital signatures. See [ML:OpenTrust Rules and Restrictions] for more information.   
     attr_accessor :require_signer_certificate
 
     # When set to **true**, the signer must print, sign, and upload or fax the signed documents to DocuSign.
@@ -228,6 +230,7 @@ module DocuSign_eSign
         :'note' => :'note',
         :'offline_attributes' => :'offlineAttributes',
         :'phone_authentication' => :'phoneAuthentication',
+        :'proof_file' => :'proofFile',
         :'recipient_attachments' => :'recipientAttachments',
         :'recipient_authentication_status' => :'recipientAuthenticationStatus',
         :'recipient_id' => :'recipientId',
@@ -296,6 +299,7 @@ module DocuSign_eSign
         :'note' => :'String',
         :'offline_attributes' => :'OfflineAttributes',
         :'phone_authentication' => :'RecipientPhoneAuthentication',
+        :'proof_file' => :'RecipientProofFile',
         :'recipient_attachments' => :'Array<RecipientAttachment>',
         :'recipient_authentication_status' => :'AuthenticationStatus',
         :'recipient_id' => :'String',
@@ -480,6 +484,10 @@ module DocuSign_eSign
         self.phone_authentication = attributes[:'phoneAuthentication']
       end
 
+      if attributes.has_key?(:'proofFile')
+        self.proof_file = attributes[:'proofFile']
+      end
+
       if attributes.has_key?(:'recipientAttachments')
         if (value = attributes[:'recipientAttachments']).is_a?(Array)
           self.recipient_attachments = value
@@ -651,6 +659,7 @@ module DocuSign_eSign
           note == o.note &&
           offline_attributes == o.offline_attributes &&
           phone_authentication == o.phone_authentication &&
+          proof_file == o.proof_file &&
           recipient_attachments == o.recipient_attachments &&
           recipient_authentication_status == o.recipient_authentication_status &&
           recipient_id == o.recipient_id &&
@@ -689,7 +698,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, add_access_code_to_email, agent_can_edit_email, agent_can_edit_name, auto_navigation, bulk_recipients_uri, can_sign_offline, client_user_id, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, document_visibility, email, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, first_name, full_name, id_check_configuration_name, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, last_name, name, note, offline_attributes, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, require_id_lookup, require_signer_certificate, require_sign_on_paper, role_name, routing_order, saml_authentication, sent_date_time, signature_info, signed_date_time, sign_in_each_location, signing_group_id, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, tabs, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, add_access_code_to_email, agent_can_edit_email, agent_can_edit_name, auto_navigation, bulk_recipients_uri, can_sign_offline, client_user_id, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, document_visibility, email, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, first_name, full_name, id_check_configuration_name, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, last_name, name, note, offline_attributes, phone_authentication, proof_file, recipient_attachments, recipient_authentication_status, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, require_id_lookup, require_signer_certificate, require_sign_on_paper, role_name, routing_order, saml_authentication, sent_date_time, signature_info, signed_date_time, sign_in_each_location, signing_group_id, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, tabs, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash

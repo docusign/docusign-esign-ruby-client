@@ -56,6 +56,9 @@ module DocuSign_eSign
     attr_accessor :signer_must_acknowledge
 
     # 
+    attr_accessor :size_bytes
+
+    # 
     attr_accessor :type
 
     # 
@@ -79,6 +82,7 @@ module DocuSign_eSign
         :'order' => :'order',
         :'pages' => :'pages',
         :'signer_must_acknowledge' => :'signerMustAcknowledge',
+        :'size_bytes' => :'sizeBytes',
         :'type' => :'type',
         :'uri' => :'uri'
       }
@@ -101,6 +105,7 @@ module DocuSign_eSign
         :'order' => :'String',
         :'pages' => :'String',
         :'signer_must_acknowledge' => :'String',
+        :'size_bytes' => :'String',
         :'type' => :'String',
         :'uri' => :'String'
       }
@@ -174,6 +179,10 @@ module DocuSign_eSign
         self.signer_must_acknowledge = attributes[:'signerMustAcknowledge']
       end
 
+      if attributes.has_key?(:'sizeBytes')
+        self.size_bytes = attributes[:'sizeBytes']
+      end
+
       if attributes.has_key?(:'type')
         self.type = attributes[:'type']
       end
@@ -216,6 +225,7 @@ module DocuSign_eSign
           order == o.order &&
           pages == o.pages &&
           signer_must_acknowledge == o.signer_must_acknowledge &&
+          size_bytes == o.size_bytes &&
           type == o.type &&
           uri == o.uri
     end
@@ -229,7 +239,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [attachment_tab_id, authoritative_copy, available_document_types, contains_pdf_form_fields, display, document_fields, document_group, document_id, error_details, include_in_download, name, order, pages, signer_must_acknowledge, type, uri].hash
+      [attachment_tab_id, authoritative_copy, available_document_types, contains_pdf_form_fields, display, document_fields, document_group, document_id, error_details, include_in_download, name, order, pages, signer_must_acknowledge, size_bytes, type, uri].hash
     end
 
     # Builds the object from hash

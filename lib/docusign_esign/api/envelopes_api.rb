@@ -181,6 +181,15 @@ module DocuSign_eSign
     end
   end
 
+  class ListDocumentsOptions
+    # 
+    attr_accessor :include_document_size
+
+    def self.default
+      @@default ||= ListDocumentsOptions.new
+    end
+  end
+
   class ListRecipientsOptions
     #  When set to **true** and `include_tabs` is set to **true**, all tabs with anchor tab properties are included in the response. 
     attr_accessor :include_anchor_tab_locations
@@ -296,7 +305,7 @@ module DocuSign_eSign
   end
 
   class ListTemplatesOptions
-    # The possible values are:  matching_applied - This returns template matching information for the template.
+    # The possible values are:  matching_applied Ã¢â¬â This returns template matching information for the template.
     attr_accessor :include
 
     def self.default
@@ -2222,7 +2231,7 @@ module DocuSign_eSign
     # Reserved: Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param recipient_id The ID of the recipient being accessed.
     # @param DocuSign_eSign::GetConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [ConsumerDisclosure]
@@ -2235,7 +2244,7 @@ module DocuSign_eSign
     # Reserved: Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param recipient_id The ID of the recipient being accessed.
     # @param DocuSign_eSign::GetConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [Array<(ConsumerDisclosure, Fixnum, Hash)>] ConsumerDisclosure data, response status code and response headers
@@ -3499,9 +3508,10 @@ module DocuSign_eSign
     # Retrieves a list of documents associated with the specified envelope.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param DocuSign_eSign::ListDocumentsOptions Options for modifying the behavior of the function.
     # @return [EnvelopeDocumentsResult]
-    def list_documents(account_id, envelope_id)
-      data, _status_code, _headers = list_documents_with_http_info(account_id, envelope_id)
+    def list_documents(account_id, envelope_id, options = DocuSign_eSign::ListDocumentsOptions.default)
+      data, _status_code, _headers = list_documents_with_http_info(account_id, envelope_id, options)
       return data
     end
 
@@ -3509,8 +3519,9 @@ module DocuSign_eSign
     # Retrieves a list of documents associated with the specified envelope.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param DocuSign_eSign::ListDocumentsOptions Options for modifying the behavior of the function.
     # @return [Array<(EnvelopeDocumentsResult, Fixnum, Hash)>] EnvelopeDocumentsResult data, response status code and response headers
-    def list_documents_with_http_info(account_id, envelope_id)
+    def list_documents_with_http_info(account_id, envelope_id, options = DocuSign_eSign::ListDocumentsOptions.default)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: EnvelopesApi.list_documents ..."
       end
@@ -3523,6 +3534,7 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'include_document_size'] = options.include_document_size if !options.include_document_size.nil?
 
       # header parameters
       header_params = {}
