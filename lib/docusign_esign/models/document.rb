@@ -46,11 +46,20 @@ module DocuSign_eSign
     # 
     attr_accessor :include_in_download
 
+    # 
+    attr_accessor :is_dynamic_xfa
+
+    # 
+    attr_accessor :is_static_xfa
+
     # Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.  
     attr_accessor :match_boxes
 
     # 
     attr_accessor :name
+
+    # 
+    attr_accessor :ocr_requests
 
     # 
     attr_accessor :order
@@ -68,7 +77,13 @@ module DocuSign_eSign
     attr_accessor :password
 
     # 
+    attr_accessor :pdf_fields_data
+
+    # 
     attr_accessor :pdf_form_field_option
+
+    # 
+    attr_accessor :pdf_widgets_base64
 
     # The file id from the cloud storage service where the document is located. This information is returned using [ML:GET /folders] or [ML:/folders/{folderid}]. 
     attr_accessor :remote_url
@@ -105,14 +120,19 @@ module DocuSign_eSign
         :'file_format_hint' => :'fileFormatHint',
         :'html_definition' => :'htmlDefinition',
         :'include_in_download' => :'includeInDownload',
+        :'is_dynamic_xfa' => :'isDynamicXfa',
+        :'is_static_xfa' => :'isStaticXfa',
         :'match_boxes' => :'matchBoxes',
         :'name' => :'name',
+        :'ocr_requests' => :'ocrRequests',
         :'order' => :'order',
         :'page_count' => :'pageCount',
         :'pages' => :'pages',
         :'page_sizes' => :'pageSizes',
         :'password' => :'password',
+        :'pdf_fields_data' => :'pdfFieldsData',
         :'pdf_form_field_option' => :'pdfFormFieldOption',
+        :'pdf_widgets_base64' => :'pdfWidgetsBase64',
         :'remote_url' => :'remoteUrl',
         :'signer_must_acknowledge' => :'signerMustAcknowledge',
         :'tabs' => :'tabs',
@@ -137,14 +157,19 @@ module DocuSign_eSign
         :'file_format_hint' => :'String',
         :'html_definition' => :'DocumentHtmlDefinition',
         :'include_in_download' => :'String',
+        :'is_dynamic_xfa' => :'BOOLEAN',
+        :'is_static_xfa' => :'BOOLEAN',
         :'match_boxes' => :'Array<MatchBox>',
         :'name' => :'String',
+        :'ocr_requests' => :'Array<OcrRequest>',
         :'order' => :'String',
         :'page_count' => :'String',
         :'pages' => :'String',
         :'page_sizes' => :'Array<PageSize>',
         :'password' => :'String',
+        :'pdf_fields_data' => :'String',
         :'pdf_form_field_option' => :'String',
+        :'pdf_widgets_base64' => :'String',
         :'remote_url' => :'String',
         :'signer_must_acknowledge' => :'String',
         :'tabs' => :'Tabs',
@@ -209,6 +234,14 @@ module DocuSign_eSign
         self.include_in_download = attributes[:'includeInDownload']
       end
 
+      if attributes.has_key?(:'isDynamicXfa')
+        self.is_dynamic_xfa = attributes[:'isDynamicXfa']
+      end
+
+      if attributes.has_key?(:'isStaticXfa')
+        self.is_static_xfa = attributes[:'isStaticXfa']
+      end
+
       if attributes.has_key?(:'matchBoxes')
         if (value = attributes[:'matchBoxes']).is_a?(Array)
           self.match_boxes = value
@@ -217,6 +250,12 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'ocrRequests')
+        if (value = attributes[:'ocrRequests']).is_a?(Array)
+          self.ocr_requests = value
+        end
       end
 
       if attributes.has_key?(:'order')
@@ -241,8 +280,16 @@ module DocuSign_eSign
         self.password = attributes[:'password']
       end
 
+      if attributes.has_key?(:'pdfFieldsData')
+        self.pdf_fields_data = attributes[:'pdfFieldsData']
+      end
+
       if attributes.has_key?(:'pdfFormFieldOption')
         self.pdf_form_field_option = attributes[:'pdfFormFieldOption']
+      end
+
+      if attributes.has_key?(:'pdfWidgetsBase64')
+        self.pdf_widgets_base64 = attributes[:'pdfWidgetsBase64']
       end
 
       if attributes.has_key?(:'remoteUrl')
@@ -304,14 +351,19 @@ module DocuSign_eSign
           file_format_hint == o.file_format_hint &&
           html_definition == o.html_definition &&
           include_in_download == o.include_in_download &&
+          is_dynamic_xfa == o.is_dynamic_xfa &&
+          is_static_xfa == o.is_static_xfa &&
           match_boxes == o.match_boxes &&
           name == o.name &&
+          ocr_requests == o.ocr_requests &&
           order == o.order &&
           page_count == o.page_count &&
           pages == o.pages &&
           page_sizes == o.page_sizes &&
           password == o.password &&
+          pdf_fields_data == o.pdf_fields_data &&
           pdf_form_field_option == o.pdf_form_field_option &&
+          pdf_widgets_base64 == o.pdf_widgets_base64 &&
           remote_url == o.remote_url &&
           signer_must_acknowledge == o.signer_must_acknowledge &&
           tabs == o.tabs &&
@@ -330,7 +382,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [apply_anchor_tabs, display, document_base64, document_fields, document_group, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, match_boxes, name, order, page_count, pages, page_sizes, password, pdf_form_field_option, remote_url, signer_must_acknowledge, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
+      [apply_anchor_tabs, display, document_base64, document_fields, document_group, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, is_dynamic_xfa, is_static_xfa, match_boxes, name, ocr_requests, order, page_count, pages, page_sizes, password, pdf_fields_data, pdf_form_field_option, pdf_widgets_base64, remote_url, signer_must_acknowledge, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
     end
 
     # Builds the object from hash

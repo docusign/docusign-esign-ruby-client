@@ -81,16 +81,16 @@ module DocuSign_eSign
     attr_accessor :requires_acknowledgement
 
     # 
-    attr_accessor :salesforce_access_token
-
-    # 
     attr_accessor :salesforce_api_version
 
     # 
-    attr_accessor :salesforce_documents_as_content_files
+    attr_accessor :salesforce_authcode
 
     # 
-    attr_accessor :salesforce_refresh_token
+    attr_accessor :salesforce_call_back_url
+
+    # 
+    attr_accessor :salesforce_documents_as_content_files
 
     # 
     attr_accessor :sender_override
@@ -145,10 +145,10 @@ module DocuSign_eSign
         :'recipient_events' => :'recipientEvents',
         :'require_mutual_tls' => :'requireMutualTls',
         :'requires_acknowledgement' => :'requiresAcknowledgement',
-        :'salesforce_access_token' => :'salesforceAccessToken',
         :'salesforce_api_version' => :'salesforceApiVersion',
+        :'salesforce_authcode' => :'salesforceAuthcode',
+        :'salesforce_call_back_url' => :'salesforceCallBackUrl',
         :'salesforce_documents_as_content_files' => :'salesforceDocumentsAsContentFiles',
-        :'salesforce_refresh_token' => :'salesforceRefreshToken',
         :'sender_override' => :'senderOverride',
         :'sender_selectable_items' => :'senderSelectableItems',
         :'sf_objects' => :'sfObjects',
@@ -186,10 +186,10 @@ module DocuSign_eSign
         :'recipient_events' => :'Array<String>',
         :'require_mutual_tls' => :'String',
         :'requires_acknowledgement' => :'String',
-        :'salesforce_access_token' => :'String',
         :'salesforce_api_version' => :'String',
+        :'salesforce_authcode' => :'String',
+        :'salesforce_call_back_url' => :'String',
         :'salesforce_documents_as_content_files' => :'String',
-        :'salesforce_refresh_token' => :'String',
         :'sender_override' => :'String',
         :'sender_selectable_items' => :'Array<String>',
         :'sf_objects' => :'Array<ConnectSalesforceObject>',
@@ -302,20 +302,20 @@ module DocuSign_eSign
         self.requires_acknowledgement = attributes[:'requiresAcknowledgement']
       end
 
-      if attributes.has_key?(:'salesforceAccessToken')
-        self.salesforce_access_token = attributes[:'salesforceAccessToken']
-      end
-
       if attributes.has_key?(:'salesforceApiVersion')
         self.salesforce_api_version = attributes[:'salesforceApiVersion']
       end
 
-      if attributes.has_key?(:'salesforceDocumentsAsContentFiles')
-        self.salesforce_documents_as_content_files = attributes[:'salesforceDocumentsAsContentFiles']
+      if attributes.has_key?(:'salesforceAuthcode')
+        self.salesforce_authcode = attributes[:'salesforceAuthcode']
       end
 
-      if attributes.has_key?(:'salesforceRefreshToken')
-        self.salesforce_refresh_token = attributes[:'salesforceRefreshToken']
+      if attributes.has_key?(:'salesforceCallBackUrl')
+        self.salesforce_call_back_url = attributes[:'salesforceCallBackUrl']
+      end
+
+      if attributes.has_key?(:'salesforceDocumentsAsContentFiles')
+        self.salesforce_documents_as_content_files = attributes[:'salesforceDocumentsAsContentFiles']
       end
 
       if attributes.has_key?(:'senderOverride')
@@ -402,10 +402,10 @@ module DocuSign_eSign
           recipient_events == o.recipient_events &&
           require_mutual_tls == o.require_mutual_tls &&
           requires_acknowledgement == o.requires_acknowledgement &&
-          salesforce_access_token == o.salesforce_access_token &&
           salesforce_api_version == o.salesforce_api_version &&
+          salesforce_authcode == o.salesforce_authcode &&
+          salesforce_call_back_url == o.salesforce_call_back_url &&
           salesforce_documents_as_content_files == o.salesforce_documents_as_content_files &&
-          salesforce_refresh_token == o.salesforce_refresh_token &&
           sender_override == o.sender_override &&
           sender_selectable_items == o.sender_selectable_items &&
           sf_objects == o.sf_objects &&
@@ -426,7 +426,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_envelope_publish, allow_salesforce_publish, all_users, configuration_type, connect_id, enable_log, envelope_events, external_folder_id, external_folder_label, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_accountas_custom_field, include_time_zone_information, name, password, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_access_token, salesforce_api_version, salesforce_documents_as_content_files, salesforce_refresh_token, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
+      [allow_envelope_publish, allow_salesforce_publish, all_users, configuration_type, connect_id, enable_log, envelope_events, external_folder_id, external_folder_label, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_accountas_custom_field, include_time_zone_information, name, password, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
     end
 
     # Builds the object from hash

@@ -14,6 +14,11 @@ require 'date'
 module DocuSign_eSign
 
   class PolyLineOverlay
+    # 
+    attr_accessor :anchor_allow_white_space_in_characters
+
+    attr_accessor :anchor_allow_white_space_in_characters_metadata
+
     # When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**.
     attr_accessor :anchor_case_sensitive
 
@@ -141,6 +146,8 @@ module DocuSign_eSign
 
     attr_accessor :shared_metadata
 
+    attr_accessor :smart_contract_information
+
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
     attr_accessor :status
 
@@ -203,6 +210,8 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'anchor_allow_white_space_in_characters' => :'anchorAllowWhiteSpaceInCharacters',
+        :'anchor_allow_white_space_in_characters_metadata' => :'anchorAllowWhiteSpaceInCharactersMetadata',
         :'anchor_case_sensitive' => :'anchorCaseSensitive',
         :'anchor_case_sensitive_metadata' => :'anchorCaseSensitiveMetadata',
         :'anchor_horizontal_alignment' => :'anchorHorizontalAlignment',
@@ -254,6 +263,7 @@ module DocuSign_eSign
         :'recipient_id_metadata' => :'recipientIdMetadata',
         :'shared' => :'shared',
         :'shared_metadata' => :'sharedMetadata',
+        :'smart_contract_information' => :'smartContractInformation',
         :'status' => :'status',
         :'status_metadata' => :'statusMetadata',
         :'tab_group_labels' => :'tabGroupLabels',
@@ -283,6 +293,8 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'anchor_allow_white_space_in_characters' => :'String',
+        :'anchor_allow_white_space_in_characters_metadata' => :'PropertyMetadata',
         :'anchor_case_sensitive' => :'String',
         :'anchor_case_sensitive_metadata' => :'PropertyMetadata',
         :'anchor_horizontal_alignment' => :'String',
@@ -334,6 +346,7 @@ module DocuSign_eSign
         :'recipient_id_metadata' => :'PropertyMetadata',
         :'shared' => :'String',
         :'shared_metadata' => :'PropertyMetadata',
+        :'smart_contract_information' => :'SmartContractInformation',
         :'status' => :'String',
         :'status_metadata' => :'PropertyMetadata',
         :'tab_group_labels' => :'Array<String>',
@@ -367,6 +380,14 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'anchorAllowWhiteSpaceInCharacters')
+        self.anchor_allow_white_space_in_characters = attributes[:'anchorAllowWhiteSpaceInCharacters']
+      end
+
+      if attributes.has_key?(:'anchorAllowWhiteSpaceInCharactersMetadata')
+        self.anchor_allow_white_space_in_characters_metadata = attributes[:'anchorAllowWhiteSpaceInCharactersMetadata']
+      end
 
       if attributes.has_key?(:'anchorCaseSensitive')
         self.anchor_case_sensitive = attributes[:'anchorCaseSensitive']
@@ -574,6 +595,10 @@ module DocuSign_eSign
         self.shared_metadata = attributes[:'sharedMetadata']
       end
 
+      if attributes.has_key?(:'smartContractInformation')
+        self.smart_contract_information = attributes[:'smartContractInformation']
+      end
+
       if attributes.has_key?(:'status')
         self.status = attributes[:'status']
       end
@@ -688,6 +713,8 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          anchor_allow_white_space_in_characters == o.anchor_allow_white_space_in_characters &&
+          anchor_allow_white_space_in_characters_metadata == o.anchor_allow_white_space_in_characters_metadata &&
           anchor_case_sensitive == o.anchor_case_sensitive &&
           anchor_case_sensitive_metadata == o.anchor_case_sensitive_metadata &&
           anchor_horizontal_alignment == o.anchor_horizontal_alignment &&
@@ -739,6 +766,7 @@ module DocuSign_eSign
           recipient_id_metadata == o.recipient_id_metadata &&
           shared == o.shared &&
           shared_metadata == o.shared_metadata &&
+          smart_contract_information == o.smart_contract_information &&
           status == o.status &&
           status_metadata == o.status_metadata &&
           tab_group_labels == o.tab_group_labels &&
@@ -773,7 +801,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, custom_tab_id, custom_tab_id_metadata, document_id, document_id_metadata, error_details, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, graphics_context, height, height_metadata, locked, locked_metadata, merge_field, merge_field_xml, overlay_type, overlay_type_metadata, page_number, page_number_metadata, poly_lines, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, shared, shared_metadata, status, status_metadata, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
+      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, custom_tab_id, custom_tab_id_metadata, document_id, document_id_metadata, error_details, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, graphics_context, height, height_metadata, locked, locked_metadata, merge_field, merge_field_xml, overlay_type, overlay_type_metadata, page_number, page_number_metadata, poly_lines, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, shared, shared_metadata, smart_contract_information, status, status_metadata, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
     end
 
     # Builds the object from hash

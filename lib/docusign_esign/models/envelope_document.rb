@@ -71,6 +71,9 @@ module DocuSign_eSign
 
     attr_accessor :signer_must_acknowledge_metadata
 
+    # 
+    attr_accessor :size_bytes
+
     # When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
     attr_accessor :template_locked
 
@@ -108,6 +111,7 @@ module DocuSign_eSign
         :'pages' => :'pages',
         :'signer_must_acknowledge' => :'signerMustAcknowledge',
         :'signer_must_acknowledge_metadata' => :'signerMustAcknowledgeMetadata',
+        :'size_bytes' => :'sizeBytes',
         :'template_locked' => :'templateLocked',
         :'template_required' => :'templateRequired',
         :'type' => :'type',
@@ -139,6 +143,7 @@ module DocuSign_eSign
         :'pages' => :'Array<Page>',
         :'signer_must_acknowledge' => :'String',
         :'signer_must_acknowledge_metadata' => :'PropertyMetadata',
+        :'size_bytes' => :'String',
         :'template_locked' => :'String',
         :'template_required' => :'String',
         :'type' => :'String',
@@ -246,6 +251,10 @@ module DocuSign_eSign
         self.signer_must_acknowledge_metadata = attributes[:'signerMustAcknowledgeMetadata']
       end
 
+      if attributes.has_key?(:'sizeBytes')
+        self.size_bytes = attributes[:'sizeBytes']
+      end
+
       if attributes.has_key?(:'templateLocked')
         self.template_locked = attributes[:'templateLocked']
       end
@@ -303,6 +312,7 @@ module DocuSign_eSign
           pages == o.pages &&
           signer_must_acknowledge == o.signer_must_acknowledge &&
           signer_must_acknowledge_metadata == o.signer_must_acknowledge_metadata &&
+          size_bytes == o.size_bytes &&
           template_locked == o.template_locked &&
           template_required == o.template_required &&
           type == o.type &&
@@ -318,7 +328,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [added_recipient_ids, attachment_tab_id, authoritative_copy, authoritative_copy_metadata, available_document_types, contains_pdf_form_fields, display, display_metadata, document_fields, document_group, document_id, document_id_guid, error_details, include_in_download, include_in_download_metadata, name, name_metadata, order, pages, signer_must_acknowledge, signer_must_acknowledge_metadata, template_locked, template_required, type, uri].hash
+      [added_recipient_ids, attachment_tab_id, authoritative_copy, authoritative_copy_metadata, available_document_types, contains_pdf_form_fields, display, display_metadata, document_fields, document_group, document_id, document_id_guid, error_details, include_in_download, include_in_download_metadata, name, name_metadata, order, pages, signer_must_acknowledge, signer_must_acknowledge_metadata, size_bytes, template_locked, template_required, type, uri].hash
     end
 
     # Builds the object from hash
