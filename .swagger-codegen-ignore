@@ -45,4 +45,5 @@ spec/
 tests/
 lib/docusign_esign/client/
 lib/docusign_esign/api_error.rb
+lib/docusign_esign/api_client.rb
 lib/docusign_esign/configuration.rb
