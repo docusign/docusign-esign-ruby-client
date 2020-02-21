@@ -2451,7 +2451,7 @@ module DocuSign_eSign
 
     # Put one branding logo.
     # 
-    # @param account_id The external account number (int) or account ID Guid.
+    # @param account_id The external account number (int) or account id GUID.
     # @param brand_id The unique identifier of a brand.
     # @param logo_type One of **Primary**, **Secondary** or **Email**.
     # @param logo_file_bytes Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places 
@@ -2463,7 +2463,7 @@ module DocuSign_eSign
 
     # Put one branding logo.
     # 
-    # @param account_id The external account number (int) or account ID Guid.
+    # @param account_id The external account number (int) or account id GUID.
     # @param brand_id The unique identifier of a brand.
     # @param logo_type One of **Primary**, **Secondary** or **Email**.
     # @param logo_file_bytes Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places 
