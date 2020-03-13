@@ -35,12 +35,9 @@ module DocuSign_eSign
     # Specifies a tag on the document where you want to give the recipient the option of declining an envelope. If the recipient clicks the Decline tag during the signing process, the envelope is voided.
     attr_accessor :decline_tabs
 
-<<<<<<< HEAD
     # 
     attr_accessor :draw_tabs
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # Specifies a location on the document where you want where you want the recipient's email, as entered in the recipient information, to display.
     attr_accessor :email_address_tabs
 
@@ -121,10 +118,7 @@ module DocuSign_eSign
         :'date_signed_tabs' => :'dateSignedTabs',
         :'date_tabs' => :'dateTabs',
         :'decline_tabs' => :'declineTabs',
-<<<<<<< HEAD
         :'draw_tabs' => :'drawTabs',
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'email_address_tabs' => :'emailAddressTabs',
         :'email_tabs' => :'emailTabs',
         :'envelope_id_tabs' => :'envelopeIdTabs',
@@ -161,10 +155,7 @@ module DocuSign_eSign
         :'date_signed_tabs' => :'Array<DateSigned>',
         :'date_tabs' => :'Array<DocuSign_eSign::Date>',
         :'decline_tabs' => :'Array<Decline>',
-<<<<<<< HEAD
         :'draw_tabs' => :'Array<Draw>',
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'email_address_tabs' => :'Array<EmailAddress>',
         :'email_tabs' => :'Array<Email>',
         :'envelope_id_tabs' => :'Array<EnvelopeId>',
@@ -241,15 +232,12 @@ module DocuSign_eSign
         end
       end
 
-<<<<<<< HEAD
       if attributes.has_key?(:'drawTabs')
         if (value = attributes[:'drawTabs']).is_a?(Array)
           self.draw_tabs = value
         end
       end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'emailAddressTabs')
         if (value = attributes[:'emailAddressTabs']).is_a?(Array)
           self.email_address_tabs = value
@@ -415,10 +403,7 @@ module DocuSign_eSign
           date_signed_tabs == o.date_signed_tabs &&
           date_tabs == o.date_tabs &&
           decline_tabs == o.decline_tabs &&
-<<<<<<< HEAD
           draw_tabs == o.draw_tabs &&
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
           email_address_tabs == o.email_address_tabs &&
           email_tabs == o.email_tabs &&
           envelope_id_tabs == o.envelope_id_tabs &&
@@ -453,11 +438,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-<<<<<<< HEAD
       [approve_tabs, checkbox_tabs, comment_thread_tabs, company_tabs, date_signed_tabs, date_tabs, decline_tabs, draw_tabs, email_address_tabs, email_tabs, envelope_id_tabs, first_name_tabs, formula_tabs, full_name_tabs, initial_here_tabs, last_name_tabs, list_tabs, notarize_tabs, note_tabs, number_tabs, poly_line_overlay_tabs, radio_group_tabs, signer_attachment_tabs, sign_here_tabs, smart_section_tabs, ssn_tabs, tab_groups, text_tabs, title_tabs, view_tabs, zip_tabs].hash
-=======
-      [approve_tabs, checkbox_tabs, comment_thread_tabs, company_tabs, date_signed_tabs, date_tabs, decline_tabs, email_address_tabs, email_tabs, envelope_id_tabs, first_name_tabs, formula_tabs, full_name_tabs, initial_here_tabs, last_name_tabs, list_tabs, notarize_tabs, note_tabs, number_tabs, poly_line_overlay_tabs, radio_group_tabs, signer_attachment_tabs, sign_here_tabs, smart_section_tabs, ssn_tabs, tab_groups, text_tabs, title_tabs, view_tabs, zip_tabs].hash
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     end
 
     # Builds the object from hash

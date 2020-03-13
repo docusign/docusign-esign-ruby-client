@@ -20,12 +20,9 @@ module DocuSign_eSign
     # 
     attr_accessor :default_name
 
-<<<<<<< HEAD
     # 
     attr_accessor :input_options
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     attr_accessor :signature_provider
 
     # 
@@ -43,10 +40,7 @@ module DocuSign_eSign
       {
         :'default_description' => :'defaultDescription',
         :'default_name' => :'defaultName',
-<<<<<<< HEAD
         :'input_options' => :'inputOptions',
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'signature_provider' => :'signatureProvider',
         :'steps' => :'steps',
         :'workflow_id' => :'workflowId',
@@ -59,10 +53,7 @@ module DocuSign_eSign
       {
         :'default_description' => :'String',
         :'default_name' => :'String',
-<<<<<<< HEAD
         :'input_options' => :'Array<AccountIdentityInputOption>',
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'signature_provider' => :'AccountSignatureProvider',
         :'steps' => :'Array<AccountIdentityVerificationStep>',
         :'workflow_id' => :'String',
@@ -86,15 +77,12 @@ module DocuSign_eSign
         self.default_name = attributes[:'defaultName']
       end
 
-<<<<<<< HEAD
       if attributes.has_key?(:'inputOptions')
         if (value = attributes[:'inputOptions']).is_a?(Array)
           self.input_options = value
         end
       end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'signatureProvider')
         self.signature_provider = attributes[:'signatureProvider']
       end
@@ -135,10 +123,7 @@ module DocuSign_eSign
       self.class == o.class &&
           default_description == o.default_description &&
           default_name == o.default_name &&
-<<<<<<< HEAD
           input_options == o.input_options &&
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
           signature_provider == o.signature_provider &&
           steps == o.steps &&
           workflow_id == o.workflow_id &&
@@ -154,11 +139,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-<<<<<<< HEAD
       [default_description, default_name, input_options, signature_provider, steps, workflow_id, workflow_resource_key].hash
-=======
-      [default_description, default_name, signature_provider, steps, workflow_id, workflow_resource_key].hash
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     end
 
     # Builds the object from hash

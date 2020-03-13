@@ -13,7 +13,6 @@ require "uri"
 
 module DocuSign_eSign
 
-<<<<<<< HEAD
   class GetOptions
     # Specifies the number of entries to return.
     attr_accessor :count
@@ -56,8 +55,6 @@ module DocuSign_eSign
     end
   end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
 
   class BulkEnvelopesApi
     attr_accessor :api_client
@@ -280,7 +277,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-<<<<<<< HEAD
     # Deletes the bulk recipient file from an envelope.
     # Deletes the bulk recipient file from an envelope. This cannot be used if the envelope has been sent.  After using this, the `bulkRecipientsUri` property is not returned in subsequent GET calls for the envelope, but the recipient will remain as a bulk recipient.
     # @param account_id The external account number (int) or account ID Guid.
@@ -396,8 +392,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # Gets a specific bulk send list
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -500,7 +494,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-<<<<<<< HEAD
     # Gets the bulk recipient file from an envelope.
     # Retrieves the bulk recipient file information from an envelope that has a bulk recipient.
     # @param account_id The external account number (int) or account ID Guid.
@@ -616,8 +609,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # Updates an existing bulk send list.  If send_envelope query string value is provided, will accept an empty payload and try to send the specified envelope
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -672,7 +663,6 @@ module DocuSign_eSign
       end
       return data, status_code, headers
     end
-<<<<<<< HEAD
 
     # Adds or replaces envelope bulk recipients.
     # Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
@@ -736,7 +726,5 @@ module DocuSign_eSign
       end
       return data, status_code, headers
     end
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
   end
 end

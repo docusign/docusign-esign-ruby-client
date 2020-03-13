@@ -29,12 +29,9 @@ module DocuSign_eSign
     attr_accessor :agent_can_edit_name
 
     # 
-<<<<<<< HEAD
     attr_accessor :allow_system_override_for_locked_recipient
 
     # 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     attr_accessor :auto_navigation
 
     # Contains a URI for an endpoint that allows you to easily retrieve bulk recipient information.
@@ -73,15 +70,12 @@ module DocuSign_eSign
     attr_accessor :delivery_method_metadata
 
     # 
-<<<<<<< HEAD
     attr_accessor :designator_id
 
     # 
     attr_accessor :designator_id_guid
 
     # 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     attr_accessor :document_visibility
 
     # Email id of the recipient. Notification of the document to sign is sent to this email id.   Maximum length: 100 characters. 
@@ -156,11 +150,8 @@ module DocuSign_eSign
 
     attr_accessor :phone_authentication
 
-<<<<<<< HEAD
     attr_accessor :proof_file
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # Reserved:
     attr_accessor :recipient_attachments
 
@@ -269,10 +260,7 @@ module DocuSign_eSign
         :'add_access_code_to_email' => :'addAccessCodeToEmail',
         :'agent_can_edit_email' => :'agentCanEditEmail',
         :'agent_can_edit_name' => :'agentCanEditName',
-<<<<<<< HEAD
         :'allow_system_override_for_locked_recipient' => :'allowSystemOverrideForLockedRecipient',
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'auto_navigation' => :'autoNavigation',
         :'bulk_recipients_uri' => :'bulkRecipientsUri',
         :'can_sign_offline' => :'canSignOffline',
@@ -286,11 +274,8 @@ module DocuSign_eSign
         :'delivered_date_time' => :'deliveredDateTime',
         :'delivery_method' => :'deliveryMethod',
         :'delivery_method_metadata' => :'deliveryMethodMetadata',
-<<<<<<< HEAD
         :'designator_id' => :'designatorId',
         :'designator_id_guid' => :'designatorIdGuid',
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'document_visibility' => :'documentVisibility',
         :'email' => :'email',
         :'email_metadata' => :'emailMetadata',
@@ -321,10 +306,7 @@ module DocuSign_eSign
         :'note_metadata' => :'noteMetadata',
         :'offline_attributes' => :'offlineAttributes',
         :'phone_authentication' => :'phoneAuthentication',
-<<<<<<< HEAD
         :'proof_file' => :'proofFile',
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'recipient_attachments' => :'recipientAttachments',
         :'recipient_authentication_status' => :'recipientAuthenticationStatus',
         :'recipient_feature_metadata' => :'recipientFeatureMetadata',
@@ -372,10 +354,7 @@ module DocuSign_eSign
         :'add_access_code_to_email' => :'String',
         :'agent_can_edit_email' => :'String',
         :'agent_can_edit_name' => :'String',
-<<<<<<< HEAD
         :'allow_system_override_for_locked_recipient' => :'String',
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'auto_navigation' => :'String',
         :'bulk_recipients_uri' => :'String',
         :'can_sign_offline' => :'String',
@@ -389,11 +368,8 @@ module DocuSign_eSign
         :'delivered_date_time' => :'String',
         :'delivery_method' => :'String',
         :'delivery_method_metadata' => :'PropertyMetadata',
-<<<<<<< HEAD
         :'designator_id' => :'String',
         :'designator_id_guid' => :'String',
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'document_visibility' => :'Array<DocumentVisibility>',
         :'email' => :'String',
         :'email_metadata' => :'PropertyMetadata',
@@ -424,10 +400,7 @@ module DocuSign_eSign
         :'note_metadata' => :'PropertyMetadata',
         :'offline_attributes' => :'OfflineAttributes',
         :'phone_authentication' => :'RecipientPhoneAuthentication',
-<<<<<<< HEAD
         :'proof_file' => :'RecipientProofFile',
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'recipient_attachments' => :'Array<RecipientAttachment>',
         :'recipient_authentication_status' => :'AuthenticationStatus',
         :'recipient_feature_metadata' => :'Array<FeatureAvailableMetadata>',
@@ -495,13 +468,10 @@ module DocuSign_eSign
         self.agent_can_edit_name = attributes[:'agentCanEditName']
       end
 
-<<<<<<< HEAD
       if attributes.has_key?(:'allowSystemOverrideForLockedRecipient')
         self.allow_system_override_for_locked_recipient = attributes[:'allowSystemOverrideForLockedRecipient']
       end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'autoNavigation')
         self.auto_navigation = attributes[:'autoNavigation']
       end
@@ -556,7 +526,6 @@ module DocuSign_eSign
         self.delivery_method_metadata = attributes[:'deliveryMethodMetadata']
       end
 
-<<<<<<< HEAD
       if attributes.has_key?(:'designatorId')
         self.designator_id = attributes[:'designatorId']
       end
@@ -565,8 +534,6 @@ module DocuSign_eSign
         self.designator_id_guid = attributes[:'designatorIdGuid']
       end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'documentVisibility')
         if (value = attributes[:'documentVisibility']).is_a?(Array)
           self.document_visibility = value
@@ -691,13 +658,10 @@ module DocuSign_eSign
         self.phone_authentication = attributes[:'phoneAuthentication']
       end
 
-<<<<<<< HEAD
       if attributes.has_key?(:'proofFile')
         self.proof_file = attributes[:'proofFile']
       end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'recipientAttachments')
         if (value = attributes[:'recipientAttachments']).is_a?(Array)
           self.recipient_attachments = value
@@ -877,10 +841,7 @@ module DocuSign_eSign
           add_access_code_to_email == o.add_access_code_to_email &&
           agent_can_edit_email == o.agent_can_edit_email &&
           agent_can_edit_name == o.agent_can_edit_name &&
-<<<<<<< HEAD
           allow_system_override_for_locked_recipient == o.allow_system_override_for_locked_recipient &&
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
           auto_navigation == o.auto_navigation &&
           bulk_recipients_uri == o.bulk_recipients_uri &&
           can_sign_offline == o.can_sign_offline &&
@@ -894,11 +855,8 @@ module DocuSign_eSign
           delivered_date_time == o.delivered_date_time &&
           delivery_method == o.delivery_method &&
           delivery_method_metadata == o.delivery_method_metadata &&
-<<<<<<< HEAD
           designator_id == o.designator_id &&
           designator_id_guid == o.designator_id_guid &&
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
           document_visibility == o.document_visibility &&
           email == o.email &&
           email_metadata == o.email_metadata &&
@@ -929,10 +887,7 @@ module DocuSign_eSign
           note_metadata == o.note_metadata &&
           offline_attributes == o.offline_attributes &&
           phone_authentication == o.phone_authentication &&
-<<<<<<< HEAD
           proof_file == o.proof_file &&
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
           recipient_attachments == o.recipient_attachments &&
           recipient_authentication_status == o.recipient_authentication_status &&
           recipient_feature_metadata == o.recipient_feature_metadata &&
@@ -980,11 +935,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-<<<<<<< HEAD
       [access_code, access_code_metadata, add_access_code_to_email, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_navigation, bulk_recipients_uri, can_sign_offline, client_user_id, completed_count, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, offline_attributes, phone_authentication, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
-=======
-      [access_code, access_code_metadata, add_access_code_to_email, agent_can_edit_email, agent_can_edit_name, auto_navigation, bulk_recipients_uri, can_sign_offline, client_user_id, completed_count, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, delivery_method_metadata, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, offline_attributes, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     end
 
     # Builds the object from hash

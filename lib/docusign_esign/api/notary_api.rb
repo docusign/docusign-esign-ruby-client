@@ -13,7 +13,6 @@ require "uri"
 
 module DocuSign_eSign
 
-<<<<<<< HEAD
   class GetNotaryOptions
     # 
     attr_accessor :include_jurisdictions
@@ -23,8 +22,6 @@ module DocuSign_eSign
     end
   end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
   class ListNotaryJournalsOptions
     # 
     attr_accessor :count
@@ -48,7 +45,6 @@ module DocuSign_eSign
       @api_client = api_client
     end
 
-<<<<<<< HEAD
     # Add a notary to the system
     # 
     # @param notary  (optional parameter)
@@ -381,8 +377,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # Get notary jurisdictions for a user
     # 
     # @param DocuSign_eSign::ListNotaryJournalsOptions Options for modifying the behavior of the function.
@@ -432,7 +426,6 @@ module DocuSign_eSign
       end
       return data, status_code, headers
     end
-<<<<<<< HEAD
 
     # Update a notary
     # 
@@ -531,7 +524,5 @@ module DocuSign_eSign
       end
       return data, status_code, headers
     end
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
   end
 end

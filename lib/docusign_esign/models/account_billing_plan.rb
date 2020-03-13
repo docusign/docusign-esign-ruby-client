@@ -26,11 +26,8 @@ module DocuSign_eSign
     # Specifies the ISO currency code for the account.
     attr_accessor :currency_code
 
-<<<<<<< HEAD
     attr_accessor :downgrade_plan_information
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # When set to **true**, then customer support is provided as part of the account plan.
     attr_accessor :enable_support
 
@@ -87,10 +84,7 @@ module DocuSign_eSign
         :'can_cancel_renewal' => :'canCancelRenewal',
         :'can_upgrade' => :'canUpgrade',
         :'currency_code' => :'currencyCode',
-<<<<<<< HEAD
         :'downgrade_plan_information' => :'downgradePlanInformation',
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'enable_support' => :'enableSupport',
         :'included_seats' => :'includedSeats',
         :'incremental_seats' => :'incrementalSeats',
@@ -117,10 +111,7 @@ module DocuSign_eSign
         :'can_cancel_renewal' => :'String',
         :'can_upgrade' => :'String',
         :'currency_code' => :'String',
-<<<<<<< HEAD
         :'downgrade_plan_information' => :'DowngradePlanUpdateResponse',
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'enable_support' => :'String',
         :'included_seats' => :'String',
         :'incremental_seats' => :'String',
@@ -166,13 +157,10 @@ module DocuSign_eSign
         self.currency_code = attributes[:'currencyCode']
       end
 
-<<<<<<< HEAD
       if attributes.has_key?(:'downgradePlanInformation')
         self.downgrade_plan_information = attributes[:'downgradePlanInformation']
       end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'enableSupport')
         self.enable_support = attributes[:'enableSupport']
       end
@@ -265,10 +253,7 @@ module DocuSign_eSign
           can_cancel_renewal == o.can_cancel_renewal &&
           can_upgrade == o.can_upgrade &&
           currency_code == o.currency_code &&
-<<<<<<< HEAD
           downgrade_plan_information == o.downgrade_plan_information &&
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
           enable_support == o.enable_support &&
           included_seats == o.included_seats &&
           incremental_seats == o.incremental_seats &&
@@ -296,11 +281,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-<<<<<<< HEAD
       [add_ons, can_cancel_renewal, can_upgrade, currency_code, downgrade_plan_information, enable_support, included_seats, incremental_seats, is_downgrade, other_discount_percent, payment_cycle, payment_method, per_seat_price, plan_classification, plan_feature_sets, plan_id, plan_name, renewal_status, seat_discounts, support_incident_fee, support_plan_fee].hash
-=======
-      [add_ons, can_cancel_renewal, can_upgrade, currency_code, enable_support, included_seats, incremental_seats, is_downgrade, other_discount_percent, payment_cycle, payment_method, per_seat_price, plan_classification, plan_feature_sets, plan_id, plan_name, renewal_status, seat_discounts, support_incident_fee, support_plan_fee].hash
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     end
 
     # Builds the object from hash

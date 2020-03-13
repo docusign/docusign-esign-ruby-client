@@ -628,7 +628,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-<<<<<<< HEAD
     # Queues downgrade billing plan request for an account.
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -680,8 +679,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # Updates the account billing plan.
     # Updates the billing plan information, billing address, and credit card information for the specified account.
     # @param account_id The external account number (int) or account ID Guid.

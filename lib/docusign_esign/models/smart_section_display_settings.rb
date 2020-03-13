@@ -41,12 +41,9 @@ module DocuSign_eSign
     attr_accessor :label_when_opened
 
     # 
-<<<<<<< HEAD
     attr_accessor :pre_label
 
     # 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     attr_accessor :scroll_to_top_when_opened
 
     # 
@@ -65,10 +62,7 @@ module DocuSign_eSign
         :'hide_label_when_opened' => :'hideLabelWhenOpened',
         :'inline_outer_style' => :'inlineOuterStyle',
         :'label_when_opened' => :'labelWhenOpened',
-<<<<<<< HEAD
         :'pre_label' => :'preLabel',
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'scroll_to_top_when_opened' => :'scrollToTopWhenOpened',
         :'table_style' => :'tableStyle'
       }
@@ -86,10 +80,7 @@ module DocuSign_eSign
         :'hide_label_when_opened' => :'BOOLEAN',
         :'inline_outer_style' => :'String',
         :'label_when_opened' => :'String',
-<<<<<<< HEAD
         :'pre_label' => :'String',
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'scroll_to_top_when_opened' => :'BOOLEAN',
         :'table_style' => :'String'
       }
@@ -139,13 +130,10 @@ module DocuSign_eSign
         self.label_when_opened = attributes[:'labelWhenOpened']
       end
 
-<<<<<<< HEAD
       if attributes.has_key?(:'preLabel')
         self.pre_label = attributes[:'preLabel']
       end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'scrollToTopWhenOpened')
         self.scroll_to_top_when_opened = attributes[:'scrollToTopWhenOpened']
       end
@@ -183,10 +171,7 @@ module DocuSign_eSign
           hide_label_when_opened == o.hide_label_when_opened &&
           inline_outer_style == o.inline_outer_style &&
           label_when_opened == o.label_when_opened &&
-<<<<<<< HEAD
           pre_label == o.pre_label &&
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
           scroll_to_top_when_opened == o.scroll_to_top_when_opened &&
           table_style == o.table_style
     end
@@ -200,11 +185,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-<<<<<<< HEAD
       [cell_style, collapsible_settings, display, display_label, display_order, display_page_number, hide_label_when_opened, inline_outer_style, label_when_opened, pre_label, scroll_to_top_when_opened, table_style].hash
-=======
-      [cell_style, collapsible_settings, display, display_label, display_order, display_page_number, hide_label_when_opened, inline_outer_style, label_when_opened, scroll_to_top_when_opened, table_style].hash
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     end
 
     # Builds the object from hash

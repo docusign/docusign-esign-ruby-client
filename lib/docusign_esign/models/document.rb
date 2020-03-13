@@ -26,12 +26,6 @@ module DocuSign_eSign
     # 
     attr_accessor :document_fields
 
-<<<<<<< HEAD
-=======
-    # 
-    attr_accessor :document_group
-
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
     attr_accessor :document_id
 
@@ -49,15 +43,12 @@ module DocuSign_eSign
     # 
     attr_accessor :include_in_download
 
-<<<<<<< HEAD
     # 
     attr_accessor :is_dynamic_xfa
 
     # 
     attr_accessor :is_static_xfa
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.  
     attr_accessor :match_boxes
 
@@ -65,12 +56,9 @@ module DocuSign_eSign
     attr_accessor :name
 
     # 
-<<<<<<< HEAD
     attr_accessor :ocr_requests
 
     # 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     attr_accessor :order
 
     # 
@@ -86,7 +74,6 @@ module DocuSign_eSign
     attr_accessor :password
 
     # 
-<<<<<<< HEAD
     attr_accessor :pdf_fields_data
 
     # 
@@ -95,22 +82,15 @@ module DocuSign_eSign
     # 
     attr_accessor :pdf_widgets_base64
 
-=======
-    attr_accessor :pdf_form_field_option
-
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # The file id from the cloud storage service where the document is located. This information is returned using [ML:GET /folders] or [ML:/folders/{folderid}]. 
     attr_accessor :remote_url
 
     # 
     attr_accessor :signer_must_acknowledge
 
-<<<<<<< HEAD
     # 
     attr_accessor :signer_must_acknowledge_use_account_default
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     attr_accessor :tabs
 
     # When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
@@ -133,43 +113,28 @@ module DocuSign_eSign
         :'display' => :'display',
         :'document_base64' => :'documentBase64',
         :'document_fields' => :'documentFields',
-<<<<<<< HEAD
-=======
-        :'document_group' => :'documentGroup',
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'document_id' => :'documentId',
         :'encrypted_with_key_manager' => :'encryptedWithKeyManager',
         :'file_extension' => :'fileExtension',
         :'file_format_hint' => :'fileFormatHint',
         :'html_definition' => :'htmlDefinition',
         :'include_in_download' => :'includeInDownload',
-<<<<<<< HEAD
         :'is_dynamic_xfa' => :'isDynamicXfa',
         :'is_static_xfa' => :'isStaticXfa',
         :'match_boxes' => :'matchBoxes',
         :'name' => :'name',
         :'ocr_requests' => :'ocrRequests',
-=======
-        :'match_boxes' => :'matchBoxes',
-        :'name' => :'name',
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'order' => :'order',
         :'page_count' => :'pageCount',
         :'pages' => :'pages',
         :'page_sizes' => :'pageSizes',
         :'password' => :'password',
-<<<<<<< HEAD
         :'pdf_fields_data' => :'pdfFieldsData',
         :'pdf_form_field_option' => :'pdfFormFieldOption',
         :'pdf_widgets_base64' => :'pdfWidgetsBase64',
         :'remote_url' => :'remoteUrl',
         :'signer_must_acknowledge' => :'signerMustAcknowledge',
         :'signer_must_acknowledge_use_account_default' => :'signerMustAcknowledgeUseAccountDefault',
-=======
-        :'pdf_form_field_option' => :'pdfFormFieldOption',
-        :'remote_url' => :'remoteUrl',
-        :'signer_must_acknowledge' => :'signerMustAcknowledge',
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'tabs' => :'tabs',
         :'template_locked' => :'templateLocked',
         :'template_required' => :'templateRequired',
@@ -185,43 +150,28 @@ module DocuSign_eSign
         :'display' => :'String',
         :'document_base64' => :'String',
         :'document_fields' => :'Array<NameValue>',
-<<<<<<< HEAD
-=======
-        :'document_group' => :'String',
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'document_id' => :'String',
         :'encrypted_with_key_manager' => :'String',
         :'file_extension' => :'String',
         :'file_format_hint' => :'String',
         :'html_definition' => :'DocumentHtmlDefinition',
         :'include_in_download' => :'String',
-<<<<<<< HEAD
         :'is_dynamic_xfa' => :'BOOLEAN',
         :'is_static_xfa' => :'BOOLEAN',
         :'match_boxes' => :'Array<MatchBox>',
         :'name' => :'String',
         :'ocr_requests' => :'Array<OcrRequest>',
-=======
-        :'match_boxes' => :'Array<MatchBox>',
-        :'name' => :'String',
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'order' => :'String',
         :'page_count' => :'String',
         :'pages' => :'String',
         :'page_sizes' => :'Array<PageSize>',
         :'password' => :'String',
-<<<<<<< HEAD
         :'pdf_fields_data' => :'String',
         :'pdf_form_field_option' => :'String',
         :'pdf_widgets_base64' => :'String',
         :'remote_url' => :'String',
         :'signer_must_acknowledge' => :'String',
         :'signer_must_acknowledge_use_account_default' => :'BOOLEAN',
-=======
-        :'pdf_form_field_option' => :'String',
-        :'remote_url' => :'String',
-        :'signer_must_acknowledge' => :'String',
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'tabs' => :'Tabs',
         :'template_locked' => :'String',
         :'template_required' => :'String',
@@ -256,13 +206,6 @@ module DocuSign_eSign
         end
       end
 
-<<<<<<< HEAD
-=======
-      if attributes.has_key?(:'documentGroup')
-        self.document_group = attributes[:'documentGroup']
-      end
-
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'documentId')
         self.document_id = attributes[:'documentId']
       end
@@ -287,7 +230,6 @@ module DocuSign_eSign
         self.include_in_download = attributes[:'includeInDownload']
       end
 
-<<<<<<< HEAD
       if attributes.has_key?(:'isDynamicXfa')
         self.is_dynamic_xfa = attributes[:'isDynamicXfa']
       end
@@ -296,8 +238,6 @@ module DocuSign_eSign
         self.is_static_xfa = attributes[:'isStaticXfa']
       end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'matchBoxes')
         if (value = attributes[:'matchBoxes']).is_a?(Array)
           self.match_boxes = value
@@ -308,15 +248,12 @@ module DocuSign_eSign
         self.name = attributes[:'name']
       end
 
-<<<<<<< HEAD
       if attributes.has_key?(:'ocrRequests')
         if (value = attributes[:'ocrRequests']).is_a?(Array)
           self.ocr_requests = value
         end
       end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'order')
         self.order = attributes[:'order']
       end
@@ -339,24 +276,18 @@ module DocuSign_eSign
         self.password = attributes[:'password']
       end
 
-<<<<<<< HEAD
       if attributes.has_key?(:'pdfFieldsData')
         self.pdf_fields_data = attributes[:'pdfFieldsData']
       end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'pdfFormFieldOption')
         self.pdf_form_field_option = attributes[:'pdfFormFieldOption']
       end
 
-<<<<<<< HEAD
       if attributes.has_key?(:'pdfWidgetsBase64')
         self.pdf_widgets_base64 = attributes[:'pdfWidgetsBase64']
       end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'remoteUrl')
         self.remote_url = attributes[:'remoteUrl']
       end
@@ -365,13 +296,10 @@ module DocuSign_eSign
         self.signer_must_acknowledge = attributes[:'signerMustAcknowledge']
       end
 
-<<<<<<< HEAD
       if attributes.has_key?(:'signerMustAcknowledgeUseAccountDefault')
         self.signer_must_acknowledge_use_account_default = attributes[:'signerMustAcknowledgeUseAccountDefault']
       end
 
-=======
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'tabs')
         self.tabs = attributes[:'tabs']
       end
@@ -416,43 +344,28 @@ module DocuSign_eSign
           display == o.display &&
           document_base64 == o.document_base64 &&
           document_fields == o.document_fields &&
-<<<<<<< HEAD
-=======
-          document_group == o.document_group &&
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
           document_id == o.document_id &&
           encrypted_with_key_manager == o.encrypted_with_key_manager &&
           file_extension == o.file_extension &&
           file_format_hint == o.file_format_hint &&
           html_definition == o.html_definition &&
           include_in_download == o.include_in_download &&
-<<<<<<< HEAD
           is_dynamic_xfa == o.is_dynamic_xfa &&
           is_static_xfa == o.is_static_xfa &&
           match_boxes == o.match_boxes &&
           name == o.name &&
           ocr_requests == o.ocr_requests &&
-=======
-          match_boxes == o.match_boxes &&
-          name == o.name &&
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
           order == o.order &&
           page_count == o.page_count &&
           pages == o.pages &&
           page_sizes == o.page_sizes &&
           password == o.password &&
-<<<<<<< HEAD
           pdf_fields_data == o.pdf_fields_data &&
           pdf_form_field_option == o.pdf_form_field_option &&
           pdf_widgets_base64 == o.pdf_widgets_base64 &&
           remote_url == o.remote_url &&
           signer_must_acknowledge == o.signer_must_acknowledge &&
           signer_must_acknowledge_use_account_default == o.signer_must_acknowledge_use_account_default &&
-=======
-          pdf_form_field_option == o.pdf_form_field_option &&
-          remote_url == o.remote_url &&
-          signer_must_acknowledge == o.signer_must_acknowledge &&
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
           tabs == o.tabs &&
           template_locked == o.template_locked &&
           template_required == o.template_required &&
@@ -469,11 +382,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-<<<<<<< HEAD
       [apply_anchor_tabs, display, document_base64, document_fields, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, is_dynamic_xfa, is_static_xfa, match_boxes, name, ocr_requests, order, page_count, pages, page_sizes, password, pdf_fields_data, pdf_form_field_option, pdf_widgets_base64, remote_url, signer_must_acknowledge, signer_must_acknowledge_use_account_default, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
-=======
-      [apply_anchor_tabs, display, document_base64, document_fields, document_group, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, match_boxes, name, order, page_count, pages, page_sizes, password, pdf_form_field_option, remote_url, signer_must_acknowledge, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
->>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     end
 
     # Builds the object from hash
