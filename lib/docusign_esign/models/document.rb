@@ -29,9 +29,6 @@ module DocuSign_eSign
     # 
     attr_accessor :document_fields
 
-    # 
-    attr_accessor :document_group
-
     # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
     attr_accessor :document_id
 
@@ -91,7 +88,6 @@ module DocuSign_eSign
         :'display' => :'display',
         :'document_base64' => :'documentBase64',
         :'document_fields' => :'documentFields',
-        :'document_group' => :'documentGroup',
         :'document_id' => :'documentId',
         :'encrypted_with_key_manager' => :'encryptedWithKeyManager',
         :'file_extension' => :'fileExtension',
@@ -120,7 +116,6 @@ module DocuSign_eSign
         :'display' => :'String',
         :'document_base64' => :'String',
         :'document_fields' => :'Array<NameValue>',
-        :'document_group' => :'String',
         :'document_id' => :'String',
         :'encrypted_with_key_manager' => :'String',
         :'file_extension' => :'String',
@@ -169,10 +164,6 @@ module DocuSign_eSign
         if (value = attributes[:'documentFields']).is_a?(Array)
           self.document_fields = value
         end
-      end
-
-      if attributes.has_key?(:'documentGroup')
-        self.document_group = attributes[:'documentGroup']
       end
 
       if attributes.has_key?(:'documentId')
@@ -270,7 +261,6 @@ module DocuSign_eSign
           display == o.display &&
           document_base64 == o.document_base64 &&
           document_fields == o.document_fields &&
-          document_group == o.document_group &&
           document_id == o.document_id &&
           encrypted_with_key_manager == o.encrypted_with_key_manager &&
           file_extension == o.file_extension &&
@@ -299,7 +289,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [apply_anchor_tabs, authoritative_copy, display, document_base64, document_fields, document_group, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, match_boxes, name, order, pages, password, remote_url, signer_must_acknowledge, template_locked, template_required, transform_pdf_fields, uri].hash
+      [apply_anchor_tabs, authoritative_copy, display, document_base64, document_fields, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, match_boxes, name, order, pages, password, remote_url, signer_must_acknowledge, template_locked, template_required, transform_pdf_fields, uri].hash
     end
 
     # Builds the object from hash

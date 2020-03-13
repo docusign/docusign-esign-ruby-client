@@ -13,96 +13,32 @@ require 'date'
 
 module DocuSign_eSign
 
-  class EnvelopeDocument
-    # 
-    attr_accessor :attachment_tab_id
-
-    # Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
-    attr_accessor :authoritative_copy
-
-    # 
-    attr_accessor :available_document_types
-
-    # 
-    attr_accessor :contains_pdf_form_fields
-
-    # 
-    attr_accessor :display
-
-    # 
-    attr_accessor :document_fields
-
-    # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-    attr_accessor :document_id
-
-    attr_accessor :error_details
-
-    # 
-    attr_accessor :include_in_download
-
+  class RecipientIdentityInputOption
     # 
     attr_accessor :name
 
     # 
-    attr_accessor :order
+    attr_accessor :phone_number_list
 
     # 
-    attr_accessor :pages
-
-    # 
-    attr_accessor :signer_must_acknowledge
-
-    # 
-    attr_accessor :size_bytes
-
-    # 
-    attr_accessor :type
-
-    # 
-    attr_accessor :uri
+    attr_accessor :value_type
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'attachment_tab_id' => :'attachmentTabId',
-        :'authoritative_copy' => :'authoritativeCopy',
-        :'available_document_types' => :'availableDocumentTypes',
-        :'contains_pdf_form_fields' => :'containsPdfFormFields',
-        :'display' => :'display',
-        :'document_fields' => :'documentFields',
-        :'document_id' => :'documentId',
-        :'error_details' => :'errorDetails',
-        :'include_in_download' => :'includeInDownload',
         :'name' => :'name',
-        :'order' => :'order',
-        :'pages' => :'pages',
-        :'signer_must_acknowledge' => :'signerMustAcknowledge',
-        :'size_bytes' => :'sizeBytes',
-        :'type' => :'type',
-        :'uri' => :'uri'
+        :'phone_number_list' => :'phoneNumberList',
+        :'value_type' => :'valueType'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'attachment_tab_id' => :'String',
-        :'authoritative_copy' => :'String',
-        :'available_document_types' => :'Array<SignatureType>',
-        :'contains_pdf_form_fields' => :'String',
-        :'display' => :'String',
-        :'document_fields' => :'Array<NameValue>',
-        :'document_id' => :'String',
-        :'error_details' => :'ErrorDetails',
-        :'include_in_download' => :'String',
         :'name' => :'String',
-        :'order' => :'String',
-        :'pages' => :'String',
-        :'signer_must_acknowledge' => :'String',
-        :'size_bytes' => :'String',
-        :'type' => :'String',
-        :'uri' => :'String'
+        :'phone_number_list' => :'Array<RecipientIdentityPhoneNumber>',
+        :'value_type' => :'String'
       }
     end
 
@@ -114,72 +50,18 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'attachmentTabId')
-        self.attachment_tab_id = attributes[:'attachmentTabId']
-      end
-
-      if attributes.has_key?(:'authoritativeCopy')
-        self.authoritative_copy = attributes[:'authoritativeCopy']
-      end
-
-      if attributes.has_key?(:'availableDocumentTypes')
-        if (value = attributes[:'availableDocumentTypes']).is_a?(Array)
-          self.available_document_types = value
-        end
-      end
-
-      if attributes.has_key?(:'containsPdfFormFields')
-        self.contains_pdf_form_fields = attributes[:'containsPdfFormFields']
-      end
-
-      if attributes.has_key?(:'display')
-        self.display = attributes[:'display']
-      end
-
-      if attributes.has_key?(:'documentFields')
-        if (value = attributes[:'documentFields']).is_a?(Array)
-          self.document_fields = value
-        end
-      end
-
-      if attributes.has_key?(:'documentId')
-        self.document_id = attributes[:'documentId']
-      end
-
-      if attributes.has_key?(:'errorDetails')
-        self.error_details = attributes[:'errorDetails']
-      end
-
-      if attributes.has_key?(:'includeInDownload')
-        self.include_in_download = attributes[:'includeInDownload']
-      end
-
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'order')
-        self.order = attributes[:'order']
+      if attributes.has_key?(:'phoneNumberList')
+        if (value = attributes[:'phoneNumberList']).is_a?(Array)
+          self.phone_number_list = value
+        end
       end
 
-      if attributes.has_key?(:'pages')
-        self.pages = attributes[:'pages']
-      end
-
-      if attributes.has_key?(:'signerMustAcknowledge')
-        self.signer_must_acknowledge = attributes[:'signerMustAcknowledge']
-      end
-
-      if attributes.has_key?(:'sizeBytes')
-        self.size_bytes = attributes[:'sizeBytes']
-      end
-
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
-      if attributes.has_key?(:'uri')
-        self.uri = attributes[:'uri']
+      if attributes.has_key?(:'valueType')
+        self.value_type = attributes[:'valueType']
       end
 
     end
@@ -202,22 +84,9 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          attachment_tab_id == o.attachment_tab_id &&
-          authoritative_copy == o.authoritative_copy &&
-          available_document_types == o.available_document_types &&
-          contains_pdf_form_fields == o.contains_pdf_form_fields &&
-          display == o.display &&
-          document_fields == o.document_fields &&
-          document_id == o.document_id &&
-          error_details == o.error_details &&
-          include_in_download == o.include_in_download &&
           name == o.name &&
-          order == o.order &&
-          pages == o.pages &&
-          signer_must_acknowledge == o.signer_must_acknowledge &&
-          size_bytes == o.size_bytes &&
-          type == o.type &&
-          uri == o.uri
+          phone_number_list == o.phone_number_list &&
+          value_type == o.value_type
     end
 
     # @see the `==` method
@@ -229,7 +98,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [attachment_tab_id, authoritative_copy, available_document_types, contains_pdf_form_fields, display, document_fields, document_id, error_details, include_in_download, name, order, pages, signer_must_acknowledge, size_bytes, type, uri].hash
+      [name, phone_number_list, value_type].hash
     end
 
     # Builds the object from hash
