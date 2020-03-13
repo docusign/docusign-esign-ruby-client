@@ -15,16 +15,22 @@ module DocuSign_eSign
 
   class RecipientIdentityVerification
     # 
+<<<<<<< HEAD
     attr_accessor :input_options
 
     # 
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     attr_accessor :workflow_id
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+<<<<<<< HEAD
         :'input_options' => :'inputOptions',
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'workflow_id' => :'workflowId'
       }
     end
@@ -32,7 +38,10 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+<<<<<<< HEAD
         :'input_options' => :'Array<RecipientIdentityInputOption>',
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'workflow_id' => :'String'
       }
     end
@@ -45,12 +54,15 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
+<<<<<<< HEAD
       if attributes.has_key?(:'inputOptions')
         if (value = attributes[:'inputOptions']).is_a?(Array)
           self.input_options = value
         end
       end
 
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'workflowId')
         self.workflow_id = attributes[:'workflowId']
       end
@@ -75,7 +87,10 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+<<<<<<< HEAD
           input_options == o.input_options &&
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
           workflow_id == o.workflow_id
     end
 
@@ -88,7 +103,11 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
+<<<<<<< HEAD
       [input_options, workflow_id].hash
+=======
+      [workflow_id].hash
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     end
 
     # Builds the object from hash

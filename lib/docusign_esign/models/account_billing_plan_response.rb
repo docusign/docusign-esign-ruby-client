@@ -25,8 +25,11 @@ module DocuSign_eSign
 
     attr_accessor :direct_debit_processor_information
 
+<<<<<<< HEAD
     attr_accessor :downgrade_plan_information
 
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # 
     attr_accessor :payment_method
 
@@ -46,7 +49,10 @@ module DocuSign_eSign
         :'billing_plan' => :'billingPlan',
         :'credit_card_information' => :'creditCardInformation',
         :'direct_debit_processor_information' => :'directDebitProcessorInformation',
+<<<<<<< HEAD
         :'downgrade_plan_information' => :'downgradePlanInformation',
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'payment_method' => :'paymentMethod',
         :'payment_processor_information' => :'paymentProcessorInformation',
         :'referral_information' => :'referralInformation',
@@ -62,7 +68,10 @@ module DocuSign_eSign
         :'billing_plan' => :'AccountBillingPlan',
         :'credit_card_information' => :'CreditCardInformation',
         :'direct_debit_processor_information' => :'DirectDebitProcessorInformation',
+<<<<<<< HEAD
         :'downgrade_plan_information' => :'DowngradePlanUpdateResponse',
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'payment_method' => :'String',
         :'payment_processor_information' => :'PaymentProcessorInformation',
         :'referral_information' => :'ReferralInformation',
@@ -98,10 +107,13 @@ module DocuSign_eSign
         self.direct_debit_processor_information = attributes[:'directDebitProcessorInformation']
       end
 
+<<<<<<< HEAD
       if attributes.has_key?(:'downgradePlanInformation')
         self.downgrade_plan_information = attributes[:'downgradePlanInformation']
       end
 
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'paymentMethod')
         self.payment_method = attributes[:'paymentMethod']
       end
@@ -145,7 +157,10 @@ module DocuSign_eSign
           billing_plan == o.billing_plan &&
           credit_card_information == o.credit_card_information &&
           direct_debit_processor_information == o.direct_debit_processor_information &&
+<<<<<<< HEAD
           downgrade_plan_information == o.downgrade_plan_information &&
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
           payment_method == o.payment_method &&
           payment_processor_information == o.payment_processor_information &&
           referral_information == o.referral_information &&
@@ -161,7 +176,11 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
+<<<<<<< HEAD
       [billing_address, billing_address_is_credit_card_address, billing_plan, credit_card_information, direct_debit_processor_information, downgrade_plan_information, payment_method, payment_processor_information, referral_information, successor_plans].hash
+=======
+      [billing_address, billing_address_is_credit_card_address, billing_plan, credit_card_information, direct_debit_processor_information, payment_method, payment_processor_information, referral_information, successor_plans].hash
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     end
 
     # Builds the object from hash

@@ -99,9 +99,12 @@ module DocuSign_eSign
     # 
     attr_accessor :stamp_type
 
+<<<<<<< HEAD
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
     attr_accessor :status
 
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -134,8 +137,12 @@ module DocuSign_eSign
         :'stamp_format' => :'stampFormat',
         :'stamp_image_uri' => :'stampImageUri',
         :'stamp_size_mm' => :'stampSizeMM',
+<<<<<<< HEAD
         :'stamp_type' => :'stampType',
         :'status' => :'status'
+=======
+        :'stamp_type' => :'stampType'
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       }
     end
 
@@ -170,8 +177,12 @@ module DocuSign_eSign
         :'stamp_format' => :'String',
         :'stamp_image_uri' => :'String',
         :'stamp_size_mm' => :'String',
+<<<<<<< HEAD
         :'stamp_type' => :'String',
         :'status' => :'String'
+=======
+        :'stamp_type' => :'String'
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       }
     end
 
@@ -299,10 +310,13 @@ module DocuSign_eSign
         self.stamp_type = attributes[:'stampType']
       end
 
+<<<<<<< HEAD
       if attributes.has_key?(:'status')
         self.status = attributes[:'status']
       end
 
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -351,8 +365,12 @@ module DocuSign_eSign
           stamp_format == o.stamp_format &&
           stamp_image_uri == o.stamp_image_uri &&
           stamp_size_mm == o.stamp_size_mm &&
+<<<<<<< HEAD
           stamp_type == o.stamp_type &&
           status == o.status
+=======
+          stamp_type == o.stamp_type
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     end
 
     # @see the `==` method
@@ -364,7 +382,11 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
+<<<<<<< HEAD
       [adopted_date_time, created_date_time, custom_field, date_stamp_properties, disallow_user_resize_stamp, error_details, external_id, image_base64, image_type, initials150_image_id, initials_image_uri, is_default, last_modified_date_time, nrds_id, nrds_last_name, nrds_status, phonetic_name, signature150_image_id, signature_font, signature_id, signature_image_uri, signature_initials, signature_name, signature_rights, signature_type, stamp_format, stamp_image_uri, stamp_size_mm, stamp_type, status].hash
+=======
+      [adopted_date_time, created_date_time, custom_field, date_stamp_properties, disallow_user_resize_stamp, error_details, external_id, image_base64, image_type, initials150_image_id, initials_image_uri, is_default, last_modified_date_time, nrds_id, nrds_last_name, nrds_status, phonetic_name, signature150_image_id, signature_font, signature_id, signature_image_uri, signature_initials, signature_name, signature_rights, signature_type, stamp_format, stamp_image_uri, stamp_size_mm, stamp_type].hash
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     end
 
     # Builds the object from hash

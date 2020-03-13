@@ -129,6 +129,7 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+<<<<<<< HEAD
     # Generates a new connect HMAC Secret.
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -177,6 +178,8 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # Deletes the specified connect configuration.
     # Deletes the specified DocuSign Connect configuration.  ###### Note: Connect must be enabled for your account to use this function.    
     # @param account_id The external account number (int) or account ID Guid.
@@ -229,6 +232,7 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+<<<<<<< HEAD
     # Delete the connect HMAC Secret for AccountID
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -281,6 +285,8 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # Deletes a Connect failure log entry.
     # Deletes the Connect failure log information for the specified entry.
     # @param account_id The external account number (int) or account ID Guid.
@@ -433,6 +439,7 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+<<<<<<< HEAD
     # Reserved
     # Reserved:
     # @param account_id The external account number (int) or account ID Guid.
@@ -532,6 +539,8 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # Get a Connect Configuration Information
     # Retrieves the information for the specified DocuSign Connect configuration.  ###### Note: Connect must be enabled for your account to use this function. 
     # @param account_id The external account number (int) or account ID Guid.
@@ -585,6 +594,7 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+<<<<<<< HEAD
     # Get the connect HMAC Secrets for AccountID
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -633,6 +643,8 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # Get the specified Connect log entry.
     # Retrieves the specified Connect log entry for your account.  ###### Note: The `enableLog` setting in the Connect configuration must be set to true to enable logging. If logging is not enabled, then no log entries are recorded. 
     # @param account_id The external account number (int) or account ID Guid.
@@ -844,6 +856,7 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+<<<<<<< HEAD
     # Reserved
     # Reserved:
     # @param account_id The external account number (int) or account ID Guid.
@@ -946,6 +959,8 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # Returns users from the configured Connect service.
     # Returns users from the configured Connect service.
     # @param account_id The external account number (int) or account ID Guid.
@@ -1161,6 +1176,7 @@ module DocuSign_eSign
       end
       return data, status_code, headers
     end
+<<<<<<< HEAD
 
     # Reserved
     # Reserved:
@@ -1212,5 +1228,7 @@ module DocuSign_eSign
       end
       return data, status_code, headers
     end
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
   end
 end

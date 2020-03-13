@@ -3,7 +3,11 @@ All notable changes to this project will be documented in this file.
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+<<<<<<< HEAD
 ## [v3.0.0] - eSignature API v2.1-19.2.02 - 2019-10-08
+=======
+## [v3.0.0.rc1] - eSignature API v2.1-19.2.02 - 2019-10-05
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
 ### BREAKING
 - The SDK now supports version 19.2.02 of the DocuSign eSignature v2.1 API.
 ### Changed
@@ -16,7 +20,11 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 - Issue [`#15`](https://github.com/docusign/docusign-ruby-client/issues/15): ListStatus not accepting envelope_ids. (DCM-3123)
 - Issue [`#7`](https://github.com/docusign/docusign-ruby-client/issues/7): Allow passing in JWT. (DCM-2312)
 
+<<<<<<< HEAD
 ## [v2.1.0] - eSignature API v2-19.2.02 - 2019-10-08
+=======
+## [v2.1.0.rc1] - eSignature API v2-19.2.02 - 2019-10-05
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
 ### Changed
 - The SDK now supports version 19.2.02 of the DocuSign eSignature v2 API.
 - SDK Release Version updated.

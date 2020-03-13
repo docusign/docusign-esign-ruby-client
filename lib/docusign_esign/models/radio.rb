@@ -14,11 +14,14 @@ require 'date'
 module DocuSign_eSign
 
   class Radio
+<<<<<<< HEAD
     # 
     attr_accessor :anchor_allow_white_space_in_characters
 
     attr_accessor :anchor_allow_white_space_in_characters_metadata
 
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     # When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**.
     attr_accessor :anchor_case_sensitive
 
@@ -150,8 +153,11 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+<<<<<<< HEAD
         :'anchor_allow_white_space_in_characters' => :'anchorAllowWhiteSpaceInCharacters',
         :'anchor_allow_white_space_in_characters_metadata' => :'anchorAllowWhiteSpaceInCharactersMetadata',
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'anchor_case_sensitive' => :'anchorCaseSensitive',
         :'anchor_case_sensitive_metadata' => :'anchorCaseSensitiveMetadata',
         :'anchor_horizontal_alignment' => :'anchorHorizontalAlignment',
@@ -209,8 +215,11 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+<<<<<<< HEAD
         :'anchor_allow_white_space_in_characters' => :'String',
         :'anchor_allow_white_space_in_characters_metadata' => :'PropertyMetadata',
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
         :'anchor_case_sensitive' => :'String',
         :'anchor_case_sensitive_metadata' => :'PropertyMetadata',
         :'anchor_horizontal_alignment' => :'String',
@@ -273,6 +282,7 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
+<<<<<<< HEAD
       if attributes.has_key?(:'anchorAllowWhiteSpaceInCharacters')
         self.anchor_allow_white_space_in_characters = attributes[:'anchorAllowWhiteSpaceInCharacters']
       end
@@ -281,6 +291,8 @@ module DocuSign_eSign
         self.anchor_allow_white_space_in_characters_metadata = attributes[:'anchorAllowWhiteSpaceInCharactersMetadata']
       end
 
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
       if attributes.has_key?(:'anchorCaseSensitive')
         self.anchor_case_sensitive = attributes[:'anchorCaseSensitive']
       end
@@ -505,8 +517,11 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+<<<<<<< HEAD
           anchor_allow_white_space_in_characters == o.anchor_allow_white_space_in_characters &&
           anchor_allow_white_space_in_characters_metadata == o.anchor_allow_white_space_in_characters_metadata &&
+=======
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
           anchor_case_sensitive == o.anchor_case_sensitive &&
           anchor_case_sensitive_metadata == o.anchor_case_sensitive_metadata &&
           anchor_horizontal_alignment == o.anchor_horizontal_alignment &&
@@ -569,7 +584,11 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
+<<<<<<< HEAD
       [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, error_details, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, italic, italic_metadata, locked, locked_metadata, page_number, page_number_metadata, required, required_metadata, selected, selected_metadata, status, status_metadata, tab_id, tab_id_metadata, tab_order, tab_order_metadata, underline, underline_metadata, value, value_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
+=======
+      [anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, error_details, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, italic, italic_metadata, locked, locked_metadata, page_number, page_number_metadata, required, required_metadata, selected, selected_metadata, status, status_metadata, tab_id, tab_id_metadata, tab_order, tab_order_metadata, underline, underline_metadata, value, value_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
+>>>>>>> 21be361feb7dcf8e34f4d3df2412dedff41c20d5
     end
 
     # Builds the object from hash
