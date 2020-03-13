@@ -472,7 +472,6 @@ require 'docusign_esign/api/organizations_api'
 require 'docusign_esign/api/power_forms_api'
 require 'docusign_esign/api/signing_groups_api'
 require 'docusign_esign/api/templates_api'
-require 'docusign_esign/api/trust_service_providers_api'
 require 'docusign_esign/api/users_api'
 require 'docusign_esign/api/workspaces_api'
 
