@@ -628,6 +628,57 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Queues downgrade billing plan request for an account.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param downgrade_billing_plan_information  (optional parameter)
+    # @return [DowngradePlanUpdateResponse]
+    def update_downgrade_account_billing_plan(account_id, downgrade_billing_plan_information)
+      data, _status_code, _headers = update_downgrade_account_billing_plan_with_http_info(account_id,  downgrade_billing_plan_information)
+      return data
+    end
+
+    # Queues downgrade billing plan request for an account.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param downgrade_billing_plan_information  (optional parameter)
+    # @return [Array<(DowngradePlanUpdateResponse, Fixnum, Hash)>] DowngradePlanUpdateResponse data, response status code and response headers
+    def update_downgrade_account_billing_plan_with_http_info(account_id, downgrade_billing_plan_information)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BillingApi.update_downgrade_account_billing_plan ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling BillingApi.update_downgrade_account_billing_plan" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/billing_plan/downgrade".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(downgrade_billing_plan_information)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DowngradePlanUpdateResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BillingApi#update_downgrade_account_billing_plan\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Updates the account billing plan.
     # Updates the billing plan information, billing address, and credit card information for the specified account.
     # @param account_id The external account number (int) or account ID Guid.

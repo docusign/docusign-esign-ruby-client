@@ -13,61 +13,32 @@ require 'date'
 
 module DocuSign_eSign
 
-  class DisplayAppliancePdf
-    attr_accessor :attachment_info
+  class AccountIdentityInputOption
+    # 
+    attr_accessor :is_required
 
     # 
-    attr_accessor :doc_name
-
-    # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-    attr_accessor :document_id
+    attr_accessor :option_name
 
     # 
-    attr_accessor :latest_pdf
-
-    # 
-    attr_accessor :latest_pdf_id
-
-    # 
-    attr_accessor :original_pdf
-
-    # 
-    attr_accessor :original_pdf_id
-
-    # 
-    attr_accessor :page_count
-
-    # 
-    attr_accessor :pdf_type
+    attr_accessor :value_type
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'attachment_info' => :'attachmentInfo',
-        :'doc_name' => :'docName',
-        :'document_id' => :'documentId',
-        :'latest_pdf' => :'latestPdf',
-        :'latest_pdf_id' => :'latestPDFId',
-        :'original_pdf' => :'originalPdf',
-        :'original_pdf_id' => :'originalPDFId',
-        :'page_count' => :'pageCount',
-        :'pdf_type' => :'pdfType'
+        :'is_required' => :'isRequired',
+        :'option_name' => :'optionName',
+        :'value_type' => :'valueType'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'attachment_info' => :'DisplayApplianceSignerAttachment',
-        :'doc_name' => :'String',
-        :'document_id' => :'String',
-        :'latest_pdf' => :'String',
-        :'latest_pdf_id' => :'String',
-        :'original_pdf' => :'String',
-        :'original_pdf_id' => :'String',
-        :'page_count' => :'Integer',
-        :'pdf_type' => :'String'
+        :'is_required' => :'BOOLEAN',
+        :'option_name' => :'String',
+        :'value_type' => :'String'
       }
     end
 
@@ -79,40 +50,16 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'attachmentInfo')
-        self.attachment_info = attributes[:'attachmentInfo']
+      if attributes.has_key?(:'isRequired')
+        self.is_required = attributes[:'isRequired']
       end
 
-      if attributes.has_key?(:'docName')
-        self.doc_name = attributes[:'docName']
+      if attributes.has_key?(:'optionName')
+        self.option_name = attributes[:'optionName']
       end
 
-      if attributes.has_key?(:'documentId')
-        self.document_id = attributes[:'documentId']
-      end
-
-      if attributes.has_key?(:'latestPdf')
-        self.latest_pdf = attributes[:'latestPdf']
-      end
-
-      if attributes.has_key?(:'latestPDFId')
-        self.latest_pdf_id = attributes[:'latestPDFId']
-      end
-
-      if attributes.has_key?(:'originalPdf')
-        self.original_pdf = attributes[:'originalPdf']
-      end
-
-      if attributes.has_key?(:'originalPDFId')
-        self.original_pdf_id = attributes[:'originalPDFId']
-      end
-
-      if attributes.has_key?(:'pageCount')
-        self.page_count = attributes[:'pageCount']
-      end
-
-      if attributes.has_key?(:'pdfType')
-        self.pdf_type = attributes[:'pdfType']
+      if attributes.has_key?(:'valueType')
+        self.value_type = attributes[:'valueType']
       end
 
     end
@@ -135,15 +82,9 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          attachment_info == o.attachment_info &&
-          doc_name == o.doc_name &&
-          document_id == o.document_id &&
-          latest_pdf == o.latest_pdf &&
-          latest_pdf_id == o.latest_pdf_id &&
-          original_pdf == o.original_pdf &&
-          original_pdf_id == o.original_pdf_id &&
-          page_count == o.page_count &&
-          pdf_type == o.pdf_type
+          is_required == o.is_required &&
+          option_name == o.option_name &&
+          value_type == o.value_type
     end
 
     # @see the `==` method
@@ -155,7 +96,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [attachment_info, doc_name, document_id, latest_pdf, latest_pdf_id, original_pdf, original_pdf_id, page_count, pdf_type].hash
+      [is_required, option_name, value_type].hash
     end
 
     # Builds the object from hash

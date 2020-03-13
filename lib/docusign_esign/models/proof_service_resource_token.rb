@@ -13,57 +13,22 @@ require 'date'
 
 module DocuSign_eSign
 
-  class DisplayApplianceDocument
+  class ProofServiceResourceToken
     # 
-    attr_accessor :attachment_description
-
-    # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-    attr_accessor :document_id
-
-    # 
-    attr_accessor :document_type
-
-    # The envelope ID of the envelope status that failed to post.
-    attr_accessor :envelope_id
-
-    # 
-    attr_accessor :external_document_id
-
-    # 
-    attr_accessor :latest_pdf_id
-
-    # 
-    attr_accessor :name
-
-    # 
-    attr_accessor :pages
+    attr_accessor :resource_token
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'attachment_description' => :'attachmentDescription',
-        :'document_id' => :'documentId',
-        :'document_type' => :'documentType',
-        :'envelope_id' => :'envelopeId',
-        :'external_document_id' => :'externalDocumentId',
-        :'latest_pdf_id' => :'latestPDFId',
-        :'name' => :'name',
-        :'pages' => :'pages'
+        :'resource_token' => :'ResourceToken'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'attachment_description' => :'String',
-        :'document_id' => :'String',
-        :'document_type' => :'String',
-        :'envelope_id' => :'String',
-        :'external_document_id' => :'String',
-        :'latest_pdf_id' => :'String',
-        :'name' => :'String',
-        :'pages' => :'Integer'
+        :'resource_token' => :'String'
       }
     end
 
@@ -75,36 +40,8 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'attachmentDescription')
-        self.attachment_description = attributes[:'attachmentDescription']
-      end
-
-      if attributes.has_key?(:'documentId')
-        self.document_id = attributes[:'documentId']
-      end
-
-      if attributes.has_key?(:'documentType')
-        self.document_type = attributes[:'documentType']
-      end
-
-      if attributes.has_key?(:'envelopeId')
-        self.envelope_id = attributes[:'envelopeId']
-      end
-
-      if attributes.has_key?(:'externalDocumentId')
-        self.external_document_id = attributes[:'externalDocumentId']
-      end
-
-      if attributes.has_key?(:'latestPDFId')
-        self.latest_pdf_id = attributes[:'latestPDFId']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'pages')
-        self.pages = attributes[:'pages']
+      if attributes.has_key?(:'ResourceToken')
+        self.resource_token = attributes[:'ResourceToken']
       end
 
     end
@@ -127,14 +64,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          attachment_description == o.attachment_description &&
-          document_id == o.document_id &&
-          document_type == o.document_type &&
-          envelope_id == o.envelope_id &&
-          external_document_id == o.external_document_id &&
-          latest_pdf_id == o.latest_pdf_id &&
-          name == o.name &&
-          pages == o.pages
+          resource_token == o.resource_token
     end
 
     # @see the `==` method
@@ -146,7 +76,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [attachment_description, document_id, document_type, envelope_id, external_document_id, latest_pdf_id, name, pages].hash
+      [resource_token].hash
     end
 
     # Builds the object from hash

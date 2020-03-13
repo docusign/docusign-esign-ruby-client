@@ -14,6 +14,15 @@ require 'date'
 module DocuSign_eSign
 
   class AccountUISettings
+    attr_accessor :admin_message
+
+    attr_accessor :ask_an_admin
+
+    # 
+    attr_accessor :enable_admin_message
+
+    attr_accessor :enable_admin_message_metadata
+
     # 
     attr_accessor :enable_easy_sign_can_use_multi_template_apply
 
@@ -23,6 +32,11 @@ module DocuSign_eSign
     attr_accessor :enable_easy_sign_template_upload
 
     attr_accessor :enable_easy_sign_template_upload_metadata
+
+    # 
+    attr_accessor :enable_envelope_copy_with_data
+
+    attr_accessor :enable_envelope_copy_with_data_metadata
 
     # 
     attr_accessor :hide_send_an_envelope
@@ -54,14 +68,25 @@ module DocuSign_eSign
 
     attr_accessor :should_redact_access_code_metadata
 
+    # 
+    attr_accessor :upload_new_image_to_sign_or_initial
+
+    attr_accessor :upload_new_image_to_sign_or_initial_metadata
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'admin_message' => :'adminMessage',
+        :'ask_an_admin' => :'askAnAdmin',
+        :'enable_admin_message' => :'enableAdminMessage',
+        :'enable_admin_message_metadata' => :'enableAdminMessageMetadata',
         :'enable_easy_sign_can_use_multi_template_apply' => :'enableEasySignCanUseMultiTemplateApply',
         :'enable_easy_sign_can_use_multi_template_apply_metadata' => :'enableEasySignCanUseMultiTemplateApplyMetadata',
         :'enable_easy_sign_template_upload' => :'enableEasySignTemplateUpload',
         :'enable_easy_sign_template_upload_metadata' => :'enableEasySignTemplateUploadMetadata',
+        :'enable_envelope_copy_with_data' => :'enableEnvelopeCopyWithData',
+        :'enable_envelope_copy_with_data_metadata' => :'enableEnvelopeCopyWithDataMetadata',
         :'hide_send_an_envelope' => :'hideSendAnEnvelope',
         :'hide_send_an_envelope_metadata' => :'hideSendAnEnvelopeMetadata',
         :'hide_use_a_template' => :'hideUseATemplate',
@@ -73,17 +98,25 @@ module DocuSign_eSign
         :'remove_envelope_forwarding' => :'removeEnvelopeForwarding',
         :'remove_envelope_forwarding_metadata' => :'removeEnvelopeForwardingMetadata',
         :'should_redact_access_code' => :'shouldRedactAccessCode',
-        :'should_redact_access_code_metadata' => :'shouldRedactAccessCodeMetadata'
+        :'should_redact_access_code_metadata' => :'shouldRedactAccessCodeMetadata',
+        :'upload_new_image_to_sign_or_initial' => :'uploadNewImageToSignOrInitial',
+        :'upload_new_image_to_sign_or_initial_metadata' => :'uploadNewImageToSignOrInitialMetadata'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'admin_message' => :'AdminMessage',
+        :'ask_an_admin' => :'AskAnAdmin',
+        :'enable_admin_message' => :'String',
+        :'enable_admin_message_metadata' => :'SettingsMetadata',
         :'enable_easy_sign_can_use_multi_template_apply' => :'String',
         :'enable_easy_sign_can_use_multi_template_apply_metadata' => :'SettingsMetadata',
         :'enable_easy_sign_template_upload' => :'String',
         :'enable_easy_sign_template_upload_metadata' => :'SettingsMetadata',
+        :'enable_envelope_copy_with_data' => :'String',
+        :'enable_envelope_copy_with_data_metadata' => :'SettingsMetadata',
         :'hide_send_an_envelope' => :'String',
         :'hide_send_an_envelope_metadata' => :'SettingsMetadata',
         :'hide_use_a_template' => :'String',
@@ -95,7 +128,9 @@ module DocuSign_eSign
         :'remove_envelope_forwarding' => :'String',
         :'remove_envelope_forwarding_metadata' => :'SettingsMetadata',
         :'should_redact_access_code' => :'String',
-        :'should_redact_access_code_metadata' => :'SettingsMetadata'
+        :'should_redact_access_code_metadata' => :'SettingsMetadata',
+        :'upload_new_image_to_sign_or_initial' => :'String',
+        :'upload_new_image_to_sign_or_initial_metadata' => :'SettingsMetadata'
       }
     end
 
@@ -106,6 +141,22 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'adminMessage')
+        self.admin_message = attributes[:'adminMessage']
+      end
+
+      if attributes.has_key?(:'askAnAdmin')
+        self.ask_an_admin = attributes[:'askAnAdmin']
+      end
+
+      if attributes.has_key?(:'enableAdminMessage')
+        self.enable_admin_message = attributes[:'enableAdminMessage']
+      end
+
+      if attributes.has_key?(:'enableAdminMessageMetadata')
+        self.enable_admin_message_metadata = attributes[:'enableAdminMessageMetadata']
+      end
 
       if attributes.has_key?(:'enableEasySignCanUseMultiTemplateApply')
         self.enable_easy_sign_can_use_multi_template_apply = attributes[:'enableEasySignCanUseMultiTemplateApply']
@@ -121,6 +172,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'enableEasySignTemplateUploadMetadata')
         self.enable_easy_sign_template_upload_metadata = attributes[:'enableEasySignTemplateUploadMetadata']
+      end
+
+      if attributes.has_key?(:'enableEnvelopeCopyWithData')
+        self.enable_envelope_copy_with_data = attributes[:'enableEnvelopeCopyWithData']
+      end
+
+      if attributes.has_key?(:'enableEnvelopeCopyWithDataMetadata')
+        self.enable_envelope_copy_with_data_metadata = attributes[:'enableEnvelopeCopyWithDataMetadata']
       end
 
       if attributes.has_key?(:'hideSendAnEnvelope')
@@ -171,6 +230,14 @@ module DocuSign_eSign
         self.should_redact_access_code_metadata = attributes[:'shouldRedactAccessCodeMetadata']
       end
 
+      if attributes.has_key?(:'uploadNewImageToSignOrInitial')
+        self.upload_new_image_to_sign_or_initial = attributes[:'uploadNewImageToSignOrInitial']
+      end
+
+      if attributes.has_key?(:'uploadNewImageToSignOrInitialMetadata')
+        self.upload_new_image_to_sign_or_initial_metadata = attributes[:'uploadNewImageToSignOrInitialMetadata']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -191,10 +258,16 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          admin_message == o.admin_message &&
+          ask_an_admin == o.ask_an_admin &&
+          enable_admin_message == o.enable_admin_message &&
+          enable_admin_message_metadata == o.enable_admin_message_metadata &&
           enable_easy_sign_can_use_multi_template_apply == o.enable_easy_sign_can_use_multi_template_apply &&
           enable_easy_sign_can_use_multi_template_apply_metadata == o.enable_easy_sign_can_use_multi_template_apply_metadata &&
           enable_easy_sign_template_upload == o.enable_easy_sign_template_upload &&
           enable_easy_sign_template_upload_metadata == o.enable_easy_sign_template_upload_metadata &&
+          enable_envelope_copy_with_data == o.enable_envelope_copy_with_data &&
+          enable_envelope_copy_with_data_metadata == o.enable_envelope_copy_with_data_metadata &&
           hide_send_an_envelope == o.hide_send_an_envelope &&
           hide_send_an_envelope_metadata == o.hide_send_an_envelope_metadata &&
           hide_use_a_template == o.hide_use_a_template &&
@@ -206,7 +279,9 @@ module DocuSign_eSign
           remove_envelope_forwarding == o.remove_envelope_forwarding &&
           remove_envelope_forwarding_metadata == o.remove_envelope_forwarding_metadata &&
           should_redact_access_code == o.should_redact_access_code &&
-          should_redact_access_code_metadata == o.should_redact_access_code_metadata
+          should_redact_access_code_metadata == o.should_redact_access_code_metadata &&
+          upload_new_image_to_sign_or_initial == o.upload_new_image_to_sign_or_initial &&
+          upload_new_image_to_sign_or_initial_metadata == o.upload_new_image_to_sign_or_initial_metadata
     end
 
     # @see the `==` method
@@ -218,7 +293,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [enable_easy_sign_can_use_multi_template_apply, enable_easy_sign_can_use_multi_template_apply_metadata, enable_easy_sign_template_upload, enable_easy_sign_template_upload_metadata, hide_send_an_envelope, hide_send_an_envelope_metadata, hide_use_a_template, hide_use_a_template_in_prepare, hide_use_a_template_in_prepare_metadata, hide_use_a_template_metadata, order_based_recipient_id_generation, order_based_recipient_id_generation_metadata, remove_envelope_forwarding, remove_envelope_forwarding_metadata, should_redact_access_code, should_redact_access_code_metadata].hash
+      [admin_message, ask_an_admin, enable_admin_message, enable_admin_message_metadata, enable_easy_sign_can_use_multi_template_apply, enable_easy_sign_can_use_multi_template_apply_metadata, enable_easy_sign_template_upload, enable_easy_sign_template_upload_metadata, enable_envelope_copy_with_data, enable_envelope_copy_with_data_metadata, hide_send_an_envelope, hide_send_an_envelope_metadata, hide_use_a_template, hide_use_a_template_in_prepare, hide_use_a_template_in_prepare_metadata, hide_use_a_template_metadata, order_based_recipient_id_generation, order_based_recipient_id_generation_metadata, remove_envelope_forwarding, remove_envelope_forwarding_metadata, should_redact_access_code, should_redact_access_code_metadata, upload_new_image_to_sign_or_initial, upload_new_image_to_sign_or_initial_metadata].hash
     end
 
     # Builds the object from hash

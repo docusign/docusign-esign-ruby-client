@@ -13,7 +13,10 @@ require 'date'
 
 module DocuSign_eSign
 
-  class Decline
+  class Draw
+    # 
+    attr_accessor :allow_signer_upload
+
     # 
     attr_accessor :anchor_allow_white_space_in_characters
 
@@ -64,16 +67,6 @@ module DocuSign_eSign
 
     attr_accessor :anchor_y_offset_metadata
 
-    # When set to **true**, the information in the tab is bold.
-    attr_accessor :bold
-
-    attr_accessor :bold_metadata
-
-    #  Specifies the decline text displayed in the tab.
-    attr_accessor :button_text
-
-    attr_accessor :button_text_metadata
-
     # For conditional fields this is the TabLabel of the parent tab that controls this tab's visibility.
     attr_accessor :conditional_parent_label
 
@@ -89,32 +82,12 @@ module DocuSign_eSign
 
     attr_accessor :custom_tab_id_metadata
 
-    # The reason the recipient declined the document.
-    attr_accessor :decline_reason
-
-    attr_accessor :decline_reason_metadata
-
     # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
     attr_accessor :document_id
 
     attr_accessor :document_id_metadata
 
     attr_accessor :error_details
-
-    # The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.
-    attr_accessor :font
-
-    # The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White.
-    attr_accessor :font_color
-
-    attr_accessor :font_color_metadata
-
-    attr_accessor :font_metadata
-
-    # The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72.
-    attr_accessor :font_size
-
-    attr_accessor :font_size_metadata
 
     # 
     attr_accessor :form_order
@@ -136,12 +109,10 @@ module DocuSign_eSign
 
     attr_accessor :height_metadata
 
-    # When set to **true**, the information in the tab is italic.
-    attr_accessor :italic
+    # When set to **true**, the signer cannot change the data of the custom tab.
+    attr_accessor :locked
 
-    attr_accessor :italic_metadata
-
-    attr_accessor :locale_policy
+    attr_accessor :locked_metadata
 
     attr_accessor :merge_field
 
@@ -163,6 +134,16 @@ module DocuSign_eSign
 
     attr_accessor :recipient_id_metadata
 
+    # When set to **true**, the signer is required to fill out this tab
+    attr_accessor :required
+
+    attr_accessor :required_metadata
+
+    # When set to **true**, this custom tab is shared.
+    attr_accessor :shared
+
+    attr_accessor :shared_metadata
+
     attr_accessor :smart_contract_information
 
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
@@ -179,9 +160,6 @@ module DocuSign_eSign
     attr_accessor :tab_id
 
     attr_accessor :tab_id_metadata
-
-    # The label string associated with the tab.
-    attr_accessor :tab_label
 
     attr_accessor :tab_label_metadata
 
@@ -210,10 +188,8 @@ module DocuSign_eSign
 
     attr_accessor :tool_tip_metadata
 
-    # When set to **true**, the information in the tab is underlined.
-    attr_accessor :underline
-
-    attr_accessor :underline_metadata
+    # 
+    attr_accessor :use_background_as_canvas
 
     # Width of the tab in pixels.
     attr_accessor :width
@@ -234,6 +210,7 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'allow_signer_upload' => :'allowSignerUpload',
         :'anchor_allow_white_space_in_characters' => :'anchorAllowWhiteSpaceInCharacters',
         :'anchor_allow_white_space_in_characters_metadata' => :'anchorAllowWhiteSpaceInCharactersMetadata',
         :'anchor_case_sensitive' => :'anchorCaseSensitive',
@@ -254,27 +231,15 @@ module DocuSign_eSign
         :'anchor_x_offset_metadata' => :'anchorXOffsetMetadata',
         :'anchor_y_offset' => :'anchorYOffset',
         :'anchor_y_offset_metadata' => :'anchorYOffsetMetadata',
-        :'bold' => :'bold',
-        :'bold_metadata' => :'boldMetadata',
-        :'button_text' => :'buttonText',
-        :'button_text_metadata' => :'buttonTextMetadata',
         :'conditional_parent_label' => :'conditionalParentLabel',
         :'conditional_parent_label_metadata' => :'conditionalParentLabelMetadata',
         :'conditional_parent_value' => :'conditionalParentValue',
         :'conditional_parent_value_metadata' => :'conditionalParentValueMetadata',
         :'custom_tab_id' => :'customTabId',
         :'custom_tab_id_metadata' => :'customTabIdMetadata',
-        :'decline_reason' => :'declineReason',
-        :'decline_reason_metadata' => :'declineReasonMetadata',
         :'document_id' => :'documentId',
         :'document_id_metadata' => :'documentIdMetadata',
         :'error_details' => :'errorDetails',
-        :'font' => :'font',
-        :'font_color' => :'fontColor',
-        :'font_color_metadata' => :'fontColorMetadata',
-        :'font_metadata' => :'fontMetadata',
-        :'font_size' => :'fontSize',
-        :'font_size_metadata' => :'fontSizeMetadata',
         :'form_order' => :'formOrder',
         :'form_order_metadata' => :'formOrderMetadata',
         :'form_page_label' => :'formPageLabel',
@@ -283,9 +248,8 @@ module DocuSign_eSign
         :'form_page_number_metadata' => :'formPageNumberMetadata',
         :'height' => :'height',
         :'height_metadata' => :'heightMetadata',
-        :'italic' => :'italic',
-        :'italic_metadata' => :'italicMetadata',
-        :'locale_policy' => :'localePolicy',
+        :'locked' => :'locked',
+        :'locked_metadata' => :'lockedMetadata',
         :'merge_field' => :'mergeField',
         :'merge_field_xml' => :'mergeFieldXml',
         :'page_number' => :'pageNumber',
@@ -294,6 +258,10 @@ module DocuSign_eSign
         :'recipient_id_guid' => :'recipientIdGuid',
         :'recipient_id_guid_metadata' => :'recipientIdGuidMetadata',
         :'recipient_id_metadata' => :'recipientIdMetadata',
+        :'required' => :'required',
+        :'required_metadata' => :'requiredMetadata',
+        :'shared' => :'shared',
+        :'shared_metadata' => :'sharedMetadata',
         :'smart_contract_information' => :'smartContractInformation',
         :'status' => :'status',
         :'status_metadata' => :'statusMetadata',
@@ -301,7 +269,6 @@ module DocuSign_eSign
         :'tab_group_labels_metadata' => :'tabGroupLabelsMetadata',
         :'tab_id' => :'tabId',
         :'tab_id_metadata' => :'tabIdMetadata',
-        :'tab_label' => :'tabLabel',
         :'tab_label_metadata' => :'tabLabelMetadata',
         :'tab_order' => :'tabOrder',
         :'tab_order_metadata' => :'tabOrderMetadata',
@@ -313,8 +280,7 @@ module DocuSign_eSign
         :'template_required_metadata' => :'templateRequiredMetadata',
         :'tooltip' => :'tooltip',
         :'tool_tip_metadata' => :'toolTipMetadata',
-        :'underline' => :'underline',
-        :'underline_metadata' => :'underlineMetadata',
+        :'use_background_as_canvas' => :'useBackgroundAsCanvas',
         :'width' => :'width',
         :'width_metadata' => :'widthMetadata',
         :'x_position' => :'xPosition',
@@ -327,6 +293,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'allow_signer_upload' => :'String',
         :'anchor_allow_white_space_in_characters' => :'String',
         :'anchor_allow_white_space_in_characters_metadata' => :'PropertyMetadata',
         :'anchor_case_sensitive' => :'String',
@@ -347,27 +314,15 @@ module DocuSign_eSign
         :'anchor_x_offset_metadata' => :'PropertyMetadata',
         :'anchor_y_offset' => :'String',
         :'anchor_y_offset_metadata' => :'PropertyMetadata',
-        :'bold' => :'String',
-        :'bold_metadata' => :'PropertyMetadata',
-        :'button_text' => :'String',
-        :'button_text_metadata' => :'PropertyMetadata',
         :'conditional_parent_label' => :'String',
         :'conditional_parent_label_metadata' => :'PropertyMetadata',
         :'conditional_parent_value' => :'String',
         :'conditional_parent_value_metadata' => :'PropertyMetadata',
         :'custom_tab_id' => :'String',
         :'custom_tab_id_metadata' => :'PropertyMetadata',
-        :'decline_reason' => :'String',
-        :'decline_reason_metadata' => :'PropertyMetadata',
         :'document_id' => :'String',
         :'document_id_metadata' => :'PropertyMetadata',
         :'error_details' => :'ErrorDetails',
-        :'font' => :'String',
-        :'font_color' => :'String',
-        :'font_color_metadata' => :'PropertyMetadata',
-        :'font_metadata' => :'PropertyMetadata',
-        :'font_size' => :'String',
-        :'font_size_metadata' => :'PropertyMetadata',
         :'form_order' => :'String',
         :'form_order_metadata' => :'PropertyMetadata',
         :'form_page_label' => :'String',
@@ -376,9 +331,8 @@ module DocuSign_eSign
         :'form_page_number_metadata' => :'PropertyMetadata',
         :'height' => :'String',
         :'height_metadata' => :'PropertyMetadata',
-        :'italic' => :'String',
-        :'italic_metadata' => :'PropertyMetadata',
-        :'locale_policy' => :'LocalePolicyTab',
+        :'locked' => :'String',
+        :'locked_metadata' => :'PropertyMetadata',
         :'merge_field' => :'MergeField',
         :'merge_field_xml' => :'String',
         :'page_number' => :'String',
@@ -387,6 +341,10 @@ module DocuSign_eSign
         :'recipient_id_guid' => :'String',
         :'recipient_id_guid_metadata' => :'PropertyMetadata',
         :'recipient_id_metadata' => :'PropertyMetadata',
+        :'required' => :'String',
+        :'required_metadata' => :'PropertyMetadata',
+        :'shared' => :'String',
+        :'shared_metadata' => :'PropertyMetadata',
         :'smart_contract_information' => :'SmartContractInformation',
         :'status' => :'String',
         :'status_metadata' => :'PropertyMetadata',
@@ -394,7 +352,6 @@ module DocuSign_eSign
         :'tab_group_labels_metadata' => :'PropertyMetadata',
         :'tab_id' => :'String',
         :'tab_id_metadata' => :'PropertyMetadata',
-        :'tab_label' => :'String',
         :'tab_label_metadata' => :'PropertyMetadata',
         :'tab_order' => :'String',
         :'tab_order_metadata' => :'PropertyMetadata',
@@ -406,8 +363,7 @@ module DocuSign_eSign
         :'template_required_metadata' => :'PropertyMetadata',
         :'tooltip' => :'String',
         :'tool_tip_metadata' => :'PropertyMetadata',
-        :'underline' => :'String',
-        :'underline_metadata' => :'PropertyMetadata',
+        :'use_background_as_canvas' => :'String',
         :'width' => :'String',
         :'width_metadata' => :'PropertyMetadata',
         :'x_position' => :'String',
@@ -424,6 +380,10 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'allowSignerUpload')
+        self.allow_signer_upload = attributes[:'allowSignerUpload']
+      end
 
       if attributes.has_key?(:'anchorAllowWhiteSpaceInCharacters')
         self.anchor_allow_white_space_in_characters = attributes[:'anchorAllowWhiteSpaceInCharacters']
@@ -505,22 +465,6 @@ module DocuSign_eSign
         self.anchor_y_offset_metadata = attributes[:'anchorYOffsetMetadata']
       end
 
-      if attributes.has_key?(:'bold')
-        self.bold = attributes[:'bold']
-      end
-
-      if attributes.has_key?(:'boldMetadata')
-        self.bold_metadata = attributes[:'boldMetadata']
-      end
-
-      if attributes.has_key?(:'buttonText')
-        self.button_text = attributes[:'buttonText']
-      end
-
-      if attributes.has_key?(:'buttonTextMetadata')
-        self.button_text_metadata = attributes[:'buttonTextMetadata']
-      end
-
       if attributes.has_key?(:'conditionalParentLabel')
         self.conditional_parent_label = attributes[:'conditionalParentLabel']
       end
@@ -545,14 +489,6 @@ module DocuSign_eSign
         self.custom_tab_id_metadata = attributes[:'customTabIdMetadata']
       end
 
-      if attributes.has_key?(:'declineReason')
-        self.decline_reason = attributes[:'declineReason']
-      end
-
-      if attributes.has_key?(:'declineReasonMetadata')
-        self.decline_reason_metadata = attributes[:'declineReasonMetadata']
-      end
-
       if attributes.has_key?(:'documentId')
         self.document_id = attributes[:'documentId']
       end
@@ -563,30 +499,6 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'errorDetails')
         self.error_details = attributes[:'errorDetails']
-      end
-
-      if attributes.has_key?(:'font')
-        self.font = attributes[:'font']
-      end
-
-      if attributes.has_key?(:'fontColor')
-        self.font_color = attributes[:'fontColor']
-      end
-
-      if attributes.has_key?(:'fontColorMetadata')
-        self.font_color_metadata = attributes[:'fontColorMetadata']
-      end
-
-      if attributes.has_key?(:'fontMetadata')
-        self.font_metadata = attributes[:'fontMetadata']
-      end
-
-      if attributes.has_key?(:'fontSize')
-        self.font_size = attributes[:'fontSize']
-      end
-
-      if attributes.has_key?(:'fontSizeMetadata')
-        self.font_size_metadata = attributes[:'fontSizeMetadata']
       end
 
       if attributes.has_key?(:'formOrder')
@@ -621,16 +533,12 @@ module DocuSign_eSign
         self.height_metadata = attributes[:'heightMetadata']
       end
 
-      if attributes.has_key?(:'italic')
-        self.italic = attributes[:'italic']
+      if attributes.has_key?(:'locked')
+        self.locked = attributes[:'locked']
       end
 
-      if attributes.has_key?(:'italicMetadata')
-        self.italic_metadata = attributes[:'italicMetadata']
-      end
-
-      if attributes.has_key?(:'localePolicy')
-        self.locale_policy = attributes[:'localePolicy']
+      if attributes.has_key?(:'lockedMetadata')
+        self.locked_metadata = attributes[:'lockedMetadata']
       end
 
       if attributes.has_key?(:'mergeField')
@@ -665,6 +573,22 @@ module DocuSign_eSign
         self.recipient_id_metadata = attributes[:'recipientIdMetadata']
       end
 
+      if attributes.has_key?(:'required')
+        self.required = attributes[:'required']
+      end
+
+      if attributes.has_key?(:'requiredMetadata')
+        self.required_metadata = attributes[:'requiredMetadata']
+      end
+
+      if attributes.has_key?(:'shared')
+        self.shared = attributes[:'shared']
+      end
+
+      if attributes.has_key?(:'sharedMetadata')
+        self.shared_metadata = attributes[:'sharedMetadata']
+      end
+
       if attributes.has_key?(:'smartContractInformation')
         self.smart_contract_information = attributes[:'smartContractInformation']
       end
@@ -693,10 +617,6 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'tabIdMetadata')
         self.tab_id_metadata = attributes[:'tabIdMetadata']
-      end
-
-      if attributes.has_key?(:'tabLabel')
-        self.tab_label = attributes[:'tabLabel']
       end
 
       if attributes.has_key?(:'tabLabelMetadata')
@@ -743,12 +663,8 @@ module DocuSign_eSign
         self.tool_tip_metadata = attributes[:'toolTipMetadata']
       end
 
-      if attributes.has_key?(:'underline')
-        self.underline = attributes[:'underline']
-      end
-
-      if attributes.has_key?(:'underlineMetadata')
-        self.underline_metadata = attributes[:'underlineMetadata']
+      if attributes.has_key?(:'useBackgroundAsCanvas')
+        self.use_background_as_canvas = attributes[:'useBackgroundAsCanvas']
       end
 
       if attributes.has_key?(:'width')
@@ -795,6 +711,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          allow_signer_upload == o.allow_signer_upload &&
           anchor_allow_white_space_in_characters == o.anchor_allow_white_space_in_characters &&
           anchor_allow_white_space_in_characters_metadata == o.anchor_allow_white_space_in_characters_metadata &&
           anchor_case_sensitive == o.anchor_case_sensitive &&
@@ -815,27 +732,15 @@ module DocuSign_eSign
           anchor_x_offset_metadata == o.anchor_x_offset_metadata &&
           anchor_y_offset == o.anchor_y_offset &&
           anchor_y_offset_metadata == o.anchor_y_offset_metadata &&
-          bold == o.bold &&
-          bold_metadata == o.bold_metadata &&
-          button_text == o.button_text &&
-          button_text_metadata == o.button_text_metadata &&
           conditional_parent_label == o.conditional_parent_label &&
           conditional_parent_label_metadata == o.conditional_parent_label_metadata &&
           conditional_parent_value == o.conditional_parent_value &&
           conditional_parent_value_metadata == o.conditional_parent_value_metadata &&
           custom_tab_id == o.custom_tab_id &&
           custom_tab_id_metadata == o.custom_tab_id_metadata &&
-          decline_reason == o.decline_reason &&
-          decline_reason_metadata == o.decline_reason_metadata &&
           document_id == o.document_id &&
           document_id_metadata == o.document_id_metadata &&
           error_details == o.error_details &&
-          font == o.font &&
-          font_color == o.font_color &&
-          font_color_metadata == o.font_color_metadata &&
-          font_metadata == o.font_metadata &&
-          font_size == o.font_size &&
-          font_size_metadata == o.font_size_metadata &&
           form_order == o.form_order &&
           form_order_metadata == o.form_order_metadata &&
           form_page_label == o.form_page_label &&
@@ -844,9 +749,8 @@ module DocuSign_eSign
           form_page_number_metadata == o.form_page_number_metadata &&
           height == o.height &&
           height_metadata == o.height_metadata &&
-          italic == o.italic &&
-          italic_metadata == o.italic_metadata &&
-          locale_policy == o.locale_policy &&
+          locked == o.locked &&
+          locked_metadata == o.locked_metadata &&
           merge_field == o.merge_field &&
           merge_field_xml == o.merge_field_xml &&
           page_number == o.page_number &&
@@ -855,6 +759,10 @@ module DocuSign_eSign
           recipient_id_guid == o.recipient_id_guid &&
           recipient_id_guid_metadata == o.recipient_id_guid_metadata &&
           recipient_id_metadata == o.recipient_id_metadata &&
+          required == o.required &&
+          required_metadata == o.required_metadata &&
+          shared == o.shared &&
+          shared_metadata == o.shared_metadata &&
           smart_contract_information == o.smart_contract_information &&
           status == o.status &&
           status_metadata == o.status_metadata &&
@@ -862,7 +770,6 @@ module DocuSign_eSign
           tab_group_labels_metadata == o.tab_group_labels_metadata &&
           tab_id == o.tab_id &&
           tab_id_metadata == o.tab_id_metadata &&
-          tab_label == o.tab_label &&
           tab_label_metadata == o.tab_label_metadata &&
           tab_order == o.tab_order &&
           tab_order_metadata == o.tab_order_metadata &&
@@ -874,8 +781,7 @@ module DocuSign_eSign
           template_required_metadata == o.template_required_metadata &&
           tooltip == o.tooltip &&
           tool_tip_metadata == o.tool_tip_metadata &&
-          underline == o.underline &&
-          underline_metadata == o.underline_metadata &&
+          use_background_as_canvas == o.use_background_as_canvas &&
           width == o.width &&
           width_metadata == o.width_metadata &&
           x_position == o.x_position &&
@@ -893,7 +799,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, button_text, button_text_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, custom_tab_id, custom_tab_id_metadata, decline_reason, decline_reason_metadata, document_id, document_id_metadata, error_details, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, height, height_metadata, italic, italic_metadata, locale_policy, merge_field, merge_field_xml, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, smart_contract_information, status, status_metadata, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_label_metadata, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, underline, underline_metadata, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
+      [allow_signer_upload, anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, custom_tab_id, custom_tab_id_metadata, document_id, document_id_metadata, error_details, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, height, height_metadata, locked, locked_metadata, merge_field, merge_field_xml, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, required, required_metadata, shared, shared_metadata, smart_contract_information, status, status_metadata, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label_metadata, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, use_background_as_canvas, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
     end
 
     # Builds the object from hash

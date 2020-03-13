@@ -13,67 +13,27 @@ require 'date'
 
 module DocuSign_eSign
 
-  class DisplayApplianceDocumentPage
+  class AdminMessage
     # 
-    attr_accessor :doc_page_count_total
-
-    # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-    attr_accessor :document_id
+    attr_accessor :base_message
 
     # 
-    attr_accessor :document_name
-
-    # 
-    attr_accessor :extension
-
-    # 
-    attr_accessor :height72_dpi
-
-    # 
-    attr_accessor :is_attachment_type
-
-    # 
-    attr_accessor :page
-
-    # 
-    attr_accessor :page_id
-
-    # 
-    attr_accessor :type
-
-    # 
-    attr_accessor :width72_dpi
+    attr_accessor :more_information
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'doc_page_count_total' => :'docPageCountTotal',
-        :'document_id' => :'documentId',
-        :'document_name' => :'documentName',
-        :'extension' => :'extension',
-        :'height72_dpi' => :'height72DPI',
-        :'is_attachment_type' => :'isAttachmentType',
-        :'page' => :'page',
-        :'page_id' => :'pageId',
-        :'type' => :'type',
-        :'width72_dpi' => :'width72DPI'
+        :'base_message' => :'baseMessage',
+        :'more_information' => :'moreInformation'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'doc_page_count_total' => :'Integer',
-        :'document_id' => :'String',
-        :'document_name' => :'String',
-        :'extension' => :'String',
-        :'height72_dpi' => :'Integer',
-        :'is_attachment_type' => :'BOOLEAN',
-        :'page' => :'Integer',
-        :'page_id' => :'String',
-        :'type' => :'String',
-        :'width72_dpi' => :'Integer'
+        :'base_message' => :'String',
+        :'more_information' => :'String'
       }
     end
 
@@ -85,44 +45,12 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'docPageCountTotal')
-        self.doc_page_count_total = attributes[:'docPageCountTotal']
+      if attributes.has_key?(:'baseMessage')
+        self.base_message = attributes[:'baseMessage']
       end
 
-      if attributes.has_key?(:'documentId')
-        self.document_id = attributes[:'documentId']
-      end
-
-      if attributes.has_key?(:'documentName')
-        self.document_name = attributes[:'documentName']
-      end
-
-      if attributes.has_key?(:'extension')
-        self.extension = attributes[:'extension']
-      end
-
-      if attributes.has_key?(:'height72DPI')
-        self.height72_dpi = attributes[:'height72DPI']
-      end
-
-      if attributes.has_key?(:'isAttachmentType')
-        self.is_attachment_type = attributes[:'isAttachmentType']
-      end
-
-      if attributes.has_key?(:'page')
-        self.page = attributes[:'page']
-      end
-
-      if attributes.has_key?(:'pageId')
-        self.page_id = attributes[:'pageId']
-      end
-
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
-      if attributes.has_key?(:'width72DPI')
-        self.width72_dpi = attributes[:'width72DPI']
+      if attributes.has_key?(:'moreInformation')
+        self.more_information = attributes[:'moreInformation']
       end
 
     end
@@ -145,16 +73,8 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          doc_page_count_total == o.doc_page_count_total &&
-          document_id == o.document_id &&
-          document_name == o.document_name &&
-          extension == o.extension &&
-          height72_dpi == o.height72_dpi &&
-          is_attachment_type == o.is_attachment_type &&
-          page == o.page &&
-          page_id == o.page_id &&
-          type == o.type &&
-          width72_dpi == o.width72_dpi
+          base_message == o.base_message &&
+          more_information == o.more_information
     end
 
     # @see the `==` method
@@ -166,7 +86,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [doc_page_count_total, document_id, document_name, extension, height72_dpi, is_attachment_type, page, page_id, type, width72_dpi].hash
+      [base_message, more_information].hash
     end
 
     # Builds the object from hash

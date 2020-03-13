@@ -13,56 +13,47 @@ require 'date'
 
 module DocuSign_eSign
 
-  class SignHashDocument
+  class OcrRequest
     # 
-    attr_accessor :data
-
-    # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-    attr_accessor :document_id
+    attr_accessor :ocr_language
 
     # 
-    attr_accessor :format
+    attr_accessor :page_selection
 
     # 
-    attr_accessor :name
+    attr_accessor :set_page_orientation
 
     # 
-    attr_accessor :remaining_signatures
+    attr_accessor :show_frames
 
     # 
-    attr_accessor :revisions
-
-    attr_accessor :signature_properties
+    attr_accessor :show_text
 
     # 
-    attr_accessor :signature_type
+    attr_accessor :skip_pages_having_existing_extractable_text
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'data' => :'data',
-        :'document_id' => :'documentId',
-        :'format' => :'format',
-        :'name' => :'name',
-        :'remaining_signatures' => :'remainingSignatures',
-        :'revisions' => :'revisions',
-        :'signature_properties' => :'signatureProperties',
-        :'signature_type' => :'signatureType'
+        :'ocr_language' => :'ocrLanguage',
+        :'page_selection' => :'pageSelection',
+        :'set_page_orientation' => :'setPageOrientation',
+        :'show_frames' => :'showFrames',
+        :'show_text' => :'showText',
+        :'skip_pages_having_existing_extractable_text' => :'skipPagesHavingExistingExtractableText'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'data' => :'String',
-        :'document_id' => :'String',
-        :'format' => :'String',
-        :'name' => :'String',
-        :'remaining_signatures' => :'Integer',
-        :'revisions' => :'Array<Revision>',
-        :'signature_properties' => :'SignatureProperties',
-        :'signature_type' => :'String'
+        :'ocr_language' => :'String',
+        :'page_selection' => :'String',
+        :'set_page_orientation' => :'String',
+        :'show_frames' => :'String',
+        :'show_text' => :'String',
+        :'skip_pages_having_existing_extractable_text' => :'String'
       }
     end
 
@@ -74,38 +65,28 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'data')
-        self.data = attributes[:'data']
+      if attributes.has_key?(:'ocrLanguage')
+        self.ocr_language = attributes[:'ocrLanguage']
       end
 
-      if attributes.has_key?(:'documentId')
-        self.document_id = attributes[:'documentId']
+      if attributes.has_key?(:'pageSelection')
+        self.page_selection = attributes[:'pageSelection']
       end
 
-      if attributes.has_key?(:'format')
-        self.format = attributes[:'format']
+      if attributes.has_key?(:'setPageOrientation')
+        self.set_page_orientation = attributes[:'setPageOrientation']
       end
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.has_key?(:'showFrames')
+        self.show_frames = attributes[:'showFrames']
       end
 
-      if attributes.has_key?(:'remainingSignatures')
-        self.remaining_signatures = attributes[:'remainingSignatures']
+      if attributes.has_key?(:'showText')
+        self.show_text = attributes[:'showText']
       end
 
-      if attributes.has_key?(:'revisions')
-        if (value = attributes[:'revisions']).is_a?(Array)
-          self.revisions = value
-        end
-      end
-
-      if attributes.has_key?(:'signatureProperties')
-        self.signature_properties = attributes[:'signatureProperties']
-      end
-
-      if attributes.has_key?(:'signatureType')
-        self.signature_type = attributes[:'signatureType']
+      if attributes.has_key?(:'skipPagesHavingExistingExtractableText')
+        self.skip_pages_having_existing_extractable_text = attributes[:'skipPagesHavingExistingExtractableText']
       end
 
     end
@@ -128,14 +109,12 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          data == o.data &&
-          document_id == o.document_id &&
-          format == o.format &&
-          name == o.name &&
-          remaining_signatures == o.remaining_signatures &&
-          revisions == o.revisions &&
-          signature_properties == o.signature_properties &&
-          signature_type == o.signature_type
+          ocr_language == o.ocr_language &&
+          page_selection == o.page_selection &&
+          set_page_orientation == o.set_page_orientation &&
+          show_frames == o.show_frames &&
+          show_text == o.show_text &&
+          skip_pages_having_existing_extractable_text == o.skip_pages_having_existing_extractable_text
     end
 
     # @see the `==` method
@@ -147,7 +126,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [data, document_id, format, name, remaining_signatures, revisions, signature_properties, signature_type].hash
+      [ocr_language, page_selection, set_page_orientation, show_frames, show_text, skip_pages_having_existing_extractable_text].hash
     end
 
     # Builds the object from hash

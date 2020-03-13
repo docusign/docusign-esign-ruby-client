@@ -129,6 +129,54 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Generates a new connect HMAC Secret.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [nil]
+    def create_connect_secret(account_id)
+      create_connect_secret_with_http_info(account_id)
+      return nil
+    end
+
+    # Generates a new connect HMAC Secret.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def create_connect_secret_with_http_info(account_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.create_connect_secret ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.create_connect_secret" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/secret".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#create_connect_secret\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Deletes the specified connect configuration.
     # Deletes the specified DocuSign Connect configuration.  ###### Note: Connect must be enabled for your account to use this function.    
     # @param account_id The external account number (int) or account ID Guid.
@@ -177,6 +225,58 @@ module DocuSign_eSign
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ConnectApi#delete_configuration\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete the connect HMAC Secret for AccountID
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param key_id 
+    # @return [nil]
+    def delete_connect_secret(account_id, key_id)
+      delete_connect_secret_with_http_info(account_id, key_id)
+      return nil
+    end
+
+    # Delete the connect HMAC Secret for AccountID
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param key_id 
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_connect_secret_with_http_info(account_id, key_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.delete_connect_secret ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.delete_connect_secret" if account_id.nil?
+      # verify the required parameter 'key_id' is set
+      fail ArgumentError, "Missing the required parameter 'key_id' when calling ConnectApi.delete_connect_secret" if key_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/secret/{keyId}/delete".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'keyId' + '}', key_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#delete_connect_secret\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -333,6 +433,105 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Reserved
+    # Reserved:
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param mobile_notifier_configuration_information  (optional parameter)
+    # @return [MobileNotifierConfigurationInformation]
+    def delete_mobile_notifiers(account_id, mobile_notifier_configuration_information)
+      data, _status_code, _headers = delete_mobile_notifiers_with_http_info(account_id,  mobile_notifier_configuration_information)
+      return data
+    end
+
+    # Reserved
+    # Reserved:
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param mobile_notifier_configuration_information  (optional parameter)
+    # @return [Array<(MobileNotifierConfigurationInformation, Fixnum, Hash)>] MobileNotifierConfigurationInformation data, response status code and response headers
+    def delete_mobile_notifiers_with_http_info(account_id, mobile_notifier_configuration_information)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.delete_mobile_notifiers ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.delete_mobile_notifiers" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/mobile_notifiers".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(mobile_notifier_configuration_information)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'MobileNotifierConfigurationInformation')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#delete_mobile_notifiers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Generates a new connect HMAC Secret.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [nil]
+    def generate_connect_secret(account_id)
+      generate_connect_secret_with_http_info(account_id)
+      return nil
+    end
+
+    # Generates a new connect HMAC Secret.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def generate_connect_secret_with_http_info(account_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.generate_connect_secret ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.generate_connect_secret" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/secret".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#generate_connect_secret\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get a Connect Configuration Information
     # Retrieves the information for the specified DocuSign Connect configuration.  ###### Note: Connect must be enabled for your account to use this function. 
     # @param account_id The external account number (int) or account ID Guid.
@@ -382,6 +581,54 @@ module DocuSign_eSign
         :return_type => 'ConnectConfigResults')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ConnectApi#get_configuration\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get the connect HMAC Secrets for AccountID
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [nil]
+    def get_connect_secrets(account_id)
+      get_connect_secrets_with_http_info(account_id)
+      return nil
+    end
+
+    # Get the connect HMAC Secrets for AccountID
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def get_connect_secrets_with_http_info(account_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.get_connect_secrets ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.get_connect_secrets" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/secrets".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#get_connect_secrets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -593,6 +840,108 @@ module DocuSign_eSign
         :return_type => 'ConnectLogs')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ConnectApi#list_event_logs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Reserved
+    # Reserved:
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [MobileNotifierConfigurationInformation]
+    def list_mobile_notifiers(account_id)
+      data, _status_code, _headers = list_mobile_notifiers_with_http_info(account_id)
+      return data
+    end
+
+    # Reserved
+    # Reserved:
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [Array<(MobileNotifierConfigurationInformation, Fixnum, Hash)>] MobileNotifierConfigurationInformation data, response status code and response headers
+    def list_mobile_notifiers_with_http_info(account_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.list_mobile_notifiers ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.list_mobile_notifiers" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/mobile_notifiers".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'MobileNotifierConfigurationInformation')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#list_mobile_notifiers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Test connect configuration.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param connect_id The ID of the custom Connect configuration being accessed.
+    # @return [ResourceInformation]
+    def list_tests(account_id, connect_id)
+      data, _status_code, _headers = list_tests_with_http_info(account_id, connect_id)
+      return data
+    end
+
+    # Test connect configuration.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param connect_id The ID of the custom Connect configuration being accessed.
+    # @return [Array<(ResourceInformation, Fixnum, Hash)>] ResourceInformation data, response status code and response headers
+    def list_tests_with_http_info(account_id, connect_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.list_tests ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.list_tests" if account_id.nil?
+      # verify the required parameter 'connect_id' is set
+      fail ArgumentError, "Missing the required parameter 'connect_id' when calling ConnectApi.list_tests" if connect_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/{connectId}/tests".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'connectId' + '}', connect_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ResourceInformation')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#list_tests\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -809,6 +1158,57 @@ module DocuSign_eSign
         :return_type => 'ConnectCustomConfiguration')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ConnectApi#update_configuration\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Reserved
+    # Reserved:
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param mobile_notifier_configuration_information  (optional parameter)
+    # @return [MobileNotifierConfigurationInformation]
+    def update_mobile_notifiers(account_id, mobile_notifier_configuration_information)
+      data, _status_code, _headers = update_mobile_notifiers_with_http_info(account_id,  mobile_notifier_configuration_information)
+      return data
+    end
+
+    # Reserved
+    # Reserved:
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param mobile_notifier_configuration_information  (optional parameter)
+    # @return [Array<(MobileNotifierConfigurationInformation, Fixnum, Hash)>] MobileNotifierConfigurationInformation data, response status code and response headers
+    def update_mobile_notifiers_with_http_info(account_id, mobile_notifier_configuration_information)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.update_mobile_notifiers ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.update_mobile_notifiers" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/mobile_notifiers".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(mobile_notifier_configuration_information)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'MobileNotifierConfigurationInformation')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#update_mobile_notifiers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

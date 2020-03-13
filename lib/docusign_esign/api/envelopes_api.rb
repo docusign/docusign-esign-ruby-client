@@ -213,6 +213,9 @@ module DocuSign_eSign
     attr_accessor :documents_by_userid
 
     # 
+    attr_accessor :include_document_size
+
+    # 
     attr_accessor :include_metadata
 
     # 
@@ -1401,111 +1404,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Create page information for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [nil]
-    def create_page_info(account_id, envelope_id)
-      create_page_info_with_http_info(account_id, envelope_id)
-      return nil
-    end
-
-    # Create page information for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def create_page_info_with_http_info(account_id, envelope_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_page_info ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_page_info" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.create_page_info" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/page_info".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#create_page_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Add pdf blobs for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [DisplayAppliancePdf]
-    def create_pdf_blob(account_id, envelope_id)
-      data, _status_code, _headers = create_pdf_blob_with_http_info(account_id, envelope_id)
-      return data
-    end
-
-    # Add pdf blobs for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [Array<(DisplayAppliancePdf, Fixnum, Hash)>] DisplayAppliancePdf data, response status code and response headers
-    def create_pdf_blob_with_http_info(account_id, envelope_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_pdf_blob ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_pdf_blob" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.create_pdf_blob" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/pdf_blobs".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'DisplayAppliancePdf')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#create_pdf_blob\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Adds one or more recipients to an envelope.
     # Adds one or more recipients to an envelope.  For an in process envelope, one that has been sent and has not been completed or voided, an email is sent to a new recipient when they are reached in the routing order. If the new recipient's routing order is before or the same as the envelope's next recipient, an email is only sent if the optional `resend_envelope` query string is set to **true**.
     # @param account_id The external account number (int) or account ID Guid.
@@ -1560,6 +1458,124 @@ module DocuSign_eSign
         :return_type => 'Recipients')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#create_recipient\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns a link to access to the identity events stored in the proof service related to this recipient.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param recipient_id The ID of the recipient being accessed.
+    # @return [ProofServiceViewLink]
+    def create_recipient_proof_file_link(account_id, envelope_id, recipient_id)
+      data, _status_code, _headers = create_recipient_proof_file_link_with_http_info(account_id, envelope_id, recipient_id)
+      return data
+    end
+
+    # Returns a link to access to the identity events stored in the proof service related to this recipient.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param recipient_id The ID of the recipient being accessed.
+    # @return [Array<(ProofServiceViewLink, Fixnum, Hash)>] ProofServiceViewLink data, response status code and response headers
+    def create_recipient_proof_file_link_with_http_info(account_id, envelope_id, recipient_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_recipient_proof_file_link ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_recipient_proof_file_link" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.create_recipient_proof_file_link" if envelope_id.nil?
+      # verify the required parameter 'recipient_id' is set
+      fail ArgumentError, "Missing the required parameter 'recipient_id' when calling EnvelopesApi.create_recipient_proof_file_link" if recipient_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/identity_proof".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'recipientId' + '}', recipient_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ProofServiceViewLink')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_recipient_proof_file_link\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns a resource token to get access to the identity events stored in the proof service related to this recipient.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param recipient_id The ID of the recipient being accessed.
+    # @param token_scopes 
+    # @return [ProofServiceResourceToken]
+    def create_recipient_proof_file_resource_token(account_id, envelope_id, recipient_id, token_scopes)
+      data, _status_code, _headers = create_recipient_proof_file_resource_token_with_http_info(account_id, envelope_id, recipient_id, token_scopes)
+      return data
+    end
+
+    # Returns a resource token to get access to the identity events stored in the proof service related to this recipient.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param recipient_id The ID of the recipient being accessed.
+    # @param token_scopes 
+    # @return [Array<(ProofServiceResourceToken, Fixnum, Hash)>] ProofServiceResourceToken data, response status code and response headers
+    def create_recipient_proof_file_resource_token_with_http_info(account_id, envelope_id, recipient_id, token_scopes)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_recipient_proof_file_resource_token ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_recipient_proof_file_resource_token" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.create_recipient_proof_file_resource_token" if envelope_id.nil?
+      # verify the required parameter 'recipient_id' is set
+      fail ArgumentError, "Missing the required parameter 'recipient_id' when calling EnvelopesApi.create_recipient_proof_file_resource_token" if recipient_id.nil?
+      # verify the required parameter 'token_scopes' is set
+      fail ArgumentError, "Missing the required parameter 'token_scopes' when calling EnvelopesApi.create_recipient_proof_file_resource_token" if token_scopes.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/identity_proof_token".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'recipientId' + '}', recipient_id.to_s).sub('{' + 'token_scopes' + '}', token_scopes.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ProofServiceResourceToken')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_recipient_proof_file_resource_token\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2342,58 +2358,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Delete page information for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [nil]
-    def delete_page_info(account_id, envelope_id)
-      delete_page_info_with_http_info(account_id, envelope_id)
-      return nil
-    end
-
-    # Delete page information for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def delete_page_info_with_http_info(account_id, envelope_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.delete_page_info ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.delete_page_info" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.delete_page_info" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/page_info".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#delete_page_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Deletes a recipient from an envelope.
     # Deletes the specified recipient file from the specified envelope. This cannot be used if the envelope has been sent.
     # @param account_id The external account number (int) or account ID Guid.
@@ -2625,59 +2589,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Returns envelope and recipient information for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [DisplayApplianceInfo]
-    def get_appliance_info(account_id, envelope_id)
-      data, _status_code, _headers = get_appliance_info_with_http_info(account_id, envelope_id)
-      return data
-    end
-
-    # Returns envelope and recipient information for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [Array<(DisplayApplianceInfo, Fixnum, Hash)>] DisplayApplianceInfo data, response status code and response headers
-    def get_appliance_info_with_http_info(account_id, envelope_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_appliance_info ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_appliance_info" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_appliance_info" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'DisplayApplianceInfo')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#get_appliance_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Retrieves an attachment from the envelope.
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -2903,7 +2814,7 @@ module DocuSign_eSign
     # Reserved: Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param recipient_id The ID of the recipient being accessed.
     # @param DocuSign_eSign::GetConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [ConsumerDisclosure]
@@ -2916,7 +2827,7 @@ module DocuSign_eSign
     # Reserved: Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param recipient_id The ID of the recipient being accessed.
     # @param DocuSign_eSign::GetConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [Array<(ConsumerDisclosure, Fixnum, Hash)>] ConsumerDisclosure data, response status code and response headers
@@ -3087,59 +2998,6 @@ module DocuSign_eSign
         :return_type => 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#get_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Return document pages for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [DisplayApplianceInfo]
-    def get_document_page(account_id, envelope_id)
-      data, _status_code, _headers = get_document_page_with_http_info(account_id, envelope_id)
-      return data
-    end
-
-    # Return document pages for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [Array<(DisplayApplianceInfo, Fixnum, Hash)>] DisplayApplianceInfo data, response status code and response headers
-    def get_document_page_with_http_info(account_id, envelope_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_document_page ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_document_page" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_document_page" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/document_page_list".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'DisplayApplianceInfo')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#get_document_page\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3830,59 +3688,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Return pdf blobs for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [DisplayAppliancePdf]
-    def get_pdf_blob(account_id, envelope_id)
-      data, _status_code, _headers = get_pdf_blob_with_http_info(account_id, envelope_id)
-      return data
-    end
-
-    # Return pdf blobs for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [Array<(DisplayAppliancePdf, Fixnum, Hash)>] DisplayAppliancePdf data, response status code and response headers
-    def get_pdf_blob_with_http_info(account_id, envelope_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_pdf_blob ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_pdf_blob" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_pdf_blob" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/pdf_blobs".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'DisplayAppliancePdf')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#get_pdf_blob\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Returns document visibility for the recipients
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -4117,60 +3922,7 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Return signer attachment information for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [DisplayApplianceSignerAttachment]
-    def get_signer_attachment(account_id, envelope_id)
-      data, _status_code, _headers = get_signer_attachment_with_http_info(account_id, envelope_id)
-      return data
-    end
-
-    # Return signer attachment information for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [Array<(DisplayApplianceSignerAttachment, Fixnum, Hash)>] DisplayApplianceSignerAttachment data, response status code and response headers
-    def get_signer_attachment_with_http_info(account_id, envelope_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_signer_attachment ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_signer_attachment" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_signer_attachment" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/signer_attachment_info".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'DisplayApplianceSignerAttachment')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#get_signer_attachment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get encrypted tabs blob.
+    # Get encrypted tabs for envelope.
     # 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -4180,7 +3932,7 @@ module DocuSign_eSign
       return nil
     end
 
-    # Get encrypted tabs blob.
+    # Get encrypted tabs for envelope.
     # 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -4473,6 +4225,7 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'documents_by_userid'] = options.documents_by_userid if !options.documents_by_userid.nil?
+      query_params[:'include_document_size'] = options.include_document_size if !options.include_document_size.nil?
       query_params[:'include_metadata'] = options.include_metadata if !options.include_metadata.nil?
       query_params[:'include_tabs'] = options.include_tabs if !options.include_tabs.nil?
       query_params[:'recipient_id'] = options.recipient_id if !options.recipient_id.nil?
@@ -5115,62 +4868,6 @@ module DocuSign_eSign
         :return_type => 'EnvelopeUpdateSummary')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#update\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update document information for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param document_id The ID of the document being accessed.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [nil]
-    def update_appliance_document(account_id, document_id, envelope_id)
-      update_appliance_document_with_http_info(account_id, document_id, envelope_id)
-      return nil
-    end
-
-    # Update document information for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param document_id The ID of the document being accessed.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_appliance_document_with_http_info(account_id, document_id, envelope_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_appliance_document ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_appliance_document" if account_id.nil?
-      # verify the required parameter 'document_id' is set
-      fail ArgumentError, "Missing the required parameter 'document_id' when calling EnvelopesApi.update_appliance_document" if document_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.update_appliance_document" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/document/{documentId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#update_appliance_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -5846,162 +5543,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Update page information for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [nil]
-    def update_page_info(account_id, envelope_id)
-      update_page_info_with_http_info(account_id, envelope_id)
-      return nil
-    end
-
-    # Update page information for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_page_info_with_http_info(account_id, envelope_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_page_info ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_page_info" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.update_page_info" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/page_info".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#update_page_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update pdf blobs for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [nil]
-    def update_pdf_blob(account_id, envelope_id)
-      update_pdf_blob_with_http_info(account_id, envelope_id)
-      return nil
-    end
-
-    # Update pdf blobs for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_pdf_blob_with_http_info(account_id, envelope_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_pdf_blob ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_pdf_blob" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.update_pdf_blob" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/pdf_blobs".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#update_pdf_blob\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update RecipientDeniedDocumentCopy for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [nil]
-    def update_recipient_denied_document_copy(account_id, envelope_id)
-      update_recipient_denied_document_copy_with_http_info(account_id, envelope_id)
-      return nil
-    end
-
-    # Update RecipientDeniedDocumentCopy for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_recipient_denied_document_copy_with_http_info(account_id, envelope_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_recipient_denied_document_copy ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_recipient_denied_document_copy" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.update_recipient_denied_document_copy" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/recipient_denied_copy".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#update_recipient_denied_document_copy\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Updates document visibility for the recipients
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -6292,58 +5833,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Update signer attachment information for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [nil]
-    def update_signer_attachment(account_id, envelope_id)
-      update_signer_attachment_with_http_info(account_id, envelope_id)
-      return nil
-    end
-
-    # Update signer attachment information for Display Appliance
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_signer_attachment_with_http_info(account_id, envelope_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_signer_attachment ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_signer_attachment" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.update_signer_attachment" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/signer_attachment_info".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#update_signer_attachment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Updates the tabs for a recipient.  
     # Updates one or more tabs for a recipient in a draft envelope.
     # @param account_id The external account number (int) or account ID Guid.
@@ -6403,7 +5892,7 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Update ecrypted tabs blob.
+    # Update encrypted tabs for envelope.
     # 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -6413,7 +5902,7 @@ module DocuSign_eSign
       return nil
     end
 
-    # Update ecrypted tabs blob.
+    # Update encrypted tabs for envelope.
     # 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.

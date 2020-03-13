@@ -13,56 +13,37 @@ require 'date'
 
 module DocuSign_eSign
 
-  class SignHashDocument
+  class AskAnAdmin
     # 
-    attr_accessor :data
-
-    # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-    attr_accessor :document_id
+    attr_accessor :email
 
     # 
-    attr_accessor :format
+    attr_accessor :message
 
     # 
     attr_accessor :name
 
     # 
-    attr_accessor :remaining_signatures
-
-    # 
-    attr_accessor :revisions
-
-    attr_accessor :signature_properties
-
-    # 
-    attr_accessor :signature_type
+    attr_accessor :phone
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'data' => :'data',
-        :'document_id' => :'documentId',
-        :'format' => :'format',
+        :'email' => :'email',
+        :'message' => :'message',
         :'name' => :'name',
-        :'remaining_signatures' => :'remainingSignatures',
-        :'revisions' => :'revisions',
-        :'signature_properties' => :'signatureProperties',
-        :'signature_type' => :'signatureType'
+        :'phone' => :'phone'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'data' => :'String',
-        :'document_id' => :'String',
-        :'format' => :'String',
+        :'email' => :'String',
+        :'message' => :'String',
         :'name' => :'String',
-        :'remaining_signatures' => :'Integer',
-        :'revisions' => :'Array<Revision>',
-        :'signature_properties' => :'SignatureProperties',
-        :'signature_type' => :'String'
+        :'phone' => :'String'
       }
     end
 
@@ -74,38 +55,20 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'data')
-        self.data = attributes[:'data']
+      if attributes.has_key?(:'email')
+        self.email = attributes[:'email']
       end
 
-      if attributes.has_key?(:'documentId')
-        self.document_id = attributes[:'documentId']
-      end
-
-      if attributes.has_key?(:'format')
-        self.format = attributes[:'format']
+      if attributes.has_key?(:'message')
+        self.message = attributes[:'message']
       end
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'remainingSignatures')
-        self.remaining_signatures = attributes[:'remainingSignatures']
-      end
-
-      if attributes.has_key?(:'revisions')
-        if (value = attributes[:'revisions']).is_a?(Array)
-          self.revisions = value
-        end
-      end
-
-      if attributes.has_key?(:'signatureProperties')
-        self.signature_properties = attributes[:'signatureProperties']
-      end
-
-      if attributes.has_key?(:'signatureType')
-        self.signature_type = attributes[:'signatureType']
+      if attributes.has_key?(:'phone')
+        self.phone = attributes[:'phone']
       end
 
     end
@@ -128,14 +91,10 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          data == o.data &&
-          document_id == o.document_id &&
-          format == o.format &&
+          email == o.email &&
+          message == o.message &&
           name == o.name &&
-          remaining_signatures == o.remaining_signatures &&
-          revisions == o.revisions &&
-          signature_properties == o.signature_properties &&
-          signature_type == o.signature_type
+          phone == o.phone
     end
 
     # @see the `==` method
@@ -147,7 +106,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [data, document_id, format, name, remaining_signatures, revisions, signature_properties, signature_type].hash
+      [email, message, name, phone].hash
     end
 
     # Builds the object from hash

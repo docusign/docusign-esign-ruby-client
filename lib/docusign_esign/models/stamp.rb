@@ -13,92 +13,95 @@ require 'date'
 
 module DocuSign_eSign
 
-  class DisplayApplianceEnvelope
+  class Stamp
     # 
-    attr_accessor :add_demo_stamp
+    attr_accessor :adopted_date_time
+
+    # Indicates the date and time the item was created.
+    attr_accessor :created_date_time
 
     # 
-    attr_accessor :allow_multiple_attachments
+    attr_accessor :custom_field
+
+    attr_accessor :date_stamp_properties
 
     # 
-    attr_accessor :burn_default_tab_data
+    attr_accessor :disallow_user_resize_stamp
+
+    attr_accessor :error_details
 
     # 
-    attr_accessor :convert_pdf_fields
-
-    # The envelope ID of the envelope status that failed to post.
-    attr_accessor :envelope_id
+    attr_accessor :external_id
 
     # 
-    attr_accessor :envelope_type
+    attr_accessor :image_base64
 
     # 
-    attr_accessor :include_sigs_before_complete
+    attr_accessor :image_type
+
+    # The date and time the item was last modified.
+    attr_accessor :last_modified_date_time
 
     # 
-    attr_accessor :is_concat_mode
+    attr_accessor :phonetic_name
+
+    # Specifies the user signature name.
+    attr_accessor :signature_name
 
     # 
-    attr_accessor :is_envelope_id_stamping_enabled
+    attr_accessor :stamp_format
 
     # 
-    attr_accessor :pdf_form_conversion_font_scale100
+    attr_accessor :stamp_image_uri
 
     # 
-    attr_accessor :should_flatten
-
-    # 
-    attr_accessor :show_envelope_changes
-
-    # 
-    attr_accessor :sign_online
+    attr_accessor :stamp_size_mm
 
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
     attr_accessor :status
-
-    # 
-    attr_accessor :user_id
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'add_demo_stamp' => :'addDemoStamp',
-        :'allow_multiple_attachments' => :'allowMultipleAttachments',
-        :'burn_default_tab_data' => :'burnDefaultTabData',
-        :'convert_pdf_fields' => :'convertPdfFields',
-        :'envelope_id' => :'envelopeId',
-        :'envelope_type' => :'envelopeType',
-        :'include_sigs_before_complete' => :'includeSigsBeforeComplete',
-        :'is_concat_mode' => :'isConcatMode',
-        :'is_envelope_id_stamping_enabled' => :'isEnvelopeIDStampingEnabled',
-        :'pdf_form_conversion_font_scale100' => :'pdfFormConversionFontScale100',
-        :'should_flatten' => :'shouldFlatten',
-        :'show_envelope_changes' => :'showEnvelopeChanges',
-        :'sign_online' => :'signOnline',
-        :'status' => :'status',
-        :'user_id' => :'userId'
+        :'adopted_date_time' => :'adoptedDateTime',
+        :'created_date_time' => :'createdDateTime',
+        :'custom_field' => :'customField',
+        :'date_stamp_properties' => :'dateStampProperties',
+        :'disallow_user_resize_stamp' => :'disallowUserResizeStamp',
+        :'error_details' => :'errorDetails',
+        :'external_id' => :'externalID',
+        :'image_base64' => :'imageBase64',
+        :'image_type' => :'imageType',
+        :'last_modified_date_time' => :'lastModifiedDateTime',
+        :'phonetic_name' => :'phoneticName',
+        :'signature_name' => :'signatureName',
+        :'stamp_format' => :'stampFormat',
+        :'stamp_image_uri' => :'stampImageUri',
+        :'stamp_size_mm' => :'stampSizeMM',
+        :'status' => :'status'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'add_demo_stamp' => :'BOOLEAN',
-        :'allow_multiple_attachments' => :'BOOLEAN',
-        :'burn_default_tab_data' => :'BOOLEAN',
-        :'convert_pdf_fields' => :'BOOLEAN',
-        :'envelope_id' => :'String',
-        :'envelope_type' => :'String',
-        :'include_sigs_before_complete' => :'BOOLEAN',
-        :'is_concat_mode' => :'BOOLEAN',
-        :'is_envelope_id_stamping_enabled' => :'BOOLEAN',
-        :'pdf_form_conversion_font_scale100' => :'BOOLEAN',
-        :'should_flatten' => :'BOOLEAN',
-        :'show_envelope_changes' => :'BOOLEAN',
-        :'sign_online' => :'BOOLEAN',
-        :'status' => :'String',
-        :'user_id' => :'String'
+        :'adopted_date_time' => :'String',
+        :'created_date_time' => :'String',
+        :'custom_field' => :'String',
+        :'date_stamp_properties' => :'DateStampProperties',
+        :'disallow_user_resize_stamp' => :'String',
+        :'error_details' => :'ErrorDetails',
+        :'external_id' => :'String',
+        :'image_base64' => :'String',
+        :'image_type' => :'String',
+        :'last_modified_date_time' => :'String',
+        :'phonetic_name' => :'String',
+        :'signature_name' => :'String',
+        :'stamp_format' => :'String',
+        :'stamp_image_uri' => :'String',
+        :'stamp_size_mm' => :'String',
+        :'status' => :'String'
       }
     end
 
@@ -110,64 +113,68 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'addDemoStamp')
-        self.add_demo_stamp = attributes[:'addDemoStamp']
+      if attributes.has_key?(:'adoptedDateTime')
+        self.adopted_date_time = attributes[:'adoptedDateTime']
       end
 
-      if attributes.has_key?(:'allowMultipleAttachments')
-        self.allow_multiple_attachments = attributes[:'allowMultipleAttachments']
+      if attributes.has_key?(:'createdDateTime')
+        self.created_date_time = attributes[:'createdDateTime']
       end
 
-      if attributes.has_key?(:'burnDefaultTabData')
-        self.burn_default_tab_data = attributes[:'burnDefaultTabData']
+      if attributes.has_key?(:'customField')
+        self.custom_field = attributes[:'customField']
       end
 
-      if attributes.has_key?(:'convertPdfFields')
-        self.convert_pdf_fields = attributes[:'convertPdfFields']
+      if attributes.has_key?(:'dateStampProperties')
+        self.date_stamp_properties = attributes[:'dateStampProperties']
       end
 
-      if attributes.has_key?(:'envelopeId')
-        self.envelope_id = attributes[:'envelopeId']
+      if attributes.has_key?(:'disallowUserResizeStamp')
+        self.disallow_user_resize_stamp = attributes[:'disallowUserResizeStamp']
       end
 
-      if attributes.has_key?(:'envelopeType')
-        self.envelope_type = attributes[:'envelopeType']
+      if attributes.has_key?(:'errorDetails')
+        self.error_details = attributes[:'errorDetails']
       end
 
-      if attributes.has_key?(:'includeSigsBeforeComplete')
-        self.include_sigs_before_complete = attributes[:'includeSigsBeforeComplete']
+      if attributes.has_key?(:'externalID')
+        self.external_id = attributes[:'externalID']
       end
 
-      if attributes.has_key?(:'isConcatMode')
-        self.is_concat_mode = attributes[:'isConcatMode']
+      if attributes.has_key?(:'imageBase64')
+        self.image_base64 = attributes[:'imageBase64']
       end
 
-      if attributes.has_key?(:'isEnvelopeIDStampingEnabled')
-        self.is_envelope_id_stamping_enabled = attributes[:'isEnvelopeIDStampingEnabled']
+      if attributes.has_key?(:'imageType')
+        self.image_type = attributes[:'imageType']
       end
 
-      if attributes.has_key?(:'pdfFormConversionFontScale100')
-        self.pdf_form_conversion_font_scale100 = attributes[:'pdfFormConversionFontScale100']
+      if attributes.has_key?(:'lastModifiedDateTime')
+        self.last_modified_date_time = attributes[:'lastModifiedDateTime']
       end
 
-      if attributes.has_key?(:'shouldFlatten')
-        self.should_flatten = attributes[:'shouldFlatten']
+      if attributes.has_key?(:'phoneticName')
+        self.phonetic_name = attributes[:'phoneticName']
       end
 
-      if attributes.has_key?(:'showEnvelopeChanges')
-        self.show_envelope_changes = attributes[:'showEnvelopeChanges']
+      if attributes.has_key?(:'signatureName')
+        self.signature_name = attributes[:'signatureName']
       end
 
-      if attributes.has_key?(:'signOnline')
-        self.sign_online = attributes[:'signOnline']
+      if attributes.has_key?(:'stampFormat')
+        self.stamp_format = attributes[:'stampFormat']
+      end
+
+      if attributes.has_key?(:'stampImageUri')
+        self.stamp_image_uri = attributes[:'stampImageUri']
+      end
+
+      if attributes.has_key?(:'stampSizeMM')
+        self.stamp_size_mm = attributes[:'stampSizeMM']
       end
 
       if attributes.has_key?(:'status')
         self.status = attributes[:'status']
-      end
-
-      if attributes.has_key?(:'userId')
-        self.user_id = attributes[:'userId']
       end
 
     end
@@ -190,21 +197,22 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          add_demo_stamp == o.add_demo_stamp &&
-          allow_multiple_attachments == o.allow_multiple_attachments &&
-          burn_default_tab_data == o.burn_default_tab_data &&
-          convert_pdf_fields == o.convert_pdf_fields &&
-          envelope_id == o.envelope_id &&
-          envelope_type == o.envelope_type &&
-          include_sigs_before_complete == o.include_sigs_before_complete &&
-          is_concat_mode == o.is_concat_mode &&
-          is_envelope_id_stamping_enabled == o.is_envelope_id_stamping_enabled &&
-          pdf_form_conversion_font_scale100 == o.pdf_form_conversion_font_scale100 &&
-          should_flatten == o.should_flatten &&
-          show_envelope_changes == o.show_envelope_changes &&
-          sign_online == o.sign_online &&
-          status == o.status &&
-          user_id == o.user_id
+          adopted_date_time == o.adopted_date_time &&
+          created_date_time == o.created_date_time &&
+          custom_field == o.custom_field &&
+          date_stamp_properties == o.date_stamp_properties &&
+          disallow_user_resize_stamp == o.disallow_user_resize_stamp &&
+          error_details == o.error_details &&
+          external_id == o.external_id &&
+          image_base64 == o.image_base64 &&
+          image_type == o.image_type &&
+          last_modified_date_time == o.last_modified_date_time &&
+          phonetic_name == o.phonetic_name &&
+          signature_name == o.signature_name &&
+          stamp_format == o.stamp_format &&
+          stamp_image_uri == o.stamp_image_uri &&
+          stamp_size_mm == o.stamp_size_mm &&
+          status == o.status
     end
 
     # @see the `==` method
@@ -216,7 +224,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [add_demo_stamp, allow_multiple_attachments, burn_default_tab_data, convert_pdf_fields, envelope_id, envelope_type, include_sigs_before_complete, is_concat_mode, is_envelope_id_stamping_enabled, pdf_form_conversion_font_scale100, should_flatten, show_envelope_changes, sign_online, status, user_id].hash
+      [adopted_date_time, created_date_time, custom_field, date_stamp_properties, disallow_user_resize_stamp, error_details, external_id, image_base64, image_type, last_modified_date_time, phonetic_name, signature_name, stamp_format, stamp_image_uri, stamp_size_mm, status].hash
     end
 
     # Builds the object from hash

@@ -13,52 +13,32 @@ require 'date'
 
 module DocuSign_eSign
 
-  class DisplayApplianceSignerAttachment
+  class RecipientIdentityPhoneNumber
     # 
-    attr_accessor :attachment_description
-
-    # 
-    attr_accessor :attachment_tab_id
-
-    # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-    attr_accessor :document_id
-
-    # The envelope ID of the envelope status that failed to post.
-    attr_accessor :envelope_id
+    attr_accessor :country_code
 
     # 
-    attr_accessor :page_count
+    attr_accessor :extension
 
     # 
-    attr_accessor :page_id
-
-    # Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
-    attr_accessor :recipient_id
+    attr_accessor :number
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'attachment_description' => :'attachmentDescription',
-        :'attachment_tab_id' => :'attachmentTabId',
-        :'document_id' => :'documentId',
-        :'envelope_id' => :'envelopeId',
-        :'page_count' => :'pageCount',
-        :'page_id' => :'pageId',
-        :'recipient_id' => :'recipientId'
+        :'country_code' => :'countryCode',
+        :'extension' => :'extension',
+        :'number' => :'number'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'attachment_description' => :'String',
-        :'attachment_tab_id' => :'String',
-        :'document_id' => :'String',
-        :'envelope_id' => :'String',
-        :'page_count' => :'Integer',
-        :'page_id' => :'String',
-        :'recipient_id' => :'String'
+        :'country_code' => :'String',
+        :'extension' => :'String',
+        :'number' => :'String'
       }
     end
 
@@ -70,32 +50,16 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'attachmentDescription')
-        self.attachment_description = attributes[:'attachmentDescription']
+      if attributes.has_key?(:'countryCode')
+        self.country_code = attributes[:'countryCode']
       end
 
-      if attributes.has_key?(:'attachmentTabId')
-        self.attachment_tab_id = attributes[:'attachmentTabId']
+      if attributes.has_key?(:'extension')
+        self.extension = attributes[:'extension']
       end
 
-      if attributes.has_key?(:'documentId')
-        self.document_id = attributes[:'documentId']
-      end
-
-      if attributes.has_key?(:'envelopeId')
-        self.envelope_id = attributes[:'envelopeId']
-      end
-
-      if attributes.has_key?(:'pageCount')
-        self.page_count = attributes[:'pageCount']
-      end
-
-      if attributes.has_key?(:'pageId')
-        self.page_id = attributes[:'pageId']
-      end
-
-      if attributes.has_key?(:'recipientId')
-        self.recipient_id = attributes[:'recipientId']
+      if attributes.has_key?(:'number')
+        self.number = attributes[:'number']
       end
 
     end
@@ -118,13 +82,9 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          attachment_description == o.attachment_description &&
-          attachment_tab_id == o.attachment_tab_id &&
-          document_id == o.document_id &&
-          envelope_id == o.envelope_id &&
-          page_count == o.page_count &&
-          page_id == o.page_id &&
-          recipient_id == o.recipient_id
+          country_code == o.country_code &&
+          extension == o.extension &&
+          number == o.number
     end
 
     # @see the `==` method
@@ -136,7 +96,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [attachment_description, attachment_tab_id, document_id, envelope_id, page_count, page_id, recipient_id].hash
+      [country_code, extension, number].hash
     end
 
     # Builds the object from hash
