@@ -62,6 +62,9 @@ module DocuSign_eSign
     # A complex type that can be added to create envelopes from a combination of DocuSign templates and PDF forms. The basic envelope remains the same, while the Composite Template adds new document and template overlays into the envelope. There can be any number of Composite Template structures in the envelope.
     attr_accessor :composite_templates
 
+    # 
+    attr_accessor :copy_recipient_data
+
     # Indicates the date and time the item was created.
     attr_accessor :created_date_time
 
@@ -208,6 +211,7 @@ module DocuSign_eSign
         :'certificate_uri' => :'certificateUri',
         :'completed_date_time' => :'completedDateTime',
         :'composite_templates' => :'compositeTemplates',
+        :'copy_recipient_data' => :'copyRecipientData',
         :'created_date_time' => :'createdDateTime',
         :'custom_fields' => :'customFields',
         :'custom_fields_uri' => :'customFieldsUri',
@@ -274,6 +278,7 @@ module DocuSign_eSign
         :'certificate_uri' => :'String',
         :'completed_date_time' => :'String',
         :'composite_templates' => :'Array<CompositeTemplate>',
+        :'copy_recipient_data' => :'String',
         :'created_date_time' => :'String',
         :'custom_fields' => :'CustomFields',
         :'custom_fields_uri' => :'String',
@@ -395,6 +400,10 @@ module DocuSign_eSign
         if (value = attributes[:'compositeTemplates']).is_a?(Array)
           self.composite_templates = value
         end
+      end
+
+      if attributes.has_key?(:'copyRecipientData')
+        self.copy_recipient_data = attributes[:'copyRecipientData']
       end
 
       if attributes.has_key?(:'createdDateTime')
@@ -613,6 +622,7 @@ module DocuSign_eSign
           certificate_uri == o.certificate_uri &&
           completed_date_time == o.completed_date_time &&
           composite_templates == o.composite_templates &&
+          copy_recipient_data == o.copy_recipient_data &&
           created_date_time == o.created_date_time &&
           custom_fields == o.custom_fields &&
           custom_fields_uri == o.custom_fields_uri &&
@@ -668,7 +678,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [accessibility, allow_markup, allow_reassign, allow_recipient_recursion, allow_view_history, asynchronous, attachments, attachments_uri, authoritative_copy, authoritative_copy_default, auto_navigation, brand_id, brand_lock, certificate_uri, completed_date_time, composite_templates, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, disable_responsive_document, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_id, envelope_id_stamping, envelope_uri, event_notification, initial_sent_date_time, is21_cfr_part11, is_signature_provider_envelope, last_modified_date_time, lock_information, message_lock, notification, notification_uri, password, purge_state, recipients, recipients_lock, recipients_uri, sent_date_time, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, template_id, template_roles, templates_uri, transaction_id, use_disclosure, voided_date_time, voided_reason].hash
+      [accessibility, allow_markup, allow_reassign, allow_recipient_recursion, allow_view_history, asynchronous, attachments, attachments_uri, authoritative_copy, authoritative_copy_default, auto_navigation, brand_id, brand_lock, certificate_uri, completed_date_time, composite_templates, copy_recipient_data, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, disable_responsive_document, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_id, envelope_id_stamping, envelope_uri, event_notification, initial_sent_date_time, is21_cfr_part11, is_signature_provider_envelope, last_modified_date_time, lock_information, message_lock, notification, notification_uri, password, purge_state, recipients, recipients_lock, recipients_uri, sent_date_time, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, template_id, template_roles, templates_uri, transaction_id, use_disclosure, voided_date_time, voided_reason].hash
     end
 
     # Builds the object from hash

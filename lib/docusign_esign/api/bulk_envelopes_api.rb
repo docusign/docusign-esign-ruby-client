@@ -17,7 +17,7 @@ module DocuSign_eSign
     # Specifies the number of entries to return.
     attr_accessor :count
 
-    # Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include=Ã¢â¬Âfailed,queuedÃ¢â¬Â)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent - This only returns entries with a sent status.  
+    # Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include=\"failed,queued\")   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent - This only returns entries with a sent status.  
     attr_accessor :include
 
     # Specifies the location in the list of envelopes from which to start.
@@ -295,7 +295,7 @@ module DocuSign_eSign
 
     # Adds or replaces envelope bulk recipients.
     # Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
-    # @param account_id The external account number (int) or account ID Guid.
+    # @param account_id The external account number (int) or account id GUID.
     # @param envelope_id The envelope's GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec 
     # @param recipient_id The `recipientId` used when the envelope or template was created.
     # @param bulk_recipients_request  
@@ -307,7 +307,7 @@ module DocuSign_eSign
 
     # Adds or replaces envelope bulk recipients.
     # Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
-    # @param account_id The external account number (int) or account ID Guid.
+    # @param account_id The external account number (int) or account id GUID.
     # @param envelope_id The envelope's GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec 
     # @param recipient_id The `recipientId` used when the envelope or template was created.
     # @param bulk_recipients_request  

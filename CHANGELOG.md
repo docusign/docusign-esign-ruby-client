@@ -3,7 +3,13 @@ All notable changes to this project will be documented in this file.
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
-## [v2.1.0] - eSignature API v2-19.2.02 - 2019-10-05
+## [v2.3.0-rc1] - eSignature API v2-20.1.00 - 2020-03-13
+### Changed
+- The SDK now supports version v2-20.1.00 of the DocuSign eSignature API.
+- Update rake version to 12.3.3
+- SDK Release Version updated.
+
+## [v2.1.0] - eSignature API v2-19.2.02 - 2019-10-08
 ### Changed
 - The SDK now supports version 19.2.02 of the DocuSign eSignature v2 API.
 - SDK Release Version updated.

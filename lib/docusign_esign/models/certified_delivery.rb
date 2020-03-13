@@ -77,6 +77,8 @@ module DocuSign_eSign
 
     attr_accessor :id_check_information_input
 
+    attr_accessor :identity_verification
+
     # When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient's account. 
     attr_accessor :inherit_email_notification_configuration
 
@@ -90,6 +92,8 @@ module DocuSign_eSign
     attr_accessor :note
 
     attr_accessor :phone_authentication
+
+    attr_accessor :proof_file
 
     # Reserved:
     attr_accessor :recipient_attachments
@@ -174,11 +178,13 @@ module DocuSign_eSign
         :'full_name' => :'fullName',
         :'id_check_configuration_name' => :'idCheckConfigurationName',
         :'id_check_information_input' => :'idCheckInformationInput',
+        :'identity_verification' => :'identityVerification',
         :'inherit_email_notification_configuration' => :'inheritEmailNotificationConfiguration',
         :'last_name' => :'lastName',
         :'name' => :'name',
         :'note' => :'note',
         :'phone_authentication' => :'phoneAuthentication',
+        :'proof_file' => :'proofFile',
         :'recipient_attachments' => :'recipientAttachments',
         :'recipient_authentication_status' => :'recipientAuthenticationStatus',
         :'recipient_id' => :'recipientId',
@@ -227,11 +233,13 @@ module DocuSign_eSign
         :'full_name' => :'String',
         :'id_check_configuration_name' => :'String',
         :'id_check_information_input' => :'IdCheckInformationInput',
+        :'identity_verification' => :'RecipientIdentityVerification',
         :'inherit_email_notification_configuration' => :'String',
         :'last_name' => :'String',
         :'name' => :'String',
         :'note' => :'String',
         :'phone_authentication' => :'RecipientPhoneAuthentication',
+        :'proof_file' => :'RecipientProofFile',
         :'recipient_attachments' => :'Array<RecipientAttachment>',
         :'recipient_authentication_status' => :'AuthenticationStatus',
         :'recipient_id' => :'String',
@@ -357,6 +365,10 @@ module DocuSign_eSign
         self.id_check_information_input = attributes[:'idCheckInformationInput']
       end
 
+      if attributes.has_key?(:'identityVerification')
+        self.identity_verification = attributes[:'identityVerification']
+      end
+
       if attributes.has_key?(:'inheritEmailNotificationConfiguration')
         self.inherit_email_notification_configuration = attributes[:'inheritEmailNotificationConfiguration']
       end
@@ -375,6 +387,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'phoneAuthentication')
         self.phone_authentication = attributes[:'phoneAuthentication']
+      end
+
+      if attributes.has_key?(:'proofFile')
+        self.proof_file = attributes[:'proofFile']
       end
 
       if attributes.has_key?(:'recipientAttachments')
@@ -505,11 +521,13 @@ module DocuSign_eSign
           full_name == o.full_name &&
           id_check_configuration_name == o.id_check_configuration_name &&
           id_check_information_input == o.id_check_information_input &&
+          identity_verification == o.identity_verification &&
           inherit_email_notification_configuration == o.inherit_email_notification_configuration &&
           last_name == o.last_name &&
           name == o.name &&
           note == o.note &&
           phone_authentication == o.phone_authentication &&
+          proof_file == o.proof_file &&
           recipient_attachments == o.recipient_attachments &&
           recipient_authentication_status == o.recipient_authentication_status &&
           recipient_id == o.recipient_id &&
@@ -541,7 +559,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, add_access_code_to_email, agent_can_edit_email, agent_can_edit_name, client_user_id, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, document_visibility, email, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, first_name, full_name, id_check_configuration_name, id_check_information_input, inherit_email_notification_configuration, last_name, name, note, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_id, recipient_id_guid, require_id_lookup, role_name, routing_order, saml_authentication, sent_date_time, signed_date_time, signing_group_id, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, add_access_code_to_email, agent_can_edit_email, agent_can_edit_name, client_user_id, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, document_visibility, email, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, first_name, full_name, id_check_configuration_name, id_check_information_input, identity_verification, inherit_email_notification_configuration, last_name, name, note, phone_authentication, proof_file, recipient_attachments, recipient_authentication_status, recipient_id, recipient_id_guid, require_id_lookup, role_name, routing_order, saml_authentication, sent_date_time, signed_date_time, signing_group_id, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash
