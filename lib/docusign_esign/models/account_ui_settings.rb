@@ -34,6 +34,11 @@ module DocuSign_eSign
     attr_accessor :enable_easy_sign_template_upload_metadata
 
     # 
+    attr_accessor :enable_envelope_copy_with_data
+
+    attr_accessor :enable_envelope_copy_with_data_metadata
+
+    # 
     attr_accessor :hide_send_an_envelope
 
     attr_accessor :hide_send_an_envelope_metadata
@@ -80,6 +85,8 @@ module DocuSign_eSign
         :'enable_easy_sign_can_use_multi_template_apply_metadata' => :'enableEasySignCanUseMultiTemplateApplyMetadata',
         :'enable_easy_sign_template_upload' => :'enableEasySignTemplateUpload',
         :'enable_easy_sign_template_upload_metadata' => :'enableEasySignTemplateUploadMetadata',
+        :'enable_envelope_copy_with_data' => :'enableEnvelopeCopyWithData',
+        :'enable_envelope_copy_with_data_metadata' => :'enableEnvelopeCopyWithDataMetadata',
         :'hide_send_an_envelope' => :'hideSendAnEnvelope',
         :'hide_send_an_envelope_metadata' => :'hideSendAnEnvelopeMetadata',
         :'hide_use_a_template' => :'hideUseATemplate',
@@ -108,6 +115,8 @@ module DocuSign_eSign
         :'enable_easy_sign_can_use_multi_template_apply_metadata' => :'SettingsMetadata',
         :'enable_easy_sign_template_upload' => :'String',
         :'enable_easy_sign_template_upload_metadata' => :'SettingsMetadata',
+        :'enable_envelope_copy_with_data' => :'String',
+        :'enable_envelope_copy_with_data_metadata' => :'SettingsMetadata',
         :'hide_send_an_envelope' => :'String',
         :'hide_send_an_envelope_metadata' => :'SettingsMetadata',
         :'hide_use_a_template' => :'String',
@@ -163,6 +172,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'enableEasySignTemplateUploadMetadata')
         self.enable_easy_sign_template_upload_metadata = attributes[:'enableEasySignTemplateUploadMetadata']
+      end
+
+      if attributes.has_key?(:'enableEnvelopeCopyWithData')
+        self.enable_envelope_copy_with_data = attributes[:'enableEnvelopeCopyWithData']
+      end
+
+      if attributes.has_key?(:'enableEnvelopeCopyWithDataMetadata')
+        self.enable_envelope_copy_with_data_metadata = attributes[:'enableEnvelopeCopyWithDataMetadata']
       end
 
       if attributes.has_key?(:'hideSendAnEnvelope')
@@ -249,6 +266,8 @@ module DocuSign_eSign
           enable_easy_sign_can_use_multi_template_apply_metadata == o.enable_easy_sign_can_use_multi_template_apply_metadata &&
           enable_easy_sign_template_upload == o.enable_easy_sign_template_upload &&
           enable_easy_sign_template_upload_metadata == o.enable_easy_sign_template_upload_metadata &&
+          enable_envelope_copy_with_data == o.enable_envelope_copy_with_data &&
+          enable_envelope_copy_with_data_metadata == o.enable_envelope_copy_with_data_metadata &&
           hide_send_an_envelope == o.hide_send_an_envelope &&
           hide_send_an_envelope_metadata == o.hide_send_an_envelope_metadata &&
           hide_use_a_template == o.hide_use_a_template &&
@@ -274,7 +293,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [admin_message, ask_an_admin, enable_admin_message, enable_admin_message_metadata, enable_easy_sign_can_use_multi_template_apply, enable_easy_sign_can_use_multi_template_apply_metadata, enable_easy_sign_template_upload, enable_easy_sign_template_upload_metadata, hide_send_an_envelope, hide_send_an_envelope_metadata, hide_use_a_template, hide_use_a_template_in_prepare, hide_use_a_template_in_prepare_metadata, hide_use_a_template_metadata, order_based_recipient_id_generation, order_based_recipient_id_generation_metadata, remove_envelope_forwarding, remove_envelope_forwarding_metadata, should_redact_access_code, should_redact_access_code_metadata, upload_new_image_to_sign_or_initial, upload_new_image_to_sign_or_initial_metadata].hash
+      [admin_message, ask_an_admin, enable_admin_message, enable_admin_message_metadata, enable_easy_sign_can_use_multi_template_apply, enable_easy_sign_can_use_multi_template_apply_metadata, enable_easy_sign_template_upload, enable_easy_sign_template_upload_metadata, enable_envelope_copy_with_data, enable_envelope_copy_with_data_metadata, hide_send_an_envelope, hide_send_an_envelope_metadata, hide_use_a_template, hide_use_a_template_in_prepare, hide_use_a_template_in_prepare_metadata, hide_use_a_template_metadata, order_based_recipient_id_generation, order_based_recipient_id_generation_metadata, remove_envelope_forwarding, remove_envelope_forwarding_metadata, should_redact_access_code, should_redact_access_code_metadata, upload_new_image_to_sign_or_initial, upload_new_image_to_sign_or_initial_metadata].hash
     end
 
     # Builds the object from hash

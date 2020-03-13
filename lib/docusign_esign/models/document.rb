@@ -26,9 +26,6 @@ module DocuSign_eSign
     # 
     attr_accessor :document_fields
 
-    # 
-    attr_accessor :document_group
-
     # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
     attr_accessor :document_id
 
@@ -91,6 +88,9 @@ module DocuSign_eSign
     # 
     attr_accessor :signer_must_acknowledge
 
+    # 
+    attr_accessor :signer_must_acknowledge_use_account_default
+
     attr_accessor :tabs
 
     # When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
@@ -113,7 +113,6 @@ module DocuSign_eSign
         :'display' => :'display',
         :'document_base64' => :'documentBase64',
         :'document_fields' => :'documentFields',
-        :'document_group' => :'documentGroup',
         :'document_id' => :'documentId',
         :'encrypted_with_key_manager' => :'encryptedWithKeyManager',
         :'file_extension' => :'fileExtension',
@@ -135,6 +134,7 @@ module DocuSign_eSign
         :'pdf_widgets_base64' => :'pdfWidgetsBase64',
         :'remote_url' => :'remoteUrl',
         :'signer_must_acknowledge' => :'signerMustAcknowledge',
+        :'signer_must_acknowledge_use_account_default' => :'signerMustAcknowledgeUseAccountDefault',
         :'tabs' => :'tabs',
         :'template_locked' => :'templateLocked',
         :'template_required' => :'templateRequired',
@@ -150,7 +150,6 @@ module DocuSign_eSign
         :'display' => :'String',
         :'document_base64' => :'String',
         :'document_fields' => :'Array<NameValue>',
-        :'document_group' => :'String',
         :'document_id' => :'String',
         :'encrypted_with_key_manager' => :'String',
         :'file_extension' => :'String',
@@ -172,6 +171,7 @@ module DocuSign_eSign
         :'pdf_widgets_base64' => :'String',
         :'remote_url' => :'String',
         :'signer_must_acknowledge' => :'String',
+        :'signer_must_acknowledge_use_account_default' => :'BOOLEAN',
         :'tabs' => :'Tabs',
         :'template_locked' => :'String',
         :'template_required' => :'String',
@@ -204,10 +204,6 @@ module DocuSign_eSign
         if (value = attributes[:'documentFields']).is_a?(Array)
           self.document_fields = value
         end
-      end
-
-      if attributes.has_key?(:'documentGroup')
-        self.document_group = attributes[:'documentGroup']
       end
 
       if attributes.has_key?(:'documentId')
@@ -300,6 +296,10 @@ module DocuSign_eSign
         self.signer_must_acknowledge = attributes[:'signerMustAcknowledge']
       end
 
+      if attributes.has_key?(:'signerMustAcknowledgeUseAccountDefault')
+        self.signer_must_acknowledge_use_account_default = attributes[:'signerMustAcknowledgeUseAccountDefault']
+      end
+
       if attributes.has_key?(:'tabs')
         self.tabs = attributes[:'tabs']
       end
@@ -344,7 +344,6 @@ module DocuSign_eSign
           display == o.display &&
           document_base64 == o.document_base64 &&
           document_fields == o.document_fields &&
-          document_group == o.document_group &&
           document_id == o.document_id &&
           encrypted_with_key_manager == o.encrypted_with_key_manager &&
           file_extension == o.file_extension &&
@@ -366,6 +365,7 @@ module DocuSign_eSign
           pdf_widgets_base64 == o.pdf_widgets_base64 &&
           remote_url == o.remote_url &&
           signer_must_acknowledge == o.signer_must_acknowledge &&
+          signer_must_acknowledge_use_account_default == o.signer_must_acknowledge_use_account_default &&
           tabs == o.tabs &&
           template_locked == o.template_locked &&
           template_required == o.template_required &&
@@ -382,7 +382,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [apply_anchor_tabs, display, document_base64, document_fields, document_group, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, is_dynamic_xfa, is_static_xfa, match_boxes, name, ocr_requests, order, page_count, pages, page_sizes, password, pdf_fields_data, pdf_form_field_option, pdf_widgets_base64, remote_url, signer_must_acknowledge, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
+      [apply_anchor_tabs, display, document_base64, document_fields, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, is_dynamic_xfa, is_static_xfa, match_boxes, name, ocr_requests, order, page_count, pages, page_sizes, password, pdf_fields_data, pdf_form_field_option, pdf_widgets_base64, remote_url, signer_must_acknowledge, signer_must_acknowledge_use_account_default, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
     end
 
     # Builds the object from hash

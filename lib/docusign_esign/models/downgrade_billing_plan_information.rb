@@ -13,27 +13,26 @@ require 'date'
 
 module DocuSign_eSign
 
-  class RecipientIdentityVerification
+  class DowngradeBillingPlanInformation
     # 
-    attr_accessor :input_options
+    attr_accessor :downgrade_event_type
 
-    # 
-    attr_accessor :workflow_id
+    attr_accessor :plan_information
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'input_options' => :'inputOptions',
-        :'workflow_id' => :'workflowId'
+        :'downgrade_event_type' => :'downgradeEventType',
+        :'plan_information' => :'planInformation'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'input_options' => :'Array<RecipientIdentityInputOption>',
-        :'workflow_id' => :'String'
+        :'downgrade_event_type' => :'String',
+        :'plan_information' => :'PlanInformation'
       }
     end
 
@@ -45,14 +44,12 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'inputOptions')
-        if (value = attributes[:'inputOptions']).is_a?(Array)
-          self.input_options = value
-        end
+      if attributes.has_key?(:'downgradeEventType')
+        self.downgrade_event_type = attributes[:'downgradeEventType']
       end
 
-      if attributes.has_key?(:'workflowId')
-        self.workflow_id = attributes[:'workflowId']
+      if attributes.has_key?(:'planInformation')
+        self.plan_information = attributes[:'planInformation']
       end
 
     end
@@ -75,8 +72,8 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          input_options == o.input_options &&
-          workflow_id == o.workflow_id
+          downgrade_event_type == o.downgrade_event_type &&
+          plan_information == o.plan_information
     end
 
     # @see the `==` method
@@ -88,7 +85,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [input_options, workflow_id].hash
+      [downgrade_event_type, plan_information].hash
     end
 
     # Builds the object from hash

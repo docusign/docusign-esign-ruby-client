@@ -35,6 +35,8 @@ module DocuSign_eSign
     # A comma separated list of Ã¯Â¿Â½EnvelopeÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
     attr_accessor :envelope_events
 
+    attr_accessor :event_data
+
     # 
     attr_accessor :external_folder_id
 
@@ -130,6 +132,7 @@ module DocuSign_eSign
         :'connect_id' => :'connectId',
         :'enable_log' => :'enableLog',
         :'envelope_events' => :'envelopeEvents',
+        :'event_data' => :'eventData',
         :'external_folder_id' => :'externalFolderId',
         :'external_folder_label' => :'externalFolderLabel',
         :'include_certificate_of_completion' => :'includeCertificateOfCompletion',
@@ -171,6 +174,7 @@ module DocuSign_eSign
         :'connect_id' => :'String',
         :'enable_log' => :'String',
         :'envelope_events' => :'Array<String>',
+        :'event_data' => :'ConnectEventData',
         :'external_folder_id' => :'String',
         :'external_folder_label' => :'String',
         :'include_certificate_of_completion' => :'String',
@@ -238,6 +242,10 @@ module DocuSign_eSign
         if (value = attributes[:'envelopeEvents']).is_a?(Array)
           self.envelope_events = value
         end
+      end
+
+      if attributes.has_key?(:'eventData')
+        self.event_data = attributes[:'eventData']
       end
 
       if attributes.has_key?(:'externalFolderId')
@@ -387,6 +395,7 @@ module DocuSign_eSign
           connect_id == o.connect_id &&
           enable_log == o.enable_log &&
           envelope_events == o.envelope_events &&
+          event_data == o.event_data &&
           external_folder_id == o.external_folder_id &&
           external_folder_label == o.external_folder_label &&
           include_certificate_of_completion == o.include_certificate_of_completion &&
@@ -426,7 +435,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_envelope_publish, allow_salesforce_publish, all_users, configuration_type, connect_id, enable_log, envelope_events, external_folder_id, external_folder_label, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_accountas_custom_field, include_time_zone_information, name, password, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
+      [allow_envelope_publish, allow_salesforce_publish, all_users, configuration_type, connect_id, enable_log, envelope_events, event_data, external_folder_id, external_folder_label, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_accountas_custom_field, include_time_zone_information, name, password, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
     end
 
     # Builds the object from hash

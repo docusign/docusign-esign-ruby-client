@@ -66,6 +66,9 @@ module DocuSign_eSign
     attr_accessor :completed_date_time
 
     # 
+    attr_accessor :copy_recipient_data
+
+    # 
     attr_accessor :created
 
     # Indicates the date and time the item was created.
@@ -313,6 +316,7 @@ module DocuSign_eSign
         :'brand_lock' => :'brandLock',
         :'certificate_uri' => :'certificateUri',
         :'completed_date_time' => :'completedDateTime',
+        :'copy_recipient_data' => :'copyRecipientData',
         :'created' => :'created',
         :'created_date_time' => :'createdDateTime',
         :'custom_fields' => :'customFields',
@@ -415,6 +419,7 @@ module DocuSign_eSign
         :'brand_lock' => :'String',
         :'certificate_uri' => :'String',
         :'completed_date_time' => :'String',
+        :'copy_recipient_data' => :'String',
         :'created' => :'String',
         :'created_date_time' => :'String',
         :'custom_fields' => :'CustomFields',
@@ -571,6 +576,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'completedDateTime')
         self.completed_date_time = attributes[:'completedDateTime']
+      end
+
+      if attributes.has_key?(:'copyRecipientData')
+        self.copy_recipient_data = attributes[:'copyRecipientData']
       end
 
       if attributes.has_key?(:'created')
@@ -938,6 +947,7 @@ module DocuSign_eSign
           brand_lock == o.brand_lock &&
           certificate_uri == o.certificate_uri &&
           completed_date_time == o.completed_date_time &&
+          copy_recipient_data == o.copy_recipient_data &&
           created == o.created &&
           created_date_time == o.created_date_time &&
           custom_fields == o.custom_fields &&
@@ -1028,7 +1038,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_control_list_base64, allow_comments, allow_markup, allow_reassign, allow_view_history, any_signer, asynchronous, attachments_uri, authoritative_copy, authoritative_copy_default, auto_match, auto_match_specified_by_user, auto_navigation, brand_id, brand_lock, certificate_uri, completed_date_time, created, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, description, disable_responsive_document, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_attachments, envelope_documents, envelope_id, envelope_id_stamping, envelope_location, envelope_metadata, envelope_uri, expire_after, expire_date_time, expire_enabled, external_envelope_id, favorited_by_me, folder_id, folder_ids, folder_name, folders, has_comments, has_form_data_changed, has_wav_file, holder, initial_sent_date_time, is21_cfr_part11, is_dynamic_envelope, is_signature_provider_envelope, last_modified, last_modified_by, last_modified_date_time, last_used, location, lock_information, message_lock, name, new_password, notification, notification_uri, owner, page_count, password, password_protected, power_form, power_forms, purge_completed_date, purge_request_date, purge_state, recipients, recipients_lock, recipients_uri, sender, sent_date_time, shared, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, status_date_time, template_id, templates_uri, transaction_id, uri, use_disclosure, voided_date_time, voided_reason].hash
+      [access_control_list_base64, allow_comments, allow_markup, allow_reassign, allow_view_history, any_signer, asynchronous, attachments_uri, authoritative_copy, authoritative_copy_default, auto_match, auto_match_specified_by_user, auto_navigation, brand_id, brand_lock, certificate_uri, completed_date_time, copy_recipient_data, created, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, description, disable_responsive_document, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_attachments, envelope_documents, envelope_id, envelope_id_stamping, envelope_location, envelope_metadata, envelope_uri, expire_after, expire_date_time, expire_enabled, external_envelope_id, favorited_by_me, folder_id, folder_ids, folder_name, folders, has_comments, has_form_data_changed, has_wav_file, holder, initial_sent_date_time, is21_cfr_part11, is_dynamic_envelope, is_signature_provider_envelope, last_modified, last_modified_by, last_modified_date_time, last_used, location, lock_information, message_lock, name, new_password, notification, notification_uri, owner, page_count, password, password_protected, power_form, power_forms, purge_completed_date, purge_request_date, purge_state, recipients, recipients_lock, recipients_uri, sender, sent_date_time, shared, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, status_date_time, template_id, templates_uri, transaction_id, uri, use_disclosure, voided_date_time, voided_reason].hash
     end
 
     # Builds the object from hash

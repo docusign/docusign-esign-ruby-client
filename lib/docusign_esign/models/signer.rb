@@ -29,6 +29,9 @@ module DocuSign_eSign
     attr_accessor :agent_can_edit_name
 
     # 
+    attr_accessor :allow_system_override_for_locked_recipient
+
+    # 
     attr_accessor :auto_navigation
 
     # Contains a URI for an endpoint that allows you to easily retrieve bulk recipient information.
@@ -179,7 +182,7 @@ module DocuSign_eSign
 
     attr_accessor :require_id_lookup_metadata
 
-    # Sets the type of signer certificate required for signing. If left blank, no certificate is required. Only one type of certificate can be set for a signer. The possible values are:  * docusign_express Ã¢â¬â Requires a DocuSign Express certificate. * safe Ã¢â¬â Requires a SAFE-BioPharma certificate. * open_trust Ã¢â¬â Requires an OpenTrust certificate.   **Important**: There are certain rules and restrictions that must be followed when requiring OpenTrust digital signatures. See [ML:OpenTrust Rules and Restrictions] for more information.   
+    # Sets the type of signer certificate required for signing. If left blank, no certificate is required. Only one type of certificate can be set for a signer. The possible values are:  * docusign_express - Requires a DocuSign Express certificate. * safe - Requires a SAFE-BioPharma certificate. * open_trust - Requires an OpenTrust certificate.   **Important**: There are certain rules and restrictions that must be followed when requiring OpenTrust digital signatures. See [ML:OpenTrust Rules and Restrictions] for more information.   
     attr_accessor :require_signer_certificate
 
     # When set to **true**, the signer must print, sign, and upload or fax the signed documents to DocuSign.
@@ -257,6 +260,7 @@ module DocuSign_eSign
         :'add_access_code_to_email' => :'addAccessCodeToEmail',
         :'agent_can_edit_email' => :'agentCanEditEmail',
         :'agent_can_edit_name' => :'agentCanEditName',
+        :'allow_system_override_for_locked_recipient' => :'allowSystemOverrideForLockedRecipient',
         :'auto_navigation' => :'autoNavigation',
         :'bulk_recipients_uri' => :'bulkRecipientsUri',
         :'can_sign_offline' => :'canSignOffline',
@@ -350,6 +354,7 @@ module DocuSign_eSign
         :'add_access_code_to_email' => :'String',
         :'agent_can_edit_email' => :'String',
         :'agent_can_edit_name' => :'String',
+        :'allow_system_override_for_locked_recipient' => :'String',
         :'auto_navigation' => :'String',
         :'bulk_recipients_uri' => :'String',
         :'can_sign_offline' => :'String',
@@ -461,6 +466,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'agentCanEditName')
         self.agent_can_edit_name = attributes[:'agentCanEditName']
+      end
+
+      if attributes.has_key?(:'allowSystemOverrideForLockedRecipient')
+        self.allow_system_override_for_locked_recipient = attributes[:'allowSystemOverrideForLockedRecipient']
       end
 
       if attributes.has_key?(:'autoNavigation')
@@ -832,6 +841,7 @@ module DocuSign_eSign
           add_access_code_to_email == o.add_access_code_to_email &&
           agent_can_edit_email == o.agent_can_edit_email &&
           agent_can_edit_name == o.agent_can_edit_name &&
+          allow_system_override_for_locked_recipient == o.allow_system_override_for_locked_recipient &&
           auto_navigation == o.auto_navigation &&
           bulk_recipients_uri == o.bulk_recipients_uri &&
           can_sign_offline == o.can_sign_offline &&
@@ -925,7 +935,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, agent_can_edit_email, agent_can_edit_name, auto_navigation, bulk_recipients_uri, can_sign_offline, client_user_id, completed_count, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, offline_attributes, phone_authentication, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, access_code_metadata, add_access_code_to_email, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_navigation, bulk_recipients_uri, can_sign_offline, client_user_id, completed_count, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, offline_attributes, phone_authentication, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash

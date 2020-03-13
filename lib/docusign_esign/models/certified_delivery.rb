@@ -28,6 +28,9 @@ module DocuSign_eSign
     # 
     attr_accessor :agent_can_edit_name
 
+    # 
+    attr_accessor :allow_system_override_for_locked_recipient
+
     # Specifies whether the recipient is embedded or remote.   If the `clientUserId` property is not null then the recipient is embedded. Note that if the `ClientUserId` property is set and either `SignerMustHaveAccount` or `SignerMustLoginToSign` property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. 
     attr_accessor :client_user_id
 
@@ -211,6 +214,7 @@ module DocuSign_eSign
         :'add_access_code_to_email' => :'addAccessCodeToEmail',
         :'agent_can_edit_email' => :'agentCanEditEmail',
         :'agent_can_edit_name' => :'agentCanEditName',
+        :'allow_system_override_for_locked_recipient' => :'allowSystemOverrideForLockedRecipient',
         :'client_user_id' => :'clientUserId',
         :'completed_count' => :'completedCount',
         :'custom_fields' => :'customFields',
@@ -287,6 +291,7 @@ module DocuSign_eSign
         :'add_access_code_to_email' => :'String',
         :'agent_can_edit_email' => :'String',
         :'agent_can_edit_name' => :'String',
+        :'allow_system_override_for_locked_recipient' => :'String',
         :'client_user_id' => :'String',
         :'completed_count' => :'String',
         :'custom_fields' => :'Array<String>',
@@ -381,6 +386,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'agentCanEditName')
         self.agent_can_edit_name = attributes[:'agentCanEditName']
+      end
+
+      if attributes.has_key?(:'allowSystemOverrideForLockedRecipient')
+        self.allow_system_override_for_locked_recipient = attributes[:'allowSystemOverrideForLockedRecipient']
       end
 
       if attributes.has_key?(:'clientUserId')
@@ -682,6 +691,7 @@ module DocuSign_eSign
           add_access_code_to_email == o.add_access_code_to_email &&
           agent_can_edit_email == o.agent_can_edit_email &&
           agent_can_edit_name == o.agent_can_edit_name &&
+          allow_system_override_for_locked_recipient == o.allow_system_override_for_locked_recipient &&
           client_user_id == o.client_user_id &&
           completed_count == o.completed_count &&
           custom_fields == o.custom_fields &&
@@ -758,7 +768,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, agent_can_edit_email, agent_can_edit_name, client_user_id, completed_count, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, phone_authentication, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, role_name, routing_order, routing_order_metadata, sent_date_time, signed_date_time, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, access_code_metadata, add_access_code_to_email, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, client_user_id, completed_count, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, phone_authentication, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, role_name, routing_order, routing_order_metadata, sent_date_time, signed_date_time, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash

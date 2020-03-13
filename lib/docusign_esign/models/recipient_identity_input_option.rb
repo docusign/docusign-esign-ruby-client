@@ -13,27 +13,32 @@ require 'date'
 
 module DocuSign_eSign
 
-  class RecipientIdentityVerification
+  class RecipientIdentityInputOption
     # 
-    attr_accessor :input_options
+    attr_accessor :name
 
     # 
-    attr_accessor :workflow_id
+    attr_accessor :phone_number_list
+
+    # 
+    attr_accessor :value_type
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'input_options' => :'inputOptions',
-        :'workflow_id' => :'workflowId'
+        :'name' => :'name',
+        :'phone_number_list' => :'phoneNumberList',
+        :'value_type' => :'valueType'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'input_options' => :'Array<RecipientIdentityInputOption>',
-        :'workflow_id' => :'String'
+        :'name' => :'String',
+        :'phone_number_list' => :'Array<RecipientIdentityPhoneNumber>',
+        :'value_type' => :'String'
       }
     end
 
@@ -45,14 +50,18 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'inputOptions')
-        if (value = attributes[:'inputOptions']).is_a?(Array)
-          self.input_options = value
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'phoneNumberList')
+        if (value = attributes[:'phoneNumberList']).is_a?(Array)
+          self.phone_number_list = value
         end
       end
 
-      if attributes.has_key?(:'workflowId')
-        self.workflow_id = attributes[:'workflowId']
+      if attributes.has_key?(:'valueType')
+        self.value_type = attributes[:'valueType']
       end
 
     end
@@ -75,8 +84,9 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          input_options == o.input_options &&
-          workflow_id == o.workflow_id
+          name == o.name &&
+          phone_number_list == o.phone_number_list &&
+          value_type == o.value_type
     end
 
     # @see the `==` method
@@ -88,7 +98,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [input_options, workflow_id].hash
+      [name, phone_number_list, value_type].hash
     end
 
     # Builds the object from hash

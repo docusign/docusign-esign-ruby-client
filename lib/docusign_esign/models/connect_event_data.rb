@@ -13,27 +13,32 @@ require 'date'
 
 module DocuSign_eSign
 
-  class RecipientIdentityVerification
+  class ConnectEventData
     # 
-    attr_accessor :input_options
+    attr_accessor :format
 
     # 
-    attr_accessor :workflow_id
+    attr_accessor :include_data
+
+    # 
+    attr_accessor :version
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'input_options' => :'inputOptions',
-        :'workflow_id' => :'workflowId'
+        :'format' => :'format',
+        :'include_data' => :'includeData',
+        :'version' => :'version'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'input_options' => :'Array<RecipientIdentityInputOption>',
-        :'workflow_id' => :'String'
+        :'format' => :'String',
+        :'include_data' => :'Array<String>',
+        :'version' => :'String'
       }
     end
 
@@ -45,14 +50,18 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'inputOptions')
-        if (value = attributes[:'inputOptions']).is_a?(Array)
-          self.input_options = value
+      if attributes.has_key?(:'format')
+        self.format = attributes[:'format']
+      end
+
+      if attributes.has_key?(:'includeData')
+        if (value = attributes[:'includeData']).is_a?(Array)
+          self.include_data = value
         end
       end
 
-      if attributes.has_key?(:'workflowId')
-        self.workflow_id = attributes[:'workflowId']
+      if attributes.has_key?(:'version')
+        self.version = attributes[:'version']
       end
 
     end
@@ -75,8 +84,9 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          input_options == o.input_options &&
-          workflow_id == o.workflow_id
+          format == o.format &&
+          include_data == o.include_data &&
+          version == o.version
     end
 
     # @see the `==` method
@@ -88,7 +98,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [input_options, workflow_id].hash
+      [format, include_data, version].hash
     end
 
     # Builds the object from hash

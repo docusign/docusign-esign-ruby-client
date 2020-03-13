@@ -13,27 +13,52 @@ require 'date'
 
 module DocuSign_eSign
 
-  class RecipientIdentityVerification
+  class DowngradePlanUpdateResponse
     # 
-    attr_accessor :input_options
+    attr_accessor :account_payment_method
 
     # 
-    attr_accessor :workflow_id
+    attr_accessor :downgrade_effective_date
+
+    # 
+    attr_accessor :downgrade_payment_cycle
+
+    # 
+    attr_accessor :downgrade_plan_id
+
+    # 
+    attr_accessor :downgrade_plan_name
+
+    # 
+    attr_accessor :downgrade_request_status
+
+    # 
+    attr_accessor :message
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'input_options' => :'inputOptions',
-        :'workflow_id' => :'workflowId'
+        :'account_payment_method' => :'accountPaymentMethod',
+        :'downgrade_effective_date' => :'downgradeEffectiveDate',
+        :'downgrade_payment_cycle' => :'downgradePaymentCycle',
+        :'downgrade_plan_id' => :'downgradePlanId',
+        :'downgrade_plan_name' => :'downgradePlanName',
+        :'downgrade_request_status' => :'downgradeRequestStatus',
+        :'message' => :'message'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'input_options' => :'Array<RecipientIdentityInputOption>',
-        :'workflow_id' => :'String'
+        :'account_payment_method' => :'String',
+        :'downgrade_effective_date' => :'String',
+        :'downgrade_payment_cycle' => :'String',
+        :'downgrade_plan_id' => :'String',
+        :'downgrade_plan_name' => :'String',
+        :'downgrade_request_status' => :'String',
+        :'message' => :'String'
       }
     end
 
@@ -45,14 +70,32 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'inputOptions')
-        if (value = attributes[:'inputOptions']).is_a?(Array)
-          self.input_options = value
-        end
+      if attributes.has_key?(:'accountPaymentMethod')
+        self.account_payment_method = attributes[:'accountPaymentMethod']
       end
 
-      if attributes.has_key?(:'workflowId')
-        self.workflow_id = attributes[:'workflowId']
+      if attributes.has_key?(:'downgradeEffectiveDate')
+        self.downgrade_effective_date = attributes[:'downgradeEffectiveDate']
+      end
+
+      if attributes.has_key?(:'downgradePaymentCycle')
+        self.downgrade_payment_cycle = attributes[:'downgradePaymentCycle']
+      end
+
+      if attributes.has_key?(:'downgradePlanId')
+        self.downgrade_plan_id = attributes[:'downgradePlanId']
+      end
+
+      if attributes.has_key?(:'downgradePlanName')
+        self.downgrade_plan_name = attributes[:'downgradePlanName']
+      end
+
+      if attributes.has_key?(:'downgradeRequestStatus')
+        self.downgrade_request_status = attributes[:'downgradeRequestStatus']
+      end
+
+      if attributes.has_key?(:'message')
+        self.message = attributes[:'message']
       end
 
     end
@@ -75,8 +118,13 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          input_options == o.input_options &&
-          workflow_id == o.workflow_id
+          account_payment_method == o.account_payment_method &&
+          downgrade_effective_date == o.downgrade_effective_date &&
+          downgrade_payment_cycle == o.downgrade_payment_cycle &&
+          downgrade_plan_id == o.downgrade_plan_id &&
+          downgrade_plan_name == o.downgrade_plan_name &&
+          downgrade_request_status == o.downgrade_request_status &&
+          message == o.message
     end
 
     # @see the `==` method
@@ -88,7 +136,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [input_options, workflow_id].hash
+      [account_payment_method, downgrade_effective_date, downgrade_payment_cycle, downgrade_plan_id, downgrade_plan_name, downgrade_request_status, message].hash
     end
 
     # Builds the object from hash
