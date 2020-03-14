@@ -13,41 +13,52 @@ require 'date'
 
 module DocuSign_eSign
 
-  class DisplayApplianceInfo
-    # 
-    attr_accessor :document_data
+  class NotaryJurisdictionList
+    # The last position in the result set. 
+    attr_accessor :end_position
+
+    # The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
+    attr_accessor :next_uri
 
     # 
-    attr_accessor :document_pages
+    attr_accessor :notary_jurisdictions
 
-    attr_accessor :envelope_data
+    # The postal code for the billing address.
+    attr_accessor :previous_uri
 
-    # 
-    attr_accessor :page_data
+    # The number of results returned in this response. 
+    attr_accessor :result_set_size
 
-    # 
-    attr_accessor :recipient_data
+    # Starting position of the current result set.
+    attr_accessor :start_position
+
+    # The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
+    attr_accessor :total_set_size
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'document_data' => :'documentData',
-        :'document_pages' => :'documentPages',
-        :'envelope_data' => :'envelopeData',
-        :'page_data' => :'pageData',
-        :'recipient_data' => :'recipientData'
+        :'end_position' => :'endPosition',
+        :'next_uri' => :'nextUri',
+        :'notary_jurisdictions' => :'notaryJurisdictions',
+        :'previous_uri' => :'previousUri',
+        :'result_set_size' => :'resultSetSize',
+        :'start_position' => :'startPosition',
+        :'total_set_size' => :'totalSetSize'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'document_data' => :'Array<DisplayApplianceDocument>',
-        :'document_pages' => :'Array<DisplayApplianceDocumentPage>',
-        :'envelope_data' => :'DisplayApplianceEnvelope',
-        :'page_data' => :'Array<DisplayAppliancePage>',
-        :'recipient_data' => :'Array<DisplayApplianceRecipient>'
+        :'end_position' => :'String',
+        :'next_uri' => :'String',
+        :'notary_jurisdictions' => :'Array<NotaryJurisdiction>',
+        :'previous_uri' => :'String',
+        :'result_set_size' => :'String',
+        :'start_position' => :'String',
+        :'total_set_size' => :'String'
       }
     end
 
@@ -59,32 +70,34 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'documentData')
-        if (value = attributes[:'documentData']).is_a?(Array)
-          self.document_data = value
+      if attributes.has_key?(:'endPosition')
+        self.end_position = attributes[:'endPosition']
+      end
+
+      if attributes.has_key?(:'nextUri')
+        self.next_uri = attributes[:'nextUri']
+      end
+
+      if attributes.has_key?(:'notaryJurisdictions')
+        if (value = attributes[:'notaryJurisdictions']).is_a?(Array)
+          self.notary_jurisdictions = value
         end
       end
 
-      if attributes.has_key?(:'documentPages')
-        if (value = attributes[:'documentPages']).is_a?(Array)
-          self.document_pages = value
-        end
+      if attributes.has_key?(:'previousUri')
+        self.previous_uri = attributes[:'previousUri']
       end
 
-      if attributes.has_key?(:'envelopeData')
-        self.envelope_data = attributes[:'envelopeData']
+      if attributes.has_key?(:'resultSetSize')
+        self.result_set_size = attributes[:'resultSetSize']
       end
 
-      if attributes.has_key?(:'pageData')
-        if (value = attributes[:'pageData']).is_a?(Array)
-          self.page_data = value
-        end
+      if attributes.has_key?(:'startPosition')
+        self.start_position = attributes[:'startPosition']
       end
 
-      if attributes.has_key?(:'recipientData')
-        if (value = attributes[:'recipientData']).is_a?(Array)
-          self.recipient_data = value
-        end
+      if attributes.has_key?(:'totalSetSize')
+        self.total_set_size = attributes[:'totalSetSize']
       end
 
     end
@@ -107,11 +120,13 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          document_data == o.document_data &&
-          document_pages == o.document_pages &&
-          envelope_data == o.envelope_data &&
-          page_data == o.page_data &&
-          recipient_data == o.recipient_data
+          end_position == o.end_position &&
+          next_uri == o.next_uri &&
+          notary_jurisdictions == o.notary_jurisdictions &&
+          previous_uri == o.previous_uri &&
+          result_set_size == o.result_set_size &&
+          start_position == o.start_position &&
+          total_set_size == o.total_set_size
     end
 
     # @see the `==` method
@@ -123,7 +138,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [document_data, document_pages, envelope_data, page_data, recipient_data].hash
+      [end_position, next_uri, notary_jurisdictions, previous_uri, result_set_size, start_position, total_set_size].hash
     end
 
     # Builds the object from hash

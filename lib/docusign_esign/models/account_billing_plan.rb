@@ -26,6 +26,8 @@ module DocuSign_eSign
     # Specifies the ISO currency code for the account.
     attr_accessor :currency_code
 
+    attr_accessor :downgrade_plan_information
+
     # When set to **true**, then customer support is provided as part of the account plan.
     attr_accessor :enable_support
 
@@ -82,6 +84,7 @@ module DocuSign_eSign
         :'can_cancel_renewal' => :'canCancelRenewal',
         :'can_upgrade' => :'canUpgrade',
         :'currency_code' => :'currencyCode',
+        :'downgrade_plan_information' => :'downgradePlanInformation',
         :'enable_support' => :'enableSupport',
         :'included_seats' => :'includedSeats',
         :'incremental_seats' => :'incrementalSeats',
@@ -108,6 +111,7 @@ module DocuSign_eSign
         :'can_cancel_renewal' => :'String',
         :'can_upgrade' => :'String',
         :'currency_code' => :'String',
+        :'downgrade_plan_information' => :'DowngradePlanUpdateResponse',
         :'enable_support' => :'String',
         :'included_seats' => :'String',
         :'incremental_seats' => :'String',
@@ -151,6 +155,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'currencyCode')
         self.currency_code = attributes[:'currencyCode']
+      end
+
+      if attributes.has_key?(:'downgradePlanInformation')
+        self.downgrade_plan_information = attributes[:'downgradePlanInformation']
       end
 
       if attributes.has_key?(:'enableSupport')
@@ -245,6 +253,7 @@ module DocuSign_eSign
           can_cancel_renewal == o.can_cancel_renewal &&
           can_upgrade == o.can_upgrade &&
           currency_code == o.currency_code &&
+          downgrade_plan_information == o.downgrade_plan_information &&
           enable_support == o.enable_support &&
           included_seats == o.included_seats &&
           incremental_seats == o.incremental_seats &&
@@ -272,7 +281,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [add_ons, can_cancel_renewal, can_upgrade, currency_code, enable_support, included_seats, incremental_seats, is_downgrade, other_discount_percent, payment_cycle, payment_method, per_seat_price, plan_classification, plan_feature_sets, plan_id, plan_name, renewal_status, seat_discounts, support_incident_fee, support_plan_fee].hash
+      [add_ons, can_cancel_renewal, can_upgrade, currency_code, downgrade_plan_information, enable_support, included_seats, incremental_seats, is_downgrade, other_discount_percent, payment_cycle, payment_method, per_seat_price, plan_classification, plan_feature_sets, plan_id, plan_name, renewal_status, seat_discounts, support_incident_fee, support_plan_fee].hash
     end
 
     # Builds the object from hash

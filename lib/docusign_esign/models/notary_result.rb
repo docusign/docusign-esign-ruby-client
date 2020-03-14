@@ -13,67 +13,26 @@ require 'date'
 
 module DocuSign_eSign
 
-  class DisplayAppliancePage
-    # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-    attr_accessor :document_id
-
+  class NotaryResult
     # 
-    attr_accessor :document_name
+    attr_accessor :jurisdictions
 
-    # 
-    attr_accessor :external_document_id
-
-    # Height of the tab in pixels.
-    attr_accessor :height
-
-    # 
-    attr_accessor :is_first_page
-
-    # 
-    attr_accessor :page_id
-
-    # 
-    attr_accessor :page_no
-
-    # 
-    attr_accessor :page_status
-
-    # 
-    attr_accessor :page_type
-
-    # Width of the tab in pixels.
-    attr_accessor :width
+    attr_accessor :notary
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'document_id' => :'documentId',
-        :'document_name' => :'documentName',
-        :'external_document_id' => :'externalDocumentId',
-        :'height' => :'height',
-        :'is_first_page' => :'isFirstPage',
-        :'page_id' => :'pageId',
-        :'page_no' => :'pageNo',
-        :'page_status' => :'pageStatus',
-        :'page_type' => :'pageType',
-        :'width' => :'width'
+        :'jurisdictions' => :'jurisdictions',
+        :'notary' => :'notary'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'document_id' => :'String',
-        :'document_name' => :'String',
-        :'external_document_id' => :'String',
-        :'height' => :'Integer',
-        :'is_first_page' => :'BOOLEAN',
-        :'page_id' => :'String',
-        :'page_no' => :'Integer',
-        :'page_status' => :'String',
-        :'page_type' => :'String',
-        :'width' => :'Integer'
+        :'jurisdictions' => :'Array<Jurisdiction>',
+        :'notary' => :'Notary'
       }
     end
 
@@ -85,44 +44,14 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'documentId')
-        self.document_id = attributes[:'documentId']
+      if attributes.has_key?(:'jurisdictions')
+        if (value = attributes[:'jurisdictions']).is_a?(Array)
+          self.jurisdictions = value
+        end
       end
 
-      if attributes.has_key?(:'documentName')
-        self.document_name = attributes[:'documentName']
-      end
-
-      if attributes.has_key?(:'externalDocumentId')
-        self.external_document_id = attributes[:'externalDocumentId']
-      end
-
-      if attributes.has_key?(:'height')
-        self.height = attributes[:'height']
-      end
-
-      if attributes.has_key?(:'isFirstPage')
-        self.is_first_page = attributes[:'isFirstPage']
-      end
-
-      if attributes.has_key?(:'pageId')
-        self.page_id = attributes[:'pageId']
-      end
-
-      if attributes.has_key?(:'pageNo')
-        self.page_no = attributes[:'pageNo']
-      end
-
-      if attributes.has_key?(:'pageStatus')
-        self.page_status = attributes[:'pageStatus']
-      end
-
-      if attributes.has_key?(:'pageType')
-        self.page_type = attributes[:'pageType']
-      end
-
-      if attributes.has_key?(:'width')
-        self.width = attributes[:'width']
+      if attributes.has_key?(:'notary')
+        self.notary = attributes[:'notary']
       end
 
     end
@@ -145,16 +74,8 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          document_id == o.document_id &&
-          document_name == o.document_name &&
-          external_document_id == o.external_document_id &&
-          height == o.height &&
-          is_first_page == o.is_first_page &&
-          page_id == o.page_id &&
-          page_no == o.page_no &&
-          page_status == o.page_status &&
-          page_type == o.page_type &&
-          width == o.width
+          jurisdictions == o.jurisdictions &&
+          notary == o.notary
     end
 
     # @see the `==` method
@@ -166,7 +87,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [document_id, document_name, external_document_id, height, is_first_page, page_id, page_no, page_status, page_type, width].hash
+      [jurisdictions, notary].hash
     end
 
     # Builds the object from hash

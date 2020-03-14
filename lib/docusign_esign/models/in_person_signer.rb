@@ -23,6 +23,9 @@ module DocuSign_eSign
     attr_accessor :add_access_code_to_email
 
     # 
+    attr_accessor :allow_system_override_for_locked_recipient
+
+    # 
     attr_accessor :auto_navigation
 
     # When set to **true**, specifies that the signer can perform the signing ceremony offline.
@@ -56,6 +59,12 @@ module DocuSign_eSign
     attr_accessor :delivery_method
 
     attr_accessor :delivery_method_metadata
+
+    # 
+    attr_accessor :designator_id
+
+    # 
+    attr_accessor :designator_id_guid
 
     # 
     attr_accessor :document_visibility
@@ -253,6 +262,7 @@ module DocuSign_eSign
         :'access_code' => :'accessCode',
         :'access_code_metadata' => :'accessCodeMetadata',
         :'add_access_code_to_email' => :'addAccessCodeToEmail',
+        :'allow_system_override_for_locked_recipient' => :'allowSystemOverrideForLockedRecipient',
         :'auto_navigation' => :'autoNavigation',
         :'can_sign_offline' => :'canSignOffline',
         :'client_user_id' => :'clientUserId',
@@ -265,6 +275,8 @@ module DocuSign_eSign
         :'delivered_date_time' => :'deliveredDateTime',
         :'delivery_method' => :'deliveryMethod',
         :'delivery_method_metadata' => :'deliveryMethodMetadata',
+        :'designator_id' => :'designatorId',
+        :'designator_id_guid' => :'designatorIdGuid',
         :'document_visibility' => :'documentVisibility',
         :'email' => :'email',
         :'email_metadata' => :'emailMetadata',
@@ -346,6 +358,7 @@ module DocuSign_eSign
         :'access_code' => :'String',
         :'access_code_metadata' => :'PropertyMetadata',
         :'add_access_code_to_email' => :'String',
+        :'allow_system_override_for_locked_recipient' => :'String',
         :'auto_navigation' => :'String',
         :'can_sign_offline' => :'String',
         :'client_user_id' => :'String',
@@ -358,6 +371,8 @@ module DocuSign_eSign
         :'delivered_date_time' => :'String',
         :'delivery_method' => :'String',
         :'delivery_method_metadata' => :'PropertyMetadata',
+        :'designator_id' => :'String',
+        :'designator_id_guid' => :'String',
         :'document_visibility' => :'Array<DocumentVisibility>',
         :'email' => :'String',
         :'email_metadata' => :'PropertyMetadata',
@@ -453,6 +468,10 @@ module DocuSign_eSign
         self.add_access_code_to_email = attributes[:'addAccessCodeToEmail']
       end
 
+      if attributes.has_key?(:'allowSystemOverrideForLockedRecipient')
+        self.allow_system_override_for_locked_recipient = attributes[:'allowSystemOverrideForLockedRecipient']
+      end
+
       if attributes.has_key?(:'autoNavigation')
         self.auto_navigation = attributes[:'autoNavigation']
       end
@@ -501,6 +520,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'deliveryMethodMetadata')
         self.delivery_method_metadata = attributes[:'deliveryMethodMetadata']
+      end
+
+      if attributes.has_key?(:'designatorId')
+        self.designator_id = attributes[:'designatorId']
+      end
+
+      if attributes.has_key?(:'designatorIdGuid')
+        self.designator_id_guid = attributes[:'designatorIdGuid']
       end
 
       if attributes.has_key?(:'documentVisibility')
@@ -828,6 +855,7 @@ module DocuSign_eSign
           access_code == o.access_code &&
           access_code_metadata == o.access_code_metadata &&
           add_access_code_to_email == o.add_access_code_to_email &&
+          allow_system_override_for_locked_recipient == o.allow_system_override_for_locked_recipient &&
           auto_navigation == o.auto_navigation &&
           can_sign_offline == o.can_sign_offline &&
           client_user_id == o.client_user_id &&
@@ -840,6 +868,8 @@ module DocuSign_eSign
           delivered_date_time == o.delivered_date_time &&
           delivery_method == o.delivery_method &&
           delivery_method_metadata == o.delivery_method_metadata &&
+          designator_id == o.designator_id &&
+          designator_id_guid == o.designator_id_guid &&
           document_visibility == o.document_visibility &&
           email == o.email &&
           email_metadata == o.email_metadata &&
@@ -923,7 +953,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, auto_navigation, can_sign_offline, client_user_id, completed_count, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, delivery_method_metadata, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, host_email, host_email_metadata, host_name, host_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, inherit_email_notification_configuration, in_person_signing_type, in_person_signing_type_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_host, note, note_metadata, offline_attributes, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, signer_email, signer_email_metadata, signer_first_name, signer_first_name_metadata, signer_last_name, signer_last_name_metadata, signer_name, signer_name_metadata, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, access_code_metadata, add_access_code_to_email, allow_system_override_for_locked_recipient, auto_navigation, can_sign_offline, client_user_id, completed_count, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, host_email, host_email_metadata, host_name, host_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, inherit_email_notification_configuration, in_person_signing_type, in_person_signing_type_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_host, note, note_metadata, offline_attributes, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, signer_email, signer_email_metadata, signer_first_name, signer_first_name_metadata, signer_last_name, signer_last_name_metadata, signer_name, signer_name_metadata, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash

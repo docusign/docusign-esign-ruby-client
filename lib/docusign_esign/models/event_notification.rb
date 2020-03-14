@@ -17,6 +17,8 @@ module DocuSign_eSign
     # A list of envelope-level event statuses that will trigger Connect to send updates to the endpoint specified in the `url` property.   To receive notifications, you must include either an `envelopeEvents` node or a `recipientEvents` node. You do not need to specify both.
     attr_accessor :envelope_events
 
+    attr_accessor :event_data
+
     # When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. 
     attr_accessor :include_certificate_of_completion
 
@@ -67,6 +69,7 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'envelope_events' => :'envelopeEvents',
+        :'event_data' => :'eventData',
         :'include_certificate_of_completion' => :'includeCertificateOfCompletion',
         :'include_certificate_with_soap' => :'includeCertificateWithSoap',
         :'include_document_fields' => :'includeDocumentFields',
@@ -89,6 +92,7 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'envelope_events' => :'Array<EnvelopeEvent>',
+        :'event_data' => :'ConnectEventData',
         :'include_certificate_of_completion' => :'String',
         :'include_certificate_with_soap' => :'String',
         :'include_document_fields' => :'String',
@@ -119,6 +123,10 @@ module DocuSign_eSign
         if (value = attributes[:'envelopeEvents']).is_a?(Array)
           self.envelope_events = value
         end
+      end
+
+      if attributes.has_key?(:'eventData')
+        self.event_data = attributes[:'eventData']
       end
 
       if attributes.has_key?(:'includeCertificateOfCompletion')
@@ -204,6 +212,7 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           envelope_events == o.envelope_events &&
+          event_data == o.event_data &&
           include_certificate_of_completion == o.include_certificate_of_completion &&
           include_certificate_with_soap == o.include_certificate_with_soap &&
           include_document_fields == o.include_document_fields &&
@@ -230,7 +239,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [envelope_events, include_certificate_of_completion, include_certificate_with_soap, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_account_as_custom_field, include_time_zone, logging_enabled, recipient_events, require_acknowledgment, sign_message_with_x509_cert, soap_name_space, url, use_soap_interface].hash
+      [envelope_events, event_data, include_certificate_of_completion, include_certificate_with_soap, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_account_as_custom_field, include_time_zone, logging_enabled, recipient_events, require_acknowledgment, sign_message_with_x509_cert, soap_name_space, url, use_soap_interface].hash
     end
 
     # Builds the object from hash
