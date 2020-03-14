@@ -41,6 +41,9 @@ module DocuSign_eSign
     attr_accessor :label_when_opened
 
     # 
+    attr_accessor :pre_label
+
+    # 
     attr_accessor :scroll_to_top_when_opened
 
     # 
@@ -59,6 +62,7 @@ module DocuSign_eSign
         :'hide_label_when_opened' => :'hideLabelWhenOpened',
         :'inline_outer_style' => :'inlineOuterStyle',
         :'label_when_opened' => :'labelWhenOpened',
+        :'pre_label' => :'preLabel',
         :'scroll_to_top_when_opened' => :'scrollToTopWhenOpened',
         :'table_style' => :'tableStyle'
       }
@@ -76,6 +80,7 @@ module DocuSign_eSign
         :'hide_label_when_opened' => :'BOOLEAN',
         :'inline_outer_style' => :'String',
         :'label_when_opened' => :'String',
+        :'pre_label' => :'String',
         :'scroll_to_top_when_opened' => :'BOOLEAN',
         :'table_style' => :'String'
       }
@@ -125,6 +130,10 @@ module DocuSign_eSign
         self.label_when_opened = attributes[:'labelWhenOpened']
       end
 
+      if attributes.has_key?(:'preLabel')
+        self.pre_label = attributes[:'preLabel']
+      end
+
       if attributes.has_key?(:'scrollToTopWhenOpened')
         self.scroll_to_top_when_opened = attributes[:'scrollToTopWhenOpened']
       end
@@ -162,6 +171,7 @@ module DocuSign_eSign
           hide_label_when_opened == o.hide_label_when_opened &&
           inline_outer_style == o.inline_outer_style &&
           label_when_opened == o.label_when_opened &&
+          pre_label == o.pre_label &&
           scroll_to_top_when_opened == o.scroll_to_top_when_opened &&
           table_style == o.table_style
     end
@@ -175,7 +185,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cell_style, collapsible_settings, display, display_label, display_order, display_page_number, hide_label_when_opened, inline_outer_style, label_when_opened, scroll_to_top_when_opened, table_style].hash
+      [cell_style, collapsible_settings, display, display_label, display_order, display_page_number, hide_label_when_opened, inline_outer_style, label_when_opened, pre_label, scroll_to_top_when_opened, table_style].hash
     end
 
     # Builds the object from hash

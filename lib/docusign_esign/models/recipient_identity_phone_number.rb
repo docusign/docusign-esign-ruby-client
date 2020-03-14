@@ -13,32 +13,32 @@ require 'date'
 
 module DocuSign_eSign
 
-  class RecipientEmailNotification
-    # Specifies the email body of the message sent to the recipient.   Maximum length: 10000 characters. 
-    attr_accessor :email_body
+  class RecipientIdentityPhoneNumber
+    # 
+    attr_accessor :country_code
 
-    # Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject.
-    attr_accessor :email_subject
+    # 
+    attr_accessor :extension
 
-    # A simple type enumeration of the language used. The supported languages, with the language value shown in parenthesis, are: Arabic (ar), Armenian (hy), Bahasa Indonesia (id), Bahasa Melayu (ms) Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro),Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk), and Vietnamese (vi).
-    attr_accessor :supported_language
+    # 
+    attr_accessor :number
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'email_body' => :'emailBody',
-        :'email_subject' => :'emailSubject',
-        :'supported_language' => :'supportedLanguage'
+        :'country_code' => :'countryCode',
+        :'extension' => :'extension',
+        :'number' => :'number'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'email_body' => :'String',
-        :'email_subject' => :'String',
-        :'supported_language' => :'String'
+        :'country_code' => :'String',
+        :'extension' => :'String',
+        :'number' => :'String'
       }
     end
 
@@ -50,16 +50,16 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'emailBody')
-        self.email_body = attributes[:'emailBody']
+      if attributes.has_key?(:'countryCode')
+        self.country_code = attributes[:'countryCode']
       end
 
-      if attributes.has_key?(:'emailSubject')
-        self.email_subject = attributes[:'emailSubject']
+      if attributes.has_key?(:'extension')
+        self.extension = attributes[:'extension']
       end
 
-      if attributes.has_key?(:'supportedLanguage')
-        self.supported_language = attributes[:'supportedLanguage']
+      if attributes.has_key?(:'number')
+        self.number = attributes[:'number']
       end
 
     end
@@ -82,9 +82,9 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          email_body == o.email_body &&
-          email_subject == o.email_subject &&
-          supported_language == o.supported_language
+          country_code == o.country_code &&
+          extension == o.extension &&
+          number == o.number
     end
 
     # @see the `==` method
@@ -96,7 +96,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [email_body, email_subject, supported_language].hash
+      [country_code, extension, number].hash
     end
 
     # Builds the object from hash

@@ -32,9 +32,6 @@ module DocuSign_eSign
     # 
     attr_accessor :document_fields
 
-    # 
-    attr_accessor :document_group
-
     # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
     attr_accessor :document_id
 
@@ -56,6 +53,9 @@ module DocuSign_eSign
     attr_accessor :signer_must_acknowledge
 
     # 
+    attr_accessor :size_bytes
+
+    # 
     attr_accessor :type
 
     # 
@@ -71,7 +71,6 @@ module DocuSign_eSign
         :'contains_pdf_form_fields' => :'containsPdfFormFields',
         :'display' => :'display',
         :'document_fields' => :'documentFields',
-        :'document_group' => :'documentGroup',
         :'document_id' => :'documentId',
         :'error_details' => :'errorDetails',
         :'include_in_download' => :'includeInDownload',
@@ -79,6 +78,7 @@ module DocuSign_eSign
         :'order' => :'order',
         :'pages' => :'pages',
         :'signer_must_acknowledge' => :'signerMustAcknowledge',
+        :'size_bytes' => :'sizeBytes',
         :'type' => :'type',
         :'uri' => :'uri'
       }
@@ -93,7 +93,6 @@ module DocuSign_eSign
         :'contains_pdf_form_fields' => :'String',
         :'display' => :'String',
         :'document_fields' => :'Array<NameValue>',
-        :'document_group' => :'String',
         :'document_id' => :'String',
         :'error_details' => :'ErrorDetails',
         :'include_in_download' => :'String',
@@ -101,6 +100,7 @@ module DocuSign_eSign
         :'order' => :'String',
         :'pages' => :'String',
         :'signer_must_acknowledge' => :'String',
+        :'size_bytes' => :'String',
         :'type' => :'String',
         :'uri' => :'String'
       }
@@ -142,10 +142,6 @@ module DocuSign_eSign
         end
       end
 
-      if attributes.has_key?(:'documentGroup')
-        self.document_group = attributes[:'documentGroup']
-      end
-
       if attributes.has_key?(:'documentId')
         self.document_id = attributes[:'documentId']
       end
@@ -172,6 +168,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'signerMustAcknowledge')
         self.signer_must_acknowledge = attributes[:'signerMustAcknowledge']
+      end
+
+      if attributes.has_key?(:'sizeBytes')
+        self.size_bytes = attributes[:'sizeBytes']
       end
 
       if attributes.has_key?(:'type')
@@ -208,7 +208,6 @@ module DocuSign_eSign
           contains_pdf_form_fields == o.contains_pdf_form_fields &&
           display == o.display &&
           document_fields == o.document_fields &&
-          document_group == o.document_group &&
           document_id == o.document_id &&
           error_details == o.error_details &&
           include_in_download == o.include_in_download &&
@@ -216,6 +215,7 @@ module DocuSign_eSign
           order == o.order &&
           pages == o.pages &&
           signer_must_acknowledge == o.signer_must_acknowledge &&
+          size_bytes == o.size_bytes &&
           type == o.type &&
           uri == o.uri
     end
@@ -229,7 +229,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [attachment_tab_id, authoritative_copy, available_document_types, contains_pdf_form_fields, display, document_fields, document_group, document_id, error_details, include_in_download, name, order, pages, signer_must_acknowledge, type, uri].hash
+      [attachment_tab_id, authoritative_copy, available_document_types, contains_pdf_form_fields, display, document_fields, document_id, error_details, include_in_download, name, order, pages, signer_must_acknowledge, size_bytes, type, uri].hash
     end
 
     # Builds the object from hash
