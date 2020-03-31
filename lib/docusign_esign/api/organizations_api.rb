@@ -73,58 +73,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Retrieves an account settings comparison.
-    # 
-    # @param organization_id 
-    # @param result_id 
-    # @return [nil]
-    def get_account_settings_export(organization_id, result_id)
-      get_account_settings_export_with_http_info(organization_id, result_id)
-      return nil
-    end
-
-    # Retrieves an account settings comparison.
-    # 
-    # @param organization_id 
-    # @param result_id 
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def get_account_settings_export_with_http_info(organization_id, result_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: OrganizationsApi.get_account_settings_export ..."
-      end
-      # verify the required parameter 'organization_id' is set
-      fail ArgumentError, "Missing the required parameter 'organization_id' when calling OrganizationsApi.get_account_settings_export" if organization_id.nil?
-      # verify the required parameter 'result_id' is set
-      fail ArgumentError, "Missing the required parameter 'result_id' when calling OrganizationsApi.get_account_settings_export" if result_id.nil?
-      # resource path
-      local_var_path = "/v2.1/organization_exports/{organizationId}/account_settings/{resultId}".sub('{format}','json').sub('{' + 'organizationId' + '}', organization_id.to_s).sub('{' + 'resultId' + '}', result_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: OrganizationsApi#get_account_settings_export\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Retrieves org level report by correlation id and site.
     # 
     # @param organization_id 
@@ -173,58 +121,6 @@ module DocuSign_eSign
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#get_report\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Retrieves UserList Export Results data.
-    # 
-    # @param organization_id 
-    # @param result_id 
-    # @return [nil]
-    def get_user_list_export(organization_id, result_id)
-      get_user_list_export_with_http_info(organization_id, result_id)
-      return nil
-    end
-
-    # Retrieves UserList Export Results data.
-    # 
-    # @param organization_id 
-    # @param result_id 
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def get_user_list_export_with_http_info(organization_id, result_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: OrganizationsApi.get_user_list_export ..."
-      end
-      # verify the required parameter 'organization_id' is set
-      fail ArgumentError, "Missing the required parameter 'organization_id' when calling OrganizationsApi.get_user_list_export" if organization_id.nil?
-      # verify the required parameter 'result_id' is set
-      fail ArgumentError, "Missing the required parameter 'result_id' when calling OrganizationsApi.get_user_list_export" if result_id.nil?
-      # resource path
-      local_var_path = "/v2.1/organization_exports/{organizationId}/user_list/{resultId}".sub('{format}','json').sub('{' + 'organizationId' + '}', organization_id.to_s).sub('{' + 'resultId' + '}', result_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: OrganizationsApi#get_user_list_export\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
