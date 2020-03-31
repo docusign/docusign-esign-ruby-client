@@ -3,11 +3,15 @@ All notable changes to this project will be documented in this file.
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
-## [v2.3.0-rc1] - eSignature API v2-20.1.00 - 2020-03-13
+## [v2.3.0] - eSignature API v2-20.1.00 - 2020-03-13
 ### Changed
-- The SDK now supports version v2-20.1.00 of the DocuSign eSignature API.
-- Update rake version to 12.3.3
-- SDK Release Version updated.
+- Added support for version v2-20.1.00 of the DocuSign eSignature API.
+- Updated rake to version 12.3.3.
+- Updated the SDK release version.
+### Added
+- Added the new property `copy_recipient_data` to envelopes. When set to **true**, the information that recipients enter is retained when you clone an envelope. For example, if you resend an envelope that was declined or voided after one or more recipients entered data, that data is retained. Note that the account setting `enable_envelope_copy_with_data` must be set to **true**.
+- Added a new object, `RecipientIdentityInputOption`: Reserved for DocuSign.
+- Added a new parameter, `input_options`, to `AccountIdentityVerificationWorkflow`: Reserved for DocuSign.
 
 ## [v2.1.0] - eSignature API v2-19.2.02 - 2019-10-08
 ### Changed
