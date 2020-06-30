@@ -668,7 +668,7 @@ module DocuSign_eSign
     # Adds or replaces envelope bulk recipients.
     # Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
     # @param account_id The external account number (int) or account ID GUID.
-    # @param envelope_id The envelope's GUID.   Example: `93be49ab-xxxx-xxxx-xxxx-f752070d71ec`
+    # @param envelope_id The envelope's GUID.   Example: `93be49ab-xxxx-xxxx-xxxx-f752070d71ec` 
     # @param recipient_id A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each `recipientId` must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a `recipientId` of `1`.
     # @param bulk_recipients_request  
     # @return [BulkRecipientsSummaryResponse]
@@ -680,7 +680,7 @@ module DocuSign_eSign
     # Adds or replaces envelope bulk recipients.
     # Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
     # @param account_id The external account number (int) or account ID GUID.
-    # @param envelope_id The envelope's GUID.   Example: `93be49ab-xxxx-xxxx-xxxx-f752070d71ec`
+    # @param envelope_id The envelope's GUID.   Example: `93be49ab-xxxx-xxxx-xxxx-f752070d71ec` 
     # @param recipient_id A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each `recipientId` must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a `recipientId` of `1`.
     # @param bulk_recipients_request  
     # @return [Array<(BulkRecipientsSummaryResponse, Fixnum, Hash)>] BulkRecipientsSummaryResponse data, response status code and response headers
