@@ -18,6 +18,9 @@ module DocuSign_eSign
     attr_accessor :batch_id
 
     # 
+    attr_accessor :batch_size
+
+    # 
     attr_accessor :envelope_or_template_id
 
     # Array or errors.
@@ -26,13 +29,22 @@ module DocuSign_eSign
     # 
     attr_accessor :errors
 
+    # 
+    attr_accessor :queue_limit
+
+    # 
+    attr_accessor :total_queued
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'batch_id' => :'batchId',
+        :'batch_size' => :'batchSize',
         :'envelope_or_template_id' => :'envelopeOrTemplateId',
         :'error_details' => :'errorDetails',
-        :'errors' => :'errors'
+        :'errors' => :'errors',
+        :'queue_limit' => :'queueLimit',
+        :'total_queued' => :'totalQueued'
       }
     end
 
@@ -40,9 +52,12 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'batch_id' => :'String',
+        :'batch_size' => :'String',
         :'envelope_or_template_id' => :'String',
         :'error_details' => :'Array<String>',
-        :'errors' => :'Array<String>'
+        :'errors' => :'Array<String>',
+        :'queue_limit' => :'String',
+        :'total_queued' => :'String'
       }
     end
 
@@ -56,6 +71,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'batchId')
         self.batch_id = attributes[:'batchId']
+      end
+
+      if attributes.has_key?(:'batchSize')
+        self.batch_size = attributes[:'batchSize']
       end
 
       if attributes.has_key?(:'envelopeOrTemplateId')
@@ -72,6 +91,14 @@ module DocuSign_eSign
         if (value = attributes[:'errors']).is_a?(Array)
           self.errors = value
         end
+      end
+
+      if attributes.has_key?(:'queueLimit')
+        self.queue_limit = attributes[:'queueLimit']
+      end
+
+      if attributes.has_key?(:'totalQueued')
+        self.total_queued = attributes[:'totalQueued']
       end
     end
 
@@ -94,9 +121,12 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           batch_id == o.batch_id &&
+          batch_size == o.batch_size &&
           envelope_or_template_id == o.envelope_or_template_id &&
           error_details == o.error_details &&
-          errors == o.errors
+          errors == o.errors &&
+          queue_limit == o.queue_limit &&
+          total_queued == o.total_queued
     end
 
     # @see the `==` method
@@ -108,7 +138,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [batch_id, envelope_or_template_id, error_details, errors].hash
+      [batch_id, batch_size, envelope_or_template_id, error_details, errors, queue_limit, total_queued].hash
     end
 
     # Builds the object from hash
