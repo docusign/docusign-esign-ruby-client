@@ -78,4 +78,3 @@ The DocuSign Ruby Client is licensed under the [MIT License](https://github.com/
 * [DocuSign API on Twitter](https://twitter.com/docusignapi)
 * [DocuSign For Developers on LinkedIn](https://www.linkedin.com/showcase/docusign-for-developers/)
 * [DocuSign For Developers on YouTube](https://www.youtube.com/channel/UCJSJ2kMs_qeQotmw4-lX2NQ)
-
