@@ -10,7 +10,7 @@ Swagger Codegen version: 2.4.13-SNAPSHOT
 
 =end
 
-require 'uri'
+require 'addressable'
 
 module DocuSign_eSign
   class Configuration
@@ -169,7 +169,7 @@ module DocuSign_eSign
 
     def base_url
       url = "#{scheme}://#{[host, base_path].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
-      URI.encode(url)
+      Addressable::URI.escape(url)
     end
 
     # Gets API key (with prefix if set).
