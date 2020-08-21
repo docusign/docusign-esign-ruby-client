@@ -13,34 +13,36 @@ Swagger Codegen version: 2.4.13-SNAPSHOT
 require 'date'
 
 module DocuSign_eSign
-  class RecipientAdditionalNotification
-    attr_accessor :phone_number
+  class ReportInProductField
+    # 
+    attr_accessor :display_order
 
     # 
-    attr_accessor :secondary_delivery_method
-
-    attr_accessor :secondary_delivery_method_metadata
+    attr_accessor :field_version
 
     # 
-    attr_accessor :secondary_delivery_status
+    attr_accessor :name
+
+    # 
+    attr_accessor :selected
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'phone_number' => :'phoneNumber',
-        :'secondary_delivery_method' => :'secondaryDeliveryMethod',
-        :'secondary_delivery_method_metadata' => :'secondaryDeliveryMethodMetadata',
-        :'secondary_delivery_status' => :'secondaryDeliveryStatus'
+        :'display_order' => :'displayOrder',
+        :'field_version' => :'fieldVersion',
+        :'name' => :'name',
+        :'selected' => :'selected'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'phone_number' => :'RecipientPhoneNumber',
-        :'secondary_delivery_method' => :'String',
-        :'secondary_delivery_method_metadata' => :'PropertyMetadata',
-        :'secondary_delivery_status' => :'String'
+        :'display_order' => :'String',
+        :'field_version' => :'String',
+        :'name' => :'String',
+        :'selected' => :'String'
       }
     end
 
@@ -52,20 +54,20 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'phoneNumber')
-        self.phone_number = attributes[:'phoneNumber']
+      if attributes.has_key?(:'displayOrder')
+        self.display_order = attributes[:'displayOrder']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethod')
-        self.secondary_delivery_method = attributes[:'secondaryDeliveryMethod']
+      if attributes.has_key?(:'fieldVersion')
+        self.field_version = attributes[:'fieldVersion']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethodMetadata')
-        self.secondary_delivery_method_metadata = attributes[:'secondaryDeliveryMethodMetadata']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryStatus')
-        self.secondary_delivery_status = attributes[:'secondaryDeliveryStatus']
+      if attributes.has_key?(:'selected')
+        self.selected = attributes[:'selected']
       end
     end
 
@@ -87,10 +89,10 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          phone_number == o.phone_number &&
-          secondary_delivery_method == o.secondary_delivery_method &&
-          secondary_delivery_method_metadata == o.secondary_delivery_method_metadata &&
-          secondary_delivery_status == o.secondary_delivery_status
+          display_order == o.display_order &&
+          field_version == o.field_version &&
+          name == o.name &&
+          selected == o.selected
     end
 
     # @see the `==` method
@@ -102,7 +104,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [phone_number, secondary_delivery_method, secondary_delivery_method_metadata, secondary_delivery_status].hash
+      [display_order, field_version, name, selected].hash
     end
 
     # Builds the object from hash

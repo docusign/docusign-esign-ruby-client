@@ -260,6 +260,8 @@ module DocuSign_eSign
     # The reason the envelope or template was voided.
     attr_accessor :voided_reason
 
+    attr_accessor :workflow
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -347,7 +349,8 @@ module DocuSign_eSign
         :'transaction_id' => :'transactionId',
         :'use_disclosure' => :'useDisclosure',
         :'voided_date_time' => :'voidedDateTime',
-        :'voided_reason' => :'voidedReason'
+        :'voided_reason' => :'voidedReason',
+        :'workflow' => :'workflow'
       }
     end
 
@@ -438,7 +441,8 @@ module DocuSign_eSign
         :'transaction_id' => :'String',
         :'use_disclosure' => :'String',
         :'voided_date_time' => :'String',
-        :'voided_reason' => :'String'
+        :'voided_reason' => :'String',
+        :'workflow' => :'Workflow'
       }
     end
 
@@ -805,6 +809,10 @@ module DocuSign_eSign
       if attributes.has_key?(:'voidedReason')
         self.voided_reason = attributes[:'voidedReason']
       end
+
+      if attributes.has_key?(:'workflow')
+        self.workflow = attributes[:'workflow']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -909,7 +917,8 @@ module DocuSign_eSign
           transaction_id == o.transaction_id &&
           use_disclosure == o.use_disclosure &&
           voided_date_time == o.voided_date_time &&
-          voided_reason == o.voided_reason
+          voided_reason == o.voided_reason &&
+          workflow == o.workflow
     end
 
     # @see the `==` method
@@ -921,7 +930,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_control_list_base64, accessibility, allow_comments, allow_markup, allow_reassign, allow_recipient_recursion, allow_view_history, any_signer, asynchronous, attachments, attachments_uri, authoritative_copy, authoritative_copy_default, auto_navigation, brand_id, brand_lock, certificate_uri, completed_date_time, composite_templates, copy_recipient_data, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, disable_responsive_document, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_attachments, envelope_documents, envelope_id, envelope_id_stamping, envelope_location, envelope_metadata, envelope_uri, event_notification, event_notifications, expire_after, expire_date_time, expire_enabled, external_envelope_id, folders, has_comments, has_form_data_changed, has_wav_file, holder, initial_sent_date_time, is21_cfr_part11, is_dynamic_envelope, is_signature_provider_envelope, last_modified_date_time, location, lock_information, message_lock, notification, notification_uri, password, power_form, purge_completed_date, purge_request_date, purge_state, recipients, recipients_lock, recipients_uri, sender, sent_date_time, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, status_date_time, template_id, template_roles, templates_uri, transaction_id, use_disclosure, voided_date_time, voided_reason].hash
+      [access_control_list_base64, accessibility, allow_comments, allow_markup, allow_reassign, allow_recipient_recursion, allow_view_history, any_signer, asynchronous, attachments, attachments_uri, authoritative_copy, authoritative_copy_default, auto_navigation, brand_id, brand_lock, certificate_uri, completed_date_time, composite_templates, copy_recipient_data, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, disable_responsive_document, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_attachments, envelope_documents, envelope_id, envelope_id_stamping, envelope_location, envelope_metadata, envelope_uri, event_notification, event_notifications, expire_after, expire_date_time, expire_enabled, external_envelope_id, folders, has_comments, has_form_data_changed, has_wav_file, holder, initial_sent_date_time, is21_cfr_part11, is_dynamic_envelope, is_signature_provider_envelope, last_modified_date_time, location, lock_information, message_lock, notification, notification_uri, password, power_form, purge_completed_date, purge_request_date, purge_state, recipients, recipients_lock, recipients_uri, sender, sent_date_time, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, status_date_time, template_id, template_roles, templates_uri, transaction_id, use_disclosure, voided_date_time, voided_reason, workflow].hash
     end
 
     # Builds the object from hash

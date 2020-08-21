@@ -13,34 +13,56 @@ Swagger Codegen version: 2.4.13-SNAPSHOT
 require 'date'
 
 module DocuSign_eSign
-  class RecipientAdditionalNotification
-    attr_accessor :phone_number
+  class BulkSendBatchSummary
+    # 
+    attr_accessor :batch_id
 
     # 
-    attr_accessor :secondary_delivery_method
-
-    attr_accessor :secondary_delivery_method_metadata
+    attr_accessor :batch_name
 
     # 
-    attr_accessor :secondary_delivery_status
+    attr_accessor :batch_size
+
+    # 
+    attr_accessor :batch_uri
+
+    # 
+    attr_accessor :failed
+
+    # 
+    attr_accessor :queued
+
+    # 
+    attr_accessor :sent
+
+    # 
+    attr_accessor :submitted_date
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'phone_number' => :'phoneNumber',
-        :'secondary_delivery_method' => :'secondaryDeliveryMethod',
-        :'secondary_delivery_method_metadata' => :'secondaryDeliveryMethodMetadata',
-        :'secondary_delivery_status' => :'secondaryDeliveryStatus'
+        :'batch_id' => :'batchId',
+        :'batch_name' => :'batchName',
+        :'batch_size' => :'batchSize',
+        :'batch_uri' => :'batchUri',
+        :'failed' => :'failed',
+        :'queued' => :'queued',
+        :'sent' => :'sent',
+        :'submitted_date' => :'submittedDate'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'phone_number' => :'RecipientPhoneNumber',
-        :'secondary_delivery_method' => :'String',
-        :'secondary_delivery_method_metadata' => :'PropertyMetadata',
-        :'secondary_delivery_status' => :'String'
+        :'batch_id' => :'String',
+        :'batch_name' => :'String',
+        :'batch_size' => :'String',
+        :'batch_uri' => :'String',
+        :'failed' => :'String',
+        :'queued' => :'String',
+        :'sent' => :'String',
+        :'submitted_date' => :'String'
       }
     end
 
@@ -52,20 +74,36 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'phoneNumber')
-        self.phone_number = attributes[:'phoneNumber']
+      if attributes.has_key?(:'batchId')
+        self.batch_id = attributes[:'batchId']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethod')
-        self.secondary_delivery_method = attributes[:'secondaryDeliveryMethod']
+      if attributes.has_key?(:'batchName')
+        self.batch_name = attributes[:'batchName']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethodMetadata')
-        self.secondary_delivery_method_metadata = attributes[:'secondaryDeliveryMethodMetadata']
+      if attributes.has_key?(:'batchSize')
+        self.batch_size = attributes[:'batchSize']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryStatus')
-        self.secondary_delivery_status = attributes[:'secondaryDeliveryStatus']
+      if attributes.has_key?(:'batchUri')
+        self.batch_uri = attributes[:'batchUri']
+      end
+
+      if attributes.has_key?(:'failed')
+        self.failed = attributes[:'failed']
+      end
+
+      if attributes.has_key?(:'queued')
+        self.queued = attributes[:'queued']
+      end
+
+      if attributes.has_key?(:'sent')
+        self.sent = attributes[:'sent']
+      end
+
+      if attributes.has_key?(:'submittedDate')
+        self.submitted_date = attributes[:'submittedDate']
       end
     end
 
@@ -87,10 +125,14 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          phone_number == o.phone_number &&
-          secondary_delivery_method == o.secondary_delivery_method &&
-          secondary_delivery_method_metadata == o.secondary_delivery_method_metadata &&
-          secondary_delivery_status == o.secondary_delivery_status
+          batch_id == o.batch_id &&
+          batch_name == o.batch_name &&
+          batch_size == o.batch_size &&
+          batch_uri == o.batch_uri &&
+          failed == o.failed &&
+          queued == o.queued &&
+          sent == o.sent &&
+          submitted_date == o.submitted_date
     end
 
     # @see the `==` method
@@ -102,7 +144,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [phone_number, secondary_delivery_method, secondary_delivery_method_metadata, secondary_delivery_status].hash
+      [batch_id, batch_name, batch_size, batch_uri, failed, queued, sent, submitted_date].hash
     end
 
     # Builds the object from hash

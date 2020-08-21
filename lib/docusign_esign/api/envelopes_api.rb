@@ -2330,6 +2330,58 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Delete the workflow definition for an envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [nil]
+    def delete_envelope_workflow_definition(account_id, envelope_id)
+      delete_envelope_workflow_definition_with_http_info(account_id, envelope_id)
+      return nil
+    end
+
+    # Delete the workflow definition for an envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_envelope_workflow_definition_with_http_info(account_id, envelope_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.delete_envelope_workflow_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.delete_envelope_workflow_definition" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.delete_envelope_workflow_definition" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#delete_envelope_workflow_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Deletes an envelope lock.
     # Deletes the lock from the specified envelope. The `X-DocuSign-Edit` header must be included in the request.
     # @param account_id The external account number (int) or account ID Guid.
@@ -2550,6 +2602,58 @@ module DocuSign_eSign
         :return_type => 'Tabs')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#delete_tabs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete the workflow definition for a template.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @return [nil]
+    def delete_template_workflow_definition(account_id, template_id)
+      delete_template_workflow_definition_with_http_info(account_id, template_id)
+      return nil
+    end
+
+    # Delete the workflow definition for a template.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_template_workflow_definition_with_http_info(account_id, template_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.delete_template_workflow_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.delete_template_workflow_definition" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling EnvelopesApi.delete_template_workflow_definition" if template_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/workflow".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#delete_template_workflow_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3427,6 +3531,59 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Returns the workflow definition for an envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [Workflow]
+    def get_envelope_workflow_definition(account_id, envelope_id)
+      data, _status_code, _headers = get_envelope_workflow_definition_with_http_info(account_id, envelope_id)
+      return data
+    end
+
+    # Returns the workflow definition for an envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [Array<(Workflow, Fixnum, Hash)>] Workflow data, response status code and response headers
+    def get_envelope_workflow_definition_with_http_info(account_id, envelope_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_envelope_workflow_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_envelope_workflow_definition" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_envelope_workflow_definition" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Workflow')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_envelope_workflow_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Returns envelope form data for an existing envelope.
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -4052,6 +4209,59 @@ module DocuSign_eSign
         :return_type => 'DocumentVisibilityList')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#get_template_recipient_document_visibility\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns the workflow definition for a template.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @return [Workflow]
+    def get_template_workflow_definition(account_id, template_id)
+      data, _status_code, _headers = get_template_workflow_definition_with_http_info(account_id, template_id)
+      return data
+    end
+
+    # Returns the workflow definition for a template.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @return [Array<(Workflow, Fixnum, Hash)>] Workflow data, response status code and response headers
+    def get_template_workflow_definition_with_http_info(account_id, template_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_template_workflow_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_template_workflow_definition" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling EnvelopesApi.get_template_workflow_definition" if template_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/workflow".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Workflow')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_template_workflow_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -5458,6 +5668,61 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Updates the envelope workflow definition for an envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow  (optional parameter)
+    # @return [Workflow]
+    def update_envelope_workflow_definition(account_id, envelope_id, workflow)
+      data, _status_code, _headers = update_envelope_workflow_definition_with_http_info(account_id, envelope_id,  workflow)
+      return data
+    end
+
+    # Updates the envelope workflow definition for an envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow  (optional parameter)
+    # @return [Array<(Workflow, Fixnum, Hash)>] Workflow data, response status code and response headers
+    def update_envelope_workflow_definition_with_http_info(account_id, envelope_id, workflow)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_envelope_workflow_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_envelope_workflow_definition" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.update_envelope_workflow_definition" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(workflow)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Workflow')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#update_envelope_workflow_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Updates an envelope lock.
     # Updates the lock duration time or update the `lockedByApp` property information for the specified envelope. The user and integrator key must match the user specified by the `lockByUser` property and integrator key information and the `X-DocuSign-Edit` header must be included or an error will be generated.
     # @param account_id The external account number (int) or account ID Guid.
@@ -6079,6 +6344,61 @@ module DocuSign_eSign
         :return_type => 'TemplateDocumentVisibilityList')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#update_template_recipients_document_visibility\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Updates the workflow definition for a template.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow  (optional parameter)
+    # @return [Workflow]
+    def update_template_workflow_definition(account_id, template_id, workflow)
+      data, _status_code, _headers = update_template_workflow_definition_with_http_info(account_id, template_id,  workflow)
+      return data
+    end
+
+    # Updates the workflow definition for a template.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow  (optional parameter)
+    # @return [Array<(Workflow, Fixnum, Hash)>] Workflow data, response status code and response headers
+    def update_template_workflow_definition_with_http_info(account_id, template_id, workflow)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_template_workflow_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_template_workflow_definition" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling EnvelopesApi.update_template_workflow_definition" if template_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/workflow".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(workflow)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Workflow')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#update_template_workflow_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

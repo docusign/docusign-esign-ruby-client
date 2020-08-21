@@ -13,34 +13,46 @@ Swagger Codegen version: 2.4.13-SNAPSHOT
 require 'date'
 
 module DocuSign_eSign
-  class RecipientAdditionalNotification
-    attr_accessor :phone_number
+  class ConditionalRecipientRuleFilter
+    # 
+    attr_accessor :operator
+
+    # Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
+    attr_accessor :recipient_id
 
     # 
-    attr_accessor :secondary_delivery_method
+    attr_accessor :scope
 
-    attr_accessor :secondary_delivery_method_metadata
+    # The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     
+    attr_accessor :tab_id
 
-    # 
-    attr_accessor :secondary_delivery_status
+    # The label string associated with the tab.
+    attr_accessor :tab_label
+
+    # Specifies the value of the tab. 
+    attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'phone_number' => :'phoneNumber',
-        :'secondary_delivery_method' => :'secondaryDeliveryMethod',
-        :'secondary_delivery_method_metadata' => :'secondaryDeliveryMethodMetadata',
-        :'secondary_delivery_status' => :'secondaryDeliveryStatus'
+        :'operator' => :'operator',
+        :'recipient_id' => :'recipientId',
+        :'scope' => :'scope',
+        :'tab_id' => :'tabId',
+        :'tab_label' => :'tabLabel',
+        :'value' => :'value'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'phone_number' => :'RecipientPhoneNumber',
-        :'secondary_delivery_method' => :'String',
-        :'secondary_delivery_method_metadata' => :'PropertyMetadata',
-        :'secondary_delivery_status' => :'String'
+        :'operator' => :'String',
+        :'recipient_id' => :'String',
+        :'scope' => :'String',
+        :'tab_id' => :'String',
+        :'tab_label' => :'String',
+        :'value' => :'String'
       }
     end
 
@@ -52,20 +64,28 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'phoneNumber')
-        self.phone_number = attributes[:'phoneNumber']
+      if attributes.has_key?(:'operator')
+        self.operator = attributes[:'operator']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethod')
-        self.secondary_delivery_method = attributes[:'secondaryDeliveryMethod']
+      if attributes.has_key?(:'recipientId')
+        self.recipient_id = attributes[:'recipientId']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethodMetadata')
-        self.secondary_delivery_method_metadata = attributes[:'secondaryDeliveryMethodMetadata']
+      if attributes.has_key?(:'scope')
+        self.scope = attributes[:'scope']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryStatus')
-        self.secondary_delivery_status = attributes[:'secondaryDeliveryStatus']
+      if attributes.has_key?(:'tabId')
+        self.tab_id = attributes[:'tabId']
+      end
+
+      if attributes.has_key?(:'tabLabel')
+        self.tab_label = attributes[:'tabLabel']
+      end
+
+      if attributes.has_key?(:'value')
+        self.value = attributes[:'value']
       end
     end
 
@@ -87,10 +107,12 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          phone_number == o.phone_number &&
-          secondary_delivery_method == o.secondary_delivery_method &&
-          secondary_delivery_method_metadata == o.secondary_delivery_method_metadata &&
-          secondary_delivery_status == o.secondary_delivery_status
+          operator == o.operator &&
+          recipient_id == o.recipient_id &&
+          scope == o.scope &&
+          tab_id == o.tab_id &&
+          tab_label == o.tab_label &&
+          value == o.value
     end
 
     # @see the `==` method
@@ -102,7 +124,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [phone_number, secondary_delivery_method, secondary_delivery_method_metadata, secondary_delivery_status].hash
+      [operator, recipient_id, scope, tab_id, tab_label, value].hash
     end
 
     # Builds the object from hash
