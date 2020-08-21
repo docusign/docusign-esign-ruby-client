@@ -115,8 +115,14 @@ module DocuSign_eSign
     # 
     attr_accessor :payment_item_name
 
+    # When set to **true** and shared is true, information must be entered in this field to complete the envelope. 
+    attr_accessor :require_all
+
     # When set to **true**, the signer is required to fill out this tab
     attr_accessor :required
+
+    # Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field.
+    attr_accessor :require_initial_on_shared_change
 
     # 
     attr_accessor :scale_value
@@ -187,7 +193,9 @@ module DocuSign_eSign
         :'payment_item_code' => :'paymentItemCode',
         :'payment_item_description' => :'paymentItemDescription',
         :'payment_item_name' => :'paymentItemName',
+        :'require_all' => :'requireAll',
         :'required' => :'required',
+        :'require_initial_on_shared_change' => :'requireInitialOnSharedChange',
         :'scale_value' => :'scaleValue',
         :'selected' => :'selected',
         :'shared' => :'shared',
@@ -239,7 +247,9 @@ module DocuSign_eSign
         :'payment_item_code' => :'String',
         :'payment_item_description' => :'String',
         :'payment_item_name' => :'String',
+        :'require_all' => :'String',
         :'required' => :'String',
+        :'require_initial_on_shared_change' => :'String',
         :'scale_value' => :'String',
         :'selected' => :'String',
         :'shared' => :'String',
@@ -400,8 +410,16 @@ module DocuSign_eSign
         self.payment_item_name = attributes[:'paymentItemName']
       end
 
+      if attributes.has_key?(:'requireAll')
+        self.require_all = attributes[:'requireAll']
+      end
+
       if attributes.has_key?(:'required')
         self.required = attributes[:'required']
+      end
+
+      if attributes.has_key?(:'requireInitialOnSharedChange')
+        self.require_initial_on_shared_change = attributes[:'requireInitialOnSharedChange']
       end
 
       if attributes.has_key?(:'scaleValue')
@@ -501,7 +519,9 @@ module DocuSign_eSign
           payment_item_code == o.payment_item_code &&
           payment_item_description == o.payment_item_description &&
           payment_item_name == o.payment_item_name &&
+          require_all == o.require_all &&
           required == o.required &&
+          require_initial_on_shared_change == o.require_initial_on_shared_change &&
           scale_value == o.scale_value &&
           selected == o.selected &&
           shared == o.shared &&
@@ -524,7 +544,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor, anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_units, anchor_x_offset, anchor_y_offset, bold, collaborative, conceal_value_on_document, created_by_display_name, created_by_user_id, custom_tab_id, disable_auto_size, editable, font, font_color, font_size, height, included_in_email, initial_value, italic, items, last_modified, last_modified_by_display_name, last_modified_by_user_id, locked, maximum_length, merge_field, name, payment_item_code, payment_item_description, payment_item_name, required, scale_value, selected, shared, stamp_type, stamp_type_metadata, tab_label, type, underline, validation_message, validation_pattern, width].hash
+      [anchor, anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_units, anchor_x_offset, anchor_y_offset, bold, collaborative, conceal_value_on_document, created_by_display_name, created_by_user_id, custom_tab_id, disable_auto_size, editable, font, font_color, font_size, height, included_in_email, initial_value, italic, items, last_modified, last_modified_by_display_name, last_modified_by_user_id, locked, maximum_length, merge_field, name, payment_item_code, payment_item_description, payment_item_name, require_all, required, require_initial_on_shared_change, scale_value, selected, shared, stamp_type, stamp_type_metadata, tab_label, type, underline, validation_message, validation_pattern, width].hash
     end
 
     # Builds the object from hash
