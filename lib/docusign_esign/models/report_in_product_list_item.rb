@@ -13,34 +13,86 @@ Swagger Codegen version: 2.4.13-SNAPSHOT
 require 'date'
 
 module DocuSign_eSign
-  class RecipientAdditionalNotification
-    attr_accessor :phone_number
+  class ReportInProductListItem
+    # 
+    attr_accessor :get_uri
 
     # 
-    attr_accessor :secondary_delivery_method
-
-    attr_accessor :secondary_delivery_method_metadata
+    attr_accessor :last_scheduled_execution_date
 
     # 
-    attr_accessor :secondary_delivery_status
+    attr_accessor :last_scheduled_execution_success_date
+
+    # 
+    attr_accessor :report_customized_id
+
+    # 
+    attr_accessor :report_description
+
+    # 
+    attr_accessor :report_id
+
+    # 
+    attr_accessor :report_name
+
+    # 
+    attr_accessor :report_type
+
+    # 
+    attr_accessor :run_uri
+
+    # 
+    attr_accessor :save_uri
+
+    # 
+    attr_accessor :schedule_create_date
+
+    # 
+    attr_accessor :schedule_end_date
+
+    # 
+    attr_accessor :schedule_id
+
+    # 
+    attr_accessor :schedule_renew_duration_days
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'phone_number' => :'phoneNumber',
-        :'secondary_delivery_method' => :'secondaryDeliveryMethod',
-        :'secondary_delivery_method_metadata' => :'secondaryDeliveryMethodMetadata',
-        :'secondary_delivery_status' => :'secondaryDeliveryStatus'
+        :'get_uri' => :'getUri',
+        :'last_scheduled_execution_date' => :'lastScheduledExecutionDate',
+        :'last_scheduled_execution_success_date' => :'lastScheduledExecutionSuccessDate',
+        :'report_customized_id' => :'reportCustomizedId',
+        :'report_description' => :'reportDescription',
+        :'report_id' => :'reportId',
+        :'report_name' => :'reportName',
+        :'report_type' => :'reportType',
+        :'run_uri' => :'runUri',
+        :'save_uri' => :'saveUri',
+        :'schedule_create_date' => :'scheduleCreateDate',
+        :'schedule_end_date' => :'scheduleEndDate',
+        :'schedule_id' => :'scheduleId',
+        :'schedule_renew_duration_days' => :'scheduleRenewDurationDays'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'phone_number' => :'RecipientPhoneNumber',
-        :'secondary_delivery_method' => :'String',
-        :'secondary_delivery_method_metadata' => :'PropertyMetadata',
-        :'secondary_delivery_status' => :'String'
+        :'get_uri' => :'String',
+        :'last_scheduled_execution_date' => :'String',
+        :'last_scheduled_execution_success_date' => :'String',
+        :'report_customized_id' => :'String',
+        :'report_description' => :'String',
+        :'report_id' => :'String',
+        :'report_name' => :'String',
+        :'report_type' => :'String',
+        :'run_uri' => :'String',
+        :'save_uri' => :'String',
+        :'schedule_create_date' => :'String',
+        :'schedule_end_date' => :'String',
+        :'schedule_id' => :'String',
+        :'schedule_renew_duration_days' => :'String'
       }
     end
 
@@ -52,20 +104,60 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'phoneNumber')
-        self.phone_number = attributes[:'phoneNumber']
+      if attributes.has_key?(:'getUri')
+        self.get_uri = attributes[:'getUri']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethod')
-        self.secondary_delivery_method = attributes[:'secondaryDeliveryMethod']
+      if attributes.has_key?(:'lastScheduledExecutionDate')
+        self.last_scheduled_execution_date = attributes[:'lastScheduledExecutionDate']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethodMetadata')
-        self.secondary_delivery_method_metadata = attributes[:'secondaryDeliveryMethodMetadata']
+      if attributes.has_key?(:'lastScheduledExecutionSuccessDate')
+        self.last_scheduled_execution_success_date = attributes[:'lastScheduledExecutionSuccessDate']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryStatus')
-        self.secondary_delivery_status = attributes[:'secondaryDeliveryStatus']
+      if attributes.has_key?(:'reportCustomizedId')
+        self.report_customized_id = attributes[:'reportCustomizedId']
+      end
+
+      if attributes.has_key?(:'reportDescription')
+        self.report_description = attributes[:'reportDescription']
+      end
+
+      if attributes.has_key?(:'reportId')
+        self.report_id = attributes[:'reportId']
+      end
+
+      if attributes.has_key?(:'reportName')
+        self.report_name = attributes[:'reportName']
+      end
+
+      if attributes.has_key?(:'reportType')
+        self.report_type = attributes[:'reportType']
+      end
+
+      if attributes.has_key?(:'runUri')
+        self.run_uri = attributes[:'runUri']
+      end
+
+      if attributes.has_key?(:'saveUri')
+        self.save_uri = attributes[:'saveUri']
+      end
+
+      if attributes.has_key?(:'scheduleCreateDate')
+        self.schedule_create_date = attributes[:'scheduleCreateDate']
+      end
+
+      if attributes.has_key?(:'scheduleEndDate')
+        self.schedule_end_date = attributes[:'scheduleEndDate']
+      end
+
+      if attributes.has_key?(:'scheduleId')
+        self.schedule_id = attributes[:'scheduleId']
+      end
+
+      if attributes.has_key?(:'scheduleRenewDurationDays')
+        self.schedule_renew_duration_days = attributes[:'scheduleRenewDurationDays']
       end
     end
 
@@ -87,10 +179,20 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          phone_number == o.phone_number &&
-          secondary_delivery_method == o.secondary_delivery_method &&
-          secondary_delivery_method_metadata == o.secondary_delivery_method_metadata &&
-          secondary_delivery_status == o.secondary_delivery_status
+          get_uri == o.get_uri &&
+          last_scheduled_execution_date == o.last_scheduled_execution_date &&
+          last_scheduled_execution_success_date == o.last_scheduled_execution_success_date &&
+          report_customized_id == o.report_customized_id &&
+          report_description == o.report_description &&
+          report_id == o.report_id &&
+          report_name == o.report_name &&
+          report_type == o.report_type &&
+          run_uri == o.run_uri &&
+          save_uri == o.save_uri &&
+          schedule_create_date == o.schedule_create_date &&
+          schedule_end_date == o.schedule_end_date &&
+          schedule_id == o.schedule_id &&
+          schedule_renew_duration_days == o.schedule_renew_duration_days
     end
 
     # @see the `==` method
@@ -102,7 +204,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [phone_number, secondary_delivery_method, secondary_delivery_method_metadata, secondary_delivery_status].hash
+      [get_uri, last_scheduled_execution_date, last_scheduled_execution_success_date, report_customized_id, report_description, report_id, report_name, report_type, run_uri, save_uri, schedule_create_date, schedule_end_date, schedule_id, schedule_renew_duration_days].hash
     end
 
     # Builds the object from hash

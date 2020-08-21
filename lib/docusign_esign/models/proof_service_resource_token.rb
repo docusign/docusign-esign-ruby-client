@@ -15,18 +15,23 @@ require 'date'
 module DocuSign_eSign
   class ProofServiceResourceToken
     # 
+    attr_accessor :proof_base_uri
+
+    # 
     attr_accessor :resource_token
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'resource_token' => :'ResourceToken'
+        :'proof_base_uri' => :'proofBaseURI',
+        :'resource_token' => :'resourceToken'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'proof_base_uri' => :'String',
         :'resource_token' => :'String'
       }
     end
@@ -39,8 +44,12 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'ResourceToken')
-        self.resource_token = attributes[:'ResourceToken']
+      if attributes.has_key?(:'proofBaseURI')
+        self.proof_base_uri = attributes[:'proofBaseURI']
+      end
+
+      if attributes.has_key?(:'resourceToken')
+        self.resource_token = attributes[:'resourceToken']
       end
     end
 
@@ -62,6 +71,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          proof_base_uri == o.proof_base_uri &&
           resource_token == o.resource_token
     end
 
@@ -74,7 +84,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [resource_token].hash
+      [proof_base_uri, resource_token].hash
     end
 
     # Builds the object from hash

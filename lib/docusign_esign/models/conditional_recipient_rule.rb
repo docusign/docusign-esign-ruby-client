@@ -13,34 +13,35 @@ Swagger Codegen version: 2.4.13-SNAPSHOT
 require 'date'
 
 module DocuSign_eSign
-  class RecipientAdditionalNotification
-    attr_accessor :phone_number
+  class ConditionalRecipientRule
+    # 
+    attr_accessor :conditions
 
     # 
-    attr_accessor :secondary_delivery_method
+    attr_accessor :order
 
-    attr_accessor :secondary_delivery_method_metadata
+    attr_accessor :recipient_group
 
-    # 
-    attr_accessor :secondary_delivery_status
+    # Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
+    attr_accessor :recipient_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'phone_number' => :'phoneNumber',
-        :'secondary_delivery_method' => :'secondaryDeliveryMethod',
-        :'secondary_delivery_method_metadata' => :'secondaryDeliveryMethodMetadata',
-        :'secondary_delivery_status' => :'secondaryDeliveryStatus'
+        :'conditions' => :'conditions',
+        :'order' => :'order',
+        :'recipient_group' => :'recipientGroup',
+        :'recipient_id' => :'recipientId'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'phone_number' => :'RecipientPhoneNumber',
-        :'secondary_delivery_method' => :'String',
-        :'secondary_delivery_method_metadata' => :'PropertyMetadata',
-        :'secondary_delivery_status' => :'String'
+        :'conditions' => :'Array<ConditionalRecipientRuleCondition>',
+        :'order' => :'String',
+        :'recipient_group' => :'RecipientGroup',
+        :'recipient_id' => :'String'
       }
     end
 
@@ -52,20 +53,22 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'phoneNumber')
-        self.phone_number = attributes[:'phoneNumber']
+      if attributes.has_key?(:'conditions')
+        if (value = attributes[:'conditions']).is_a?(Array)
+          self.conditions = value
+        end
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethod')
-        self.secondary_delivery_method = attributes[:'secondaryDeliveryMethod']
+      if attributes.has_key?(:'order')
+        self.order = attributes[:'order']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethodMetadata')
-        self.secondary_delivery_method_metadata = attributes[:'secondaryDeliveryMethodMetadata']
+      if attributes.has_key?(:'recipientGroup')
+        self.recipient_group = attributes[:'recipientGroup']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryStatus')
-        self.secondary_delivery_status = attributes[:'secondaryDeliveryStatus']
+      if attributes.has_key?(:'recipientId')
+        self.recipient_id = attributes[:'recipientId']
       end
     end
 
@@ -87,10 +90,10 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          phone_number == o.phone_number &&
-          secondary_delivery_method == o.secondary_delivery_method &&
-          secondary_delivery_method_metadata == o.secondary_delivery_method_metadata &&
-          secondary_delivery_status == o.secondary_delivery_status
+          conditions == o.conditions &&
+          order == o.order &&
+          recipient_group == o.recipient_group &&
+          recipient_id == o.recipient_id
     end
 
     # @see the `==` method
@@ -102,7 +105,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [phone_number, secondary_delivery_method, secondary_delivery_method_metadata, secondary_delivery_status].hash
+      [conditions, order, recipient_group, recipient_id].hash
     end
 
     # Builds the object from hash

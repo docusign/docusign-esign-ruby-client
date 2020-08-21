@@ -13,34 +13,55 @@ Swagger Codegen version: 2.4.13-SNAPSHOT
 require 'date'
 
 module DocuSign_eSign
-  class RecipientAdditionalNotification
-    attr_accessor :phone_number
+  class WorkflowStep
+    # 
+    attr_accessor :action
 
     # 
-    attr_accessor :secondary_delivery_method
-
-    attr_accessor :secondary_delivery_method_metadata
+    attr_accessor :completed_date
 
     # 
-    attr_accessor :secondary_delivery_status
+    attr_accessor :item_id
+
+    attr_accessor :recipient_routing
+
+    # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+    attr_accessor :status
+
+    # 
+    attr_accessor :triggered_date
+
+    # 
+    attr_accessor :trigger_on_item
+
+    # 
+    attr_accessor :workflow_step_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'phone_number' => :'phoneNumber',
-        :'secondary_delivery_method' => :'secondaryDeliveryMethod',
-        :'secondary_delivery_method_metadata' => :'secondaryDeliveryMethodMetadata',
-        :'secondary_delivery_status' => :'secondaryDeliveryStatus'
+        :'action' => :'action',
+        :'completed_date' => :'completedDate',
+        :'item_id' => :'itemId',
+        :'recipient_routing' => :'recipientRouting',
+        :'status' => :'status',
+        :'triggered_date' => :'triggeredDate',
+        :'trigger_on_item' => :'triggerOnItem',
+        :'workflow_step_id' => :'workflowStepId'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'phone_number' => :'RecipientPhoneNumber',
-        :'secondary_delivery_method' => :'String',
-        :'secondary_delivery_method_metadata' => :'PropertyMetadata',
-        :'secondary_delivery_status' => :'String'
+        :'action' => :'String',
+        :'completed_date' => :'String',
+        :'item_id' => :'String',
+        :'recipient_routing' => :'RecipientRouting',
+        :'status' => :'String',
+        :'triggered_date' => :'String',
+        :'trigger_on_item' => :'String',
+        :'workflow_step_id' => :'String'
       }
     end
 
@@ -52,20 +73,36 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'phoneNumber')
-        self.phone_number = attributes[:'phoneNumber']
+      if attributes.has_key?(:'action')
+        self.action = attributes[:'action']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethod')
-        self.secondary_delivery_method = attributes[:'secondaryDeliveryMethod']
+      if attributes.has_key?(:'completedDate')
+        self.completed_date = attributes[:'completedDate']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethodMetadata')
-        self.secondary_delivery_method_metadata = attributes[:'secondaryDeliveryMethodMetadata']
+      if attributes.has_key?(:'itemId')
+        self.item_id = attributes[:'itemId']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryStatus')
-        self.secondary_delivery_status = attributes[:'secondaryDeliveryStatus']
+      if attributes.has_key?(:'recipientRouting')
+        self.recipient_routing = attributes[:'recipientRouting']
+      end
+
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
+      end
+
+      if attributes.has_key?(:'triggeredDate')
+        self.triggered_date = attributes[:'triggeredDate']
+      end
+
+      if attributes.has_key?(:'triggerOnItem')
+        self.trigger_on_item = attributes[:'triggerOnItem']
+      end
+
+      if attributes.has_key?(:'workflowStepId')
+        self.workflow_step_id = attributes[:'workflowStepId']
       end
     end
 
@@ -87,10 +124,14 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          phone_number == o.phone_number &&
-          secondary_delivery_method == o.secondary_delivery_method &&
-          secondary_delivery_method_metadata == o.secondary_delivery_method_metadata &&
-          secondary_delivery_status == o.secondary_delivery_status
+          action == o.action &&
+          completed_date == o.completed_date &&
+          item_id == o.item_id &&
+          recipient_routing == o.recipient_routing &&
+          status == o.status &&
+          triggered_date == o.triggered_date &&
+          trigger_on_item == o.trigger_on_item &&
+          workflow_step_id == o.workflow_step_id
     end
 
     # @see the `==` method
@@ -102,7 +143,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [phone_number, secondary_delivery_method, secondary_delivery_method_metadata, secondary_delivery_status].hash
+      [action, completed_date, item_id, recipient_routing, status, triggered_date, trigger_on_item, workflow_step_id].hash
     end
 
     # Builds the object from hash
