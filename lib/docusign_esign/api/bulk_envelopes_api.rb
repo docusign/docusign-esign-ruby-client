@@ -29,6 +29,24 @@ module DocuSign_eSign
     end
   end
 
+  class GetBulkSendBatchesOptions
+    # 
+    attr_accessor :batch_ids
+
+    # 
+    attr_accessor :count
+
+    # 
+    attr_accessor :start_position
+
+    # 
+    attr_accessor :status
+
+    def self.default
+      @@default ||= GetBulkSendBatchesOptions.new
+    end
+  end
+
   class GetRecipientsOptions
     # 
     attr_accessor :include_tabs
@@ -44,9 +62,6 @@ module DocuSign_eSign
   class ListOptions
     # The number of results to return. This can be 1 to 20.
     attr_accessor :count
-
-    # 
-    attr_accessor :include
 
     # The position of the bulk envelope items in the response. This is used for repeated calls, when the number of bulk envelopes returned is too large for one return. The default value is 0.
     attr_accessor :start_position
@@ -393,6 +408,114 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Gets a specific bulk send batch status
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param bulk_send_batch_id 
+    # @return [BulkSendBatchStatus]
+    def get_bulk_send_batch_status(account_id, bulk_send_batch_id)
+      data, _status_code, _headers = get_bulk_send_batch_status_with_http_info(account_id, bulk_send_batch_id)
+      return data
+    end
+
+    # Gets a specific bulk send batch status
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param bulk_send_batch_id 
+    # @return [Array<(BulkSendBatchStatus, Fixnum, Hash)>] BulkSendBatchStatus data, response status code and response headers
+    def get_bulk_send_batch_status_with_http_info(account_id, bulk_send_batch_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BulkEnvelopesApi.get_bulk_send_batch_status ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling BulkEnvelopesApi.get_bulk_send_batch_status" if account_id.nil?
+      # verify the required parameter 'bulk_send_batch_id' is set
+      fail ArgumentError, "Missing the required parameter 'bulk_send_batch_id' when calling BulkEnvelopesApi.get_bulk_send_batch_status" if bulk_send_batch_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'bulkSendBatchId' + '}', bulk_send_batch_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'BulkSendBatchStatus')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BulkEnvelopesApi#get_bulk_send_batch_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns a list of bulk send batch satuses initiated by account.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param DocuSign_eSign::GetBulkSendBatchesOptions Options for modifying the behavior of the function.
+    # @return [BulkSendBatchSummaries]
+    def get_bulk_send_batches(account_id, options = DocuSign_eSign::GetBulkSendBatchesOptions.default)
+      data, _status_code, _headers = get_bulk_send_batches_with_http_info(account_id, options)
+      return data
+    end
+
+    # Returns a list of bulk send batch satuses initiated by account.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param DocuSign_eSign::GetBulkSendBatchesOptions Options for modifying the behavior of the function.
+    # @return [Array<(BulkSendBatchSummaries, Fixnum, Hash)>] BulkSendBatchSummaries data, response status code and response headers
+    def get_bulk_send_batches_with_http_info(account_id, options = DocuSign_eSign::GetBulkSendBatchesOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BulkEnvelopesApi.get_bulk_send_batches ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling BulkEnvelopesApi.get_bulk_send_batches" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/bulk_send_batch".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'batch_ids'] = options.batch_ids if !options.batch_ids.nil?
+      query_params[:'count'] = options.count if !options.count.nil?
+      query_params[:'start_position'] = options.start_position if !options.start_position.nil?
+      query_params[:'status'] = options.status if !options.status.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'BulkSendBatchSummaries')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BulkEnvelopesApi#get_bulk_send_batches\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Gets a specific bulk send list
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -583,7 +706,6 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'count'] = options.count if !options.count.nil?
-      query_params[:'include'] = options.include if !options.include.nil?
       query_params[:'start_position'] = options.start_position if !options.start_position.nil?
 
       # header parameters

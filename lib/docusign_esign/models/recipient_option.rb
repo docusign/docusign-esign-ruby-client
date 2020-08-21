@@ -13,34 +13,41 @@ Swagger Codegen version: 2.4.13-SNAPSHOT
 require 'date'
 
 module DocuSign_eSign
-  class RecipientAdditionalNotification
-    attr_accessor :phone_number
+  class RecipientOption
+    # 
+    attr_accessor :email
 
     # 
-    attr_accessor :secondary_delivery_method
-
-    attr_accessor :secondary_delivery_method_metadata
+    attr_accessor :name
 
     # 
-    attr_accessor :secondary_delivery_status
+    attr_accessor :recipient_label
+
+    # Optional element. Specifies the role name associated with the recipient.<br/><br/>This is required when working with template recipients.
+    attr_accessor :role_name
+
+    # When set to **true** and the feature is enabled in the sender's account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once).
+    attr_accessor :signing_group_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'phone_number' => :'phoneNumber',
-        :'secondary_delivery_method' => :'secondaryDeliveryMethod',
-        :'secondary_delivery_method_metadata' => :'secondaryDeliveryMethodMetadata',
-        :'secondary_delivery_status' => :'secondaryDeliveryStatus'
+        :'email' => :'email',
+        :'name' => :'name',
+        :'recipient_label' => :'recipientLabel',
+        :'role_name' => :'roleName',
+        :'signing_group_id' => :'signingGroupId'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'phone_number' => :'RecipientPhoneNumber',
-        :'secondary_delivery_method' => :'String',
-        :'secondary_delivery_method_metadata' => :'PropertyMetadata',
-        :'secondary_delivery_status' => :'String'
+        :'email' => :'String',
+        :'name' => :'String',
+        :'recipient_label' => :'String',
+        :'role_name' => :'String',
+        :'signing_group_id' => :'String'
       }
     end
 
@@ -52,20 +59,24 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'phoneNumber')
-        self.phone_number = attributes[:'phoneNumber']
+      if attributes.has_key?(:'email')
+        self.email = attributes[:'email']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethod')
-        self.secondary_delivery_method = attributes[:'secondaryDeliveryMethod']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethodMetadata')
-        self.secondary_delivery_method_metadata = attributes[:'secondaryDeliveryMethodMetadata']
+      if attributes.has_key?(:'recipientLabel')
+        self.recipient_label = attributes[:'recipientLabel']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryStatus')
-        self.secondary_delivery_status = attributes[:'secondaryDeliveryStatus']
+      if attributes.has_key?(:'roleName')
+        self.role_name = attributes[:'roleName']
+      end
+
+      if attributes.has_key?(:'signingGroupId')
+        self.signing_group_id = attributes[:'signingGroupId']
       end
     end
 
@@ -87,10 +98,11 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          phone_number == o.phone_number &&
-          secondary_delivery_method == o.secondary_delivery_method &&
-          secondary_delivery_method_metadata == o.secondary_delivery_method_metadata &&
-          secondary_delivery_status == o.secondary_delivery_status
+          email == o.email &&
+          name == o.name &&
+          recipient_label == o.recipient_label &&
+          role_name == o.role_name &&
+          signing_group_id == o.signing_group_id
     end
 
     # @see the `==` method
@@ -102,7 +114,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [phone_number, secondary_delivery_method, secondary_delivery_method_metadata, secondary_delivery_status].hash
+      [email, name, recipient_label, role_name, signing_group_id].hash
     end
 
     # Builds the object from hash

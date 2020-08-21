@@ -13,34 +13,66 @@ Swagger Codegen version: 2.4.13-SNAPSHOT
 require 'date'
 
 module DocuSign_eSign
-  class RecipientAdditionalNotification
-    attr_accessor :phone_number
+  class BulkSendBatchSummaries
+    # 
+    attr_accessor :batch_size_limit
 
     # 
-    attr_accessor :secondary_delivery_method
+    attr_accessor :bulk_batch_summaries
 
-    attr_accessor :secondary_delivery_method_metadata
+    # The last position in the result set. 
+    attr_accessor :end_position
+
+    # The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
+    attr_accessor :next_uri
+
+    # The postal code for the billing address.
+    attr_accessor :previous_uri
 
     # 
-    attr_accessor :secondary_delivery_status
+    attr_accessor :queue_limit
+
+    # The number of results returned in this response. 
+    attr_accessor :result_set_size
+
+    # Starting position of the current result set.
+    attr_accessor :start_position
+
+    # 
+    attr_accessor :total_queued
+
+    # The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
+    attr_accessor :total_set_size
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'phone_number' => :'phoneNumber',
-        :'secondary_delivery_method' => :'secondaryDeliveryMethod',
-        :'secondary_delivery_method_metadata' => :'secondaryDeliveryMethodMetadata',
-        :'secondary_delivery_status' => :'secondaryDeliveryStatus'
+        :'batch_size_limit' => :'batchSizeLimit',
+        :'bulk_batch_summaries' => :'bulkBatchSummaries',
+        :'end_position' => :'endPosition',
+        :'next_uri' => :'nextUri',
+        :'previous_uri' => :'previousUri',
+        :'queue_limit' => :'queueLimit',
+        :'result_set_size' => :'resultSetSize',
+        :'start_position' => :'startPosition',
+        :'total_queued' => :'totalQueued',
+        :'total_set_size' => :'totalSetSize'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'phone_number' => :'RecipientPhoneNumber',
-        :'secondary_delivery_method' => :'String',
-        :'secondary_delivery_method_metadata' => :'PropertyMetadata',
-        :'secondary_delivery_status' => :'String'
+        :'batch_size_limit' => :'String',
+        :'bulk_batch_summaries' => :'Array<BulkSendBatchSummary>',
+        :'end_position' => :'String',
+        :'next_uri' => :'String',
+        :'previous_uri' => :'String',
+        :'queue_limit' => :'String',
+        :'result_set_size' => :'String',
+        :'start_position' => :'String',
+        :'total_queued' => :'String',
+        :'total_set_size' => :'String'
       }
     end
 
@@ -52,20 +84,46 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'phoneNumber')
-        self.phone_number = attributes[:'phoneNumber']
+      if attributes.has_key?(:'batchSizeLimit')
+        self.batch_size_limit = attributes[:'batchSizeLimit']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethod')
-        self.secondary_delivery_method = attributes[:'secondaryDeliveryMethod']
+      if attributes.has_key?(:'bulkBatchSummaries')
+        if (value = attributes[:'bulkBatchSummaries']).is_a?(Array)
+          self.bulk_batch_summaries = value
+        end
       end
 
-      if attributes.has_key?(:'secondaryDeliveryMethodMetadata')
-        self.secondary_delivery_method_metadata = attributes[:'secondaryDeliveryMethodMetadata']
+      if attributes.has_key?(:'endPosition')
+        self.end_position = attributes[:'endPosition']
       end
 
-      if attributes.has_key?(:'secondaryDeliveryStatus')
-        self.secondary_delivery_status = attributes[:'secondaryDeliveryStatus']
+      if attributes.has_key?(:'nextUri')
+        self.next_uri = attributes[:'nextUri']
+      end
+
+      if attributes.has_key?(:'previousUri')
+        self.previous_uri = attributes[:'previousUri']
+      end
+
+      if attributes.has_key?(:'queueLimit')
+        self.queue_limit = attributes[:'queueLimit']
+      end
+
+      if attributes.has_key?(:'resultSetSize')
+        self.result_set_size = attributes[:'resultSetSize']
+      end
+
+      if attributes.has_key?(:'startPosition')
+        self.start_position = attributes[:'startPosition']
+      end
+
+      if attributes.has_key?(:'totalQueued')
+        self.total_queued = attributes[:'totalQueued']
+      end
+
+      if attributes.has_key?(:'totalSetSize')
+        self.total_set_size = attributes[:'totalSetSize']
       end
     end
 
@@ -87,10 +145,16 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          phone_number == o.phone_number &&
-          secondary_delivery_method == o.secondary_delivery_method &&
-          secondary_delivery_method_metadata == o.secondary_delivery_method_metadata &&
-          secondary_delivery_status == o.secondary_delivery_status
+          batch_size_limit == o.batch_size_limit &&
+          bulk_batch_summaries == o.bulk_batch_summaries &&
+          end_position == o.end_position &&
+          next_uri == o.next_uri &&
+          previous_uri == o.previous_uri &&
+          queue_limit == o.queue_limit &&
+          result_set_size == o.result_set_size &&
+          start_position == o.start_position &&
+          total_queued == o.total_queued &&
+          total_set_size == o.total_set_size
     end
 
     # @see the `==` method
@@ -102,7 +166,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [phone_number, secondary_delivery_method, secondary_delivery_method_metadata, secondary_delivery_status].hash
+      [batch_size_limit, bulk_batch_summaries, end_position, next_uri, previous_uri, queue_limit, result_set_size, start_position, total_queued, total_set_size].hash
     end
 
     # Builds the object from hash

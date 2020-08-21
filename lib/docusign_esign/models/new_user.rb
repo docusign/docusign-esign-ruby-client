@@ -26,6 +26,9 @@ module DocuSign_eSign
     attr_accessor :error_details
 
     # 
+    attr_accessor :membership_id
+
+    # 
     attr_accessor :permission_profile_id
 
     # 
@@ -50,6 +53,7 @@ module DocuSign_eSign
         :'created_date_time' => :'createdDateTime',
         :'email' => :'email',
         :'error_details' => :'errorDetails',
+        :'membership_id' => :'membershipId',
         :'permission_profile_id' => :'permissionProfileId',
         :'permission_profile_name' => :'permissionProfileName',
         :'uri' => :'uri',
@@ -66,6 +70,7 @@ module DocuSign_eSign
         :'created_date_time' => :'String',
         :'email' => :'String',
         :'error_details' => :'ErrorDetails',
+        :'membership_id' => :'String',
         :'permission_profile_id' => :'String',
         :'permission_profile_name' => :'String',
         :'uri' => :'String',
@@ -97,6 +102,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'errorDetails')
         self.error_details = attributes[:'errorDetails']
+      end
+
+      if attributes.has_key?(:'membershipId')
+        self.membership_id = attributes[:'membershipId']
       end
 
       if attributes.has_key?(:'permissionProfileId')
@@ -146,6 +155,7 @@ module DocuSign_eSign
           created_date_time == o.created_date_time &&
           email == o.email &&
           error_details == o.error_details &&
+          membership_id == o.membership_id &&
           permission_profile_id == o.permission_profile_id &&
           permission_profile_name == o.permission_profile_name &&
           uri == o.uri &&
@@ -163,7 +173,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [api_password, created_date_time, email, error_details, permission_profile_id, permission_profile_name, uri, user_id, user_name, user_status].hash
+      [api_password, created_date_time, email, error_details, membership_id, permission_profile_id, permission_profile_name, uri, user_id, user_name, user_status].hash
     end
 
     # Builds the object from hash

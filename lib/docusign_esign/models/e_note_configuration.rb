@@ -15,6 +15,9 @@ require 'date'
 module DocuSign_eSign
   class ENoteConfiguration
     # 
+    attr_accessor :api_key
+
+    # 
     attr_accessor :connect_configured
 
     # 
@@ -32,6 +35,7 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'api_key' => :'apiKey',
         :'connect_configured' => :'connectConfigured',
         :'e_note_configured' => :'eNoteConfigured',
         :'organization' => :'organization',
@@ -43,6 +47,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'api_key' => :'String',
         :'connect_configured' => :'String',
         :'e_note_configured' => :'String',
         :'organization' => :'String',
@@ -58,6 +63,10 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'apiKey')
+        self.api_key = attributes[:'apiKey']
+      end
 
       if attributes.has_key?(:'connectConfigured')
         self.connect_configured = attributes[:'connectConfigured']
@@ -98,6 +107,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          api_key == o.api_key &&
           connect_configured == o.connect_configured &&
           e_note_configured == o.e_note_configured &&
           organization == o.organization &&
@@ -114,7 +124,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [connect_configured, e_note_configured, organization, password, user_name].hash
+      [api_key, connect_configured, e_note_configured, organization, password, user_name].hash
     end
 
     # Builds the object from hash
