@@ -32,6 +32,9 @@ module DocuSign_eSign
     # When set to **true**, the user receives notification if the offline signing failed.
     attr_accessor :offline_signing_failed
 
+    # 
+    attr_accessor :powerform_responses_limit_notification_email
+
     # When set to **true**, the sender receives notification that the recipient viewed the enveloper.
     attr_accessor :recipient_viewed
 
@@ -50,6 +53,7 @@ module DocuSign_eSign
         :'delivery_failed' => :'deliveryFailed',
         :'envelope_complete' => :'envelopeComplete',
         :'offline_signing_failed' => :'offlineSigningFailed',
+        :'powerform_responses_limit_notification_email' => :'powerformResponsesLimitNotificationEmail',
         :'recipient_viewed' => :'recipientViewed',
         :'sender_envelope_declined' => :'senderEnvelopeDeclined',
         :'withdrawn_consent' => :'withdrawnConsent'
@@ -65,6 +69,7 @@ module DocuSign_eSign
         :'delivery_failed' => :'String',
         :'envelope_complete' => :'String',
         :'offline_signing_failed' => :'String',
+        :'powerform_responses_limit_notification_email' => :'String',
         :'recipient_viewed' => :'String',
         :'sender_envelope_declined' => :'String',
         :'withdrawn_consent' => :'String'
@@ -101,6 +106,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'offlineSigningFailed')
         self.offline_signing_failed = attributes[:'offlineSigningFailed']
+      end
+
+      if attributes.has_key?(:'powerformResponsesLimitNotificationEmail')
+        self.powerform_responses_limit_notification_email = attributes[:'powerformResponsesLimitNotificationEmail']
       end
 
       if attributes.has_key?(:'recipientViewed')
@@ -140,6 +149,7 @@ module DocuSign_eSign
           delivery_failed == o.delivery_failed &&
           envelope_complete == o.envelope_complete &&
           offline_signing_failed == o.offline_signing_failed &&
+          powerform_responses_limit_notification_email == o.powerform_responses_limit_notification_email &&
           recipient_viewed == o.recipient_viewed &&
           sender_envelope_declined == o.sender_envelope_declined &&
           withdrawn_consent == o.withdrawn_consent
@@ -154,7 +164,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [changed_signer, comments_only_private_and_mention, comments_receive_all, delivery_failed, envelope_complete, offline_signing_failed, recipient_viewed, sender_envelope_declined, withdrawn_consent].hash
+      [changed_signer, comments_only_private_and_mention, comments_receive_all, delivery_failed, envelope_complete, offline_signing_failed, powerform_responses_limit_notification_email, recipient_viewed, sender_envelope_declined, withdrawn_consent].hash
     end
 
     # Builds the object from hash

@@ -45,9 +45,6 @@ module DocuSign_eSign
     # The number of results to return. This can be 1 to 20.
     attr_accessor :count
 
-    # 
-    attr_accessor :include
-
     # The position of the bulk envelope items in the response. This is used for repeated calls, when the number of bulk envelopes returned is too large for one return. The default value is 0.
     attr_accessor :start_position
 
@@ -267,7 +264,6 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'count'] = options.count if !options.count.nil?
-      query_params[:'include'] = options.include if !options.include.nil?
       query_params[:'start_position'] = options.start_position if !options.start_position.nil?
 
       # header parameters
