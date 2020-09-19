@@ -23,6 +23,15 @@ module DocuSign_eSign
     end
   end
 
+  class CreateAccountSignaturesOptions
+    # 
+    attr_accessor :decode_only
+
+    def self.default
+      @@default ||= CreateAccountSignaturesOptions.new
+    end
+  end
+
   class CreateCustomFieldOptions
     # 
     attr_accessor :apply_to_templates
@@ -65,6 +74,30 @@ module DocuSign_eSign
 
     def self.default
       @@default ||= GetAccountInformationOptions.new
+    end
+  end
+
+  class GetAccountSignatureImageOptions
+    # 
+    attr_accessor :include_chrome
+
+    def self.default
+      @@default ||= GetAccountSignatureImageOptions.new
+    end
+  end
+
+  class GetAccountSignaturesOptions
+    # 
+    attr_accessor :stamp_format
+
+    # 
+    attr_accessor :stamp_name
+
+    # 
+    attr_accessor :stamp_type
+
+    def self.default
+      @@default ||= GetAccountSignaturesOptions.new
     end
   end
 
@@ -179,6 +212,24 @@ module DocuSign_eSign
     end
   end
 
+  class UpdateAccountSignatureByIdOptions
+    # 
+    attr_accessor :close_existing_signature
+
+    def self.default
+      @@default ||= UpdateAccountSignatureByIdOptions.new
+    end
+  end
+
+  class UpdateAccountSignatureImageOptions
+    # 
+    attr_accessor :transparent_png
+
+    def self.default
+      @@default ||= UpdateAccountSignatureImageOptions.new
+    end
+  end
+
   class UpdateConsumerDisclosureOptions
     # 
     attr_accessor :include_metadata
@@ -275,6 +326,60 @@ module DocuSign_eSign
         :return_type => 'NewAccountSummary')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AccountsApi#create\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Adds/updates one or more account signatures. This request may include images in multi-part format.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param account_signatures_information  (optional parameter)
+    # @param DocuSign_eSign::CreateAccountSignaturesOptions Options for modifying the behavior of the function.
+    # @return [AccountSignaturesInformation]
+    def create_account_signatures(account_id, account_signatures_information, options = DocuSign_eSign::CreateAccountSignaturesOptions.default)
+      data, _status_code, _headers = create_account_signatures_with_http_info(account_id,  account_signatures_information, options)
+      return data
+    end
+
+    # Adds/updates one or more account signatures. This request may include images in multi-part format.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param account_signatures_information  (optional parameter)
+    # @param DocuSign_eSign::CreateAccountSignaturesOptions Options for modifying the behavior of the function.
+    # @return [Array<(AccountSignaturesInformation, Fixnum, Hash)>] AccountSignaturesInformation data, response status code and response headers
+    def create_account_signatures_with_http_info(account_id, account_signatures_information, options = DocuSign_eSign::CreateAccountSignaturesOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.create_account_signatures ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.create_account_signatures" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/signatures".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'decode_only'] = options.decode_only if !options.decode_only.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(account_signatures_information)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'AccountSignaturesInformation')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#create_account_signatures\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -533,6 +638,115 @@ module DocuSign_eSign
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AccountsApi#delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Close the specified signature by Id.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param signature_id The ID of the signature being accessed.
+    # @return [nil]
+    def delete_account_signature(account_id, signature_id)
+      delete_account_signature_with_http_info(account_id, signature_id)
+      return nil
+    end
+
+    # Close the specified signature by Id.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param signature_id The ID of the signature being accessed.
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_account_signature_with_http_info(account_id, signature_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.delete_account_signature ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.delete_account_signature" if account_id.nil?
+      # verify the required parameter 'signature_id' is set
+      fail ArgumentError, "Missing the required parameter 'signature_id' when calling AccountsApi.delete_account_signature" if signature_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/signatures/{signatureId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'signatureId' + '}', signature_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#delete_account_signature\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Deletes a signature, initials, or stamps image.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param image_type One of **signature_image** or **initials_image**.
+    # @param signature_id The ID of the signature being accessed.
+    # @return [AccountSignature]
+    def delete_account_signature_image(account_id, image_type, signature_id)
+      data, _status_code, _headers = delete_account_signature_image_with_http_info(account_id, image_type, signature_id)
+      return data
+    end
+
+    # Deletes a signature, initials, or stamps image.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param image_type One of **signature_image** or **initials_image**.
+    # @param signature_id The ID of the signature being accessed.
+    # @return [Array<(AccountSignature, Fixnum, Hash)>] AccountSignature data, response status code and response headers
+    def delete_account_signature_image_with_http_info(account_id, image_type, signature_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.delete_account_signature_image ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.delete_account_signature_image" if account_id.nil?
+      # verify the required parameter 'image_type' is set
+      fail ArgumentError, "Missing the required parameter 'image_type' when calling AccountsApi.delete_account_signature_image" if image_type.nil?
+      # verify the required parameter 'signature_id' is set
+      fail ArgumentError, "Missing the required parameter 'signature_id' when calling AccountsApi.delete_account_signature_image" if signature_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'imageType' + '}', image_type.to_s).sub('{' + 'signatureId' + '}', signature_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'AccountSignature')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#delete_account_signature_image\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1063,6 +1277,173 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Returns information about a single signature by specifed signatureId.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param signature_id The ID of the signature being accessed.
+    # @return [AccountSignature]
+    def get_account_signature(account_id, signature_id)
+      data, _status_code, _headers = get_account_signature_with_http_info(account_id, signature_id)
+      return data
+    end
+
+    # Returns information about a single signature by specifed signatureId.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param signature_id The ID of the signature being accessed.
+    # @return [Array<(AccountSignature, Fixnum, Hash)>] AccountSignature data, response status code and response headers
+    def get_account_signature_with_http_info(account_id, signature_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.get_account_signature ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.get_account_signature" if account_id.nil?
+      # verify the required parameter 'signature_id' is set
+      fail ArgumentError, "Missing the required parameter 'signature_id' when calling AccountsApi.get_account_signature" if signature_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/signatures/{signatureId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'signatureId' + '}', signature_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'AccountSignature')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#get_account_signature\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns a signature, initials, or stamps image.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param image_type One of **signature_image** or **initials_image**.
+    # @param signature_id The ID of the signature being accessed.
+    # @param DocuSign_eSign::GetAccountSignatureImageOptions Options for modifying the behavior of the function.
+    # @return [File]
+    def get_account_signature_image(account_id, image_type, signature_id, options = DocuSign_eSign::GetAccountSignatureImageOptions.default)
+      data, _status_code, _headers = get_account_signature_image_with_http_info(account_id, image_type, signature_id, options)
+      return data
+    end
+
+    # Returns a signature, initials, or stamps image.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param image_type One of **signature_image** or **initials_image**.
+    # @param signature_id The ID of the signature being accessed.
+    # @param DocuSign_eSign::GetAccountSignatureImageOptions Options for modifying the behavior of the function.
+    # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
+    def get_account_signature_image_with_http_info(account_id, image_type, signature_id, options = DocuSign_eSign::GetAccountSignatureImageOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.get_account_signature_image ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.get_account_signature_image" if account_id.nil?
+      # verify the required parameter 'image_type' is set
+      fail ArgumentError, "Missing the required parameter 'image_type' when calling AccountsApi.get_account_signature_image" if image_type.nil?
+      # verify the required parameter 'signature_id' is set
+      fail ArgumentError, "Missing the required parameter 'signature_id' when calling AccountsApi.get_account_signature_image" if signature_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'imageType' + '}', image_type.to_s).sub('{' + 'signatureId' + '}', signature_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'include_chrome'] = options.include_chrome if !options.include_chrome.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['image/gif'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#get_account_signature_image\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns the managed signature definitions for the account
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param DocuSign_eSign::GetAccountSignaturesOptions Options for modifying the behavior of the function.
+    # @return [AccountSignaturesInformation]
+    def get_account_signatures(account_id, options = DocuSign_eSign::GetAccountSignaturesOptions.default)
+      data, _status_code, _headers = get_account_signatures_with_http_info(account_id, options)
+      return data
+    end
+
+    # Returns the managed signature definitions for the account
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param DocuSign_eSign::GetAccountSignaturesOptions Options for modifying the behavior of the function.
+    # @return [Array<(AccountSignaturesInformation, Fixnum, Hash)>] AccountSignaturesInformation data, response status code and response headers
+    def get_account_signatures_with_http_info(account_id, options = DocuSign_eSign::GetAccountSignaturesOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.get_account_signatures ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.get_account_signatures" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/signatures".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'stamp_format'] = options.stamp_format if !options.stamp_format.nil?
+      query_params[:'stamp_name'] = options.stamp_name if !options.stamp_name.nil?
+      query_params[:'stamp_type'] = options.stamp_type if !options.stamp_type.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'AccountSignaturesInformation')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#get_account_signatures\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Returns tab settings list for specified account
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -1495,7 +1876,7 @@ module DocuSign_eSign
     # Gets the Electronic Record and Signature Disclosure.
     # Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, for the requested envelope recipient. This might be different than the current account disclosure depending on account settings, such as branding, and when the account disclosure was last updated. An optional query string can be included to return the language for the disclosure.  
     # @param account_id The external account number (int) or account ID Guid.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @return [ConsumerDisclosure]
     def get_consumer_disclosure(account_id, lang_code)
       data, _status_code, _headers = get_consumer_disclosure_with_http_info(account_id, lang_code)
@@ -1505,7 +1886,7 @@ module DocuSign_eSign
     # Gets the Electronic Record and Signature Disclosure.
     # Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, for the requested envelope recipient. This might be different than the current account disclosure depending on account settings, such as branding, and when the account disclosure was last updated. An optional query string can be included to return the language for the disclosure.  
     # @param account_id The external account number (int) or account ID Guid.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @return [Array<(ConsumerDisclosure, Fixnum, Hash)>] ConsumerDisclosure data, response status code and response headers
     def get_consumer_disclosure_with_http_info(account_id, lang_code)
       if @api_client.config.debugging
@@ -2702,6 +3083,177 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Updates a account signature.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param account_signatures_information  (optional parameter)
+    # @return [AccountSignaturesInformation]
+    def update_account_signature(account_id, account_signatures_information)
+      data, _status_code, _headers = update_account_signature_with_http_info(account_id,  account_signatures_information)
+      return data
+    end
+
+    # Updates a account signature.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param account_signatures_information  (optional parameter)
+    # @return [Array<(AccountSignaturesInformation, Fixnum, Hash)>] AccountSignaturesInformation data, response status code and response headers
+    def update_account_signature_with_http_info(account_id, account_signatures_information)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.update_account_signature ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.update_account_signature" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/signatures".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(account_signatures_information)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'AccountSignaturesInformation')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#update_account_signature\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Updates a account signature.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param signature_id The ID of the signature being accessed.
+    # @param account_signature_definition  (optional parameter)
+    # @param DocuSign_eSign::UpdateAccountSignatureByIdOptions Options for modifying the behavior of the function.
+    # @return [AccountSignature]
+    def update_account_signature_by_id(account_id, signature_id, account_signature_definition, options = DocuSign_eSign::UpdateAccountSignatureByIdOptions.default)
+      data, _status_code, _headers = update_account_signature_by_id_with_http_info(account_id, signature_id,  account_signature_definition, options)
+      return data
+    end
+
+    # Updates a account signature.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param signature_id The ID of the signature being accessed.
+    # @param account_signature_definition  (optional parameter)
+    # @param DocuSign_eSign::UpdateAccountSignatureByIdOptions Options for modifying the behavior of the function.
+    # @return [Array<(AccountSignature, Fixnum, Hash)>] AccountSignature data, response status code and response headers
+    def update_account_signature_by_id_with_http_info(account_id, signature_id, account_signature_definition, options = DocuSign_eSign::UpdateAccountSignatureByIdOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.update_account_signature_by_id ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.update_account_signature_by_id" if account_id.nil?
+      # verify the required parameter 'signature_id' is set
+      fail ArgumentError, "Missing the required parameter 'signature_id' when calling AccountsApi.update_account_signature_by_id" if signature_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/signatures/{signatureId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'signatureId' + '}', signature_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'close_existing_signature'] = options.close_existing_signature if !options.close_existing_signature.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(account_signature_definition)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'AccountSignature')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#update_account_signature_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Sets a signature, initials, or stamps image.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param image_type One of **signature_image** or **initials_image**.
+    # @param signature_id The ID of the signature being accessed.
+    # @param DocuSign_eSign::UpdateAccountSignatureImageOptions Options for modifying the behavior of the function.
+    # @return [AccountSignature]
+    def update_account_signature_image(account_id, image_type, signature_id, options = DocuSign_eSign::UpdateAccountSignatureImageOptions.default)
+      data, _status_code, _headers = update_account_signature_image_with_http_info(account_id, image_type, signature_id, options)
+      return data
+    end
+
+    # Sets a signature, initials, or stamps image.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param image_type One of **signature_image** or **initials_image**.
+    # @param signature_id The ID of the signature being accessed.
+    # @param DocuSign_eSign::UpdateAccountSignatureImageOptions Options for modifying the behavior of the function.
+    # @return [Array<(AccountSignature, Fixnum, Hash)>] AccountSignature data, response status code and response headers
+    def update_account_signature_image_with_http_info(account_id, image_type, signature_id, options = DocuSign_eSign::UpdateAccountSignatureImageOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.update_account_signature_image ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.update_account_signature_image" if account_id.nil?
+      # verify the required parameter 'image_type' is set
+      fail ArgumentError, "Missing the required parameter 'image_type' when calling AccountsApi.update_account_signature_image" if image_type.nil?
+      # verify the required parameter 'signature_id' is set
+      fail ArgumentError, "Missing the required parameter 'signature_id' when calling AccountsApi.update_account_signature_image" if signature_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'imageType' + '}', image_type.to_s).sub('{' + 'signatureId' + '}', signature_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'transparent_png'] = options.transparent_png if !options.transparent_png.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['image/gif'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'AccountSignature')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#update_account_signature_image\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Modifies tab settings for specified account
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -2930,7 +3482,7 @@ module DocuSign_eSign
     # Update Consumer Disclosure.
     # 
     # @param account_id The external account number (int) or account ID Guid.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param consumer_disclosure  (optional parameter)
     # @param DocuSign_eSign::UpdateConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [ConsumerDisclosure]
@@ -2942,7 +3494,7 @@ module DocuSign_eSign
     # Update Consumer Disclosure.
     # 
     # @param account_id The external account number (int) or account ID Guid.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param consumer_disclosure  (optional parameter)
     # @param DocuSign_eSign::UpdateConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [Array<(ConsumerDisclosure, Fixnum, Hash)>] ConsumerDisclosure data, response status code and response headers

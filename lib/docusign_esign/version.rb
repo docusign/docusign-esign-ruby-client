@@ -11,5 +11,5 @@ Swagger Codegen version: 2.4.13-SNAPSHOT
 =end
 
 module DocuSign_eSign
-  VERSION = '3.5.0'
+  VERSION = '3.6.0.rc1'
 end
