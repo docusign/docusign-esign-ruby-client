@@ -68,6 +68,12 @@ module DocuSign_eSign
     # 
     attr_accessor :notarize_tabs
 
+    # 
+    attr_accessor :notary_certificate_tabs
+
+    # 
+    attr_accessor :notary_seal_tabs
+
     # Specifies a location on the document where you want to place additional information, in the form of a note, for a recipient.
     attr_accessor :note_tabs
 
@@ -128,6 +134,8 @@ module DocuSign_eSign
         :'last_name_tabs' => :'lastNameTabs',
         :'list_tabs' => :'listTabs',
         :'notarize_tabs' => :'notarizeTabs',
+        :'notary_certificate_tabs' => :'notaryCertificateTabs',
+        :'notary_seal_tabs' => :'notarySealTabs',
         :'note_tabs' => :'noteTabs',
         :'number_tabs' => :'numberTabs',
         :'poly_line_overlay_tabs' => :'polyLineOverlayTabs',
@@ -165,6 +173,8 @@ module DocuSign_eSign
         :'last_name_tabs' => :'Array<LastName>',
         :'list_tabs' => :'Array<Array>',
         :'notarize_tabs' => :'Array<Notarize>',
+        :'notary_certificate_tabs' => :'Array<NotaryCertificate>',
+        :'notary_seal_tabs' => :'Array<NotarySeal>',
         :'note_tabs' => :'Array<Note>',
         :'number_tabs' => :'Array<Number>',
         :'poly_line_overlay_tabs' => :'Array<PolyLineOverlay>',
@@ -297,6 +307,18 @@ module DocuSign_eSign
         end
       end
 
+      if attributes.has_key?(:'notaryCertificateTabs')
+        if (value = attributes[:'notaryCertificateTabs']).is_a?(Array)
+          self.notary_certificate_tabs = value
+        end
+      end
+
+      if attributes.has_key?(:'notarySealTabs')
+        if (value = attributes[:'notarySealTabs']).is_a?(Array)
+          self.notary_seal_tabs = value
+        end
+      end
+
       if attributes.has_key?(:'noteTabs')
         if (value = attributes[:'noteTabs']).is_a?(Array)
           self.note_tabs = value
@@ -412,6 +434,8 @@ module DocuSign_eSign
           last_name_tabs == o.last_name_tabs &&
           list_tabs == o.list_tabs &&
           notarize_tabs == o.notarize_tabs &&
+          notary_certificate_tabs == o.notary_certificate_tabs &&
+          notary_seal_tabs == o.notary_seal_tabs &&
           note_tabs == o.note_tabs &&
           number_tabs == o.number_tabs &&
           poly_line_overlay_tabs == o.poly_line_overlay_tabs &&
@@ -436,7 +460,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [approve_tabs, checkbox_tabs, comment_thread_tabs, company_tabs, date_signed_tabs, date_tabs, decline_tabs, draw_tabs, email_address_tabs, email_tabs, envelope_id_tabs, first_name_tabs, formula_tabs, full_name_tabs, initial_here_tabs, last_name_tabs, list_tabs, notarize_tabs, note_tabs, number_tabs, poly_line_overlay_tabs, radio_group_tabs, signer_attachment_tabs, sign_here_tabs, smart_section_tabs, ssn_tabs, tab_groups, text_tabs, title_tabs, view_tabs, zip_tabs].hash
+      [approve_tabs, checkbox_tabs, comment_thread_tabs, company_tabs, date_signed_tabs, date_tabs, decline_tabs, draw_tabs, email_address_tabs, email_tabs, envelope_id_tabs, first_name_tabs, formula_tabs, full_name_tabs, initial_here_tabs, last_name_tabs, list_tabs, notarize_tabs, notary_certificate_tabs, notary_seal_tabs, note_tabs, number_tabs, poly_line_overlay_tabs, radio_group_tabs, signer_attachment_tabs, sign_here_tabs, smart_section_tabs, ssn_tabs, tab_groups, text_tabs, title_tabs, view_tabs, zip_tabs].hash
     end
 
     # Builds the object from hash

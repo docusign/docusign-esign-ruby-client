@@ -13,31 +13,31 @@ Swagger Codegen version: 2.4.13-SNAPSHOT
 require 'date'
 
 module DocuSign_eSign
-  class CorrectViewRequest
-    # The url used after correct/send view session has ended. DocuSign redirects to the url and includes an event parameter that can be used by your app. The event parameters returned are:   * send (user corrected and sent the envelope) * save (user saved the envelope) * cancel (user canceled the transaction.) * error (there was an error when performing the correct or send) * sessionEnd (the session ended before the user completed a different action)  ###### Note: Include https:// in the URL or the redirect might not succeed on some browsers. 
-    attr_accessor :return_url
+  class SignatureGroup
+    # 
+    attr_accessor :group_id
 
-    # Specifies whether the window is displayed with or without dressing.
-    attr_accessor :suppress_navigation
+    # The name of the group.
+    attr_accessor :group_name
 
     # 
-    attr_accessor :view_url
+    attr_accessor :rights
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'return_url' => :'returnUrl',
-        :'suppress_navigation' => :'suppressNavigation',
-        :'view_url' => :'viewUrl'
+        :'group_id' => :'groupId',
+        :'group_name' => :'groupName',
+        :'rights' => :'rights'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'return_url' => :'String',
-        :'suppress_navigation' => :'String',
-        :'view_url' => :'String'
+        :'group_id' => :'String',
+        :'group_name' => :'String',
+        :'rights' => :'String'
       }
     end
 
@@ -49,16 +49,16 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'returnUrl')
-        self.return_url = attributes[:'returnUrl']
+      if attributes.has_key?(:'groupId')
+        self.group_id = attributes[:'groupId']
       end
 
-      if attributes.has_key?(:'suppressNavigation')
-        self.suppress_navigation = attributes[:'suppressNavigation']
+      if attributes.has_key?(:'groupName')
+        self.group_name = attributes[:'groupName']
       end
 
-      if attributes.has_key?(:'viewUrl')
-        self.view_url = attributes[:'viewUrl']
+      if attributes.has_key?(:'rights')
+        self.rights = attributes[:'rights']
       end
     end
 
@@ -80,9 +80,9 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          return_url == o.return_url &&
-          suppress_navigation == o.suppress_navigation &&
-          view_url == o.view_url
+          group_id == o.group_id &&
+          group_name == o.group_name &&
+          rights == o.rights
     end
 
     # @see the `==` method
@@ -94,7 +94,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [return_url, suppress_navigation, view_url].hash
+      [group_id, group_name, rights].hash
     end
 
     # Builds the object from hash
