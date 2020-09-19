@@ -1788,6 +1788,60 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Revokes the correction view URL to the Envelope UI
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param correct_view_request  (optional parameter)
+    # @return [nil]
+    def delete_envelope_correct_view(account_id, envelope_id, correct_view_request)
+      delete_envelope_correct_view_with_http_info(account_id, envelope_id,  correct_view_request)
+      return nil
+    end
+
+    # Revokes the correction view URL to the Envelope UI
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param correct_view_request  (optional parameter)
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_envelope_correct_view_with_http_info(account_id, envelope_id, correct_view_request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.delete_envelope_correct_view ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.delete_envelope_correct_view" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.delete_envelope_correct_view" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2/accounts/{accountId}/envelopes/{envelopeId}/views/correct".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(correct_view_request)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#delete_envelope_correct_view\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Deletes an envelope lock.
     # Deletes the lock from the specified envelope. The `X-DocuSign-Edit` header must be included in the request.
     # @param account_id The external account number (int) or account ID Guid.
