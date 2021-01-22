@@ -1,6 +1,7 @@
 require 'docusign_esign'
 require 'base64'
 require 'uri'
+require 'addressable/uri'
 
 describe 'DocuSign Ruby Client Tests' do
 	def login
@@ -34,7 +35,7 @@ describe 'DocuSign Ruby Client Tests' do
 						$account_id = account.account_id
 
             # IMPORTANT: Use the base url from the login account to instantiant the api_client
-						base_uri = URI.parse($base_uri)
+						base_uri = Addressable::URI.parse($base_uri)
 						$api_client.set_base_path( "%s://%s/restapi" % [base_uri.scheme, base_uri.host])
 
 						return account
