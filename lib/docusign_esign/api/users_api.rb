@@ -1019,6 +1019,58 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Retrieves UserList Export Results data.
+    # 
+    # @param organization_id 
+    # @param result_id 
+    # @return [nil]
+    def get_user_list_export(organization_id, result_id)
+      get_user_list_export_with_http_info(organization_id, result_id)
+      return nil
+    end
+
+    # Retrieves UserList Export Results data.
+    # 
+    # @param organization_id 
+    # @param result_id 
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def get_user_list_export_with_http_info(organization_id, result_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: UsersApi.get_user_list_export ..."
+      end
+      # verify the required parameter 'organization_id' is set
+      fail ArgumentError, "Missing the required parameter 'organization_id' when calling UsersApi.get_user_list_export" if organization_id.nil?
+      # verify the required parameter 'result_id' is set
+      fail ArgumentError, "Missing the required parameter 'result_id' when calling UsersApi.get_user_list_export" if result_id.nil?
+      # resource path
+      local_var_path = "/v2.1/organization_exports/{organizationId}/user_list/{resultId}".sub('{format}','json').sub('{' + 'organizationId' + '}', organization_id.to_s).sub('{' + 'resultId' + '}', result_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: UsersApi#get_user_list_export\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Retrieves the list of users for the specified account.
     # Retrieves the list of users for the specified account.  The response returns the list of users for the account along with the information about the result set. If the `additional_info` query was added to the endpoint and set to **true**, the full user information is returned for each user
     # @param account_id The external account number (int) or account ID Guid.
