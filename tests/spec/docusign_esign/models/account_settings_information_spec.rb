@@ -2,7 +2,7 @@ require 'docusign_esign/models/account_settings_information'
 
 describe DocuSign_eSign::AccountSettingsInformation do
   describe '.attribute_map' do
-    it 'returns a map between  variable names and JSON keys', :aggregate_failures do
+    it 'returns a map between variable names and JSON keys', :aggregate_failures do
       map = DocuSign_eSign::AccountSettingsInformation.attribute_map
 
       expect(map[:access_code_format]).to eq(:accessCodeFormat)
