@@ -4,7 +4,9 @@ module DocuSign_eSign
 
       # Returns the given symbol in camel case
       # @return [Symbol] Returns the given symbol in camel case
-      def camelize_symbol(symbol, uppercase_first_letter: false)
+      def camelize_symbol(symbol, uppercase_first_letter: false, irregular_mappings: {})
+        return irregular_mappings[symbol] if irregular_mappings.has_key?(symbol)
+
         camelize_string(symbol.to_s, uppercase_first_letter: uppercase_first_letter).to_sym
       end
 

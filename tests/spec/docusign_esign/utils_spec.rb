@@ -3,7 +3,7 @@ require 'docusign_esign/utils'
 describe DocuSign_eSign::Utils do
   describe '.camelize_symbol' do
     it 'converts snake case symbols to camel case' do
-      symbol = 'snake_case_symbol'
+      symbol = :snake_case_symbol
 
       camelized_symbol = DocuSign_eSign::Utils.camelize_symbol(symbol)
 
@@ -11,11 +11,19 @@ describe DocuSign_eSign::Utils do
     end
 
     it 'converts snake case symbols to camel case with first letter uppercased' do
-      symbol = 'snake_case_symbol'
+      symbol = :snake_case_symbol
 
       camelized_symbol = DocuSign_eSign::Utils.camelize_symbol(symbol, uppercase_first_letter: true)
 
       expect(camelized_symbol).to eq :SnakeCaseSymbol
+    end
+
+    it 'accepts a hash of irregular mappings ' do
+      symbol = :user_id
+
+      camelized_symbol = DocuSign_eSign::Utils.camelize_symbol(symbol, irregular_mappings: {:user_id => :userID})
+
+      expect(camelized_symbol).to eq :userID
     end
   end
 
