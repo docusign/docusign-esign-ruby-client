@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [2.0.1] - eSignature API v19.1.02 - 2020-02-11
+### Fixed
+* Fix deserialization of Date tabs
+
 ## [2.0.0] - eSignature API v19.1.02 - 2019-06-08
 ### BREAKING
 * Moved ApiClient and ApiException under Client folder
