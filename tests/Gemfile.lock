@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    docusign_esign (2.0.0)
+    docusign_esign (2.0.1)
       json (~> 1.8, >= 1.8.3)
       jwt (~> 1.0, >= 1.5.2)
       typhoeus (~> 1.0, >= 1.0.1)
