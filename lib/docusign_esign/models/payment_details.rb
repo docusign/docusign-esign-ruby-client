@@ -53,6 +53,8 @@ module DocuSign_eSign
     # 
     attr_accessor :payment_source_id
 
+    attr_accessor :signer_values
+
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
     attr_accessor :status
 
@@ -75,6 +77,7 @@ module DocuSign_eSign
         :'line_items' => :'lineItems',
         :'payment_option' => :'paymentOption',
         :'payment_source_id' => :'paymentSourceId',
+        :'signer_values' => :'signerValues',
         :'status' => :'status',
         :'total' => :'total'
       }
@@ -97,6 +100,7 @@ module DocuSign_eSign
         :'line_items' => :'Array<PaymentLineItem>',
         :'payment_option' => :'String',
         :'payment_source_id' => :'String',
+        :'signer_values' => :'PaymentSignerValues',
         :'status' => :'String',
         :'total' => :'Money'
       }
@@ -170,6 +174,10 @@ module DocuSign_eSign
         self.payment_source_id = attributes[:'paymentSourceId']
       end
 
+      if attributes.has_key?(:'signerValues')
+        self.signer_values = attributes[:'signerValues']
+      end
+
       if attributes.has_key?(:'status')
         self.status = attributes[:'status']
       end
@@ -211,6 +219,7 @@ module DocuSign_eSign
           line_items == o.line_items &&
           payment_option == o.payment_option &&
           payment_source_id == o.payment_source_id &&
+          signer_values == o.signer_values &&
           status == o.status &&
           total == o.total
     end
@@ -224,7 +233,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allowed_payment_methods, charge_id, currency_code, currency_code_metadata, customer_id, custom_metadata, custom_metadata_required, gateway_account_id, gateway_account_id_metadata, gateway_display_name, gateway_name, line_items, payment_option, payment_source_id, status, total].hash
+      [allowed_payment_methods, charge_id, currency_code, currency_code_metadata, customer_id, custom_metadata, custom_metadata_required, gateway_account_id, gateway_account_id_metadata, gateway_display_name, gateway_name, line_items, payment_option, payment_source_id, signer_values, status, total].hash
     end
 
     # Builds the object from hash

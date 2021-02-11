@@ -110,7 +110,7 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param group_id The ID of the group being accessed.
     # @param brands_request  (optional parameter)
-    # @return [BrandsResponse]
+    # @return [GroupBrands]
     def delete_brands(account_id, group_id, brands_request)
       data, _status_code, _headers = delete_brands_with_http_info(account_id, group_id,  brands_request)
       return data
@@ -121,7 +121,7 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param group_id The ID of the group being accessed.
     # @param brands_request  (optional parameter)
-    # @return [Array<(BrandsResponse, Fixnum, Hash)>] BrandsResponse data, response status code and response headers
+    # @return [Array<(GroupBrands, Fixnum, Hash)>] GroupBrands data, response status code and response headers
     def delete_brands_with_http_info(account_id, group_id, brands_request)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: GroupsApi.delete_brands ..."
@@ -153,7 +153,7 @@ module DocuSign_eSign
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'BrandsResponse')
+        :return_type => 'GroupBrands')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: GroupsApi#delete_brands\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -270,7 +270,7 @@ module DocuSign_eSign
     # Retrieves information about the brands associated with the requested group.
     # @param account_id The external account number (int) or account ID Guid.
     # @param group_id The ID of the group being accessed.
-    # @return [BrandsResponse]
+    # @return [GroupBrands]
     def get_brands(account_id, group_id)
       data, _status_code, _headers = get_brands_with_http_info(account_id, group_id)
       return data
@@ -280,7 +280,7 @@ module DocuSign_eSign
     # Retrieves information about the brands associated with the requested group.
     # @param account_id The external account number (int) or account ID Guid.
     # @param group_id The ID of the group being accessed.
-    # @return [Array<(BrandsResponse, Fixnum, Hash)>] BrandsResponse data, response status code and response headers
+    # @return [Array<(GroupBrands, Fixnum, Hash)>] GroupBrands data, response status code and response headers
     def get_brands_with_http_info(account_id, group_id)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: GroupsApi.get_brands ..."
@@ -312,7 +312,7 @@ module DocuSign_eSign
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'BrandsResponse')
+        :return_type => 'GroupBrands')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: GroupsApi#get_brands\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -437,7 +437,7 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param group_id The ID of the group being accessed.
     # @param brands_request  (optional parameter)
-    # @return [BrandsResponse]
+    # @return [GroupBrands]
     def update_brands(account_id, group_id, brands_request)
       data, _status_code, _headers = update_brands_with_http_info(account_id, group_id,  brands_request)
       return data
@@ -448,7 +448,7 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param group_id The ID of the group being accessed.
     # @param brands_request  (optional parameter)
-    # @return [Array<(BrandsResponse, Fixnum, Hash)>] BrandsResponse data, response status code and response headers
+    # @return [Array<(GroupBrands, Fixnum, Hash)>] GroupBrands data, response status code and response headers
     def update_brands_with_http_info(account_id, group_id, brands_request)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: GroupsApi.update_brands ..."
@@ -480,7 +480,7 @@ module DocuSign_eSign
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'BrandsResponse')
+        :return_type => 'GroupBrands')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: GroupsApi#update_brands\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

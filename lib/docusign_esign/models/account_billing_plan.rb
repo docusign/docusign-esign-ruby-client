@@ -40,6 +40,9 @@ module DocuSign_eSign
     # 
     attr_accessor :is_downgrade
 
+    # 
+    attr_accessor :notification_type
+
     #  Any other percentage discount for the plan. 
     attr_accessor :other_discount_percent
 
@@ -88,6 +91,7 @@ module DocuSign_eSign
         :'included_seats' => :'includedSeats',
         :'incremental_seats' => :'incrementalSeats',
         :'is_downgrade' => :'isDowngrade',
+        :'notification_type' => :'notificationType',
         :'other_discount_percent' => :'otherDiscountPercent',
         :'payment_cycle' => :'paymentCycle',
         :'payment_method' => :'paymentMethod',
@@ -115,6 +119,7 @@ module DocuSign_eSign
         :'included_seats' => :'String',
         :'incremental_seats' => :'String',
         :'is_downgrade' => :'String',
+        :'notification_type' => :'String',
         :'other_discount_percent' => :'String',
         :'payment_cycle' => :'String',
         :'payment_method' => :'String',
@@ -174,6 +179,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'isDowngrade')
         self.is_downgrade = attributes[:'isDowngrade']
+      end
+
+      if attributes.has_key?(:'notificationType')
+        self.notification_type = attributes[:'notificationType']
       end
 
       if attributes.has_key?(:'otherDiscountPercent')
@@ -256,6 +265,7 @@ module DocuSign_eSign
           included_seats == o.included_seats &&
           incremental_seats == o.incremental_seats &&
           is_downgrade == o.is_downgrade &&
+          notification_type == o.notification_type &&
           other_discount_percent == o.other_discount_percent &&
           payment_cycle == o.payment_cycle &&
           payment_method == o.payment_method &&
@@ -279,7 +289,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [add_ons, can_cancel_renewal, can_upgrade, currency_code, downgrade_plan_information, enable_support, included_seats, incremental_seats, is_downgrade, other_discount_percent, payment_cycle, payment_method, per_seat_price, plan_classification, plan_feature_sets, plan_id, plan_name, renewal_status, seat_discounts, support_incident_fee, support_plan_fee].hash
+      [add_ons, can_cancel_renewal, can_upgrade, currency_code, downgrade_plan_information, enable_support, included_seats, incremental_seats, is_downgrade, notification_type, other_discount_percent, payment_cycle, payment_method, per_seat_price, plan_classification, plan_feature_sets, plan_id, plan_name, renewal_status, seat_discounts, support_incident_fee, support_plan_fee].hash
     end
 
     # Builds the object from hash

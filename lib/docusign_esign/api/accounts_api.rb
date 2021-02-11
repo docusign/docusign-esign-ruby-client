@@ -385,7 +385,7 @@ module DocuSign_eSign
 
     # Creates one or more brand profile files for the account.
     # Creates one or more brand profile files for the account. The Account Branding feature (accountSettings properties `canSelfBrandSend` and `canSelfBrandSig`) must be set to **true** for the account to use this call.  An error is returned if `brandId` property for a brand profile is already set for the account. To upload a new version of an existing brand profile, you must delete the profile and then upload the newer version.  When brand profile files are being uploaded, they must be combined into one zip file and the `Content-Type` must be `application/zip`.
-    # @param account_id The external account number (int) or account ID Guid.
+    # @param account_id The external account number (int) or account ID GUID.
     # @param brand  (optional parameter)
     # @return [BrandsResponse]
     def create_brand(account_id, brand)
@@ -395,7 +395,7 @@ module DocuSign_eSign
 
     # Creates one or more brand profile files for the account.
     # Creates one or more brand profile files for the account. The Account Branding feature (accountSettings properties &#x60;canSelfBrandSend&#x60; and &#x60;canSelfBrandSig&#x60;) must be set to **true** for the account to use this call.  An error is returned if &#x60;brandId&#x60; property for a brand profile is already set for the account. To upload a new version of an existing brand profile, you must delete the profile and then upload the newer version.  When brand profile files are being uploaded, they must be combined into one zip file and the &#x60;Content-Type&#x60; must be &#x60;application/zip&#x60;.
-    # @param account_id The external account number (int) or account ID Guid.
+    # @param account_id The external account number (int) or account ID GUID.
     # @param brand  (optional parameter)
     # @return [Array<(BrandsResponse, Fixnum, Hash)>] BrandsResponse data, response status code and response headers
     def create_brand_with_http_info(account_id, brand)
@@ -1272,6 +1272,58 @@ module DocuSign_eSign
         :return_type => 'AccountInformation')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AccountsApi#get_account_information\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieves an account settings comparison.
+    # 
+    # @param organization_id 
+    # @param result_id 
+    # @return [nil]
+    def get_account_settings_export(organization_id, result_id)
+      get_account_settings_export_with_http_info(organization_id, result_id)
+      return nil
+    end
+
+    # Retrieves an account settings comparison.
+    # 
+    # @param organization_id 
+    # @param result_id 
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def get_account_settings_export_with_http_info(organization_id, result_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.get_account_settings_export ..."
+      end
+      # verify the required parameter 'organization_id' is set
+      fail ArgumentError, "Missing the required parameter 'organization_id' when calling AccountsApi.get_account_settings_export" if organization_id.nil?
+      # verify the required parameter 'result_id' is set
+      fail ArgumentError, "Missing the required parameter 'result_id' when calling AccountsApi.get_account_settings_export" if result_id.nil?
+      # resource path
+      local_var_path = "/v2.1/organization_exports/{organizationId}/account_settings/{resultId}".sub('{format}','json').sub('{' + 'organizationId' + '}', organization_id.to_s).sub('{' + 'resultId' + '}', result_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#get_account_settings_export\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3423,9 +3475,9 @@ module DocuSign_eSign
 
     # Uploads a branding resource file.
     # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param brand_id The unique identifier of a brand.
-    # @param resource_content_type 
+    # @param account_id The external account number (int) or account ID GUID.
+    # @param brand_id The id of the brand.
+    # @param resource_content_type The type of brand resource file that you are updating. Valid values are:  - `sending` - `signing` - `email` - `signing_captive`
     # @return [BrandResources]
     def update_brand_resources_by_content_type(account_id, brand_id, resource_content_type)
       data, _status_code, _headers = update_brand_resources_by_content_type_with_http_info(account_id, brand_id, resource_content_type)
@@ -3434,9 +3486,9 @@ module DocuSign_eSign
 
     # Uploads a branding resource file.
     # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param brand_id The unique identifier of a brand.
-    # @param resource_content_type 
+    # @param account_id The external account number (int) or account ID GUID.
+    # @param brand_id The id of the brand.
+    # @param resource_content_type The type of brand resource file that you are updating. Valid values are:  - `sending` - `signing` - `email` - `signing_captive`
     # @return [Array<(BrandResources, Fixnum, Hash)>] BrandResources data, response status code and response headers
     def update_brand_resources_by_content_type_with_http_info(account_id, brand_id, resource_content_type)
       if @api_client.config.debugging
@@ -3448,6 +3500,8 @@ module DocuSign_eSign
       fail ArgumentError, "Missing the required parameter 'brand_id' when calling AccountsApi.update_brand_resources_by_content_type" if brand_id.nil?
       # verify the required parameter 'resource_content_type' is set
       fail ArgumentError, "Missing the required parameter 'resource_content_type' when calling AccountsApi.update_brand_resources_by_content_type" if resource_content_type.nil?
+      # verify the required parameter 'file_xml' is set
+      fail ArgumentError, "Missing the required parameter 'file_xml' when calling AccountsApi.update_brand_resources_by_content_type" if file_xml.nil?
       # resource path
       local_var_path = "/v2.1/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'brandId' + '}', brand_id.to_s).sub('{' + 'resourceContentType' + '}', resource_content_type.to_s)
 
@@ -3458,9 +3512,12 @@ module DocuSign_eSign
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
 
       # form parameters
       form_params = {}
+      form_params["file.xml"] = file_xml
 
       # http body (model)
       post_body = nil

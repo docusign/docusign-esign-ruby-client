@@ -58,6 +58,12 @@ module DocuSign_eSign
     # Identifies the plan that was used create this account.
     attr_accessor :current_plan_id
 
+    # 
+    attr_accessor :display_appliance_start_url
+
+    # 
+    attr_accessor :display_appliance_url
+
     # The code that identifies the billing plan groups and plans for the new account.
     attr_accessor :distributor_code
 
@@ -115,6 +121,9 @@ module DocuSign_eSign
     # 
     attr_accessor :suspension_status
 
+    # 
+    attr_accessor :use_display_appliance
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -133,6 +142,8 @@ module DocuSign_eSign
         :'created_date' => :'createdDate',
         :'currency_code' => :'currencyCode',
         :'current_plan_id' => :'currentPlanId',
+        :'display_appliance_start_url' => :'displayApplianceStartUrl',
+        :'display_appliance_url' => :'displayApplianceUrl',
         :'distributor_code' => :'distributorCode',
         :'docu_sign_landing_url' => :'docuSignLandingUrl',
         :'dss_values' => :'dssValues',
@@ -151,7 +162,8 @@ module DocuSign_eSign
         :'seats_in_use' => :'seatsInUse',
         :'status21_cfr_part11' => :'status21CFRPart11',
         :'suspension_date' => :'suspensionDate',
-        :'suspension_status' => :'suspensionStatus'
+        :'suspension_status' => :'suspensionStatus',
+        :'use_display_appliance' => :'useDisplayAppliance'
       }
     end
 
@@ -173,6 +185,8 @@ module DocuSign_eSign
         :'created_date' => :'String',
         :'currency_code' => :'String',
         :'current_plan_id' => :'String',
+        :'display_appliance_start_url' => :'String',
+        :'display_appliance_url' => :'String',
         :'distributor_code' => :'String',
         :'docu_sign_landing_url' => :'String',
         :'dss_values' => :'Hash<String, String>',
@@ -191,7 +205,8 @@ module DocuSign_eSign
         :'seats_in_use' => :'String',
         :'status21_cfr_part11' => :'String',
         :'suspension_date' => :'String',
-        :'suspension_status' => :'String'
+        :'suspension_status' => :'String',
+        :'use_display_appliance' => :'BOOLEAN'
       }
     end
 
@@ -261,6 +276,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'currentPlanId')
         self.current_plan_id = attributes[:'currentPlanId']
+      end
+
+      if attributes.has_key?(:'displayApplianceStartUrl')
+        self.display_appliance_start_url = attributes[:'displayApplianceStartUrl']
+      end
+
+      if attributes.has_key?(:'displayApplianceUrl')
+        self.display_appliance_url = attributes[:'displayApplianceUrl']
       end
 
       if attributes.has_key?(:'distributorCode')
@@ -342,6 +365,10 @@ module DocuSign_eSign
       if attributes.has_key?(:'suspensionStatus')
         self.suspension_status = attributes[:'suspensionStatus']
       end
+
+      if attributes.has_key?(:'useDisplayAppliance')
+        self.use_display_appliance = attributes[:'useDisplayAppliance']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -377,6 +404,8 @@ module DocuSign_eSign
           created_date == o.created_date &&
           currency_code == o.currency_code &&
           current_plan_id == o.current_plan_id &&
+          display_appliance_start_url == o.display_appliance_start_url &&
+          display_appliance_url == o.display_appliance_url &&
           distributor_code == o.distributor_code &&
           docu_sign_landing_url == o.docu_sign_landing_url &&
           dss_values == o.dss_values &&
@@ -395,7 +424,8 @@ module DocuSign_eSign
           seats_in_use == o.seats_in_use &&
           status21_cfr_part11 == o.status21_cfr_part11 &&
           suspension_date == o.suspension_date &&
-          suspension_status == o.suspension_status
+          suspension_status == o.suspension_status &&
+          use_display_appliance == o.use_display_appliance
     end
 
     # @see the `==` method
@@ -407,7 +437,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id_guid, account_name, account_settings, allow_transaction_rooms, billing_period_days_remaining, billing_period_end_date, billing_period_envelopes_allowed, billing_period_envelopes_sent, billing_period_start_date, billing_profile, can_upgrade, connect_permission, created_date, currency_code, current_plan_id, distributor_code, docu_sign_landing_url, dss_values, envelope_sending_blocked, envelope_unit_price, external_account_id, forgotten_password_questions_count, is_downgrade, payment_method, plan_classification, plan_end_date, plan_name, plan_start_date, recipient_domains, seats_allowed, seats_in_use, status21_cfr_part11, suspension_date, suspension_status].hash
+      [account_id_guid, account_name, account_settings, allow_transaction_rooms, billing_period_days_remaining, billing_period_end_date, billing_period_envelopes_allowed, billing_period_envelopes_sent, billing_period_start_date, billing_profile, can_upgrade, connect_permission, created_date, currency_code, current_plan_id, display_appliance_start_url, display_appliance_url, distributor_code, docu_sign_landing_url, dss_values, envelope_sending_blocked, envelope_unit_price, external_account_id, forgotten_password_questions_count, is_downgrade, payment_method, plan_classification, plan_end_date, plan_name, plan_start_date, recipient_domains, seats_allowed, seats_in_use, status21_cfr_part11, suspension_date, suspension_status, use_display_appliance].hash
     end
 
     # Builds the object from hash

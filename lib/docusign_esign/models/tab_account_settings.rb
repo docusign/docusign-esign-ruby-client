@@ -64,6 +64,11 @@ module DocuSign_eSign
     attr_accessor :note_tabs_metadata
 
     # 
+    attr_accessor :prefill_tabs_enabled
+
+    attr_accessor :prefill_tabs_metadata
+
+    # 
     attr_accessor :radio_tabs_enabled
 
     attr_accessor :radio_tabs_metadata
@@ -136,6 +141,8 @@ module DocuSign_eSign
         :'list_tabs_metadata' => :'listTabsMetadata',
         :'note_tabs_enabled' => :'noteTabsEnabled',
         :'note_tabs_metadata' => :'noteTabsMetadata',
+        :'prefill_tabs_enabled' => :'prefillTabsEnabled',
+        :'prefill_tabs_metadata' => :'prefillTabsMetadata',
         :'radio_tabs_enabled' => :'radioTabsEnabled',
         :'radio_tabs_metadata' => :'radioTabsMetadata',
         :'saving_custom_tabs_enabled' => :'savingCustomTabsEnabled',
@@ -182,6 +189,8 @@ module DocuSign_eSign
         :'list_tabs_metadata' => :'SettingsMetadata',
         :'note_tabs_enabled' => :'String',
         :'note_tabs_metadata' => :'SettingsMetadata',
+        :'prefill_tabs_enabled' => :'String',
+        :'prefill_tabs_metadata' => :'SettingsMetadata',
         :'radio_tabs_enabled' => :'String',
         :'radio_tabs_metadata' => :'SettingsMetadata',
         :'saving_custom_tabs_enabled' => :'String',
@@ -291,6 +300,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'noteTabsMetadata')
         self.note_tabs_metadata = attributes[:'noteTabsMetadata']
+      end
+
+      if attributes.has_key?(:'prefillTabsEnabled')
+        self.prefill_tabs_enabled = attributes[:'prefillTabsEnabled']
+      end
+
+      if attributes.has_key?(:'prefillTabsMetadata')
+        self.prefill_tabs_metadata = attributes[:'prefillTabsMetadata']
       end
 
       if attributes.has_key?(:'radioTabsEnabled')
@@ -412,6 +429,8 @@ module DocuSign_eSign
           list_tabs_metadata == o.list_tabs_metadata &&
           note_tabs_enabled == o.note_tabs_enabled &&
           note_tabs_metadata == o.note_tabs_metadata &&
+          prefill_tabs_enabled == o.prefill_tabs_enabled &&
+          prefill_tabs_metadata == o.prefill_tabs_metadata &&
           radio_tabs_enabled == o.radio_tabs_enabled &&
           radio_tabs_metadata == o.radio_tabs_metadata &&
           saving_custom_tabs_enabled == o.saving_custom_tabs_enabled &&
@@ -443,7 +462,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_tab_order, allow_tab_order_metadata, approve_decline_tabs_enabled, approve_decline_tabs_metadata, calculated_fields_enabled, calculated_fields_metadata, checkbox_tabs_enabled, check_box_tabs_metadata, data_field_regex_enabled, data_field_regex_metadata, data_field_size_enabled, data_field_size_metadata, draw_tabs_enabled, draw_tabs_metadata, first_last_email_tabs_enabled, first_last_email_tabs_metadata, list_tabs_enabled, list_tabs_metadata, note_tabs_enabled, note_tabs_metadata, radio_tabs_enabled, radio_tabs_metadata, saving_custom_tabs_enabled, saving_custom_tabs_metadata, sender_to_change_tab_assignments_enabled, sender_to_change_tab_assignments_metadata, shared_custom_tabs_enabled, shared_custom_tabs_metadata, tab_data_label_enabled, tab_data_label_metadata, tab_location_enabled, tab_location_metadata, tab_locking_enabled, tab_locking_metadata, tab_scale_enabled, tab_scale_metadata, tab_text_formatting_enabled, tab_text_formatting_metadata, text_tabs_enabled, text_tabs_metadata].hash
+      [allow_tab_order, allow_tab_order_metadata, approve_decline_tabs_enabled, approve_decline_tabs_metadata, calculated_fields_enabled, calculated_fields_metadata, checkbox_tabs_enabled, check_box_tabs_metadata, data_field_regex_enabled, data_field_regex_metadata, data_field_size_enabled, data_field_size_metadata, draw_tabs_enabled, draw_tabs_metadata, first_last_email_tabs_enabled, first_last_email_tabs_metadata, list_tabs_enabled, list_tabs_metadata, note_tabs_enabled, note_tabs_metadata, prefill_tabs_enabled, prefill_tabs_metadata, radio_tabs_enabled, radio_tabs_metadata, saving_custom_tabs_enabled, saving_custom_tabs_metadata, sender_to_change_tab_assignments_enabled, sender_to_change_tab_assignments_metadata, shared_custom_tabs_enabled, shared_custom_tabs_metadata, tab_data_label_enabled, tab_data_label_metadata, tab_location_enabled, tab_location_metadata, tab_locking_enabled, tab_locking_metadata, tab_scale_enabled, tab_scale_metadata, tab_text_formatting_enabled, tab_text_formatting_metadata, text_tabs_enabled, text_tabs_metadata].hash
     end
 
     # Builds the object from hash

@@ -94,6 +94,8 @@ module DocuSign_eSign
     # 
     attr_accessor :poly_line_overlay_tabs
 
+    attr_accessor :prefill_tabs
+
     # Specifies a tag on the document in a location where the recipient can select one option from a group of options using a radio button. The radio buttons do not have to be on the same page in a document.
     attr_accessor :radio_group_tabs
 
@@ -154,6 +156,7 @@ module DocuSign_eSign
         :'number_tabs' => :'numberTabs',
         :'phone_number_tabs' => :'phoneNumberTabs',
         :'poly_line_overlay_tabs' => :'polyLineOverlayTabs',
+        :'prefill_tabs' => :'prefillTabs',
         :'radio_group_tabs' => :'radioGroupTabs',
         :'signer_attachment_tabs' => :'signerAttachmentTabs',
         :'sign_here_tabs' => :'signHereTabs',
@@ -197,6 +200,7 @@ module DocuSign_eSign
         :'number_tabs' => :'Array<Number>',
         :'phone_number_tabs' => :'Array<PhoneNumber>',
         :'poly_line_overlay_tabs' => :'Array<PolyLineOverlay>',
+        :'prefill_tabs' => :'PrefillTabs',
         :'radio_group_tabs' => :'Array<RadioGroup>',
         :'signer_attachment_tabs' => :'Array<SignerAttachment>',
         :'sign_here_tabs' => :'Array<SignHere>',
@@ -380,6 +384,10 @@ module DocuSign_eSign
         end
       end
 
+      if attributes.has_key?(:'prefillTabs')
+        self.prefill_tabs = attributes[:'prefillTabs']
+      end
+
       if attributes.has_key?(:'radioGroupTabs')
         if (value = attributes[:'radioGroupTabs']).is_a?(Array)
           self.radio_group_tabs = value
@@ -486,6 +494,7 @@ module DocuSign_eSign
           number_tabs == o.number_tabs &&
           phone_number_tabs == o.phone_number_tabs &&
           poly_line_overlay_tabs == o.poly_line_overlay_tabs &&
+          prefill_tabs == o.prefill_tabs &&
           radio_group_tabs == o.radio_group_tabs &&
           signer_attachment_tabs == o.signer_attachment_tabs &&
           sign_here_tabs == o.sign_here_tabs &&
@@ -507,7 +516,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [approve_tabs, checkbox_tabs, comment_thread_tabs, commission_county_tabs, commission_expiration_tabs, commission_number_tabs, commission_state_tabs, company_tabs, date_signed_tabs, date_tabs, decline_tabs, draw_tabs, email_address_tabs, email_tabs, envelope_id_tabs, first_name_tabs, formula_tabs, full_name_tabs, initial_here_tabs, last_name_tabs, list_tabs, notarize_tabs, notary_seal_tabs, note_tabs, number_tabs, phone_number_tabs, poly_line_overlay_tabs, radio_group_tabs, signer_attachment_tabs, sign_here_tabs, smart_section_tabs, ssn_tabs, tab_groups, text_tabs, title_tabs, view_tabs, zip_tabs].hash
+      [approve_tabs, checkbox_tabs, comment_thread_tabs, commission_county_tabs, commission_expiration_tabs, commission_number_tabs, commission_state_tabs, company_tabs, date_signed_tabs, date_tabs, decline_tabs, draw_tabs, email_address_tabs, email_tabs, envelope_id_tabs, first_name_tabs, formula_tabs, full_name_tabs, initial_here_tabs, last_name_tabs, list_tabs, notarize_tabs, notary_seal_tabs, note_tabs, number_tabs, phone_number_tabs, poly_line_overlay_tabs, prefill_tabs, radio_group_tabs, signer_attachment_tabs, sign_here_tabs, smart_section_tabs, ssn_tabs, tab_groups, text_tabs, title_tabs, view_tabs, zip_tabs].hash
     end
 
     # Builds the object from hash

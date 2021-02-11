@@ -50,6 +50,9 @@ module DocuSign_eSign
     # A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId - The DocuSign group ID for the group. * groupName - The name of the group * permissionProfileId - The ID of the permission profile associated with the group. * groupType - The group type. 
     attr_accessor :group_list
 
+    # 
+    attr_accessor :has_remote_notary
+
     attr_accessor :home_address
 
     # Contains the URI for an endpoint that you can use to retrieve the initials image.
@@ -150,6 +153,7 @@ module DocuSign_eSign
         :'first_name' => :'firstName',
         :'forgotten_password_info' => :'forgottenPasswordInfo',
         :'group_list' => :'groupList',
+        :'has_remote_notary' => :'hasRemoteNotary',
         :'home_address' => :'homeAddress',
         :'initials_image_uri' => :'initialsImageUri',
         :'is_admin' => :'isAdmin',
@@ -198,6 +202,7 @@ module DocuSign_eSign
         :'first_name' => :'String',
         :'forgotten_password_info' => :'ForgottenPasswordInformation',
         :'group_list' => :'Array<Group>',
+        :'has_remote_notary' => :'BOOLEAN',
         :'home_address' => :'AddressInformation',
         :'initials_image_uri' => :'String',
         :'is_admin' => :'String',
@@ -294,6 +299,10 @@ module DocuSign_eSign
         if (value = attributes[:'groupList']).is_a?(Array)
           self.group_list = value
         end
+      end
+
+      if attributes.has_key?(:'hasRemoteNotary')
+        self.has_remote_notary = attributes[:'hasRemoteNotary']
       end
 
       if attributes.has_key?(:'homeAddress')
@@ -444,6 +453,7 @@ module DocuSign_eSign
           first_name == o.first_name &&
           forgotten_password_info == o.forgotten_password_info &&
           group_list == o.group_list &&
+          has_remote_notary == o.has_remote_notary &&
           home_address == o.home_address &&
           initials_image_uri == o.initials_image_uri &&
           is_admin == o.is_admin &&
@@ -484,7 +494,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [activation_access_code, company, connect_configurations, country_code, created_date_time, custom_settings, default_account_id, email, enable_connect_for_user, error_details, first_name, forgotten_password_info, group_list, home_address, initials_image_uri, is_admin, is_nar_enabled, job_title, last_login, last_name, login_status, middle_name, password, password_expiration, permission_profile_id, permission_profile_name, profile_image_uri, send_activation_email, send_activation_on_invalid_login, signature_image_uri, subscribe, suffix_name, title, uri, user_added_to_account_date_time, user_id, user_name, user_profile_last_modified_date, user_settings, user_status, user_type, work_address].hash
+      [activation_access_code, company, connect_configurations, country_code, created_date_time, custom_settings, default_account_id, email, enable_connect_for_user, error_details, first_name, forgotten_password_info, group_list, has_remote_notary, home_address, initials_image_uri, is_admin, is_nar_enabled, job_title, last_login, last_name, login_status, middle_name, password, password_expiration, permission_profile_id, permission_profile_name, profile_image_uri, send_activation_email, send_activation_on_invalid_login, signature_image_uri, subscribe, suffix_name, title, uri, user_added_to_account_date_time, user_id, user_name, user_profile_last_modified_date, user_settings, user_status, user_type, work_address].hash
     end
 
     # Builds the object from hash

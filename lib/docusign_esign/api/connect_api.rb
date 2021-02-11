@@ -74,7 +74,7 @@ module DocuSign_eSign
   class ConnectApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = ConnectApi.default)
       @api_client = api_client
     end
 
@@ -129,6 +129,54 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Generates a new connect HMAC Secret.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [nil]
+    def create_connect_secret(account_id)
+      create_connect_secret_with_http_info(account_id)
+      return nil
+    end
+
+    # Generates a new connect HMAC Secret.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def create_connect_secret_with_http_info(account_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.create_connect_secret ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.create_connect_secret" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/secret".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#create_connect_secret\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Deletes the specified connect configuration.
     # Deletes the specified DocuSign Connect configuration.  ###### Note: Connect must be enabled for your account to use this function.    
     # @param account_id The external account number (int) or account ID Guid.
@@ -177,6 +225,58 @@ module DocuSign_eSign
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ConnectApi#delete_configuration\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete the connect HMAC Secret for AccountID
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param key_id 
+    # @return [nil]
+    def delete_connect_secret(account_id, key_id)
+      delete_connect_secret_with_http_info(account_id, key_id)
+      return nil
+    end
+
+    # Delete the connect HMAC Secret for AccountID
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param key_id 
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_connect_secret_with_http_info(account_id, key_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.delete_connect_secret ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.delete_connect_secret" if account_id.nil?
+      # verify the required parameter 'key_id' is set
+      fail ArgumentError, "Missing the required parameter 'key_id' when calling ConnectApi.delete_connect_secret" if key_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/secret/{keyId}/delete".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'keyId' + '}', key_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#delete_connect_secret\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -384,6 +484,54 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Generates a new connect HMAC Secret.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [nil]
+    def generate_connect_secret(account_id)
+      generate_connect_secret_with_http_info(account_id)
+      return nil
+    end
+
+    # Generates a new connect HMAC Secret.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def generate_connect_secret_with_http_info(account_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.generate_connect_secret ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.generate_connect_secret" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/secret".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#generate_connect_secret\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get a Connect Configuration Information
     # Retrieves the information for the specified DocuSign Connect configuration.  ###### Note: Connect must be enabled for your account to use this function. 
     # @param account_id The external account number (int) or account ID Guid.
@@ -433,6 +581,54 @@ module DocuSign_eSign
         :return_type => 'ConnectConfigResults')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ConnectApi#get_configuration\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get the connect HMAC Secrets for AccountID
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [nil]
+    def get_connect_secrets(account_id)
+      get_connect_secrets_with_http_info(account_id)
+      return nil
+    end
+
+    # Get the connect HMAC Secrets for AccountID
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def get_connect_secrets_with_http_info(account_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.get_connect_secrets ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.get_connect_secrets" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/secrets".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#get_connect_secrets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

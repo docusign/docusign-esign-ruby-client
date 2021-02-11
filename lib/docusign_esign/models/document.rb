@@ -17,6 +17,9 @@ module DocuSign_eSign
     attr_accessor :apply_anchor_tabs
 
     # 
+    attr_accessor :assign_tabs_to_recipient_id
+
+    # 
     attr_accessor :display
 
     # The document's bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding.
@@ -87,6 +90,7 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'apply_anchor_tabs' => :'applyAnchorTabs',
+        :'assign_tabs_to_recipient_id' => :'assignTabsToRecipientId',
         :'display' => :'display',
         :'document_base64' => :'documentBase64',
         :'document_fields' => :'documentFields',
@@ -117,6 +121,7 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'apply_anchor_tabs' => :'String',
+        :'assign_tabs_to_recipient_id' => :'String',
         :'display' => :'String',
         :'document_base64' => :'String',
         :'document_fields' => :'Array<NameValue>',
@@ -153,6 +158,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'applyAnchorTabs')
         self.apply_anchor_tabs = attributes[:'applyAnchorTabs']
+      end
+
+      if attributes.has_key?(:'assignTabsToRecipientId')
+        self.assign_tabs_to_recipient_id = attributes[:'assignTabsToRecipientId']
       end
 
       if attributes.has_key?(:'display')
@@ -271,6 +280,7 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           apply_anchor_tabs == o.apply_anchor_tabs &&
+          assign_tabs_to_recipient_id == o.assign_tabs_to_recipient_id &&
           display == o.display &&
           document_base64 == o.document_base64 &&
           document_fields == o.document_fields &&
@@ -305,7 +315,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [apply_anchor_tabs, display, document_base64, document_fields, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, match_boxes, name, order, pages, password, pdf_form_field_option, remote_url, signer_must_acknowledge, signer_must_acknowledge_use_account_default, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
+      [apply_anchor_tabs, assign_tabs_to_recipient_id, display, document_base64, document_fields, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, match_boxes, name, order, pages, password, pdf_form_field_option, remote_url, signer_must_acknowledge, signer_must_acknowledge_use_account_default, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
     end
 
     # Builds the object from hash
