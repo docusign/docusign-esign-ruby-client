@@ -168,6 +168,9 @@ module DocuSign_eSign
     attr_accessor :include
 
     # 
+    attr_accessor :is_deleted_template_only
+
+    # 
     attr_accessor :is_download
 
     # 
@@ -2463,6 +2466,7 @@ module DocuSign_eSign
       query_params[:'folder_types'] = options.folder_types if !options.folder_types.nil?
       query_params[:'from_date'] = options.from_date if !options.from_date.nil?
       query_params[:'include'] = options.include if !options.include.nil?
+      query_params[:'is_deleted_template_only'] = options.is_deleted_template_only if !options.is_deleted_template_only.nil?
       query_params[:'is_download'] = options.is_download if !options.is_download.nil?
       query_params[:'modified_from_date'] = options.modified_from_date if !options.modified_from_date.nil?
       query_params[:'modified_to_date'] = options.modified_to_date if !options.modified_to_date.nil?

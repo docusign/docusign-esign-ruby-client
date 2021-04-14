@@ -122,6 +122,9 @@ module DocuSign_eSign
     attr_accessor :expired_ts
 
     # 
+    attr_accessor :failure_reason
+
+    # 
     attr_accessor :failures
 
     # 
@@ -374,6 +377,12 @@ module DocuSign_eSign
     attr_accessor :user_id
 
     # 
+    attr_accessor :verification_status
+
+    # 
+    attr_accessor :verification_type
+
+    # 
     attr_accessor :view_date
 
     # 
@@ -418,6 +427,7 @@ module DocuSign_eSign
         :'event_date' => :'eventDate',
         :'expiration_date' => :'expirationDate',
         :'expired_ts' => :'expiredTs',
+        :'failure_reason' => :'failureReason',
         :'failures' => :'failures',
         :'failure_vendor_code' => :'failureVendorCode',
         :'failure_vendor_reason' => :'failureVendorReason',
@@ -502,6 +512,8 @@ module DocuSign_eSign
         :'user_account_status' => :'userAccountStatus',
         :'user_count' => :'userCount',
         :'user_id' => :'userId',
+        :'verification_status' => :'verificationStatus',
+        :'verification_type' => :'verificationType',
         :'view_date' => :'viewDate',
         :'voided_ts' => :'voidedTs'
       }
@@ -546,6 +558,7 @@ module DocuSign_eSign
         :'event_date' => :'String',
         :'expiration_date' => :'String',
         :'expired_ts' => :'String',
+        :'failure_reason' => :'String',
         :'failures' => :'String',
         :'failure_vendor_code' => :'String',
         :'failure_vendor_reason' => :'String',
@@ -630,6 +643,8 @@ module DocuSign_eSign
         :'user_account_status' => :'String',
         :'user_count' => :'String',
         :'user_id' => :'String',
+        :'verification_status' => :'String',
+        :'verification_type' => :'String',
         :'view_date' => :'String',
         :'voided_ts' => :'String'
       }
@@ -785,6 +800,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'expiredTs')
         self.expired_ts = attributes[:'expiredTs']
+      end
+
+      if attributes.has_key?(:'failureReason')
+        self.failure_reason = attributes[:'failureReason']
       end
 
       if attributes.has_key?(:'failures')
@@ -1123,6 +1142,14 @@ module DocuSign_eSign
         self.user_id = attributes[:'userId']
       end
 
+      if attributes.has_key?(:'verificationStatus')
+        self.verification_status = attributes[:'verificationStatus']
+      end
+
+      if attributes.has_key?(:'verificationType')
+        self.verification_type = attributes[:'verificationType']
+      end
+
       if attributes.has_key?(:'viewDate')
         self.view_date = attributes[:'viewDate']
       end
@@ -1186,6 +1213,7 @@ module DocuSign_eSign
           event_date == o.event_date &&
           expiration_date == o.expiration_date &&
           expired_ts == o.expired_ts &&
+          failure_reason == o.failure_reason &&
           failures == o.failures &&
           failure_vendor_code == o.failure_vendor_code &&
           failure_vendor_reason == o.failure_vendor_reason &&
@@ -1270,6 +1298,8 @@ module DocuSign_eSign
           user_account_status == o.user_account_status &&
           user_count == o.user_count &&
           user_id == o.user_id &&
+          verification_status == o.verification_status &&
+          verification_type == o.verification_type &&
           view_date == o.view_date &&
           voided_ts == o.voided_ts
     end
@@ -1283,7 +1313,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code_required, access_codes_attempted, access_codes_failed, account_id, authentication_category, authentication_success, authentication_type, average_time_to_complete_seconds, avg_complete_seconds, completed, completed_ts, created_date, custom_field, declined_date, declined_reason, delivered_date, envelope_count, envelope_creator, envelope_id, envelope_initial_send_ts, envelopes_billed, envelopes_completed, envelopes_completed_count, envelopes_declined, envelopes_sent, envelopes_sent_count, envelopes_voided, envelope_voided_reason, eod_document_description, eod_document_name, eod_document_profile_id, eod_transaction_id, eod_transaction_name, event_date, expiration_date, expired_ts, failures, failure_vendor_code, failure_vendor_reason, first_send_ts, group_id, group_name, hours_to_complete_end, hours_to_complete_start, id_checks_attempted, id_checks_failed, initial_send_ts, ip_address, last_activity, last_activity_date, last_sent_date, not_signed, number_of_authenticated_recipients, number_of_completed_signatures, number_of_documents, number_of_pages, number_of_recipients, number_of_sends, number_of_signers, number_of_total_documents, number_of_total_pages, number_of_total_signers, number_of_unique_senders, number_total_recipients, period_end, period_start, phone_calls_attempted, phone_calls_failed, reason_for_declining, reason_for_voiding, reassign_reason, received, recipient, recipient_action, recipient_company_name, recipient_country, recipient_email, recipient_id, recipient_name, recipient_template_role_name, recipient_title, recipient_type, recipient_user_id, remaining_signatures, routing_order, sender_account_id, sender_company_name, sender_country, sender_email, sender_ip_address, sender_job_title, sender_name, sender_user_id, sign_date, signed, signed_date, signed_on_mobile, signed_on_paper, signer_list, status, status_changed_date, status_changed_ts, subject, successes, templates_created, templates_created_count, terminal_status_date, time_to_complete_seconds, time_to_deliver, total_documents, total_envelopes, total_pages, total_recipients, total_signers, unique_senders, user_account_email, user_account_name, user_account_status, user_count, user_id, view_date, voided_ts].hash
+      [access_code_required, access_codes_attempted, access_codes_failed, account_id, authentication_category, authentication_success, authentication_type, average_time_to_complete_seconds, avg_complete_seconds, completed, completed_ts, created_date, custom_field, declined_date, declined_reason, delivered_date, envelope_count, envelope_creator, envelope_id, envelope_initial_send_ts, envelopes_billed, envelopes_completed, envelopes_completed_count, envelopes_declined, envelopes_sent, envelopes_sent_count, envelopes_voided, envelope_voided_reason, eod_document_description, eod_document_name, eod_document_profile_id, eod_transaction_id, eod_transaction_name, event_date, expiration_date, expired_ts, failure_reason, failures, failure_vendor_code, failure_vendor_reason, first_send_ts, group_id, group_name, hours_to_complete_end, hours_to_complete_start, id_checks_attempted, id_checks_failed, initial_send_ts, ip_address, last_activity, last_activity_date, last_sent_date, not_signed, number_of_authenticated_recipients, number_of_completed_signatures, number_of_documents, number_of_pages, number_of_recipients, number_of_sends, number_of_signers, number_of_total_documents, number_of_total_pages, number_of_total_signers, number_of_unique_senders, number_total_recipients, period_end, period_start, phone_calls_attempted, phone_calls_failed, reason_for_declining, reason_for_voiding, reassign_reason, received, recipient, recipient_action, recipient_company_name, recipient_country, recipient_email, recipient_id, recipient_name, recipient_template_role_name, recipient_title, recipient_type, recipient_user_id, remaining_signatures, routing_order, sender_account_id, sender_company_name, sender_country, sender_email, sender_ip_address, sender_job_title, sender_name, sender_user_id, sign_date, signed, signed_date, signed_on_mobile, signed_on_paper, signer_list, status, status_changed_date, status_changed_ts, subject, successes, templates_created, templates_created_count, terminal_status_date, time_to_complete_seconds, time_to_deliver, total_documents, total_envelopes, total_pages, total_recipients, total_signers, unique_senders, user_account_email, user_account_name, user_account_status, user_count, user_id, verification_status, verification_type, view_date, voided_ts].hash
     end
 
     # Builds the object from hash
