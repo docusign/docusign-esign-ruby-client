@@ -133,6 +133,9 @@ module DocuSign_eSign
     attr_accessor :last_name_metadata
 
     # 
+    attr_accessor :live_oak_start_url
+
+    # 
     attr_accessor :locked_recipient_phone_auth_editable
 
     # 
@@ -309,6 +312,7 @@ module DocuSign_eSign
         :'is_bulk_recipient_metadata' => :'isBulkRecipientMetadata',
         :'last_name' => :'lastName',
         :'last_name_metadata' => :'lastNameMetadata',
+        :'live_oak_start_url' => :'liveOakStartURL',
         :'locked_recipient_phone_auth_editable' => :'lockedRecipientPhoneAuthEditable',
         :'locked_recipient_sms_editable' => :'lockedRecipientSmsEditable',
         :'name' => :'name',
@@ -407,6 +411,7 @@ module DocuSign_eSign
         :'is_bulk_recipient_metadata' => :'PropertyMetadata',
         :'last_name' => :'String',
         :'last_name_metadata' => :'PropertyMetadata',
+        :'live_oak_start_url' => :'String',
         :'locked_recipient_phone_auth_editable' => :'String',
         :'locked_recipient_sms_editable' => :'String',
         :'name' => :'String',
@@ -648,6 +653,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'lastNameMetadata')
         self.last_name_metadata = attributes[:'lastNameMetadata']
+      end
+
+      if attributes.has_key?(:'liveOakStartURL')
+        self.live_oak_start_url = attributes[:'liveOakStartURL']
       end
 
       if attributes.has_key?(:'lockedRecipientPhoneAuthEditable')
@@ -917,6 +926,7 @@ module DocuSign_eSign
           is_bulk_recipient_metadata == o.is_bulk_recipient_metadata &&
           last_name == o.last_name &&
           last_name_metadata == o.last_name_metadata &&
+          live_oak_start_url == o.live_oak_start_url &&
           locked_recipient_phone_auth_editable == o.locked_recipient_phone_auth_editable &&
           locked_recipient_sms_editable == o.locked_recipient_sms_editable &&
           name == o.name &&
@@ -976,7 +986,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_navigation, bulk_recipients_uri, can_sign_offline, client_user_id, completed_count, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_id, notary_signers, notary_type, note, note_metadata, offline_attributes, phone_authentication, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_navigation, bulk_recipients_uri, can_sign_offline, client_user_id, completed_count, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, live_oak_start_url, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_id, notary_signers, notary_type, note, note_metadata, offline_attributes, phone_authentication, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash

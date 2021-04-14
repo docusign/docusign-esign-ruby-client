@@ -253,7 +253,7 @@ module DocuSign_eSign
       # verify the required parameter 'key_id' is set
       fail ArgumentError, "Missing the required parameter 'key_id' when calling ConnectApi.delete_connect_secret" if key_id.nil?
       # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/connect/secret/{keyId}/delete".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'keyId' + '}', key_id.to_s)
+      local_var_path = "/v2.1/accounts/{accountId}/connect/secret/{keyId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'keyId' + '}', key_id.to_s)
 
       # query parameters
       query_params = {}
@@ -889,59 +889,6 @@ module DocuSign_eSign
         :return_type => 'MobileNotifierConfigurationInformation')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ConnectApi#list_mobile_notifiers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Test connect configuration.
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param connect_id The ID of the custom Connect configuration being accessed.
-    # @return [ResourceInformation]
-    def list_tests(account_id, connect_id)
-      data, _status_code, _headers = list_tests_with_http_info(account_id, connect_id)
-      return data
-    end
-
-    # Test connect configuration.
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param connect_id The ID of the custom Connect configuration being accessed.
-    # @return [Array<(ResourceInformation, Fixnum, Hash)>] ResourceInformation data, response status code and response headers
-    def list_tests_with_http_info(account_id, connect_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ConnectApi.list_tests ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.list_tests" if account_id.nil?
-      # verify the required parameter 'connect_id' is set
-      fail ArgumentError, "Missing the required parameter 'connect_id' when calling ConnectApi.list_tests" if connect_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/connect/{connectId}/tests".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'connectId' + '}', connect_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'ResourceInformation')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ConnectApi#list_tests\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

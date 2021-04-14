@@ -23,6 +23,9 @@ module DocuSign_eSign
     attr_accessor :enable_admin_message_metadata
 
     # 
+    attr_accessor :enable_advanced_payments_react_edit
+
+    # 
     attr_accessor :enable_easy_sign_can_use_multi_template_apply
 
     attr_accessor :enable_easy_sign_can_use_multi_template_apply_metadata
@@ -41,6 +44,11 @@ module DocuSign_eSign
     attr_accessor :enable_legacy_homepage_link
 
     attr_accessor :enable_legacy_homepage_link_metadata
+
+    # 
+    attr_accessor :has_external_linked_accounts
+
+    attr_accessor :has_external_linked_accounts_metadata
 
     # 
     attr_accessor :hide_send_an_envelope
@@ -84,6 +92,7 @@ module DocuSign_eSign
         :'ask_an_admin' => :'askAnAdmin',
         :'enable_admin_message' => :'enableAdminMessage',
         :'enable_admin_message_metadata' => :'enableAdminMessageMetadata',
+        :'enable_advanced_payments_react_edit' => :'enableAdvancedPaymentsReactEdit',
         :'enable_easy_sign_can_use_multi_template_apply' => :'enableEasySignCanUseMultiTemplateApply',
         :'enable_easy_sign_can_use_multi_template_apply_metadata' => :'enableEasySignCanUseMultiTemplateApplyMetadata',
         :'enable_easy_sign_template_upload' => :'enableEasySignTemplateUpload',
@@ -92,6 +101,8 @@ module DocuSign_eSign
         :'enable_envelope_copy_with_data_metadata' => :'enableEnvelopeCopyWithDataMetadata',
         :'enable_legacy_homepage_link' => :'enableLegacyHomepageLink',
         :'enable_legacy_homepage_link_metadata' => :'enableLegacyHomepageLinkMetadata',
+        :'has_external_linked_accounts' => :'hasExternalLinkedAccounts',
+        :'has_external_linked_accounts_metadata' => :'hasExternalLinkedAccountsMetadata',
         :'hide_send_an_envelope' => :'hideSendAnEnvelope',
         :'hide_send_an_envelope_metadata' => :'hideSendAnEnvelopeMetadata',
         :'hide_use_a_template' => :'hideUseATemplate',
@@ -116,6 +127,7 @@ module DocuSign_eSign
         :'ask_an_admin' => :'AskAnAdmin',
         :'enable_admin_message' => :'String',
         :'enable_admin_message_metadata' => :'SettingsMetadata',
+        :'enable_advanced_payments_react_edit' => :'String',
         :'enable_easy_sign_can_use_multi_template_apply' => :'String',
         :'enable_easy_sign_can_use_multi_template_apply_metadata' => :'SettingsMetadata',
         :'enable_easy_sign_template_upload' => :'String',
@@ -124,6 +136,8 @@ module DocuSign_eSign
         :'enable_envelope_copy_with_data_metadata' => :'SettingsMetadata',
         :'enable_legacy_homepage_link' => :'String',
         :'enable_legacy_homepage_link_metadata' => :'SettingsMetadata',
+        :'has_external_linked_accounts' => :'String',
+        :'has_external_linked_accounts_metadata' => :'SettingsMetadata',
         :'hide_send_an_envelope' => :'String',
         :'hide_send_an_envelope_metadata' => :'SettingsMetadata',
         :'hide_use_a_template' => :'String',
@@ -165,6 +179,10 @@ module DocuSign_eSign
         self.enable_admin_message_metadata = attributes[:'enableAdminMessageMetadata']
       end
 
+      if attributes.has_key?(:'enableAdvancedPaymentsReactEdit')
+        self.enable_advanced_payments_react_edit = attributes[:'enableAdvancedPaymentsReactEdit']
+      end
+
       if attributes.has_key?(:'enableEasySignCanUseMultiTemplateApply')
         self.enable_easy_sign_can_use_multi_template_apply = attributes[:'enableEasySignCanUseMultiTemplateApply']
       end
@@ -195,6 +213,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'enableLegacyHomepageLinkMetadata')
         self.enable_legacy_homepage_link_metadata = attributes[:'enableLegacyHomepageLinkMetadata']
+      end
+
+      if attributes.has_key?(:'hasExternalLinkedAccounts')
+        self.has_external_linked_accounts = attributes[:'hasExternalLinkedAccounts']
+      end
+
+      if attributes.has_key?(:'hasExternalLinkedAccountsMetadata')
+        self.has_external_linked_accounts_metadata = attributes[:'hasExternalLinkedAccountsMetadata']
       end
 
       if attributes.has_key?(:'hideSendAnEnvelope')
@@ -276,6 +302,7 @@ module DocuSign_eSign
           ask_an_admin == o.ask_an_admin &&
           enable_admin_message == o.enable_admin_message &&
           enable_admin_message_metadata == o.enable_admin_message_metadata &&
+          enable_advanced_payments_react_edit == o.enable_advanced_payments_react_edit &&
           enable_easy_sign_can_use_multi_template_apply == o.enable_easy_sign_can_use_multi_template_apply &&
           enable_easy_sign_can_use_multi_template_apply_metadata == o.enable_easy_sign_can_use_multi_template_apply_metadata &&
           enable_easy_sign_template_upload == o.enable_easy_sign_template_upload &&
@@ -284,6 +311,8 @@ module DocuSign_eSign
           enable_envelope_copy_with_data_metadata == o.enable_envelope_copy_with_data_metadata &&
           enable_legacy_homepage_link == o.enable_legacy_homepage_link &&
           enable_legacy_homepage_link_metadata == o.enable_legacy_homepage_link_metadata &&
+          has_external_linked_accounts == o.has_external_linked_accounts &&
+          has_external_linked_accounts_metadata == o.has_external_linked_accounts_metadata &&
           hide_send_an_envelope == o.hide_send_an_envelope &&
           hide_send_an_envelope_metadata == o.hide_send_an_envelope_metadata &&
           hide_use_a_template == o.hide_use_a_template &&
@@ -309,7 +338,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [admin_message, ask_an_admin, enable_admin_message, enable_admin_message_metadata, enable_easy_sign_can_use_multi_template_apply, enable_easy_sign_can_use_multi_template_apply_metadata, enable_easy_sign_template_upload, enable_easy_sign_template_upload_metadata, enable_envelope_copy_with_data, enable_envelope_copy_with_data_metadata, enable_legacy_homepage_link, enable_legacy_homepage_link_metadata, hide_send_an_envelope, hide_send_an_envelope_metadata, hide_use_a_template, hide_use_a_template_in_prepare, hide_use_a_template_in_prepare_metadata, hide_use_a_template_metadata, order_based_recipient_id_generation, order_based_recipient_id_generation_metadata, remove_envelope_forwarding, remove_envelope_forwarding_metadata, should_redact_access_code, should_redact_access_code_metadata, upload_new_image_to_sign_or_initial, upload_new_image_to_sign_or_initial_metadata].hash
+      [admin_message, ask_an_admin, enable_admin_message, enable_admin_message_metadata, enable_advanced_payments_react_edit, enable_easy_sign_can_use_multi_template_apply, enable_easy_sign_can_use_multi_template_apply_metadata, enable_easy_sign_template_upload, enable_easy_sign_template_upload_metadata, enable_envelope_copy_with_data, enable_envelope_copy_with_data_metadata, enable_legacy_homepage_link, enable_legacy_homepage_link_metadata, has_external_linked_accounts, has_external_linked_accounts_metadata, hide_send_an_envelope, hide_send_an_envelope_metadata, hide_use_a_template, hide_use_a_template_in_prepare, hide_use_a_template_in_prepare_metadata, hide_use_a_template_metadata, order_based_recipient_id_generation, order_based_recipient_id_generation_metadata, remove_envelope_forwarding, remove_envelope_forwarding_metadata, should_redact_access_code, should_redact_access_code_metadata, upload_new_image_to_sign_or_initial, upload_new_image_to_sign_or_initial_metadata].hash
     end
 
     # Builds the object from hash

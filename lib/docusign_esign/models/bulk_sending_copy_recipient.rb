@@ -36,6 +36,12 @@ module DocuSign_eSign
     # Reserved:
     attr_accessor :fax_number
 
+    # 
+    attr_accessor :host_email
+
+    # 
+    attr_accessor :host_name
+
     # Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as 'ID Check $' and 'SMS Auth $'. To use ID check in an envelope, the idCheckConfigurationName should be 'ID Check '. If you wanted to use SMS, it would be 'SMS Auth $' and you would need to add you would need to add phone number information to the `smsAuthentication` node.
     attr_accessor :id_check_configuration_name
 
@@ -61,6 +67,12 @@ module DocuSign_eSign
     # Optional element. Specifies the role name associated with the recipient.<br/><br/>This is required when working with template recipients.
     attr_accessor :role_name
 
+    # 
+    attr_accessor :signer_name
+
+    # When set to **true** and the feature is enabled in the sender's account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once).
+    attr_accessor :signing_group_id
+
     attr_accessor :sms_authentication
 
     #  Lists the social ID type that can be used for recipient authentication.
@@ -80,6 +92,8 @@ module DocuSign_eSign
         :'email_notification' => :'emailNotification',
         :'embedded_recipient_start_url' => :'embeddedRecipientStartURL',
         :'fax_number' => :'faxNumber',
+        :'host_email' => :'hostEmail',
+        :'host_name' => :'hostName',
         :'id_check_configuration_name' => :'idCheckConfigurationName',
         :'id_check_information_input' => :'idCheckInformationInput',
         :'identification_method' => :'identificationMethod',
@@ -89,6 +103,8 @@ module DocuSign_eSign
         :'recipient_id' => :'recipientId',
         :'recipient_signature_providers' => :'recipientSignatureProviders',
         :'role_name' => :'roleName',
+        :'signer_name' => :'signerName',
+        :'signing_group_id' => :'signingGroupId',
         :'sms_authentication' => :'smsAuthentication',
         :'social_authentications' => :'socialAuthentications',
         :'tabs' => :'tabs'
@@ -106,6 +122,8 @@ module DocuSign_eSign
         :'email_notification' => :'RecipientEmailNotification',
         :'embedded_recipient_start_url' => :'String',
         :'fax_number' => :'String',
+        :'host_email' => :'String',
+        :'host_name' => :'String',
         :'id_check_configuration_name' => :'String',
         :'id_check_information_input' => :'IdCheckInformationInput',
         :'identification_method' => :'String',
@@ -115,6 +133,8 @@ module DocuSign_eSign
         :'recipient_id' => :'String',
         :'recipient_signature_providers' => :'Array<RecipientSignatureProvider>',
         :'role_name' => :'String',
+        :'signer_name' => :'String',
+        :'signing_group_id' => :'String',
         :'sms_authentication' => :'RecipientSMSAuthentication',
         :'social_authentications' => :'Array<SocialAuthentication>',
         :'tabs' => :'Array<BulkSendingCopyTab>'
@@ -163,6 +183,14 @@ module DocuSign_eSign
         self.fax_number = attributes[:'faxNumber']
       end
 
+      if attributes.has_key?(:'hostEmail')
+        self.host_email = attributes[:'hostEmail']
+      end
+
+      if attributes.has_key?(:'hostName')
+        self.host_name = attributes[:'hostName']
+      end
+
       if attributes.has_key?(:'idCheckConfigurationName')
         self.id_check_configuration_name = attributes[:'idCheckConfigurationName']
       end
@@ -199,6 +227,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'roleName')
         self.role_name = attributes[:'roleName']
+      end
+
+      if attributes.has_key?(:'signerName')
+        self.signer_name = attributes[:'signerName']
+      end
+
+      if attributes.has_key?(:'signingGroupId')
+        self.signing_group_id = attributes[:'signingGroupId']
       end
 
       if attributes.has_key?(:'smsAuthentication')
@@ -244,6 +280,8 @@ module DocuSign_eSign
           email_notification == o.email_notification &&
           embedded_recipient_start_url == o.embedded_recipient_start_url &&
           fax_number == o.fax_number &&
+          host_email == o.host_email &&
+          host_name == o.host_name &&
           id_check_configuration_name == o.id_check_configuration_name &&
           id_check_information_input == o.id_check_information_input &&
           identification_method == o.identification_method &&
@@ -253,6 +291,8 @@ module DocuSign_eSign
           recipient_id == o.recipient_id &&
           recipient_signature_providers == o.recipient_signature_providers &&
           role_name == o.role_name &&
+          signer_name == o.signer_name &&
+          signing_group_id == o.signing_group_id &&
           sms_authentication == o.sms_authentication &&
           social_authentications == o.social_authentications &&
           tabs == o.tabs
@@ -267,7 +307,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, client_user_id, custom_fields, delivery_method, email, email_notification, embedded_recipient_start_url, fax_number, id_check_configuration_name, id_check_information_input, identification_method, name, note, phone_authentication, recipient_id, recipient_signature_providers, role_name, sms_authentication, social_authentications, tabs].hash
+      [access_code, client_user_id, custom_fields, delivery_method, email, email_notification, embedded_recipient_start_url, fax_number, host_email, host_name, id_check_configuration_name, id_check_information_input, identification_method, name, note, phone_authentication, recipient_id, recipient_signature_providers, role_name, signer_name, signing_group_id, sms_authentication, social_authentications, tabs].hash
     end
 
     # Builds the object from hash

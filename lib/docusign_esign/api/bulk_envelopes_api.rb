@@ -21,6 +21,9 @@ module DocuSign_eSign
     attr_accessor :count
 
     # 
+    attr_accessor :search_text
+
+    # 
     attr_accessor :start_position
 
     # 
@@ -334,6 +337,7 @@ module DocuSign_eSign
       query_params = {}
       query_params[:'batch_ids'] = options.batch_ids if !options.batch_ids.nil?
       query_params[:'count'] = options.count if !options.count.nil?
+      query_params[:'search_text'] = options.search_text if !options.search_text.nil?
       query_params[:'start_position'] = options.start_position if !options.start_position.nil?
       query_params[:'status'] = options.status if !options.status.nil?
 

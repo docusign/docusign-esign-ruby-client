@@ -17,6 +17,12 @@ module DocuSign_eSign
     # Reserved:
     attr_accessor :add_ons
 
+    # 
+    attr_accessor :app_store_receipt_expiration_date
+
+    # 
+    attr_accessor :app_store_receipt_purchase_date
+
     # Reserved: TBD
     attr_accessor :can_cancel_renewal
 
@@ -83,6 +89,8 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'add_ons' => :'addOns',
+        :'app_store_receipt_expiration_date' => :'appStoreReceiptExpirationDate',
+        :'app_store_receipt_purchase_date' => :'appStoreReceiptPurchaseDate',
         :'can_cancel_renewal' => :'canCancelRenewal',
         :'can_upgrade' => :'canUpgrade',
         :'currency_code' => :'currencyCode',
@@ -111,6 +119,8 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'add_ons' => :'Array<AddOn>',
+        :'app_store_receipt_expiration_date' => :'String',
+        :'app_store_receipt_purchase_date' => :'String',
         :'can_cancel_renewal' => :'String',
         :'can_upgrade' => :'String',
         :'currency_code' => :'String',
@@ -147,6 +157,14 @@ module DocuSign_eSign
         if (value = attributes[:'addOns']).is_a?(Array)
           self.add_ons = value
         end
+      end
+
+      if attributes.has_key?(:'appStoreReceiptExpirationDate')
+        self.app_store_receipt_expiration_date = attributes[:'appStoreReceiptExpirationDate']
+      end
+
+      if attributes.has_key?(:'appStoreReceiptPurchaseDate')
+        self.app_store_receipt_purchase_date = attributes[:'appStoreReceiptPurchaseDate']
       end
 
       if attributes.has_key?(:'canCancelRenewal')
@@ -257,6 +275,8 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           add_ons == o.add_ons &&
+          app_store_receipt_expiration_date == o.app_store_receipt_expiration_date &&
+          app_store_receipt_purchase_date == o.app_store_receipt_purchase_date &&
           can_cancel_renewal == o.can_cancel_renewal &&
           can_upgrade == o.can_upgrade &&
           currency_code == o.currency_code &&
@@ -289,7 +309,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [add_ons, can_cancel_renewal, can_upgrade, currency_code, downgrade_plan_information, enable_support, included_seats, incremental_seats, is_downgrade, notification_type, other_discount_percent, payment_cycle, payment_method, per_seat_price, plan_classification, plan_feature_sets, plan_id, plan_name, renewal_status, seat_discounts, support_incident_fee, support_plan_fee].hash
+      [add_ons, app_store_receipt_expiration_date, app_store_receipt_purchase_date, can_cancel_renewal, can_upgrade, currency_code, downgrade_plan_information, enable_support, included_seats, incremental_seats, is_downgrade, notification_type, other_discount_percent, payment_cycle, payment_method, per_seat_price, plan_classification, plan_feature_sets, plan_id, plan_name, renewal_status, seat_discounts, support_incident_fee, support_plan_fee].hash
     end
 
     # Builds the object from hash

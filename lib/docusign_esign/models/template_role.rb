@@ -16,6 +16,9 @@ module DocuSign_eSign
     # If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account's access code format setting.  If blank, but the signer `accessCode` property is set in the envelope, then that value is used.  If blank and the signer `accessCode` property is not set, then the access code is not required.
     attr_accessor :access_code
 
+    # 
+    attr_accessor :additional_notifications
+
     # Specifies whether the recipient is embedded or remote.   If the `clientUserId` property is not null then the recipient is embedded. Note that if the `ClientUserId` property is set and either `SignerMustHaveAccount` or `SignerMustLoginToSign` property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. 
     attr_accessor :client_user_id
 
@@ -54,6 +57,7 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'access_code' => :'accessCode',
+        :'additional_notifications' => :'additionalNotifications',
         :'client_user_id' => :'clientUserId',
         :'default_recipient' => :'defaultRecipient',
         :'email' => :'email',
@@ -73,6 +77,7 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'access_code' => :'String',
+        :'additional_notifications' => :'Array<RecipientAdditionalNotification>',
         :'client_user_id' => :'String',
         :'default_recipient' => :'String',
         :'email' => :'String',
@@ -98,6 +103,12 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'accessCode')
         self.access_code = attributes[:'accessCode']
+      end
+
+      if attributes.has_key?(:'additionalNotifications')
+        if (value = attributes[:'additionalNotifications']).is_a?(Array)
+          self.additional_notifications = value
+        end
       end
 
       if attributes.has_key?(:'clientUserId')
@@ -170,6 +181,7 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           access_code == o.access_code &&
+          additional_notifications == o.additional_notifications &&
           client_user_id == o.client_user_id &&
           default_recipient == o.default_recipient &&
           email == o.email &&
@@ -193,7 +205,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, client_user_id, default_recipient, email, email_notification, embedded_recipient_start_url, in_person_signer_name, name, recipient_signature_providers, role_name, routing_order, signing_group_id, tabs].hash
+      [access_code, additional_notifications, client_user_id, default_recipient, email, email_notification, embedded_recipient_start_url, in_person_signer_name, name, recipient_signature_providers, role_name, routing_order, signing_group_id, tabs].hash
     end
 
     # Builds the object from hash

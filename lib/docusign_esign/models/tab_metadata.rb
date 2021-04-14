@@ -94,6 +94,8 @@ module DocuSign_eSign
     # The userId of the DocuSign user who last modified this object.
     attr_accessor :last_modified_by_user_id
 
+    attr_accessor :locale_policy
+
     # When set to **true**, the signer cannot change the data of the custom tab.
     attr_accessor :locked
 
@@ -104,6 +106,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :name
+
+    # 
+    attr_accessor :numerical_value
 
     # 
     attr_accessor :payment_item_code
@@ -185,10 +190,12 @@ module DocuSign_eSign
         :'last_modified' => :'lastModified',
         :'last_modified_by_display_name' => :'lastModifiedByDisplayName',
         :'last_modified_by_user_id' => :'lastModifiedByUserId',
+        :'locale_policy' => :'localePolicy',
         :'locked' => :'locked',
         :'maximum_length' => :'maximumLength',
         :'merge_field' => :'mergeField',
         :'name' => :'name',
+        :'numerical_value' => :'numericalValue',
         :'payment_item_code' => :'paymentItemCode',
         :'payment_item_description' => :'paymentItemDescription',
         :'payment_item_name' => :'paymentItemName',
@@ -239,10 +246,12 @@ module DocuSign_eSign
         :'last_modified' => :'String',
         :'last_modified_by_display_name' => :'String',
         :'last_modified_by_user_id' => :'String',
+        :'locale_policy' => :'LocalePolicyTab',
         :'locked' => :'String',
         :'maximum_length' => :'String',
         :'merge_field' => :'MergeField',
         :'name' => :'String',
+        :'numerical_value' => :'String',
         :'payment_item_code' => :'String',
         :'payment_item_description' => :'String',
         :'payment_item_name' => :'String',
@@ -381,6 +390,10 @@ module DocuSign_eSign
         self.last_modified_by_user_id = attributes[:'lastModifiedByUserId']
       end
 
+      if attributes.has_key?(:'localePolicy')
+        self.locale_policy = attributes[:'localePolicy']
+      end
+
       if attributes.has_key?(:'locked')
         self.locked = attributes[:'locked']
       end
@@ -395,6 +408,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'numericalValue')
+        self.numerical_value = attributes[:'numericalValue']
       end
 
       if attributes.has_key?(:'paymentItemCode')
@@ -511,10 +528,12 @@ module DocuSign_eSign
           last_modified == o.last_modified &&
           last_modified_by_display_name == o.last_modified_by_display_name &&
           last_modified_by_user_id == o.last_modified_by_user_id &&
+          locale_policy == o.locale_policy &&
           locked == o.locked &&
           maximum_length == o.maximum_length &&
           merge_field == o.merge_field &&
           name == o.name &&
+          numerical_value == o.numerical_value &&
           payment_item_code == o.payment_item_code &&
           payment_item_description == o.payment_item_description &&
           payment_item_name == o.payment_item_name &&
@@ -543,7 +562,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor, anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_units, anchor_x_offset, anchor_y_offset, bold, collaborative, conceal_value_on_document, created_by_display_name, created_by_user_id, custom_tab_id, disable_auto_size, editable, font, font_color, font_size, height, included_in_email, initial_value, italic, items, last_modified, last_modified_by_display_name, last_modified_by_user_id, locked, maximum_length, merge_field, name, payment_item_code, payment_item_description, payment_item_name, require_all, required, require_initial_on_shared_change, scale_value, selected, shared, stamp_type, stamp_type_metadata, tab_label, type, underline, validation_message, validation_pattern, width].hash
+      [anchor, anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_units, anchor_x_offset, anchor_y_offset, bold, collaborative, conceal_value_on_document, created_by_display_name, created_by_user_id, custom_tab_id, disable_auto_size, editable, font, font_color, font_size, height, included_in_email, initial_value, italic, items, last_modified, last_modified_by_display_name, last_modified_by_user_id, locale_policy, locked, maximum_length, merge_field, name, numerical_value, payment_item_code, payment_item_description, payment_item_name, require_all, required, require_initial_on_shared_change, scale_value, selected, shared, stamp_type, stamp_type_metadata, tab_label, type, underline, validation_message, validation_pattern, width].hash
     end
 
     # Builds the object from hash
