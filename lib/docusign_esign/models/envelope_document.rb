@@ -36,6 +36,9 @@ module DocuSign_eSign
     attr_accessor :display_metadata
 
     # 
+    attr_accessor :document_base64
+
+    # 
     attr_accessor :document_fields
 
     # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
@@ -93,6 +96,7 @@ module DocuSign_eSign
         :'contains_pdf_form_fields' => :'containsPdfFormFields',
         :'display' => :'display',
         :'display_metadata' => :'displayMetadata',
+        :'document_base64' => :'documentBase64',
         :'document_fields' => :'documentFields',
         :'document_id' => :'documentId',
         :'document_id_guid' => :'documentIdGuid',
@@ -124,6 +128,7 @@ module DocuSign_eSign
         :'contains_pdf_form_fields' => :'String',
         :'display' => :'String',
         :'display_metadata' => :'PropertyMetadata',
+        :'document_base64' => :'String',
         :'document_fields' => :'Array<NameValue>',
         :'document_id' => :'String',
         :'document_id_guid' => :'String',
@@ -186,6 +191,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'displayMetadata')
         self.display_metadata = attributes[:'displayMetadata']
+      end
+
+      if attributes.has_key?(:'documentBase64')
+        self.document_base64 = attributes[:'documentBase64']
       end
 
       if attributes.has_key?(:'documentFields')
@@ -287,6 +296,7 @@ module DocuSign_eSign
           contains_pdf_form_fields == o.contains_pdf_form_fields &&
           display == o.display &&
           display_metadata == o.display_metadata &&
+          document_base64 == o.document_base64 &&
           document_fields == o.document_fields &&
           document_id == o.document_id &&
           document_id_guid == o.document_id_guid &&
@@ -315,7 +325,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [added_recipient_ids, attachment_tab_id, authoritative_copy, authoritative_copy_metadata, available_document_types, contains_pdf_form_fields, display, display_metadata, document_fields, document_id, document_id_guid, error_details, include_in_download, include_in_download_metadata, name, name_metadata, order, pages, signer_must_acknowledge, signer_must_acknowledge_metadata, size_bytes, template_locked, template_required, type, uri].hash
+      [added_recipient_ids, attachment_tab_id, authoritative_copy, authoritative_copy_metadata, available_document_types, contains_pdf_form_fields, display, display_metadata, document_base64, document_fields, document_id, document_id_guid, error_details, include_in_download, include_in_download_metadata, name, name_metadata, order, pages, signer_must_acknowledge, signer_must_acknowledge_metadata, size_bytes, template_locked, template_required, type, uri].hash
     end
 
     # Builds the object from hash

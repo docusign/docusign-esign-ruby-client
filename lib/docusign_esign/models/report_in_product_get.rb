@@ -14,6 +14,9 @@ require 'date'
 module DocuSign_eSign
   class ReportInProductGet
     # 
+    attr_accessor :authentication_success_filter
+
+    # 
     attr_accessor :custom_field_filter
 
     # 
@@ -99,9 +102,13 @@ module DocuSign_eSign
     # 
     attr_accessor :sort_field_name
 
+    # 
+    attr_accessor :verification_status_filter
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'authentication_success_filter' => :'authenticationSuccessFilter',
         :'custom_field_filter' => :'customFieldFilter',
         :'date_range_custom_from_date' => :'dateRangeCustomFromDate',
         :'date_range_custom_to_date' => :'dateRangeCustomToDate',
@@ -130,13 +137,15 @@ module DocuSign_eSign
         :'sent_by_filter' => :'sentByFilter',
         :'sent_by_ids' => :'sentByIds',
         :'sort_field_direction' => :'sortFieldDirection',
-        :'sort_field_name' => :'sortFieldName'
+        :'sort_field_name' => :'sortFieldName',
+        :'verification_status_filter' => :'verificationStatusFilter'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'authentication_success_filter' => :'String',
         :'custom_field_filter' => :'String',
         :'date_range_custom_from_date' => :'String',
         :'date_range_custom_to_date' => :'String',
@@ -165,7 +174,8 @@ module DocuSign_eSign
         :'sent_by_filter' => :'String',
         :'sent_by_ids' => :'String',
         :'sort_field_direction' => :'String',
-        :'sort_field_name' => :'String'
+        :'sort_field_name' => :'String',
+        :'verification_status_filter' => :'String'
       }
     end
 
@@ -176,6 +186,10 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'authenticationSuccessFilter')
+        self.authentication_success_filter = attributes[:'authenticationSuccessFilter']
+      end
 
       if attributes.has_key?(:'customFieldFilter')
         self.custom_field_filter = attributes[:'customFieldFilter']
@@ -294,6 +308,10 @@ module DocuSign_eSign
       if attributes.has_key?(:'sortFieldName')
         self.sort_field_name = attributes[:'sortFieldName']
       end
+
+      if attributes.has_key?(:'verificationStatusFilter')
+        self.verification_status_filter = attributes[:'verificationStatusFilter']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -314,6 +332,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          authentication_success_filter == o.authentication_success_filter &&
           custom_field_filter == o.custom_field_filter &&
           date_range_custom_from_date == o.date_range_custom_from_date &&
           date_range_custom_to_date == o.date_range_custom_to_date &&
@@ -342,7 +361,8 @@ module DocuSign_eSign
           sent_by_filter == o.sent_by_filter &&
           sent_by_ids == o.sent_by_ids &&
           sort_field_direction == o.sort_field_direction &&
-          sort_field_name == o.sort_field_name
+          sort_field_name == o.sort_field_name &&
+          verification_status_filter == o.verification_status_filter
     end
 
     # @see the `==` method
@@ -354,7 +374,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [custom_field_filter, date_range_custom_from_date, date_range_custom_to_date, date_range_filter, display_order, envelope_date_type_filter, envelope_recipient_name_contains_filter, envelope_status_filter, envelope_subject_contains_filter, fields, last_scheduled_execution_date, last_scheduled_execution_success_date, max_download_rows, max_grid_rows, max_scheduled_rows, period_length_filter, report_customized_id, report_description, report_id, report_name, report_type, run_uri, save_uri, schedule_id, sent_by_details, sent_by_filter, sent_by_ids, sort_field_direction, sort_field_name].hash
+      [authentication_success_filter, custom_field_filter, date_range_custom_from_date, date_range_custom_to_date, date_range_filter, display_order, envelope_date_type_filter, envelope_recipient_name_contains_filter, envelope_status_filter, envelope_subject_contains_filter, fields, last_scheduled_execution_date, last_scheduled_execution_success_date, max_download_rows, max_grid_rows, max_scheduled_rows, period_length_filter, report_customized_id, report_description, report_id, report_name, report_type, run_uri, save_uri, schedule_id, sent_by_details, sent_by_filter, sent_by_ids, sort_field_direction, sort_field_name, verification_status_filter].hash
     end
 
     # Builds the object from hash

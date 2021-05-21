@@ -20,6 +20,12 @@ module DocuSign_eSign
 
     attr_accessor :error_details
 
+    # 
+    attr_accessor :recipient_signing_uri
+
+    # 
+    attr_accessor :recipient_signing_uri_error
+
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
     attr_accessor :status
 
@@ -35,6 +41,8 @@ module DocuSign_eSign
         :'bulk_envelope_status' => :'bulkEnvelopeStatus',
         :'envelope_id' => :'envelopeId',
         :'error_details' => :'errorDetails',
+        :'recipient_signing_uri' => :'recipientSigningUri',
+        :'recipient_signing_uri_error' => :'recipientSigningUriError',
         :'status' => :'status',
         :'status_date_time' => :'statusDateTime',
         :'uri' => :'uri'
@@ -47,6 +55,8 @@ module DocuSign_eSign
         :'bulk_envelope_status' => :'BulkEnvelopeStatus',
         :'envelope_id' => :'String',
         :'error_details' => :'ErrorDetails',
+        :'recipient_signing_uri' => :'String',
+        :'recipient_signing_uri_error' => :'String',
         :'status' => :'String',
         :'status_date_time' => :'String',
         :'uri' => :'String'
@@ -71,6 +81,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'errorDetails')
         self.error_details = attributes[:'errorDetails']
+      end
+
+      if attributes.has_key?(:'recipientSigningUri')
+        self.recipient_signing_uri = attributes[:'recipientSigningUri']
+      end
+
+      if attributes.has_key?(:'recipientSigningUriError')
+        self.recipient_signing_uri_error = attributes[:'recipientSigningUriError']
       end
 
       if attributes.has_key?(:'status')
@@ -107,6 +125,8 @@ module DocuSign_eSign
           bulk_envelope_status == o.bulk_envelope_status &&
           envelope_id == o.envelope_id &&
           error_details == o.error_details &&
+          recipient_signing_uri == o.recipient_signing_uri &&
+          recipient_signing_uri_error == o.recipient_signing_uri_error &&
           status == o.status &&
           status_date_time == o.status_date_time &&
           uri == o.uri
@@ -121,7 +141,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [bulk_envelope_status, envelope_id, error_details, status, status_date_time, uri].hash
+      [bulk_envelope_status, envelope_id, error_details, recipient_signing_uri, recipient_signing_uri_error, status, status_date_time, uri].hash
     end
 
     # Builds the object from hash

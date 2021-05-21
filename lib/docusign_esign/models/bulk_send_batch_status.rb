@@ -38,6 +38,9 @@ module DocuSign_eSign
     attr_accessor :mailing_list_id
 
     # 
+    attr_accessor :mailing_list_name
+
+    # 
     attr_accessor :owner_user_id
 
     # 
@@ -63,6 +66,7 @@ module DocuSign_eSign
         :'envelopes_uri' => :'envelopesUri',
         :'failed' => :'failed',
         :'mailing_list_id' => :'mailingListId',
+        :'mailing_list_name' => :'mailingListName',
         :'owner_user_id' => :'ownerUserId',
         :'queued' => :'queued',
         :'sender_user_id' => :'senderUserId',
@@ -82,6 +86,7 @@ module DocuSign_eSign
         :'envelopes_uri' => :'String',
         :'failed' => :'String',
         :'mailing_list_id' => :'String',
+        :'mailing_list_name' => :'String',
         :'owner_user_id' => :'String',
         :'queued' => :'String',
         :'sender_user_id' => :'String',
@@ -132,6 +137,10 @@ module DocuSign_eSign
         self.mailing_list_id = attributes[:'mailingListId']
       end
 
+      if attributes.has_key?(:'mailingListName')
+        self.mailing_list_name = attributes[:'mailingListName']
+      end
+
       if attributes.has_key?(:'ownerUserId')
         self.owner_user_id = attributes[:'ownerUserId']
       end
@@ -179,6 +188,7 @@ module DocuSign_eSign
           envelopes_uri == o.envelopes_uri &&
           failed == o.failed &&
           mailing_list_id == o.mailing_list_id &&
+          mailing_list_name == o.mailing_list_name &&
           owner_user_id == o.owner_user_id &&
           queued == o.queued &&
           sender_user_id == o.sender_user_id &&
@@ -195,7 +205,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [batch_id, batch_name, batch_size, bulk_errors, envelope_id_or_template_id, envelopes_uri, failed, mailing_list_id, owner_user_id, queued, sender_user_id, sent, submitted_date].hash
+      [batch_id, batch_name, batch_size, bulk_errors, envelope_id_or_template_id, envelopes_uri, failed, mailing_list_id, mailing_list_name, owner_user_id, queued, sender_user_id, sent, submitted_date].hash
     end
 
     # Builds the object from hash

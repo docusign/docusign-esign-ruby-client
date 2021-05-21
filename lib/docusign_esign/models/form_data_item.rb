@@ -21,6 +21,9 @@ module DocuSign_eSign
     # 
     attr_accessor :name
 
+    # 
+    attr_accessor :numerical_value
+
     # The initial value of the tab when it was sent to the recipient. 
     attr_accessor :original_value
 
@@ -33,6 +36,7 @@ module DocuSign_eSign
         :'error_details' => :'errorDetails',
         :'list_selected_value' => :'listSelectedValue',
         :'name' => :'name',
+        :'numerical_value' => :'numericalValue',
         :'original_value' => :'originalValue',
         :'value' => :'value'
       }
@@ -44,6 +48,7 @@ module DocuSign_eSign
         :'error_details' => :'ErrorDetails',
         :'list_selected_value' => :'String',
         :'name' => :'String',
+        :'numerical_value' => :'String',
         :'original_value' => :'String',
         :'value' => :'String'
       }
@@ -67,6 +72,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'numericalValue')
+        self.numerical_value = attributes[:'numericalValue']
       end
 
       if attributes.has_key?(:'originalValue')
@@ -99,6 +108,7 @@ module DocuSign_eSign
           error_details == o.error_details &&
           list_selected_value == o.list_selected_value &&
           name == o.name &&
+          numerical_value == o.numerical_value &&
           original_value == o.original_value &&
           value == o.value
     end
@@ -112,7 +122,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [error_details, list_selected_value, name, original_value, value].hash
+      [error_details, list_selected_value, name, numerical_value, original_value, value].hash
     end
 
     # Builds the object from hash
