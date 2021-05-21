@@ -93,6 +93,9 @@ module DocuSign_eSign
     # 
     attr_accessor :disable_responsive_document
 
+    # 
+    attr_accessor :document_base64
+
     # Complex element contains the details on the documents in the envelope.
     attr_accessor :documents
 
@@ -218,6 +221,8 @@ module DocuSign_eSign
     # Contains a URI for an endpoint that you can use to retrieve the recipients.
     attr_accessor :recipients_uri
 
+    attr_accessor :recipient_view_request
+
     attr_accessor :sender
 
     # The date and time the envelope was sent.
@@ -291,6 +296,7 @@ module DocuSign_eSign
         :'deleted_date_time' => :'deletedDateTime',
         :'delivered_date_time' => :'deliveredDateTime',
         :'disable_responsive_document' => :'disableResponsiveDocument',
+        :'document_base64' => :'documentBase64',
         :'documents' => :'documents',
         :'documents_combined_uri' => :'documentsCombinedUri',
         :'documents_uri' => :'documentsUri',
@@ -335,6 +341,7 @@ module DocuSign_eSign
         :'recipients' => :'recipients',
         :'recipients_lock' => :'recipientsLock',
         :'recipients_uri' => :'recipientsUri',
+        :'recipient_view_request' => :'recipientViewRequest',
         :'sender' => :'sender',
         :'sent_date_time' => :'sentDateTime',
         :'signer_can_sign_on_mobile' => :'signerCanSignOnMobile',
@@ -383,6 +390,7 @@ module DocuSign_eSign
         :'deleted_date_time' => :'String',
         :'delivered_date_time' => :'String',
         :'disable_responsive_document' => :'String',
+        :'document_base64' => :'String',
         :'documents' => :'Array<Document>',
         :'documents_combined_uri' => :'String',
         :'documents_uri' => :'String',
@@ -427,6 +435,7 @@ module DocuSign_eSign
         :'recipients' => :'Recipients',
         :'recipients_lock' => :'String',
         :'recipients_uri' => :'String',
+        :'recipient_view_request' => :'RecipientViewRequest',
         :'sender' => :'UserInfo',
         :'sent_date_time' => :'String',
         :'signer_can_sign_on_mobile' => :'String',
@@ -563,6 +572,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'disableResponsiveDocument')
         self.disable_responsive_document = attributes[:'disableResponsiveDocument']
+      end
+
+      if attributes.has_key?(:'documentBase64')
+        self.document_base64 = attributes[:'documentBase64']
       end
 
       if attributes.has_key?(:'documents')
@@ -751,6 +764,10 @@ module DocuSign_eSign
         self.recipients_uri = attributes[:'recipientsUri']
       end
 
+      if attributes.has_key?(:'recipientViewRequest')
+        self.recipient_view_request = attributes[:'recipientViewRequest']
+      end
+
       if attributes.has_key?(:'sender')
         self.sender = attributes[:'sender']
       end
@@ -859,6 +876,7 @@ module DocuSign_eSign
           deleted_date_time == o.deleted_date_time &&
           delivered_date_time == o.delivered_date_time &&
           disable_responsive_document == o.disable_responsive_document &&
+          document_base64 == o.document_base64 &&
           documents == o.documents &&
           documents_combined_uri == o.documents_combined_uri &&
           documents_uri == o.documents_uri &&
@@ -903,6 +921,7 @@ module DocuSign_eSign
           recipients == o.recipients &&
           recipients_lock == o.recipients_lock &&
           recipients_uri == o.recipients_uri &&
+          recipient_view_request == o.recipient_view_request &&
           sender == o.sender &&
           sent_date_time == o.sent_date_time &&
           signer_can_sign_on_mobile == o.signer_can_sign_on_mobile &&
@@ -929,7 +948,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_control_list_base64, accessibility, allow_comments, allow_markup, allow_reassign, allow_recipient_recursion, allow_view_history, any_signer, asynchronous, attachments, attachments_uri, authoritative_copy, authoritative_copy_default, auto_navigation, brand_id, brand_lock, certificate_uri, completed_date_time, composite_templates, copy_recipient_data, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, disable_responsive_document, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_attachments, envelope_documents, envelope_id, envelope_id_stamping, envelope_location, envelope_metadata, envelope_uri, event_notification, event_notifications, expire_after, expire_date_time, expire_enabled, external_envelope_id, folders, has_comments, has_form_data_changed, has_wav_file, holder, initial_sent_date_time, is21_cfr_part11, is_dynamic_envelope, is_signature_provider_envelope, last_modified_date_time, location, lock_information, message_lock, notification, notification_uri, password, power_form, purge_completed_date, purge_request_date, purge_state, recipients, recipients_lock, recipients_uri, sender, sent_date_time, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, status_date_time, template_id, template_roles, templates_uri, transaction_id, use_disclosure, voided_date_time, voided_reason, workflow].hash
+      [access_control_list_base64, accessibility, allow_comments, allow_markup, allow_reassign, allow_recipient_recursion, allow_view_history, any_signer, asynchronous, attachments, attachments_uri, authoritative_copy, authoritative_copy_default, auto_navigation, brand_id, brand_lock, certificate_uri, completed_date_time, composite_templates, copy_recipient_data, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, disable_responsive_document, document_base64, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_attachments, envelope_documents, envelope_id, envelope_id_stamping, envelope_location, envelope_metadata, envelope_uri, event_notification, event_notifications, expire_after, expire_date_time, expire_enabled, external_envelope_id, folders, has_comments, has_form_data_changed, has_wav_file, holder, initial_sent_date_time, is21_cfr_part11, is_dynamic_envelope, is_signature_provider_envelope, last_modified_date_time, location, lock_information, message_lock, notification, notification_uri, password, power_form, purge_completed_date, purge_request_date, purge_state, recipients, recipients_lock, recipients_uri, recipient_view_request, sender, sent_date_time, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, status_date_time, template_id, template_roles, templates_uri, transaction_id, use_disclosure, voided_date_time, voided_reason, workflow].hash
     end
 
     # Builds the object from hash

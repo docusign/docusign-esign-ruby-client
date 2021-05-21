@@ -28,6 +28,9 @@ module DocuSign_eSign
     # The label string associated with the tab.
     attr_accessor :tab_label
 
+    # 
+    attr_accessor :tab_type
+
     # Specifies the value of the tab. 
     attr_accessor :value
 
@@ -39,6 +42,7 @@ module DocuSign_eSign
         :'scope' => :'scope',
         :'tab_id' => :'tabId',
         :'tab_label' => :'tabLabel',
+        :'tab_type' => :'tabType',
         :'value' => :'value'
       }
     end
@@ -51,6 +55,7 @@ module DocuSign_eSign
         :'scope' => :'String',
         :'tab_id' => :'String',
         :'tab_label' => :'String',
+        :'tab_type' => :'String',
         :'value' => :'String'
       }
     end
@@ -83,6 +88,10 @@ module DocuSign_eSign
         self.tab_label = attributes[:'tabLabel']
       end
 
+      if attributes.has_key?(:'tabType')
+        self.tab_type = attributes[:'tabType']
+      end
+
       if attributes.has_key?(:'value')
         self.value = attributes[:'value']
       end
@@ -111,6 +120,7 @@ module DocuSign_eSign
           scope == o.scope &&
           tab_id == o.tab_id &&
           tab_label == o.tab_label &&
+          tab_type == o.tab_type &&
           value == o.value
     end
 
@@ -123,7 +133,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [operator, recipient_id, scope, tab_id, tab_label, value].hash
+      [operator, recipient_id, scope, tab_id, tab_label, tab_type, value].hash
     end
 
     # Builds the object from hash

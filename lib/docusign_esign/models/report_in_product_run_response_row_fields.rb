@@ -41,6 +41,9 @@ module DocuSign_eSign
     attr_accessor :avg_complete_seconds
 
     # 
+    attr_accessor :capture_method
+
+    # 
     attr_accessor :completed
 
     # 
@@ -155,6 +158,12 @@ module DocuSign_eSign
     attr_accessor :id_checks_failed
 
     # 
+    attr_accessor :id_country
+
+    # 
+    attr_accessor :id_method
+
+    # 
     attr_accessor :initial_send_ts
 
     # 
@@ -168,6 +177,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :last_sent_date
+
+    # 
+    attr_accessor :metadata_removed
 
     # 
     attr_accessor :not_signed
@@ -219,6 +231,12 @@ module DocuSign_eSign
 
     # 
     attr_accessor :phone_calls_failed
+
+    # 
+    attr_accessor :pii_redacted
+
+    # 
+    attr_accessor :purge_date
 
     # 
     attr_accessor :reason_for_declining
@@ -323,6 +341,9 @@ module DocuSign_eSign
     attr_accessor :status_changed_ts
 
     # 
+    attr_accessor :status_comment
+
+    # 
     attr_accessor :subject
 
     # 
@@ -400,6 +421,7 @@ module DocuSign_eSign
         :'authentication_type' => :'authenticationType',
         :'average_time_to_complete_seconds' => :'averageTimeToCompleteSeconds',
         :'avg_complete_seconds' => :'avgCompleteSeconds',
+        :'capture_method' => :'captureMethod',
         :'completed' => :'completed',
         :'completed_ts' => :'completedTs',
         :'created_date' => :'createdDate',
@@ -438,11 +460,14 @@ module DocuSign_eSign
         :'hours_to_complete_start' => :'hoursToCompleteStart',
         :'id_checks_attempted' => :'idChecksAttempted',
         :'id_checks_failed' => :'idChecksFailed',
+        :'id_country' => :'idCountry',
+        :'id_method' => :'idMethod',
         :'initial_send_ts' => :'initialSendTs',
         :'ip_address' => :'ipAddress',
         :'last_activity' => :'lastActivity',
         :'last_activity_date' => :'lastActivityDate',
         :'last_sent_date' => :'lastSentDate',
+        :'metadata_removed' => :'metadataRemoved',
         :'not_signed' => :'notSigned',
         :'number_of_authenticated_recipients' => :'numberOfAuthenticatedRecipients',
         :'number_of_completed_signatures' => :'numberOfCompletedSignatures',
@@ -460,6 +485,8 @@ module DocuSign_eSign
         :'period_start' => :'periodStart',
         :'phone_calls_attempted' => :'phoneCallsAttempted',
         :'phone_calls_failed' => :'phoneCallsFailed',
+        :'pii_redacted' => :'piiRedacted',
+        :'purge_date' => :'purgeDate',
         :'reason_for_declining' => :'reasonForDeclining',
         :'reason_for_voiding' => :'reasonForVoiding',
         :'reassign_reason' => :'reassignReason',
@@ -494,6 +521,7 @@ module DocuSign_eSign
         :'status' => :'status',
         :'status_changed_date' => :'statusChangedDate',
         :'status_changed_ts' => :'statusChangedTs',
+        :'status_comment' => :'statusComment',
         :'subject' => :'subject',
         :'successes' => :'successes',
         :'templates_created' => :'templatesCreated',
@@ -531,6 +559,7 @@ module DocuSign_eSign
         :'authentication_type' => :'String',
         :'average_time_to_complete_seconds' => :'String',
         :'avg_complete_seconds' => :'String',
+        :'capture_method' => :'String',
         :'completed' => :'String',
         :'completed_ts' => :'String',
         :'created_date' => :'String',
@@ -569,11 +598,14 @@ module DocuSign_eSign
         :'hours_to_complete_start' => :'String',
         :'id_checks_attempted' => :'String',
         :'id_checks_failed' => :'String',
+        :'id_country' => :'String',
+        :'id_method' => :'String',
         :'initial_send_ts' => :'String',
         :'ip_address' => :'String',
         :'last_activity' => :'String',
         :'last_activity_date' => :'String',
         :'last_sent_date' => :'String',
+        :'metadata_removed' => :'String',
         :'not_signed' => :'String',
         :'number_of_authenticated_recipients' => :'String',
         :'number_of_completed_signatures' => :'String',
@@ -591,6 +623,8 @@ module DocuSign_eSign
         :'period_start' => :'String',
         :'phone_calls_attempted' => :'String',
         :'phone_calls_failed' => :'String',
+        :'pii_redacted' => :'String',
+        :'purge_date' => :'String',
         :'reason_for_declining' => :'String',
         :'reason_for_voiding' => :'String',
         :'reassign_reason' => :'String',
@@ -625,6 +659,7 @@ module DocuSign_eSign
         :'status' => :'String',
         :'status_changed_date' => :'String',
         :'status_changed_ts' => :'String',
+        :'status_comment' => :'String',
         :'subject' => :'String',
         :'successes' => :'String',
         :'templates_created' => :'String',
@@ -692,6 +727,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'avgCompleteSeconds')
         self.avg_complete_seconds = attributes[:'avgCompleteSeconds']
+      end
+
+      if attributes.has_key?(:'captureMethod')
+        self.capture_method = attributes[:'captureMethod']
       end
 
       if attributes.has_key?(:'completed')
@@ -846,6 +885,14 @@ module DocuSign_eSign
         self.id_checks_failed = attributes[:'idChecksFailed']
       end
 
+      if attributes.has_key?(:'idCountry')
+        self.id_country = attributes[:'idCountry']
+      end
+
+      if attributes.has_key?(:'idMethod')
+        self.id_method = attributes[:'idMethod']
+      end
+
       if attributes.has_key?(:'initialSendTs')
         self.initial_send_ts = attributes[:'initialSendTs']
       end
@@ -864,6 +911,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'lastSentDate')
         self.last_sent_date = attributes[:'lastSentDate']
+      end
+
+      if attributes.has_key?(:'metadataRemoved')
+        self.metadata_removed = attributes[:'metadataRemoved']
       end
 
       if attributes.has_key?(:'notSigned')
@@ -932,6 +983,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'phoneCallsFailed')
         self.phone_calls_failed = attributes[:'phoneCallsFailed']
+      end
+
+      if attributes.has_key?(:'piiRedacted')
+        self.pii_redacted = attributes[:'piiRedacted']
+      end
+
+      if attributes.has_key?(:'purgeDate')
+        self.purge_date = attributes[:'purgeDate']
       end
 
       if attributes.has_key?(:'reasonForDeclining')
@@ -1070,6 +1129,10 @@ module DocuSign_eSign
         self.status_changed_ts = attributes[:'statusChangedTs']
       end
 
+      if attributes.has_key?(:'statusComment')
+        self.status_comment = attributes[:'statusComment']
+      end
+
       if attributes.has_key?(:'subject')
         self.subject = attributes[:'subject']
       end
@@ -1186,6 +1249,7 @@ module DocuSign_eSign
           authentication_type == o.authentication_type &&
           average_time_to_complete_seconds == o.average_time_to_complete_seconds &&
           avg_complete_seconds == o.avg_complete_seconds &&
+          capture_method == o.capture_method &&
           completed == o.completed &&
           completed_ts == o.completed_ts &&
           created_date == o.created_date &&
@@ -1224,11 +1288,14 @@ module DocuSign_eSign
           hours_to_complete_start == o.hours_to_complete_start &&
           id_checks_attempted == o.id_checks_attempted &&
           id_checks_failed == o.id_checks_failed &&
+          id_country == o.id_country &&
+          id_method == o.id_method &&
           initial_send_ts == o.initial_send_ts &&
           ip_address == o.ip_address &&
           last_activity == o.last_activity &&
           last_activity_date == o.last_activity_date &&
           last_sent_date == o.last_sent_date &&
+          metadata_removed == o.metadata_removed &&
           not_signed == o.not_signed &&
           number_of_authenticated_recipients == o.number_of_authenticated_recipients &&
           number_of_completed_signatures == o.number_of_completed_signatures &&
@@ -1246,6 +1313,8 @@ module DocuSign_eSign
           period_start == o.period_start &&
           phone_calls_attempted == o.phone_calls_attempted &&
           phone_calls_failed == o.phone_calls_failed &&
+          pii_redacted == o.pii_redacted &&
+          purge_date == o.purge_date &&
           reason_for_declining == o.reason_for_declining &&
           reason_for_voiding == o.reason_for_voiding &&
           reassign_reason == o.reassign_reason &&
@@ -1280,6 +1349,7 @@ module DocuSign_eSign
           status == o.status &&
           status_changed_date == o.status_changed_date &&
           status_changed_ts == o.status_changed_ts &&
+          status_comment == o.status_comment &&
           subject == o.subject &&
           successes == o.successes &&
           templates_created == o.templates_created &&
@@ -1313,7 +1383,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code_required, access_codes_attempted, access_codes_failed, account_id, authentication_category, authentication_success, authentication_type, average_time_to_complete_seconds, avg_complete_seconds, completed, completed_ts, created_date, custom_field, declined_date, declined_reason, delivered_date, envelope_count, envelope_creator, envelope_id, envelope_initial_send_ts, envelopes_billed, envelopes_completed, envelopes_completed_count, envelopes_declined, envelopes_sent, envelopes_sent_count, envelopes_voided, envelope_voided_reason, eod_document_description, eod_document_name, eod_document_profile_id, eod_transaction_id, eod_transaction_name, event_date, expiration_date, expired_ts, failure_reason, failures, failure_vendor_code, failure_vendor_reason, first_send_ts, group_id, group_name, hours_to_complete_end, hours_to_complete_start, id_checks_attempted, id_checks_failed, initial_send_ts, ip_address, last_activity, last_activity_date, last_sent_date, not_signed, number_of_authenticated_recipients, number_of_completed_signatures, number_of_documents, number_of_pages, number_of_recipients, number_of_sends, number_of_signers, number_of_total_documents, number_of_total_pages, number_of_total_signers, number_of_unique_senders, number_total_recipients, period_end, period_start, phone_calls_attempted, phone_calls_failed, reason_for_declining, reason_for_voiding, reassign_reason, received, recipient, recipient_action, recipient_company_name, recipient_country, recipient_email, recipient_id, recipient_name, recipient_template_role_name, recipient_title, recipient_type, recipient_user_id, remaining_signatures, routing_order, sender_account_id, sender_company_name, sender_country, sender_email, sender_ip_address, sender_job_title, sender_name, sender_user_id, sign_date, signed, signed_date, signed_on_mobile, signed_on_paper, signer_list, status, status_changed_date, status_changed_ts, subject, successes, templates_created, templates_created_count, terminal_status_date, time_to_complete_seconds, time_to_deliver, total_documents, total_envelopes, total_pages, total_recipients, total_signers, unique_senders, user_account_email, user_account_name, user_account_status, user_count, user_id, verification_status, verification_type, view_date, voided_ts].hash
+      [access_code_required, access_codes_attempted, access_codes_failed, account_id, authentication_category, authentication_success, authentication_type, average_time_to_complete_seconds, avg_complete_seconds, capture_method, completed, completed_ts, created_date, custom_field, declined_date, declined_reason, delivered_date, envelope_count, envelope_creator, envelope_id, envelope_initial_send_ts, envelopes_billed, envelopes_completed, envelopes_completed_count, envelopes_declined, envelopes_sent, envelopes_sent_count, envelopes_voided, envelope_voided_reason, eod_document_description, eod_document_name, eod_document_profile_id, eod_transaction_id, eod_transaction_name, event_date, expiration_date, expired_ts, failure_reason, failures, failure_vendor_code, failure_vendor_reason, first_send_ts, group_id, group_name, hours_to_complete_end, hours_to_complete_start, id_checks_attempted, id_checks_failed, id_country, id_method, initial_send_ts, ip_address, last_activity, last_activity_date, last_sent_date, metadata_removed, not_signed, number_of_authenticated_recipients, number_of_completed_signatures, number_of_documents, number_of_pages, number_of_recipients, number_of_sends, number_of_signers, number_of_total_documents, number_of_total_pages, number_of_total_signers, number_of_unique_senders, number_total_recipients, period_end, period_start, phone_calls_attempted, phone_calls_failed, pii_redacted, purge_date, reason_for_declining, reason_for_voiding, reassign_reason, received, recipient, recipient_action, recipient_company_name, recipient_country, recipient_email, recipient_id, recipient_name, recipient_template_role_name, recipient_title, recipient_type, recipient_user_id, remaining_signatures, routing_order, sender_account_id, sender_company_name, sender_country, sender_email, sender_ip_address, sender_job_title, sender_name, sender_user_id, sign_date, signed, signed_date, signed_on_mobile, signed_on_paper, signer_list, status, status_changed_date, status_changed_ts, status_comment, subject, successes, templates_created, templates_created_count, terminal_status_date, time_to_complete_seconds, time_to_deliver, total_documents, total_envelopes, total_pages, total_recipients, total_signers, unique_senders, user_account_email, user_account_name, user_account_status, user_count, user_id, verification_status, verification_type, view_date, voided_ts].hash
     end
 
     # Builds the object from hash

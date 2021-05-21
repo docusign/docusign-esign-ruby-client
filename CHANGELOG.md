@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v3.10.0.rc1] - eSignature API v2.1-21.1.02.00 - 2021-05-20
+### Breaking
+- Removed methods `get_account_settings_export`,`get_seal_providers` from Accounts.
+- Removed methods `create_connect_secret`,`delete_connect_secret`,`generate_connect_secret`,`get_connect_secrets` from Connect.
+- Removed methods `create_page_info`, `create_pdf_blob`, `delete_custom_fields_0`, `delete_custom_fields_v2`, `delete_document`, `delete_page_info`, `delete_recipient_denied_document_copy`, `delete_signer_attachment`, `get_account`, `get_appliance_info`, `get_custom_fields`, `get_document_pages`, `get_dynamic_system_settings`, `get_image`, `get_locale_policy`, `get_pdf`, `get_pdf_blob`, `get_signer_attachment`, `get_tabs_blob`, `update_document`, `update_document_0`, `update_page_info`, `update_pdf`, `update_pdf_blob`, `update_recipient_denied_document_copy` from Envelopes.
+- Removed methods `complete_sign_hash`,`get_user_info`,`health_check`,`sign_hash_session_info`,`update_transaction` from TrustServiceProviders.
+- Removed methods `get_user_list_export` from Users.
+### Added
+- Added new methods `get_bulk_send_batch_envelopes` to BulkEnvelopes.
+### Changed
+- Added support for version v2.1-21.1.02.00 of the DocuSign eSignature API.
+- Updated the SDK release version.
+
 ## [v3.9.0] - eSignature API v2.1-21.1.01.03 - 2021-04-25
 ### Added
 - Added new methods `delete_custom_fields_v2`, `delete_page_info_v2`, `get_appliance_envelope_info`, `get_template_info` to envelopes.

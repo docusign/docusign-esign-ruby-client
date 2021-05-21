@@ -17,6 +17,9 @@ module DocuSign_eSign
     attr_accessor :date
 
     # 
+    attr_accessor :has_composite_template
+
+    # 
     attr_accessor :id
 
     # 
@@ -24,6 +27,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :name
+
+    # 
+    attr_accessor :owner_name
 
     # Reserved: TBD
     attr_accessor :size
@@ -41,9 +47,11 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'date' => :'date',
+        :'has_composite_template' => :'hasCompositeTemplate',
         :'id' => :'id',
         :'img' => :'img',
         :'name' => :'name',
+        :'owner_name' => :'ownerName',
         :'size' => :'size',
         :'supported' => :'supported',
         :'type' => :'type',
@@ -55,9 +63,11 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'date' => :'String',
+        :'has_composite_template' => :'String',
         :'id' => :'String',
         :'img' => :'String',
         :'name' => :'String',
+        :'owner_name' => :'String',
         :'size' => :'String',
         :'supported' => :'String',
         :'type' => :'String',
@@ -77,6 +87,10 @@ module DocuSign_eSign
         self.date = attributes[:'date']
       end
 
+      if attributes.has_key?(:'hasCompositeTemplate')
+        self.has_composite_template = attributes[:'hasCompositeTemplate']
+      end
+
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
       end
@@ -87,6 +101,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'ownerName')
+        self.owner_name = attributes[:'ownerName']
       end
 
       if attributes.has_key?(:'size')
@@ -125,9 +143,11 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           date == o.date &&
+          has_composite_template == o.has_composite_template &&
           id == o.id &&
           img == o.img &&
           name == o.name &&
+          owner_name == o.owner_name &&
           size == o.size &&
           supported == o.supported &&
           type == o.type &&
@@ -143,7 +163,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [date, id, img, name, size, supported, type, uri].hash
+      [date, has_composite_template, id, img, name, owner_name, size, supported, type, uri].hash
     end
 
     # Builds the object from hash
