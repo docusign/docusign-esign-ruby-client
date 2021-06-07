@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
-## [v2.10.0.rc1] - eSignature API v2-21.1.02.00 - 2021-05-20
+## [v2.10.0] - eSignature API v2-21.1.02.00 - 2021-06-04
 ### Breaking
 - Removed methods `get_account_settings_export`,`get_seal_providers` from Accounts.
 - Removed methods `create_connect_secret`,`delete_connect_secret`,`generate_connect_secret`,`get_connect_secrets` from Connect.
