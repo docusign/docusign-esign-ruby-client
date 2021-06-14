@@ -306,6 +306,39 @@ describe 'DocuSign Ruby Client Tests' do
 				end
   			end
   		end
+
+		context 'get form data' do
+			it 'successfully returns envelope form data' do
+				envelope_form_data = nil
+
+				if !$envelope_id.nil?
+				  	api_client = create_api_client()
+				  	envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
+				  
+				  	envelope_form_data = envelopes_api.get_form_data($account_id, $envelope_id)
+			  	end
+
+			  	expect(envelope_form_data).to be_truthy
+			  	if !envelope_form_data.nil?
+					expect(envelope_form_data.form_data).to be_truthy
+					if !envelope_form_data.form_data.nil?
+						expect(envelope_form_data.form_data).to be_truthy
+						# expect(envelope_form_data.form_data.length).to be > 0
+						# if envelope_form_data.form_data.length > 0
+						# 	expect(envelope_form_data.form_data[0].name).to be_truthy
+						# 	expect(envelope_form_data.prefill_form_data).to be_truthy
+						# 	if !envelope_form_data.prefill_form_data.nil?
+						# 		expect(envelope_form_data.prefill_form_data.form_data).to be_truthy
+						# 		expect(envelope_form_data.prefill_form_data.form_data.length).to be > 0
+						# 		if envelope_form_data.prefill_form_data.form_data.length > 0
+						# 			expect(envelope_form_data.prefill_form_data.form_data[0].name).to be_truthy
+						# 		end
+						# 	end
+						# end
+					end
+			  	end
+			end
+		end
   	end
 
   	describe '.list' do
@@ -421,6 +454,31 @@ describe 'DocuSign Ruby Client Tests' do
 					end
   				end
   			end
+		end
+
+		context 'list tabs' do
+			it 'successfully lists envelope tabs' do
+				envelope_summary = nil
+
+  				if !$envelope_id.nil?
+					api_client = create_api_client()
+					envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
+					
+					options = DocuSign_eSign::GetEnvelopeOptions.new
+
+					envelope_summary = envelopes_api.get_envelope($account_id, $envelope_id, options)
+
+					options = DocuSign_eSign::ListRecipientsOptions.new
+
+					recipients = envelopes_api.list_recipients($account_id, $envelope_id, options)
+
+					tabs = envelopes_api.list_tabs($account_id, $envelope_id, recipients.signers[0].recipient_id)
+
+					sign_here_tabs = tabs.sign_here_tabs
+
+					expect(sign_here_tabs).to be_truthy
+				end
+			end
 		end
 	end
 end
