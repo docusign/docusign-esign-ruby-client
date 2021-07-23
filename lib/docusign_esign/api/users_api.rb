@@ -109,6 +109,15 @@ module DocuSign_eSign
     end
   end
 
+  class UpdateSettingsOptions
+    # 
+    attr_accessor :allow_all_languages
+
+    def self.default
+      @@default ||= UpdateSettingsOptions.new
+    end
+  end
+
   class UpdateSignatureOptions
     # When set to **true**, closes the current signature.
     attr_accessor :close_existing_signature
@@ -124,6 +133,24 @@ module DocuSign_eSign
 
     def self.default
       @@default ||= UpdateSignatureImageOptions.new
+    end
+  end
+
+  class UpdateUserOptions
+    # 
+    attr_accessor :allow_all_languages
+
+    def self.default
+      @@default ||= UpdateUserOptions.new
+    end
+  end
+
+  class UpdateUsersOptions
+    # 
+    attr_accessor :allow_all_languages
+
+    def self.default
+      @@default ||= UpdateUsersOptions.new
     end
   end
 
@@ -1460,9 +1487,10 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
     # @param user_settings_information  (optional parameter)
+    # @param DocuSign_eSign::UpdateSettingsOptions Options for modifying the behavior of the function.
     # @return [nil]
-    def update_settings(account_id, user_id, user_settings_information)
-      update_settings_with_http_info(account_id, user_id,  user_settings_information)
+    def update_settings(account_id, user_id, user_settings_information, options = DocuSign_eSign::UpdateSettingsOptions.default)
+      update_settings_with_http_info(account_id, user_id,  user_settings_information, options)
       return nil
     end
 
@@ -1471,8 +1499,9 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
     # @param user_settings_information  (optional parameter)
+    # @param DocuSign_eSign::UpdateSettingsOptions Options for modifying the behavior of the function.
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_settings_with_http_info(account_id, user_id, user_settings_information)
+    def update_settings_with_http_info(account_id, user_id, user_settings_information, options = DocuSign_eSign::UpdateSettingsOptions.default)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UsersApi.update_settings ..."
       end
@@ -1485,6 +1514,7 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'allow_all_languages'] = options.allow_all_languages if !options.allow_all_languages.nil?
 
       # header parameters
       header_params = {}
@@ -1697,9 +1727,10 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
     # @param user_information  (optional parameter)
+    # @param DocuSign_eSign::UpdateUserOptions Options for modifying the behavior of the function.
     # @return [UserInformation]
-    def update_user(account_id, user_id, user_information)
-      data, _status_code, _headers = update_user_with_http_info(account_id, user_id,  user_information)
+    def update_user(account_id, user_id, user_information, options = DocuSign_eSign::UpdateUserOptions.default)
+      data, _status_code, _headers = update_user_with_http_info(account_id, user_id,  user_information, options)
       return data
     end
 
@@ -1708,8 +1739,9 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
     # @param user_information  (optional parameter)
+    # @param DocuSign_eSign::UpdateUserOptions Options for modifying the behavior of the function.
     # @return [Array<(UserInformation, Fixnum, Hash)>] UserInformation data, response status code and response headers
-    def update_user_with_http_info(account_id, user_id, user_information)
+    def update_user_with_http_info(account_id, user_id, user_information, options = DocuSign_eSign::UpdateUserOptions.default)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UsersApi.update_user ..."
       end
@@ -1722,6 +1754,7 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'allow_all_languages'] = options.allow_all_languages if !options.allow_all_languages.nil?
 
       # header parameters
       header_params = {}
@@ -1751,9 +1784,10 @@ module DocuSign_eSign
     # 
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_information_list  (optional parameter)
+    # @param DocuSign_eSign::UpdateUsersOptions Options for modifying the behavior of the function.
     # @return [UserInformationList]
-    def update_users(account_id, user_information_list)
-      data, _status_code, _headers = update_users_with_http_info(account_id,  user_information_list)
+    def update_users(account_id, user_information_list, options = DocuSign_eSign::UpdateUsersOptions.default)
+      data, _status_code, _headers = update_users_with_http_info(account_id,  user_information_list, options)
       return data
     end
 
@@ -1761,8 +1795,9 @@ module DocuSign_eSign
     # 
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_information_list  (optional parameter)
+    # @param DocuSign_eSign::UpdateUsersOptions Options for modifying the behavior of the function.
     # @return [Array<(UserInformationList, Fixnum, Hash)>] UserInformationList data, response status code and response headers
-    def update_users_with_http_info(account_id, user_information_list)
+    def update_users_with_http_info(account_id, user_information_list, options = DocuSign_eSign::UpdateUsersOptions.default)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UsersApi.update_users ..."
       end
@@ -1773,6 +1808,7 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'allow_all_languages'] = options.allow_all_languages if !options.allow_all_languages.nil?
 
       # header parameters
       header_params = {}

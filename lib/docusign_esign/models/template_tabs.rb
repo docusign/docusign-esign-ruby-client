@@ -198,7 +198,7 @@ module DocuSign_eSign
         :'full_name_tabs' => :'Array<FullName>',
         :'initial_here_tabs' => :'Array<InitialHere>',
         :'last_name_tabs' => :'Array<LastName>',
-        :'list_tabs' => :'Array<Array>',
+        :'list_tabs' => :'Array<List>',
         :'notarize_tabs' => :'Array<Notarize>',
         :'notary_seal_tabs' => :'Array<NotarySeal>',
         :'note_tabs' => :'Array<Note>',
