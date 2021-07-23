@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v2.11.0-rc1] - eSignature API v2-21.2.00.00 - 2021-07-13
+### Added
+- Added new models and properties.
+### Changed
+- Added support for version v2-21.2.00.00 of the DocuSign eSignature API.
+- Updated the SDK release version.
+
 ## [v2.10.0] - eSignature API v2-21.1.02.00 - 2021-06-04
 ### Breaking
 - Removed methods `get_account_settings_export`,`get_seal_providers` from Accounts.
