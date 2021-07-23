@@ -14,6 +14,9 @@ require 'date'
 module DocuSign_eSign
   class PaymentMethodWithOptions
     # 
+    attr_accessor :supported_currencies
+
+    # 
     attr_accessor :supported_options
 
     # 
@@ -22,6 +25,7 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'supported_currencies' => :'supportedCurrencies',
         :'supported_options' => :'supportedOptions',
         :'type' => :'type'
       }
@@ -30,6 +34,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'supported_currencies' => :'Array<String>',
         :'supported_options' => :'Array<String>',
         :'type' => :'String'
       }
@@ -42,6 +47,12 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'supportedCurrencies')
+        if (value = attributes[:'supportedCurrencies']).is_a?(Array)
+          self.supported_currencies = value
+        end
+      end
 
       if attributes.has_key?(:'supportedOptions')
         if (value = attributes[:'supportedOptions']).is_a?(Array)
@@ -72,6 +83,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          supported_currencies == o.supported_currencies &&
           supported_options == o.supported_options &&
           type == o.type
     end
@@ -85,7 +97,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [supported_options, type].hash
+      [supported_currencies, supported_options, type].hash
     end
 
     # Builds the object from hash

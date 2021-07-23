@@ -52,7 +52,7 @@ module DocuSign_eSign
         :'email_subject' => :'String',
         :'envelope_id' => :'String',
         :'form_data' => :'Array<FormDataItem>',
-        :'prefill_form_data' => :'EnvelopeFormDataPrefillFormData',
+        :'prefill_form_data' => :'PrefillFormData',
         :'recipient_form_data' => :'Array<RecipientFormData>',
         :'sent_date_time' => :'String',
         :'status' => :'String'

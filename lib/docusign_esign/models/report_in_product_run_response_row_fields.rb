@@ -53,6 +53,12 @@ module DocuSign_eSign
     attr_accessor :created_date
 
     # 
+    attr_accessor :created_on
+
+    # 
+    attr_accessor :creator
+
+    # 
     attr_accessor :custom_field
 
     # 
@@ -176,7 +182,13 @@ module DocuSign_eSign
     attr_accessor :last_activity_date
 
     # 
+    attr_accessor :last_modified
+
+    # 
     attr_accessor :last_sent_date
+
+    # 
+    attr_accessor :last_used
 
     # 
     attr_accessor :metadata_removed
@@ -219,6 +231,12 @@ module DocuSign_eSign
 
     # 
     attr_accessor :number_total_recipients
+
+    # 
+    attr_accessor :owner
+
+    # 
+    attr_accessor :owner_mail
 
     # 
     attr_accessor :period_end
@@ -270,6 +288,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :recipient_name
+
+    # 
+    attr_accessor :recipient_role_name
 
     # 
     attr_accessor :recipient_template_role_name
@@ -349,6 +370,12 @@ module DocuSign_eSign
     # 
     attr_accessor :successes
 
+    # The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+    attr_accessor :template_id
+
+    # 
+    attr_accessor :template_name
+
     # 
     attr_accessor :templates_created
 
@@ -425,6 +452,8 @@ module DocuSign_eSign
         :'completed' => :'completed',
         :'completed_ts' => :'completedTs',
         :'created_date' => :'createdDate',
+        :'created_on' => :'createdOn',
+        :'creator' => :'creator',
         :'custom_field' => :'customField',
         :'declined_date' => :'declinedDate',
         :'declined_reason' => :'declinedReason',
@@ -466,7 +495,9 @@ module DocuSign_eSign
         :'ip_address' => :'ipAddress',
         :'last_activity' => :'lastActivity',
         :'last_activity_date' => :'lastActivityDate',
+        :'last_modified' => :'lastModified',
         :'last_sent_date' => :'lastSentDate',
+        :'last_used' => :'lastUsed',
         :'metadata_removed' => :'metadataRemoved',
         :'not_signed' => :'notSigned',
         :'number_of_authenticated_recipients' => :'numberOfAuthenticatedRecipients',
@@ -481,6 +512,8 @@ module DocuSign_eSign
         :'number_of_total_signers' => :'numberOfTotalSigners',
         :'number_of_unique_senders' => :'numberOfUniqueSenders',
         :'number_total_recipients' => :'numberTotalRecipients',
+        :'owner' => :'owner',
+        :'owner_mail' => :'ownerMail',
         :'period_end' => :'periodEnd',
         :'period_start' => :'periodStart',
         :'phone_calls_attempted' => :'phoneCallsAttempted',
@@ -498,6 +531,7 @@ module DocuSign_eSign
         :'recipient_email' => :'recipientEmail',
         :'recipient_id' => :'recipientId',
         :'recipient_name' => :'recipientName',
+        :'recipient_role_name' => :'recipientRoleName',
         :'recipient_template_role_name' => :'recipientTemplateRoleName',
         :'recipient_title' => :'recipientTitle',
         :'recipient_type' => :'recipientType',
@@ -524,6 +558,8 @@ module DocuSign_eSign
         :'status_comment' => :'statusComment',
         :'subject' => :'subject',
         :'successes' => :'successes',
+        :'template_id' => :'templateId',
+        :'template_name' => :'templateName',
         :'templates_created' => :'templatesCreated',
         :'templates_created_count' => :'templatesCreatedCount',
         :'terminal_status_date' => :'terminalStatusDate',
@@ -563,6 +599,8 @@ module DocuSign_eSign
         :'completed' => :'String',
         :'completed_ts' => :'String',
         :'created_date' => :'String',
+        :'created_on' => :'String',
+        :'creator' => :'String',
         :'custom_field' => :'String',
         :'declined_date' => :'String',
         :'declined_reason' => :'String',
@@ -604,7 +642,9 @@ module DocuSign_eSign
         :'ip_address' => :'String',
         :'last_activity' => :'String',
         :'last_activity_date' => :'String',
+        :'last_modified' => :'String',
         :'last_sent_date' => :'String',
+        :'last_used' => :'String',
         :'metadata_removed' => :'String',
         :'not_signed' => :'String',
         :'number_of_authenticated_recipients' => :'String',
@@ -619,6 +659,8 @@ module DocuSign_eSign
         :'number_of_total_signers' => :'String',
         :'number_of_unique_senders' => :'String',
         :'number_total_recipients' => :'String',
+        :'owner' => :'String',
+        :'owner_mail' => :'String',
         :'period_end' => :'String',
         :'period_start' => :'String',
         :'phone_calls_attempted' => :'String',
@@ -636,6 +678,7 @@ module DocuSign_eSign
         :'recipient_email' => :'String',
         :'recipient_id' => :'String',
         :'recipient_name' => :'String',
+        :'recipient_role_name' => :'String',
         :'recipient_template_role_name' => :'String',
         :'recipient_title' => :'String',
         :'recipient_type' => :'String',
@@ -662,6 +705,8 @@ module DocuSign_eSign
         :'status_comment' => :'String',
         :'subject' => :'String',
         :'successes' => :'String',
+        :'template_id' => :'String',
+        :'template_name' => :'String',
         :'templates_created' => :'String',
         :'templates_created_count' => :'String',
         :'terminal_status_date' => :'String',
@@ -743,6 +788,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'createdDate')
         self.created_date = attributes[:'createdDate']
+      end
+
+      if attributes.has_key?(:'createdOn')
+        self.created_on = attributes[:'createdOn']
+      end
+
+      if attributes.has_key?(:'creator')
+        self.creator = attributes[:'creator']
       end
 
       if attributes.has_key?(:'customField')
@@ -909,8 +962,16 @@ module DocuSign_eSign
         self.last_activity_date = attributes[:'lastActivityDate']
       end
 
+      if attributes.has_key?(:'lastModified')
+        self.last_modified = attributes[:'lastModified']
+      end
+
       if attributes.has_key?(:'lastSentDate')
         self.last_sent_date = attributes[:'lastSentDate']
+      end
+
+      if attributes.has_key?(:'lastUsed')
+        self.last_used = attributes[:'lastUsed']
       end
 
       if attributes.has_key?(:'metadataRemoved')
@@ -967,6 +1028,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'numberTotalRecipients')
         self.number_total_recipients = attributes[:'numberTotalRecipients']
+      end
+
+      if attributes.has_key?(:'owner')
+        self.owner = attributes[:'owner']
+      end
+
+      if attributes.has_key?(:'ownerMail')
+        self.owner_mail = attributes[:'ownerMail']
       end
 
       if attributes.has_key?(:'periodEnd')
@@ -1035,6 +1104,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'recipientName')
         self.recipient_name = attributes[:'recipientName']
+      end
+
+      if attributes.has_key?(:'recipientRoleName')
+        self.recipient_role_name = attributes[:'recipientRoleName']
       end
 
       if attributes.has_key?(:'recipientTemplateRoleName')
@@ -1139,6 +1212,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'successes')
         self.successes = attributes[:'successes']
+      end
+
+      if attributes.has_key?(:'templateId')
+        self.template_id = attributes[:'templateId']
+      end
+
+      if attributes.has_key?(:'templateName')
+        self.template_name = attributes[:'templateName']
       end
 
       if attributes.has_key?(:'templatesCreated')
@@ -1253,6 +1334,8 @@ module DocuSign_eSign
           completed == o.completed &&
           completed_ts == o.completed_ts &&
           created_date == o.created_date &&
+          created_on == o.created_on &&
+          creator == o.creator &&
           custom_field == o.custom_field &&
           declined_date == o.declined_date &&
           declined_reason == o.declined_reason &&
@@ -1294,7 +1377,9 @@ module DocuSign_eSign
           ip_address == o.ip_address &&
           last_activity == o.last_activity &&
           last_activity_date == o.last_activity_date &&
+          last_modified == o.last_modified &&
           last_sent_date == o.last_sent_date &&
+          last_used == o.last_used &&
           metadata_removed == o.metadata_removed &&
           not_signed == o.not_signed &&
           number_of_authenticated_recipients == o.number_of_authenticated_recipients &&
@@ -1309,6 +1394,8 @@ module DocuSign_eSign
           number_of_total_signers == o.number_of_total_signers &&
           number_of_unique_senders == o.number_of_unique_senders &&
           number_total_recipients == o.number_total_recipients &&
+          owner == o.owner &&
+          owner_mail == o.owner_mail &&
           period_end == o.period_end &&
           period_start == o.period_start &&
           phone_calls_attempted == o.phone_calls_attempted &&
@@ -1326,6 +1413,7 @@ module DocuSign_eSign
           recipient_email == o.recipient_email &&
           recipient_id == o.recipient_id &&
           recipient_name == o.recipient_name &&
+          recipient_role_name == o.recipient_role_name &&
           recipient_template_role_name == o.recipient_template_role_name &&
           recipient_title == o.recipient_title &&
           recipient_type == o.recipient_type &&
@@ -1352,6 +1440,8 @@ module DocuSign_eSign
           status_comment == o.status_comment &&
           subject == o.subject &&
           successes == o.successes &&
+          template_id == o.template_id &&
+          template_name == o.template_name &&
           templates_created == o.templates_created &&
           templates_created_count == o.templates_created_count &&
           terminal_status_date == o.terminal_status_date &&
@@ -1383,7 +1473,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code_required, access_codes_attempted, access_codes_failed, account_id, authentication_category, authentication_success, authentication_type, average_time_to_complete_seconds, avg_complete_seconds, capture_method, completed, completed_ts, created_date, custom_field, declined_date, declined_reason, delivered_date, envelope_count, envelope_creator, envelope_id, envelope_initial_send_ts, envelopes_billed, envelopes_completed, envelopes_completed_count, envelopes_declined, envelopes_sent, envelopes_sent_count, envelopes_voided, envelope_voided_reason, eod_document_description, eod_document_name, eod_document_profile_id, eod_transaction_id, eod_transaction_name, event_date, expiration_date, expired_ts, failure_reason, failures, failure_vendor_code, failure_vendor_reason, first_send_ts, group_id, group_name, hours_to_complete_end, hours_to_complete_start, id_checks_attempted, id_checks_failed, id_country, id_method, initial_send_ts, ip_address, last_activity, last_activity_date, last_sent_date, metadata_removed, not_signed, number_of_authenticated_recipients, number_of_completed_signatures, number_of_documents, number_of_pages, number_of_recipients, number_of_sends, number_of_signers, number_of_total_documents, number_of_total_pages, number_of_total_signers, number_of_unique_senders, number_total_recipients, period_end, period_start, phone_calls_attempted, phone_calls_failed, pii_redacted, purge_date, reason_for_declining, reason_for_voiding, reassign_reason, received, recipient, recipient_action, recipient_company_name, recipient_country, recipient_email, recipient_id, recipient_name, recipient_template_role_name, recipient_title, recipient_type, recipient_user_id, remaining_signatures, routing_order, sender_account_id, sender_company_name, sender_country, sender_email, sender_ip_address, sender_job_title, sender_name, sender_user_id, sign_date, signed, signed_date, signed_on_mobile, signed_on_paper, signer_list, status, status_changed_date, status_changed_ts, status_comment, subject, successes, templates_created, templates_created_count, terminal_status_date, time_to_complete_seconds, time_to_deliver, total_documents, total_envelopes, total_pages, total_recipients, total_signers, unique_senders, user_account_email, user_account_name, user_account_status, user_count, user_id, verification_status, verification_type, view_date, voided_ts].hash
+      [access_code_required, access_codes_attempted, access_codes_failed, account_id, authentication_category, authentication_success, authentication_type, average_time_to_complete_seconds, avg_complete_seconds, capture_method, completed, completed_ts, created_date, created_on, creator, custom_field, declined_date, declined_reason, delivered_date, envelope_count, envelope_creator, envelope_id, envelope_initial_send_ts, envelopes_billed, envelopes_completed, envelopes_completed_count, envelopes_declined, envelopes_sent, envelopes_sent_count, envelopes_voided, envelope_voided_reason, eod_document_description, eod_document_name, eod_document_profile_id, eod_transaction_id, eod_transaction_name, event_date, expiration_date, expired_ts, failure_reason, failures, failure_vendor_code, failure_vendor_reason, first_send_ts, group_id, group_name, hours_to_complete_end, hours_to_complete_start, id_checks_attempted, id_checks_failed, id_country, id_method, initial_send_ts, ip_address, last_activity, last_activity_date, last_modified, last_sent_date, last_used, metadata_removed, not_signed, number_of_authenticated_recipients, number_of_completed_signatures, number_of_documents, number_of_pages, number_of_recipients, number_of_sends, number_of_signers, number_of_total_documents, number_of_total_pages, number_of_total_signers, number_of_unique_senders, number_total_recipients, owner, owner_mail, period_end, period_start, phone_calls_attempted, phone_calls_failed, pii_redacted, purge_date, reason_for_declining, reason_for_voiding, reassign_reason, received, recipient, recipient_action, recipient_company_name, recipient_country, recipient_email, recipient_id, recipient_name, recipient_role_name, recipient_template_role_name, recipient_title, recipient_type, recipient_user_id, remaining_signatures, routing_order, sender_account_id, sender_company_name, sender_country, sender_email, sender_ip_address, sender_job_title, sender_name, sender_user_id, sign_date, signed, signed_date, signed_on_mobile, signed_on_paper, signer_list, status, status_changed_date, status_changed_ts, status_comment, subject, successes, template_id, template_name, templates_created, templates_created_count, terminal_status_date, time_to_complete_seconds, time_to_deliver, total_documents, total_envelopes, total_pages, total_recipients, total_signers, unique_senders, user_account_email, user_account_name, user_account_status, user_count, user_id, verification_status, verification_type, view_date, voided_ts].hash
     end
 
     # Builds the object from hash

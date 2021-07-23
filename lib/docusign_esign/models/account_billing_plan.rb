@@ -73,6 +73,12 @@ module DocuSign_eSign
     # The name of the Billing Plan.
     attr_accessor :plan_name
 
+    # 
+    attr_accessor :plan_start_date
+
+    # 
+    attr_accessor :renewal_date
+
     # The renewal status for the account. The acceptable values are:  * auto: The account automatically renews. * queued_for_close: Account will be closed at the billingPeriodEndDate. * queued_for_downgrade: Account will be downgraded at the billingPeriodEndDate.
     attr_accessor :renewal_status
 
@@ -108,6 +114,8 @@ module DocuSign_eSign
         :'plan_feature_sets' => :'planFeatureSets',
         :'plan_id' => :'planId',
         :'plan_name' => :'planName',
+        :'plan_start_date' => :'planStartDate',
+        :'renewal_date' => :'renewalDate',
         :'renewal_status' => :'renewalStatus',
         :'seat_discounts' => :'seatDiscounts',
         :'support_incident_fee' => :'supportIncidentFee',
@@ -138,6 +146,8 @@ module DocuSign_eSign
         :'plan_feature_sets' => :'Array<FeatureSet>',
         :'plan_id' => :'String',
         :'plan_name' => :'String',
+        :'plan_start_date' => :'String',
+        :'renewal_date' => :'String',
         :'renewal_status' => :'String',
         :'seat_discounts' => :'Array<SeatDiscount>',
         :'support_incident_fee' => :'String',
@@ -237,6 +247,14 @@ module DocuSign_eSign
         self.plan_name = attributes[:'planName']
       end
 
+      if attributes.has_key?(:'planStartDate')
+        self.plan_start_date = attributes[:'planStartDate']
+      end
+
+      if attributes.has_key?(:'renewalDate')
+        self.renewal_date = attributes[:'renewalDate']
+      end
+
       if attributes.has_key?(:'renewalStatus')
         self.renewal_status = attributes[:'renewalStatus']
       end
@@ -294,6 +312,8 @@ module DocuSign_eSign
           plan_feature_sets == o.plan_feature_sets &&
           plan_id == o.plan_id &&
           plan_name == o.plan_name &&
+          plan_start_date == o.plan_start_date &&
+          renewal_date == o.renewal_date &&
           renewal_status == o.renewal_status &&
           seat_discounts == o.seat_discounts &&
           support_incident_fee == o.support_incident_fee &&
@@ -309,7 +329,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [add_ons, app_store_receipt_expiration_date, app_store_receipt_purchase_date, can_cancel_renewal, can_upgrade, currency_code, downgrade_plan_information, enable_support, included_seats, incremental_seats, is_downgrade, notification_type, other_discount_percent, payment_cycle, payment_method, per_seat_price, plan_classification, plan_feature_sets, plan_id, plan_name, renewal_status, seat_discounts, support_incident_fee, support_plan_fee].hash
+      [add_ons, app_store_receipt_expiration_date, app_store_receipt_purchase_date, can_cancel_renewal, can_upgrade, currency_code, downgrade_plan_information, enable_support, included_seats, incremental_seats, is_downgrade, notification_type, other_discount_percent, payment_cycle, payment_method, per_seat_price, plan_classification, plan_feature_sets, plan_id, plan_name, plan_start_date, renewal_date, renewal_status, seat_discounts, support_incident_fee, support_plan_fee].hash
     end
 
     # Builds the object from hash

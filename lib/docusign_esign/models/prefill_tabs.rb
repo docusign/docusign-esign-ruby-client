@@ -20,6 +20,12 @@ module DocuSign_eSign
     attr_accessor :radio_group_tabs
 
     # 
+    attr_accessor :sender_company_tabs
+
+    # 
+    attr_accessor :sender_name_tabs
+
+    # 
     attr_accessor :tab_groups
 
     # Specifies a that that is an adaptable field that allows the recipient to enter different text information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
@@ -30,6 +36,8 @@ module DocuSign_eSign
       {
         :'checkbox_tabs' => :'checkboxTabs',
         :'radio_group_tabs' => :'radioGroupTabs',
+        :'sender_company_tabs' => :'senderCompanyTabs',
+        :'sender_name_tabs' => :'senderNameTabs',
         :'tab_groups' => :'tabGroups',
         :'text_tabs' => :'textTabs'
       }
@@ -40,6 +48,8 @@ module DocuSign_eSign
       {
         :'checkbox_tabs' => :'Array<Checkbox>',
         :'radio_group_tabs' => :'Array<RadioGroup>',
+        :'sender_company_tabs' => :'Array<SenderCompany>',
+        :'sender_name_tabs' => :'Array<SenderName>',
         :'tab_groups' => :'Array<TabGroup>',
         :'text_tabs' => :'Array<Text>'
       }
@@ -62,6 +72,18 @@ module DocuSign_eSign
       if attributes.has_key?(:'radioGroupTabs')
         if (value = attributes[:'radioGroupTabs']).is_a?(Array)
           self.radio_group_tabs = value
+        end
+      end
+
+      if attributes.has_key?(:'senderCompanyTabs')
+        if (value = attributes[:'senderCompanyTabs']).is_a?(Array)
+          self.sender_company_tabs = value
+        end
+      end
+
+      if attributes.has_key?(:'senderNameTabs')
+        if (value = attributes[:'senderNameTabs']).is_a?(Array)
+          self.sender_name_tabs = value
         end
       end
 
@@ -98,6 +120,8 @@ module DocuSign_eSign
       self.class == o.class &&
           checkbox_tabs == o.checkbox_tabs &&
           radio_group_tabs == o.radio_group_tabs &&
+          sender_company_tabs == o.sender_company_tabs &&
+          sender_name_tabs == o.sender_name_tabs &&
           tab_groups == o.tab_groups &&
           text_tabs == o.text_tabs
     end
@@ -111,7 +135,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [checkbox_tabs, radio_group_tabs, tab_groups, text_tabs].hash
+      [checkbox_tabs, radio_group_tabs, sender_company_tabs, sender_name_tabs, tab_groups, text_tabs].hash
     end
 
     # Builds the object from hash
