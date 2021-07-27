@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'jwt', '~> 2.2', '>= 2.2.1'
   s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
   s.add_runtime_dependency 'json', '~> 2.1', '>= 2.1.0'
+  s.add_runtime_dependency 'addressable', '~> 2.7', '>= 2.7.0'
 
   s.add_development_dependency 'rspec-mocks', '~> 3.8', '>= 3.8.0'
   s.add_development_dependency 'rspec-expectations', '~> 3.8', '>= 3.8.0'
