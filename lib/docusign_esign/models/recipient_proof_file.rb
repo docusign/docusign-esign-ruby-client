@@ -14,11 +14,15 @@ require 'date'
 module DocuSign_eSign
   class RecipientProofFile
     # 
+    attr_accessor :has_identity_attempts
+
+    # 
     attr_accessor :is_in_proof_file
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'has_identity_attempts' => :'hasIdentityAttempts',
         :'is_in_proof_file' => :'isInProofFile'
       }
     end
@@ -26,6 +30,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'has_identity_attempts' => :'String',
         :'is_in_proof_file' => :'String'
       }
     end
@@ -37,6 +42,10 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'hasIdentityAttempts')
+        self.has_identity_attempts = attributes[:'hasIdentityAttempts']
+      end
 
       if attributes.has_key?(:'isInProofFile')
         self.is_in_proof_file = attributes[:'isInProofFile']
@@ -61,6 +70,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          has_identity_attempts == o.has_identity_attempts &&
           is_in_proof_file == o.is_in_proof_file
     end
 
@@ -73,7 +83,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [is_in_proof_file].hash
+      [has_identity_attempts, is_in_proof_file].hash
     end
 
     # Builds the object from hash
