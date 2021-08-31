@@ -17,6 +17,9 @@ module DocuSign_eSign
     attr_accessor :account_payment_method
 
     # 
+    attr_accessor :discount_applied
+
+    # 
     attr_accessor :downgrade_effective_date
 
     # 
@@ -34,16 +37,33 @@ module DocuSign_eSign
     # 
     attr_accessor :message
 
+    # 
+    attr_accessor :promo_code
+
+    # 
+    attr_accessor :sale_discount
+
+    # 
+    attr_accessor :sale_discount_periods
+
+    # 
+    attr_accessor :sale_discount_type
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'account_payment_method' => :'accountPaymentMethod',
+        :'discount_applied' => :'discountApplied',
         :'downgrade_effective_date' => :'downgradeEffectiveDate',
         :'downgrade_payment_cycle' => :'downgradePaymentCycle',
         :'downgrade_plan_id' => :'downgradePlanId',
         :'downgrade_plan_name' => :'downgradePlanName',
         :'downgrade_request_status' => :'downgradeRequestStatus',
-        :'message' => :'message'
+        :'message' => :'message',
+        :'promo_code' => :'promoCode',
+        :'sale_discount' => :'saleDiscount',
+        :'sale_discount_periods' => :'saleDiscountPeriods',
+        :'sale_discount_type' => :'saleDiscountType'
       }
     end
 
@@ -51,12 +71,17 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'account_payment_method' => :'String',
+        :'discount_applied' => :'String',
         :'downgrade_effective_date' => :'String',
         :'downgrade_payment_cycle' => :'String',
         :'downgrade_plan_id' => :'String',
         :'downgrade_plan_name' => :'String',
         :'downgrade_request_status' => :'String',
-        :'message' => :'String'
+        :'message' => :'String',
+        :'promo_code' => :'String',
+        :'sale_discount' => :'String',
+        :'sale_discount_periods' => :'String',
+        :'sale_discount_type' => :'String'
       }
     end
 
@@ -70,6 +95,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'accountPaymentMethod')
         self.account_payment_method = attributes[:'accountPaymentMethod']
+      end
+
+      if attributes.has_key?(:'discountApplied')
+        self.discount_applied = attributes[:'discountApplied']
       end
 
       if attributes.has_key?(:'downgradeEffectiveDate')
@@ -95,6 +124,22 @@ module DocuSign_eSign
       if attributes.has_key?(:'message')
         self.message = attributes[:'message']
       end
+
+      if attributes.has_key?(:'promoCode')
+        self.promo_code = attributes[:'promoCode']
+      end
+
+      if attributes.has_key?(:'saleDiscount')
+        self.sale_discount = attributes[:'saleDiscount']
+      end
+
+      if attributes.has_key?(:'saleDiscountPeriods')
+        self.sale_discount_periods = attributes[:'saleDiscountPeriods']
+      end
+
+      if attributes.has_key?(:'saleDiscountType')
+        self.sale_discount_type = attributes[:'saleDiscountType']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -116,12 +161,17 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           account_payment_method == o.account_payment_method &&
+          discount_applied == o.discount_applied &&
           downgrade_effective_date == o.downgrade_effective_date &&
           downgrade_payment_cycle == o.downgrade_payment_cycle &&
           downgrade_plan_id == o.downgrade_plan_id &&
           downgrade_plan_name == o.downgrade_plan_name &&
           downgrade_request_status == o.downgrade_request_status &&
-          message == o.message
+          message == o.message &&
+          promo_code == o.promo_code &&
+          sale_discount == o.sale_discount &&
+          sale_discount_periods == o.sale_discount_periods &&
+          sale_discount_type == o.sale_discount_type
     end
 
     # @see the `==` method
@@ -133,7 +183,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_payment_method, downgrade_effective_date, downgrade_payment_cycle, downgrade_plan_id, downgrade_plan_name, downgrade_request_status, message].hash
+      [account_payment_method, discount_applied, downgrade_effective_date, downgrade_payment_cycle, downgrade_plan_id, downgrade_plan_name, downgrade_request_status, message, promo_code, sale_discount, sale_discount_periods, sale_discount_type].hash
     end
 
     # Builds the object from hash

@@ -15,6 +15,9 @@ module DocuSign_eSign
   class CreditCardInformation
     attr_accessor :address
 
+    # 
+    attr_accessor :card_last_digits
+
     # The number on the credit card.
     attr_accessor :card_number
 
@@ -33,16 +36,21 @@ module DocuSign_eSign
     # The exact name printed on the credit card.
     attr_accessor :name_on_card
 
+    # 
+    attr_accessor :tokenized_card
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'address' => :'address',
+        :'card_last_digits' => :'cardLastDigits',
         :'card_number' => :'cardNumber',
         :'card_type' => :'cardType',
         :'cv_number' => :'cvNumber',
         :'expiration_month' => :'expirationMonth',
         :'expiration_year' => :'expirationYear',
-        :'name_on_card' => :'nameOnCard'
+        :'name_on_card' => :'nameOnCard',
+        :'tokenized_card' => :'tokenizedCard'
       }
     end
 
@@ -50,12 +58,14 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'address' => :'AddressInformation',
+        :'card_last_digits' => :'String',
         :'card_number' => :'String',
         :'card_type' => :'String',
         :'cv_number' => :'String',
         :'expiration_month' => :'String',
         :'expiration_year' => :'String',
-        :'name_on_card' => :'String'
+        :'name_on_card' => :'String',
+        :'tokenized_card' => :'String'
       }
     end
 
@@ -69,6 +79,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'address')
         self.address = attributes[:'address']
+      end
+
+      if attributes.has_key?(:'cardLastDigits')
+        self.card_last_digits = attributes[:'cardLastDigits']
       end
 
       if attributes.has_key?(:'cardNumber')
@@ -94,6 +108,10 @@ module DocuSign_eSign
       if attributes.has_key?(:'nameOnCard')
         self.name_on_card = attributes[:'nameOnCard']
       end
+
+      if attributes.has_key?(:'tokenizedCard')
+        self.tokenized_card = attributes[:'tokenizedCard']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -115,12 +133,14 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           address == o.address &&
+          card_last_digits == o.card_last_digits &&
           card_number == o.card_number &&
           card_type == o.card_type &&
           cv_number == o.cv_number &&
           expiration_month == o.expiration_month &&
           expiration_year == o.expiration_year &&
-          name_on_card == o.name_on_card
+          name_on_card == o.name_on_card &&
+          tokenized_card == o.tokenized_card
     end
 
     # @see the `==` method
@@ -132,7 +152,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [address, card_number, card_type, cv_number, expiration_month, expiration_year, name_on_card].hash
+      [address, card_last_digits, card_number, card_type, cv_number, expiration_month, expiration_year, name_on_card, tokenized_card].hash
     end
 
     # Builds the object from hash

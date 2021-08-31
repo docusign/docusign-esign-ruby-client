@@ -18,11 +18,27 @@ module DocuSign_eSign
 
     attr_accessor :plan_information
 
+    # 
+    attr_accessor :promo_code
+
+    # 
+    attr_accessor :sale_discount
+
+    # 
+    attr_accessor :sale_discount_periods
+
+    # 
+    attr_accessor :sale_discount_type
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'downgrade_event_type' => :'downgradeEventType',
-        :'plan_information' => :'planInformation'
+        :'plan_information' => :'planInformation',
+        :'promo_code' => :'promoCode',
+        :'sale_discount' => :'saleDiscount',
+        :'sale_discount_periods' => :'saleDiscountPeriods',
+        :'sale_discount_type' => :'saleDiscountType'
       }
     end
 
@@ -30,7 +46,11 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'downgrade_event_type' => :'String',
-        :'plan_information' => :'PlanInformation'
+        :'plan_information' => :'PlanInformation',
+        :'promo_code' => :'String',
+        :'sale_discount' => :'String',
+        :'sale_discount_periods' => :'String',
+        :'sale_discount_type' => :'String'
       }
     end
 
@@ -48,6 +68,22 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'planInformation')
         self.plan_information = attributes[:'planInformation']
+      end
+
+      if attributes.has_key?(:'promoCode')
+        self.promo_code = attributes[:'promoCode']
+      end
+
+      if attributes.has_key?(:'saleDiscount')
+        self.sale_discount = attributes[:'saleDiscount']
+      end
+
+      if attributes.has_key?(:'saleDiscountPeriods')
+        self.sale_discount_periods = attributes[:'saleDiscountPeriods']
+      end
+
+      if attributes.has_key?(:'saleDiscountType')
+        self.sale_discount_type = attributes[:'saleDiscountType']
       end
     end
 
@@ -70,7 +106,11 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           downgrade_event_type == o.downgrade_event_type &&
-          plan_information == o.plan_information
+          plan_information == o.plan_information &&
+          promo_code == o.promo_code &&
+          sale_discount == o.sale_discount &&
+          sale_discount_periods == o.sale_discount_periods &&
+          sale_discount_type == o.sale_discount_type
     end
 
     # @see the `==` method
@@ -82,7 +122,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [downgrade_event_type, plan_information].hash
+      [downgrade_event_type, plan_information, promo_code, sale_discount, sale_discount_periods, sale_discount_type].hash
     end
 
     # Builds the object from hash

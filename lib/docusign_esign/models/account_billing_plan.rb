@@ -85,6 +85,9 @@ module DocuSign_eSign
     #  A complex type that contains any seat discount information.  Values are: BeginSeatCount, EndSeatCount, and SeatDiscountPercent.  
     attr_accessor :seat_discounts
 
+    # 
+    attr_accessor :subscription_start_date
+
     # The support incident fee charged for each support incident.
     attr_accessor :support_incident_fee
 
@@ -118,6 +121,7 @@ module DocuSign_eSign
         :'renewal_date' => :'renewalDate',
         :'renewal_status' => :'renewalStatus',
         :'seat_discounts' => :'seatDiscounts',
+        :'subscription_start_date' => :'subscriptionStartDate',
         :'support_incident_fee' => :'supportIncidentFee',
         :'support_plan_fee' => :'supportPlanFee'
       }
@@ -150,6 +154,7 @@ module DocuSign_eSign
         :'renewal_date' => :'String',
         :'renewal_status' => :'String',
         :'seat_discounts' => :'Array<SeatDiscount>',
+        :'subscription_start_date' => :'String',
         :'support_incident_fee' => :'String',
         :'support_plan_fee' => :'String'
       }
@@ -265,6 +270,10 @@ module DocuSign_eSign
         end
       end
 
+      if attributes.has_key?(:'subscriptionStartDate')
+        self.subscription_start_date = attributes[:'subscriptionStartDate']
+      end
+
       if attributes.has_key?(:'supportIncidentFee')
         self.support_incident_fee = attributes[:'supportIncidentFee']
       end
@@ -316,6 +325,7 @@ module DocuSign_eSign
           renewal_date == o.renewal_date &&
           renewal_status == o.renewal_status &&
           seat_discounts == o.seat_discounts &&
+          subscription_start_date == o.subscription_start_date &&
           support_incident_fee == o.support_incident_fee &&
           support_plan_fee == o.support_plan_fee
     end
@@ -329,7 +339,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [add_ons, app_store_receipt_expiration_date, app_store_receipt_purchase_date, can_cancel_renewal, can_upgrade, currency_code, downgrade_plan_information, enable_support, included_seats, incremental_seats, is_downgrade, notification_type, other_discount_percent, payment_cycle, payment_method, per_seat_price, plan_classification, plan_feature_sets, plan_id, plan_name, plan_start_date, renewal_date, renewal_status, seat_discounts, support_incident_fee, support_plan_fee].hash
+      [add_ons, app_store_receipt_expiration_date, app_store_receipt_purchase_date, can_cancel_renewal, can_upgrade, currency_code, downgrade_plan_information, enable_support, included_seats, incremental_seats, is_downgrade, notification_type, other_discount_percent, payment_cycle, payment_method, per_seat_price, plan_classification, plan_feature_sets, plan_id, plan_name, plan_start_date, renewal_date, renewal_status, seat_discounts, subscription_start_date, support_incident_fee, support_plan_fee].hash
     end
 
     # Builds the object from hash

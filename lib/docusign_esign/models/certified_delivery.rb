@@ -135,8 +135,6 @@ module DocuSign_eSign
 
     attr_accessor :phone_number
 
-    attr_accessor :phone_number_metadata
-
     attr_accessor :proof_file
 
     # Reserved:
@@ -263,7 +261,6 @@ module DocuSign_eSign
         :'note_metadata' => :'noteMetadata',
         :'phone_authentication' => :'phoneAuthentication',
         :'phone_number' => :'phoneNumber',
-        :'phone_number_metadata' => :'phoneNumberMetadata',
         :'proof_file' => :'proofFile',
         :'recipient_attachments' => :'recipientAttachments',
         :'recipient_authentication_status' => :'recipientAuthenticationStatus',
@@ -344,7 +341,6 @@ module DocuSign_eSign
         :'note_metadata' => :'PropertyMetadata',
         :'phone_authentication' => :'RecipientPhoneAuthentication',
         :'phone_number' => :'RecipientPhoneNumber',
-        :'phone_number_metadata' => :'PropertyMetadata',
         :'proof_file' => :'RecipientProofFile',
         :'recipient_attachments' => :'Array<RecipientAttachment>',
         :'recipient_authentication_status' => :'AuthenticationStatus',
@@ -576,10 +572,6 @@ module DocuSign_eSign
         self.phone_number = attributes[:'phoneNumber']
       end
 
-      if attributes.has_key?(:'phoneNumberMetadata')
-        self.phone_number_metadata = attributes[:'phoneNumberMetadata']
-      end
-
       if attributes.has_key?(:'proofFile')
         self.proof_file = attributes[:'proofFile']
       end
@@ -765,7 +757,6 @@ module DocuSign_eSign
           note_metadata == o.note_metadata &&
           phone_authentication == o.phone_authentication &&
           phone_number == o.phone_number &&
-          phone_number_metadata == o.phone_number_metadata &&
           proof_file == o.proof_file &&
           recipient_attachments == o.recipient_attachments &&
           recipient_authentication_status == o.recipient_authentication_status &&
@@ -805,7 +796,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_responded_reason, client_user_id, completed_count, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, phone_authentication, phone_number, phone_number_metadata, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, role_name, routing_order, routing_order_metadata, sent_date_time, signed_date_time, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_responded_reason, client_user_id, completed_count, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, phone_authentication, phone_number, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, role_name, routing_order, routing_order_metadata, sent_date_time, signed_date_time, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash

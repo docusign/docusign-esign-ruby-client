@@ -39,6 +39,8 @@ module DocuSign_eSign
     # Specifies the recipient's name.
     attr_accessor :name
 
+    attr_accessor :phone_number
+
     # 
     attr_accessor :recipient_signature_providers
 
@@ -65,6 +67,7 @@ module DocuSign_eSign
         :'embedded_recipient_start_url' => :'embeddedRecipientStartURL',
         :'in_person_signer_name' => :'inPersonSignerName',
         :'name' => :'name',
+        :'phone_number' => :'phoneNumber',
         :'recipient_signature_providers' => :'recipientSignatureProviders',
         :'role_name' => :'roleName',
         :'routing_order' => :'routingOrder',
@@ -85,6 +88,7 @@ module DocuSign_eSign
         :'embedded_recipient_start_url' => :'String',
         :'in_person_signer_name' => :'String',
         :'name' => :'String',
+        :'phone_number' => :'RecipientPhoneNumber',
         :'recipient_signature_providers' => :'Array<RecipientSignatureProvider>',
         :'role_name' => :'String',
         :'routing_order' => :'String',
@@ -139,6 +143,10 @@ module DocuSign_eSign
         self.name = attributes[:'name']
       end
 
+      if attributes.has_key?(:'phoneNumber')
+        self.phone_number = attributes[:'phoneNumber']
+      end
+
       if attributes.has_key?(:'recipientSignatureProviders')
         if (value = attributes[:'recipientSignatureProviders']).is_a?(Array)
           self.recipient_signature_providers = value
@@ -189,6 +197,7 @@ module DocuSign_eSign
           embedded_recipient_start_url == o.embedded_recipient_start_url &&
           in_person_signer_name == o.in_person_signer_name &&
           name == o.name &&
+          phone_number == o.phone_number &&
           recipient_signature_providers == o.recipient_signature_providers &&
           role_name == o.role_name &&
           routing_order == o.routing_order &&
@@ -205,7 +214,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, additional_notifications, client_user_id, default_recipient, email, email_notification, embedded_recipient_start_url, in_person_signer_name, name, recipient_signature_providers, role_name, routing_order, signing_group_id, tabs].hash
+      [access_code, additional_notifications, client_user_id, default_recipient, email, email_notification, embedded_recipient_start_url, in_person_signer_name, name, phone_number, recipient_signature_providers, role_name, routing_order, signing_group_id, tabs].hash
     end
 
     # Builds the object from hash
