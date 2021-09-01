@@ -49,6 +49,9 @@ module DocuSign_eSign
     attr_accessor :signature_name
 
     # 
+    attr_accessor :signature_type
+
+    # 
     attr_accessor :stamp_format
 
     # 
@@ -69,6 +72,7 @@ module DocuSign_eSign
         :'signature_id' => :'signatureId',
         :'signature_initials' => :'signatureInitials',
         :'signature_name' => :'signatureName',
+        :'signature_type' => :'signatureType',
         :'stamp_format' => :'stampFormat',
         :'stamp_size_mm' => :'stampSizeMM'
       }
@@ -89,6 +93,7 @@ module DocuSign_eSign
         :'signature_id' => :'String',
         :'signature_initials' => :'String',
         :'signature_name' => :'String',
+        :'signature_type' => :'String',
         :'stamp_format' => :'String',
         :'stamp_size_mm' => :'String'
       }
@@ -150,6 +155,10 @@ module DocuSign_eSign
         self.signature_name = attributes[:'signatureName']
       end
 
+      if attributes.has_key?(:'signatureType')
+        self.signature_type = attributes[:'signatureType']
+      end
+
       if attributes.has_key?(:'stampFormat')
         self.stamp_format = attributes[:'stampFormat']
       end
@@ -189,6 +198,7 @@ module DocuSign_eSign
           signature_id == o.signature_id &&
           signature_initials == o.signature_initials &&
           signature_name == o.signature_name &&
+          signature_type == o.signature_type &&
           stamp_format == o.stamp_format &&
           stamp_size_mm == o.stamp_size_mm
     end
@@ -202,7 +212,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [date_stamp_properties, disallow_user_resize_stamp, external_id, image_type, is_default, nrds_id, nrds_last_name, phonetic_name, signature_font, signature_id, signature_initials, signature_name, stamp_format, stamp_size_mm].hash
+      [date_stamp_properties, disallow_user_resize_stamp, external_id, image_type, is_default, nrds_id, nrds_last_name, phonetic_name, signature_font, signature_id, signature_initials, signature_name, signature_type, stamp_format, stamp_size_mm].hash
     end
 
     # Builds the object from hash

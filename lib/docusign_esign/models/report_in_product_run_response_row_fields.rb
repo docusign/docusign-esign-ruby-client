@@ -233,6 +233,9 @@ module DocuSign_eSign
     attr_accessor :number_total_recipients
 
     # 
+    attr_accessor :other_recipients_list
+
+    # 
     attr_accessor :owner
 
     # 
@@ -333,6 +336,12 @@ module DocuSign_eSign
 
     # 
     attr_accessor :sender_user_id
+
+    # 
+    attr_accessor :signature_type
+
+    # 
+    attr_accessor :signature_type_value
 
     # 
     attr_accessor :sign_date
@@ -512,6 +521,7 @@ module DocuSign_eSign
         :'number_of_total_signers' => :'numberOfTotalSigners',
         :'number_of_unique_senders' => :'numberOfUniqueSenders',
         :'number_total_recipients' => :'numberTotalRecipients',
+        :'other_recipients_list' => :'otherRecipientsList',
         :'owner' => :'owner',
         :'owner_mail' => :'ownerMail',
         :'period_end' => :'periodEnd',
@@ -546,6 +556,8 @@ module DocuSign_eSign
         :'sender_job_title' => :'senderJobTitle',
         :'sender_name' => :'senderName',
         :'sender_user_id' => :'senderUserId',
+        :'signature_type' => :'signatureType',
+        :'signature_type_value' => :'signatureTypeValue',
         :'sign_date' => :'signDate',
         :'signed' => :'signed',
         :'signed_date' => :'signedDate',
@@ -659,6 +671,7 @@ module DocuSign_eSign
         :'number_of_total_signers' => :'String',
         :'number_of_unique_senders' => :'String',
         :'number_total_recipients' => :'String',
+        :'other_recipients_list' => :'String',
         :'owner' => :'String',
         :'owner_mail' => :'String',
         :'period_end' => :'String',
@@ -693,6 +706,8 @@ module DocuSign_eSign
         :'sender_job_title' => :'String',
         :'sender_name' => :'String',
         :'sender_user_id' => :'String',
+        :'signature_type' => :'String',
+        :'signature_type_value' => :'String',
         :'sign_date' => :'String',
         :'signed' => :'String',
         :'signed_date' => :'String',
@@ -1030,6 +1045,10 @@ module DocuSign_eSign
         self.number_total_recipients = attributes[:'numberTotalRecipients']
       end
 
+      if attributes.has_key?(:'otherRecipientsList')
+        self.other_recipients_list = attributes[:'otherRecipientsList']
+      end
+
       if attributes.has_key?(:'owner')
         self.owner = attributes[:'owner']
       end
@@ -1164,6 +1183,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'senderUserId')
         self.sender_user_id = attributes[:'senderUserId']
+      end
+
+      if attributes.has_key?(:'signatureType')
+        self.signature_type = attributes[:'signatureType']
+      end
+
+      if attributes.has_key?(:'signatureTypeValue')
+        self.signature_type_value = attributes[:'signatureTypeValue']
       end
 
       if attributes.has_key?(:'signDate')
@@ -1394,6 +1421,7 @@ module DocuSign_eSign
           number_of_total_signers == o.number_of_total_signers &&
           number_of_unique_senders == o.number_of_unique_senders &&
           number_total_recipients == o.number_total_recipients &&
+          other_recipients_list == o.other_recipients_list &&
           owner == o.owner &&
           owner_mail == o.owner_mail &&
           period_end == o.period_end &&
@@ -1428,6 +1456,8 @@ module DocuSign_eSign
           sender_job_title == o.sender_job_title &&
           sender_name == o.sender_name &&
           sender_user_id == o.sender_user_id &&
+          signature_type == o.signature_type &&
+          signature_type_value == o.signature_type_value &&
           sign_date == o.sign_date &&
           signed == o.signed &&
           signed_date == o.signed_date &&
@@ -1473,7 +1503,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code_required, access_codes_attempted, access_codes_failed, account_id, authentication_category, authentication_success, authentication_type, average_time_to_complete_seconds, avg_complete_seconds, capture_method, completed, completed_ts, created_date, created_on, creator, custom_field, declined_date, declined_reason, delivered_date, envelope_count, envelope_creator, envelope_id, envelope_initial_send_ts, envelopes_billed, envelopes_completed, envelopes_completed_count, envelopes_declined, envelopes_sent, envelopes_sent_count, envelopes_voided, envelope_voided_reason, eod_document_description, eod_document_name, eod_document_profile_id, eod_transaction_id, eod_transaction_name, event_date, expiration_date, expired_ts, failure_reason, failures, failure_vendor_code, failure_vendor_reason, first_send_ts, group_id, group_name, hours_to_complete_end, hours_to_complete_start, id_checks_attempted, id_checks_failed, id_country, id_method, initial_send_ts, ip_address, last_activity, last_activity_date, last_modified, last_sent_date, last_used, metadata_removed, not_signed, number_of_authenticated_recipients, number_of_completed_signatures, number_of_documents, number_of_pages, number_of_recipients, number_of_sends, number_of_signers, number_of_total_documents, number_of_total_pages, number_of_total_signers, number_of_unique_senders, number_total_recipients, owner, owner_mail, period_end, period_start, phone_calls_attempted, phone_calls_failed, pii_redacted, purge_date, reason_for_declining, reason_for_voiding, reassign_reason, received, recipient, recipient_action, recipient_company_name, recipient_country, recipient_email, recipient_id, recipient_name, recipient_role_name, recipient_template_role_name, recipient_title, recipient_type, recipient_user_id, remaining_signatures, routing_order, sender_account_id, sender_company_name, sender_country, sender_email, sender_ip_address, sender_job_title, sender_name, sender_user_id, sign_date, signed, signed_date, signed_on_mobile, signed_on_paper, signer_list, status, status_changed_date, status_changed_ts, status_comment, subject, successes, template_id, template_name, templates_created, templates_created_count, terminal_status_date, time_to_complete_seconds, time_to_deliver, total_documents, total_envelopes, total_pages, total_recipients, total_signers, unique_senders, user_account_email, user_account_name, user_account_status, user_count, user_id, verification_status, verification_type, view_date, voided_ts].hash
+      [access_code_required, access_codes_attempted, access_codes_failed, account_id, authentication_category, authentication_success, authentication_type, average_time_to_complete_seconds, avg_complete_seconds, capture_method, completed, completed_ts, created_date, created_on, creator, custom_field, declined_date, declined_reason, delivered_date, envelope_count, envelope_creator, envelope_id, envelope_initial_send_ts, envelopes_billed, envelopes_completed, envelopes_completed_count, envelopes_declined, envelopes_sent, envelopes_sent_count, envelopes_voided, envelope_voided_reason, eod_document_description, eod_document_name, eod_document_profile_id, eod_transaction_id, eod_transaction_name, event_date, expiration_date, expired_ts, failure_reason, failures, failure_vendor_code, failure_vendor_reason, first_send_ts, group_id, group_name, hours_to_complete_end, hours_to_complete_start, id_checks_attempted, id_checks_failed, id_country, id_method, initial_send_ts, ip_address, last_activity, last_activity_date, last_modified, last_sent_date, last_used, metadata_removed, not_signed, number_of_authenticated_recipients, number_of_completed_signatures, number_of_documents, number_of_pages, number_of_recipients, number_of_sends, number_of_signers, number_of_total_documents, number_of_total_pages, number_of_total_signers, number_of_unique_senders, number_total_recipients, other_recipients_list, owner, owner_mail, period_end, period_start, phone_calls_attempted, phone_calls_failed, pii_redacted, purge_date, reason_for_declining, reason_for_voiding, reassign_reason, received, recipient, recipient_action, recipient_company_name, recipient_country, recipient_email, recipient_id, recipient_name, recipient_role_name, recipient_template_role_name, recipient_title, recipient_type, recipient_user_id, remaining_signatures, routing_order, sender_account_id, sender_company_name, sender_country, sender_email, sender_ip_address, sender_job_title, sender_name, sender_user_id, signature_type, signature_type_value, sign_date, signed, signed_date, signed_on_mobile, signed_on_paper, signer_list, status, status_changed_date, status_changed_ts, status_comment, subject, successes, template_id, template_name, templates_created, templates_created_count, terminal_status_date, time_to_complete_seconds, time_to_deliver, total_documents, total_envelopes, total_pages, total_recipients, total_signers, unique_senders, user_account_email, user_account_name, user_account_status, user_count, user_id, verification_status, verification_type, view_date, voided_ts].hash
     end
 
     # Builds the object from hash
