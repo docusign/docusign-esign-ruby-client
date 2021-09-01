@@ -29,6 +29,11 @@ module DocuSign_eSign
     attr_accessor :can_manage_admins_metadata
 
     # 
+    attr_accessor :can_manage_document_retention
+
+    attr_accessor :can_manage_document_retention_metadata
+
+    # 
     attr_accessor :can_manage_envelope_transfer
 
     attr_accessor :can_manage_envelope_transfer_metadata
@@ -72,6 +77,8 @@ module DocuSign_eSign
         :'can_manage_account_settings_metadata' => :'canManageAccountSettingsMetadata',
         :'can_manage_admins' => :'canManageAdmins',
         :'can_manage_admins_metadata' => :'canManageAdminsMetadata',
+        :'can_manage_document_retention' => :'canManageDocumentRetention',
+        :'can_manage_document_retention_metadata' => :'canManageDocumentRetentionMetadata',
         :'can_manage_envelope_transfer' => :'canManageEnvelopeTransfer',
         :'can_manage_envelope_transfer_metadata' => :'canManageEnvelopeTransferMetadata',
         :'can_manage_groups' => :'canManageGroups',
@@ -98,6 +105,8 @@ module DocuSign_eSign
         :'can_manage_account_settings_metadata' => :'SettingsMetadata',
         :'can_manage_admins' => :'String',
         :'can_manage_admins_metadata' => :'SettingsMetadata',
+        :'can_manage_document_retention' => :'String',
+        :'can_manage_document_retention_metadata' => :'SettingsMetadata',
         :'can_manage_envelope_transfer' => :'String',
         :'can_manage_envelope_transfer_metadata' => :'SettingsMetadata',
         :'can_manage_groups' => :'String',
@@ -145,6 +154,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'canManageAdminsMetadata')
         self.can_manage_admins_metadata = attributes[:'canManageAdminsMetadata']
+      end
+
+      if attributes.has_key?(:'canManageDocumentRetention')
+        self.can_manage_document_retention = attributes[:'canManageDocumentRetention']
+      end
+
+      if attributes.has_key?(:'canManageDocumentRetentionMetadata')
+        self.can_manage_document_retention_metadata = attributes[:'canManageDocumentRetentionMetadata']
       end
 
       if attributes.has_key?(:'canManageEnvelopeTransfer')
@@ -228,6 +245,8 @@ module DocuSign_eSign
           can_manage_account_settings_metadata == o.can_manage_account_settings_metadata &&
           can_manage_admins == o.can_manage_admins &&
           can_manage_admins_metadata == o.can_manage_admins_metadata &&
+          can_manage_document_retention == o.can_manage_document_retention &&
+          can_manage_document_retention_metadata == o.can_manage_document_retention_metadata &&
           can_manage_envelope_transfer == o.can_manage_envelope_transfer &&
           can_manage_envelope_transfer_metadata == o.can_manage_envelope_transfer_metadata &&
           can_manage_groups == o.can_manage_groups &&
@@ -253,7 +272,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [can_manage_account_security_settings, can_manage_account_security_settings_metadata, can_manage_account_settings, can_manage_account_settings_metadata, can_manage_admins, can_manage_admins_metadata, can_manage_envelope_transfer, can_manage_envelope_transfer_metadata, can_manage_groups, can_manage_groups_metadata, can_manage_reporting, can_manage_reporting_metadata, can_manage_sharing, can_manage_sharing_metadata, can_manage_signing_groups, can_manage_signing_groups_metadata, can_manage_users, can_manage_users_metadata, can_view_users, can_view_users_metadata].hash
+      [can_manage_account_security_settings, can_manage_account_security_settings_metadata, can_manage_account_settings, can_manage_account_settings_metadata, can_manage_admins, can_manage_admins_metadata, can_manage_document_retention, can_manage_document_retention_metadata, can_manage_envelope_transfer, can_manage_envelope_transfer_metadata, can_manage_groups, can_manage_groups_metadata, can_manage_reporting, can_manage_reporting_metadata, can_manage_sharing, can_manage_sharing_metadata, can_manage_signing_groups, can_manage_signing_groups_metadata, can_manage_users, can_manage_users_metadata, can_view_users, can_view_users_metadata].hash
     end
 
     # Builds the object from hash
