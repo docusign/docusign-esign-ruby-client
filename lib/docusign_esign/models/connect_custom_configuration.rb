@@ -28,7 +28,7 @@ module DocuSign_eSign
     # This turns Connect logging on or off. When set to **true**, logging is turned on.
     attr_accessor :enable_log
 
-    # A comma separated list of Ã¯Â¿Â½EnvelopeÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
+    # A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
     attr_accessor :envelope_events
 
     # When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. 
@@ -58,7 +58,7 @@ module DocuSign_eSign
     # The name of the Connect configuration. The name helps identify the configuration in the list.
     attr_accessor :name
 
-    # A comma separated list of Ã¯Â¿Â½RecipientÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
+    # A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
     attr_accessor :recipient_events
 
     # When set to **true**, and a publication message fails to be acknowledged, the message goes back into the queue and the system will retry delivery after a successful acknowledgement is received. If the delivery fails a second time, the message is not returned to the queue for sending until Connect receives a successful acknowledgement and it has been at least 24 hours since the previous retry. There is a maximum of ten retries Alternately, you can use Republish Connect Information to manually republish the envelope information.
@@ -73,7 +73,7 @@ module DocuSign_eSign
     # This is the web address and name of your listener or Retrieving Service endpoint. You need to include HTTPS:// in the web address.
     attr_accessor :url_to_publish_to
 
-    # A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to Ã¯Â¿Â½falseÃ¯Â¿Â½ then you must provide a list of user idÃ¯Â¿Â½s.
+    # A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s.
     attr_accessor :user_ids
 
     # When set to **true**, indicates that the `urlToPublishTo` property contains a SOAP endpoint.
