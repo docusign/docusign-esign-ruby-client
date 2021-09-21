@@ -17,6 +17,9 @@ module DocuSign_eSign
     attr_accessor :country_code
 
     # 
+    attr_accessor :country_code_lock
+
+    # 
     attr_accessor :extension
 
     # 
@@ -26,6 +29,7 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'country_code' => :'countryCode',
+        :'country_code_lock' => :'countryCodeLock',
         :'extension' => :'extension',
         :'number' => :'number'
       }
@@ -35,6 +39,7 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'country_code' => :'String',
+        :'country_code_lock' => :'String',
         :'extension' => :'String',
         :'number' => :'String'
       }
@@ -50,6 +55,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'countryCode')
         self.country_code = attributes[:'countryCode']
+      end
+
+      if attributes.has_key?(:'countryCodeLock')
+        self.country_code_lock = attributes[:'countryCodeLock']
       end
 
       if attributes.has_key?(:'extension')
@@ -80,6 +89,7 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           country_code == o.country_code &&
+          country_code_lock == o.country_code_lock &&
           extension == o.extension &&
           number == o.number
     end
@@ -93,7 +103,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [country_code, extension, number].hash
+      [country_code, country_code_lock, extension, number].hash
     end
 
     # Builds the object from hash
