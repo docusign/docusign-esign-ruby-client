@@ -28,10 +28,13 @@ module DocuSign_eSign
     #  Specifies the DocuSign generated ID for the Connect configuration.  
     attr_accessor :connect_id
 
+    # 
+    attr_accessor :delivery_mode
+
     # This turns Connect logging on or off. When set to **true**, logging is turned on.
     attr_accessor :enable_log
 
-    # A comma separated list of Ã¯Â¿Â½EnvelopeÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
+    # A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
     attr_accessor :envelope_events
 
     attr_accessor :event_data
@@ -72,7 +75,7 @@ module DocuSign_eSign
     # 
     attr_accessor :password
 
-    # A comma separated list of Ã¯Â¿Â½RecipientÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
+    # A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
     attr_accessor :recipient_events
 
     # 
@@ -111,7 +114,7 @@ module DocuSign_eSign
     # This is the web address and name of your listener or Retrieving Service endpoint. You need to include HTTPS:// in the web address.
     attr_accessor :url_to_publish_to
 
-    # A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to Ã¯Â¿Â½falseÃ¯Â¿Â½ then you must provide a list of user idÃ¯Â¿Â½s.
+    # A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s.
     attr_accessor :user_ids
 
     # 
@@ -128,6 +131,7 @@ module DocuSign_eSign
         :'all_users' => :'allUsers',
         :'configuration_type' => :'configurationType',
         :'connect_id' => :'connectId',
+        :'delivery_mode' => :'deliveryMode',
         :'enable_log' => :'enableLog',
         :'envelope_events' => :'envelopeEvents',
         :'event_data' => :'eventData',
@@ -170,6 +174,7 @@ module DocuSign_eSign
         :'all_users' => :'String',
         :'configuration_type' => :'String',
         :'connect_id' => :'String',
+        :'delivery_mode' => :'String',
         :'enable_log' => :'String',
         :'envelope_events' => :'Array<String>',
         :'event_data' => :'ConnectEventData',
@@ -230,6 +235,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'connectId')
         self.connect_id = attributes[:'connectId']
+      end
+
+      if attributes.has_key?(:'deliveryMode')
+        self.delivery_mode = attributes[:'deliveryMode']
       end
 
       if attributes.has_key?(:'enableLog')
@@ -390,6 +399,7 @@ module DocuSign_eSign
           all_users == o.all_users &&
           configuration_type == o.configuration_type &&
           connect_id == o.connect_id &&
+          delivery_mode == o.delivery_mode &&
           enable_log == o.enable_log &&
           envelope_events == o.envelope_events &&
           event_data == o.event_data &&
@@ -432,7 +442,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_envelope_publish, allow_salesforce_publish, all_users, configuration_type, connect_id, enable_log, envelope_events, event_data, external_folder_id, external_folder_label, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_accountas_custom_field, include_time_zone_information, name, password, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
+      [allow_envelope_publish, allow_salesforce_publish, all_users, configuration_type, connect_id, delivery_mode, enable_log, envelope_events, event_data, external_folder_id, external_folder_label, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_accountas_custom_field, include_time_zone_information, name, password, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
     end
 
     # Builds the object from hash

@@ -14,6 +14,9 @@ require 'date'
 module DocuSign_eSign
   # This optional complex element allows a message to be sent a specified URL when the envelope or recipient changes status. It is similar to DocuSign Connect. For example, if an envelope changes from \"Sent\" to \"Delivered\", a message containing the updated envelope status and optionally the documents is sent to the URL. When an eventNotification is attached to an envelope using the API, it only applies to the envelope (treating the envelope as the sender). This is different from envelopes created through the console user interface, where the user is treated as the sender.
   class EventNotification
+    # 
+    attr_accessor :delivery_mode
+
     # A list of envelope-level event statuses that will trigger Connect to send updates to the endpoint specified in the `url` property.   To receive notifications, you must include either an `envelopeEvents` node or a `recipientEvents` node. You do not need to specify both.
     attr_accessor :envelope_events
 
@@ -67,6 +70,7 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'delivery_mode' => :'deliveryMode',
         :'envelope_events' => :'envelopeEvents',
         :'event_data' => :'eventData',
         :'include_certificate_of_completion' => :'includeCertificateOfCompletion',
@@ -90,6 +94,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'delivery_mode' => :'String',
         :'envelope_events' => :'Array<EnvelopeEvent>',
         :'event_data' => :'ConnectEventData',
         :'include_certificate_of_completion' => :'String',
@@ -117,6 +122,10 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'deliveryMode')
+        self.delivery_mode = attributes[:'deliveryMode']
+      end
 
       if attributes.has_key?(:'envelopeEvents')
         if (value = attributes[:'envelopeEvents']).is_a?(Array)
@@ -209,6 +218,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          delivery_mode == o.delivery_mode &&
           envelope_events == o.envelope_events &&
           event_data == o.event_data &&
           include_certificate_of_completion == o.include_certificate_of_completion &&
@@ -237,7 +247,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [envelope_events, event_data, include_certificate_of_completion, include_certificate_with_soap, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_account_as_custom_field, include_time_zone, logging_enabled, recipient_events, require_acknowledgment, sign_message_with_x509_cert, soap_name_space, url, use_soap_interface].hash
+      [delivery_mode, envelope_events, event_data, include_certificate_of_completion, include_certificate_with_soap, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_account_as_custom_field, include_time_zone, logging_enabled, recipient_events, require_acknowledgment, sign_message_with_x509_cert, soap_name_space, url, use_soap_interface].hash
     end
 
     # Builds the object from hash

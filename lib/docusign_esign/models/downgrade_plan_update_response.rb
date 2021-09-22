@@ -38,6 +38,9 @@ module DocuSign_eSign
     attr_accessor :message
 
     # 
+    attr_accessor :product_id
+
+    # 
     attr_accessor :promo_code
 
     # 
@@ -60,6 +63,7 @@ module DocuSign_eSign
         :'downgrade_plan_name' => :'downgradePlanName',
         :'downgrade_request_status' => :'downgradeRequestStatus',
         :'message' => :'message',
+        :'product_id' => :'productId',
         :'promo_code' => :'promoCode',
         :'sale_discount' => :'saleDiscount',
         :'sale_discount_periods' => :'saleDiscountPeriods',
@@ -78,6 +82,7 @@ module DocuSign_eSign
         :'downgrade_plan_name' => :'String',
         :'downgrade_request_status' => :'String',
         :'message' => :'String',
+        :'product_id' => :'String',
         :'promo_code' => :'String',
         :'sale_discount' => :'String',
         :'sale_discount_periods' => :'String',
@@ -125,6 +130,10 @@ module DocuSign_eSign
         self.message = attributes[:'message']
       end
 
+      if attributes.has_key?(:'productId')
+        self.product_id = attributes[:'productId']
+      end
+
       if attributes.has_key?(:'promoCode')
         self.promo_code = attributes[:'promoCode']
       end
@@ -168,6 +177,7 @@ module DocuSign_eSign
           downgrade_plan_name == o.downgrade_plan_name &&
           downgrade_request_status == o.downgrade_request_status &&
           message == o.message &&
+          product_id == o.product_id &&
           promo_code == o.promo_code &&
           sale_discount == o.sale_discount &&
           sale_discount_periods == o.sale_discount_periods &&
@@ -183,7 +193,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_payment_method, discount_applied, downgrade_effective_date, downgrade_payment_cycle, downgrade_plan_id, downgrade_plan_name, downgrade_request_status, message, promo_code, sale_discount, sale_discount_periods, sale_discount_type].hash
+      [account_payment_method, discount_applied, downgrade_effective_date, downgrade_payment_cycle, downgrade_plan_id, downgrade_plan_name, downgrade_request_status, message, product_id, promo_code, sale_discount, sale_discount_periods, sale_discount_type].hash
     end
 
     # Builds the object from hash

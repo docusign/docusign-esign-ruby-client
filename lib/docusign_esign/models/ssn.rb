@@ -207,6 +207,11 @@ module DocuSign_eSign
 
     attr_accessor :shared_metadata
 
+    # 
+    attr_accessor :share_to_recipients
+
+    attr_accessor :share_to_recipients_metadata
+
     attr_accessor :smart_contract_information
 
     # 
@@ -373,6 +378,8 @@ module DocuSign_eSign
         :'sender_required_metadata' => :'senderRequiredMetadata',
         :'shared' => :'shared',
         :'shared_metadata' => :'sharedMetadata',
+        :'share_to_recipients' => :'shareToRecipients',
+        :'share_to_recipients_metadata' => :'shareToRecipientsMetadata',
         :'smart_contract_information' => :'smartContractInformation',
         :'source' => :'source',
         :'status' => :'status',
@@ -491,6 +498,8 @@ module DocuSign_eSign
         :'sender_required_metadata' => :'PropertyMetadata',
         :'shared' => :'String',
         :'shared_metadata' => :'PropertyMetadata',
+        :'share_to_recipients' => :'String',
+        :'share_to_recipients_metadata' => :'PropertyMetadata',
         :'smart_contract_information' => :'SmartContractInformation',
         :'source' => :'String',
         :'status' => :'String',
@@ -848,6 +857,14 @@ module DocuSign_eSign
         self.shared_metadata = attributes[:'sharedMetadata']
       end
 
+      if attributes.has_key?(:'shareToRecipients')
+        self.share_to_recipients = attributes[:'shareToRecipients']
+      end
+
+      if attributes.has_key?(:'shareToRecipientsMetadata')
+        self.share_to_recipients_metadata = attributes[:'shareToRecipientsMetadata']
+      end
+
       if attributes.has_key?(:'smartContractInformation')
         self.smart_contract_information = attributes[:'smartContractInformation']
       end
@@ -1083,6 +1100,8 @@ module DocuSign_eSign
           sender_required_metadata == o.sender_required_metadata &&
           shared == o.shared &&
           shared_metadata == o.shared_metadata &&
+          share_to_recipients == o.share_to_recipients &&
+          share_to_recipients_metadata == o.share_to_recipients_metadata &&
           smart_contract_information == o.smart_contract_information &&
           source == o.source &&
           status == o.status &&
@@ -1128,7 +1147,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, conceal_value_on_document, conceal_value_on_document_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, custom_tab_id, custom_tab_id_metadata, disable_auto_size, disable_auto_size_metadata, document_id, document_id_metadata, error_details, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, height, height_metadata, italic, italic_metadata, locale_policy, locked, locked_metadata, max_length, max_length_metadata, merge_field, merge_field_xml, name, name_metadata, original_value, original_value_metadata, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, require_all, require_all_metadata, required, required_metadata, require_initial_on_shared_change, require_initial_on_shared_change_metadata, sender_required, sender_required_metadata, shared, shared_metadata, smart_contract_information, source, status, status_metadata, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_label_metadata, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, underline, underline_metadata, validation_message, validation_message_metadata, validation_pattern, validation_pattern_metadata, value, value_metadata, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
+      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, conceal_value_on_document, conceal_value_on_document_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, custom_tab_id, custom_tab_id_metadata, disable_auto_size, disable_auto_size_metadata, document_id, document_id_metadata, error_details, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, height, height_metadata, italic, italic_metadata, locale_policy, locked, locked_metadata, max_length, max_length_metadata, merge_field, merge_field_xml, name, name_metadata, original_value, original_value_metadata, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, require_all, require_all_metadata, required, required_metadata, require_initial_on_shared_change, require_initial_on_shared_change_metadata, sender_required, sender_required_metadata, shared, shared_metadata, share_to_recipients, share_to_recipients_metadata, smart_contract_information, source, status, status_metadata, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_label_metadata, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, underline, underline_metadata, validation_message, validation_message_metadata, validation_pattern, validation_pattern_metadata, value, value_metadata, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
     end
 
     # Builds the object from hash

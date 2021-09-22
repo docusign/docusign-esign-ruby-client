@@ -15,6 +15,12 @@ module DocuSign_eSign
   # Contains information about an APP store receipt.
   class AppStoreReceipt
     # 
+    attr_accessor :downgrade_product_id
+
+    # 
+    attr_accessor :is_downgrade_cancellation
+
+    # 
     attr_accessor :product_id
 
     # Reserved: TBD
@@ -23,6 +29,8 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'downgrade_product_id' => :'downgradeProductId',
+        :'is_downgrade_cancellation' => :'isDowngradeCancellation',
         :'product_id' => :'productId',
         :'receipt_data' => :'receiptData'
       }
@@ -31,6 +39,8 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'downgrade_product_id' => :'String',
+        :'is_downgrade_cancellation' => :'String',
         :'product_id' => :'String',
         :'receipt_data' => :'String'
       }
@@ -43,6 +53,14 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'downgradeProductId')
+        self.downgrade_product_id = attributes[:'downgradeProductId']
+      end
+
+      if attributes.has_key?(:'isDowngradeCancellation')
+        self.is_downgrade_cancellation = attributes[:'isDowngradeCancellation']
+      end
 
       if attributes.has_key?(:'productId')
         self.product_id = attributes[:'productId']
@@ -71,6 +89,8 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          downgrade_product_id == o.downgrade_product_id &&
+          is_downgrade_cancellation == o.is_downgrade_cancellation &&
           product_id == o.product_id &&
           receipt_data == o.receipt_data
     end
@@ -84,7 +104,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [product_id, receipt_data].hash
+      [downgrade_product_id, is_downgrade_cancellation, product_id, receipt_data].hash
     end
 
     # Builds the object from hash

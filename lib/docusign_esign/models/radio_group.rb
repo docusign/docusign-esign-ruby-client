@@ -62,6 +62,11 @@ module DocuSign_eSign
     attr_accessor :shared_metadata
 
     # 
+    attr_accessor :share_to_recipients
+
+    attr_accessor :share_to_recipients_metadata
+
+    # 
     attr_accessor :tab_type
 
     attr_accessor :tab_type_metadata
@@ -103,6 +108,8 @@ module DocuSign_eSign
         :'require_initial_on_shared_change_metadata' => :'requireInitialOnSharedChangeMetadata',
         :'shared' => :'shared',
         :'shared_metadata' => :'sharedMetadata',
+        :'share_to_recipients' => :'shareToRecipients',
+        :'share_to_recipients_metadata' => :'shareToRecipientsMetadata',
         :'tab_type' => :'tabType',
         :'tab_type_metadata' => :'tabTypeMetadata',
         :'template_locked' => :'templateLocked',
@@ -136,6 +143,8 @@ module DocuSign_eSign
         :'require_initial_on_shared_change_metadata' => :'PropertyMetadata',
         :'shared' => :'String',
         :'shared_metadata' => :'PropertyMetadata',
+        :'share_to_recipients' => :'String',
+        :'share_to_recipients_metadata' => :'PropertyMetadata',
         :'tab_type' => :'String',
         :'tab_type_metadata' => :'PropertyMetadata',
         :'template_locked' => :'String',
@@ -233,6 +242,14 @@ module DocuSign_eSign
         self.shared_metadata = attributes[:'sharedMetadata']
       end
 
+      if attributes.has_key?(:'shareToRecipients')
+        self.share_to_recipients = attributes[:'shareToRecipients']
+      end
+
+      if attributes.has_key?(:'shareToRecipientsMetadata')
+        self.share_to_recipients_metadata = attributes[:'shareToRecipientsMetadata']
+      end
+
       if attributes.has_key?(:'tabType')
         self.tab_type = attributes[:'tabType']
       end
@@ -303,6 +320,8 @@ module DocuSign_eSign
           require_initial_on_shared_change_metadata == o.require_initial_on_shared_change_metadata &&
           shared == o.shared &&
           shared_metadata == o.shared_metadata &&
+          share_to_recipients == o.share_to_recipients &&
+          share_to_recipients_metadata == o.share_to_recipients_metadata &&
           tab_type == o.tab_type &&
           tab_type_metadata == o.tab_type_metadata &&
           template_locked == o.template_locked &&
@@ -322,7 +341,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, document_id, document_id_metadata, group_name, group_name_metadata, radios, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, require_all, require_all_metadata, require_initial_on_shared_change, require_initial_on_shared_change_metadata, shared, shared_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tooltip_metadata].hash
+      [conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, document_id, document_id_metadata, group_name, group_name_metadata, radios, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, require_all, require_all_metadata, require_initial_on_shared_change, require_initial_on_shared_change_metadata, shared, shared_metadata, share_to_recipients, share_to_recipients_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tooltip_metadata].hash
     end
 
     # Builds the object from hash

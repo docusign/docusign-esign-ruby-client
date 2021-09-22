@@ -13,6 +13,30 @@ require "uri"
 
 module DocuSign_eSign
 
+  class GetConnectAllUsersOptions
+    # 
+    attr_accessor :count
+
+    # 
+    attr_accessor :email_substring
+
+    # 
+    attr_accessor :is_recipient_connect_config
+
+    # 
+    attr_accessor :start_position
+
+    # 
+    attr_accessor :status
+
+    # 
+    attr_accessor :user_name_substring
+
+    def self.default
+      @@default ||= GetConnectAllUsersOptions.new
+    end
+  end
+
   class GetEventLogOptions
     # When true, the connectDebugLog information is included in the response.
     attr_accessor :additional_info
@@ -433,6 +457,67 @@ module DocuSign_eSign
         :return_type => 'ConnectConfigResults')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ConnectApi#get_configuration\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns all users from the configured Connect service.
+    # 
+    # @param account_id 
+    # @param connect_id 
+    # @param DocuSign_eSign::GetConnectAllUsersOptions Options for modifying the behavior of the function.
+    # @return [IntegratedConnectUserInfoList]
+    def get_connect_all_users(account_id, connect_id, options = DocuSign_eSign::GetConnectAllUsersOptions.default)
+      data, _status_code, _headers = get_connect_all_users_with_http_info(account_id, connect_id, options)
+      return data
+    end
+
+    # Returns all users from the configured Connect service.
+    # 
+    # @param account_id 
+    # @param connect_id 
+    # @param DocuSign_eSign::GetConnectAllUsersOptions Options for modifying the behavior of the function.
+    # @return [Array<(IntegratedConnectUserInfoList, Fixnum, Hash)>] IntegratedConnectUserInfoList data, response status code and response headers
+    def get_connect_all_users_with_http_info(account_id, connect_id, options = DocuSign_eSign::GetConnectAllUsersOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.get_connect_all_users ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.get_connect_all_users" if account_id.nil?
+      # verify the required parameter 'connect_id' is set
+      fail ArgumentError, "Missing the required parameter 'connect_id' when calling ConnectApi.get_connect_all_users" if connect_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/{connectId}/all/users".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'connectId' + '}', connect_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'count'] = options.count if !options.count.nil?
+      query_params[:'email_substring'] = options.email_substring if !options.email_substring.nil?
+      query_params[:'is_recipient_connect_config'] = options.is_recipient_connect_config if !options.is_recipient_connect_config.nil?
+      query_params[:'start_position'] = options.start_position if !options.start_position.nil?
+      query_params[:'status'] = options.status if !options.status.nil?
+      query_params[:'user_name_substring'] = options.user_name_substring if !options.user_name_substring.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'IntegratedConnectUserInfoList')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#get_connect_all_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
