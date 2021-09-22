@@ -19,11 +19,14 @@ module DocuSign_eSign
     # 
     attr_accessor :workflow_id
 
+    attr_accessor :workflow_id_metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'input_options' => :'inputOptions',
-        :'workflow_id' => :'workflowId'
+        :'workflow_id' => :'workflowId',
+        :'workflow_id_metadata' => :'workflowIdMetadata'
       }
     end
 
@@ -31,7 +34,8 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'input_options' => :'Array<RecipientIdentityInputOption>',
-        :'workflow_id' => :'String'
+        :'workflow_id' => :'String',
+        :'workflow_id_metadata' => :'PropertyMetadata'
       }
     end
 
@@ -51,6 +55,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'workflowId')
         self.workflow_id = attributes[:'workflowId']
+      end
+
+      if attributes.has_key?(:'workflowIdMetadata')
+        self.workflow_id_metadata = attributes[:'workflowIdMetadata']
       end
     end
 
@@ -73,7 +81,8 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           input_options == o.input_options &&
-          workflow_id == o.workflow_id
+          workflow_id == o.workflow_id &&
+          workflow_id_metadata == o.workflow_id_metadata
     end
 
     # @see the `==` method
@@ -85,7 +94,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [input_options, workflow_id].hash
+      [input_options, workflow_id, workflow_id_metadata].hash
     end
 
     # Builds the object from hash

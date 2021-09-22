@@ -80,7 +80,7 @@ module DocuSign_eSign
   end
 
   class GetConsumerDisclosureOptions
-    # 
+    # The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     attr_accessor :lang_code2
 
     def self.default
@@ -145,6 +145,15 @@ module DocuSign_eSign
 
     def self.default
       @@default ||= GetDocumentPageImageOptions.new
+    end
+  end
+
+  class GetDocumentResponsiveHtmlOptions
+    # 
+    attr_accessor :include_anchor_tab_locations
+
+    def self.default
+      @@default ||= GetDocumentResponsiveHtmlOptions.new
     end
   end
 
@@ -226,6 +235,15 @@ module DocuSign_eSign
 
     def self.default
       @@default ||= GetRecipientSignatureImageOptions.new
+    end
+  end
+
+  class GetResponsiveHtmlOptions
+    # 
+    attr_accessor :include_anchor_tab_locations
+
+    def self.default
+      @@default ||= GetResponsiveHtmlOptions.new
     end
   end
 
@@ -3056,7 +3074,7 @@ module DocuSign_eSign
     # Reserved: Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param recipient_id The ID of the recipient being accessed.
     # @param DocuSign_eSign::GetConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [ConsumerDisclosure]
@@ -3069,7 +3087,7 @@ module DocuSign_eSign
     # Reserved: Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param recipient_id The ID of the recipient being accessed.
     # @param DocuSign_eSign::GetConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [Array<(ConsumerDisclosure, Fixnum, Hash)>] ConsumerDisclosure data, response status code and response headers
@@ -3307,6 +3325,66 @@ module DocuSign_eSign
         :return_type => 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#get_document_page_image\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Responsive HTML for a document in an envelope.
+    # 
+    # @param account_id 
+    # @param document_id 
+    # @param envelope_id 
+    # @param DocuSign_eSign::GetDocumentResponsiveHtmlOptions Options for modifying the behavior of the function.
+    # @return [DocumentHtmlDefinitionOriginals]
+    def get_document_responsive_html(account_id, document_id, envelope_id, options = DocuSign_eSign::GetDocumentResponsiveHtmlOptions.default)
+      data, _status_code, _headers = get_document_responsive_html_with_http_info(account_id, document_id, envelope_id, options)
+      return data
+    end
+
+    # Get Responsive HTML for a document in an envelope.
+    # 
+    # @param account_id 
+    # @param document_id 
+    # @param envelope_id 
+    # @param DocuSign_eSign::GetDocumentResponsiveHtmlOptions Options for modifying the behavior of the function.
+    # @return [Array<(DocumentHtmlDefinitionOriginals, Fixnum, Hash)>] DocumentHtmlDefinitionOriginals data, response status code and response headers
+    def get_document_responsive_html_with_http_info(account_id, document_id, envelope_id, options = DocuSign_eSign::GetDocumentResponsiveHtmlOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_document_responsive_html ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_document_responsive_html" if account_id.nil?
+      # verify the required parameter 'document_id' is set
+      fail ArgumentError, "Missing the required parameter 'document_id' when calling EnvelopesApi.get_document_responsive_html" if document_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_document_responsive_html" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/responsive_html".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'include_anchor_tab_locations'] = options.include_anchor_tab_locations if !options.include_anchor_tab_locations.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DocumentHtmlDefinitionOriginals')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_document_responsive_html\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -4214,6 +4292,62 @@ module DocuSign_eSign
         :return_type => 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#get_recipient_signature_image\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Responsive HTML for all documents in an envelope.
+    # 
+    # @param account_id 
+    # @param envelope_id 
+    # @param DocuSign_eSign::GetResponsiveHtmlOptions Options for modifying the behavior of the function.
+    # @return [DocumentHtmlDefinitionOriginals]
+    def get_responsive_html(account_id, envelope_id, options = DocuSign_eSign::GetResponsiveHtmlOptions.default)
+      data, _status_code, _headers = get_responsive_html_with_http_info(account_id, envelope_id, options)
+      return data
+    end
+
+    # Get Responsive HTML for all documents in an envelope.
+    # 
+    # @param account_id 
+    # @param envelope_id 
+    # @param DocuSign_eSign::GetResponsiveHtmlOptions Options for modifying the behavior of the function.
+    # @return [Array<(DocumentHtmlDefinitionOriginals, Fixnum, Hash)>] DocumentHtmlDefinitionOriginals data, response status code and response headers
+    def get_responsive_html_with_http_info(account_id, envelope_id, options = DocuSign_eSign::GetResponsiveHtmlOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_responsive_html ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_responsive_html" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_responsive_html" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/responsive_html".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'include_anchor_tab_locations'] = options.include_anchor_tab_locations if !options.include_anchor_tab_locations.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DocumentHtmlDefinitionOriginals')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_responsive_html\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
