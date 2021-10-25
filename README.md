@@ -38,6 +38,32 @@ For details regarding which type of OAuth grant will work best for your DocuSign
 
 For security purposes, DocuSign recommends using the [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) flow.
 
+## Running tests:
+
+To run tests, you need:
+1. Create a .env file at the `tests` dir (or rename an existing .env.example file)
+2. Enter your data from the developer account
+* SECRET=< The secret key of your application > \
+    settings => Apps and Keys =>
+    Apps and Integration Keys your app "ACTIONS" => Edit =>
+    Authentication => Secret Keys
+* INTEGRATOR_KEY_JWT=< your Integration Key > \
+    settings => Apps and Keys => Integration Key of your app
+* TEMPLATE_ID=< your template id > \
+  templates => in MyTemplates list click by choosen template => template id
+* USER_ID=< your User ID > \
+    settings => Apps and Keys => User ID
+
+3. Copy private key to `tests/docs/private.pem ` \
+    Settings => "Apps and Keys"
+    in Apps and Integration Keys choose your application name => "ACTIONS" Edit => Service Integration => + GENERATE RSA
+
+4. Install dependencies bundle install
+
+5. Run tests: \
+   `cd tests`\
+   `rspec`
+
 ## Support
 Log issues against this client through GitHub. We also have an [active developer community on Stack Overflow](https://stackoverflow.com/questions/tagged/docusignapi).
 
