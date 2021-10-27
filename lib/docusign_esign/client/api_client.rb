@@ -575,6 +575,8 @@ module DocuSign_eSign
 
       if status_code == 200
         self.default_headers.store('Authorization', "#{token.token_type} #{token.access_token}")
+
+        token
       end
     end
 
