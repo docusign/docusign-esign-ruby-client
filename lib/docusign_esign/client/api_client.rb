@@ -570,14 +570,14 @@ module DocuSign_eSign
           :return_type => 'OAuth::OAuthToken',
           :oauth => true
       }
-      data, status_code, headers = self.call_api("POST", '/oauth/token', params)
-      abort(data.inspect)
 
+      token, status_code, headers = self.call_api("POST", '/oauth/token', params)
+
+      if status_code == 200
+        self.default_headers.store('Authorization', "#{token.token_type} #{token.access_token}")
+      end
     end
 
-    def set_access_token(token_obj)
-      self.default_headers['Authorization'] = token_obj.access_token
-    end
 
     # Helper method to add default header params
     # @param [String] header_name
