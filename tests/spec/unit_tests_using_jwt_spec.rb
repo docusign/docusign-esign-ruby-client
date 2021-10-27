@@ -38,7 +38,6 @@ describe 'DocuSign Ruby Client Tests' do
       end
     rescue => e
       puts "Error during processing: #{$!}"
-      # puts "Backtrace:\n\t#{e.backtrace.join("\n\t")}"
     end
 
     return nil
@@ -395,18 +394,6 @@ describe 'DocuSign Ruby Client Tests' do
             expect(envelope_form_data.form_data).to be_truthy
             if !envelope_form_data.form_data.nil?
               expect(envelope_form_data.form_data).to be_truthy
-              # expect(envelope_form_data.form_data.length).to be > 0
-              # if envelope_form_data.form_data.length > 0
-              # 	expect(envelope_form_data.form_data[0].name).to be_truthy
-              # 	expect(envelope_form_data.prefill_form_data).to be_truthy
-              # 	if !envelope_form_data.prefill_form_data.nil?
-              # 		expect(envelope_form_data.prefill_form_data.form_data).to be_truthy
-              # 		expect(envelope_form_data.prefill_form_data.form_data.length).to be > 0
-              # 		if envelope_form_data.prefill_form_data.form_data.length > 0
-              # 			expect(envelope_form_data.prefill_form_data.form_data[0].name).to be_truthy
-              # 		end
-              # 	end
-              # end
             end
           end
         end
