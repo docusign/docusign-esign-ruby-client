@@ -209,17 +209,17 @@ module DocuSign_eSign
     # Deletes the Connect failure log information for the specified entry.
     # @param account_id The external account number (int) or account ID Guid.
     # @param failure_id The ID of the failed connect log entry.
-    # @return [nil]
+    # @return [ConnectDeleteFailureResult]
     def delete_event_failure_log(account_id, failure_id)
-      delete_event_failure_log_with_http_info(account_id, failure_id)
-      return nil
+      data, _status_code, _headers = delete_event_failure_log_with_http_info(account_id, failure_id)
+      return data
     end
 
     # Deletes a Connect failure log entry.
     # Deletes the Connect failure log information for the specified entry.
     # @param account_id The external account number (int) or account ID Guid.
     # @param failure_id The ID of the failed connect log entry.
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(ConnectDeleteFailureResult, Fixnum, Hash)>] ConnectDeleteFailureResult data, response status code and response headers
     def delete_event_failure_log_with_http_info(account_id, failure_id)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ConnectApi.delete_event_failure_log ..."
@@ -250,7 +250,8 @@ module DocuSign_eSign
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'ConnectDeleteFailureResult')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ConnectApi#delete_event_failure_log\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
