@@ -3362,7 +3362,7 @@ module DocuSign_eSign
     # Put one branding logo.
     # 
     # @param account_id The external account number (int) or account ID GUID.
-    # @param brand_id The id of the brand.
+    # @param brand_id The ID of the brand.
     # @param logo_type The type of logo. Valid values are:  - `primary`  - `secondary`  - `email`
     # @param logo_file_bytes Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places 
     # @return [nil]
@@ -3374,7 +3374,7 @@ module DocuSign_eSign
     # Put one branding logo.
     # 
     # @param account_id The external account number (int) or account ID GUID.
-    # @param brand_id The id of the brand.
+    # @param brand_id The ID of the brand.
     # @param logo_type The type of logo. Valid values are:  - `primary`  - `secondary`  - `email`
     # @param logo_file_bytes Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -3424,7 +3424,7 @@ module DocuSign_eSign
     # Uploads a branding resource file.
     # 
     # @param account_id The external account number (int) or account ID GUID.
-    # @param brand_id The id of the brand.
+    # @param brand_id The ID of the brand.
     # @param resource_content_type The type of brand resource file that you are updating. Valid values are:  - `sending` - `signing` - `email` - `signing_captive`
     # @return [BrandResources]
     def update_brand_resources_by_content_type(account_id, brand_id, resource_content_type)
@@ -3435,7 +3435,7 @@ module DocuSign_eSign
     # Uploads a branding resource file.
     # 
     # @param account_id The external account number (int) or account ID GUID.
-    # @param brand_id The id of the brand.
+    # @param brand_id The ID of the brand.
     # @param resource_content_type The type of brand resource file that you are updating. Valid values are:  - `sending` - `signing` - `email` - `signing_captive`
     # @return [Array<(BrandResources, Fixnum, Hash)>] BrandResources data, response status code and response headers
     def update_brand_resources_by_content_type_with_http_info(account_id, brand_id, resource_content_type)
