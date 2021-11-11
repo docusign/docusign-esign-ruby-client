@@ -2,6 +2,7 @@ require 'dotenv/load'
 require 'docusign_esign'
 require 'base64'
 require 'uri'
+require 'launchy'
 
 describe 'DocuSign Ruby Client Tests' do
   def login
@@ -12,10 +13,13 @@ describe 'DocuSign Ruby Client Tests' do
 
         $api_client = DocuSign_eSign::ApiClient.new(configuration)
         $api_client.set_oauth_base_path(DocuSign_eSign::OAuth::DEMO_OAUTH_BASE_PATH)
-        # $api_client.get_authorization_uri($integrator_key,%w[signature impersonation],$return_url,'code')
-        # $api_client.request_jwt_application_token($integrator_key,File.read($private_key_filename),$expires_in_seconds,%w[signature impersonation] )
-        # code = 'code_here'
-        # $api_client.generate_access_token($integrator_key,$secret,code)
+        # IMPORTANT NOTE:
+        # the first time you ask for a JWT access token, you should grant access by making the following call
+        # visit DocuSign OAuth authorization url in the browser, login, grant access and restart the tests
+        # url = $api_client.get_authorization_uri($integrator_key,%w[signature organization_read impersonation],$return_url,'code')
+        # Launchy.open(url)
+        # abort "Please restart the tests"
+        # END OF NOTE
       end
 
       token_obj = $api_client.request_jwt_user_token(ENV["INTEGRATOR_KEY_JWT"], ENV["USER_ID"], File.read($private_key_filename), $expires_in_seconds)
@@ -348,19 +352,15 @@ describe 'DocuSign Ruby Client Tests' do
           if !$envelope_id.nil?
             api_client = create_api_client()
             templates_api = DocuSign_eSign::TemplatesApi.new(api_client)
-
-            options = DocuSign_eSign::GetEnvelopeOptions.new
-            $template_id = ENV["TEMPLATE_ID"]
-
             options = DocuSign_eSign::GetOptions.new
             options.include = "tabs"
 
-            template_summary = templates_api.get($account_id, $template_id, options)
+            template_summary = templates_api.get($account_id, ENV["TEMPLATE_ID"], options)
           end
 
           expect(template_summary).to be_truthy
           if !template_summary.nil?
-            expect(template_summary.template_id).to eq($template_id)
+            expect(template_summary.template_id).to eq(ENV["TEMPLATE_ID"])
           end
         end
       end

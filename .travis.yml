@@ -4,6 +4,6 @@ branches:
 language: ruby
 #before_install: openssl aes-256-cbc -K $encrypted_7aa52200b8fc_key -iv $encrypted_7aa52200b8fc_iv -in tests/keys/docusign_private_key.txt.enc -out tests/keys/docusign_private_key.txt -d
 # command to install dependencies
-install: cd tests/spec && bundle install
+install: cd tests && bundle install
 # command to run tests
 script: bundle exec rspec unit_tests_using_jwt_spec.rb --format documentation

@@ -39,30 +39,45 @@ For details regarding which type of OAuth grant will work best for your DocuSign
 For security purposes, DocuSign recommends using the [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) flow.
 
 ## Running tests:
+Pre-conditions:
+1. Make sure ruby is installed or install it fallowing the [instructions](https://www.ruby-lang.org/en/documentation/installation/)
+2. Login with your DocuSign account on https://appdemo.docusign.com.
+3. Open Apps and Keys section in Settings and press Add App and Integration Key button.
+4. Enter App name, add secret key, generate RSA key and press Save button, add `https://developers.docusign.com/` to Redirect URIs.
+5. Create new template on https://appdemo.docusign.com/templates page and save its ID.
+
+After complete all previous steps for run on the Windows 10 need to do the following:
+1. Download curl from https://curl.se/windows/
+2. Inside archive find "bin" directory
+3. Rename libcurl-x64.def to libcurl.def
+4. Rename libcurl-x64.dll to libcurl.dll
+5. Copy all files from "bin" directory to C:\Ruby30-x64\bin
 
 To run tests, you need:
 1. Create a .env file at the `tests` dir (or rename an existing .env.example file)
 2. Enter your data from the developer account
-* SECRET=< The secret key of your application > \
+* `SECRET` \
     settings => Apps and Keys =>
     Apps and Integration Keys your app "ACTIONS" => Edit =>
     Authentication => Secret Keys
-* INTEGRATOR_KEY_JWT=< your Integration Key > \
+* `INTEGRATOR_KEY_JWT` \
     settings => Apps and Keys => Integration Key of your app
-* TEMPLATE_ID=< your template id > \
-  templates => in MyTemplates list click by choosen template => template id
-* USER_ID=< your User ID > \
+* `TEMPLATE_ID` \
+  templates => in MyTemplates list click by chosen template or _create new one_ => template id
+* `USER_ID` \
     settings => Apps and Keys => User ID
 
 3. Copy private key to `tests/docs/private.pem ` \
     Settings => "Apps and Keys"
     in Apps and Integration Keys choose your application name => "ACTIONS" Edit => Service Integration => + GENERATE RSA
 
-4. Install dependencies bundle install
+4. Run tests: \
+   `cd tests && bundle install`\
+   `bundle exec rspec spec/unit_tests_using_jwt_spec.rb --format documentation`
 
-5. Run tests: \
-   `cd tests`\
-   `rspec`
+### Important note:
+First time you ask for a JWT access token you might need to uncomment lines 19-21 in `tests/spec/unit_tests_using_jwt_spec.rb:19` and grant access to the API
+
 
 ## Support
 Log issues against this client through GitHub. We also have an [active developer community on Stack Overflow](https://stackoverflow.com/questions/tagged/docusignapi).
