@@ -17,6 +17,11 @@ module DocuSign_eSign
     attr_accessor :current_workflow_step_id
 
     # 
+    attr_accessor :resume_date
+
+    attr_accessor :scheduled_sending
+
+    # 
     attr_accessor :workflow_status
 
     # 
@@ -26,6 +31,8 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'current_workflow_step_id' => :'currentWorkflowStepId',
+        :'resume_date' => :'resumeDate',
+        :'scheduled_sending' => :'scheduledSending',
         :'workflow_status' => :'workflowStatus',
         :'workflow_steps' => :'workflowSteps'
       }
@@ -35,6 +42,8 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'current_workflow_step_id' => :'String',
+        :'resume_date' => :'String',
+        :'scheduled_sending' => :'ScheduledSendingApiModel',
         :'workflow_status' => :'String',
         :'workflow_steps' => :'Array<WorkflowStep>'
       }
@@ -50,6 +59,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'currentWorkflowStepId')
         self.current_workflow_step_id = attributes[:'currentWorkflowStepId']
+      end
+
+      if attributes.has_key?(:'resumeDate')
+        self.resume_date = attributes[:'resumeDate']
+      end
+
+      if attributes.has_key?(:'scheduledSending')
+        self.scheduled_sending = attributes[:'scheduledSending']
       end
 
       if attributes.has_key?(:'workflowStatus')
@@ -82,6 +99,8 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           current_workflow_step_id == o.current_workflow_step_id &&
+          resume_date == o.resume_date &&
+          scheduled_sending == o.scheduled_sending &&
           workflow_status == o.workflow_status &&
           workflow_steps == o.workflow_steps
     end
@@ -95,7 +114,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [current_workflow_step_id, workflow_status, workflow_steps].hash
+      [current_workflow_step_id, resume_date, scheduled_sending, workflow_status, workflow_steps].hash
     end
 
     # Builds the object from hash

@@ -13,22 +13,22 @@ require 'date'
 
 module DocuSign_eSign
   class IntegratedConnectUserInfoList
-    # 
+    # The last position in the result set. 
     attr_accessor :end_position
 
-    # 
+    # The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
     attr_accessor :next_uri
 
-    # 
+    # The postal code for the billing address.
     attr_accessor :previous_uri
 
-    # 
+    # The number of results returned in this response. 
     attr_accessor :result_set_size
 
-    # 
+    # Starting position of the current result set.
     attr_accessor :start_position
 
-    # 
+    # The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
     attr_accessor :total_set_size
 
     # 

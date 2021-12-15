@@ -151,6 +151,15 @@ module DocuSign_eSign
     end
   end
 
+  class GetReservedDomainExistenceOptions
+    # 
+    attr_accessor :email_domain
+
+    def self.default
+      @@default ||= GetReservedDomainExistenceOptions.new
+    end
+  end
+
   class ListBrandsOptions
     # When set to **true**, excludes distributor brand information from the response set.
     attr_accessor :exclude_distributor_brand
@@ -538,57 +547,6 @@ module DocuSign_eSign
         :return_type => 'PermissionProfile')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AccountsApi#create_permission_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Creates a customized report
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param report_in_product_run_request  (optional parameter)
-    # @return [ReportInProductSaveResponse]
-    def create_report_in_product_create(account_id, report_in_product_run_request)
-      data, _status_code, _headers = create_report_in_product_create_with_http_info(account_id,  report_in_product_run_request)
-      return data
-    end
-
-    # Creates a customized report
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param report_in_product_run_request  (optional parameter)
-    # @return [Array<(ReportInProductSaveResponse, Fixnum, Hash)>] ReportInProductSaveResponse data, response status code and response headers
-    def create_report_in_product_create_with_http_info(account_id, report_in_product_run_request)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: AccountsApi.create_report_in_product_create ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.create_report_in_product_create" if account_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/reports".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(report_in_product_run_request)
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'ReportInProductSaveResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountsApi#create_report_in_product_create\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1118,59 +1076,6 @@ module DocuSign_eSign
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AccountsApi#delete_permission_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Removes a customized report
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param id 
-    # @return [ReportInProductSaveResponse]
-    def delete_report_in_product(account_id, id)
-      data, _status_code, _headers = delete_report_in_product_with_http_info(account_id, id)
-      return data
-    end
-
-    # Removes a customized report
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param id 
-    # @return [Array<(ReportInProductSaveResponse, Fixnum, Hash)>] ReportInProductSaveResponse data, response status code and response headers
-    def delete_report_in_product_with_http_info(account_id, id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: AccountsApi.delete_report_in_product ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.delete_report_in_product" if account_id.nil?
-      # verify the required parameter 'id' is set
-      fail ArgumentError, "Missing the required parameter 'id' when calling AccountsApi.delete_report_in_product" if id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/reports/{id}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'id' + '}', id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'ReportInProductSaveResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountsApi#delete_report_in_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2368,34 +2273,35 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Gets the specified report
+    # Returns whether or not the specified email domain is reserved/claimed.
     # 
     # @param account_id The external account number (int) or account ID Guid.
-    # @param id 
-    # @return [ReportInProductGet]
-    def get_report_in_product(account_id, id)
-      data, _status_code, _headers = get_report_in_product_with_http_info(account_id, id)
+    # @param DocuSign_eSign::GetReservedDomainExistenceOptions Options for modifying the behavior of the function.
+    # @return [ReservedDomainExistence]
+    def get_reserved_domain_existence(account_id, options = DocuSign_eSign::GetReservedDomainExistenceOptions.default)
+      data, _status_code, _headers = get_reserved_domain_existence_with_http_info(account_id, options)
       return data
     end
 
-    # Gets the specified report
+    # Returns whether or not the specified email domain is reserved/claimed.
     # 
     # @param account_id The external account number (int) or account ID Guid.
-    # @param id 
-    # @return [Array<(ReportInProductGet, Fixnum, Hash)>] ReportInProductGet data, response status code and response headers
-    def get_report_in_product_with_http_info(account_id, id)
+    # @param DocuSign_eSign::GetReservedDomainExistenceOptions Options for modifying the behavior of the function.
+    # @return [Array<(ReservedDomainExistence, Fixnum, Hash)>] ReservedDomainExistence data, response status code and response headers
+    def get_reserved_domain_existence_with_http_info(account_id, options = DocuSign_eSign::GetReservedDomainExistenceOptions.default)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: AccountsApi.get_report_in_product ..."
+        @api_client.config.logger.debug "Calling API: AccountsApi.get_reserved_domain_existence ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.get_report_in_product" if account_id.nil?
-      # verify the required parameter 'id' is set
-      fail ArgumentError, "Missing the required parameter 'id' when calling AccountsApi.get_report_in_product" if id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.get_reserved_domain_existence" if account_id.nil?
+      # verify the required parameter 'email_domain' is set
+      fail ArgumentError, "Missing the required parameter 'email_domain' when calling AccountsApi.get_reserved_domain_existence" if email_domain.nil?
       # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/reports/{id}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'id' + '}', id.to_s)
+      local_var_path = "/v2.1/accounts/{accountId}/reserved_domains".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'email_domain'] = email_domain
 
       # header parameters
       header_params = {}
@@ -2414,58 +2320,9 @@ module DocuSign_eSign
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'ReportInProductGet')
+        :return_type => 'ReservedDomainExistence')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountsApi#get_report_in_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Gets the descriptors for all of an account's active reports (for listings)
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @return [ReportInProductList]
-    def get_report_in_product_list(account_id)
-      data, _status_code, _headers = get_report_in_product_list_with_http_info(account_id)
-      return data
-    end
-
-    # Gets the descriptors for all of an account&#39;s active reports (for listings)
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @return [Array<(ReportInProductList, Fixnum, Hash)>] ReportInProductList data, response status code and response headers
-    def get_report_in_product_list_with_http_info(account_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: AccountsApi.get_report_in_product_list ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.get_report_in_product_list" if account_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/reports".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'ReportInProductList')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountsApi#get_report_in_product_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AccountsApi#get_reserved_domain_existence\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3908,162 +3765,6 @@ module DocuSign_eSign
         :return_type => 'PermissionProfile')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AccountsApi#update_permission_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Returns the result set from running the specified report
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param report_in_product_run_request  (optional parameter)
-    # @return [ReportInProductRunResponse]
-    def update_report_in_product_run_results(account_id, report_in_product_run_request)
-      data, _status_code, _headers = update_report_in_product_run_results_with_http_info(account_id,  report_in_product_run_request)
-      return data
-    end
-
-    # Returns the result set from running the specified report
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param report_in_product_run_request  (optional parameter)
-    # @return [Array<(ReportInProductRunResponse, Fixnum, Hash)>] ReportInProductRunResponse data, response status code and response headers
-    def update_report_in_product_run_results_with_http_info(account_id, report_in_product_run_request)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: AccountsApi.update_report_in_product_run_results ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.update_report_in_product_run_results" if account_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/reports/report_results".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(report_in_product_run_request)
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'ReportInProductRunResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountsApi#update_report_in_product_run_results\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Saves a customized report
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param id 
-    # @param report_in_product_run_request  (optional parameter)
-    # @return [ReportInProductSaveResponse]
-    def update_report_in_product_save(account_id, id, report_in_product_run_request)
-      data, _status_code, _headers = update_report_in_product_save_with_http_info(account_id, id,  report_in_product_run_request)
-      return data
-    end
-
-    # Saves a customized report
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param id 
-    # @param report_in_product_run_request  (optional parameter)
-    # @return [Array<(ReportInProductSaveResponse, Fixnum, Hash)>] ReportInProductSaveResponse data, response status code and response headers
-    def update_report_in_product_save_with_http_info(account_id, id, report_in_product_run_request)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: AccountsApi.update_report_in_product_save ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.update_report_in_product_save" if account_id.nil?
-      # verify the required parameter 'id' is set
-      fail ArgumentError, "Missing the required parameter 'id' when calling AccountsApi.update_report_in_product_save" if id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/reports/{id}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'id' + '}', id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(report_in_product_run_request)
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'ReportInProductSaveResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountsApi#update_report_in_product_save\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Returns the specified report as a CSV string
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param report_in_product_csv_run_request  (optional parameter)
-    # @return [nil]
-    def update_report_results_csv(account_id, report_in_product_csv_run_request)
-      update_report_results_csv_with_http_info(account_id,  report_in_product_csv_run_request)
-      return nil
-    end
-
-    # Returns the specified report as a CSV string
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param report_in_product_csv_run_request  (optional parameter)
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_report_results_csv_with_http_info(account_id, report_in_product_csv_run_request)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: AccountsApi.update_report_results_csv ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.update_report_results_csv" if account_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/reports/report_results_csv".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(report_in_product_csv_run_request)
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountsApi#update_report_results_csv\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

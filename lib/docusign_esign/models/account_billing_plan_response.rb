@@ -29,8 +29,7 @@ module DocuSign_eSign
 
     attr_accessor :downgrade_request_information
 
-    # 
-    attr_accessor :entity_name
+    attr_accessor :entity_information
 
     # 
     attr_accessor :payment_method
@@ -52,7 +51,7 @@ module DocuSign_eSign
         :'direct_debit_processor_information' => :'directDebitProcessorInformation',
         :'downgrade_plan_information' => :'downgradePlanInformation',
         :'downgrade_request_information' => :'downgradeRequestInformation',
-        :'entity_name' => :'entityName',
+        :'entity_information' => :'entityInformation',
         :'payment_method' => :'paymentMethod',
         :'payment_processor_information' => :'paymentProcessorInformation',
         :'referral_information' => :'referralInformation',
@@ -70,7 +69,7 @@ module DocuSign_eSign
         :'direct_debit_processor_information' => :'DirectDebitProcessorInformation',
         :'downgrade_plan_information' => :'DowngradePlanUpdateResponse',
         :'downgrade_request_information' => :'DowngradeRequestInformation',
-        :'entity_name' => :'String',
+        :'entity_information' => :'BillingEntityInformationResponse',
         :'payment_method' => :'String',
         :'payment_processor_information' => :'PaymentProcessorInformation',
         :'referral_information' => :'ReferralInformation',
@@ -114,8 +113,8 @@ module DocuSign_eSign
         self.downgrade_request_information = attributes[:'downgradeRequestInformation']
       end
 
-      if attributes.has_key?(:'entityName')
-        self.entity_name = attributes[:'entityName']
+      if attributes.has_key?(:'entityInformation')
+        self.entity_information = attributes[:'entityInformation']
       end
 
       if attributes.has_key?(:'paymentMethod')
@@ -162,7 +161,7 @@ module DocuSign_eSign
           direct_debit_processor_information == o.direct_debit_processor_information &&
           downgrade_plan_information == o.downgrade_plan_information &&
           downgrade_request_information == o.downgrade_request_information &&
-          entity_name == o.entity_name &&
+          entity_information == o.entity_information &&
           payment_method == o.payment_method &&
           payment_processor_information == o.payment_processor_information &&
           referral_information == o.referral_information &&
@@ -178,7 +177,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [billing_address, billing_address_is_credit_card_address, billing_plan, credit_card_information, direct_debit_processor_information, downgrade_plan_information, downgrade_request_information, entity_name, payment_method, payment_processor_information, referral_information, successor_plans].hash
+      [billing_address, billing_address_is_credit_card_address, billing_plan, credit_card_information, direct_debit_processor_information, downgrade_plan_information, downgrade_request_information, entity_information, payment_method, payment_processor_information, referral_information, successor_plans].hash
     end
 
     # Builds the object from hash

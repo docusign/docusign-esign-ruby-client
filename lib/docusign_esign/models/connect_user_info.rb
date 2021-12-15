@@ -20,9 +20,6 @@ module DocuSign_eSign
     attr_accessor :is_included
 
     # 
-    attr_accessor :is_part_of_domain
-
-    # 
     attr_accessor :user_id
 
     # 
@@ -33,7 +30,6 @@ module DocuSign_eSign
       {
         :'email' => :'email',
         :'is_included' => :'isIncluded',
-        :'is_part_of_domain' => :'isPartOfDomain',
         :'user_id' => :'userId',
         :'user_name' => :'userName'
       }
@@ -44,7 +40,6 @@ module DocuSign_eSign
       {
         :'email' => :'String',
         :'is_included' => :'String',
-        :'is_part_of_domain' => :'String',
         :'user_id' => :'String',
         :'user_name' => :'String'
       }
@@ -64,10 +59,6 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'isIncluded')
         self.is_included = attributes[:'isIncluded']
-      end
-
-      if attributes.has_key?(:'isPartOfDomain')
-        self.is_part_of_domain = attributes[:'isPartOfDomain']
       end
 
       if attributes.has_key?(:'userId')
@@ -99,7 +90,6 @@ module DocuSign_eSign
       self.class == o.class &&
           email == o.email &&
           is_included == o.is_included &&
-          is_part_of_domain == o.is_part_of_domain &&
           user_id == o.user_id &&
           user_name == o.user_name
     end
@@ -113,7 +103,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [email, is_included, is_part_of_domain, user_id, user_name].hash
+      [email, is_included, user_id, user_name].hash
     end
 
     # Builds the object from hash

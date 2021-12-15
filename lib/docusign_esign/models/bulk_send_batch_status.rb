@@ -28,6 +28,8 @@ module DocuSign_eSign
     # 
     attr_accessor :envelope_id_or_template_id
 
+    attr_accessor :envelopes_info
+
     # 
     attr_accessor :envelopes_uri
 
@@ -63,6 +65,7 @@ module DocuSign_eSign
         :'batch_size' => :'batchSize',
         :'bulk_errors' => :'bulkErrors',
         :'envelope_id_or_template_id' => :'envelopeIdOrTemplateId',
+        :'envelopes_info' => :'envelopesInfo',
         :'envelopes_uri' => :'envelopesUri',
         :'failed' => :'failed',
         :'mailing_list_id' => :'mailingListId',
@@ -83,6 +86,7 @@ module DocuSign_eSign
         :'batch_size' => :'String',
         :'bulk_errors' => :'Array<BulkSendErrorStatus>',
         :'envelope_id_or_template_id' => :'String',
+        :'envelopes_info' => :'BulkSendEnvelopesInfo',
         :'envelopes_uri' => :'String',
         :'failed' => :'String',
         :'mailing_list_id' => :'String',
@@ -123,6 +127,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'envelopeIdOrTemplateId')
         self.envelope_id_or_template_id = attributes[:'envelopeIdOrTemplateId']
+      end
+
+      if attributes.has_key?(:'envelopesInfo')
+        self.envelopes_info = attributes[:'envelopesInfo']
       end
 
       if attributes.has_key?(:'envelopesUri')
@@ -185,6 +193,7 @@ module DocuSign_eSign
           batch_size == o.batch_size &&
           bulk_errors == o.bulk_errors &&
           envelope_id_or_template_id == o.envelope_id_or_template_id &&
+          envelopes_info == o.envelopes_info &&
           envelopes_uri == o.envelopes_uri &&
           failed == o.failed &&
           mailing_list_id == o.mailing_list_id &&
@@ -205,7 +214,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [batch_id, batch_name, batch_size, bulk_errors, envelope_id_or_template_id, envelopes_uri, failed, mailing_list_id, mailing_list_name, owner_user_id, queued, sender_user_id, sent, submitted_date].hash
+      [batch_id, batch_name, batch_size, bulk_errors, envelope_id_or_template_id, envelopes_info, envelopes_uri, failed, mailing_list_id, mailing_list_name, owner_user_id, queued, sender_user_id, sent, submitted_date].hash
     end
 
     # Builds the object from hash

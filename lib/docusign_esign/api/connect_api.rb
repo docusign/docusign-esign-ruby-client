@@ -18,10 +18,10 @@ module DocuSign_eSign
     attr_accessor :count
 
     # 
-    attr_accessor :email_substring
+    attr_accessor :domain_users_only
 
     # 
-    attr_accessor :is_recipient_connect_config
+    attr_accessor :email_substring
 
     # 
     attr_accessor :start_position
@@ -464,8 +464,8 @@ module DocuSign_eSign
 
     # Returns all users from the configured Connect service.
     # 
-    # @param account_id 
-    # @param connect_id 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param connect_id The ID of the custom Connect configuration being accessed.
     # @param DocuSign_eSign::GetConnectAllUsersOptions Options for modifying the behavior of the function.
     # @return [IntegratedConnectUserInfoList]
     def get_connect_all_users(account_id, connect_id, options = DocuSign_eSign::GetConnectAllUsersOptions.default)
@@ -475,8 +475,8 @@ module DocuSign_eSign
 
     # Returns all users from the configured Connect service.
     # 
-    # @param account_id 
-    # @param connect_id 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param connect_id The ID of the custom Connect configuration being accessed.
     # @param DocuSign_eSign::GetConnectAllUsersOptions Options for modifying the behavior of the function.
     # @return [Array<(IntegratedConnectUserInfoList, Fixnum, Hash)>] IntegratedConnectUserInfoList data, response status code and response headers
     def get_connect_all_users_with_http_info(account_id, connect_id, options = DocuSign_eSign::GetConnectAllUsersOptions.default)
@@ -493,8 +493,8 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'count'] = options.count if !options.count.nil?
+      query_params[:'domain_users_only'] = options.domain_users_only if !options.domain_users_only.nil?
       query_params[:'email_substring'] = options.email_substring if !options.email_substring.nil?
-      query_params[:'is_recipient_connect_config'] = options.is_recipient_connect_config if !options.is_recipient_connect_config.nil?
       query_params[:'start_position'] = options.start_position if !options.start_position.nil?
       query_params[:'status'] = options.status if !options.status.nil?
       query_params[:'user_name_substring'] = options.user_name_substring if !options.user_name_substring.nil?

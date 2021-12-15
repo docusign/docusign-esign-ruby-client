@@ -3331,9 +3331,9 @@ module DocuSign_eSign
 
     # Get Responsive HTML for a document in an envelope.
     # 
-    # @param account_id 
-    # @param document_id 
-    # @param envelope_id 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param DocuSign_eSign::GetDocumentResponsiveHtmlOptions Options for modifying the behavior of the function.
     # @return [DocumentHtmlDefinitionOriginals]
     def get_document_responsive_html(account_id, document_id, envelope_id, options = DocuSign_eSign::GetDocumentResponsiveHtmlOptions.default)
@@ -3343,9 +3343,9 @@ module DocuSign_eSign
 
     # Get Responsive HTML for a document in an envelope.
     # 
-    # @param account_id 
-    # @param document_id 
-    # @param envelope_id 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param DocuSign_eSign::GetDocumentResponsiveHtmlOptions Options for modifying the behavior of the function.
     # @return [Array<(DocumentHtmlDefinitionOriginals, Fixnum, Hash)>] DocumentHtmlDefinitionOriginals data, response status code and response headers
     def get_document_responsive_html_with_http_info(account_id, document_id, envelope_id, options = DocuSign_eSign::GetDocumentResponsiveHtmlOptions.default)
@@ -4298,8 +4298,8 @@ module DocuSign_eSign
 
     # Get Responsive HTML for all documents in an envelope.
     # 
-    # @param account_id 
-    # @param envelope_id 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param DocuSign_eSign::GetResponsiveHtmlOptions Options for modifying the behavior of the function.
     # @return [DocumentHtmlDefinitionOriginals]
     def get_responsive_html(account_id, envelope_id, options = DocuSign_eSign::GetResponsiveHtmlOptions.default)
@@ -4309,8 +4309,8 @@ module DocuSign_eSign
 
     # Get Responsive HTML for all documents in an envelope.
     # 
-    # @param account_id 
-    # @param envelope_id 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param DocuSign_eSign::GetResponsiveHtmlOptions Options for modifying the behavior of the function.
     # @return [Array<(DocumentHtmlDefinitionOriginals, Fixnum, Hash)>] DocumentHtmlDefinitionOriginals data, response status code and response headers
     def get_responsive_html_with_http_info(account_id, envelope_id, options = DocuSign_eSign::GetResponsiveHtmlOptions.default)

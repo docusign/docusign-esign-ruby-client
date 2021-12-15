@@ -17,6 +17,9 @@ module DocuSign_eSign
     attr_accessor :changed_signer
 
     # 
+    attr_accessor :clickwrap_responses_limit_notification_email
+
+    # 
     attr_accessor :comments_only_private_and_mention
 
     # 
@@ -50,6 +53,7 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'changed_signer' => :'changedSigner',
+        :'clickwrap_responses_limit_notification_email' => :'clickwrapResponsesLimitNotificationEmail',
         :'comments_only_private_and_mention' => :'commentsOnlyPrivateAndMention',
         :'comments_receive_all' => :'commentsReceiveAll',
         :'delivery_failed' => :'deliveryFailed',
@@ -67,6 +71,7 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'changed_signer' => :'String',
+        :'clickwrap_responses_limit_notification_email' => :'String',
         :'comments_only_private_and_mention' => :'String',
         :'comments_receive_all' => :'String',
         :'delivery_failed' => :'String',
@@ -90,6 +95,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'changedSigner')
         self.changed_signer = attributes[:'changedSigner']
+      end
+
+      if attributes.has_key?(:'clickwrapResponsesLimitNotificationEmail')
+        self.clickwrap_responses_limit_notification_email = attributes[:'clickwrapResponsesLimitNotificationEmail']
       end
 
       if attributes.has_key?(:'commentsOnlyPrivateAndMention')
@@ -152,6 +161,7 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           changed_signer == o.changed_signer &&
+          clickwrap_responses_limit_notification_email == o.clickwrap_responses_limit_notification_email &&
           comments_only_private_and_mention == o.comments_only_private_and_mention &&
           comments_receive_all == o.comments_receive_all &&
           delivery_failed == o.delivery_failed &&
@@ -173,7 +183,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [changed_signer, comments_only_private_and_mention, comments_receive_all, delivery_failed, envelope_complete, offline_signing_failed, powerform_responses_limit_notification_email, purge_documents, recipient_viewed, sender_envelope_declined, withdrawn_consent].hash
+      [changed_signer, clickwrap_responses_limit_notification_email, comments_only_private_and_mention, comments_receive_all, delivery_failed, envelope_complete, offline_signing_failed, powerform_responses_limit_notification_email, purge_documents, recipient_viewed, sender_envelope_declined, withdrawn_consent].hash
     end
 
     # Builds the object from hash

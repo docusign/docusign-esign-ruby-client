@@ -19,6 +19,8 @@ module DocuSign_eSign
     # 
     attr_accessor :completed_date
 
+    attr_accessor :delayed_routing
+
     # 
     attr_accessor :item_id
 
@@ -41,6 +43,7 @@ module DocuSign_eSign
       {
         :'action' => :'action',
         :'completed_date' => :'completedDate',
+        :'delayed_routing' => :'delayedRouting',
         :'item_id' => :'itemId',
         :'recipient_routing' => :'recipientRouting',
         :'status' => :'status',
@@ -55,6 +58,7 @@ module DocuSign_eSign
       {
         :'action' => :'String',
         :'completed_date' => :'String',
+        :'delayed_routing' => :'DelayedRoutingApiModel',
         :'item_id' => :'String',
         :'recipient_routing' => :'RecipientRouting',
         :'status' => :'String',
@@ -78,6 +82,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'completedDate')
         self.completed_date = attributes[:'completedDate']
+      end
+
+      if attributes.has_key?(:'delayedRouting')
+        self.delayed_routing = attributes[:'delayedRouting']
       end
 
       if attributes.has_key?(:'itemId')
@@ -125,6 +133,7 @@ module DocuSign_eSign
       self.class == o.class &&
           action == o.action &&
           completed_date == o.completed_date &&
+          delayed_routing == o.delayed_routing &&
           item_id == o.item_id &&
           recipient_routing == o.recipient_routing &&
           status == o.status &&
@@ -142,7 +151,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [action, completed_date, item_id, recipient_routing, status, triggered_date, trigger_on_item, workflow_step_id].hash
+      [action, completed_date, delayed_routing, item_id, recipient_routing, status, triggered_date, trigger_on_item, workflow_step_id].hash
     end
 
     # Builds the object from hash
