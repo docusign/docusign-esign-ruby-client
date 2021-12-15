@@ -22,6 +22,9 @@ module DocuSign_eSign
 
     attr_accessor :event_data
 
+    # 
+    attr_accessor :events
+
     # When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. 
     attr_accessor :include_certificate_of_completion
 
@@ -73,6 +76,7 @@ module DocuSign_eSign
         :'delivery_mode' => :'deliveryMode',
         :'envelope_events' => :'envelopeEvents',
         :'event_data' => :'eventData',
+        :'events' => :'events',
         :'include_certificate_of_completion' => :'includeCertificateOfCompletion',
         :'include_certificate_with_soap' => :'includeCertificateWithSoap',
         :'include_document_fields' => :'includeDocumentFields',
@@ -97,6 +101,7 @@ module DocuSign_eSign
         :'delivery_mode' => :'String',
         :'envelope_events' => :'Array<EnvelopeEvent>',
         :'event_data' => :'ConnectEventData',
+        :'events' => :'Array<String>',
         :'include_certificate_of_completion' => :'String',
         :'include_certificate_with_soap' => :'String',
         :'include_document_fields' => :'String',
@@ -135,6 +140,12 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'eventData')
         self.event_data = attributes[:'eventData']
+      end
+
+      if attributes.has_key?(:'events')
+        if (value = attributes[:'events']).is_a?(Array)
+          self.events = value
+        end
       end
 
       if attributes.has_key?(:'includeCertificateOfCompletion')
@@ -221,6 +232,7 @@ module DocuSign_eSign
           delivery_mode == o.delivery_mode &&
           envelope_events == o.envelope_events &&
           event_data == o.event_data &&
+          events == o.events &&
           include_certificate_of_completion == o.include_certificate_of_completion &&
           include_certificate_with_soap == o.include_certificate_with_soap &&
           include_document_fields == o.include_document_fields &&
@@ -247,7 +259,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [delivery_mode, envelope_events, event_data, include_certificate_of_completion, include_certificate_with_soap, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_account_as_custom_field, include_time_zone, logging_enabled, recipient_events, require_acknowledgment, sign_message_with_x509_cert, soap_name_space, url, use_soap_interface].hash
+      [delivery_mode, envelope_events, event_data, events, include_certificate_of_completion, include_certificate_with_soap, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_account_as_custom_field, include_time_zone, logging_enabled, recipient_events, require_acknowledgment, sign_message_with_x509_cert, soap_name_space, url, use_soap_interface].hash
     end
 
     # Builds the object from hash

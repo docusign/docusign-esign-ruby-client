@@ -66,6 +66,11 @@ module DocuSign_eSign
     # 
     attr_accessor :default_recipient
 
+    attr_accessor :delegated_by
+
+    # 
+    attr_accessor :delegated_to
+
     # Reserved: For DocuSign use only.
     attr_accessor :delivered_date_time
 
@@ -148,6 +153,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :notary_id
+
+    # 
+    attr_accessor :notary_signer_email_sent
 
     # Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters.
     attr_accessor :note
@@ -288,6 +296,8 @@ module DocuSign_eSign
         :'declined_date_time' => :'declinedDateTime',
         :'declined_reason' => :'declinedReason',
         :'default_recipient' => :'defaultRecipient',
+        :'delegated_by' => :'delegatedBy',
+        :'delegated_to' => :'delegatedTo',
         :'delivered_date_time' => :'deliveredDateTime',
         :'delivery_method' => :'deliveryMethod',
         :'delivery_method_metadata' => :'deliveryMethodMetadata',
@@ -320,6 +330,7 @@ module DocuSign_eSign
         :'name' => :'name',
         :'name_metadata' => :'nameMetadata',
         :'notary_id' => :'notaryId',
+        :'notary_signer_email_sent' => :'notarySignerEmailSent',
         :'note' => :'note',
         :'note_metadata' => :'noteMetadata',
         :'offline_attributes' => :'offlineAttributes',
@@ -388,6 +399,8 @@ module DocuSign_eSign
         :'declined_date_time' => :'String',
         :'declined_reason' => :'String',
         :'default_recipient' => :'String',
+        :'delegated_by' => :'DelegationInfo',
+        :'delegated_to' => :'Array<DelegationInfo>',
         :'delivered_date_time' => :'String',
         :'delivery_method' => :'String',
         :'delivery_method_metadata' => :'PropertyMetadata',
@@ -420,6 +433,7 @@ module DocuSign_eSign
         :'name' => :'String',
         :'name_metadata' => :'PropertyMetadata',
         :'notary_id' => :'String',
+        :'notary_signer_email_sent' => :'String',
         :'note' => :'String',
         :'note_metadata' => :'PropertyMetadata',
         :'offline_attributes' => :'OfflineAttributes',
@@ -549,6 +563,16 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'defaultRecipient')
         self.default_recipient = attributes[:'defaultRecipient']
+      end
+
+      if attributes.has_key?(:'delegatedBy')
+        self.delegated_by = attributes[:'delegatedBy']
+      end
+
+      if attributes.has_key?(:'delegatedTo')
+        if (value = attributes[:'delegatedTo']).is_a?(Array)
+          self.delegated_to = value
+        end
       end
 
       if attributes.has_key?(:'deliveredDateTime')
@@ -681,6 +705,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'notaryId')
         self.notary_id = attributes[:'notaryId']
+      end
+
+      if attributes.has_key?(:'notarySignerEmailSent')
+        self.notary_signer_email_sent = attributes[:'notarySignerEmailSent']
       end
 
       if attributes.has_key?(:'note')
@@ -906,6 +934,8 @@ module DocuSign_eSign
           declined_date_time == o.declined_date_time &&
           declined_reason == o.declined_reason &&
           default_recipient == o.default_recipient &&
+          delegated_by == o.delegated_by &&
+          delegated_to == o.delegated_to &&
           delivered_date_time == o.delivered_date_time &&
           delivery_method == o.delivery_method &&
           delivery_method_metadata == o.delivery_method_metadata &&
@@ -938,6 +968,7 @@ module DocuSign_eSign
           name == o.name &&
           name_metadata == o.name_metadata &&
           notary_id == o.notary_id &&
+          notary_signer_email_sent == o.notary_signer_email_sent &&
           note == o.note &&
           note_metadata == o.note_metadata &&
           offline_attributes == o.offline_attributes &&
@@ -993,7 +1024,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_navigation, auto_responded_reason, bulk_recipients_uri, can_sign_offline, client_user_id, completed_count, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_id, note, note_metadata, offline_attributes, phone_authentication, phone_number, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id, witness_for, witness_for_guid].hash
+      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_navigation, auto_responded_reason, bulk_recipients_uri, can_sign_offline, client_user_id, completed_count, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delegated_by, delegated_to, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_id, notary_signer_email_sent, note, note_metadata, offline_attributes, phone_authentication, phone_number, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id, witness_for, witness_for_guid].hash
     end
 
     # Builds the object from hash

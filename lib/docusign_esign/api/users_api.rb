@@ -69,6 +69,9 @@ module DocuSign_eSign
     attr_accessor :count
 
     # 
+    attr_accessor :domain_users_only
+
+    # 
     attr_accessor :email
 
     # Filters the returned user records by the email address or a sub-string of email address.
@@ -1074,6 +1077,7 @@ module DocuSign_eSign
       query_params = {}
       query_params[:'additional_info'] = options.additional_info if !options.additional_info.nil?
       query_params[:'count'] = options.count if !options.count.nil?
+      query_params[:'domain_users_only'] = options.domain_users_only if !options.domain_users_only.nil?
       query_params[:'email'] = options.email if !options.email.nil?
       query_params[:'email_substring'] = options.email_substring if !options.email_substring.nil?
       query_params[:'group_id'] = options.group_id if !options.group_id.nil?

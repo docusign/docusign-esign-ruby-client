@@ -117,6 +117,11 @@ module DocuSign_eSign
     attr_accessor :allow_data_download_metadata
 
     # 
+    attr_accessor :allow_delegated_signing
+
+    attr_accessor :allow_delegated_signing_metadata
+
+    # 
     attr_accessor :allow_document_disclosures
 
     attr_accessor :allow_document_disclosures_metadata
@@ -518,6 +523,11 @@ module DocuSign_eSign
     attr_accessor :capture_voice_recording_metadata
 
     # 
+    attr_accessor :cfr21_simplified_signing_enabled
+
+    attr_accessor :cfr21_simplified_signing_enabled_metadata
+
+    # 
     attr_accessor :cfr_use_wide_image
 
     attr_accessor :cfr_use_wide_image_metadata
@@ -638,6 +648,12 @@ module DocuSign_eSign
     attr_accessor :document_visibility_metadata
 
     # 
+    attr_accessor :dss_sign_28411_enable_leave_page_prompt_radmin_option
+
+    # 
+    attr_accessor :dss_sign_29182_slide_up_bar_radmin_option
+
+    # 
     attr_accessor :email_template_version
 
     attr_accessor :email_template_version_metadata
@@ -721,6 +737,11 @@ module DocuSign_eSign
     attr_accessor :enable_id_fx_intuit_kba
 
     attr_accessor :enable_id_fx_intuit_kba_metadata
+
+    # 
+    attr_accessor :enable_id_fx_phone_authentication
+
+    attr_accessor :enable_id_fx_phone_authentication_metadata
 
     # 
     attr_accessor :enable_in_browser_editor
@@ -873,6 +894,9 @@ module DocuSign_eSign
     attr_accessor :enable_sms_delivery_additional_notification_metadata
 
     # 
+    attr_accessor :enable_sms_delivery_primary
+
+    # 
     attr_accessor :enable_social_id_login
 
     attr_accessor :enable_social_id_login_metadata
@@ -918,6 +942,11 @@ module DocuSign_eSign
     attr_accessor :envelope_stamping_default_value_metadata
 
     # 
+    attr_accessor :exit_prompt
+
+    attr_accessor :exit_prompt_metadata
+
+    # 
     attr_accessor :express_send
 
     # 
@@ -938,6 +967,11 @@ module DocuSign_eSign
     attr_accessor :fax_out_enabled
 
     attr_accessor :fax_out_enabled_metadata
+
+    # 
+    attr_accessor :finish_reminder
+
+    attr_accessor :finish_reminder_metadata
 
     # 
     attr_accessor :guided_forms_html_allowed
@@ -1145,6 +1179,11 @@ module DocuSign_eSign
     attr_accessor :sending_tags_font_size
 
     attr_accessor :sending_tags_font_size_metadata
+
+    # 
+    attr_accessor :send_lockout_recipient_notification
+
+    attr_accessor :send_lockout_recipient_notification_metadata
 
     # 
     attr_accessor :send_to_certified_delivery_enabled
@@ -1485,6 +1524,8 @@ module DocuSign_eSign
         :'allow_consumer_disclosure_override_metadata' => :'allowConsumerDisclosureOverrideMetadata',
         :'allow_data_download' => :'allowDataDownload',
         :'allow_data_download_metadata' => :'allowDataDownloadMetadata',
+        :'allow_delegated_signing' => :'allowDelegatedSigning',
+        :'allow_delegated_signing_metadata' => :'allowDelegatedSigningMetadata',
         :'allow_document_disclosures' => :'allowDocumentDisclosures',
         :'allow_document_disclosures_metadata' => :'allowDocumentDisclosuresMetadata',
         :'allow_documents_on_signed_envelopes' => :'allowDocumentsOnSignedEnvelopes',
@@ -1645,6 +1686,8 @@ module DocuSign_eSign
         :'can_use_salesforce_o_auth_metadata' => :'canUseSalesforceOAuthMetadata',
         :'capture_voice_recording' => :'captureVoiceRecording',
         :'capture_voice_recording_metadata' => :'captureVoiceRecordingMetadata',
+        :'cfr21_simplified_signing_enabled' => :'cfr21SimplifiedSigningEnabled',
+        :'cfr21_simplified_signing_enabled_metadata' => :'cfr21SimplifiedSigningEnabledMetadata',
         :'cfr_use_wide_image' => :'cfrUseWideImage',
         :'cfr_use_wide_image_metadata' => :'cfrUseWideImageMetadata',
         :'check_for_multiple_admins_on_account' => :'checkForMultipleAdminsOnAccount',
@@ -1693,6 +1736,8 @@ module DocuSign_eSign
         :'document_retention_purge_tabs' => :'documentRetentionPurgeTabs',
         :'document_visibility' => :'documentVisibility',
         :'document_visibility_metadata' => :'documentVisibilityMetadata',
+        :'dss_sign_28411_enable_leave_page_prompt_radmin_option' => :'dss_SIGN_28411_EnableLeavePagePrompt_RadminOption',
+        :'dss_sign_29182_slide_up_bar_radmin_option' => :'dss_SIGN_29182_SlideUpBar_RadminOption',
         :'email_template_version' => :'emailTemplateVersion',
         :'email_template_version_metadata' => :'emailTemplateVersionMetadata',
         :'enable_access_code_generator' => :'enableAccessCodeGenerator',
@@ -1727,6 +1772,8 @@ module DocuSign_eSign
         :'enable_esign_communities_metadata' => :'enableEsignCommunitiesMetadata',
         :'enable_id_fx_intuit_kba' => :'enableIDFxIntuitKBA',
         :'enable_id_fx_intuit_kba_metadata' => :'enableIDFxIntuitKBAMetadata',
+        :'enable_id_fx_phone_authentication' => :'enableIDFxPhoneAuthentication',
+        :'enable_id_fx_phone_authentication_metadata' => :'enableIDFxPhoneAuthenticationMetadata',
         :'enable_in_browser_editor' => :'enableInBrowserEditor',
         :'enable_in_browser_editor_metadata' => :'enableInBrowserEditorMetadata',
         :'enable_payment_processing' => :'enablePaymentProcessing',
@@ -1787,6 +1834,7 @@ module DocuSign_eSign
         :'enable_sms_authentication_metadata' => :'enableSMSAuthenticationMetadata',
         :'enable_sms_delivery_additional_notification' => :'enableSMSDeliveryAdditionalNotification',
         :'enable_sms_delivery_additional_notification_metadata' => :'enableSMSDeliveryAdditionalNotificationMetadata',
+        :'enable_sms_delivery_primary' => :'enableSMSDeliveryPrimary',
         :'enable_social_id_login' => :'enableSocialIdLogin',
         :'enable_social_id_login_metadata' => :'enableSocialIdLoginMetadata',
         :'enable_strike_through' => :'enableStrikeThrough',
@@ -1805,6 +1853,8 @@ module DocuSign_eSign
         :'envelope_integration_enabled_metadata' => :'envelopeIntegrationEnabledMetadata',
         :'envelope_stamping_default_value' => :'envelopeStampingDefaultValue',
         :'envelope_stamping_default_value_metadata' => :'envelopeStampingDefaultValueMetadata',
+        :'exit_prompt' => :'exitPrompt',
+        :'exit_prompt_metadata' => :'exitPromptMetadata',
         :'express_send' => :'expressSend',
         :'express_send_allow_tabs' => :'expressSendAllowTabs',
         :'express_send_allow_tabs_metadata' => :'expressSendAllowTabsMetadata',
@@ -1814,6 +1864,8 @@ module DocuSign_eSign
         :'external_signature_pad_type_metadata' => :'externalSignaturePadTypeMetadata',
         :'fax_out_enabled' => :'faxOutEnabled',
         :'fax_out_enabled_metadata' => :'faxOutEnabledMetadata',
+        :'finish_reminder' => :'finishReminder',
+        :'finish_reminder_metadata' => :'finishReminderMetadata',
         :'guided_forms_html_allowed' => :'guidedFormsHtmlAllowed',
         :'guided_forms_html_allowed_metadata' => :'guidedFormsHtmlAllowedMetadata',
         :'has_recipient_connect_claimed_domain' => :'hasRecipientConnectClaimedDomain',
@@ -1895,6 +1947,8 @@ module DocuSign_eSign
         :'sending_tags_font_name_metadata' => :'sendingTagsFontNameMetadata',
         :'sending_tags_font_size' => :'sendingTagsFontSize',
         :'sending_tags_font_size_metadata' => :'sendingTagsFontSizeMetadata',
+        :'send_lockout_recipient_notification' => :'sendLockoutRecipientNotification',
+        :'send_lockout_recipient_notification_metadata' => :'sendLockoutRecipientNotificationMetadata',
         :'send_to_certified_delivery_enabled' => :'sendToCertifiedDeliveryEnabled',
         :'send_to_certified_delivery_enabled_metadata' => :'sendToCertifiedDeliveryEnabledMetadata',
         :'session_timeout' => :'sessionTimeout',
@@ -2060,6 +2114,8 @@ module DocuSign_eSign
         :'allow_consumer_disclosure_override_metadata' => :'SettingsMetadata',
         :'allow_data_download' => :'String',
         :'allow_data_download_metadata' => :'SettingsMetadata',
+        :'allow_delegated_signing' => :'String',
+        :'allow_delegated_signing_metadata' => :'SettingsMetadata',
         :'allow_document_disclosures' => :'String',
         :'allow_document_disclosures_metadata' => :'SettingsMetadata',
         :'allow_documents_on_signed_envelopes' => :'String',
@@ -2220,6 +2276,8 @@ module DocuSign_eSign
         :'can_use_salesforce_o_auth_metadata' => :'SettingsMetadata',
         :'capture_voice_recording' => :'String',
         :'capture_voice_recording_metadata' => :'SettingsMetadata',
+        :'cfr21_simplified_signing_enabled' => :'String',
+        :'cfr21_simplified_signing_enabled_metadata' => :'SettingsMetadata',
         :'cfr_use_wide_image' => :'String',
         :'cfr_use_wide_image_metadata' => :'SettingsMetadata',
         :'check_for_multiple_admins_on_account' => :'String',
@@ -2268,6 +2326,8 @@ module DocuSign_eSign
         :'document_retention_purge_tabs' => :'String',
         :'document_visibility' => :'String',
         :'document_visibility_metadata' => :'SettingsMetadata',
+        :'dss_sign_28411_enable_leave_page_prompt_radmin_option' => :'String',
+        :'dss_sign_29182_slide_up_bar_radmin_option' => :'String',
         :'email_template_version' => :'String',
         :'email_template_version_metadata' => :'SettingsMetadata',
         :'enable_access_code_generator' => :'String',
@@ -2302,6 +2362,8 @@ module DocuSign_eSign
         :'enable_esign_communities_metadata' => :'SettingsMetadata',
         :'enable_id_fx_intuit_kba' => :'String',
         :'enable_id_fx_intuit_kba_metadata' => :'SettingsMetadata',
+        :'enable_id_fx_phone_authentication' => :'String',
+        :'enable_id_fx_phone_authentication_metadata' => :'SettingsMetadata',
         :'enable_in_browser_editor' => :'String',
         :'enable_in_browser_editor_metadata' => :'SettingsMetadata',
         :'enable_payment_processing' => :'String',
@@ -2362,6 +2424,7 @@ module DocuSign_eSign
         :'enable_sms_authentication_metadata' => :'SettingsMetadata',
         :'enable_sms_delivery_additional_notification' => :'String',
         :'enable_sms_delivery_additional_notification_metadata' => :'SettingsMetadata',
+        :'enable_sms_delivery_primary' => :'String',
         :'enable_social_id_login' => :'String',
         :'enable_social_id_login_metadata' => :'SettingsMetadata',
         :'enable_strike_through' => :'String',
@@ -2380,6 +2443,8 @@ module DocuSign_eSign
         :'envelope_integration_enabled_metadata' => :'SettingsMetadata',
         :'envelope_stamping_default_value' => :'String',
         :'envelope_stamping_default_value_metadata' => :'SettingsMetadata',
+        :'exit_prompt' => :'String',
+        :'exit_prompt_metadata' => :'SettingsMetadata',
         :'express_send' => :'String',
         :'express_send_allow_tabs' => :'String',
         :'express_send_allow_tabs_metadata' => :'SettingsMetadata',
@@ -2389,6 +2454,8 @@ module DocuSign_eSign
         :'external_signature_pad_type_metadata' => :'SettingsMetadata',
         :'fax_out_enabled' => :'String',
         :'fax_out_enabled_metadata' => :'SettingsMetadata',
+        :'finish_reminder' => :'String',
+        :'finish_reminder_metadata' => :'SettingsMetadata',
         :'guided_forms_html_allowed' => :'String',
         :'guided_forms_html_allowed_metadata' => :'SettingsMetadata',
         :'has_recipient_connect_claimed_domain' => :'String',
@@ -2470,6 +2537,8 @@ module DocuSign_eSign
         :'sending_tags_font_name_metadata' => :'SettingsMetadata',
         :'sending_tags_font_size' => :'String',
         :'sending_tags_font_size_metadata' => :'SettingsMetadata',
+        :'send_lockout_recipient_notification' => :'String',
+        :'send_lockout_recipient_notification_metadata' => :'SettingsMetadata',
         :'send_to_certified_delivery_enabled' => :'String',
         :'send_to_certified_delivery_enabled_metadata' => :'SettingsMetadata',
         :'session_timeout' => :'String',
@@ -2761,6 +2830,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'allowDataDownloadMetadata')
         self.allow_data_download_metadata = attributes[:'allowDataDownloadMetadata']
+      end
+
+      if attributes.has_key?(:'allowDelegatedSigning')
+        self.allow_delegated_signing = attributes[:'allowDelegatedSigning']
+      end
+
+      if attributes.has_key?(:'allowDelegatedSigningMetadata')
+        self.allow_delegated_signing_metadata = attributes[:'allowDelegatedSigningMetadata']
       end
 
       if attributes.has_key?(:'allowDocumentDisclosures')
@@ -3403,6 +3480,14 @@ module DocuSign_eSign
         self.capture_voice_recording_metadata = attributes[:'captureVoiceRecordingMetadata']
       end
 
+      if attributes.has_key?(:'cfr21SimplifiedSigningEnabled')
+        self.cfr21_simplified_signing_enabled = attributes[:'cfr21SimplifiedSigningEnabled']
+      end
+
+      if attributes.has_key?(:'cfr21SimplifiedSigningEnabledMetadata')
+        self.cfr21_simplified_signing_enabled_metadata = attributes[:'cfr21SimplifiedSigningEnabledMetadata']
+      end
+
       if attributes.has_key?(:'cfrUseWideImage')
         self.cfr_use_wide_image = attributes[:'cfrUseWideImage']
       end
@@ -3595,6 +3680,14 @@ module DocuSign_eSign
         self.document_visibility_metadata = attributes[:'documentVisibilityMetadata']
       end
 
+      if attributes.has_key?(:'dss_SIGN_28411_EnableLeavePagePrompt_RadminOption')
+        self.dss_sign_28411_enable_leave_page_prompt_radmin_option = attributes[:'dss_SIGN_28411_EnableLeavePagePrompt_RadminOption']
+      end
+
+      if attributes.has_key?(:'dss_SIGN_29182_SlideUpBar_RadminOption')
+        self.dss_sign_29182_slide_up_bar_radmin_option = attributes[:'dss_SIGN_29182_SlideUpBar_RadminOption']
+      end
+
       if attributes.has_key?(:'emailTemplateVersion')
         self.email_template_version = attributes[:'emailTemplateVersion']
       end
@@ -3729,6 +3822,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'enableIDFxIntuitKBAMetadata')
         self.enable_id_fx_intuit_kba_metadata = attributes[:'enableIDFxIntuitKBAMetadata']
+      end
+
+      if attributes.has_key?(:'enableIDFxPhoneAuthentication')
+        self.enable_id_fx_phone_authentication = attributes[:'enableIDFxPhoneAuthentication']
+      end
+
+      if attributes.has_key?(:'enableIDFxPhoneAuthenticationMetadata')
+        self.enable_id_fx_phone_authentication_metadata = attributes[:'enableIDFxPhoneAuthenticationMetadata']
       end
 
       if attributes.has_key?(:'enableInBrowserEditor')
@@ -3971,6 +4072,10 @@ module DocuSign_eSign
         self.enable_sms_delivery_additional_notification_metadata = attributes[:'enableSMSDeliveryAdditionalNotificationMetadata']
       end
 
+      if attributes.has_key?(:'enableSMSDeliveryPrimary')
+        self.enable_sms_delivery_primary = attributes[:'enableSMSDeliveryPrimary']
+      end
+
       if attributes.has_key?(:'enableSocialIdLogin')
         self.enable_social_id_login = attributes[:'enableSocialIdLogin']
       end
@@ -4043,6 +4148,14 @@ module DocuSign_eSign
         self.envelope_stamping_default_value_metadata = attributes[:'envelopeStampingDefaultValueMetadata']
       end
 
+      if attributes.has_key?(:'exitPrompt')
+        self.exit_prompt = attributes[:'exitPrompt']
+      end
+
+      if attributes.has_key?(:'exitPromptMetadata')
+        self.exit_prompt_metadata = attributes[:'exitPromptMetadata']
+      end
+
       if attributes.has_key?(:'expressSend')
         self.express_send = attributes[:'expressSend']
       end
@@ -4077,6 +4190,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'faxOutEnabledMetadata')
         self.fax_out_enabled_metadata = attributes[:'faxOutEnabledMetadata']
+      end
+
+      if attributes.has_key?(:'finishReminder')
+        self.finish_reminder = attributes[:'finishReminder']
+      end
+
+      if attributes.has_key?(:'finishReminderMetadata')
+        self.finish_reminder_metadata = attributes[:'finishReminderMetadata']
       end
 
       if attributes.has_key?(:'guidedFormsHtmlAllowed')
@@ -4407,6 +4528,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'sendingTagsFontSizeMetadata')
         self.sending_tags_font_size_metadata = attributes[:'sendingTagsFontSizeMetadata']
+      end
+
+      if attributes.has_key?(:'sendLockoutRecipientNotification')
+        self.send_lockout_recipient_notification = attributes[:'sendLockoutRecipientNotification']
+      end
+
+      if attributes.has_key?(:'sendLockoutRecipientNotificationMetadata')
+        self.send_lockout_recipient_notification_metadata = attributes[:'sendLockoutRecipientNotificationMetadata']
       end
 
       if attributes.has_key?(:'sendToCertifiedDeliveryEnabled')
@@ -4943,6 +5072,8 @@ module DocuSign_eSign
           allow_consumer_disclosure_override_metadata == o.allow_consumer_disclosure_override_metadata &&
           allow_data_download == o.allow_data_download &&
           allow_data_download_metadata == o.allow_data_download_metadata &&
+          allow_delegated_signing == o.allow_delegated_signing &&
+          allow_delegated_signing_metadata == o.allow_delegated_signing_metadata &&
           allow_document_disclosures == o.allow_document_disclosures &&
           allow_document_disclosures_metadata == o.allow_document_disclosures_metadata &&
           allow_documents_on_signed_envelopes == o.allow_documents_on_signed_envelopes &&
@@ -5103,6 +5234,8 @@ module DocuSign_eSign
           can_use_salesforce_o_auth_metadata == o.can_use_salesforce_o_auth_metadata &&
           capture_voice_recording == o.capture_voice_recording &&
           capture_voice_recording_metadata == o.capture_voice_recording_metadata &&
+          cfr21_simplified_signing_enabled == o.cfr21_simplified_signing_enabled &&
+          cfr21_simplified_signing_enabled_metadata == o.cfr21_simplified_signing_enabled_metadata &&
           cfr_use_wide_image == o.cfr_use_wide_image &&
           cfr_use_wide_image_metadata == o.cfr_use_wide_image_metadata &&
           check_for_multiple_admins_on_account == o.check_for_multiple_admins_on_account &&
@@ -5151,6 +5284,8 @@ module DocuSign_eSign
           document_retention_purge_tabs == o.document_retention_purge_tabs &&
           document_visibility == o.document_visibility &&
           document_visibility_metadata == o.document_visibility_metadata &&
+          dss_sign_28411_enable_leave_page_prompt_radmin_option == o.dss_sign_28411_enable_leave_page_prompt_radmin_option &&
+          dss_sign_29182_slide_up_bar_radmin_option == o.dss_sign_29182_slide_up_bar_radmin_option &&
           email_template_version == o.email_template_version &&
           email_template_version_metadata == o.email_template_version_metadata &&
           enable_access_code_generator == o.enable_access_code_generator &&
@@ -5185,6 +5320,8 @@ module DocuSign_eSign
           enable_esign_communities_metadata == o.enable_esign_communities_metadata &&
           enable_id_fx_intuit_kba == o.enable_id_fx_intuit_kba &&
           enable_id_fx_intuit_kba_metadata == o.enable_id_fx_intuit_kba_metadata &&
+          enable_id_fx_phone_authentication == o.enable_id_fx_phone_authentication &&
+          enable_id_fx_phone_authentication_metadata == o.enable_id_fx_phone_authentication_metadata &&
           enable_in_browser_editor == o.enable_in_browser_editor &&
           enable_in_browser_editor_metadata == o.enable_in_browser_editor_metadata &&
           enable_payment_processing == o.enable_payment_processing &&
@@ -5245,6 +5382,7 @@ module DocuSign_eSign
           enable_sms_authentication_metadata == o.enable_sms_authentication_metadata &&
           enable_sms_delivery_additional_notification == o.enable_sms_delivery_additional_notification &&
           enable_sms_delivery_additional_notification_metadata == o.enable_sms_delivery_additional_notification_metadata &&
+          enable_sms_delivery_primary == o.enable_sms_delivery_primary &&
           enable_social_id_login == o.enable_social_id_login &&
           enable_social_id_login_metadata == o.enable_social_id_login_metadata &&
           enable_strike_through == o.enable_strike_through &&
@@ -5263,6 +5401,8 @@ module DocuSign_eSign
           envelope_integration_enabled_metadata == o.envelope_integration_enabled_metadata &&
           envelope_stamping_default_value == o.envelope_stamping_default_value &&
           envelope_stamping_default_value_metadata == o.envelope_stamping_default_value_metadata &&
+          exit_prompt == o.exit_prompt &&
+          exit_prompt_metadata == o.exit_prompt_metadata &&
           express_send == o.express_send &&
           express_send_allow_tabs == o.express_send_allow_tabs &&
           express_send_allow_tabs_metadata == o.express_send_allow_tabs_metadata &&
@@ -5272,6 +5412,8 @@ module DocuSign_eSign
           external_signature_pad_type_metadata == o.external_signature_pad_type_metadata &&
           fax_out_enabled == o.fax_out_enabled &&
           fax_out_enabled_metadata == o.fax_out_enabled_metadata &&
+          finish_reminder == o.finish_reminder &&
+          finish_reminder_metadata == o.finish_reminder_metadata &&
           guided_forms_html_allowed == o.guided_forms_html_allowed &&
           guided_forms_html_allowed_metadata == o.guided_forms_html_allowed_metadata &&
           has_recipient_connect_claimed_domain == o.has_recipient_connect_claimed_domain &&
@@ -5353,6 +5495,8 @@ module DocuSign_eSign
           sending_tags_font_name_metadata == o.sending_tags_font_name_metadata &&
           sending_tags_font_size == o.sending_tags_font_size &&
           sending_tags_font_size_metadata == o.sending_tags_font_size_metadata &&
+          send_lockout_recipient_notification == o.send_lockout_recipient_notification &&
+          send_lockout_recipient_notification_metadata == o.send_lockout_recipient_notification_metadata &&
           send_to_certified_delivery_enabled == o.send_to_certified_delivery_enabled &&
           send_to_certified_delivery_enabled_metadata == o.send_to_certified_delivery_enabled_metadata &&
           session_timeout == o.session_timeout &&
@@ -5482,7 +5626,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code_format, account_date_time_format, account_date_time_format_metadata, account_default_language, account_default_language_metadata, account_name, account_name_metadata, account_notification, account_ui_settings, adopt_sig_config, adopt_sig_config_metadata, advanced_correct, advanced_correct_metadata, allow_access_code_format, allow_access_code_format_metadata, allow_account_management_granular, allow_account_management_granular_metadata, allow_account_member_name_change, allow_account_member_name_change_metadata, allow_advanced_recipient_routing_conditional, allow_advanced_recipient_routing_conditional_metadata, allow_agent_name_email_edit, allow_agent_name_email_edit_metadata, allow_agreement_actions, allow_agreement_actions_metadata, allow_auto_nav_settings, allow_auto_nav_settings_metadata, allow_auto_tagging, allow_auto_tagging_metadata, allow_bulk_send, allow_bulk_send_metadata, allow_cd_withdraw, allow_cd_withdraw_metadata, allow_connect_http_listener_configs, allow_connect_send_finish_later, allow_connect_send_finish_later_metadata, allow_connect_unified_payload_ui, allow_consumer_disclosure_override, allow_consumer_disclosure_override_metadata, allow_data_download, allow_data_download_metadata, allow_document_disclosures, allow_document_disclosures_metadata, allow_documents_on_signed_envelopes, allow_documents_on_signed_envelopes_metadata, allow_document_visibility, allow_document_visibility_metadata, allow_e_hanko_stamps, allow_e_hanko_stamps_metadata, allow_e_note_e_original, allow_e_note_e_original_metadata, allow_envelope_correct, allow_envelope_correct_metadata, allow_envelope_custody_transfer, allow_envelope_custody_transfer_metadata, allow_envelope_custom_fields, allow_envelope_custom_fields_metadata, allow_envelope_publish_reporting, allow_envelope_publish_reporting_metadata, allow_envelope_reporting, allow_envelope_reporting_metadata, allow_expression, allow_expression_metadata, allow_express_signer_certificate, allow_express_signer_certificate_metadata, allow_extended_sending_resource_file, allow_extended_sending_resource_file_metadata, allow_external_linked_accounts, allow_external_linked_accounts_metadata, allow_external_signature_pad, allow_external_signature_pad_metadata, allow_idv_level1, allow_idv_level1_metadata, allow_idv_level2, allow_idv_level2_metadata, allow_idv_level3, allow_idv_level3_metadata, allow_idv_platform, allow_idv_platform_metadata, allow_in_person, allow_in_person_metadata, allow_managed_stamps, allow_managed_stamps_metadata, allow_markup, allow_markup_metadata, allow_member_time_zone, allow_member_time_zone_metadata, allow_merge_fields, allow_merge_fields_metadata, allow_multiple_brand_profiles, allow_multiple_brand_profiles_metadata, allow_multiple_signer_attachments, allow_multiple_signer_attachments_metadata, allow_non_us_phone_auth, allow_non_us_phone_auth_metadata, allow_ocr_of_envelope_documents, allow_ocr_of_envelope_documents_metadata, allow_offline_signing, allow_offline_signing_metadata, allow_open_trust_signer_certificate, allow_open_trust_signer_certificate_metadata, allow_organization_docusign_monitor, allow_organization_docusign_monitor_metadata, allow_organization_domain_user_management, allow_organization_domain_user_management_metadata, allow_organizations, allow_organizations_metadata, allow_organization_sso_management, allow_organization_sso_management_metadata, allow_organization_to_use_remote_notary, allow_organization_to_use_remote_notary_metadata, allow_payment_processing, allow_payment_processing_metadata, allow_personal_signer_certificate, allow_personal_signer_certificate_metadata, allow_phone_authentication, allow_phone_authentication_metadata, allow_phone_auth_override, allow_phone_auth_override_metadata, allow_private_signing_groups, allow_private_signing_groups_metadata, allow_recipient_connect, allow_recipient_connect_metadata, allow_reminders, allow_reminders_metadata, allow_remote_notary, allow_remote_notary_metadata, allow_resource_file_branding, allow_resource_file_branding_metadata, allow_safe_bio_pharma_signer_certificate, allow_safe_bio_pharma_signer_certificate_metadata, allow_security_appliance, allow_security_appliance_metadata, allow_send_to_certified_delivery, allow_send_to_certified_delivery_metadata, allow_send_to_intermediary, allow_send_to_intermediary_metadata, allow_server_templates, allow_server_templates_metadata, allow_set_embedded_recipient_start_url, allow_set_embedded_recipient_start_url_metadata, allow_shared_tabs, allow_shared_tabs_metadata, allow_signature_stamps, allow_signature_stamps_metadata, allow_sign_document_from_home_page, allow_sign_document_from_home_page_metadata, allow_signer_reassign, allow_signer_reassign_metadata, allow_signer_reassign_override, allow_signer_reassign_override_metadata, allow_signing_extensions, allow_signing_extensions_metadata, allow_signing_groups, allow_signing_groups_metadata, allow_signing_insights, allow_signing_insights_metadata, allow_signing_radio_deselect, allow_signing_radio_deselect_metadata, allow_sign_now, allow_sign_now_metadata, allow_sms_delivery, allow_sms_delivery_metadata, allow_social_id_login, allow_social_id_login_metadata, allow_supplemental_documents, allow_supplemental_documents_metadata, allow_users_to_access_directory, allow_users_to_access_directory_metadata, allow_value_insights, allow_value_insights_metadata, anchor_population_scope, anchor_population_scope_metadata, anchor_tag_versioned_placement_enabled, anchor_tag_versioned_placement_metadata_enabled, attach_completed_envelope, attach_completed_envelope_metadata, authentication_check, authentication_check_metadata, auto_nav_rule, auto_nav_rule_metadata, auto_provision_signer_account, auto_provision_signer_account_metadata, bcc_email_archive, bcc_email_archive_metadata, beta_switch_configuration, beta_switch_configuration_metadata, billing_address, billing_address_metadata, bulk_send, bulk_send_max_copies_in_batch, bulk_send_max_unprocessed_envelopes_count, bulk_send_metadata, can_self_brand_send, can_self_brand_send_metadata, can_self_brand_sign, can_self_brand_sign_metadata, can_use_salesforce_o_auth, can_use_salesforce_o_auth_metadata, capture_voice_recording, capture_voice_recording_metadata, cfr_use_wide_image, cfr_use_wide_image_metadata, check_for_multiple_admins_on_account, check_for_multiple_admins_on_account_metadata, chrome_signature_enabled, chrome_signature_enabled_metadata, comment_email_show_message_text, comment_email_show_message_text_metadata, comments_allow_envelope_override, comments_allow_envelope_override_metadata, conditional_fields_enabled, conditional_fields_enabled_metadata, consumer_disclosure_frequency, consumer_disclosure_frequency_metadata, convert_pdf_fields, convert_pdf_fields_metadata, data_population_scope, data_population_scope_metadata, disable_auto_template_matching, disable_auto_template_matching_metadata, disable_mobile_app, disable_mobile_app_metadata, disable_mobile_push_notifications, disable_mobile_push_notifications_metadata, disable_mobile_sending, disable_mobile_sending_metadata, disable_multiple_sessions, disable_multiple_sessions_metadata, disable_purge_notifications_for_sender_metadata, disable_signer_cert_view, disable_signer_cert_view_metadata, disable_signer_history_view, disable_signer_history_view_metadata, disable_style_signature, disable_style_signature_metadata, disable_upload_signature, disable_upload_signature_metadata, disable_user_sharing, disable_user_sharing_metadata, display_beta_switch, display_beta_switch_metadata, document_conversion_restrictions, document_conversion_restrictions_metadata, document_retention, document_retention_metadata, document_retention_purge_tabs, document_visibility, document_visibility_metadata, email_template_version, email_template_version_metadata, enable_access_code_generator, enable_access_code_generator_metadata, enable_advanced_payments, enable_advanced_payments_metadata, enable_advanced_power_forms, enable_advanced_power_forms_metadata, enable_agreement_actions_for_clm, enable_agreement_actions_for_clm_metadata, enable_agreement_actions_for_e_sign, enable_agreement_actions_for_e_sign_metadata, enable_auto_nav, enable_auto_nav_metadata, enable_bcc_dummy_link, enable_bcc_dummy_link_metadata, enable_calculated_fields, enable_calculated_fields_metadata, enable_clickwraps, enable_clickwraps_metadata, enable_comments_history_download_in_signing, enable_comments_history_download_in_signing_metadata, enable_customer_satisfaction_metric_tracking, enable_customer_satisfaction_metric_tracking_metadata, enable_ds_pro, enable_ds_pro_metadata, enable_envelope_stamping_by_account_admin, enable_envelope_stamping_by_account_admin_metadata, enable_envelope_stamping_by_ds_admin, enable_envelope_stamping_by_ds_admin_metadata, enable_esign_communities, enable_esign_communities_metadata, enable_id_fx_intuit_kba, enable_id_fx_intuit_kba_metadata, enable_in_browser_editor, enable_in_browser_editor_metadata, enable_payment_processing, enable_payment_processing_metadata, enable_pdfa_conversion, enable_pdfa_conversion_metadata, enable_power_form, enable_power_form_direct, enable_power_form_direct_metadata, enable_power_form_metadata, enable_recipient_domain_validation, enable_recipient_domain_validation_metadata, enable_recipient_may_provide_phone_number, enable_recipient_may_provide_phone_number_metadata, enable_report_links, enable_report_links_metadata, enable_require_sign_on_paper, enable_require_sign_on_paper_metadata, enable_reserved_domain, enable_reserved_domain_metadata, enable_responsive_signing, enable_responsive_signing_metadata, enable_scheduled_release, enable_scheduled_release_metadata, enable_search, enable_search_metadata, enable_search_ui, enable_search_ui_metadata, enable_sending_tags_font_settings, enable_sending_tags_font_settings_metadata, enable_send_to_agent, enable_send_to_agent_metadata, enable_send_to_intermediary, enable_send_to_intermediary_metadata, enable_send_to_manage, enable_send_to_manage_metadata, enable_sequential_signing_api, enable_sequential_signing_api_metadata, enable_sequential_signing_ui, enable_sequential_signing_ui_metadata, enable_signer_attachments, enable_signer_attachments_metadata, enable_signing_extension_comments, enable_signing_extension_comments_metadata, enable_signing_extension_conversations, enable_signing_extension_conversations_metadata, enable_signing_order_settings_for_account, enable_signing_order_settings_for_account_metadata, enable_sign_on_paper, enable_sign_on_paper_metadata, enable_sign_on_paper_override, enable_sign_on_paper_override_metadata, enable_sign_with_notary, enable_sign_with_notary_metadata, enable_smart_contracts, enable_smart_contracts_metadata, enable_sms_authentication, enable_sms_authentication_metadata, enable_sms_delivery_additional_notification, enable_sms_delivery_additional_notification_metadata, enable_social_id_login, enable_social_id_login_metadata, enable_strike_through, enable_strike_through_metadata, enable_transaction_point, enable_transaction_point_metadata, enable_vaulting, enable_vaulting_metadata, enable_witnessing, enable_witnessing_metadata, enforce_template_name_uniqueness, enforce_template_name_uniqueness_metadata, envelope_integration_allowed, envelope_integration_allowed_metadata, envelope_integration_enabled, envelope_integration_enabled_metadata, envelope_stamping_default_value, envelope_stamping_default_value_metadata, express_send, express_send_allow_tabs, express_send_allow_tabs_metadata, express_send_metadata, external_document_sources, external_signature_pad_type, external_signature_pad_type_metadata, fax_out_enabled, fax_out_enabled_metadata, guided_forms_html_allowed, guided_forms_html_allowed_metadata, has_recipient_connect_claimed_domain, hide_account_address_in_co_c, hide_account_address_in_co_c_metadata, hide_pricing, hide_pricing_metadata, id_check_configurations, id_check_expire, id_check_expire_days, id_check_expire_days_metadata, id_check_expire_metadata, id_check_expire_minutes, id_check_expire_minutes_metadata, id_check_required, id_check_required_metadata, identity_verification, identity_verification_metadata, idfx_phone_authentication_override, idfx_phone_authentication_override_metadata, ignore_error_if_anchor_tab_not_found, ignore_error_if_anchor_tab_not_found_metadata_enabled, in_person_id_check_question, in_person_id_check_question_metadata, in_person_signing_enabled, in_person_signing_enabled_metadata, in_session_enabled, in_session_enabled_metadata, in_session_suppress_emails, in_session_suppress_emails_metadata, linked_external_primary_accounts, maximum_signing_groups, maximum_signing_groups_metadata, maximum_users_per_signing_group, maximum_users_per_signing_group_metadata, max_number_of_custom_stamps, mobile_session_timeout, mobile_session_timeout_metadata, number_of_active_custom_stamps, opt_in_mobile_signing_v02, opt_in_mobile_signing_v02_metadata, opt_out_auto_nav_text_and_tab_color_updates, opt_out_auto_nav_text_and_tab_color_updates_metadata, opt_out_new_platform_seal, opt_out_new_platform_seal_platform_metadata, phone_auth_recipient_may_provide_phone_number, phone_auth_recipient_may_provide_phone_number_metadata, pki_sign_downloaded_pdf_docs, pki_sign_downloaded_pdf_docs_metadata, read_only_mode, read_only_mode_metadata, recipients_can_sign_offline, recipients_can_sign_offline_metadata, recipient_signing_auto_navigation_control, recipient_signing_auto_navigation_control_metadata, require21_cf_rpt11_compliance, require21_cf_rpt11_compliance_metadata, require_decline_reason, require_decline_reason_metadata, require_external_user_management, require_external_user_management_metadata, require_signer_certificate_type, require_signer_certificate_type_metadata, rsa_verid_account_name, rsa_verid_password, rsa_verid_ruleset, rsa_verid_user_id, self_signed_recipient_email_document, self_signed_recipient_email_document_metadata, self_signed_recipient_email_document_user_override, self_signed_recipient_email_document_user_override_metadata, sender_can_sign_in_each_location, sender_can_sign_in_each_location_metadata, sender_must_authenticate_signing, sender_must_authenticate_signing_metadata, sending_tags_font_color, sending_tags_font_color_metadata, sending_tags_font_name, sending_tags_font_name_metadata, sending_tags_font_size, sending_tags_font_size_metadata, send_to_certified_delivery_enabled, send_to_certified_delivery_enabled_metadata, session_timeout, session_timeout_metadata, set_recip_email_lang, set_recip_email_lang_metadata, set_recip_sign_lang, set_recip_sign_lang_metadata, shared_template_folders, shared_template_folders_metadata, show_complete_dialog_in_embedded_session, show_complete_dialog_in_embedded_session_metadata, show_conditional_routing_on_send, show_conditional_routing_on_send_metadata, show_initial_conditional_fields, show_initial_conditional_fields_metadata, show_localized_watermarks, show_localized_watermarks_metadata, show_masked_fields_when_downloading_document_as_sender, show_masked_fields_when_downloading_document_as_sender_metadata, show_tutorials, show_tutorials_metadata, signature_providers, signature_providers_metadata, sign_date_format, sign_date_format_metadata, sign_date_time_account_language_override, sign_date_time_account_language_override_metadata, sign_date_time_account_timezone_override, sign_date_time_account_timezone_override_metadata, signer_attach_certificate_to_envelope_pdf, signer_attach_certificate_to_envelope_pdf_metadata, signer_attach_concat, signer_attach_concat_metadata, signer_can_create_account, signer_can_create_account_metadata, signer_can_sign_on_mobile, signer_can_sign_on_mobile_metadata, signer_in_session_use_envelope_complete_email, signer_in_session_use_envelope_complete_email_metadata, signer_login_requirements, signer_login_requirements_metadata, signer_must_have_account, signer_must_have_account_metadata, signer_must_login_to_sign, signer_must_login_to_sign_metadata, signer_show_secure_field_initial_values, signer_show_secure_field_initial_values_metadata, signing_session_timeout, signing_session_timeout_metadata, signing_ui_version, signing_ui_version_metadata, sign_time_format, sign_time_format_metadata, sign_time_show_am_pm, sign_time_show_am_pm_metadata, simplified_sending_enabled, simplified_sending_enabled_metadata, single_sign_on_enabled, single_sign_on_enabled_metadata, skip_auth_completed_envelopes, skip_auth_completed_envelopes_metadata, social_id_recip_auth, social_id_recip_auth_metadata, specify_document_visibility, specify_document_visibility_metadata, start_in_advanced_correct, start_in_advanced_correct_metadata, supplemental_documents_must_accept, supplemental_documents_must_accept_metadata, supplemental_documents_must_read, supplemental_documents_must_read_metadata, supplemental_documents_must_view, supplemental_documents_must_view_metadata, suppress_certificate_enforcement, suppress_certificate_enforcement_metadata, tab_account_settings, timezone_offset_api, timezone_offset_api_metadata, timezone_offset_ui, timezone_offset_ui_metadata, universal_signature_opt_in, use_account_level_email, use_account_level_email_metadata, use_consumer_disclosure, use_consumer_disclosure_metadata, use_consumer_disclosure_within_account, use_consumer_disclosure_within_account_metadata, use_derived_keys, use_derived_keys_metadata, use_docu_sign_express_signer_certificate, use_docu_sign_express_signer_certificate_metadata, use_multi_app_groups_data, use_multi_app_groups_data_metadata, use_new_blob_for_pdf, use_new_blob_for_pdf_metadata, use_safe_signer_certificates, use_safe_signer_certificates_metadata, uses_api, uses_api_metadata, use_signature_provider_platform, use_signature_provider_platform_metadata, validations_allowed, validations_allowed_metadata, validations_brand, validations_brand_metadata, validations_cadence, validations_cadence_metadata, validations_enabled, validations_enabled_metadata, validations_report, validations_report_metadata, water_mark_enabled, water_mark_enabled_metadata, write_reminder_to_envelope_history, write_reminder_to_envelope_history_metadata, wurfl_min_allowable_screen_size, wurfl_min_allowable_screen_size_metadata].hash
+      [access_code_format, account_date_time_format, account_date_time_format_metadata, account_default_language, account_default_language_metadata, account_name, account_name_metadata, account_notification, account_ui_settings, adopt_sig_config, adopt_sig_config_metadata, advanced_correct, advanced_correct_metadata, allow_access_code_format, allow_access_code_format_metadata, allow_account_management_granular, allow_account_management_granular_metadata, allow_account_member_name_change, allow_account_member_name_change_metadata, allow_advanced_recipient_routing_conditional, allow_advanced_recipient_routing_conditional_metadata, allow_agent_name_email_edit, allow_agent_name_email_edit_metadata, allow_agreement_actions, allow_agreement_actions_metadata, allow_auto_nav_settings, allow_auto_nav_settings_metadata, allow_auto_tagging, allow_auto_tagging_metadata, allow_bulk_send, allow_bulk_send_metadata, allow_cd_withdraw, allow_cd_withdraw_metadata, allow_connect_http_listener_configs, allow_connect_send_finish_later, allow_connect_send_finish_later_metadata, allow_connect_unified_payload_ui, allow_consumer_disclosure_override, allow_consumer_disclosure_override_metadata, allow_data_download, allow_data_download_metadata, allow_delegated_signing, allow_delegated_signing_metadata, allow_document_disclosures, allow_document_disclosures_metadata, allow_documents_on_signed_envelopes, allow_documents_on_signed_envelopes_metadata, allow_document_visibility, allow_document_visibility_metadata, allow_e_hanko_stamps, allow_e_hanko_stamps_metadata, allow_e_note_e_original, allow_e_note_e_original_metadata, allow_envelope_correct, allow_envelope_correct_metadata, allow_envelope_custody_transfer, allow_envelope_custody_transfer_metadata, allow_envelope_custom_fields, allow_envelope_custom_fields_metadata, allow_envelope_publish_reporting, allow_envelope_publish_reporting_metadata, allow_envelope_reporting, allow_envelope_reporting_metadata, allow_expression, allow_expression_metadata, allow_express_signer_certificate, allow_express_signer_certificate_metadata, allow_extended_sending_resource_file, allow_extended_sending_resource_file_metadata, allow_external_linked_accounts, allow_external_linked_accounts_metadata, allow_external_signature_pad, allow_external_signature_pad_metadata, allow_idv_level1, allow_idv_level1_metadata, allow_idv_level2, allow_idv_level2_metadata, allow_idv_level3, allow_idv_level3_metadata, allow_idv_platform, allow_idv_platform_metadata, allow_in_person, allow_in_person_metadata, allow_managed_stamps, allow_managed_stamps_metadata, allow_markup, allow_markup_metadata, allow_member_time_zone, allow_member_time_zone_metadata, allow_merge_fields, allow_merge_fields_metadata, allow_multiple_brand_profiles, allow_multiple_brand_profiles_metadata, allow_multiple_signer_attachments, allow_multiple_signer_attachments_metadata, allow_non_us_phone_auth, allow_non_us_phone_auth_metadata, allow_ocr_of_envelope_documents, allow_ocr_of_envelope_documents_metadata, allow_offline_signing, allow_offline_signing_metadata, allow_open_trust_signer_certificate, allow_open_trust_signer_certificate_metadata, allow_organization_docusign_monitor, allow_organization_docusign_monitor_metadata, allow_organization_domain_user_management, allow_organization_domain_user_management_metadata, allow_organizations, allow_organizations_metadata, allow_organization_sso_management, allow_organization_sso_management_metadata, allow_organization_to_use_remote_notary, allow_organization_to_use_remote_notary_metadata, allow_payment_processing, allow_payment_processing_metadata, allow_personal_signer_certificate, allow_personal_signer_certificate_metadata, allow_phone_authentication, allow_phone_authentication_metadata, allow_phone_auth_override, allow_phone_auth_override_metadata, allow_private_signing_groups, allow_private_signing_groups_metadata, allow_recipient_connect, allow_recipient_connect_metadata, allow_reminders, allow_reminders_metadata, allow_remote_notary, allow_remote_notary_metadata, allow_resource_file_branding, allow_resource_file_branding_metadata, allow_safe_bio_pharma_signer_certificate, allow_safe_bio_pharma_signer_certificate_metadata, allow_security_appliance, allow_security_appliance_metadata, allow_send_to_certified_delivery, allow_send_to_certified_delivery_metadata, allow_send_to_intermediary, allow_send_to_intermediary_metadata, allow_server_templates, allow_server_templates_metadata, allow_set_embedded_recipient_start_url, allow_set_embedded_recipient_start_url_metadata, allow_shared_tabs, allow_shared_tabs_metadata, allow_signature_stamps, allow_signature_stamps_metadata, allow_sign_document_from_home_page, allow_sign_document_from_home_page_metadata, allow_signer_reassign, allow_signer_reassign_metadata, allow_signer_reassign_override, allow_signer_reassign_override_metadata, allow_signing_extensions, allow_signing_extensions_metadata, allow_signing_groups, allow_signing_groups_metadata, allow_signing_insights, allow_signing_insights_metadata, allow_signing_radio_deselect, allow_signing_radio_deselect_metadata, allow_sign_now, allow_sign_now_metadata, allow_sms_delivery, allow_sms_delivery_metadata, allow_social_id_login, allow_social_id_login_metadata, allow_supplemental_documents, allow_supplemental_documents_metadata, allow_users_to_access_directory, allow_users_to_access_directory_metadata, allow_value_insights, allow_value_insights_metadata, anchor_population_scope, anchor_population_scope_metadata, anchor_tag_versioned_placement_enabled, anchor_tag_versioned_placement_metadata_enabled, attach_completed_envelope, attach_completed_envelope_metadata, authentication_check, authentication_check_metadata, auto_nav_rule, auto_nav_rule_metadata, auto_provision_signer_account, auto_provision_signer_account_metadata, bcc_email_archive, bcc_email_archive_metadata, beta_switch_configuration, beta_switch_configuration_metadata, billing_address, billing_address_metadata, bulk_send, bulk_send_max_copies_in_batch, bulk_send_max_unprocessed_envelopes_count, bulk_send_metadata, can_self_brand_send, can_self_brand_send_metadata, can_self_brand_sign, can_self_brand_sign_metadata, can_use_salesforce_o_auth, can_use_salesforce_o_auth_metadata, capture_voice_recording, capture_voice_recording_metadata, cfr21_simplified_signing_enabled, cfr21_simplified_signing_enabled_metadata, cfr_use_wide_image, cfr_use_wide_image_metadata, check_for_multiple_admins_on_account, check_for_multiple_admins_on_account_metadata, chrome_signature_enabled, chrome_signature_enabled_metadata, comment_email_show_message_text, comment_email_show_message_text_metadata, comments_allow_envelope_override, comments_allow_envelope_override_metadata, conditional_fields_enabled, conditional_fields_enabled_metadata, consumer_disclosure_frequency, consumer_disclosure_frequency_metadata, convert_pdf_fields, convert_pdf_fields_metadata, data_population_scope, data_population_scope_metadata, disable_auto_template_matching, disable_auto_template_matching_metadata, disable_mobile_app, disable_mobile_app_metadata, disable_mobile_push_notifications, disable_mobile_push_notifications_metadata, disable_mobile_sending, disable_mobile_sending_metadata, disable_multiple_sessions, disable_multiple_sessions_metadata, disable_purge_notifications_for_sender_metadata, disable_signer_cert_view, disable_signer_cert_view_metadata, disable_signer_history_view, disable_signer_history_view_metadata, disable_style_signature, disable_style_signature_metadata, disable_upload_signature, disable_upload_signature_metadata, disable_user_sharing, disable_user_sharing_metadata, display_beta_switch, display_beta_switch_metadata, document_conversion_restrictions, document_conversion_restrictions_metadata, document_retention, document_retention_metadata, document_retention_purge_tabs, document_visibility, document_visibility_metadata, dss_sign_28411_enable_leave_page_prompt_radmin_option, dss_sign_29182_slide_up_bar_radmin_option, email_template_version, email_template_version_metadata, enable_access_code_generator, enable_access_code_generator_metadata, enable_advanced_payments, enable_advanced_payments_metadata, enable_advanced_power_forms, enable_advanced_power_forms_metadata, enable_agreement_actions_for_clm, enable_agreement_actions_for_clm_metadata, enable_agreement_actions_for_e_sign, enable_agreement_actions_for_e_sign_metadata, enable_auto_nav, enable_auto_nav_metadata, enable_bcc_dummy_link, enable_bcc_dummy_link_metadata, enable_calculated_fields, enable_calculated_fields_metadata, enable_clickwraps, enable_clickwraps_metadata, enable_comments_history_download_in_signing, enable_comments_history_download_in_signing_metadata, enable_customer_satisfaction_metric_tracking, enable_customer_satisfaction_metric_tracking_metadata, enable_ds_pro, enable_ds_pro_metadata, enable_envelope_stamping_by_account_admin, enable_envelope_stamping_by_account_admin_metadata, enable_envelope_stamping_by_ds_admin, enable_envelope_stamping_by_ds_admin_metadata, enable_esign_communities, enable_esign_communities_metadata, enable_id_fx_intuit_kba, enable_id_fx_intuit_kba_metadata, enable_id_fx_phone_authentication, enable_id_fx_phone_authentication_metadata, enable_in_browser_editor, enable_in_browser_editor_metadata, enable_payment_processing, enable_payment_processing_metadata, enable_pdfa_conversion, enable_pdfa_conversion_metadata, enable_power_form, enable_power_form_direct, enable_power_form_direct_metadata, enable_power_form_metadata, enable_recipient_domain_validation, enable_recipient_domain_validation_metadata, enable_recipient_may_provide_phone_number, enable_recipient_may_provide_phone_number_metadata, enable_report_links, enable_report_links_metadata, enable_require_sign_on_paper, enable_require_sign_on_paper_metadata, enable_reserved_domain, enable_reserved_domain_metadata, enable_responsive_signing, enable_responsive_signing_metadata, enable_scheduled_release, enable_scheduled_release_metadata, enable_search, enable_search_metadata, enable_search_ui, enable_search_ui_metadata, enable_sending_tags_font_settings, enable_sending_tags_font_settings_metadata, enable_send_to_agent, enable_send_to_agent_metadata, enable_send_to_intermediary, enable_send_to_intermediary_metadata, enable_send_to_manage, enable_send_to_manage_metadata, enable_sequential_signing_api, enable_sequential_signing_api_metadata, enable_sequential_signing_ui, enable_sequential_signing_ui_metadata, enable_signer_attachments, enable_signer_attachments_metadata, enable_signing_extension_comments, enable_signing_extension_comments_metadata, enable_signing_extension_conversations, enable_signing_extension_conversations_metadata, enable_signing_order_settings_for_account, enable_signing_order_settings_for_account_metadata, enable_sign_on_paper, enable_sign_on_paper_metadata, enable_sign_on_paper_override, enable_sign_on_paper_override_metadata, enable_sign_with_notary, enable_sign_with_notary_metadata, enable_smart_contracts, enable_smart_contracts_metadata, enable_sms_authentication, enable_sms_authentication_metadata, enable_sms_delivery_additional_notification, enable_sms_delivery_additional_notification_metadata, enable_sms_delivery_primary, enable_social_id_login, enable_social_id_login_metadata, enable_strike_through, enable_strike_through_metadata, enable_transaction_point, enable_transaction_point_metadata, enable_vaulting, enable_vaulting_metadata, enable_witnessing, enable_witnessing_metadata, enforce_template_name_uniqueness, enforce_template_name_uniqueness_metadata, envelope_integration_allowed, envelope_integration_allowed_metadata, envelope_integration_enabled, envelope_integration_enabled_metadata, envelope_stamping_default_value, envelope_stamping_default_value_metadata, exit_prompt, exit_prompt_metadata, express_send, express_send_allow_tabs, express_send_allow_tabs_metadata, express_send_metadata, external_document_sources, external_signature_pad_type, external_signature_pad_type_metadata, fax_out_enabled, fax_out_enabled_metadata, finish_reminder, finish_reminder_metadata, guided_forms_html_allowed, guided_forms_html_allowed_metadata, has_recipient_connect_claimed_domain, hide_account_address_in_co_c, hide_account_address_in_co_c_metadata, hide_pricing, hide_pricing_metadata, id_check_configurations, id_check_expire, id_check_expire_days, id_check_expire_days_metadata, id_check_expire_metadata, id_check_expire_minutes, id_check_expire_minutes_metadata, id_check_required, id_check_required_metadata, identity_verification, identity_verification_metadata, idfx_phone_authentication_override, idfx_phone_authentication_override_metadata, ignore_error_if_anchor_tab_not_found, ignore_error_if_anchor_tab_not_found_metadata_enabled, in_person_id_check_question, in_person_id_check_question_metadata, in_person_signing_enabled, in_person_signing_enabled_metadata, in_session_enabled, in_session_enabled_metadata, in_session_suppress_emails, in_session_suppress_emails_metadata, linked_external_primary_accounts, maximum_signing_groups, maximum_signing_groups_metadata, maximum_users_per_signing_group, maximum_users_per_signing_group_metadata, max_number_of_custom_stamps, mobile_session_timeout, mobile_session_timeout_metadata, number_of_active_custom_stamps, opt_in_mobile_signing_v02, opt_in_mobile_signing_v02_metadata, opt_out_auto_nav_text_and_tab_color_updates, opt_out_auto_nav_text_and_tab_color_updates_metadata, opt_out_new_platform_seal, opt_out_new_platform_seal_platform_metadata, phone_auth_recipient_may_provide_phone_number, phone_auth_recipient_may_provide_phone_number_metadata, pki_sign_downloaded_pdf_docs, pki_sign_downloaded_pdf_docs_metadata, read_only_mode, read_only_mode_metadata, recipients_can_sign_offline, recipients_can_sign_offline_metadata, recipient_signing_auto_navigation_control, recipient_signing_auto_navigation_control_metadata, require21_cf_rpt11_compliance, require21_cf_rpt11_compliance_metadata, require_decline_reason, require_decline_reason_metadata, require_external_user_management, require_external_user_management_metadata, require_signer_certificate_type, require_signer_certificate_type_metadata, rsa_verid_account_name, rsa_verid_password, rsa_verid_ruleset, rsa_verid_user_id, self_signed_recipient_email_document, self_signed_recipient_email_document_metadata, self_signed_recipient_email_document_user_override, self_signed_recipient_email_document_user_override_metadata, sender_can_sign_in_each_location, sender_can_sign_in_each_location_metadata, sender_must_authenticate_signing, sender_must_authenticate_signing_metadata, sending_tags_font_color, sending_tags_font_color_metadata, sending_tags_font_name, sending_tags_font_name_metadata, sending_tags_font_size, sending_tags_font_size_metadata, send_lockout_recipient_notification, send_lockout_recipient_notification_metadata, send_to_certified_delivery_enabled, send_to_certified_delivery_enabled_metadata, session_timeout, session_timeout_metadata, set_recip_email_lang, set_recip_email_lang_metadata, set_recip_sign_lang, set_recip_sign_lang_metadata, shared_template_folders, shared_template_folders_metadata, show_complete_dialog_in_embedded_session, show_complete_dialog_in_embedded_session_metadata, show_conditional_routing_on_send, show_conditional_routing_on_send_metadata, show_initial_conditional_fields, show_initial_conditional_fields_metadata, show_localized_watermarks, show_localized_watermarks_metadata, show_masked_fields_when_downloading_document_as_sender, show_masked_fields_when_downloading_document_as_sender_metadata, show_tutorials, show_tutorials_metadata, signature_providers, signature_providers_metadata, sign_date_format, sign_date_format_metadata, sign_date_time_account_language_override, sign_date_time_account_language_override_metadata, sign_date_time_account_timezone_override, sign_date_time_account_timezone_override_metadata, signer_attach_certificate_to_envelope_pdf, signer_attach_certificate_to_envelope_pdf_metadata, signer_attach_concat, signer_attach_concat_metadata, signer_can_create_account, signer_can_create_account_metadata, signer_can_sign_on_mobile, signer_can_sign_on_mobile_metadata, signer_in_session_use_envelope_complete_email, signer_in_session_use_envelope_complete_email_metadata, signer_login_requirements, signer_login_requirements_metadata, signer_must_have_account, signer_must_have_account_metadata, signer_must_login_to_sign, signer_must_login_to_sign_metadata, signer_show_secure_field_initial_values, signer_show_secure_field_initial_values_metadata, signing_session_timeout, signing_session_timeout_metadata, signing_ui_version, signing_ui_version_metadata, sign_time_format, sign_time_format_metadata, sign_time_show_am_pm, sign_time_show_am_pm_metadata, simplified_sending_enabled, simplified_sending_enabled_metadata, single_sign_on_enabled, single_sign_on_enabled_metadata, skip_auth_completed_envelopes, skip_auth_completed_envelopes_metadata, social_id_recip_auth, social_id_recip_auth_metadata, specify_document_visibility, specify_document_visibility_metadata, start_in_advanced_correct, start_in_advanced_correct_metadata, supplemental_documents_must_accept, supplemental_documents_must_accept_metadata, supplemental_documents_must_read, supplemental_documents_must_read_metadata, supplemental_documents_must_view, supplemental_documents_must_view_metadata, suppress_certificate_enforcement, suppress_certificate_enforcement_metadata, tab_account_settings, timezone_offset_api, timezone_offset_api_metadata, timezone_offset_ui, timezone_offset_ui_metadata, universal_signature_opt_in, use_account_level_email, use_account_level_email_metadata, use_consumer_disclosure, use_consumer_disclosure_metadata, use_consumer_disclosure_within_account, use_consumer_disclosure_within_account_metadata, use_derived_keys, use_derived_keys_metadata, use_docu_sign_express_signer_certificate, use_docu_sign_express_signer_certificate_metadata, use_multi_app_groups_data, use_multi_app_groups_data_metadata, use_new_blob_for_pdf, use_new_blob_for_pdf_metadata, use_safe_signer_certificates, use_safe_signer_certificates_metadata, uses_api, uses_api_metadata, use_signature_provider_platform, use_signature_provider_platform_metadata, validations_allowed, validations_allowed_metadata, validations_brand, validations_brand_metadata, validations_cadence, validations_cadence_metadata, validations_enabled, validations_enabled_metadata, validations_report, validations_report_metadata, water_mark_enabled, water_mark_enabled_metadata, write_reminder_to_envelope_history, write_reminder_to_envelope_history_metadata, wurfl_min_allowable_screen_size, wurfl_min_allowable_screen_size_metadata].hash
     end
 
     # Builds the object from hash
