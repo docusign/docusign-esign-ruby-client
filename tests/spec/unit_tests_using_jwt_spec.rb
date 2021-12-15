@@ -22,6 +22,11 @@ describe 'DocuSign Ruby Client Tests' do
         # END OF NOTE
       end
 
+      decode_base64_content = Base64.decode64(ENV["PRIVATE_KEY"])
+      File.open($private_key_filename, "wb") do |f|
+        f.write(decode_base64_content)
+      end
+
       token_obj = $api_client.request_jwt_user_token(ENV["INTEGRATOR_KEY_JWT"], ENV["USER_ID"], File.read($private_key_filename), $expires_in_seconds)
 
       user_info = $api_client.get_user_info(token_obj.access_token)
@@ -59,7 +64,7 @@ describe 'DocuSign Ruby Client Tests' do
     if (!$account_id.nil?)
       # STEP 2: Create envelope definition
       # Add a document to the envelope
-      document_path = "docs/Test.pdf"
+      document_path = "../docs/Test.pdf"
       document_name = "Test.docx"
       document = DocuSign_eSign::Document.new
       document.document_base64 = Base64.encode64(File.open(document_path).read)
@@ -115,7 +120,7 @@ describe 'DocuSign Ruby Client Tests' do
 
     $expires_in_seconds = 3600 #1 hour
     $auth_server = 'account-d.docusign.com'
-    $private_key_filename = 'docs/private.pem'
+    $private_key_filename = '../docs/private.pem'
 
     $recipient_name = "Ruby SDK"
 
