@@ -20,34 +20,36 @@ describe 'DocuSign Ruby Client Tests' do
                 # $api_client.generate_access_token($integrator_key,$secret,code)
             end
 
-            puts "4"
+        puts "4"
         decode_base64_content = Base64.decode64(ENV["PRIVATE_KEY"])
         encoded_content = ENV["PRIVATE_KEY"]
-        puts "#{$encoded_content}"
-        puts "#{$decode_base64_content}"
+        puts "encoded: #{$encoded_content}"
+        puts "decoded: #{$decode_base64_content}"
         puts "5"
-         File.open($private_key_filename, "wb") do |f|
-           f.write(decode_base64_content)
-         end
-         puts "6"
-          token_obj = $api_client.request_jwt_user_token(ENV["INTEGRATOR_KEY_JWT"],ENV["USER_ID"], File.read($private_key_filename),$expires_in_seconds)
-          user_info = $api_client.get_user_info(token_obj.access_token)
+        File.open($private_key_filename, "wb") do |f|
+            f.write(decode_base64_content)
+        end
+        puts "6"
+        token_obj = $api_client.request_jwt_user_token(ENV["INTEGRATOR_KEY_JWT"],ENV["USER_ID"], File.read($private_key_filename),$expires_in_seconds)
+        puts "7"
+        puts token_obj.access_token
+        user_info = $api_client.get_user_info(token_obj.access_token)
 
-          puts "7"
-            if !user_info.nil?
-                user_info.accounts.each do |account|
-                    if account.is_default == "true"
-                        $base_uri = account.base_uri
-                        $account_id = account.account_id
+        puts "8"
+        if !user_info.nil?
+            user_info.accounts.each do |account|
+                if account.is_default == "true"
+                    $base_uri = account.base_uri
+                    $account_id = account.account_id
 
-            # IMPORTANT: Use the base url from the login account to instantiant the api_client
-                        base_uri = URI.parse($base_uri)
-                        $api_client.set_base_path( "%s://%s/restapi" % [base_uri.scheme, base_uri.host])
+        # IMPORTANT: Use the base url from the login account to instantiant the api_client
+                    base_uri = URI.parse($base_uri)
+                    $api_client.set_base_path( "%s://%s/restapi" % [base_uri.scheme, base_uri.host])
 
-                        return account
-                    end
+                    return account
                 end
             end
+        end
         rescue => e
           puts "Error during processing: #{$!}"
           # puts "Backtrace:\n\t#{e.backtrace.join("\n\t")}"

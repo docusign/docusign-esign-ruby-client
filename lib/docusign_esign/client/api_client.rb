@@ -485,7 +485,7 @@ module DocuSign_eSign
       data, status_code, headers = self.call_api("POST", "/oauth/token", params)
 
 
-      raise ApiError.new('Some error accrued during process') if data.nil?
+      raise ApiError.new('Some error occured during processing') if data.nil?
 
       self.set_default_header('Authorization', data.token_type + ' ' + data.access_token)
       data
