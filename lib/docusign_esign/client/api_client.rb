@@ -513,14 +513,19 @@ module DocuSign_eSign
           "scope"=> scopes
       }
       
+      puts "6.1"
+      puts $private_key_or_filename
+
       private_key = if private_key_or_filename.include?("-----BEGIN RSA PRIVATE KEY-----")
                       private_key_or_filename
                     else
                       File.read(private_key_or_filename)
                     end
 
+      puts "6.2"
       private_key_bytes = OpenSSL::PKey::RSA.new private_key
       token = JWT.encode claim, private_key_bytes, 'RS256'
+      puts "6.2.1"
       params = {
           :header_params => {"Content-Type" => "application/x-www-form-urlencoded"},
           :form_params => {
@@ -532,7 +537,8 @@ module DocuSign_eSign
       }
       data, status_code, headers = self.call_api("POST", "/oauth/token", params)
 
-      raise ApiError.new('Some error accrued during process') if data.nil?
+      puts "6.3"
+      raise ApiError.new('Some error occured during processing') if data.nil?
 
       self.set_default_header('Authorization', data.token_type + ' ' + data.access_token)
       data
