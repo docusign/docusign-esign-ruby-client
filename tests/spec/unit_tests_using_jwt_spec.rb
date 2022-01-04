@@ -22,7 +22,8 @@ describe 'DocuSign Ruby Client Tests' do
 
             puts "4"
         decode_base64_content = Base64.decode64(ENV["PRIVATE_KEY"])
-        puts "#{$ENV["PRIVATE_KEY"]}"
+        encoded_content = ENV["PRIVATE_KEY"]
+        puts "#{$encoded_content}"
         puts "#{$decode_base64_content}"
         puts "5"
          File.open($private_key_filename, "wb") do |f|
