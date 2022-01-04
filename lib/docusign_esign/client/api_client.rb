@@ -448,9 +448,11 @@ module DocuSign_eSign
     # @param scopes The list of requested scopes.  Client applications may be scoped to a limited set of system access.
     # @return [OAuth::OAuthToken]
     def request_jwt_user_token(client_id, user_id, private_key_or_filename, expires_in = 3600,scopes=OAuth::SCOPE_SIGNATURE)
+      puts "6.1"
       raise ArgumentError.new('client_id cannot be empty')  if client_id.empty?
       raise ArgumentError.new('user_id cannot be empty')  if user_id.empty?
       raise ArgumentError.new('private_key_or_filename cannot be empty')  if private_key_or_filename.empty?
+      puts "6.2"
 
       scopes = scopes.join(' ') if scopes.kind_of?(Array)
       scopes = OAuth::SCOPE_SIGNATURE if scopes.empty?
@@ -465,11 +467,14 @@ module DocuSign_eSign
         "scope"=> scopes
       }
 
+      puts "6.3"
+      puts $private_key_or_filename
       private_key = if private_key_or_filename.include?("-----BEGIN RSA PRIVATE KEY-----")
                       private_key_or_filename
                     else
                       File.read(private_key_or_filename)
                     end
+      puts "6.4"
 
       private_key_bytes = OpenSSL::PKey::RSA.new private_key
       token = JWT.encode claim, private_key_bytes, 'RS256'
@@ -484,7 +489,7 @@ module DocuSign_eSign
       }
       data, status_code, headers = self.call_api("POST", "/oauth/token", params)
 
-
+      puts "6.5"
       raise ApiError.new('Some error occured during processing') if data.nil?
 
       self.set_default_header('Authorization', data.token_type + ' ' + data.access_token)
@@ -498,10 +503,8 @@ module DocuSign_eSign
     # @param scopes The list of requested scopes.  Client applications may be scoped to a limited set of system access.
     # @return [OAuth::OAuthToken]
     def request_jwt_application_token(client_id, private_key_or_filename, expires_in = 3600,scopes=OAuth::SCOPE_SIGNATURE)
-      puts "error out here?"
       raise ArgumentError.new('client_id cannot be empty')  if client_id.empty?
       raise ArgumentError.new('private_key_or_filename cannot be empty')  if private_key_or_filename.empty?
-      puts "error out or here?"
 
       scopes = scopes.join(' ') if scopes.kind_of?(Array)
       scopes = OAuth::SCOPE_SIGNATURE if scopes.empty?
@@ -515,7 +518,6 @@ module DocuSign_eSign
           "scope"=> scopes
       }
       
-      puts "6.1"
       puts $private_key_or_filename
 
       private_key = if private_key_or_filename.include?("-----BEGIN RSA PRIVATE KEY-----")
@@ -524,10 +526,9 @@ module DocuSign_eSign
                       File.read(private_key_or_filename)
                     end
 
-      puts "6.2"
       private_key_bytes = OpenSSL::PKey::RSA.new private_key
       token = JWT.encode claim, private_key_bytes, 'RS256'
-      puts "6.2.1"
+
       params = {
           :header_params => {"Content-Type" => "application/x-www-form-urlencoded"},
           :form_params => {
@@ -539,7 +540,6 @@ module DocuSign_eSign
       }
       data, status_code, headers = self.call_api("POST", "/oauth/token", params)
 
-      puts "6.3"
       raise ApiError.new('Some error occured during processing') if data.nil?
 
       self.set_default_header('Authorization', data.token_type + ' ' + data.access_token)
