@@ -22,15 +22,12 @@ describe 'DocuSign Ruby Client Tests' do
 
         puts "4"
         decode_base64_content = Base64.decode64(ENV["PRIVATE_KEY"])
-        encoded_content = ENV["PRIVATE_KEY"]
-        puts "encoded: #{encoded_content}"
-        puts "decoded: #{decode_base64_content}"
         puts "5"
         File.open($private_key_filename, "wb") do |f|
             f.write(decode_base64_content)
         end
         puts "6"
-        token_obj = $api_client.request_jwt_user_token(ENV["INTEGRATOR_KEY_JWT"],ENV["USER_ID"], File.read($private_key_filename),$expires_in_seconds)
+        token_obj = $api_client.request_jwt_user_token(ENV["INTEGRATOR_KEY_JWT"], ENV["USER_ID"], File.read($private_key_filename), $expires_in_seconds)
         puts "7"
         puts $token_obj.access_token
         user_info = $api_client.get_user_info(token_obj.access_token)

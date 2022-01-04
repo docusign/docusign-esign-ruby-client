@@ -447,7 +447,7 @@ module DocuSign_eSign
     # @param [Number] expires_in number of seconds remaining before the JWT assertion is considered as invalid
     # @param scopes The list of requested scopes.  Client applications may be scoped to a limited set of system access.
     # @return [OAuth::OAuthToken]
-    def request_jwt_user_token(client_id, user_id, private_key_or_filename, expires_in = 3600,scopes=OAuth::SCOPE_SIGNATURE)
+    def request_jwt_user_token(client_id, user_id, private_key_or_filename, expires_in = 3600, scopes=OAuth::SCOPE_SIGNATURE)
       puts "6.1"
       raise ArgumentError.new('client_id cannot be empty')  if client_id.empty?
       raise ArgumentError.new('user_id cannot be empty')  if user_id.empty?
