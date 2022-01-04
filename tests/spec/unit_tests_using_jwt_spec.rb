@@ -29,7 +29,6 @@ describe 'DocuSign Ruby Client Tests' do
         puts "6"
         token_obj = $api_client.request_jwt_user_token(ENV["INTEGRATOR_KEY_JWT"], ENV["USER_ID"], File.read($private_key_filename), $expires_in_seconds)
         puts "7"
-        puts $token_obj.access_token
         user_info = $api_client.get_user_info(token_obj.access_token)
 
         puts "8"
