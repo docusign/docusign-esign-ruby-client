@@ -498,8 +498,10 @@ module DocuSign_eSign
     # @param scopes The list of requested scopes.  Client applications may be scoped to a limited set of system access.
     # @return [OAuth::OAuthToken]
     def request_jwt_application_token(client_id, private_key_or_filename, expires_in = 3600,scopes=OAuth::SCOPE_SIGNATURE)
+      puts "error out here?"
       raise ArgumentError.new('client_id cannot be empty')  if client_id.empty?
       raise ArgumentError.new('private_key_or_filename cannot be empty')  if private_key_or_filename.empty?
+      puts "error out or here?"
 
       scopes = scopes.join(' ') if scopes.kind_of?(Array)
       scopes = OAuth::SCOPE_SIGNATURE if scopes.empty?
