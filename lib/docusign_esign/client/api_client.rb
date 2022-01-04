@@ -490,7 +490,7 @@ module DocuSign_eSign
           :oauth => true
       }
       puts "6.4.3"
-      puts "#{$params}"
+      puts "#{params}"
       data, status_code, headers = self.call_api("POST", "/oauth/token", params)
 
       puts "6.5"
