@@ -466,7 +466,7 @@ module DocuSign_eSign
         "exp" => now + expires_in,
         "scope"=> scopes
       }
-
+      puts "#{claim}"
       puts "6.3"
       puts $private_key_or_filename
       private_key = if private_key_or_filename.include?("-----BEGIN RSA PRIVATE KEY-----")
