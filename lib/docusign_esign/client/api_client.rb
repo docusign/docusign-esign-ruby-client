@@ -448,11 +448,9 @@ module DocuSign_eSign
     # @param scopes The list of requested scopes.  Client applications may be scoped to a limited set of system access.
     # @return [OAuth::OAuthToken]
     def request_jwt_user_token(client_id, user_id, private_key_or_filename, expires_in = 3600, scopes=OAuth::SCOPE_SIGNATURE)
-      puts "6.1"
       raise ArgumentError.new('client_id cannot be empty')  if client_id.empty?
       raise ArgumentError.new('user_id cannot be empty')  if user_id.empty?
       raise ArgumentError.new('private_key_or_filename cannot be empty')  if private_key_or_filename.empty?
-      puts "6.2"
 
       scopes = scopes.join(' ') if scopes.kind_of?(Array)
       scopes = OAuth::SCOPE_SIGNATURE if scopes.empty?
@@ -466,20 +464,16 @@ module DocuSign_eSign
         "exp" => now + expires_in,
         "scope"=> scopes
       }
-      puts "#{claim}"
-      puts "6.3"
-      puts "#{private_key_or_filename}"
+
       private_key = if private_key_or_filename.include?("-----BEGIN RSA PRIVATE KEY-----")
                       private_key_or_filename
                     else
                       File.read(private_key_or_filename)
                     end
-      puts "6.4"
 
       private_key_bytes = OpenSSL::PKey::RSA.new private_key
-      puts "6.4.1"
       token = JWT.encode claim, private_key_bytes, 'RS256'
-      puts "6.4.2"
+
       params = {
           :header_params => {"Content-Type" => "application/x-www-form-urlencoded"},
           :form_params => {
@@ -489,11 +483,9 @@ module DocuSign_eSign
           :return_type => 'OAuth::OAuthToken',
           :oauth => true
       }
-      puts "6.4.3"
-      puts "#{params}"
+
       data, status_code, headers = self.call_api("POST", "/oauth/token", params)
 
-      puts "6.5"
       raise ApiError.new('Some error occured during processing') if data.nil?
 
       self.set_default_header('Authorization', data.token_type + ' ' + data.access_token)
