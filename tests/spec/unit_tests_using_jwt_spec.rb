@@ -5,13 +5,10 @@ require 'uri'
 describe 'DocuSign Ruby Client Tests' do
     def login
         begin
-            puts "1"
             if $api_client.nil?
-                puts "2"
                 configuration = DocuSign_eSign::Configuration.new
                 configuration.host = $host
 
-                puts "3"
                 $api_client = DocuSign_eSign::ApiClient.new(configuration)
                     $api_client.set_oauth_base_path(DocuSign_eSign::OAuth::DEMO_OAUTH_BASE_PATH)
                 # $api_client.get_authorization_uri($integrator_key,'signature',$return_url,'code')
@@ -20,18 +17,13 @@ describe 'DocuSign Ruby Client Tests' do
                 # $api_client.generate_access_token($integrator_key,$secret,code)
             end
 
-        puts "4"
         decode_base64_content = Base64.decode64(ENV["PRIVATE_KEY"])
-        puts "5"
         File.open($private_key_filename, "wb") do |f|
             f.write(decode_base64_content)
         end
-        puts "6"
         token_obj = $api_client.request_jwt_user_token(ENV["INTEGRATOR_KEY_JWT"], ENV["USER_ID"], File.read($private_key_filename), $expires_in_seconds)
-        puts "7"
         user_info = $api_client.get_user_info(token_obj.access_token)
 
-        puts "8"
         if !user_info.nil?
             user_info.accounts.each do |account|
                 if account.is_default == "true"
