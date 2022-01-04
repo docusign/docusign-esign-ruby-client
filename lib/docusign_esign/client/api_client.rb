@@ -477,7 +477,9 @@ module DocuSign_eSign
       puts "6.4"
 
       private_key_bytes = OpenSSL::PKey::RSA.new private_key
+      puts "6.4.1"
       token = JWT.encode claim, private_key_bytes, 'RS256'
+      puts "6.4.2"
       params = {
           :header_params => {"Content-Type" => "application/x-www-form-urlencoded"},
           :form_params => {
@@ -487,6 +489,8 @@ module DocuSign_eSign
           :return_type => 'OAuth::OAuthToken',
           :oauth => true
       }
+      puts "6.4.3"
+      puts "#{$params}"
       data, status_code, headers = self.call_api("POST", "/oauth/token", params)
 
       puts "6.5"
