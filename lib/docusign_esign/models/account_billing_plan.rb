@@ -97,6 +97,9 @@ module DocuSign_eSign
     # The support plan fee charged for this plan.
     attr_accessor :support_plan_fee
 
+    # 
+    attr_accessor :tax_exempt_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -127,7 +130,8 @@ module DocuSign_eSign
         :'seat_discounts' => :'seatDiscounts',
         :'subscription_start_date' => :'subscriptionStartDate',
         :'support_incident_fee' => :'supportIncidentFee',
-        :'support_plan_fee' => :'supportPlanFee'
+        :'support_plan_fee' => :'supportPlanFee',
+        :'tax_exempt_id' => :'taxExemptId'
       }
     end
 
@@ -161,7 +165,8 @@ module DocuSign_eSign
         :'seat_discounts' => :'Array<SeatDiscount>',
         :'subscription_start_date' => :'String',
         :'support_incident_fee' => :'String',
-        :'support_plan_fee' => :'String'
+        :'support_plan_fee' => :'String',
+        :'tax_exempt_id' => :'String'
       }
     end
 
@@ -290,6 +295,10 @@ module DocuSign_eSign
       if attributes.has_key?(:'supportPlanFee')
         self.support_plan_fee = attributes[:'supportPlanFee']
       end
+
+      if attributes.has_key?(:'taxExemptId')
+        self.tax_exempt_id = attributes[:'taxExemptId']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -337,7 +346,8 @@ module DocuSign_eSign
           seat_discounts == o.seat_discounts &&
           subscription_start_date == o.subscription_start_date &&
           support_incident_fee == o.support_incident_fee &&
-          support_plan_fee == o.support_plan_fee
+          support_plan_fee == o.support_plan_fee &&
+          tax_exempt_id == o.tax_exempt_id
     end
 
     # @see the `==` method
@@ -349,7 +359,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [add_ons, app_store_receipt_expiration_date, app_store_receipt_purchase_date, can_cancel_renewal, can_upgrade, currency_code, downgrade_plan_information, enable_support, included_seats, incremental_seats, is_downgrade, notification_type, other_discount_percent, payment_cycle, payment_method, per_seat_price, plan_classification, plan_feature_sets, plan_id, plan_name, plan_start_date, product_id, renewal_date, renewal_status, seat_discounts, subscription_start_date, support_incident_fee, support_plan_fee].hash
+      [add_ons, app_store_receipt_expiration_date, app_store_receipt_purchase_date, can_cancel_renewal, can_upgrade, currency_code, downgrade_plan_information, enable_support, included_seats, incremental_seats, is_downgrade, notification_type, other_discount_percent, payment_cycle, payment_method, per_seat_price, plan_classification, plan_feature_sets, plan_id, plan_name, plan_start_date, product_id, renewal_date, renewal_status, seat_discounts, subscription_start_date, support_incident_fee, support_plan_fee, tax_exempt_id].hash
     end
 
     # Builds the object from hash

@@ -26,6 +26,9 @@ module DocuSign_eSign
     # When set to **true**, excludes successor information from the response.
     attr_accessor :include_successor_plans
 
+    # 
+    attr_accessor :include_tax_exempt_id
+
     def self.default
       @@default ||= GetPlanOptions.new
     end
@@ -355,6 +358,7 @@ module DocuSign_eSign
       query_params[:'include_downgrade_information'] = options.include_downgrade_information if !options.include_downgrade_information.nil?
       query_params[:'include_metadata'] = options.include_metadata if !options.include_metadata.nil?
       query_params[:'include_successor_plans'] = options.include_successor_plans if !options.include_successor_plans.nil?
+      query_params[:'include_tax_exempt_id'] = options.include_tax_exempt_id if !options.include_tax_exempt_id.nil?
 
       # header parameters
       header_params = {}

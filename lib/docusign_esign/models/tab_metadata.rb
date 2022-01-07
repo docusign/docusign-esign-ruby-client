@@ -102,7 +102,13 @@ module DocuSign_eSign
     # The maximum number of entry characters supported by the custom tab.
     attr_accessor :maximum_length
 
+    # 
+    attr_accessor :max_numerical_value
+
     attr_accessor :merge_field
+
+    # 
+    attr_accessor :min_numerical_value
 
     # 
     attr_accessor :name
@@ -193,7 +199,9 @@ module DocuSign_eSign
         :'locale_policy' => :'localePolicy',
         :'locked' => :'locked',
         :'maximum_length' => :'maximumLength',
+        :'max_numerical_value' => :'maxNumericalValue',
         :'merge_field' => :'mergeField',
+        :'min_numerical_value' => :'minNumericalValue',
         :'name' => :'name',
         :'numerical_value' => :'numericalValue',
         :'payment_item_code' => :'paymentItemCode',
@@ -249,7 +257,9 @@ module DocuSign_eSign
         :'locale_policy' => :'LocalePolicyTab',
         :'locked' => :'String',
         :'maximum_length' => :'String',
+        :'max_numerical_value' => :'String',
         :'merge_field' => :'MergeField',
+        :'min_numerical_value' => :'String',
         :'name' => :'String',
         :'numerical_value' => :'String',
         :'payment_item_code' => :'String',
@@ -402,8 +412,16 @@ module DocuSign_eSign
         self.maximum_length = attributes[:'maximumLength']
       end
 
+      if attributes.has_key?(:'maxNumericalValue')
+        self.max_numerical_value = attributes[:'maxNumericalValue']
+      end
+
       if attributes.has_key?(:'mergeField')
         self.merge_field = attributes[:'mergeField']
+      end
+
+      if attributes.has_key?(:'minNumericalValue')
+        self.min_numerical_value = attributes[:'minNumericalValue']
       end
 
       if attributes.has_key?(:'name')
@@ -531,7 +549,9 @@ module DocuSign_eSign
           locale_policy == o.locale_policy &&
           locked == o.locked &&
           maximum_length == o.maximum_length &&
+          max_numerical_value == o.max_numerical_value &&
           merge_field == o.merge_field &&
+          min_numerical_value == o.min_numerical_value &&
           name == o.name &&
           numerical_value == o.numerical_value &&
           payment_item_code == o.payment_item_code &&
@@ -562,7 +582,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor, anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_units, anchor_x_offset, anchor_y_offset, bold, collaborative, conceal_value_on_document, created_by_display_name, created_by_user_id, custom_tab_id, disable_auto_size, editable, font, font_color, font_size, height, included_in_email, initial_value, italic, items, last_modified, last_modified_by_display_name, last_modified_by_user_id, locale_policy, locked, maximum_length, merge_field, name, numerical_value, payment_item_code, payment_item_description, payment_item_name, require_all, required, require_initial_on_shared_change, scale_value, selected, shared, stamp_type, stamp_type_metadata, tab_label, type, underline, validation_message, validation_pattern, width].hash
+      [anchor, anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_units, anchor_x_offset, anchor_y_offset, bold, collaborative, conceal_value_on_document, created_by_display_name, created_by_user_id, custom_tab_id, disable_auto_size, editable, font, font_color, font_size, height, included_in_email, initial_value, italic, items, last_modified, last_modified_by_display_name, last_modified_by_user_id, locale_policy, locked, maximum_length, max_numerical_value, merge_field, min_numerical_value, name, numerical_value, payment_item_code, payment_item_description, payment_item_name, require_all, required, require_initial_on_shared_change, scale_value, selected, shared, stamp_type, stamp_type_metadata, tab_label, type, underline, validation_message, validation_pattern, width].hash
     end
 
     # Builds the object from hash

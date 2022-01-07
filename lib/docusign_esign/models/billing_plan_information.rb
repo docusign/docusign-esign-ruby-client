@@ -60,6 +60,9 @@ module DocuSign_eSign
     # 
     attr_accessor :sale_discount_seat_price_override
 
+    # 
+    attr_accessor :tax_exempt_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -80,7 +83,8 @@ module DocuSign_eSign
         :'sale_discount_fixed_amount' => :'saleDiscountFixedAmount',
         :'sale_discount_percent' => :'saleDiscountPercent',
         :'sale_discount_periods' => :'saleDiscountPeriods',
-        :'sale_discount_seat_price_override' => :'saleDiscountSeatPriceOverride'
+        :'sale_discount_seat_price_override' => :'saleDiscountSeatPriceOverride',
+        :'tax_exempt_id' => :'taxExemptId'
       }
     end
 
@@ -104,7 +108,8 @@ module DocuSign_eSign
         :'sale_discount_fixed_amount' => :'String',
         :'sale_discount_percent' => :'String',
         :'sale_discount_periods' => :'String',
-        :'sale_discount_seat_price_override' => :'String'
+        :'sale_discount_seat_price_override' => :'String',
+        :'tax_exempt_id' => :'String'
       }
     end
 
@@ -187,6 +192,10 @@ module DocuSign_eSign
       if attributes.has_key?(:'saleDiscountSeatPriceOverride')
         self.sale_discount_seat_price_override = attributes[:'saleDiscountSeatPriceOverride']
       end
+
+      if attributes.has_key?(:'taxExemptId')
+        self.tax_exempt_id = attributes[:'taxExemptId']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -224,7 +233,8 @@ module DocuSign_eSign
           sale_discount_fixed_amount == o.sale_discount_fixed_amount &&
           sale_discount_percent == o.sale_discount_percent &&
           sale_discount_periods == o.sale_discount_periods &&
-          sale_discount_seat_price_override == o.sale_discount_seat_price_override
+          sale_discount_seat_price_override == o.sale_discount_seat_price_override &&
+          tax_exempt_id == o.tax_exempt_id
     end
 
     # @see the `==` method
@@ -236,7 +246,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [app_store_receipt, billing_address, credit_card_information, direct_debit_processor_information, downgrade_reason, enable_support, included_seats, incremental_seats, payment_method, payment_processor_information, plan_information, referral_information, renewal_status, sale_discount_amount, sale_discount_fixed_amount, sale_discount_percent, sale_discount_periods, sale_discount_seat_price_override].hash
+      [app_store_receipt, billing_address, credit_card_information, direct_debit_processor_information, downgrade_reason, enable_support, included_seats, incremental_seats, payment_method, payment_processor_information, plan_information, referral_information, renewal_status, sale_discount_amount, sale_discount_fixed_amount, sale_discount_percent, sale_discount_periods, sale_discount_seat_price_override, tax_exempt_id].hash
     end
 
     # Builds the object from hash

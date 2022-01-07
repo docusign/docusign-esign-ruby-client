@@ -19,6 +19,12 @@ module DocuSign_eSign
     # 
     attr_accessor :bulk_batch_summaries
 
+    # 
+    attr_accessor :bulk_process_queue_limit
+
+    # 
+    attr_accessor :bulk_process_total_queued
+
     # The last position in the result set. 
     attr_accessor :end_position
 
@@ -48,6 +54,8 @@ module DocuSign_eSign
       {
         :'batch_size_limit' => :'batchSizeLimit',
         :'bulk_batch_summaries' => :'bulkBatchSummaries',
+        :'bulk_process_queue_limit' => :'bulkProcessQueueLimit',
+        :'bulk_process_total_queued' => :'bulkProcessTotalQueued',
         :'end_position' => :'endPosition',
         :'next_uri' => :'nextUri',
         :'previous_uri' => :'previousUri',
@@ -64,6 +72,8 @@ module DocuSign_eSign
       {
         :'batch_size_limit' => :'String',
         :'bulk_batch_summaries' => :'Array<BulkSendBatchSummary>',
+        :'bulk_process_queue_limit' => :'String',
+        :'bulk_process_total_queued' => :'String',
         :'end_position' => :'String',
         :'next_uri' => :'String',
         :'previous_uri' => :'String',
@@ -91,6 +101,14 @@ module DocuSign_eSign
         if (value = attributes[:'bulkBatchSummaries']).is_a?(Array)
           self.bulk_batch_summaries = value
         end
+      end
+
+      if attributes.has_key?(:'bulkProcessQueueLimit')
+        self.bulk_process_queue_limit = attributes[:'bulkProcessQueueLimit']
+      end
+
+      if attributes.has_key?(:'bulkProcessTotalQueued')
+        self.bulk_process_total_queued = attributes[:'bulkProcessTotalQueued']
       end
 
       if attributes.has_key?(:'endPosition')
@@ -146,6 +164,8 @@ module DocuSign_eSign
       self.class == o.class &&
           batch_size_limit == o.batch_size_limit &&
           bulk_batch_summaries == o.bulk_batch_summaries &&
+          bulk_process_queue_limit == o.bulk_process_queue_limit &&
+          bulk_process_total_queued == o.bulk_process_total_queued &&
           end_position == o.end_position &&
           next_uri == o.next_uri &&
           previous_uri == o.previous_uri &&
@@ -165,7 +185,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [batch_size_limit, bulk_batch_summaries, end_position, next_uri, previous_uri, queue_limit, result_set_size, start_position, total_queued, total_set_size].hash
+      [batch_size_limit, bulk_batch_summaries, bulk_process_queue_limit, bulk_process_total_queued, end_position, next_uri, previous_uri, queue_limit, result_set_size, start_position, total_queued, total_set_size].hash
     end
 
     # Builds the object from hash
