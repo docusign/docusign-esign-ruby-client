@@ -41,6 +41,9 @@ module DocuSign_eSign
     # 
     attr_accessor :successor_plans
 
+    # 
+    attr_accessor :tax_exempt_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -55,7 +58,8 @@ module DocuSign_eSign
         :'payment_method' => :'paymentMethod',
         :'payment_processor_information' => :'paymentProcessorInformation',
         :'referral_information' => :'referralInformation',
-        :'successor_plans' => :'successorPlans'
+        :'successor_plans' => :'successorPlans',
+        :'tax_exempt_id' => :'taxExemptId'
       }
     end
 
@@ -73,7 +77,8 @@ module DocuSign_eSign
         :'payment_method' => :'String',
         :'payment_processor_information' => :'PaymentProcessorInformation',
         :'referral_information' => :'ReferralInformation',
-        :'successor_plans' => :'Array<BillingPlan>'
+        :'successor_plans' => :'Array<BillingPlan>',
+        :'tax_exempt_id' => :'String'
       }
     end
 
@@ -134,6 +139,10 @@ module DocuSign_eSign
           self.successor_plans = value
         end
       end
+
+      if attributes.has_key?(:'taxExemptId')
+        self.tax_exempt_id = attributes[:'taxExemptId']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -165,7 +174,8 @@ module DocuSign_eSign
           payment_method == o.payment_method &&
           payment_processor_information == o.payment_processor_information &&
           referral_information == o.referral_information &&
-          successor_plans == o.successor_plans
+          successor_plans == o.successor_plans &&
+          tax_exempt_id == o.tax_exempt_id
     end
 
     # @see the `==` method
@@ -177,7 +187,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [billing_address, billing_address_is_credit_card_address, billing_plan, credit_card_information, direct_debit_processor_information, downgrade_plan_information, downgrade_request_information, entity_information, payment_method, payment_processor_information, referral_information, successor_plans].hash
+      [billing_address, billing_address_is_credit_card_address, billing_plan, credit_card_information, direct_debit_processor_information, downgrade_plan_information, downgrade_request_information, entity_information, payment_method, payment_processor_information, referral_information, successor_plans, tax_exempt_id].hash
     end
 
     # Builds the object from hash

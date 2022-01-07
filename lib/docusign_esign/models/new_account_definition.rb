@@ -46,6 +46,9 @@ module DocuSign_eSign
 
     attr_accessor :social_account_information
 
+    # 
+    attr_accessor :tax_exempt_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -62,7 +65,8 @@ module DocuSign_eSign
         :'payment_processor_information' => :'paymentProcessorInformation',
         :'plan_information' => :'planInformation',
         :'referral_information' => :'referralInformation',
-        :'social_account_information' => :'socialAccountInformation'
+        :'social_account_information' => :'socialAccountInformation',
+        :'tax_exempt_id' => :'taxExemptId'
       }
     end
 
@@ -82,7 +86,8 @@ module DocuSign_eSign
         :'payment_processor_information' => :'PaymentProcessorInformation',
         :'plan_information' => :'PlanInformation',
         :'referral_information' => :'ReferralInformation',
-        :'social_account_information' => :'SocialAccountInformation'
+        :'social_account_information' => :'SocialAccountInformation',
+        :'tax_exempt_id' => :'String'
       }
     end
 
@@ -149,6 +154,10 @@ module DocuSign_eSign
       if attributes.has_key?(:'socialAccountInformation')
         self.social_account_information = attributes[:'socialAccountInformation']
       end
+
+      if attributes.has_key?(:'taxExemptId')
+        self.tax_exempt_id = attributes[:'taxExemptId']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -182,7 +191,8 @@ module DocuSign_eSign
           payment_processor_information == o.payment_processor_information &&
           plan_information == o.plan_information &&
           referral_information == o.referral_information &&
-          social_account_information == o.social_account_information
+          social_account_information == o.social_account_information &&
+          tax_exempt_id == o.tax_exempt_id
     end
 
     # @see the `==` method
@@ -194,7 +204,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_name, account_settings, address_information, credit_card_information, direct_debit_processor_information, distributor_code, distributor_password, envelope_partition_id, initial_user, payment_method, payment_processor_information, plan_information, referral_information, social_account_information].hash
+      [account_name, account_settings, address_information, credit_card_information, direct_debit_processor_information, distributor_code, distributor_password, envelope_partition_id, initial_user, payment_method, payment_processor_information, plan_information, referral_information, social_account_information, tax_exempt_id].hash
     end
 
     # Builds the object from hash

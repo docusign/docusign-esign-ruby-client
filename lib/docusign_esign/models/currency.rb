@@ -152,10 +152,16 @@ module DocuSign_eSign
 
     attr_accessor :max_length_metadata
 
+    # 
+    attr_accessor :max_numerical_value
+
     attr_accessor :merge_field
 
     # 
     attr_accessor :merge_field_xml
+
+    # 
+    attr_accessor :min_numerical_value
 
     # 
     attr_accessor :name
@@ -344,8 +350,10 @@ module DocuSign_eSign
         :'locked_metadata' => :'lockedMetadata',
         :'max_length' => :'maxLength',
         :'max_length_metadata' => :'maxLengthMetadata',
+        :'max_numerical_value' => :'maxNumericalValue',
         :'merge_field' => :'mergeField',
         :'merge_field_xml' => :'mergeFieldXml',
+        :'min_numerical_value' => :'minNumericalValue',
         :'name' => :'name',
         :'name_metadata' => :'nameMetadata',
         :'numerical_value' => :'numericalValue',
@@ -459,8 +467,10 @@ module DocuSign_eSign
         :'locked_metadata' => :'PropertyMetadata',
         :'max_length' => :'String',
         :'max_length_metadata' => :'PropertyMetadata',
+        :'max_numerical_value' => :'String',
         :'merge_field' => :'MergeField',
         :'merge_field_xml' => :'String',
+        :'min_numerical_value' => :'String',
         :'name' => :'String',
         :'name_metadata' => :'PropertyMetadata',
         :'numerical_value' => :'String',
@@ -747,12 +757,20 @@ module DocuSign_eSign
         self.max_length_metadata = attributes[:'maxLengthMetadata']
       end
 
+      if attributes.has_key?(:'maxNumericalValue')
+        self.max_numerical_value = attributes[:'maxNumericalValue']
+      end
+
       if attributes.has_key?(:'mergeField')
         self.merge_field = attributes[:'mergeField']
       end
 
       if attributes.has_key?(:'mergeFieldXml')
         self.merge_field_xml = attributes[:'mergeFieldXml']
+      end
+
+      if attributes.has_key?(:'minNumericalValue')
+        self.min_numerical_value = attributes[:'minNumericalValue']
       end
 
       if attributes.has_key?(:'name')
@@ -1036,8 +1054,10 @@ module DocuSign_eSign
           locked_metadata == o.locked_metadata &&
           max_length == o.max_length &&
           max_length_metadata == o.max_length_metadata &&
+          max_numerical_value == o.max_numerical_value &&
           merge_field == o.merge_field &&
           merge_field_xml == o.merge_field_xml &&
+          min_numerical_value == o.min_numerical_value &&
           name == o.name &&
           name_metadata == o.name_metadata &&
           numerical_value == o.numerical_value &&
@@ -1100,7 +1120,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, conceal_value_on_document, conceal_value_on_document_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, custom_tab_id, custom_tab_id_metadata, disable_auto_size, disable_auto_size_metadata, document_id, document_id_metadata, error_details, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, height, height_metadata, italic, italic_metadata, locale_policy, locked, locked_metadata, max_length, max_length_metadata, merge_field, merge_field_xml, name, name_metadata, numerical_value, original_value, original_value_metadata, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, require_all, require_all_metadata, required, required_metadata, require_initial_on_shared_change, require_initial_on_shared_change_metadata, sender_required, sender_required_metadata, shared, shared_metadata, smart_contract_information, source, status, status_metadata, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_label_metadata, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, underline, underline_metadata, value, value_metadata, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
+      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, conceal_value_on_document, conceal_value_on_document_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, custom_tab_id, custom_tab_id_metadata, disable_auto_size, disable_auto_size_metadata, document_id, document_id_metadata, error_details, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, height, height_metadata, italic, italic_metadata, locale_policy, locked, locked_metadata, max_length, max_length_metadata, max_numerical_value, merge_field, merge_field_xml, min_numerical_value, name, name_metadata, numerical_value, original_value, original_value_metadata, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, require_all, require_all_metadata, required, required_metadata, require_initial_on_shared_change, require_initial_on_shared_change_metadata, sender_required, sender_required_metadata, shared, shared_metadata, smart_contract_information, source, status, status_metadata, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_label_metadata, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, underline, underline_metadata, value, value_metadata, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
     end
 
     # Builds the object from hash
