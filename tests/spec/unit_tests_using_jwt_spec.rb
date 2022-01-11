@@ -7,10 +7,12 @@ require 'launchy'
 describe 'DocuSign Ruby Client Tests' do
   def login
     begin
+      puts "1"
       if $api_client.nil?
         configuration = DocuSign_eSign::Configuration.new
         configuration.host = $host
 
+        puts "2"
         $api_client = DocuSign_eSign::ApiClient.new(configuration)
         $api_client.set_oauth_base_path(DocuSign_eSign::OAuth::DEMO_OAUTH_BASE_PATH)
         # IMPORTANT NOTE:
@@ -22,15 +24,21 @@ describe 'DocuSign Ruby Client Tests' do
         # END OF NOTE
       end
 
+      puts "3"
       decode_base64_content = Base64.decode64(ENV["PRIVATE_KEY"])
+      puts $decode_base64_content
+
       File.open($private_key_filename, "wb") do |f|
         f.write(decode_base64_content)
       end
 
       token_obj = $api_client.request_jwt_user_token(ENV["INTEGRATOR_KEY_JWT"], ENV["USER_ID"], File.read($private_key_filename), $expires_in_seconds)
+      puts "4"
+      puts $token_obj
 
       user_info = $api_client.get_user_info(token_obj.access_token)
-
+      puts "4"
+      
       if !user_info.nil?
         user_info.accounts.each do |account|
           if account.is_default == "true"
