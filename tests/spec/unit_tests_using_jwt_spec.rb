@@ -25,20 +25,25 @@ describe 'DocuSign Ruby Client Tests' do
       end
 
       puts "3"
+      encodedprokey = ENV["PRIVATE_KEY"]
+      puts $encodedprokey
+
       decode_base64_content = Base64.decode64(ENV["PRIVATE_KEY"])
       puts $decode_base64_content
+      puts "3.1"
 
       File.open($private_key_filename, "wb") do |f|
         f.write(decode_base64_content)
       end
 
+      puts "3.2"
       token_obj = $api_client.request_jwt_user_token(ENV["INTEGRATOR_KEY_JWT"], ENV["USER_ID"], File.read($private_key_filename), $expires_in_seconds)
       puts "4"
       puts $token_obj
 
       user_info = $api_client.get_user_info(token_obj.access_token)
-      puts "4"
-      
+      puts "5"
+
       if !user_info.nil?
         user_info.accounts.each do |account|
           if account.is_default == "true"
