@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
 gem 'rspec'
-gem 'dotenv'
-gem 'launchy'
+
 gem 'docusign_esign', path: '../'
