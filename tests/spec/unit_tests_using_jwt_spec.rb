@@ -1,8 +1,7 @@
-require 'dotenv/load'
 require 'docusign_esign'
 require 'base64'
 require 'uri'
-require 'launchy'
+#require 'launchy'
 
 describe 'DocuSign Ruby Client Tests' do
   def login
