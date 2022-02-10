@@ -116,7 +116,7 @@ module DocuSign_eSign
 
     attr_accessor :allow_data_download_metadata
 
-    # 
+    # \"true\" if the account has permission to use the delayed routing feature to insert delays before routing an envelope to a recipient, \"false\" otherwise.
     attr_accessor :allow_delayed_routing
 
     attr_accessor :allow_delayed_routing_metadata
@@ -351,7 +351,7 @@ module DocuSign_eSign
 
     attr_accessor :allow_safe_bio_pharma_signer_certificate_metadata
 
-    # 
+    # \"true\" if the account has permission to use the scheduled sending feature to send envelopes at a specified datetime in the future, \"false\" otherwise.
     attr_accessor :allow_scheduled_sending
 
     attr_accessor :allow_scheduled_sending_metadata

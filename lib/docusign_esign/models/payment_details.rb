@@ -58,6 +58,9 @@ module DocuSign_eSign
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
     attr_accessor :status
 
+    # 
+    attr_accessor :sub_gateway_name
+
     attr_accessor :total
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -79,6 +82,7 @@ module DocuSign_eSign
         :'payment_source_id' => :'paymentSourceId',
         :'signer_values' => :'signerValues',
         :'status' => :'status',
+        :'sub_gateway_name' => :'subGatewayName',
         :'total' => :'total'
       }
     end
@@ -102,6 +106,7 @@ module DocuSign_eSign
         :'payment_source_id' => :'String',
         :'signer_values' => :'PaymentSignerValues',
         :'status' => :'String',
+        :'sub_gateway_name' => :'String',
         :'total' => :'Money'
       }
     end
@@ -182,6 +187,10 @@ module DocuSign_eSign
         self.status = attributes[:'status']
       end
 
+      if attributes.has_key?(:'subGatewayName')
+        self.sub_gateway_name = attributes[:'subGatewayName']
+      end
+
       if attributes.has_key?(:'total')
         self.total = attributes[:'total']
       end
@@ -221,6 +230,7 @@ module DocuSign_eSign
           payment_source_id == o.payment_source_id &&
           signer_values == o.signer_values &&
           status == o.status &&
+          sub_gateway_name == o.sub_gateway_name &&
           total == o.total
     end
 
@@ -233,7 +243,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allowed_payment_methods, charge_id, currency_code, currency_code_metadata, customer_id, custom_metadata, custom_metadata_required, gateway_account_id, gateway_account_id_metadata, gateway_display_name, gateway_name, line_items, payment_option, payment_source_id, signer_values, status, total].hash
+      [allowed_payment_methods, charge_id, currency_code, currency_code_metadata, customer_id, custom_metadata, custom_metadata_required, gateway_account_id, gateway_account_id_metadata, gateway_display_name, gateway_name, line_items, payment_option, payment_source_id, signer_values, status, sub_gateway_name, total].hash
     end
 
     # Builds the object from hash

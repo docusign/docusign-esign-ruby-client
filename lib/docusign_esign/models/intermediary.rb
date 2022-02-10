@@ -69,6 +69,9 @@ module DocuSign_eSign
 
     attr_accessor :email_notification
 
+    # 
+    attr_accessor :email_recipient_post_signing_url
+
     # Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender's system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to `SIGN_AT_DOCUSIGN`, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient's identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets `EmbeddedRecipientStartURL=SIGN_AT_DOCUSIGN`, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the `clientUserId` property is NOT set, and the `embeddedRecipientStartURL` is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The `customFields` property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   `http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&[[mergeField3]]` 
     attr_accessor :embedded_recipient_start_url
 
@@ -227,6 +230,7 @@ module DocuSign_eSign
         :'email' => :'email',
         :'email_metadata' => :'emailMetadata',
         :'email_notification' => :'emailNotification',
+        :'email_recipient_post_signing_url' => :'emailRecipientPostSigningURL',
         :'embedded_recipient_start_url' => :'embeddedRecipientStartURL',
         :'error_details' => :'errorDetails',
         :'excluded_documents' => :'excludedDocuments',
@@ -304,6 +308,7 @@ module DocuSign_eSign
         :'email' => :'String',
         :'email_metadata' => :'PropertyMetadata',
         :'email_notification' => :'RecipientEmailNotification',
+        :'email_recipient_post_signing_url' => :'String',
         :'embedded_recipient_start_url' => :'String',
         :'error_details' => :'ErrorDetails',
         :'excluded_documents' => :'Array<String>',
@@ -450,6 +455,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'emailNotification')
         self.email_notification = attributes[:'emailNotification']
+      end
+
+      if attributes.has_key?(:'emailRecipientPostSigningURL')
+        self.email_recipient_post_signing_url = attributes[:'emailRecipientPostSigningURL']
       end
 
       if attributes.has_key?(:'embeddedRecipientStartURL')
@@ -705,6 +714,7 @@ module DocuSign_eSign
           email == o.email &&
           email_metadata == o.email_metadata &&
           email_notification == o.email_notification &&
+          email_recipient_post_signing_url == o.email_recipient_post_signing_url &&
           embedded_recipient_start_url == o.embedded_recipient_start_url &&
           error_details == o.error_details &&
           excluded_documents == o.excluded_documents &&
@@ -767,7 +777,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, allow_system_override_for_locked_recipient, auto_responded_reason, client_user_id, completed_count, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, phone_authentication, phone_number, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, role_name, routing_order, routing_order_metadata, sent_date_time, signed_date_time, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, allow_system_override_for_locked_recipient, auto_responded_reason, client_user_id, completed_count, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, phone_authentication, phone_number, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, role_name, routing_order, routing_order_metadata, sent_date_time, signed_date_time, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash

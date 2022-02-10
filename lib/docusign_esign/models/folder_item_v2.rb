@@ -37,6 +37,9 @@ module DocuSign_eSign
     # When set to **true**, indicates that this module is enabled on the account.
     attr_accessor :is21_cfr_part11
 
+    # The date and time the item was last modified.
+    attr_accessor :last_modified_date_time
+
     # 
     attr_accessor :owner_name
 
@@ -83,6 +86,7 @@ module DocuSign_eSign
         :'folder_id' => :'folderId',
         :'folder_uri' => :'folderUri',
         :'is21_cfr_part11' => :'is21CFRPart11',
+        :'last_modified_date_time' => :'lastModifiedDateTime',
         :'owner_name' => :'ownerName',
         :'recipients' => :'recipients',
         :'recipients_uri' => :'recipientsUri',
@@ -109,6 +113,7 @@ module DocuSign_eSign
         :'folder_id' => :'String',
         :'folder_uri' => :'String',
         :'is21_cfr_part11' => :'String',
+        :'last_modified_date_time' => :'String',
         :'owner_name' => :'String',
         :'recipients' => :'Recipients',
         :'recipients_uri' => :'String',
@@ -162,6 +167,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'is21CFRPart11')
         self.is21_cfr_part11 = attributes[:'is21CFRPart11']
+      end
+
+      if attributes.has_key?(:'lastModifiedDateTime')
+        self.last_modified_date_time = attributes[:'lastModifiedDateTime']
       end
 
       if attributes.has_key?(:'ownerName')
@@ -239,6 +248,7 @@ module DocuSign_eSign
           folder_id == o.folder_id &&
           folder_uri == o.folder_uri &&
           is21_cfr_part11 == o.is21_cfr_part11 &&
+          last_modified_date_time == o.last_modified_date_time &&
           owner_name == o.owner_name &&
           recipients == o.recipients &&
           recipients_uri == o.recipients_uri &&
@@ -262,7 +272,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [completed_date_time, created_date_time, envelope_id, envelope_uri, expire_date_time, folder_id, folder_uri, is21_cfr_part11, owner_name, recipients, recipients_uri, sender_company, sender_email, sender_name, sender_user_id, sent_date_time, status, subject, template_id, template_uri].hash
+      [completed_date_time, created_date_time, envelope_id, envelope_uri, expire_date_time, folder_id, folder_uri, is21_cfr_part11, last_modified_date_time, owner_name, recipients, recipients_uri, sender_company, sender_email, sender_name, sender_user_id, sent_date_time, status, subject, template_id, template_uri].hash
     end
 
     # Builds the object from hash
