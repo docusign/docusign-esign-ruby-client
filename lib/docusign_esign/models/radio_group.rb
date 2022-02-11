@@ -33,6 +33,11 @@ module DocuSign_eSign
 
     attr_accessor :group_name_metadata
 
+    # The initial value of the tab when it was sent to the recipient. 
+    attr_accessor :original_value
+
+    attr_accessor :original_value_metadata
+
     # Specifies the locations and status for radio buttons that are grouped together.
     attr_accessor :radios
 
@@ -86,6 +91,11 @@ module DocuSign_eSign
 
     attr_accessor :tooltip_metadata
 
+    # Specifies the value of the tab. 
+    attr_accessor :value
+
+    attr_accessor :value_metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -97,6 +107,8 @@ module DocuSign_eSign
         :'document_id_metadata' => :'documentIdMetadata',
         :'group_name' => :'groupName',
         :'group_name_metadata' => :'groupNameMetadata',
+        :'original_value' => :'originalValue',
+        :'original_value_metadata' => :'originalValueMetadata',
         :'radios' => :'radios',
         :'recipient_id' => :'recipientId',
         :'recipient_id_guid' => :'recipientIdGuid',
@@ -117,7 +129,9 @@ module DocuSign_eSign
         :'template_required' => :'templateRequired',
         :'template_required_metadata' => :'templateRequiredMetadata',
         :'tooltip' => :'tooltip',
-        :'tooltip_metadata' => :'tooltipMetadata'
+        :'tooltip_metadata' => :'tooltipMetadata',
+        :'value' => :'value',
+        :'value_metadata' => :'valueMetadata'
       }
     end
 
@@ -132,6 +146,8 @@ module DocuSign_eSign
         :'document_id_metadata' => :'PropertyMetadata',
         :'group_name' => :'String',
         :'group_name_metadata' => :'PropertyMetadata',
+        :'original_value' => :'String',
+        :'original_value_metadata' => :'PropertyMetadata',
         :'radios' => :'Array<Radio>',
         :'recipient_id' => :'String',
         :'recipient_id_guid' => :'String',
@@ -152,7 +168,9 @@ module DocuSign_eSign
         :'template_required' => :'String',
         :'template_required_metadata' => :'PropertyMetadata',
         :'tooltip' => :'String',
-        :'tooltip_metadata' => :'PropertyMetadata'
+        :'tooltip_metadata' => :'PropertyMetadata',
+        :'value' => :'String',
+        :'value_metadata' => :'PropertyMetadata'
       }
     end
 
@@ -194,6 +212,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'groupNameMetadata')
         self.group_name_metadata = attributes[:'groupNameMetadata']
+      end
+
+      if attributes.has_key?(:'originalValue')
+        self.original_value = attributes[:'originalValue']
+      end
+
+      if attributes.has_key?(:'originalValueMetadata')
+        self.original_value_metadata = attributes[:'originalValueMetadata']
       end
 
       if attributes.has_key?(:'radios')
@@ -281,6 +307,14 @@ module DocuSign_eSign
       if attributes.has_key?(:'tooltipMetadata')
         self.tooltip_metadata = attributes[:'tooltipMetadata']
       end
+
+      if attributes.has_key?(:'value')
+        self.value = attributes[:'value']
+      end
+
+      if attributes.has_key?(:'valueMetadata')
+        self.value_metadata = attributes[:'valueMetadata']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -309,6 +343,8 @@ module DocuSign_eSign
           document_id_metadata == o.document_id_metadata &&
           group_name == o.group_name &&
           group_name_metadata == o.group_name_metadata &&
+          original_value == o.original_value &&
+          original_value_metadata == o.original_value_metadata &&
           radios == o.radios &&
           recipient_id == o.recipient_id &&
           recipient_id_guid == o.recipient_id_guid &&
@@ -329,7 +365,9 @@ module DocuSign_eSign
           template_required == o.template_required &&
           template_required_metadata == o.template_required_metadata &&
           tooltip == o.tooltip &&
-          tooltip_metadata == o.tooltip_metadata
+          tooltip_metadata == o.tooltip_metadata &&
+          value == o.value &&
+          value_metadata == o.value_metadata
     end
 
     # @see the `==` method
@@ -341,7 +379,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, document_id, document_id_metadata, group_name, group_name_metadata, radios, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, require_all, require_all_metadata, require_initial_on_shared_change, require_initial_on_shared_change_metadata, shared, shared_metadata, share_to_recipients, share_to_recipients_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tooltip_metadata].hash
+      [conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, document_id, document_id_metadata, group_name, group_name_metadata, original_value, original_value_metadata, radios, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, require_all, require_all_metadata, require_initial_on_shared_change, require_initial_on_shared_change_metadata, shared, shared_metadata, share_to_recipients, share_to_recipients_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tooltip_metadata, value, value_metadata].hash
     end
 
     # Builds the object from hash

@@ -13,21 +13,21 @@ require 'date'
 
 module DocuSign_eSign
   class DelayedRoutingApiModel
-    # 
+    # An ISO 8601 formatted datetime string indicating the date and time that the envelope is (or was) scheduled to be sent to the recipients associated with the current workflow step or null if the envelope has not yet begun processing the current workflow step.
     attr_accessor :resume_date
 
-    # 
+    # A list of envelope delay rules specified by the user indicating how and when the envelope should be sent in the future for the current workflow step and its associated recipients. Currently only 1 rule may be specified.
     attr_accessor :rules
 
-    # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+    # \"pending\" if the current workflow step has not been reached and the delay has not yet started. \"started\" if the delay is in progress. \"completed\" if the delay has elapsed and the envelope has been sent to the current workflow step's recipients.
     attr_accessor :status
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'resume_date' => :'ResumeDate',
-        :'rules' => :'Rules',
-        :'status' => :'Status'
+        :'resume_date' => :'resumeDate',
+        :'rules' => :'rules',
+        :'status' => :'status'
       }
     end
 
@@ -48,18 +48,18 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'ResumeDate')
-        self.resume_date = attributes[:'ResumeDate']
+      if attributes.has_key?(:'resumeDate')
+        self.resume_date = attributes[:'resumeDate']
       end
 
-      if attributes.has_key?(:'Rules')
-        if (value = attributes[:'Rules']).is_a?(Array)
+      if attributes.has_key?(:'rules')
+        if (value = attributes[:'rules']).is_a?(Array)
           self.rules = value
         end
       end
 
-      if attributes.has_key?(:'Status')
-        self.status = attributes[:'Status']
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
       end
     end
 

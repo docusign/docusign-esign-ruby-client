@@ -13,21 +13,21 @@ require 'date'
 
 module DocuSign_eSign
   class ScheduledSendingApiModel
-    # 
+    # An ISO 8601 formatted datetime string indicating the date and time that the envelope is (or was) scheduled to be sent or null if the envelope has not yet been sent.
     attr_accessor :resume_date
 
-    # 
+    # A list of envelope delay rules specified by the user indicating how and when the envelope should be scheduled for sending in the future. Currently only 1 rule may be specified.
     attr_accessor :rules
 
-    # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+    # \"pending\" if the envelope has not yet been sent and the scheduled sending delay has not iniaited. \"started\" if the scheduled sending delay is in progress. \"completed\" if the scheduled sending delay has elapsed and the envelope has been sent.
     attr_accessor :status
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'resume_date' => :'ResumeDate',
-        :'rules' => :'Rules',
-        :'status' => :'Status'
+        :'resume_date' => :'resumeDate',
+        :'rules' => :'rules',
+        :'status' => :'status'
       }
     end
 
@@ -48,18 +48,18 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'ResumeDate')
-        self.resume_date = attributes[:'ResumeDate']
+      if attributes.has_key?(:'resumeDate')
+        self.resume_date = attributes[:'resumeDate']
       end
 
-      if attributes.has_key?(:'Rules')
-        if (value = attributes[:'Rules']).is_a?(Array)
+      if attributes.has_key?(:'rules')
+        if (value = attributes[:'rules']).is_a?(Array)
           self.rules = value
         end
       end
 
-      if attributes.has_key?(:'Status')
-        self.status = attributes[:'Status']
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
       end
     end
 

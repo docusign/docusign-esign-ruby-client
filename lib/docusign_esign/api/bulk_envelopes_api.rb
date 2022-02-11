@@ -560,6 +560,65 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Initiate a specific bulk send batch action
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param bulk_action 
+    # @param bulk_send_batch_id 
+    # @param bulk_send_batch_action_request  (optional parameter)
+    # @return [BulkSendBatchStatus]
+    def update_bulk_send_batch_action(account_id, bulk_action, bulk_send_batch_id, bulk_send_batch_action_request)
+      data, _status_code, _headers = update_bulk_send_batch_action_with_http_info(account_id, bulk_action, bulk_send_batch_id,  bulk_send_batch_action_request)
+      return data
+    end
+
+    # Initiate a specific bulk send batch action
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param bulk_action 
+    # @param bulk_send_batch_id 
+    # @param bulk_send_batch_action_request  (optional parameter)
+    # @return [Array<(BulkSendBatchStatus, Fixnum, Hash)>] BulkSendBatchStatus data, response status code and response headers
+    def update_bulk_send_batch_action_with_http_info(account_id, bulk_action, bulk_send_batch_id, bulk_send_batch_action_request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BulkEnvelopesApi.update_bulk_send_batch_action ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling BulkEnvelopesApi.update_bulk_send_batch_action" if account_id.nil?
+      # verify the required parameter 'bulk_action' is set
+      fail ArgumentError, "Missing the required parameter 'bulk_action' when calling BulkEnvelopesApi.update_bulk_send_batch_action" if bulk_action.nil?
+      # verify the required parameter 'bulk_send_batch_id' is set
+      fail ArgumentError, "Missing the required parameter 'bulk_send_batch_id' when calling BulkEnvelopesApi.update_bulk_send_batch_action" if bulk_send_batch_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}/{bulkAction}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'bulkAction' + '}', bulk_action.to_s).sub('{' + 'bulkSendBatchId' + '}', bulk_send_batch_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(bulk_send_batch_action_request)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'BulkSendBatchStatus')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BulkEnvelopesApi#update_bulk_send_batch_action\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Put/Update a specific bulk send batch status
     # 
     # @param account_id The external account number (int) or account ID Guid.
