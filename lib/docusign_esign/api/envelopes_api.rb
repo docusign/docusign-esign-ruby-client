@@ -148,15 +148,6 @@ module DocuSign_eSign
     end
   end
 
-  class GetDocumentResponsiveHtmlOptions
-    # 
-    attr_accessor :include_anchor_tab_locations
-
-    def self.default
-      @@default ||= GetDocumentResponsiveHtmlOptions.new
-    end
-  end
-
   class GetDocumentTabsOptions
     # 
     attr_accessor :include_metadata
@@ -235,15 +226,6 @@ module DocuSign_eSign
 
     def self.default
       @@default ||= GetRecipientSignatureImageOptions.new
-    end
-  end
-
-  class GetResponsiveHtmlOptions
-    # 
-    attr_accessor :include_anchor_tab_locations
-
-    def self.default
-      @@default ||= GetResponsiveHtmlOptions.new
     end
   end
 
@@ -3329,66 +3311,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Get Responsive HTML for a document in an envelope.
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param document_id The ID of the document being accessed.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param DocuSign_eSign::GetDocumentResponsiveHtmlOptions Options for modifying the behavior of the function.
-    # @return [DocumentHtmlDefinitionOriginals]
-    def get_document_responsive_html(account_id, document_id, envelope_id, options = DocuSign_eSign::GetDocumentResponsiveHtmlOptions.default)
-      data, _status_code, _headers = get_document_responsive_html_with_http_info(account_id, document_id, envelope_id, options)
-      return data
-    end
-
-    # Get Responsive HTML for a document in an envelope.
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param document_id The ID of the document being accessed.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param DocuSign_eSign::GetDocumentResponsiveHtmlOptions Options for modifying the behavior of the function.
-    # @return [Array<(DocumentHtmlDefinitionOriginals, Fixnum, Hash)>] DocumentHtmlDefinitionOriginals data, response status code and response headers
-    def get_document_responsive_html_with_http_info(account_id, document_id, envelope_id, options = DocuSign_eSign::GetDocumentResponsiveHtmlOptions.default)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_document_responsive_html ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_document_responsive_html" if account_id.nil?
-      # verify the required parameter 'document_id' is set
-      fail ArgumentError, "Missing the required parameter 'document_id' when calling EnvelopesApi.get_document_responsive_html" if document_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_document_responsive_html" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/responsive_html".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-      query_params[:'include_anchor_tab_locations'] = options.include_anchor_tab_locations if !options.include_anchor_tab_locations.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'DocumentHtmlDefinitionOriginals')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#get_document_responsive_html\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Returns tabs on the document.
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -4292,62 +4214,6 @@ module DocuSign_eSign
         :return_type => 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#get_recipient_signature_image\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Responsive HTML for all documents in an envelope.
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param DocuSign_eSign::GetResponsiveHtmlOptions Options for modifying the behavior of the function.
-    # @return [DocumentHtmlDefinitionOriginals]
-    def get_responsive_html(account_id, envelope_id, options = DocuSign_eSign::GetResponsiveHtmlOptions.default)
-      data, _status_code, _headers = get_responsive_html_with_http_info(account_id, envelope_id, options)
-      return data
-    end
-
-    # Get Responsive HTML for all documents in an envelope.
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param DocuSign_eSign::GetResponsiveHtmlOptions Options for modifying the behavior of the function.
-    # @return [Array<(DocumentHtmlDefinitionOriginals, Fixnum, Hash)>] DocumentHtmlDefinitionOriginals data, response status code and response headers
-    def get_responsive_html_with_http_info(account_id, envelope_id, options = DocuSign_eSign::GetResponsiveHtmlOptions.default)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_responsive_html ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_responsive_html" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_responsive_html" if envelope_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/responsive_html".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
-
-      # query parameters
-      query_params = {}
-      query_params[:'include_anchor_tab_locations'] = options.include_anchor_tab_locations if !options.include_anchor_tab_locations.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'DocumentHtmlDefinitionOriginals')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#get_responsive_html\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -6367,6 +6233,65 @@ module DocuSign_eSign
         :return_type => 'DocumentVisibilityList')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#update_recipients_document_visibility\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieves a PDF document from the envelope with no CoC.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param regen_document_id 
+    # @param document  (optional parameter)
+    # @return [File]
+    def update_regen_document(account_id, envelope_id, regen_document_id, document)
+      data, _status_code, _headers = update_regen_document_with_http_info(account_id, envelope_id, regen_document_id,  document)
+      return data
+    end
+
+    # Retrieves a PDF document from the envelope with no CoC.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param regen_document_id 
+    # @param document  (optional parameter)
+    # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
+    def update_regen_document_with_http_info(account_id, envelope_id, regen_document_id, document)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_regen_document ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_regen_document" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.update_regen_document" if envelope_id.nil?
+      # verify the required parameter 'regen_document_id' is set
+      fail ArgumentError, "Missing the required parameter 'regen_document_id' when calling EnvelopesApi.update_regen_document" if regen_document_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{regenDocumentId}/regen".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'regenDocumentId' + '}', regen_document_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/pdf'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(document)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#update_regen_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -2624,65 +2624,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Adds or replaces the bulk recipients list in a template.
-    # Updates the bulk recipients in a template using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param recipient_id The ID of the recipient being accessed.
-    # @param template_id The ID of the template being accessed.
-    # @param bulk_recipients_request  (optional parameter)
-    # @return [BulkRecipientsSummaryResponse]
-    def update_bulk_recipients(account_id, recipient_id, template_id, bulk_recipients_request)
-      data, _status_code, _headers = update_bulk_recipients_with_http_info(account_id, recipient_id, template_id,  bulk_recipients_request)
-      return data
-    end
-
-    # Adds or replaces the bulk recipients list in a template.
-    # Updates the bulk recipients in a template using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param recipient_id The ID of the recipient being accessed.
-    # @param template_id The ID of the template being accessed.
-    # @param bulk_recipients_request  (optional parameter)
-    # @return [Array<(BulkRecipientsSummaryResponse, Fixnum, Hash)>] BulkRecipientsSummaryResponse data, response status code and response headers
-    def update_bulk_recipients_with_http_info(account_id, recipient_id, template_id, bulk_recipients_request)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: TemplatesApi.update_bulk_recipients ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.update_bulk_recipients" if account_id.nil?
-      # verify the required parameter 'recipient_id' is set
-      fail ArgumentError, "Missing the required parameter 'recipient_id' when calling TemplatesApi.update_bulk_recipients" if recipient_id.nil?
-      # verify the required parameter 'template_id' is set
-      fail ArgumentError, "Missing the required parameter 'template_id' when calling TemplatesApi.update_bulk_recipients" if template_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'recipientId' + '}', recipient_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(bulk_recipients_request)
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'BulkRecipientsSummaryResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TemplatesApi#update_bulk_recipients\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Updates envelope custom fields in a template.
     # Updates the custom fields in a template.  Each custom field used in a template must have a unique name.
     # @param account_id The external account number (int) or account ID Guid.

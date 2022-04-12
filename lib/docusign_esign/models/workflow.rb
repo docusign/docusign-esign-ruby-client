@@ -17,6 +17,9 @@ module DocuSign_eSign
     attr_accessor :current_workflow_step_id
 
     # 
+    attr_accessor :overwrite_update_mode
+
+    # 
     attr_accessor :resume_date
 
     attr_accessor :scheduled_sending
@@ -31,6 +34,7 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'current_workflow_step_id' => :'currentWorkflowStepId',
+        :'overwrite_update_mode' => :'overwriteUpdateMode',
         :'resume_date' => :'resumeDate',
         :'scheduled_sending' => :'scheduledSending',
         :'workflow_status' => :'workflowStatus',
@@ -42,8 +46,9 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'current_workflow_step_id' => :'String',
+        :'overwrite_update_mode' => :'String',
         :'resume_date' => :'String',
-        :'scheduled_sending' => :'ScheduledSendingApiModel',
+        :'scheduled_sending' => :'ScheduledSending',
         :'workflow_status' => :'String',
         :'workflow_steps' => :'Array<WorkflowStep>'
       }
@@ -59,6 +64,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'currentWorkflowStepId')
         self.current_workflow_step_id = attributes[:'currentWorkflowStepId']
+      end
+
+      if attributes.has_key?(:'overwriteUpdateMode')
+        self.overwrite_update_mode = attributes[:'overwriteUpdateMode']
       end
 
       if attributes.has_key?(:'resumeDate')
@@ -99,6 +108,7 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           current_workflow_step_id == o.current_workflow_step_id &&
+          overwrite_update_mode == o.overwrite_update_mode &&
           resume_date == o.resume_date &&
           scheduled_sending == o.scheduled_sending &&
           workflow_status == o.workflow_status &&
@@ -114,7 +124,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [current_workflow_step_id, resume_date, scheduled_sending, workflow_status, workflow_steps].hash
+      [current_workflow_step_id, overwrite_update_mode, resume_date, scheduled_sending, workflow_status, workflow_steps].hash
     end
 
     # Builds the object from hash
