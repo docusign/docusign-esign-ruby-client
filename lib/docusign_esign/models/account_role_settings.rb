@@ -200,6 +200,11 @@ module DocuSign_eSign
 
     attr_accessor :vaulting_mode_metadata
 
+    # 
+    attr_accessor :web_forms
+
+    attr_accessor :web_forms_metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -277,7 +282,9 @@ module DocuSign_eSign
         :'use_new_sending_interface' => :'useNewSendingInterface',
         :'use_new_sending_interface_metadata' => :'useNewSendingInterfaceMetadata',
         :'vaulting_mode' => :'vaultingMode',
-        :'vaulting_mode_metadata' => :'vaultingModeMetadata'
+        :'vaulting_mode_metadata' => :'vaultingModeMetadata',
+        :'web_forms' => :'webForms',
+        :'web_forms_metadata' => :'webFormsMetadata'
       }
     end
 
@@ -358,7 +365,9 @@ module DocuSign_eSign
         :'use_new_sending_interface' => :'String',
         :'use_new_sending_interface_metadata' => :'SettingsMetadata',
         :'vaulting_mode' => :'String',
-        :'vaulting_mode_metadata' => :'SettingsMetadata'
+        :'vaulting_mode_metadata' => :'SettingsMetadata',
+        :'web_forms' => :'String',
+        :'web_forms_metadata' => :'SettingsMetadata'
       }
     end
 
@@ -669,6 +678,14 @@ module DocuSign_eSign
       if attributes.has_key?(:'vaultingModeMetadata')
         self.vaulting_mode_metadata = attributes[:'vaultingModeMetadata']
       end
+
+      if attributes.has_key?(:'webForms')
+        self.web_forms = attributes[:'webForms']
+      end
+
+      if attributes.has_key?(:'webFormsMetadata')
+        self.web_forms_metadata = attributes[:'webFormsMetadata']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -763,7 +780,9 @@ module DocuSign_eSign
           use_new_sending_interface == o.use_new_sending_interface &&
           use_new_sending_interface_metadata == o.use_new_sending_interface_metadata &&
           vaulting_mode == o.vaulting_mode &&
-          vaulting_mode_metadata == o.vaulting_mode_metadata
+          vaulting_mode_metadata == o.vaulting_mode_metadata &&
+          web_forms == o.web_forms &&
+          web_forms_metadata == o.web_forms_metadata
     end
 
     # @see the `==` method
@@ -775,7 +794,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_account_management, allow_account_management_metadata, allow_api_access, allow_api_access_metadata, allow_api_access_to_account, allow_api_access_to_account_metadata, allow_api_sending_on_behalf_of_others, allow_api_sending_on_behalf_of_others_metadata, allow_api_sequential_signing, allow_api_sequential_signing_metadata, allow_auto_tagging, allow_auto_tagging_metadata, allow_bulk_sending, allow_bulk_sending_metadata, allow_docu_sign_desktop_client, allow_docu_sign_desktop_client_metadata, allowed_address_book_access, allowed_address_book_access_metadata, allowed_clickwraps_access, allowed_clickwraps_access_metadata, allowed_template_access, allowed_template_access_metadata, allowed_to_be_envelope_transfer_recipient, allowed_to_be_envelope_transfer_recipient_metadata, allow_envelope_sending, allow_envelope_sending_metadata, allow_e_seal_recipients, allow_e_seal_recipients_metadata, allow_power_forms_admin_to_access_all_power_form_envelopes, allow_power_forms_admin_to_access_all_power_form_envelopes_metadata, allow_senders_to_set_recipient_email_language, allow_senders_to_set_recipient_email_language_metadata, allow_signer_attachments, allow_signer_attachments_metadata, allow_supplemental_documents, allow_supplemental_documents_metadata, allow_tagging_in_send_and_correct, allow_tagging_in_send_and_correct_metadata, allow_vaulting, allow_vaulting_metadata, allow_wet_signing_override, allow_wet_signing_override_metadata, can_create_workspaces, can_create_workspaces_metadata, can_send_envelopes_via_sms, can_send_envelopes_via_sms_metadata, disable_document_upload, disable_document_upload_metadata, disable_other_actions, disable_other_actions_metadata, enable_api_request_logging, enable_api_request_logging_metadata, enable_recipient_viewing_notifications, enable_recipient_viewing_notifications_metadata, enable_sequential_signing_interface, enable_sequential_signing_interface_metadata, enable_transaction_point_integration, enable_transaction_point_integration_metadata, power_form_role, power_form_role_metadata, receive_completed_self_signed_documents_as_email_links, receive_completed_self_signed_documents_as_email_links_metadata, signing_ui_version_metadata, supplemental_documents_must_accept, supplemental_documents_must_accept_metadata, supplemental_documents_must_read, supplemental_documents_must_read_metadata, supplemental_documents_must_view, supplemental_documents_must_view_metadata, use_new_docu_sign_experience_interface, use_new_docu_sign_experience_interface_metadata, use_new_sending_interface, use_new_sending_interface_metadata, vaulting_mode, vaulting_mode_metadata].hash
+      [allow_account_management, allow_account_management_metadata, allow_api_access, allow_api_access_metadata, allow_api_access_to_account, allow_api_access_to_account_metadata, allow_api_sending_on_behalf_of_others, allow_api_sending_on_behalf_of_others_metadata, allow_api_sequential_signing, allow_api_sequential_signing_metadata, allow_auto_tagging, allow_auto_tagging_metadata, allow_bulk_sending, allow_bulk_sending_metadata, allow_docu_sign_desktop_client, allow_docu_sign_desktop_client_metadata, allowed_address_book_access, allowed_address_book_access_metadata, allowed_clickwraps_access, allowed_clickwraps_access_metadata, allowed_template_access, allowed_template_access_metadata, allowed_to_be_envelope_transfer_recipient, allowed_to_be_envelope_transfer_recipient_metadata, allow_envelope_sending, allow_envelope_sending_metadata, allow_e_seal_recipients, allow_e_seal_recipients_metadata, allow_power_forms_admin_to_access_all_power_form_envelopes, allow_power_forms_admin_to_access_all_power_form_envelopes_metadata, allow_senders_to_set_recipient_email_language, allow_senders_to_set_recipient_email_language_metadata, allow_signer_attachments, allow_signer_attachments_metadata, allow_supplemental_documents, allow_supplemental_documents_metadata, allow_tagging_in_send_and_correct, allow_tagging_in_send_and_correct_metadata, allow_vaulting, allow_vaulting_metadata, allow_wet_signing_override, allow_wet_signing_override_metadata, can_create_workspaces, can_create_workspaces_metadata, can_send_envelopes_via_sms, can_send_envelopes_via_sms_metadata, disable_document_upload, disable_document_upload_metadata, disable_other_actions, disable_other_actions_metadata, enable_api_request_logging, enable_api_request_logging_metadata, enable_recipient_viewing_notifications, enable_recipient_viewing_notifications_metadata, enable_sequential_signing_interface, enable_sequential_signing_interface_metadata, enable_transaction_point_integration, enable_transaction_point_integration_metadata, power_form_role, power_form_role_metadata, receive_completed_self_signed_documents_as_email_links, receive_completed_self_signed_documents_as_email_links_metadata, signing_ui_version_metadata, supplemental_documents_must_accept, supplemental_documents_must_accept_metadata, supplemental_documents_must_read, supplemental_documents_must_read_metadata, supplemental_documents_must_view, supplemental_documents_must_view_metadata, use_new_docu_sign_experience_interface, use_new_docu_sign_experience_interface_metadata, use_new_sending_interface, use_new_sending_interface_metadata, vaulting_mode, vaulting_mode_metadata, web_forms, web_forms_metadata].hash
     end
 
     # Builds the object from hash

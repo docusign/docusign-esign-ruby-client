@@ -16,6 +16,15 @@ module DocuSign_eSign
     # Specifies a tag on the document in a location where the recipient can select an option.
     attr_accessor :checkbox_tabs
 
+    # Specifies a tab on the document where you want the recipient to enter a date. Date tabs are single-line fields that allow date information to be entered in any format. The tooltip for this tab recommends entering the date as MM/DD/YYYY, but this is not enforced. The format entered by the signer is retained.   If you need a particular date format enforced, DocuSign recommends using a Text tab with a Validation Pattern and Validation Message to enforce the format.
+    attr_accessor :date_tabs
+
+    # Specifies a tag on the document where you want the recipient to enter an email. Email tags are single-line fields that accept any characters. The system checks that a valid email format (i.e. xxx@yyy.zzz) is entered in the tag. It uses the same parameters as a Text tab, with the validation message and pattern set for email information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
+    attr_accessor :email_tabs
+
+    # Specifies a tag on the document where you want the recipient to enter a number. It uses the same parameters as a Text tab, with the validation message and pattern set for number information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response. 
+    attr_accessor :number_tabs
+
     # Specifies a tag on the document in a location where the recipient can select one option from a group of options using a radio button. The radio buttons do not have to be on the same page in a document.
     attr_accessor :radio_group_tabs
 
@@ -25,21 +34,32 @@ module DocuSign_eSign
     # 
     attr_accessor :sender_name_tabs
 
+    # Specifies a tag on the document where you want the recipient to enter a Social Security Number (SSN). A SSN can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for SSN information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
+    attr_accessor :ssn_tabs
+
     # 
     attr_accessor :tab_groups
 
     # Specifies a that that is an adaptable field that allows the recipient to enter different text information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
     attr_accessor :text_tabs
 
+    # Specifies a tag on the document where you want the recipient to enter a ZIP code. The ZIP code can be a five numbers or the ZIP+4 format with nine numbers. The zip code can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for ZIP code information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
+    attr_accessor :zip_tabs
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'checkbox_tabs' => :'checkboxTabs',
+        :'date_tabs' => :'dateTabs',
+        :'email_tabs' => :'emailTabs',
+        :'number_tabs' => :'numberTabs',
         :'radio_group_tabs' => :'radioGroupTabs',
         :'sender_company_tabs' => :'senderCompanyTabs',
         :'sender_name_tabs' => :'senderNameTabs',
+        :'ssn_tabs' => :'ssnTabs',
         :'tab_groups' => :'tabGroups',
-        :'text_tabs' => :'textTabs'
+        :'text_tabs' => :'textTabs',
+        :'zip_tabs' => :'zipTabs'
       }
     end
 
@@ -47,11 +67,16 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'checkbox_tabs' => :'Array<Checkbox>',
+        :'date_tabs' => :'Array<DocuSign_eSign::Date>',
+        :'email_tabs' => :'Array<Email>',
+        :'number_tabs' => :'Array<Number>',
         :'radio_group_tabs' => :'Array<RadioGroup>',
         :'sender_company_tabs' => :'Array<SenderCompany>',
         :'sender_name_tabs' => :'Array<SenderName>',
+        :'ssn_tabs' => :'Array<Ssn>',
         :'tab_groups' => :'Array<TabGroup>',
-        :'text_tabs' => :'Array<Text>'
+        :'text_tabs' => :'Array<Text>',
+        :'zip_tabs' => :'Array<Zip>'
       }
     end
 
@@ -66,6 +91,24 @@ module DocuSign_eSign
       if attributes.has_key?(:'checkboxTabs')
         if (value = attributes[:'checkboxTabs']).is_a?(Array)
           self.checkbox_tabs = value
+        end
+      end
+
+      if attributes.has_key?(:'dateTabs')
+        if (value = attributes[:'dateTabs']).is_a?(Array)
+          self.date_tabs = value
+        end
+      end
+
+      if attributes.has_key?(:'emailTabs')
+        if (value = attributes[:'emailTabs']).is_a?(Array)
+          self.email_tabs = value
+        end
+      end
+
+      if attributes.has_key?(:'numberTabs')
+        if (value = attributes[:'numberTabs']).is_a?(Array)
+          self.number_tabs = value
         end
       end
 
@@ -87,6 +130,12 @@ module DocuSign_eSign
         end
       end
 
+      if attributes.has_key?(:'ssnTabs')
+        if (value = attributes[:'ssnTabs']).is_a?(Array)
+          self.ssn_tabs = value
+        end
+      end
+
       if attributes.has_key?(:'tabGroups')
         if (value = attributes[:'tabGroups']).is_a?(Array)
           self.tab_groups = value
@@ -96,6 +145,12 @@ module DocuSign_eSign
       if attributes.has_key?(:'textTabs')
         if (value = attributes[:'textTabs']).is_a?(Array)
           self.text_tabs = value
+        end
+      end
+
+      if attributes.has_key?(:'zipTabs')
+        if (value = attributes[:'zipTabs']).is_a?(Array)
+          self.zip_tabs = value
         end
       end
     end
@@ -119,11 +174,16 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           checkbox_tabs == o.checkbox_tabs &&
+          date_tabs == o.date_tabs &&
+          email_tabs == o.email_tabs &&
+          number_tabs == o.number_tabs &&
           radio_group_tabs == o.radio_group_tabs &&
           sender_company_tabs == o.sender_company_tabs &&
           sender_name_tabs == o.sender_name_tabs &&
+          ssn_tabs == o.ssn_tabs &&
           tab_groups == o.tab_groups &&
-          text_tabs == o.text_tabs
+          text_tabs == o.text_tabs &&
+          zip_tabs == o.zip_tabs
     end
 
     # @see the `==` method
@@ -135,7 +195,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [checkbox_tabs, radio_group_tabs, sender_company_tabs, sender_name_tabs, tab_groups, text_tabs].hash
+      [checkbox_tabs, date_tabs, email_tabs, number_tabs, radio_group_tabs, sender_company_tabs, sender_name_tabs, ssn_tabs, tab_groups, text_tabs, zip_tabs].hash
     end
 
     # Builds the object from hash

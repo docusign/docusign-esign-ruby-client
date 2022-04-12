@@ -25,6 +25,9 @@ module DocuSign_eSign
     # 
     attr_accessor :link_id
 
+    # 
+    attr_accessor :pdf_field_handling_option
+
     attr_accessor :recipient_auth_requirements
 
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
@@ -40,6 +43,7 @@ module DocuSign_eSign
         :'configuration_id' => :'configurationId',
         :'email' => :'email',
         :'link_id' => :'linkId',
+        :'pdf_field_handling_option' => :'pdfFieldHandlingOption',
         :'recipient_auth_requirements' => :'recipientAuthRequirements',
         :'status' => :'status',
         :'user_id' => :'userId'
@@ -53,6 +57,7 @@ module DocuSign_eSign
         :'configuration_id' => :'String',
         :'email' => :'String',
         :'link_id' => :'String',
+        :'pdf_field_handling_option' => :'String',
         :'recipient_auth_requirements' => :'ExternalPrimaryAccountRecipientAuthRequirements',
         :'status' => :'String',
         :'user_id' => :'String'
@@ -81,6 +86,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'linkId')
         self.link_id = attributes[:'linkId']
+      end
+
+      if attributes.has_key?(:'pdfFieldHandlingOption')
+        self.pdf_field_handling_option = attributes[:'pdfFieldHandlingOption']
       end
 
       if attributes.has_key?(:'recipientAuthRequirements')
@@ -118,6 +127,7 @@ module DocuSign_eSign
           configuration_id == o.configuration_id &&
           email == o.email &&
           link_id == o.link_id &&
+          pdf_field_handling_option == o.pdf_field_handling_option &&
           recipient_auth_requirements == o.recipient_auth_requirements &&
           status == o.status &&
           user_id == o.user_id
@@ -132,7 +142,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_name, configuration_id, email, link_id, recipient_auth_requirements, status, user_id].hash
+      [account_name, configuration_id, email, link_id, pdf_field_handling_option, recipient_auth_requirements, status, user_id].hash
     end
 
     # Builds the object from hash

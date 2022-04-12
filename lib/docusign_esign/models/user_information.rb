@@ -62,6 +62,9 @@ module DocuSign_eSign
     attr_accessor :is_admin
 
     # 
+    attr_accessor :is_alternate_admin
+
+    # 
     attr_accessor :is_nar_enabled
 
     # 
@@ -157,6 +160,7 @@ module DocuSign_eSign
         :'home_address' => :'homeAddress',
         :'initials_image_uri' => :'initialsImageUri',
         :'is_admin' => :'isAdmin',
+        :'is_alternate_admin' => :'isAlternateAdmin',
         :'is_nar_enabled' => :'isNAREnabled',
         :'job_title' => :'jobTitle',
         :'last_login' => :'lastLogin',
@@ -206,6 +210,7 @@ module DocuSign_eSign
         :'home_address' => :'AddressInformation',
         :'initials_image_uri' => :'String',
         :'is_admin' => :'String',
+        :'is_alternate_admin' => :'String',
         :'is_nar_enabled' => :'String',
         :'job_title' => :'String',
         :'last_login' => :'String',
@@ -315,6 +320,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'isAdmin')
         self.is_admin = attributes[:'isAdmin']
+      end
+
+      if attributes.has_key?(:'isAlternateAdmin')
+        self.is_alternate_admin = attributes[:'isAlternateAdmin']
       end
 
       if attributes.has_key?(:'isNAREnabled')
@@ -457,6 +466,7 @@ module DocuSign_eSign
           home_address == o.home_address &&
           initials_image_uri == o.initials_image_uri &&
           is_admin == o.is_admin &&
+          is_alternate_admin == o.is_alternate_admin &&
           is_nar_enabled == o.is_nar_enabled &&
           job_title == o.job_title &&
           last_login == o.last_login &&
@@ -494,7 +504,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [activation_access_code, company, connect_configurations, country_code, created_date_time, custom_settings, default_account_id, email, enable_connect_for_user, error_details, first_name, forgotten_password_info, group_list, has_remote_notary, home_address, initials_image_uri, is_admin, is_nar_enabled, job_title, last_login, last_name, login_status, middle_name, password, password_expiration, permission_profile_id, permission_profile_name, profile_image_uri, send_activation_email, send_activation_on_invalid_login, signature_image_uri, subscribe, suffix_name, title, uri, user_added_to_account_date_time, user_id, user_name, user_profile_last_modified_date, user_settings, user_status, user_type, work_address].hash
+      [activation_access_code, company, connect_configurations, country_code, created_date_time, custom_settings, default_account_id, email, enable_connect_for_user, error_details, first_name, forgotten_password_info, group_list, has_remote_notary, home_address, initials_image_uri, is_admin, is_alternate_admin, is_nar_enabled, job_title, last_login, last_name, login_status, middle_name, password, password_expiration, permission_profile_id, permission_profile_name, profile_image_uri, send_activation_email, send_activation_on_invalid_login, signature_image_uri, subscribe, suffix_name, title, uri, user_added_to_account_date_time, user_id, user_name, user_profile_last_modified_date, user_settings, user_status, user_type, work_address].hash
     end
 
     # Builds the object from hash

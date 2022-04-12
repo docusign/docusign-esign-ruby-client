@@ -58,7 +58,7 @@ module DocuSign_eSign
       {
         :'action' => :'String',
         :'completed_date' => :'String',
-        :'delayed_routing' => :'DelayedRoutingApiModel',
+        :'delayed_routing' => :'DelayedRouting',
         :'item_id' => :'String',
         :'recipient_routing' => :'RecipientRouting',
         :'status' => :'String',

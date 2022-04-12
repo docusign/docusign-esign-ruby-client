@@ -65,6 +65,9 @@ module DocuSign_eSign
     # When set to **true**, the full list of user information is returned for each user in the account.
     attr_accessor :additional_info
 
+    # 
+    attr_accessor :alternate_admins_only
+
     # Number of records to return. The number must be greater than 0 and less than or equal to 100. 
     attr_accessor :count
 
@@ -1076,6 +1079,7 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'additional_info'] = options.additional_info if !options.additional_info.nil?
+      query_params[:'alternate_admins_only'] = options.alternate_admins_only if !options.alternate_admins_only.nil?
       query_params[:'count'] = options.count if !options.count.nil?
       query_params[:'domain_users_only'] = options.domain_users_only if !options.domain_users_only.nil?
       query_params[:'email'] = options.email if !options.email.nil?
