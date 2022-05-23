@@ -41,6 +41,9 @@ module DocuSign_eSign
     attr_accessor :notaries
 
     # 
+    attr_accessor :participants
+
+    # 
     attr_accessor :recipient_count
 
     # 
@@ -64,6 +67,7 @@ module DocuSign_eSign
         :'in_person_signers' => :'inPersonSigners',
         :'intermediaries' => :'intermediaries',
         :'notaries' => :'notaries',
+        :'participants' => :'participants',
         :'recipient_count' => :'recipientCount',
         :'seals' => :'seals',
         :'signers' => :'signers',
@@ -83,6 +87,7 @@ module DocuSign_eSign
         :'in_person_signers' => :'Array<InPersonSigner>',
         :'intermediaries' => :'Array<Intermediary>',
         :'notaries' => :'Array<NotaryRecipient>',
+        :'participants' => :'Array<Participant>',
         :'recipient_count' => :'String',
         :'seals' => :'Array<SealSign>',
         :'signers' => :'Array<Signer>',
@@ -148,6 +153,12 @@ module DocuSign_eSign
         end
       end
 
+      if attributes.has_key?(:'participants')
+        if (value = attributes[:'participants']).is_a?(Array)
+          self.participants = value
+        end
+      end
+
       if attributes.has_key?(:'recipientCount')
         self.recipient_count = attributes[:'recipientCount']
       end
@@ -198,6 +209,7 @@ module DocuSign_eSign
           in_person_signers == o.in_person_signers &&
           intermediaries == o.intermediaries &&
           notaries == o.notaries &&
+          participants == o.participants &&
           recipient_count == o.recipient_count &&
           seals == o.seals &&
           signers == o.signers &&
@@ -213,7 +225,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [agents, carbon_copies, certified_deliveries, current_routing_order, editors, error_details, in_person_signers, intermediaries, notaries, recipient_count, seals, signers, witnesses].hash
+      [agents, carbon_copies, certified_deliveries, current_routing_order, editors, error_details, in_person_signers, intermediaries, notaries, participants, recipient_count, seals, signers, witnesses].hash
     end
 
     # Builds the object from hash

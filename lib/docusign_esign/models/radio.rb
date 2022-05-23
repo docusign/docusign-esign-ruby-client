@@ -68,6 +68,11 @@ module DocuSign_eSign
 
     attr_accessor :bold_metadata
 
+    # 
+    attr_accessor :caption
+
+    attr_accessor :caption_metadata
+
     attr_accessor :error_details
 
     # The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.
@@ -170,6 +175,8 @@ module DocuSign_eSign
         :'anchor_y_offset_metadata' => :'anchorYOffsetMetadata',
         :'bold' => :'bold',
         :'bold_metadata' => :'boldMetadata',
+        :'caption' => :'caption',
+        :'caption_metadata' => :'captionMetadata',
         :'error_details' => :'errorDetails',
         :'font' => :'font',
         :'font_color' => :'fontColor',
@@ -229,6 +236,8 @@ module DocuSign_eSign
         :'anchor_y_offset_metadata' => :'PropertyMetadata',
         :'bold' => :'String',
         :'bold_metadata' => :'PropertyMetadata',
+        :'caption' => :'String',
+        :'caption_metadata' => :'PropertyMetadata',
         :'error_details' => :'ErrorDetails',
         :'font' => :'String',
         :'font_color' => :'String',
@@ -357,6 +366,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'boldMetadata')
         self.bold_metadata = attributes[:'boldMetadata']
+      end
+
+      if attributes.has_key?(:'caption')
+        self.caption = attributes[:'caption']
+      end
+
+      if attributes.has_key?(:'captionMetadata')
+        self.caption_metadata = attributes[:'captionMetadata']
       end
 
       if attributes.has_key?(:'errorDetails')
@@ -524,6 +541,8 @@ module DocuSign_eSign
           anchor_y_offset_metadata == o.anchor_y_offset_metadata &&
           bold == o.bold &&
           bold_metadata == o.bold_metadata &&
+          caption == o.caption &&
+          caption_metadata == o.caption_metadata &&
           error_details == o.error_details &&
           font == o.font &&
           font_color == o.font_color &&
@@ -566,7 +585,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, error_details, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, italic, italic_metadata, locked, locked_metadata, page_number, page_number_metadata, required, required_metadata, selected, selected_metadata, status, status_metadata, tab_id, tab_id_metadata, tab_order, tab_order_metadata, underline, underline_metadata, value, value_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
+      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, caption, caption_metadata, error_details, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, italic, italic_metadata, locked, locked_metadata, page_number, page_number_metadata, required, required_metadata, selected, selected_metadata, status, status_metadata, tab_id, tab_id_metadata, tab_order, tab_order_metadata, underline, underline_metadata, value, value_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
     end
 
     # Builds the object from hash

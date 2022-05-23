@@ -13,11 +13,41 @@ require 'date'
 
 module DocuSign_eSign
   class BulkSendEnvelopesInfo
+    # Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
+    attr_accessor :authoritative_copy
+
     # 
     attr_accessor :completed
 
     # 
+    attr_accessor :correct
+
+    # 
+    attr_accessor :created
+
+    # 
     attr_accessor :declined
+
+    # 
+    attr_accessor :deleted
+
+    # 
+    attr_accessor :delivered
+
+    # 
+    attr_accessor :digital_signatures_pending
+
+    # 
+    attr_accessor :sent
+
+    # 
+    attr_accessor :signed
+
+    # 
+    attr_accessor :timed_out
+
+    # 
+    attr_accessor :transfer_completed
 
     # 
     attr_accessor :voided
@@ -25,8 +55,18 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'authoritative_copy' => :'authoritativeCopy',
         :'completed' => :'completed',
+        :'correct' => :'correct',
+        :'created' => :'created',
         :'declined' => :'declined',
+        :'deleted' => :'deleted',
+        :'delivered' => :'delivered',
+        :'digital_signatures_pending' => :'digitalSignaturesPending',
+        :'sent' => :'sent',
+        :'signed' => :'signed',
+        :'timed_out' => :'timedOut',
+        :'transfer_completed' => :'transferCompleted',
         :'voided' => :'voided'
       }
     end
@@ -34,8 +74,18 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'authoritative_copy' => :'String',
         :'completed' => :'String',
+        :'correct' => :'String',
+        :'created' => :'String',
         :'declined' => :'String',
+        :'deleted' => :'String',
+        :'delivered' => :'String',
+        :'digital_signatures_pending' => :'String',
+        :'sent' => :'String',
+        :'signed' => :'String',
+        :'timed_out' => :'String',
+        :'transfer_completed' => :'String',
         :'voided' => :'String'
       }
     end
@@ -48,12 +98,52 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'authoritativeCopy')
+        self.authoritative_copy = attributes[:'authoritativeCopy']
+      end
+
       if attributes.has_key?(:'completed')
         self.completed = attributes[:'completed']
       end
 
+      if attributes.has_key?(:'correct')
+        self.correct = attributes[:'correct']
+      end
+
+      if attributes.has_key?(:'created')
+        self.created = attributes[:'created']
+      end
+
       if attributes.has_key?(:'declined')
         self.declined = attributes[:'declined']
+      end
+
+      if attributes.has_key?(:'deleted')
+        self.deleted = attributes[:'deleted']
+      end
+
+      if attributes.has_key?(:'delivered')
+        self.delivered = attributes[:'delivered']
+      end
+
+      if attributes.has_key?(:'digitalSignaturesPending')
+        self.digital_signatures_pending = attributes[:'digitalSignaturesPending']
+      end
+
+      if attributes.has_key?(:'sent')
+        self.sent = attributes[:'sent']
+      end
+
+      if attributes.has_key?(:'signed')
+        self.signed = attributes[:'signed']
+      end
+
+      if attributes.has_key?(:'timedOut')
+        self.timed_out = attributes[:'timedOut']
+      end
+
+      if attributes.has_key?(:'transferCompleted')
+        self.transfer_completed = attributes[:'transferCompleted']
       end
 
       if attributes.has_key?(:'voided')
@@ -79,8 +169,18 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          authoritative_copy == o.authoritative_copy &&
           completed == o.completed &&
+          correct == o.correct &&
+          created == o.created &&
           declined == o.declined &&
+          deleted == o.deleted &&
+          delivered == o.delivered &&
+          digital_signatures_pending == o.digital_signatures_pending &&
+          sent == o.sent &&
+          signed == o.signed &&
+          timed_out == o.timed_out &&
+          transfer_completed == o.transfer_completed &&
           voided == o.voided
     end
 
@@ -93,7 +193,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [completed, declined, voided].hash
+      [authoritative_copy, completed, correct, created, declined, deleted, delivered, digital_signatures_pending, sent, signed, timed_out, transfer_completed, voided].hash
     end
 
     # Builds the object from hash

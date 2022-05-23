@@ -31,6 +31,9 @@ module DocuSign_eSign
     attr_accessor :distributor_password
 
     # 
+    attr_accessor :enable_pre_auth
+
+    # 
     attr_accessor :envelope_partition_id
 
     attr_accessor :initial_user
@@ -41,6 +44,9 @@ module DocuSign_eSign
     attr_accessor :payment_processor_information
 
     attr_accessor :plan_information
+
+    # 
+    attr_accessor :process_payment
 
     attr_accessor :referral_information
 
@@ -59,11 +65,13 @@ module DocuSign_eSign
         :'direct_debit_processor_information' => :'directDebitProcessorInformation',
         :'distributor_code' => :'distributorCode',
         :'distributor_password' => :'distributorPassword',
+        :'enable_pre_auth' => :'enablePreAuth',
         :'envelope_partition_id' => :'envelopePartitionId',
         :'initial_user' => :'initialUser',
         :'payment_method' => :'paymentMethod',
         :'payment_processor_information' => :'paymentProcessorInformation',
         :'plan_information' => :'planInformation',
+        :'process_payment' => :'processPayment',
         :'referral_information' => :'referralInformation',
         :'social_account_information' => :'socialAccountInformation',
         :'tax_exempt_id' => :'taxExemptId'
@@ -80,11 +88,13 @@ module DocuSign_eSign
         :'direct_debit_processor_information' => :'DirectDebitProcessorInformation',
         :'distributor_code' => :'String',
         :'distributor_password' => :'String',
+        :'enable_pre_auth' => :'String',
         :'envelope_partition_id' => :'String',
         :'initial_user' => :'UserInformation',
         :'payment_method' => :'String',
         :'payment_processor_information' => :'PaymentProcessorInformation',
         :'plan_information' => :'PlanInformation',
+        :'process_payment' => :'String',
         :'referral_information' => :'ReferralInformation',
         :'social_account_information' => :'SocialAccountInformation',
         :'tax_exempt_id' => :'String'
@@ -127,6 +137,10 @@ module DocuSign_eSign
         self.distributor_password = attributes[:'distributorPassword']
       end
 
+      if attributes.has_key?(:'enablePreAuth')
+        self.enable_pre_auth = attributes[:'enablePreAuth']
+      end
+
       if attributes.has_key?(:'envelopePartitionId')
         self.envelope_partition_id = attributes[:'envelopePartitionId']
       end
@@ -145,6 +159,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'planInformation')
         self.plan_information = attributes[:'planInformation']
+      end
+
+      if attributes.has_key?(:'processPayment')
+        self.process_payment = attributes[:'processPayment']
       end
 
       if attributes.has_key?(:'referralInformation')
@@ -185,11 +203,13 @@ module DocuSign_eSign
           direct_debit_processor_information == o.direct_debit_processor_information &&
           distributor_code == o.distributor_code &&
           distributor_password == o.distributor_password &&
+          enable_pre_auth == o.enable_pre_auth &&
           envelope_partition_id == o.envelope_partition_id &&
           initial_user == o.initial_user &&
           payment_method == o.payment_method &&
           payment_processor_information == o.payment_processor_information &&
           plan_information == o.plan_information &&
+          process_payment == o.process_payment &&
           referral_information == o.referral_information &&
           social_account_information == o.social_account_information &&
           tax_exempt_id == o.tax_exempt_id
@@ -204,7 +224,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_name, account_settings, address_information, credit_card_information, direct_debit_processor_information, distributor_code, distributor_password, envelope_partition_id, initial_user, payment_method, payment_processor_information, plan_information, referral_information, social_account_information, tax_exempt_id].hash
+      [account_name, account_settings, address_information, credit_card_information, direct_debit_processor_information, distributor_code, distributor_password, enable_pre_auth, envelope_partition_id, initial_user, payment_method, payment_processor_information, plan_information, process_payment, referral_information, social_account_information, tax_exempt_id].hash
     end
 
     # Builds the object from hash
