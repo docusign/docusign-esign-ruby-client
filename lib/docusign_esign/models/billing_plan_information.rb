@@ -25,6 +25,9 @@ module DocuSign_eSign
     attr_accessor :downgrade_reason
 
     # 
+    attr_accessor :enable_pre_auth
+
+    # 
     attr_accessor :enable_support
 
     # The number of seats (users) included.
@@ -39,6 +42,9 @@ module DocuSign_eSign
     attr_accessor :payment_processor_information
 
     attr_accessor :plan_information
+
+    # 
+    attr_accessor :process_payment
 
     attr_accessor :referral_information
 
@@ -71,12 +77,14 @@ module DocuSign_eSign
         :'credit_card_information' => :'creditCardInformation',
         :'direct_debit_processor_information' => :'directDebitProcessorInformation',
         :'downgrade_reason' => :'downgradeReason',
+        :'enable_pre_auth' => :'enablePreAuth',
         :'enable_support' => :'enableSupport',
         :'included_seats' => :'includedSeats',
         :'incremental_seats' => :'incrementalSeats',
         :'payment_method' => :'paymentMethod',
         :'payment_processor_information' => :'paymentProcessorInformation',
         :'plan_information' => :'planInformation',
+        :'process_payment' => :'processPayment',
         :'referral_information' => :'referralInformation',
         :'renewal_status' => :'renewalStatus',
         :'sale_discount_amount' => :'saleDiscountAmount',
@@ -96,12 +104,14 @@ module DocuSign_eSign
         :'credit_card_information' => :'CreditCardInformation',
         :'direct_debit_processor_information' => :'DirectDebitProcessorInformation',
         :'downgrade_reason' => :'String',
+        :'enable_pre_auth' => :'String',
         :'enable_support' => :'String',
         :'included_seats' => :'String',
         :'incremental_seats' => :'String',
         :'payment_method' => :'String',
         :'payment_processor_information' => :'PaymentProcessorInformation',
         :'plan_information' => :'PlanInformation',
+        :'process_payment' => :'String',
         :'referral_information' => :'ReferralInformation',
         :'renewal_status' => :'String',
         :'sale_discount_amount' => :'String',
@@ -141,6 +151,10 @@ module DocuSign_eSign
         self.downgrade_reason = attributes[:'downgradeReason']
       end
 
+      if attributes.has_key?(:'enablePreAuth')
+        self.enable_pre_auth = attributes[:'enablePreAuth']
+      end
+
       if attributes.has_key?(:'enableSupport')
         self.enable_support = attributes[:'enableSupport']
       end
@@ -163,6 +177,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'planInformation')
         self.plan_information = attributes[:'planInformation']
+      end
+
+      if attributes.has_key?(:'processPayment')
+        self.process_payment = attributes[:'processPayment']
       end
 
       if attributes.has_key?(:'referralInformation')
@@ -221,12 +239,14 @@ module DocuSign_eSign
           credit_card_information == o.credit_card_information &&
           direct_debit_processor_information == o.direct_debit_processor_information &&
           downgrade_reason == o.downgrade_reason &&
+          enable_pre_auth == o.enable_pre_auth &&
           enable_support == o.enable_support &&
           included_seats == o.included_seats &&
           incremental_seats == o.incremental_seats &&
           payment_method == o.payment_method &&
           payment_processor_information == o.payment_processor_information &&
           plan_information == o.plan_information &&
+          process_payment == o.process_payment &&
           referral_information == o.referral_information &&
           renewal_status == o.renewal_status &&
           sale_discount_amount == o.sale_discount_amount &&
@@ -246,7 +266,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [app_store_receipt, billing_address, credit_card_information, direct_debit_processor_information, downgrade_reason, enable_support, included_seats, incremental_seats, payment_method, payment_processor_information, plan_information, referral_information, renewal_status, sale_discount_amount, sale_discount_fixed_amount, sale_discount_percent, sale_discount_periods, sale_discount_seat_price_override, tax_exempt_id].hash
+      [app_store_receipt, billing_address, credit_card_information, direct_debit_processor_information, downgrade_reason, enable_pre_auth, enable_support, included_seats, incremental_seats, payment_method, payment_processor_information, plan_information, process_payment, referral_information, renewal_status, sale_discount_amount, sale_discount_fixed_amount, sale_discount_percent, sale_discount_periods, sale_discount_seat_price_override, tax_exempt_id].hash
     end
 
     # Builds the object from hash

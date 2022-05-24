@@ -225,7 +225,7 @@ describe 'DocuSign Ruby Client Tests' do
           user = nil
 
           user_information = DocuSign_eSign::UserInformation.new
-          user_information.email = ENV["USER_NAME"]
+          user_information.email = 'test-user@example.com'
           user_information.first_name = 'user-name'
           user_information.last_name = 'user-last-name'
           user_information.user_name = 'test-user-name'
@@ -286,9 +286,9 @@ describe 'DocuSign Ruby Client Tests' do
         it 'successfully updates envelope recipients' do
           envelope = create_envelope_on_document('sent', true)
 
-          signer = DocuSign_eSign::Signer.new(email: ENV["USER_NAME"], name: 'test_name', routingOrder: '3', recipientId: '3',)
+          signer = DocuSign_eSign::Signer.new(email: 'test_recipient@example.com', name: 'test_name', routingOrder: '3', recipientId: '3',)
 
-          cc = DocuSign_eSign::CarbonCopy.new(email: ENV["USER_NAME"], name: 'test_cc_name', routingOrder: '4', recipientId: '4',)
+          cc = DocuSign_eSign::CarbonCopy.new(email: 'test_recipient@example.com', name: 'test_cc_name', routingOrder: '4', recipientId: '4',)
 
           recipients = DocuSign_eSign::Recipients.new(signers: [signer], carbonCopies: [cc]
           )

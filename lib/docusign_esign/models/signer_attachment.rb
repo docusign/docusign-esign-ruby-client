@@ -63,6 +63,11 @@ module DocuSign_eSign
 
     attr_accessor :anchor_y_offset_metadata
 
+    # 
+    attr_accessor :caption
+
+    attr_accessor :caption_metadata
+
     # For conditional fields this is the TabLabel of the parent tab that controls this tab's visibility.
     attr_accessor :conditional_parent_label
 
@@ -231,6 +236,8 @@ module DocuSign_eSign
         :'anchor_x_offset_metadata' => :'anchorXOffsetMetadata',
         :'anchor_y_offset' => :'anchorYOffset',
         :'anchor_y_offset_metadata' => :'anchorYOffsetMetadata',
+        :'caption' => :'caption',
+        :'caption_metadata' => :'captionMetadata',
         :'conditional_parent_label' => :'conditionalParentLabel',
         :'conditional_parent_label_metadata' => :'conditionalParentLabelMetadata',
         :'conditional_parent_value' => :'conditionalParentValue',
@@ -315,6 +322,8 @@ module DocuSign_eSign
         :'anchor_x_offset_metadata' => :'PropertyMetadata',
         :'anchor_y_offset' => :'String',
         :'anchor_y_offset_metadata' => :'PropertyMetadata',
+        :'caption' => :'String',
+        :'caption_metadata' => :'PropertyMetadata',
         :'conditional_parent_label' => :'String',
         :'conditional_parent_label_metadata' => :'PropertyMetadata',
         :'conditional_parent_value' => :'String',
@@ -462,6 +471,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'anchorYOffsetMetadata')
         self.anchor_y_offset_metadata = attributes[:'anchorYOffsetMetadata']
+      end
+
+      if attributes.has_key?(:'caption')
+        self.caption = attributes[:'caption']
+      end
+
+      if attributes.has_key?(:'captionMetadata')
+        self.caption_metadata = attributes[:'captionMetadata']
       end
 
       if attributes.has_key?(:'conditionalParentLabel')
@@ -737,6 +754,8 @@ module DocuSign_eSign
           anchor_x_offset_metadata == o.anchor_x_offset_metadata &&
           anchor_y_offset == o.anchor_y_offset &&
           anchor_y_offset_metadata == o.anchor_y_offset_metadata &&
+          caption == o.caption &&
+          caption_metadata == o.caption_metadata &&
           conditional_parent_label == o.conditional_parent_label &&
           conditional_parent_label_metadata == o.conditional_parent_label_metadata &&
           conditional_parent_value == o.conditional_parent_value &&
@@ -806,7 +825,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, custom_tab_id, custom_tab_id_metadata, document_id, document_id_metadata, error_details, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, hand_draw_required, height, height_metadata, merge_field, merge_field_xml, name, name_metadata, optional, optional_metadata, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, scale_value, scale_value_metadata, smart_contract_information, source, status, status_metadata, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_label_metadata, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
+      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, caption, caption_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, custom_tab_id, custom_tab_id_metadata, document_id, document_id_metadata, error_details, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, hand_draw_required, height, height_metadata, merge_field, merge_field_xml, name, name_metadata, optional, optional_metadata, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, scale_value, scale_value_metadata, smart_contract_information, source, status, status_metadata, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_label_metadata, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
     end
 
     # Builds the object from hash

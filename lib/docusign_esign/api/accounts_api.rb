@@ -151,15 +151,6 @@ module DocuSign_eSign
     end
   end
 
-  class GetReservedDomainExistenceOptions
-    # 
-    attr_accessor :email_domain
-
-    def self.default
-      @@default ||= GetReservedDomainExistenceOptions.new
-    end
-  end
-
   class ListBrandsOptions
     # When set to **true**, excludes distributor brand information from the response set.
     attr_accessor :exclude_distributor_brand
@@ -235,6 +226,15 @@ module DocuSign_eSign
 
     def self.default
       @@default ||= UpdateAccountSignatureImageOptions.new
+    end
+  end
+
+  class UpdateBrandOptions
+    # 
+    attr_accessor :replace_brand
+
+    def self.default
+      @@default ||= UpdateBrandOptions.new
     end
   end
 
@@ -2273,60 +2273,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Returns whether or not the specified email domain is reserved/claimed.
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param DocuSign_eSign::GetReservedDomainExistenceOptions Options for modifying the behavior of the function.
-    # @return [ReservedDomainExistence]
-    def get_reserved_domain_existence(account_id, options = DocuSign_eSign::GetReservedDomainExistenceOptions.default)
-      data, _status_code, _headers = get_reserved_domain_existence_with_http_info(account_id, options)
-      return data
-    end
-
-    # Returns whether or not the specified email domain is reserved/claimed.
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param DocuSign_eSign::GetReservedDomainExistenceOptions Options for modifying the behavior of the function.
-    # @return [Array<(ReservedDomainExistence, Fixnum, Hash)>] ReservedDomainExistence data, response status code and response headers
-    def get_reserved_domain_existence_with_http_info(account_id, options = DocuSign_eSign::GetReservedDomainExistenceOptions.default)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: AccountsApi.get_reserved_domain_existence ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.get_reserved_domain_existence" if account_id.nil?
-      # verify the required parameter 'email_domain' is set
-      fail ArgumentError, "Missing the required parameter 'email_domain' when calling AccountsApi.get_reserved_domain_existence" if email_domain.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/reserved_domains".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
-
-      # query parameters
-      query_params = {}
-      query_params[:'email_domain'] = email_domain
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'ReservedDomainExistence')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountsApi#get_reserved_domain_existence\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Gets list of supported languages for recipient language setting.
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -3166,9 +3112,10 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @param brand  (optional parameter)
+    # @param DocuSign_eSign::UpdateBrandOptions Options for modifying the behavior of the function.
     # @return [Brand]
-    def update_brand(account_id, brand_id, brand)
-      data, _status_code, _headers = update_brand_with_http_info(account_id, brand_id,  brand)
+    def update_brand(account_id, brand_id, brand, options = DocuSign_eSign::UpdateBrandOptions.default)
+      data, _status_code, _headers = update_brand_with_http_info(account_id, brand_id,  brand, options)
       return data
     end
 
@@ -3177,8 +3124,9 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @param brand  (optional parameter)
+    # @param DocuSign_eSign::UpdateBrandOptions Options for modifying the behavior of the function.
     # @return [Array<(Brand, Fixnum, Hash)>] Brand data, response status code and response headers
-    def update_brand_with_http_info(account_id, brand_id, brand)
+    def update_brand_with_http_info(account_id, brand_id, brand, options = DocuSign_eSign::UpdateBrandOptions.default)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: AccountsApi.update_brand ..."
       end
@@ -3191,6 +3139,7 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'replace_brand'] = options.replace_brand if !options.replace_brand.nil?
 
       # header parameters
       header_params = {}

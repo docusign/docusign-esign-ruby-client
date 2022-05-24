@@ -22,6 +22,9 @@ module DocuSign_eSign
     # When set to **true**, the tracked envelope and recipient events for all users, including users that are added a later time, are sent through Connect.
     attr_accessor :all_users
 
+    # 
+    attr_accessor :all_users_except
+
     # If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
     attr_accessor :configuration_type
 
@@ -47,6 +50,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :external_folder_label
+
+    # 
+    attr_accessor :group_ids
 
     # When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. 
     attr_accessor :include_certificate_of_completion
@@ -132,6 +138,7 @@ module DocuSign_eSign
         :'allow_envelope_publish' => :'allowEnvelopePublish',
         :'allow_salesforce_publish' => :'allowSalesforcePublish',
         :'all_users' => :'allUsers',
+        :'all_users_except' => :'allUsersExcept',
         :'configuration_type' => :'configurationType',
         :'connect_id' => :'connectId',
         :'delivery_mode' => :'deliveryMode',
@@ -141,6 +148,7 @@ module DocuSign_eSign
         :'events' => :'events',
         :'external_folder_id' => :'externalFolderId',
         :'external_folder_label' => :'externalFolderLabel',
+        :'group_ids' => :'groupIds',
         :'include_certificate_of_completion' => :'includeCertificateOfCompletion',
         :'include_cert_soap_header' => :'includeCertSoapHeader',
         :'include_document_fields' => :'includeDocumentFields',
@@ -176,6 +184,7 @@ module DocuSign_eSign
         :'allow_envelope_publish' => :'String',
         :'allow_salesforce_publish' => :'String',
         :'all_users' => :'String',
+        :'all_users_except' => :'String',
         :'configuration_type' => :'String',
         :'connect_id' => :'String',
         :'delivery_mode' => :'String',
@@ -185,6 +194,7 @@ module DocuSign_eSign
         :'events' => :'Array<String>',
         :'external_folder_id' => :'String',
         :'external_folder_label' => :'String',
+        :'group_ids' => :'Array<String>',
         :'include_certificate_of_completion' => :'String',
         :'include_cert_soap_header' => :'String',
         :'include_document_fields' => :'String',
@@ -234,6 +244,10 @@ module DocuSign_eSign
         self.all_users = attributes[:'allUsers']
       end
 
+      if attributes.has_key?(:'allUsersExcept')
+        self.all_users_except = attributes[:'allUsersExcept']
+      end
+
       if attributes.has_key?(:'configurationType')
         self.configuration_type = attributes[:'configurationType']
       end
@@ -272,6 +286,12 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'externalFolderLabel')
         self.external_folder_label = attributes[:'externalFolderLabel']
+      end
+
+      if attributes.has_key?(:'groupIds')
+        if (value = attributes[:'groupIds']).is_a?(Array)
+          self.group_ids = value
+        end
       end
 
       if attributes.has_key?(:'includeCertificateOfCompletion')
@@ -408,6 +428,7 @@ module DocuSign_eSign
           allow_envelope_publish == o.allow_envelope_publish &&
           allow_salesforce_publish == o.allow_salesforce_publish &&
           all_users == o.all_users &&
+          all_users_except == o.all_users_except &&
           configuration_type == o.configuration_type &&
           connect_id == o.connect_id &&
           delivery_mode == o.delivery_mode &&
@@ -417,6 +438,7 @@ module DocuSign_eSign
           events == o.events &&
           external_folder_id == o.external_folder_id &&
           external_folder_label == o.external_folder_label &&
+          group_ids == o.group_ids &&
           include_certificate_of_completion == o.include_certificate_of_completion &&
           include_cert_soap_header == o.include_cert_soap_header &&
           include_document_fields == o.include_document_fields &&
@@ -454,7 +476,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_envelope_publish, allow_salesforce_publish, all_users, configuration_type, connect_id, delivery_mode, enable_log, envelope_events, event_data, events, external_folder_id, external_folder_label, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_accountas_custom_field, include_time_zone_information, name, password, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
+      [allow_envelope_publish, allow_salesforce_publish, all_users, all_users_except, configuration_type, connect_id, delivery_mode, enable_log, envelope_events, event_data, events, external_folder_id, external_folder_label, group_ids, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_accountas_custom_field, include_time_zone_information, name, password, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
     end
 
     # Builds the object from hash

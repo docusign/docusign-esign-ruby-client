@@ -55,6 +55,9 @@ module DocuSign_eSign
     attr_accessor :queued
 
     # 
+    attr_accessor :resends_remaining
+
+    # 
     attr_accessor :sender_user_id
 
     # 
@@ -80,6 +83,7 @@ module DocuSign_eSign
         :'mailing_list_name' => :'mailingListName',
         :'owner_user_id' => :'ownerUserId',
         :'queued' => :'queued',
+        :'resends_remaining' => :'resendsRemaining',
         :'sender_user_id' => :'senderUserId',
         :'sent' => :'sent',
         :'submitted_date' => :'submittedDate'
@@ -103,6 +107,7 @@ module DocuSign_eSign
         :'mailing_list_name' => :'String',
         :'owner_user_id' => :'String',
         :'queued' => :'String',
+        :'resends_remaining' => :'String',
         :'sender_user_id' => :'String',
         :'sent' => :'String',
         :'submitted_date' => :'String'
@@ -175,6 +180,10 @@ module DocuSign_eSign
         self.queued = attributes[:'queued']
       end
 
+      if attributes.has_key?(:'resendsRemaining')
+        self.resends_remaining = attributes[:'resendsRemaining']
+      end
+
       if attributes.has_key?(:'senderUserId')
         self.sender_user_id = attributes[:'senderUserId']
       end
@@ -220,6 +229,7 @@ module DocuSign_eSign
           mailing_list_name == o.mailing_list_name &&
           owner_user_id == o.owner_user_id &&
           queued == o.queued &&
+          resends_remaining == o.resends_remaining &&
           sender_user_id == o.sender_user_id &&
           sent == o.sent &&
           submitted_date == o.submitted_date
@@ -234,7 +244,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [action, action_status, batch_id, batch_name, batch_size, bulk_errors, envelope_id_or_template_id, envelopes_info, envelopes_uri, failed, mailing_list_id, mailing_list_name, owner_user_id, queued, sender_user_id, sent, submitted_date].hash
+      [action, action_status, batch_id, batch_name, batch_size, bulk_errors, envelope_id_or_template_id, envelopes_info, envelopes_uri, failed, mailing_list_id, mailing_list_name, owner_user_id, queued, resends_remaining, sender_user_id, sent, submitted_date].hash
     end
 
     # Builds the object from hash

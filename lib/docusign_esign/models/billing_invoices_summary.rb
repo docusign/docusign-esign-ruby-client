@@ -13,8 +13,14 @@ require 'date'
 
 module DocuSign_eSign
   class BillingInvoicesSummary
+    # 
+    attr_accessor :account_balance
+
     # Reserved: TBD
     attr_accessor :billing_invoices
+
+    # 
+    attr_accessor :currency_code
 
     # 
     attr_accessor :past_due_balance
@@ -25,7 +31,9 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'account_balance' => :'accountBalance',
         :'billing_invoices' => :'billingInvoices',
+        :'currency_code' => :'currencyCode',
         :'past_due_balance' => :'pastDueBalance',
         :'payment_allowed' => :'paymentAllowed'
       }
@@ -34,7 +42,9 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'account_balance' => :'String',
         :'billing_invoices' => :'Array<BillingInvoice>',
+        :'currency_code' => :'String',
         :'past_due_balance' => :'String',
         :'payment_allowed' => :'String'
       }
@@ -48,10 +58,18 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'accountBalance')
+        self.account_balance = attributes[:'accountBalance']
+      end
+
       if attributes.has_key?(:'billingInvoices')
         if (value = attributes[:'billingInvoices']).is_a?(Array)
           self.billing_invoices = value
         end
+      end
+
+      if attributes.has_key?(:'currencyCode')
+        self.currency_code = attributes[:'currencyCode']
       end
 
       if attributes.has_key?(:'pastDueBalance')
@@ -81,7 +99,9 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          account_balance == o.account_balance &&
           billing_invoices == o.billing_invoices &&
+          currency_code == o.currency_code &&
           past_due_balance == o.past_due_balance &&
           payment_allowed == o.payment_allowed
     end
@@ -95,7 +115,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [billing_invoices, past_due_balance, payment_allowed].hash
+      [account_balance, billing_invoices, currency_code, past_due_balance, payment_allowed].hash
     end
 
     # Builds the object from hash

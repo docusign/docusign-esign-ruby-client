@@ -1551,7 +1551,7 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_id The ID of the recipient being accessed.
-    # @return [ProofServiceViewLink]
+    # @return [IdEvidenceViewLink]
     def create_recipient_proof_file_link(account_id, envelope_id, recipient_id)
       data, _status_code, _headers = create_recipient_proof_file_link_with_http_info(account_id, envelope_id, recipient_id)
       return data
@@ -1562,7 +1562,7 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_id The ID of the recipient being accessed.
-    # @return [Array<(ProofServiceViewLink, Fixnum, Hash)>] ProofServiceViewLink data, response status code and response headers
+    # @return [Array<(IdEvidenceViewLink, Fixnum, Hash)>] IdEvidenceViewLink data, response status code and response headers
     def create_recipient_proof_file_link_with_http_info(account_id, envelope_id, recipient_id)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: EnvelopesApi.create_recipient_proof_file_link ..."
@@ -1596,7 +1596,7 @@ module DocuSign_eSign
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'ProofServiceViewLink')
+        :return_type => 'IdEvidenceViewLink')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#create_recipient_proof_file_link\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1609,7 +1609,7 @@ module DocuSign_eSign
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_id The ID of the recipient being accessed.
     # @param token_scopes 
-    # @return [ProofServiceResourceToken]
+    # @return [IdEvidenceResourceToken]
     def create_recipient_proof_file_resource_token(account_id, envelope_id, recipient_id, token_scopes)
       data, _status_code, _headers = create_recipient_proof_file_resource_token_with_http_info(account_id, envelope_id, recipient_id, token_scopes)
       return data
@@ -1621,7 +1621,7 @@ module DocuSign_eSign
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_id The ID of the recipient being accessed.
     # @param token_scopes 
-    # @return [Array<(ProofServiceResourceToken, Fixnum, Hash)>] ProofServiceResourceToken data, response status code and response headers
+    # @return [Array<(IdEvidenceResourceToken, Fixnum, Hash)>] IdEvidenceResourceToken data, response status code and response headers
     def create_recipient_proof_file_resource_token_with_http_info(account_id, envelope_id, recipient_id, token_scopes)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: EnvelopesApi.create_recipient_proof_file_resource_token ..."
@@ -1657,7 +1657,7 @@ module DocuSign_eSign
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'ProofServiceResourceToken')
+        :return_type => 'IdEvidenceResourceToken')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#create_recipient_proof_file_resource_token\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

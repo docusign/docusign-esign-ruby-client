@@ -16,6 +16,9 @@ module DocuSign_eSign
     # 
     attr_accessor :created
 
+    # The envelope ID of the envelope status that failed to post.
+    attr_accessor :envelope_id
+
     # 
     attr_accessor :error_message
 
@@ -26,6 +29,7 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'created' => :'created',
+        :'envelope_id' => :'envelopeId',
         :'error_message' => :'errorMessage',
         :'recipient_emails' => :'recipientEmails'
       }
@@ -35,6 +39,7 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'created' => :'String',
+        :'envelope_id' => :'String',
         :'error_message' => :'String',
         :'recipient_emails' => :'Array<String>'
       }
@@ -50,6 +55,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'created')
         self.created = attributes[:'created']
+      end
+
+      if attributes.has_key?(:'envelopeId')
+        self.envelope_id = attributes[:'envelopeId']
       end
 
       if attributes.has_key?(:'errorMessage')
@@ -82,6 +91,7 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           created == o.created &&
+          envelope_id == o.envelope_id &&
           error_message == o.error_message &&
           recipient_emails == o.recipient_emails
     end
@@ -95,7 +105,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [created, error_message, recipient_emails].hash
+      [created, envelope_id, error_message, recipient_emails].hash
     end
 
     # Builds the object from hash
