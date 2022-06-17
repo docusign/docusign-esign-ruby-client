@@ -64,6 +64,11 @@ module DocuSign_eSign
     attr_accessor :can_manage_signing_groups_metadata
 
     # 
+    attr_accessor :can_manage_stamps
+
+    attr_accessor :can_manage_stamps_metadata
+
+    # 
     attr_accessor :can_manage_users
 
     attr_accessor :can_manage_users_metadata
@@ -94,6 +99,8 @@ module DocuSign_eSign
         :'can_manage_sharing_metadata' => :'canManageSharingMetadata',
         :'can_manage_signing_groups' => :'canManageSigningGroups',
         :'can_manage_signing_groups_metadata' => :'canManageSigningGroupsMetadata',
+        :'can_manage_stamps' => :'canManageStamps',
+        :'can_manage_stamps_metadata' => :'canManageStampsMetadata',
         :'can_manage_users' => :'canManageUsers',
         :'can_manage_users_metadata' => :'canManageUsersMetadata',
         :'can_view_users' => :'canViewUsers'
@@ -123,6 +130,8 @@ module DocuSign_eSign
         :'can_manage_sharing_metadata' => :'SettingsMetadata',
         :'can_manage_signing_groups' => :'String',
         :'can_manage_signing_groups_metadata' => :'SettingsMetadata',
+        :'can_manage_stamps' => :'String',
+        :'can_manage_stamps_metadata' => :'SettingsMetadata',
         :'can_manage_users' => :'String',
         :'can_manage_users_metadata' => :'SettingsMetadata',
         :'can_view_users' => :'String'
@@ -217,6 +226,14 @@ module DocuSign_eSign
         self.can_manage_signing_groups_metadata = attributes[:'canManageSigningGroupsMetadata']
       end
 
+      if attributes.has_key?(:'canManageStamps')
+        self.can_manage_stamps = attributes[:'canManageStamps']
+      end
+
+      if attributes.has_key?(:'canManageStampsMetadata')
+        self.can_manage_stamps_metadata = attributes[:'canManageStampsMetadata']
+      end
+
       if attributes.has_key?(:'canManageUsers')
         self.can_manage_users = attributes[:'canManageUsers']
       end
@@ -268,6 +285,8 @@ module DocuSign_eSign
           can_manage_sharing_metadata == o.can_manage_sharing_metadata &&
           can_manage_signing_groups == o.can_manage_signing_groups &&
           can_manage_signing_groups_metadata == o.can_manage_signing_groups_metadata &&
+          can_manage_stamps == o.can_manage_stamps &&
+          can_manage_stamps_metadata == o.can_manage_stamps_metadata &&
           can_manage_users == o.can_manage_users &&
           can_manage_users_metadata == o.can_manage_users_metadata &&
           can_view_users == o.can_view_users
@@ -282,7 +301,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [can_manage_account_security_settings, can_manage_account_security_settings_metadata, can_manage_account_settings, can_manage_account_settings_metadata, can_manage_admins, can_manage_admins_metadata, can_manage_connect, can_manage_connect_metadata, can_manage_document_retention, can_manage_document_retention_metadata, can_manage_envelope_transfer, can_manage_envelope_transfer_metadata, can_manage_groups_but_not_users, can_manage_groups_but_not_users_metadata, can_manage_reporting, can_manage_reporting_metadata, can_manage_sharing, can_manage_sharing_metadata, can_manage_signing_groups, can_manage_signing_groups_metadata, can_manage_users, can_manage_users_metadata, can_view_users].hash
+      [can_manage_account_security_settings, can_manage_account_security_settings_metadata, can_manage_account_settings, can_manage_account_settings_metadata, can_manage_admins, can_manage_admins_metadata, can_manage_connect, can_manage_connect_metadata, can_manage_document_retention, can_manage_document_retention_metadata, can_manage_envelope_transfer, can_manage_envelope_transfer_metadata, can_manage_groups_but_not_users, can_manage_groups_but_not_users_metadata, can_manage_reporting, can_manage_reporting_metadata, can_manage_sharing, can_manage_sharing_metadata, can_manage_signing_groups, can_manage_signing_groups_metadata, can_manage_stamps, can_manage_stamps_metadata, can_manage_users, can_manage_users_metadata, can_view_users].hash
     end
 
     # Builds the object from hash

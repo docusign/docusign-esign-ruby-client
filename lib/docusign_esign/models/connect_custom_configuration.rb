@@ -34,6 +34,9 @@ module DocuSign_eSign
     # 
     attr_accessor :delivery_mode
 
+    # 
+    attr_accessor :disabled_by
+
     # This turns Connect logging on or off. When set to **true**, logging is turned on.
     attr_accessor :enable_log
 
@@ -142,6 +145,7 @@ module DocuSign_eSign
         :'configuration_type' => :'configurationType',
         :'connect_id' => :'connectId',
         :'delivery_mode' => :'deliveryMode',
+        :'disabled_by' => :'disabledBy',
         :'enable_log' => :'enableLog',
         :'envelope_events' => :'envelopeEvents',
         :'event_data' => :'eventData',
@@ -188,6 +192,7 @@ module DocuSign_eSign
         :'configuration_type' => :'String',
         :'connect_id' => :'String',
         :'delivery_mode' => :'String',
+        :'disabled_by' => :'String',
         :'enable_log' => :'String',
         :'envelope_events' => :'Array<String>',
         :'event_data' => :'ConnectEventData',
@@ -258,6 +263,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'deliveryMode')
         self.delivery_mode = attributes[:'deliveryMode']
+      end
+
+      if attributes.has_key?(:'disabledBy')
+        self.disabled_by = attributes[:'disabledBy']
       end
 
       if attributes.has_key?(:'enableLog')
@@ -432,6 +441,7 @@ module DocuSign_eSign
           configuration_type == o.configuration_type &&
           connect_id == o.connect_id &&
           delivery_mode == o.delivery_mode &&
+          disabled_by == o.disabled_by &&
           enable_log == o.enable_log &&
           envelope_events == o.envelope_events &&
           event_data == o.event_data &&
@@ -476,7 +486,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_envelope_publish, allow_salesforce_publish, all_users, all_users_except, configuration_type, connect_id, delivery_mode, enable_log, envelope_events, event_data, events, external_folder_id, external_folder_label, group_ids, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_accountas_custom_field, include_time_zone_information, name, password, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
+      [allow_envelope_publish, allow_salesforce_publish, all_users, all_users_except, configuration_type, connect_id, delivery_mode, disabled_by, enable_log, envelope_events, event_data, events, external_folder_id, external_folder_label, group_ids, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_accountas_custom_field, include_time_zone_information, name, password, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
     end
 
     # Builds the object from hash

@@ -43,6 +43,8 @@ module DocuSign_eSign
     # Reserved: TBD
     attr_accessor :billing_profile
 
+    attr_accessor :brands
+
     # When set to **true**, specifies that you can upgrade the account through the API.
     attr_accessor :can_upgrade
 
@@ -137,6 +139,7 @@ module DocuSign_eSign
         :'billing_period_envelopes_sent' => :'billingPeriodEnvelopesSent',
         :'billing_period_start_date' => :'billingPeriodStartDate',
         :'billing_profile' => :'billingProfile',
+        :'brands' => :'brands',
         :'can_upgrade' => :'canUpgrade',
         :'connect_permission' => :'connectPermission',
         :'created_date' => :'createdDate',
@@ -180,6 +183,7 @@ module DocuSign_eSign
         :'billing_period_envelopes_sent' => :'String',
         :'billing_period_start_date' => :'String',
         :'billing_profile' => :'String',
+        :'brands' => :'BrandsResponse',
         :'can_upgrade' => :'String',
         :'connect_permission' => :'String',
         :'created_date' => :'String',
@@ -256,6 +260,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'billingProfile')
         self.billing_profile = attributes[:'billingProfile']
+      end
+
+      if attributes.has_key?(:'brands')
+        self.brands = attributes[:'brands']
       end
 
       if attributes.has_key?(:'canUpgrade')
@@ -399,6 +407,7 @@ module DocuSign_eSign
           billing_period_envelopes_sent == o.billing_period_envelopes_sent &&
           billing_period_start_date == o.billing_period_start_date &&
           billing_profile == o.billing_profile &&
+          brands == o.brands &&
           can_upgrade == o.can_upgrade &&
           connect_permission == o.connect_permission &&
           created_date == o.created_date &&
@@ -437,7 +446,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id_guid, account_name, account_settings, allow_transaction_rooms, billing_period_days_remaining, billing_period_end_date, billing_period_envelopes_allowed, billing_period_envelopes_sent, billing_period_start_date, billing_profile, can_upgrade, connect_permission, created_date, currency_code, current_plan_id, display_appliance_start_url, display_appliance_url, distributor_code, docu_sign_landing_url, dss_values, envelope_sending_blocked, envelope_unit_price, external_account_id, forgotten_password_questions_count, is_downgrade, payment_method, plan_classification, plan_end_date, plan_name, plan_start_date, recipient_domains, seats_allowed, seats_in_use, status21_cfr_part11, suspension_date, suspension_status, use_display_appliance].hash
+      [account_id_guid, account_name, account_settings, allow_transaction_rooms, billing_period_days_remaining, billing_period_end_date, billing_period_envelopes_allowed, billing_period_envelopes_sent, billing_period_start_date, billing_profile, brands, can_upgrade, connect_permission, created_date, currency_code, current_plan_id, display_appliance_start_url, display_appliance_url, distributor_code, docu_sign_landing_url, dss_values, envelope_sending_blocked, envelope_unit_price, external_account_id, forgotten_password_questions_count, is_downgrade, payment_method, plan_classification, plan_end_date, plan_name, plan_start_date, recipient_domains, seats_allowed, seats_in_use, status21_cfr_part11, suspension_date, suspension_status, use_display_appliance].hash
     end
 
     # Builds the object from hash
