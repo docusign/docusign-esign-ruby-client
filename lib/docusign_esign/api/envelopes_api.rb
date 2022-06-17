@@ -1376,6 +1376,57 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Submits a batch of historical envelopes for republish to an adhoc config.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param connect_historical_envelope_republish  (optional parameter)
+    # @return [EnvelopePublishTransaction]
+    def create_historical_envelope_publish_transaction(account_id, connect_historical_envelope_republish)
+      data, _status_code, _headers = create_historical_envelope_publish_transaction_with_http_info(account_id,  connect_historical_envelope_republish)
+      return data
+    end
+
+    # Submits a batch of historical envelopes for republish to an adhoc config.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param connect_historical_envelope_republish  (optional parameter)
+    # @return [Array<(EnvelopePublishTransaction, Fixnum, Hash)>] EnvelopePublishTransaction data, response status code and response headers
+    def create_historical_envelope_publish_transaction_with_http_info(account_id, connect_historical_envelope_republish)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_historical_envelope_publish_transaction ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_historical_envelope_publish_transaction" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/envelopes/publish/historical".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(connect_historical_envelope_republish)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'EnvelopePublishTransaction')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_historical_envelope_publish_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Lock an envelope.
     # Locks the specified envelope, and sets the time until the lock expires, to prevent other users or recipients from accessing and changing the envelope.  ###### Note: Users must have envelope locking capability enabled to use this function (userSetting `canLockEnvelopes` must be  set to true for the user).
     # @param account_id The external account number (int) or account ID Guid.

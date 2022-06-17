@@ -52,6 +52,9 @@ module DocuSign_eSign
     attr_accessor :completed_count
 
     # 
+    attr_accessor :consent_details_list
+
+    # 
     attr_accessor :creation_reason
 
     # An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
@@ -165,6 +168,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :notary_signers
+
+    # 
+    attr_accessor :notary_source_type
 
     # 
     attr_accessor :notary_type
@@ -297,6 +303,7 @@ module DocuSign_eSign
         :'can_sign_offline' => :'canSignOffline',
         :'client_user_id' => :'clientUserId',
         :'completed_count' => :'completedCount',
+        :'consent_details_list' => :'consentDetailsList',
         :'creation_reason' => :'creationReason',
         :'custom_fields' => :'customFields',
         :'declined_date_time' => :'declinedDateTime',
@@ -340,6 +347,7 @@ module DocuSign_eSign
         :'notary_id' => :'notaryId',
         :'notary_signer_email_sent' => :'notarySignerEmailSent',
         :'notary_signers' => :'notarySigners',
+        :'notary_source_type' => :'notarySourceType',
         :'notary_type' => :'notaryType',
         :'note' => :'note',
         :'note_metadata' => :'noteMetadata',
@@ -402,6 +410,7 @@ module DocuSign_eSign
         :'can_sign_offline' => :'String',
         :'client_user_id' => :'String',
         :'completed_count' => :'String',
+        :'consent_details_list' => :'Array<ConsentDetails>',
         :'creation_reason' => :'String',
         :'custom_fields' => :'Array<String>',
         :'declined_date_time' => :'String',
@@ -445,6 +454,7 @@ module DocuSign_eSign
         :'notary_id' => :'String',
         :'notary_signer_email_sent' => :'String',
         :'notary_signers' => :'Array<String>',
+        :'notary_source_type' => :'String',
         :'notary_type' => :'String',
         :'note' => :'String',
         :'note_metadata' => :'PropertyMetadata',
@@ -551,6 +561,12 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'completedCount')
         self.completed_count = attributes[:'completedCount']
+      end
+
+      if attributes.has_key?(:'consentDetailsList')
+        if (value = attributes[:'consentDetailsList']).is_a?(Array)
+          self.consent_details_list = value
+        end
       end
 
       if attributes.has_key?(:'creationReason')
@@ -733,6 +749,10 @@ module DocuSign_eSign
         if (value = attributes[:'notarySigners']).is_a?(Array)
           self.notary_signers = value
         end
+      end
+
+      if attributes.has_key?(:'notarySourceType')
+        self.notary_source_type = attributes[:'notarySourceType']
       end
 
       if attributes.has_key?(:'notaryType')
@@ -949,6 +969,7 @@ module DocuSign_eSign
           can_sign_offline == o.can_sign_offline &&
           client_user_id == o.client_user_id &&
           completed_count == o.completed_count &&
+          consent_details_list == o.consent_details_list &&
           creation_reason == o.creation_reason &&
           custom_fields == o.custom_fields &&
           declined_date_time == o.declined_date_time &&
@@ -992,6 +1013,7 @@ module DocuSign_eSign
           notary_id == o.notary_id &&
           notary_signer_email_sent == o.notary_signer_email_sent &&
           notary_signers == o.notary_signers &&
+          notary_source_type == o.notary_source_type &&
           notary_type == o.notary_type &&
           note == o.note &&
           note_metadata == o.note_metadata &&
@@ -1046,7 +1068,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_navigation, auto_responded_reason, bulk_recipients_uri, can_sign_offline, client_user_id, completed_count, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delegated_by, delegated_to, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, live_oak_start_url, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_id, notary_signer_email_sent, notary_signers, notary_type, note, note_metadata, offline_attributes, phone_authentication, phone_number, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_navigation, auto_responded_reason, bulk_recipients_uri, can_sign_offline, client_user_id, completed_count, consent_details_list, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delegated_by, delegated_to, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, live_oak_start_url, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_id, notary_signer_email_sent, notary_signers, notary_source_type, notary_type, note, note_metadata, offline_attributes, phone_authentication, phone_number, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash

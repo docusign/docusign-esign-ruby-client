@@ -36,6 +36,9 @@ module DocuSign_eSign
     # 
     attr_accessor :completed_count
 
+    # 
+    attr_accessor :consent_details_list
+
     # An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
     attr_accessor :custom_fields
 
@@ -215,6 +218,7 @@ module DocuSign_eSign
         :'auto_responded_reason' => :'autoRespondedReason',
         :'client_user_id' => :'clientUserId',
         :'completed_count' => :'completedCount',
+        :'consent_details_list' => :'consentDetailsList',
         :'custom_fields' => :'customFields',
         :'declined_date_time' => :'declinedDateTime',
         :'declined_reason' => :'declinedReason',
@@ -292,6 +296,7 @@ module DocuSign_eSign
         :'auto_responded_reason' => :'String',
         :'client_user_id' => :'String',
         :'completed_count' => :'String',
+        :'consent_details_list' => :'Array<ConsentDetails>',
         :'custom_fields' => :'Array<String>',
         :'declined_date_time' => :'String',
         :'declined_reason' => :'String',
@@ -398,6 +403,12 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'completedCount')
         self.completed_count = attributes[:'completedCount']
+      end
+
+      if attributes.has_key?(:'consentDetailsList')
+        if (value = attributes[:'consentDetailsList']).is_a?(Array)
+          self.consent_details_list = value
+        end
       end
 
       if attributes.has_key?(:'customFields')
@@ -691,6 +702,7 @@ module DocuSign_eSign
           auto_responded_reason == o.auto_responded_reason &&
           client_user_id == o.client_user_id &&
           completed_count == o.completed_count &&
+          consent_details_list == o.consent_details_list &&
           custom_fields == o.custom_fields &&
           declined_date_time == o.declined_date_time &&
           declined_reason == o.declined_reason &&
@@ -765,7 +777,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, allow_system_override_for_locked_recipient, auto_responded_reason, client_user_id, completed_count, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, phone_authentication, phone_number, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, role_name, routing_order, routing_order_metadata, sent_date_time, signed_date_time, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, allow_system_override_for_locked_recipient, auto_responded_reason, client_user_id, completed_count, consent_details_list, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, phone_authentication, phone_number, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, role_name, routing_order, routing_order_metadata, sent_date_time, signed_date_time, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash
