@@ -32,6 +32,7 @@ module DocuSign_eSign
     # Specifies the ISO currency code for the account.
     attr_accessor :currency_code
 
+    # 
     attr_accessor :downgrade_plan_information
 
     # When set to **true**, then customer support is provided as part of the account plan.

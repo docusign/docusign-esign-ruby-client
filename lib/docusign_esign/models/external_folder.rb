@@ -16,6 +16,7 @@ module DocuSign_eSign
     # The last position in the result set. 
     attr_accessor :end_position
 
+    # This object describes errors that occur. It is only valid for responses and ignored in requests.
     attr_accessor :error_details
 
     # 

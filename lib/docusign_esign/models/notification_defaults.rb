@@ -13,8 +13,10 @@ require 'date'
 
 module DocuSign_eSign
   class NotificationDefaults
+    # The default notification settings for envelopes sent by using the console.
     attr_accessor :api_email_notifications
 
+    # The default notification settings for envelopes sent by using the API.
     attr_accessor :email_notifications
 
     # Attribute mapping from ruby-style variable name to JSON key.

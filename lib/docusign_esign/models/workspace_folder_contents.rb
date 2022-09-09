@@ -17,6 +17,7 @@ module DocuSign_eSign
     # The last position in the result set. 
     attr_accessor :end_position
 
+    # The folder from which to return items. You can enter either the folder name or folder ID.
     attr_accessor :folder
 
     # 

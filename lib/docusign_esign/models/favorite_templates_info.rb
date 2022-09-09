@@ -13,6 +13,7 @@ require 'date'
 
 module DocuSign_eSign
   class FavoriteTemplatesInfo
+    # This object describes errors that occur. It is only valid for responses and ignored in requests.
     attr_accessor :error_details
 
     # 

@@ -16,6 +16,7 @@ module DocuSign_eSign
     # If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account's access code format setting.  If blank, but the signer `accessCode` property is set in the envelope, then that value is used.  If blank and the signer `accessCode` property is not set, then the access code is not required.
     attr_accessor :access_code
 
+    # Metadata that indicates whether the `accessCode` property is editable. This property is read-only.
     attr_accessor :access_code_metadata
 
     # This Optional attribute indicates that the access code will be added to the email sent to the recipient; this nullifies the Security measure of Access Code on the recipient.
@@ -69,6 +70,7 @@ module DocuSign_eSign
     # 
     attr_accessor :default_recipient
 
+    # 
     attr_accessor :delegated_by
 
     # 
@@ -80,6 +82,7 @@ module DocuSign_eSign
     # Reserved: For DocuSign use only.
     attr_accessor :delivery_method
 
+    # Reserved for DocuSign.
     attr_accessor :delivery_method_metadata
 
     # 
@@ -94,8 +97,10 @@ module DocuSign_eSign
     # 
     attr_accessor :email
 
+    # Metadata that indicates whether the `email` property is editable. This property is read-only.
     attr_accessor :email_metadata
 
+    # An optional complex type that sets a specific email subject and body for this recipient's notification email.   **Note:** You can set the `emailNotification` property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level `emailSubject` and `emailBlurb`. 
     attr_accessor :email_notification
 
     # 
@@ -104,6 +109,7 @@ module DocuSign_eSign
     # Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender's system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to `SIGN_AT_DOCUSIGN`, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient's identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets `EmbeddedRecipientStartURL=SIGN_AT_DOCUSIGN`, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the `clientUserId` property is NOT set, and the `embeddedRecipientStartURL` is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The `customFields` property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   `http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&[[mergeField3]]` 
     attr_accessor :embedded_recipient_start_url
 
+    # This object describes errors that occur. It is only valid for responses and ignored in requests.
     attr_accessor :error_details
 
     # Specifies the documents that are not visible to this recipient. Document Visibility must be enabled for the account and the `enforceSignerVisibility` property must be set to **true** for the envelope to use this.  When enforce signer visibility is enabled, documents with tabs can only be viewed by signers that have a tab on that document. Recipients that have an administrative role (Agent, Editor, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent.
@@ -112,25 +118,31 @@ module DocuSign_eSign
     # Reserved:
     attr_accessor :fax_number
 
+    # Reserved for DocuSign.
     attr_accessor :fax_number_metadata
 
     # The user's first name.  Maximum Length: 50 characters.
     attr_accessor :first_name
 
+    # Metadata that indicates whether the `firstName` property is editable. This property is read-only.
     attr_accessor :first_name_metadata
 
     # 
     attr_accessor :full_name
 
+    # Reserved for DocuSign.
     attr_accessor :full_name_metadata
 
     # Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as 'ID Check $' and 'SMS Auth $'. To use ID check in an envelope, the idCheckConfigurationName should be 'ID Check '. If you wanted to use SMS, it would be 'SMS Auth $' and you would need to add you would need to add phone number information to the `smsAuthentication` node.
     attr_accessor :id_check_configuration_name
 
+    # Metadata that indicates whether the `idCheckConfigurationName` property is editable. This property is read-only.
     attr_accessor :id_check_configuration_name_metadata
 
+    # An object that contains input information related to a recipient ID check.
     attr_accessor :id_check_information_input
 
+    # Specifies the ID Verification workflow applied on an envelope by workflow ID. <br/>See the [list](/docs/esign-rest-api/reference/accounts/identityverifications/list/) method in the [IdentityVerifications](/docs/esign-rest-api/reference/accounts/identityverifications/) resource for more information on how to retrieve workflow IDs available for an account. <br/>This can be used in addition to other [recipient authentication](https://support.docusign.com/en/guides/ndse-user-guide-recipient-authentication) methods. <br/>Note that ID Verification and ID Check are two distinct methods. ID Verification checks recipients' identity by verifying their ID while ID Check relies on data available on public records (such as current and former address).
     attr_accessor :identity_verification
 
     # When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient's account. 
@@ -139,11 +151,13 @@ module DocuSign_eSign
     # 
     attr_accessor :is_bulk_recipient
 
+    # Reserved for DocuSign.
     attr_accessor :is_bulk_recipient_metadata
 
     # 
     attr_accessor :last_name
 
+    # Metadata that indicates whether the `lastName` property is editable. This property is read-only.
     attr_accessor :last_name_metadata
 
     # 
@@ -158,6 +172,7 @@ module DocuSign_eSign
     # 
     attr_accessor :name
 
+    # Metadata that indicates whether the `name` property is editable. This property is read-only.
     attr_accessor :name_metadata
 
     # 
@@ -178,19 +193,25 @@ module DocuSign_eSign
     # Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters.
     attr_accessor :note
 
+    # Metadata that indicates whether the `note` property is editable. This property is read-only.
     attr_accessor :note_metadata
 
+    # Reserved for DocuSign.
     attr_accessor :offline_attributes
 
+    # When `idCheckConfigurationName` is set to `Phone Auth $`, you use this complex type to provide the recipient authentication method details. It contains the following elements:  * `recipMayProvideNumber`: Boolean. When **true,** the recipient can use whatever phone number they choose. * `senderProvidedNumbers`: ArrayOfStrings.  A list of phone numbers the recipient can use. * `recordVoicePrint`: Reserved for DocuSign. * `validateRecipProvidedNumber`: Reserved for DocuSign.  
     attr_accessor :phone_authentication
 
+    # Describes the recipient phone number.
     attr_accessor :phone_number
 
+    # 
     attr_accessor :proof_file
 
     # Reserved:
     attr_accessor :recipient_attachments
 
+    # Information about the recipient's authentication status. This property is read-only.
     attr_accessor :recipient_authentication_status
 
     # 
@@ -211,11 +232,13 @@ module DocuSign_eSign
     # 
     attr_accessor :recipient_type
 
+    # Metadata that indicates whether the `recipientType` property is editable. This property is read-only.
     attr_accessor :recipient_type_metadata
 
     # When set to **true**, the recipient is required to use the specified ID check method (including Phone and SMS authentication) to validate their identity. 
     attr_accessor :require_id_lookup
 
+    # Metadata that indicates whether the `requireIdLookup` property is editable. This property is read-only.
     attr_accessor :require_id_lookup_metadata
 
     # 
@@ -233,11 +256,13 @@ module DocuSign_eSign
     # Specifies the routing order of the recipient in the envelope. 
     attr_accessor :routing_order
 
+    # Metadata that indicates whether the `routingOrder` property is editable. This property is read-only.
     attr_accessor :routing_order_metadata
 
     # The date and time the envelope was sent.
     attr_accessor :sent_date_time
 
+    # Allows the sender to pre-specify the signature name, signature initials and signature font used in the signature stamp for the recipient.  Used only with recipient types In Person Signers and Signers.
     attr_accessor :signature_info
 
     # Reserved: For DocuSign use only. 
@@ -246,11 +271,13 @@ module DocuSign_eSign
     # When set to **true**, specifies that the signer must sign in all locations.
     attr_accessor :sign_in_each_location
 
+    # Metadata that indicates whether the `signInEachLocation` property is editable. This property is read-only.
     attr_accessor :sign_in_each_location_metadata
 
     # When set to **true** and the feature is enabled in the sender's account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once).
     attr_accessor :signing_group_id
 
+    # Metadata that indicates whether the `signingGroupId` property is editable. This property is read-only.
     attr_accessor :signing_group_id_metadata
 
     # The display name for the signing group.   Maximum Length: 100 characters. 
@@ -259,6 +286,7 @@ module DocuSign_eSign
     # A complex type that contains information about users in the signing group.
     attr_accessor :signing_group_users
 
+    # When `idCheckConfigurationName` is set to `SMS Auth $`, you use this complex type to provide the recipient authentication method details. It contains the element `senderProvidedNumbers`, which is an array of phone numbers that the recipient can use for SMS text authentication.   
     attr_accessor :sms_authentication
 
     #  Lists the social ID type that can be used for recipient authentication.
@@ -273,6 +301,7 @@ module DocuSign_eSign
     # 
     attr_accessor :suppress_emails
 
+    # A list of tabs, which are represented graphically as symbols on documents at the time of signing. Tabs show recipients where to sign, initial, or enter data. They may also display data to the recipients.
     attr_accessor :tabs
 
     # When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 

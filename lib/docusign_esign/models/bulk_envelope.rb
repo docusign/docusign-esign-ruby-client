@@ -28,6 +28,7 @@ module DocuSign_eSign
     # Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
     attr_accessor :envelope_uri
 
+    # This object describes errors that occur. It is only valid for responses and ignored in requests.
     attr_accessor :error_details
 
     # 

@@ -20,6 +20,7 @@ module DocuSign_eSign
     # A list of envelope-level event statuses that will trigger Connect to send updates to the endpoint specified in the `url` property.   To receive notifications, you must include either an `envelopeEvents` node or a `recipientEvents` node. You do not need to specify both.
     attr_accessor :envelope_events
 
+    # Allows you to specify the format of the information the Connect webhooks returns. For more information, see [Connect webhooks with JSON notifications](https://www.docusign.com/blog/developers/connect-webhooks-json-notifications)
     attr_accessor :event_data
 
     # 

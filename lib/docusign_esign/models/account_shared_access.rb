@@ -20,6 +20,7 @@ module DocuSign_eSign
     # The last position in the result set. 
     attr_accessor :end_position
 
+    # A complex type containing an errorCode and message identifying the error that occurred.
     attr_accessor :error_details
 
     # The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 

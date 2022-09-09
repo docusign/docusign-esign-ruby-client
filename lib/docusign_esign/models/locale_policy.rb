@@ -16,6 +16,7 @@ module DocuSign_eSign
     # 
     attr_accessor :address_format
 
+    # 
     attr_accessor :address_format_metadata
 
     # 
@@ -24,26 +25,31 @@ module DocuSign_eSign
     # 
     attr_accessor :calendar_type
 
+    # 
     attr_accessor :calendar_type_metadata
 
     # 
     attr_accessor :culture_name
 
+    # 
     attr_accessor :culture_name_metadata
 
     # 
     attr_accessor :currency_code
 
+    # Metadata that indicates whether the `currencyCode` property is editable.
     attr_accessor :currency_code_metadata
 
     # 
     attr_accessor :currency_negative_format
 
+    # 
     attr_accessor :currency_negative_format_metadata
 
     # 
     attr_accessor :currency_positive_format
 
+    # 
     attr_accessor :currency_positive_format_metadata
 
     # 
@@ -61,6 +67,7 @@ module DocuSign_eSign
     # 
     attr_accessor :date_format
 
+    # 
     attr_accessor :date_format_metadata
 
     # 
@@ -102,31 +109,37 @@ module DocuSign_eSign
     # 
     attr_accessor :initial_format
 
+    # 
     attr_accessor :initial_format_metadata
 
     # 
     attr_accessor :name_format
 
+    # 
     attr_accessor :name_format_metadata
 
     # 
     attr_accessor :sign_date_format
 
+    # Metadata that indicates whether the `signDateFormat` property is editable. 
     attr_accessor :sign_date_format_metadata
 
     # 
     attr_accessor :sign_time_format
 
+    # Metadata that indicates whether the `signTimeFormat` property is editable. 
     attr_accessor :sign_time_format_metadata
 
     # 
     attr_accessor :time_format
 
+    # 
     attr_accessor :time_format_metadata
 
     # 
     attr_accessor :time_zone
 
+    # 
     attr_accessor :time_zone_metadata
 
     # Attribute mapping from ruby-style variable name to JSON key.

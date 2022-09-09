@@ -17,11 +17,13 @@ module DocuSign_eSign
     # When set to **true**, the sender can modify the value of the custom tab during the sending process.
     attr_accessor :allow_sender_to_edit
 
+    # Metadata that indicates if the sender can edit the `allowSenderToEdit` property.
     attr_accessor :allow_sender_to_edit_metadata
 
     # If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
     attr_accessor :configuration_type
 
+    # Metadata that indicates if the sender can edit the `configurationType` property.
     attr_accessor :configuration_type_metadata
 
     # Sets the object associated with the custom tab. Currently this is the Salesforce Object.
@@ -30,18 +32,22 @@ module DocuSign_eSign
     # 
     attr_accessor :path_extended
 
+    # Reserved for DocuSign.
     attr_accessor :path_extended_metadata
 
+    # Metadata that indicates whether the `path` property is editable. 
     attr_accessor :path_metadata
 
     # Specifies the row number in a Salesforce table that the merge field value corresponds to.
     attr_accessor :row
 
+    # Metadata that indicates whether the `row` property is editable. 
     attr_accessor :row_metadata
 
     # When wet to true, the information entered in the tab automatically updates the related Salesforce data when an envelope is completed.
     attr_accessor :write_back
 
+    # Metadata that indicates if the sender can edit the `writeBack` property.
     attr_accessor :write_back_metadata
 
     # Attribute mapping from ruby-style variable name to JSON key.

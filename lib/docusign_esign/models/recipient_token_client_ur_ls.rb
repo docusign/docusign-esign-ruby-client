@@ -46,16 +46,16 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'on_access_code_failed' => :'OnAccessCodeFailed',
-        :'on_cancel' => :'OnCancel',
-        :'on_decline' => :'OnDecline',
-        :'on_exception' => :'OnException',
-        :'on_fax_pending' => :'OnFaxPending',
-        :'on_id_check_failed' => :'OnIdCheckFailed',
-        :'on_session_timeout' => :'OnSessionTimeout',
-        :'on_signing_complete' => :'OnSigningComplete',
-        :'on_ttl_expired' => :'OnTTLExpired',
-        :'on_viewing_complete' => :'OnViewingComplete'
+        :'on_access_code_failed' => :'onAccessCodeFailed',
+        :'on_cancel' => :'onCancel',
+        :'on_decline' => :'onDecline',
+        :'on_exception' => :'onException',
+        :'on_fax_pending' => :'onFaxPending',
+        :'on_id_check_failed' => :'onIdCheckFailed',
+        :'on_session_timeout' => :'onSessionTimeout',
+        :'on_signing_complete' => :'onSigningComplete',
+        :'on_ttl_expired' => :'onTTLExpired',
+        :'on_viewing_complete' => :'onViewingComplete'
       }
     end
 
@@ -83,44 +83,44 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'OnAccessCodeFailed')
-        self.on_access_code_failed = attributes[:'OnAccessCodeFailed']
+      if attributes.has_key?(:'onAccessCodeFailed')
+        self.on_access_code_failed = attributes[:'onAccessCodeFailed']
       end
 
-      if attributes.has_key?(:'OnCancel')
-        self.on_cancel = attributes[:'OnCancel']
+      if attributes.has_key?(:'onCancel')
+        self.on_cancel = attributes[:'onCancel']
       end
 
-      if attributes.has_key?(:'OnDecline')
-        self.on_decline = attributes[:'OnDecline']
+      if attributes.has_key?(:'onDecline')
+        self.on_decline = attributes[:'onDecline']
       end
 
-      if attributes.has_key?(:'OnException')
-        self.on_exception = attributes[:'OnException']
+      if attributes.has_key?(:'onException')
+        self.on_exception = attributes[:'onException']
       end
 
-      if attributes.has_key?(:'OnFaxPending')
-        self.on_fax_pending = attributes[:'OnFaxPending']
+      if attributes.has_key?(:'onFaxPending')
+        self.on_fax_pending = attributes[:'onFaxPending']
       end
 
-      if attributes.has_key?(:'OnIdCheckFailed')
-        self.on_id_check_failed = attributes[:'OnIdCheckFailed']
+      if attributes.has_key?(:'onIdCheckFailed')
+        self.on_id_check_failed = attributes[:'onIdCheckFailed']
       end
 
-      if attributes.has_key?(:'OnSessionTimeout')
-        self.on_session_timeout = attributes[:'OnSessionTimeout']
+      if attributes.has_key?(:'onSessionTimeout')
+        self.on_session_timeout = attributes[:'onSessionTimeout']
       end
 
-      if attributes.has_key?(:'OnSigningComplete')
-        self.on_signing_complete = attributes[:'OnSigningComplete']
+      if attributes.has_key?(:'onSigningComplete')
+        self.on_signing_complete = attributes[:'onSigningComplete']
       end
 
-      if attributes.has_key?(:'OnTTLExpired')
-        self.on_ttl_expired = attributes[:'OnTTLExpired']
+      if attributes.has_key?(:'onTTLExpired')
+        self.on_ttl_expired = attributes[:'onTTLExpired']
       end
 
-      if attributes.has_key?(:'OnViewingComplete')
-        self.on_viewing_complete = attributes[:'OnViewingComplete']
+      if attributes.has_key?(:'onViewingComplete')
+        self.on_viewing_complete = attributes[:'onViewingComplete']
       end
     end
 

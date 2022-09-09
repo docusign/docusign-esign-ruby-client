@@ -16,6 +16,7 @@ module DocuSign_eSign
     # The users email address.
     attr_accessor :email
 
+    # This object describes errors that occur. It is only valid for responses and ignored in requests.
     attr_accessor :error_details
 
     # The social account provider (Facebook, Yahoo, etc.)

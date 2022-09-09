@@ -16,6 +16,7 @@ module DocuSign_eSign
     # 
     attr_accessor :action
 
+    # 
     attr_accessor :notification
 
     # 

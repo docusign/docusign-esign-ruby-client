@@ -17,6 +17,7 @@ module DocuSign_eSign
     # An Array containing a list of phone numbers the recipient may use for SMS text authentication. 
     attr_accessor :sender_provided_numbers
 
+    # Metadata that indicates whether the `senderProvidedNumbers` property can be edited.
     attr_accessor :sender_provided_numbers_metadata
 
     # Attribute mapping from ruby-style variable name to JSON key.

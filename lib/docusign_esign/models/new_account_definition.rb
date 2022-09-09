@@ -16,12 +16,16 @@ module DocuSign_eSign
     # The account name for the new account.
     attr_accessor :account_name
 
+    # The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  
     attr_accessor :account_settings
 
+    # A complex type that contains the following information for the new account: `Street1`, `Street2`, `City`, `State`, `Zip`, `Phone`, and `Fax`.
     attr_accessor :address_information
 
+    # A complex type that has information about the credit card used to pay for this account.
     attr_accessor :credit_card_information
 
+    # Information about the bank that processes direct debits for the payment plan.
     attr_accessor :direct_debit_processor_information
 
     # The code that identifies the billing plan groups and plans for the new account.
@@ -36,20 +40,28 @@ module DocuSign_eSign
     # 
     attr_accessor :envelope_partition_id
 
+    # A complex type with the initial user information for the new account. Note that some user information is set internally based on the plan and cannot be overridden.
     attr_accessor :initial_user
 
     # 
     attr_accessor :payment_method
 
+    # 
+    attr_accessor :payment_processor
+
+    # Information about the entity that processes payments for the billing plan.
     attr_accessor :payment_processor_information
 
+    # An object used to identify the features and attributes of the account being created.
     attr_accessor :plan_information
 
     # 
     attr_accessor :process_payment
 
+    # A complex type that contains properties for entering referral and discount information.
     attr_accessor :referral_information
 
+    # Contains properties that map a DocuSign user to a social account such as Facebook or Yahoo.
     attr_accessor :social_account_information
 
     # 
@@ -69,6 +81,7 @@ module DocuSign_eSign
         :'envelope_partition_id' => :'envelopePartitionId',
         :'initial_user' => :'initialUser',
         :'payment_method' => :'paymentMethod',
+        :'payment_processor' => :'paymentProcessor',
         :'payment_processor_information' => :'paymentProcessorInformation',
         :'plan_information' => :'planInformation',
         :'process_payment' => :'processPayment',
@@ -92,6 +105,7 @@ module DocuSign_eSign
         :'envelope_partition_id' => :'String',
         :'initial_user' => :'UserInformation',
         :'payment_method' => :'String',
+        :'payment_processor' => :'String',
         :'payment_processor_information' => :'PaymentProcessorInformation',
         :'plan_information' => :'PlanInformation',
         :'process_payment' => :'String',
@@ -153,6 +167,10 @@ module DocuSign_eSign
         self.payment_method = attributes[:'paymentMethod']
       end
 
+      if attributes.has_key?(:'paymentProcessor')
+        self.payment_processor = attributes[:'paymentProcessor']
+      end
+
       if attributes.has_key?(:'paymentProcessorInformation')
         self.payment_processor_information = attributes[:'paymentProcessorInformation']
       end
@@ -207,6 +225,7 @@ module DocuSign_eSign
           envelope_partition_id == o.envelope_partition_id &&
           initial_user == o.initial_user &&
           payment_method == o.payment_method &&
+          payment_processor == o.payment_processor &&
           payment_processor_information == o.payment_processor_information &&
           plan_information == o.plan_information &&
           process_payment == o.process_payment &&
@@ -224,7 +243,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_name, account_settings, address_information, credit_card_information, direct_debit_processor_information, distributor_code, distributor_password, enable_pre_auth, envelope_partition_id, initial_user, payment_method, payment_processor_information, plan_information, process_payment, referral_information, social_account_information, tax_exempt_id].hash
+      [account_name, account_settings, address_information, credit_card_information, direct_debit_processor_information, distributor_code, distributor_password, enable_pre_auth, envelope_partition_id, initial_user, payment_method, payment_processor, payment_processor_information, plan_information, process_payment, referral_information, social_account_information, tax_exempt_id].hash
     end
 
     # Builds the object from hash

@@ -17,21 +17,25 @@ module DocuSign_eSign
     # Boolean. When set to **true**, the recipient can supply a phone number their choice.
     attr_accessor :recip_may_provide_number
 
+    # Metadata that indicates whether the `recipMayProvideNumber` property can be edited.
     attr_accessor :recip_may_provide_number_metadata
 
     # Reserved.
     attr_accessor :record_voice_print
 
+    # Reserved for DocuSign.
     attr_accessor :record_voice_print_metadata
 
     # An Array containing a list of phone numbers the recipient may use for SMS text authentication. 
     attr_accessor :sender_provided_numbers
 
+    # Metadata that indicates whether the `senderProvidedNumbers` property can be edited.
     attr_accessor :sender_provided_numbers_metadata
 
     #  Reserved.
     attr_accessor :validate_recip_provided_number
 
+    # Reserved for DocuSign.
     attr_accessor :validate_recip_provided_number_metadata
 
     # Attribute mapping from ruby-style variable name to JSON key.

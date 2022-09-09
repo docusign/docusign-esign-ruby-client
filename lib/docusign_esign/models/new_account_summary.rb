@@ -28,6 +28,7 @@ module DocuSign_eSign
     # The URL that should be used for successive calls to this account. It includes the protocal (https), the DocuSign server where the account is located, and the account number. Use this Url to make API calls against this account. Many of the API calls provide Uri's that are relative to this baseUrl.
     attr_accessor :base_url
 
+    # 
     attr_accessor :billing_plan_preview
 
     # Specifies the user ID of the new user.

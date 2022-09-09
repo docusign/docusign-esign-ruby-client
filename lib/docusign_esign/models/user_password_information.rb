@@ -19,6 +19,7 @@ module DocuSign_eSign
     # The user's email address for the associated account.
     attr_accessor :email
 
+    # A complex element containing up to four Question/Answer pairs for forgotten password information.
     attr_accessor :forgotten_password_info
 
     # The user's new password.

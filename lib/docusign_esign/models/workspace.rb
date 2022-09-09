@@ -17,18 +17,22 @@ module DocuSign_eSign
     # 
     attr_accessor :billable_account_id
 
+    # 
     attr_accessor :caller_information
 
     # 
     attr_accessor :created
 
+    # Details about the user who created the workspace.
     attr_accessor :created_by_information
 
     # Utc date and time the comment was last updated (can only be done by creator.)
     attr_accessor :last_modified
 
+    # Details about the user who last modified the workspace.
     attr_accessor :last_modified_by_information
 
+    # Information about the settings for the workspace.
     attr_accessor :settings
 
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.

@@ -97,6 +97,7 @@ module DocuSign_eSign
     # 
     attr_accessor :poly_line_overlay_tabs
 
+    # Prefill tabs are tabs that the sender can fill in before the envelope is sent. They are sometimes called sender tags or pre-fill fields.   [Pre-Fill Your Own Document Fields][app] describes how prefill tabs work in the web application.   [Customize your envelopes with pre-fill fields][catblog] shows how to use prefill tabs in your application using the eSignature SDKs.  [app]:      https://support.docusign.com/en/guides/ndse-user-guide-prefill-fields [catblog]:  https://www.docusign.com/blog/developers/common-api-tasks-customize-your-envelopes-pre-fill-fields
     attr_accessor :prefill_tabs
 
     # Specifies a tag on the document in a location where the recipient can select one option from a group of options using a radio button. The radio buttons do not have to be on the same page in a document.

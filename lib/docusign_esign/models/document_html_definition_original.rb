@@ -19,6 +19,7 @@ module DocuSign_eSign
     # 
     attr_accessor :document_id_guid
 
+    # Defines how to generate the responsive-formatted HTML for the document.
     attr_accessor :html_definition
 
     # Attribute mapping from ruby-style variable name to JSON key.

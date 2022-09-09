@@ -14,42 +14,61 @@ require 'date'
 module DocuSign_eSign
   # Contains information about the authentication status.
   class AuthenticationStatus
+    # The result of a user's attempt to authenticate by using an access code. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
     attr_accessor :access_code_result
 
+    # The result of an age verification check. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
     attr_accessor :age_verify_result
 
+    # Deprecated.
     attr_accessor :any_social_id_result
 
+    # Deprecated.
     attr_accessor :facebook_result
 
+    # Deprecated.
     attr_accessor :google_result
 
+    # The result of an [Identity Verification][IDV] workflow.  [IDV]: /docs/esign-rest-api/reference/accounts/identityverifications/
     attr_accessor :identity_verification_result
 
+    # The result of an ID lookup authentication check. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
     attr_accessor :id_lookup_result
 
+    # The result of the user's answers to ID challenge questions. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
     attr_accessor :id_questions_result
 
+    # Deprecated.
     attr_accessor :linkedin_result
 
+    # Deprecated.
     attr_accessor :live_id_result
 
+    # The result of an Office of Foreign Asset Control (OFAC) check. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
     attr_accessor :ofac_result
 
+    # Deprecated.
     attr_accessor :open_id_result
 
+    # The result of the user's attempt to authenticate by using two-factor authentication (2FA) through phone messaging. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
     attr_accessor :phone_auth_result
 
+    # Success/failure result of authentication using sign-in with a Salesforce account. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
     attr_accessor :salesforce_result
 
+    # The result of the user's attempt to authenticate by using a signature provider.
     attr_accessor :signature_provider_result
 
+    # The result of the user's attempt to authenticate by using two-factor authentication (2FA) through SMS messaging on a mobile phone.
     attr_accessor :sms_auth_result
 
+    # The result of a Student Authentication Network (STAN) authentication check. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
     attr_accessor :s_tan_pin_result
 
+    # Deprecated.
     attr_accessor :twitter_result
 
+    # Deprecated.
     attr_accessor :yahoo_result
 
     # Attribute mapping from ruby-style variable name to JSON key.

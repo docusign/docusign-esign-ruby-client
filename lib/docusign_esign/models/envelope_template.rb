@@ -73,6 +73,7 @@ module DocuSign_eSign
     # Indicates the date and time the item was created.
     attr_accessor :created_date_time
 
+    # An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each `customField` string can be a maximum of 100 characters.
     attr_accessor :custom_fields
 
     # Contains a URI for an endpoint that you can use to retrieve the custom fields.
@@ -108,6 +109,7 @@ module DocuSign_eSign
     # 
     attr_accessor :email_blurb
 
+    # A complex type that contains email settings.
     attr_accessor :email_settings
 
     # Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject.
@@ -122,6 +124,7 @@ module DocuSign_eSign
     # 
     attr_accessor :envelope_attachments
 
+    # 
     attr_accessor :envelope_custom_metadata
 
     # 
@@ -136,6 +139,7 @@ module DocuSign_eSign
     # 
     attr_accessor :envelope_location
 
+    # Provides information about the features and services that are enabled for the envelope, including the Correct feature, the Advanced Correct feature, and DocuSign eNotary service.
     attr_accessor :envelope_metadata
 
     # Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
@@ -195,6 +199,7 @@ module DocuSign_eSign
     # 
     attr_accessor :last_modified
 
+    # 
     attr_accessor :last_modified_by
 
     # The date and time the item was last modified.
@@ -206,6 +211,7 @@ module DocuSign_eSign
     # 
     attr_accessor :location
 
+    # Provides lock information about an envelope that a user has locked.
     attr_accessor :lock_information
 
     # When set to **true**, prevents senders from changing the contents of `emailBlurb` and `emailSubject` properties for the envelope.   Additionally, this prevents users from making changes to the contents of `emailBlurb` and `emailSubject` properties when correcting envelopes.   However, if the `messageLock` node is set to true**** and the `emailSubject` property is empty, senders and correctors are able to add a subject to the envelope.
@@ -217,11 +223,13 @@ module DocuSign_eSign
     # 
     attr_accessor :new_password
 
+    # 
     attr_accessor :notification
 
     # Contains a URI for an endpoint that you can use to retrieve the notifications.
     attr_accessor :notification_uri
 
+    # 
     attr_accessor :owner
 
     # 
@@ -233,6 +241,7 @@ module DocuSign_eSign
     # 
     attr_accessor :password_protected
 
+    # Information about any PowerForms that are included in the envelope.
     attr_accessor :power_form
 
     # 
@@ -247,6 +256,7 @@ module DocuSign_eSign
     # 
     attr_accessor :purge_state
 
+    # An array of recipient objects that provides details about the recipients of the envelope.
     attr_accessor :recipients
 
     # When set to **true**, prevents senders from changing, correcting, or deleting the recipient information for the envelope.
@@ -255,6 +265,7 @@ module DocuSign_eSign
     # Contains a URI for an endpoint that you can use to retrieve the recipients.
     attr_accessor :recipients_uri
 
+    # Information about the sender of the envelope.
     attr_accessor :sender
 
     # The date and time the envelope was sent.
@@ -299,6 +310,7 @@ module DocuSign_eSign
     # The reason the envelope or template was voided.
     attr_accessor :voided_reason
 
+    # 
     attr_accessor :workflow
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -80,7 +80,7 @@ module DocuSign_eSign
   end
 
   class GetConsumerDisclosureOptions
-    # The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     attr_accessor :lang_code2
 
     def self.default
@@ -604,7 +604,7 @@ module DocuSign_eSign
     end
 
     # Initiate a new ChunkedUpload.
-    # 
+    # This method initiates a new chunked upload with the first part of the content.
     # @param account_id The external account number (int) or account ID Guid.
     # @param chunked_upload_request  (optional parameter)
     # @return [ChunkedUploadResponse]
@@ -614,7 +614,7 @@ module DocuSign_eSign
     end
 
     # Initiate a new ChunkedUpload.
-    # 
+    # This method initiates a new chunked upload with the first part of the content.
     # @param account_id The external account number (int) or account ID Guid.
     # @param chunked_upload_request  (optional parameter)
     # @return [Array<(ChunkedUploadResponse, Fixnum, Hash)>] ChunkedUploadResponse data, response status code and response headers
@@ -875,7 +875,7 @@ module DocuSign_eSign
     end
 
     # Get Responsive HTML Preview for a document in an envelope.
-    # 
+    # Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/) HTML version of a specific document. This method enables you to preview a PDF document conversion to responsive HTML across device types prior to sending.  The request body is a `documentHtmlDefinition` object, which holds the responsive signing parameters that define how to generate the HTML version of the signing document.
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -887,7 +887,7 @@ module DocuSign_eSign
     end
 
     # Get Responsive HTML Preview for a document in an envelope.
-    # 
+    # Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/) HTML version of a specific document. This method enables you to preview a PDF document conversion to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the signing document.
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -934,7 +934,7 @@ module DocuSign_eSign
     end
 
     # Adds the tabs to an envelope document
-    # 
+    # Adds tabs to the document specified by `documentId` in the envelope specified by `envelopeId`.  In the request body, you only need to specify the tabs that your are adding. For example, to add a text [prefill tab](/docs/esign-rest-api/reference/envelopes/envelopedocumenttabs/create/#definition__tabs_prefilltabs), your request body might look like this:  ``` {   \"prefillTabs\": {     \"textTabs\": [       {         \"value\": \"a prefill text tab\",         \"pageNumber\": \"1\",         \"documentId\": \"1\",         \"xPosition\": 316,         \"yPosition\": 97       }     ]   } } ``` 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -946,7 +946,7 @@ module DocuSign_eSign
     end
 
     # Adds the tabs to an envelope document
-    # 
+    # Adds tabs to the document specified by &#x60;documentId&#x60; in the envelope specified by &#x60;envelopeId&#x60;.  In the request body, you only need to specify the tabs that your are adding. For example, to add a text [prefill tab](/docs/esign-rest-api/reference/envelopes/envelopedocumenttabs/create/#definition__tabs_prefilltabs), your request body might look like this:  &#x60;&#x60;&#x60; {   \&quot;prefillTabs\&quot;: {     \&quot;textTabs\&quot;: [       {         \&quot;value\&quot;: \&quot;a prefill text tab\&quot;,         \&quot;pageNumber\&quot;: \&quot;1\&quot;,         \&quot;documentId\&quot;: \&quot;1\&quot;,         \&quot;xPosition\&quot;: 316,         \&quot;yPosition\&quot;: 97       }     ]   } } &#x60;&#x60;&#x60; 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -1216,7 +1216,7 @@ module DocuSign_eSign
     end
 
     # Provides a URL to start a recipient view of the Envelope UI
-    # 
+    # This method returns a URL for an envelope recipient preview  in the DocuSign UI that you can embed in your application. You use this method to enable the sender to preview the recipients' experience.  For more information, see [Preview and Send](https://support.docusign.com/en/guides/ndse-user-guide-send-your-documents).
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_preview_request  (optional parameter)
@@ -1227,7 +1227,7 @@ module DocuSign_eSign
     end
 
     # Provides a URL to start a recipient view of the Envelope UI
-    # 
+    # This method returns a URL for an envelope recipient preview  in the DocuSign UI that you can embed in your application. You use this method to enable the sender to preview the recipients&#39; experience.  For more information, see [Preview and Send](https://support.docusign.com/en/guides/ndse-user-guide-send-your-documents).
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_preview_request  (optional parameter)
@@ -1271,7 +1271,7 @@ module DocuSign_eSign
     end
 
     # Provides a URL to start a shared recipient view of the Envelope UI
-    # 
+    # Returns a URL that enables you to embed the DocuSign UI recipient view of a [shared envelope](https://support.docusign.com/en/guides/ndse-admin-guide-share-envelopes) in your applications. This is the view that a user sees of an envelope that a recipient on the same account has shared with them.  Due to screen space issues, do not use an `<iframe>` for embedded operations on mobile devices. For iOS devices, DocuSign recommends using a WebView.  ### Revoking the URL  You can revoke this URL by making a DELETE HTTP request to the URL with no request body.  ### Related topics  - [Embedded signing and sending](/docs/esign-rest-api/esign101/concepts/embedding/) - [How to send an envelope via your app](/docs/esign-rest-api/how-to/embedded-sending/) - [How to embed the DocuSign UI in your app](/docs/esign-rest-api/how-to/embed-ui/) 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_view_request  (optional parameter)
@@ -1282,7 +1282,7 @@ module DocuSign_eSign
     end
 
     # Provides a URL to start a shared recipient view of the Envelope UI
-    # 
+    # Returns a URL that enables you to embed the DocuSign UI recipient view of a [shared envelope](https://support.docusign.com/en/guides/ndse-admin-guide-share-envelopes) in your applications. This is the view that a user sees of an envelope that a recipient on the same account has shared with them.  Due to screen space issues, do not use an &#x60;&lt;iframe&gt;&#x60; for embedded operations on mobile devices. For iOS devices, DocuSign recommends using a WebView.  ### Revoking the URL  You can revoke this URL by making a DELETE HTTP request to the URL with no request body.  ### Related topics  - [Embedded signing and sending](/docs/esign-rest-api/esign101/concepts/embedding/) - [How to send an envelope via your app](/docs/esign-rest-api/how-to/embedded-sending/) - [How to embed the DocuSign UI in your app](/docs/esign-rest-api/how-to/embed-ui/) 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_view_request  (optional parameter)
@@ -1326,7 +1326,7 @@ module DocuSign_eSign
     end
 
     # Add envelope transfer rules to an account.
-    # 
+    # This method creates an envelope transfer rule.  When you create an envelope transfer rule, you specify the following properties:   - `eventType` - `fromGroups` - `toUser` - `toFolder` - `carbonCopyOriginalOwner` - `enabled`  **Note:** Only Administrators can create envelope transfer rules. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_transfer_rule_request  (optional parameter)
     # @return [EnvelopeTransferRuleInformation]
@@ -1336,7 +1336,7 @@ module DocuSign_eSign
     end
 
     # Add envelope transfer rules to an account.
-    # 
+    # This method creates an envelope transfer rule.  When you create an envelope transfer rule, you specify the following properties:   - &#x60;eventType&#x60; - &#x60;fromGroups&#x60; - &#x60;toUser&#x60; - &#x60;toFolder&#x60; - &#x60;carbonCopyOriginalOwner&#x60; - &#x60;enabled&#x60;  **Note:** Only Administrators can create envelope transfer rules. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_transfer_rule_request  (optional parameter)
     # @return [Array<(EnvelopeTransferRuleInformation, Fixnum, Hash)>] EnvelopeTransferRuleInformation data, response status code and response headers
@@ -1372,6 +1372,61 @@ module DocuSign_eSign
         :return_type => 'EnvelopeTransferRuleInformation')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#create_envelope_transfer_rules\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Creates and adds a new workflow step definition for an envelope's workflow
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow_step  (optional parameter)
+    # @return [WorkflowStep]
+    def create_envelope_workflow_step_definition(account_id, envelope_id, workflow_step)
+      data, _status_code, _headers = create_envelope_workflow_step_definition_with_http_info(account_id, envelope_id,  workflow_step)
+      return data
+    end
+
+    # Creates and adds a new workflow step definition for an envelope&#39;s workflow
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow_step  (optional parameter)
+    # @return [Array<(WorkflowStep, Fixnum, Hash)>] WorkflowStep data, response status code and response headers
+    def create_envelope_workflow_step_definition_with_http_info(account_id, envelope_id, workflow_step)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_envelope_workflow_step_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_envelope_workflow_step_definition" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.create_envelope_workflow_step_definition" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(workflow_step)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WorkflowStep')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_envelope_workflow_step_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1541,7 +1596,7 @@ module DocuSign_eSign
     end
 
     # Provides a link to access the Identity manual review related to a recipient.
-    # 
+    # This method returns the URL of the page that allows a sender to [manually review](https://support.docusign.com/en/guides/ndse-user-guide-send-documents-with-id-verification) the ID of a recipient. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_id The ID of the recipient being accessed.
@@ -1552,7 +1607,7 @@ module DocuSign_eSign
     end
 
     # Provides a link to access the Identity manual review related to a recipient.
-    # 
+    # This method returns the URL of the page that allows a sender to [manually review](https://support.docusign.com/en/guides/ndse-user-guide-send-documents-with-id-verification) the ID of a recipient. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_id The ID of the recipient being accessed.
@@ -1655,7 +1710,7 @@ module DocuSign_eSign
     end
 
     # Returns a resource token to get access to the identity events stored in the proof service related to this recipient.
-    # 
+    # Creates a resource token for a sender. This token allows a sender to return identification data for a recipient using the [ID Evidence API](/docs/idevidence-api/).
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_id The ID of the recipient being accessed.
@@ -1667,7 +1722,7 @@ module DocuSign_eSign
     end
 
     # Returns a resource token to get access to the identity events stored in the proof service related to this recipient.
-    # 
+    # Creates a resource token for a sender. This token allows a sender to return identification data for a recipient using the [ID Evidence API](/docs/idevidence-api/).
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_id The ID of the recipient being accessed.
@@ -1771,7 +1826,7 @@ module DocuSign_eSign
     end
 
     # Get Responsive HTML Preview for all documents in an envelope.
-    # 
+    # Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML versions of all of the documents in an envelope. This method enables you to preview the PDF document conversions to responsive HTML across device types prior to sending.  The request body is a `documentHtmlDefinition` object, which holds the responsive signing parameters that define how to generate the HTML version of the documents. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param document_html_definition  (optional parameter)
@@ -1782,7 +1837,7 @@ module DocuSign_eSign
     end
 
     # Get Responsive HTML Preview for all documents in an envelope.
-    # 
+    # Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML versions of all of the documents in an envelope. This method enables you to preview the PDF document conversions to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the documents. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param document_html_definition  (optional parameter)
@@ -1939,8 +1994,63 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Delete one or more attachments from a DRAFT envelope.
+    # Creates and adds a new workflow step definition for a template's workflow
     # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow_step  (optional parameter)
+    # @return [WorkflowStep]
+    def create_template_workflow_step_definition(account_id, template_id, workflow_step)
+      data, _status_code, _headers = create_template_workflow_step_definition_with_http_info(account_id, template_id,  workflow_step)
+      return data
+    end
+
+    # Creates and adds a new workflow step definition for a template&#39;s workflow
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow_step  (optional parameter)
+    # @return [Array<(WorkflowStep, Fixnum, Hash)>] WorkflowStep data, response status code and response headers
+    def create_template_workflow_step_definition_with_http_info(account_id, template_id, workflow_step)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_template_workflow_step_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_template_workflow_step_definition" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling EnvelopesApi.create_template_workflow_step_definition" if template_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(workflow_step)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WorkflowStep')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_template_workflow_step_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete one or more attachments from a DRAFT envelope.
+    # Deletes one or more attachments from a draft envelope.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param envelope_attachments_request  (optional parameter)
@@ -1951,7 +2061,7 @@ module DocuSign_eSign
     end
 
     # Delete one or more attachments from a DRAFT envelope.
-    # 
+    # Deletes one or more attachments from a draft envelope.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param envelope_attachments_request  (optional parameter)
@@ -1995,7 +2105,7 @@ module DocuSign_eSign
     end
 
     # Delete an existing ChunkedUpload.
-    # 
+    # Deletes a chunked upload that has been committed but not yet consumed.  This method cannot be used to delete the following types of chunked uploads, which the system deletes automatically:   - Chunked uploads that have been consumed by use in another API call. - Expired chunked uploads.  **Note:** If you are aware of a chunked upload that can be discarded, the best practice is to explicitly delete it. If you wait for the system to automatically delete it after it expires, the chunked upload will continue to count against your quota.
     # @param account_id The external account number (int) or account ID Guid.
     # @param chunked_upload_id 
     # @return [ChunkedUploadResponse]
@@ -2005,7 +2115,7 @@ module DocuSign_eSign
     end
 
     # Delete an existing ChunkedUpload.
-    # 
+    # Deletes a chunked upload that has been committed but not yet consumed.  This method cannot be used to delete the following types of chunked uploads, which the system deletes automatically:   - Chunked uploads that have been consumed by use in another API call. - Expired chunked uploads.  **Note:** If you are aware of a chunked upload that can be discarded, the best practice is to explicitly delete it. If you wait for the system to automatically delete it after it expires, the chunked upload will continue to count against your quota.
     # @param account_id The external account number (int) or account ID Guid.
     # @param chunked_upload_id 
     # @return [Array<(ChunkedUploadResponse, Fixnum, Hash)>] ChunkedUploadResponse data, response status code and response headers
@@ -2222,7 +2332,7 @@ module DocuSign_eSign
     end
 
     # Deletes tabs from an envelope document
-    # 
+    # Deletes tabs from the document specified by `documentId` in the envelope specified by `envelopeId`. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -2234,7 +2344,7 @@ module DocuSign_eSign
     end
 
     # Deletes tabs from an envelope document
-    # 
+    # Deletes tabs from the document specified by &#x60;documentId&#x60; in the envelope specified by &#x60;envelopeId&#x60;. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -2389,7 +2499,7 @@ module DocuSign_eSign
     end
 
     # Revokes the correction view URL to the Envelope UI
-    # 
+    # Revokes the correction view URL to the Envelope UI.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param correct_view_request  (optional parameter)
@@ -2400,7 +2510,7 @@ module DocuSign_eSign
     end
 
     # Revokes the correction view URL to the Envelope UI
-    # 
+    # Revokes the correction view URL to the Envelope UI.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param correct_view_request  (optional parameter)
@@ -2442,8 +2552,116 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Delete envelope transfer rules for an account.
+    # Deletes the delayed routing rules for the specified envelope workflow step.
     # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow_step_id 
+    # @return [nil]
+    def delete_envelope_delayed_routing_definition(account_id, envelope_id, workflow_step_id)
+      delete_envelope_delayed_routing_definition_with_http_info(account_id, envelope_id, workflow_step_id)
+      return nil
+    end
+
+    # Deletes the delayed routing rules for the specified envelope workflow step.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow_step_id 
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_envelope_delayed_routing_definition_with_http_info(account_id, envelope_id, workflow_step_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.delete_envelope_delayed_routing_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.delete_envelope_delayed_routing_definition" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.delete_envelope_delayed_routing_definition" if envelope_id.nil?
+      # verify the required parameter 'workflow_step_id' is set
+      fail ArgumentError, "Missing the required parameter 'workflow_step_id' when calling EnvelopesApi.delete_envelope_delayed_routing_definition" if workflow_step_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}/delayedRouting".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'workflowStepId' + '}', workflow_step_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#delete_envelope_delayed_routing_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Deletes the scheduled sending rules for the envelope's workflow.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [nil]
+    def delete_envelope_scheduled_sending_definition(account_id, envelope_id)
+      delete_envelope_scheduled_sending_definition_with_http_info(account_id, envelope_id)
+      return nil
+    end
+
+    # Deletes the scheduled sending rules for the envelope&#39;s workflow.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_envelope_scheduled_sending_definition_with_http_info(account_id, envelope_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.delete_envelope_scheduled_sending_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.delete_envelope_scheduled_sending_definition" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.delete_envelope_scheduled_sending_definition" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/scheduledSending".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#delete_envelope_scheduled_sending_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete envelope transfer rules for an account.
+    # This method deletes an envelope transfer rule.  **Note:** Only Administrators can delete envelope transfer rules. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_transfer_rule_id 
     # @return [nil]
@@ -2453,7 +2671,7 @@ module DocuSign_eSign
     end
 
     # Delete envelope transfer rules for an account.
-    # 
+    # This method deletes an envelope transfer rule.  **Note:** Only Administrators can delete envelope transfer rules. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_transfer_rule_id 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2495,7 +2713,7 @@ module DocuSign_eSign
     end
 
     # Delete the workflow definition for an envelope.
-    # 
+    # Deletes the specified envelope's workflow definition if it has one. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @return [nil]
@@ -2505,7 +2723,7 @@ module DocuSign_eSign
     end
 
     # Delete the workflow definition for an envelope.
-    # 
+    # Deletes the specified envelope&#39;s workflow definition if it has one. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2542,6 +2760,62 @@ module DocuSign_eSign
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#delete_envelope_workflow_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Deletes the envelope workflow step definition for an envelope's workflow by step id.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow_step_id 
+    # @return [nil]
+    def delete_envelope_workflow_step_definition(account_id, envelope_id, workflow_step_id)
+      delete_envelope_workflow_step_definition_with_http_info(account_id, envelope_id, workflow_step_id)
+      return nil
+    end
+
+    # Deletes the envelope workflow step definition for an envelope&#39;s workflow by step id.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow_step_id 
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_envelope_workflow_step_definition_with_http_info(account_id, envelope_id, workflow_step_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.delete_envelope_workflow_step_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.delete_envelope_workflow_step_definition" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.delete_envelope_workflow_step_definition" if envelope_id.nil?
+      # verify the required parameter 'workflow_step_id' is set
+      fail ArgumentError, "Missing the required parameter 'workflow_step_id' when calling EnvelopesApi.delete_envelope_workflow_step_definition" if workflow_step_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'workflowStepId' + '}', workflow_step_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#delete_envelope_workflow_step_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2770,8 +3044,116 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Delete the workflow definition for a template.
+    # Deletes the delayed routing rules for the specified template workflow step.
     # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow_step_id 
+    # @return [nil]
+    def delete_template_delayed_routing_definition(account_id, template_id, workflow_step_id)
+      delete_template_delayed_routing_definition_with_http_info(account_id, template_id, workflow_step_id)
+      return nil
+    end
+
+    # Deletes the delayed routing rules for the specified template workflow step.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow_step_id 
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_template_delayed_routing_definition_with_http_info(account_id, template_id, workflow_step_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.delete_template_delayed_routing_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.delete_template_delayed_routing_definition" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling EnvelopesApi.delete_template_delayed_routing_definition" if template_id.nil?
+      # verify the required parameter 'workflow_step_id' is set
+      fail ArgumentError, "Missing the required parameter 'workflow_step_id' when calling EnvelopesApi.delete_template_delayed_routing_definition" if workflow_step_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}/delayedRouting".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s).sub('{' + 'workflowStepId' + '}', workflow_step_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#delete_template_delayed_routing_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Deletes the scheduled sending rules for the template's workflow.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @return [nil]
+    def delete_template_scheduled_sending_definition(account_id, template_id)
+      delete_template_scheduled_sending_definition_with_http_info(account_id, template_id)
+      return nil
+    end
+
+    # Deletes the scheduled sending rules for the template&#39;s workflow.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_template_scheduled_sending_definition_with_http_info(account_id, template_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.delete_template_scheduled_sending_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.delete_template_scheduled_sending_definition" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling EnvelopesApi.delete_template_scheduled_sending_definition" if template_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/workflow/scheduledSending".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#delete_template_scheduled_sending_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete the workflow definition for a template.
+    # Deletes the specified template's workflow definition if it has one.
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
     # @return [nil]
@@ -2781,7 +3163,7 @@ module DocuSign_eSign
     end
 
     # Delete the workflow definition for a template.
-    # 
+    # Deletes the specified template&#39;s workflow definition if it has one.
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2818,6 +3200,62 @@ module DocuSign_eSign
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#delete_template_workflow_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Deletes the workflow step definition for an template's workflow by step id.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow_step_id 
+    # @return [nil]
+    def delete_template_workflow_step_definition(account_id, template_id, workflow_step_id)
+      delete_template_workflow_step_definition_with_http_info(account_id, template_id, workflow_step_id)
+      return nil
+    end
+
+    # Deletes the workflow step definition for an template&#39;s workflow by step id.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow_step_id 
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_template_workflow_step_definition_with_http_info(account_id, template_id, workflow_step_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.delete_template_workflow_step_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.delete_template_workflow_step_definition" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling EnvelopesApi.delete_template_workflow_step_definition" if template_id.nil?
+      # verify the required parameter 'workflow_step_id' is set
+      fail ArgumentError, "Missing the required parameter 'workflow_step_id' when calling EnvelopesApi.delete_template_workflow_step_definition" if workflow_step_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s).sub('{' + 'workflowStepId' + '}', workflow_step_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#delete_template_workflow_step_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2883,7 +3321,7 @@ module DocuSign_eSign
     end
 
     # Retrieves an attachment from the envelope.
-    # 
+    # Retrieves an attachment from an envelope.
     # @param account_id The external account number (int) or account ID Guid.
     # @param attachment_id 
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -2894,7 +3332,7 @@ module DocuSign_eSign
     end
 
     # Retrieves an attachment from the envelope.
-    # 
+    # Retrieves an attachment from an envelope.
     # @param account_id The external account number (int) or account ID Guid.
     # @param attachment_id 
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -2939,7 +3377,7 @@ module DocuSign_eSign
     end
 
     # Returns a list of attachments associated with the specified envelope
-    # 
+    # Returns a list of attachments associated with a specified envelope
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @return [EnvelopeAttachmentsResult]
@@ -2949,7 +3387,7 @@ module DocuSign_eSign
     end
 
     # Returns a list of attachments associated with the specified envelope
-    # 
+    # Returns a list of attachments associated with a specified envelope
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @return [Array<(EnvelopeAttachmentsResult, Fixnum, Hash)>] EnvelopeAttachmentsResult data, response status code and response headers
@@ -2992,7 +3430,7 @@ module DocuSign_eSign
     end
 
     # Retrieves the current metadata of a ChunkedUpload.
-    # 
+    # Returns the details (but not the content) about a chunked upload.  **Note:** You cannot obtain details about a chunked upload that has expired, been deleted, or consumed by other actions.
     # @param account_id The external account number (int) or account ID Guid.
     # @param chunked_upload_id 
     # @param DocuSign_eSign::GetChunkedUploadOptions Options for modifying the behavior of the function.
@@ -3003,7 +3441,7 @@ module DocuSign_eSign
     end
 
     # Retrieves the current metadata of a ChunkedUpload.
-    # 
+    # Returns the details (but not the content) about a chunked upload.  **Note:** You cannot obtain details about a chunked upload that has expired, been deleted, or consumed by other actions.
     # @param account_id The external account number (int) or account ID Guid.
     # @param chunked_upload_id 
     # @param DocuSign_eSign::GetChunkedUploadOptions Options for modifying the behavior of the function.
@@ -3048,7 +3486,7 @@ module DocuSign_eSign
     end
 
     # Gets comment transcript for envelope and user
-    # 
+    # Retrieves a PDF file containing all of the comments that senders and recipients have added to the documents in an envelope.  The response body of this method is the PDF file as a byte stream.   **Note:** Comments are disabled by default. To use the comments feature, an account administrator must enable comments on the account (in the `accountSettingsInformation` object, set the `enableSigningExtensionComments` property to **true**). 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param DocuSign_eSign::GetCommentsTranscriptOptions Options for modifying the behavior of the function.
@@ -3059,7 +3497,7 @@ module DocuSign_eSign
     end
 
     # Gets comment transcript for envelope and user
-    # 
+    # Retrieves a PDF file containing all of the comments that senders and recipients have added to the documents in an envelope.  The response body of this method is the PDF file as a byte stream.   **Note:** Comments are disabled by default. To use the comments feature, an account administrator must enable comments on the account (in the &#x60;accountSettingsInformation&#x60; object, set the &#x60;enableSigningExtensionComments&#x60; property to **true**). 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param DocuSign_eSign::GetCommentsTranscriptOptions Options for modifying the behavior of the function.
@@ -3363,7 +3801,7 @@ module DocuSign_eSign
     end
 
     # Returns tabs on the document.
-    # 
+    # Returns the tabs on the document specified by `documentId` in the envelope specified by `envelopeId`. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -3375,7 +3813,7 @@ module DocuSign_eSign
     end
 
     # Returns tabs on the document.
-    # 
+    # Returns the tabs on the document specified by &#x60;documentId&#x60; in the envelope specified by &#x60;envelopeId&#x60;. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -3533,6 +3971,63 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Returns the delayed routing rules for an envelope's workflow step definition.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow_step_id 
+    # @return [DelayedRouting]
+    def get_envelope_delayed_routing_definition(account_id, envelope_id, workflow_step_id)
+      data, _status_code, _headers = get_envelope_delayed_routing_definition_with_http_info(account_id, envelope_id, workflow_step_id)
+      return data
+    end
+
+    # Returns the delayed routing rules for an envelope&#39;s workflow step definition.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow_step_id 
+    # @return [Array<(DelayedRouting, Fixnum, Hash)>] DelayedRouting data, response status code and response headers
+    def get_envelope_delayed_routing_definition_with_http_info(account_id, envelope_id, workflow_step_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_envelope_delayed_routing_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_envelope_delayed_routing_definition" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_envelope_delayed_routing_definition" if envelope_id.nil?
+      # verify the required parameter 'workflow_step_id' is set
+      fail ArgumentError, "Missing the required parameter 'workflow_step_id' when calling EnvelopesApi.get_envelope_delayed_routing_definition" if workflow_step_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}/delayedRouting".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'workflowStepId' + '}', workflow_step_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DelayedRouting')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_envelope_delayed_routing_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get the Original HTML Definition used to generate the Responsive HTML for a given document.
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -3643,8 +4138,61 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Returns a list of envelope transfer rules in the specified account.
+    # Returns the scheduled sending rules for an envelope's workflow definition.
     # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [ScheduledSending]
+    def get_envelope_scheduled_sending_definition(account_id, envelope_id)
+      data, _status_code, _headers = get_envelope_scheduled_sending_definition_with_http_info(account_id, envelope_id)
+      return data
+    end
+
+    # Returns the scheduled sending rules for an envelope&#39;s workflow definition.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [Array<(ScheduledSending, Fixnum, Hash)>] ScheduledSending data, response status code and response headers
+    def get_envelope_scheduled_sending_definition_with_http_info(account_id, envelope_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_envelope_scheduled_sending_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_envelope_scheduled_sending_definition" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_envelope_scheduled_sending_definition" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/scheduledSending".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ScheduledSending')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_envelope_scheduled_sending_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns a list of envelope transfer rules in the specified account.
+    # This method retrieves a list of envelope transfer rules associated with an account.  **Note:** Only Administrators can create and use envelope transfer rules. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param DocuSign_eSign::GetEnvelopeTransferRulesOptions Options for modifying the behavior of the function.
     # @return [EnvelopeTransferRuleInformation]
@@ -3654,7 +4202,7 @@ module DocuSign_eSign
     end
 
     # Returns a list of envelope transfer rules in the specified account.
-    # 
+    # This method retrieves a list of envelope transfer rules associated with an account.  **Note:** Only Administrators can create and use envelope transfer rules. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param DocuSign_eSign::GetEnvelopeTransferRulesOptions Options for modifying the behavior of the function.
     # @return [Array<(EnvelopeTransferRuleInformation, Fixnum, Hash)>] EnvelopeTransferRuleInformation data, response status code and response headers
@@ -3697,7 +4245,7 @@ module DocuSign_eSign
     end
 
     # Returns the workflow definition for an envelope.
-    # 
+    # Returns an envelope's workflow definition if the envelope specified by `envelopeId` has one.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @return [Workflow]
@@ -3707,7 +4255,7 @@ module DocuSign_eSign
     end
 
     # Returns the workflow definition for an envelope.
-    # 
+    # Returns an envelope&#39;s workflow definition if the envelope specified by &#x60;envelopeId&#x60; has one.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @return [Array<(Workflow, Fixnum, Hash)>] Workflow data, response status code and response headers
@@ -3749,8 +4297,65 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Returns envelope form data for an existing envelope.
+    # Returns the workflow step definition for an envelope by step id.
     # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow_step_id 
+    # @return [WorkflowStep]
+    def get_envelope_workflow_step_definition(account_id, envelope_id, workflow_step_id)
+      data, _status_code, _headers = get_envelope_workflow_step_definition_with_http_info(account_id, envelope_id, workflow_step_id)
+      return data
+    end
+
+    # Returns the workflow step definition for an envelope by step id.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow_step_id 
+    # @return [Array<(WorkflowStep, Fixnum, Hash)>] WorkflowStep data, response status code and response headers
+    def get_envelope_workflow_step_definition_with_http_info(account_id, envelope_id, workflow_step_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_envelope_workflow_step_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_envelope_workflow_step_definition" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_envelope_workflow_step_definition" if envelope_id.nil?
+      # verify the required parameter 'workflow_step_id' is set
+      fail ArgumentError, "Missing the required parameter 'workflow_step_id' when calling EnvelopesApi.get_envelope_workflow_step_definition" if workflow_step_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'workflowStepId' + '}', workflow_step_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WorkflowStep')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_envelope_workflow_step_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns envelope form data for an existing envelope.
+    # This method downloads the envelope and tab data (also called form data) from any in-process, completed, or canceled envelope that you sent or that is shared with you. Recipients who are also full administrators on an account can view form data for any envelopes that another user on the account has sent to them.  **Note:** To use this feature, the Sending Setting \"Allow sender to download form data\" must be enabled for the account.  ### Related topics  - [How to get envelope tab values](/docs/esign-rest-api/how-to/get-envelope-tab-values/) 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @return [EnvelopeFormData]
@@ -3760,7 +4365,7 @@ module DocuSign_eSign
     end
 
     # Returns envelope form data for an existing envelope.
-    # 
+    # This method downloads the envelope and tab data (also called form data) from any in-process, completed, or canceled envelope that you sent or that is shared with you. Recipients who are also full administrators on an account can view form data for any envelopes that another user on the account has sent to them.  **Note:** To use this feature, the Sending Setting \&quot;Allow sender to download form data\&quot; must be enabled for the account.  ### Related topics  - [How to get envelope tab values](/docs/esign-rest-api/how-to/get-envelope-tab-values/) 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @return [Array<(EnvelopeFormData, Fixnum, Hash)>] EnvelopeFormData data, response status code and response headers
@@ -3909,7 +4514,7 @@ module DocuSign_eSign
     end
 
     # Returns tabs on the specified page.
-    # 
+    # Returns the tabs from the page specified by `pageNumber` of the document specified by `documentId` in the envelope specified by `envelopeId`. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -3921,7 +4526,7 @@ module DocuSign_eSign
     end
 
     # Returns tabs on the specified page.
-    # 
+    # Returns the tabs from the page specified by &#x60;pageNumber&#x60; of the document specified by &#x60;documentId&#x60; in the envelope specified by &#x60;envelopeId&#x60;. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -3970,7 +4575,7 @@ module DocuSign_eSign
     end
 
     # Returns document page image(s) based on input.
-    # 
+    # Returns images of the pages in a document for display based on the parameters that you specify.
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -3982,7 +4587,7 @@ module DocuSign_eSign
     end
 
     # Returns document page image(s) based on input.
-    # 
+    # Returns images of the pages in a document for display based on the parameters that you specify.
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -4036,7 +4641,7 @@ module DocuSign_eSign
     end
 
     # Returns document visibility for the recipients
-    # 
+    # This method returns information about document visibility for a recipient.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_id The ID of the recipient being accessed.
@@ -4047,7 +4652,7 @@ module DocuSign_eSign
     end
 
     # Returns document visibility for the recipients
-    # 
+    # This method returns information about document visibility for a recipient.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_id The ID of the recipient being accessed.
@@ -4321,8 +4926,65 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Returns document visibility for the recipients
+    # Returns the delayed routing rules for a template's workflow step definition.
     # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow_step_id 
+    # @return [DelayedRouting]
+    def get_template_delayed_routing_definition(account_id, template_id, workflow_step_id)
+      data, _status_code, _headers = get_template_delayed_routing_definition_with_http_info(account_id, template_id, workflow_step_id)
+      return data
+    end
+
+    # Returns the delayed routing rules for a template&#39;s workflow step definition.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow_step_id 
+    # @return [Array<(DelayedRouting, Fixnum, Hash)>] DelayedRouting data, response status code and response headers
+    def get_template_delayed_routing_definition_with_http_info(account_id, template_id, workflow_step_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_template_delayed_routing_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_template_delayed_routing_definition" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling EnvelopesApi.get_template_delayed_routing_definition" if template_id.nil?
+      # verify the required parameter 'workflow_step_id' is set
+      fail ArgumentError, "Missing the required parameter 'workflow_step_id' when calling EnvelopesApi.get_template_delayed_routing_definition" if workflow_step_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}/delayedRouting".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s).sub('{' + 'workflowStepId' + '}', workflow_step_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DelayedRouting')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_template_delayed_routing_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns document visibility for the recipients
+    # This method returns information about document visibility for a template recipient.
     # @param account_id The external account number (int) or account ID Guid.
     # @param recipient_id The ID of the recipient being accessed.
     # @param template_id The ID of the template being accessed.
@@ -4333,7 +4995,7 @@ module DocuSign_eSign
     end
 
     # Returns document visibility for the recipients
-    # 
+    # This method returns information about document visibility for a template recipient.
     # @param account_id The external account number (int) or account ID Guid.
     # @param recipient_id The ID of the recipient being accessed.
     # @param template_id The ID of the template being accessed.
@@ -4378,8 +5040,61 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Returns the workflow definition for a template.
+    # Returns the scheduled sending rules for a template's workflow definition.
     # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @return [ScheduledSending]
+    def get_template_scheduled_sending_definition(account_id, template_id)
+      data, _status_code, _headers = get_template_scheduled_sending_definition_with_http_info(account_id, template_id)
+      return data
+    end
+
+    # Returns the scheduled sending rules for a template&#39;s workflow definition.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @return [Array<(ScheduledSending, Fixnum, Hash)>] ScheduledSending data, response status code and response headers
+    def get_template_scheduled_sending_definition_with_http_info(account_id, template_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_template_scheduled_sending_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_template_scheduled_sending_definition" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling EnvelopesApi.get_template_scheduled_sending_definition" if template_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/workflow/scheduledSending".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ScheduledSending')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_template_scheduled_sending_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns the workflow definition for a template.
+    # Returns template's workflow definition if the template specified by `templateId` has one.
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
     # @return [Workflow]
@@ -4389,7 +5104,7 @@ module DocuSign_eSign
     end
 
     # Returns the workflow definition for a template.
-    # 
+    # Returns template&#39;s workflow definition if the template specified by &#x60;templateId&#x60; has one.
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
     # @return [Array<(Workflow, Fixnum, Hash)>] Workflow data, response status code and response headers
@@ -4427,6 +5142,63 @@ module DocuSign_eSign
         :return_type => 'Workflow')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#get_template_workflow_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns the workflow step definition for a template by step id.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow_step_id 
+    # @return [WorkflowStep]
+    def get_template_workflow_step_definition(account_id, template_id, workflow_step_id)
+      data, _status_code, _headers = get_template_workflow_step_definition_with_http_info(account_id, template_id, workflow_step_id)
+      return data
+    end
+
+    # Returns the workflow step definition for a template by step id.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow_step_id 
+    # @return [Array<(WorkflowStep, Fixnum, Hash)>] WorkflowStep data, response status code and response headers
+    def get_template_workflow_step_definition_with_http_info(account_id, template_id, workflow_step_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_template_workflow_step_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_template_workflow_step_definition" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling EnvelopesApi.get_template_workflow_step_definition" if template_id.nil?
+      # verify the required parameter 'workflow_step_id' is set
+      fail ArgumentError, "Missing the required parameter 'workflow_step_id' when calling EnvelopesApi.get_template_workflow_step_definition" if workflow_step_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s).sub('{' + 'workflowStepId' + '}', workflow_step_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WorkflowStep')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_template_workflow_step_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -5038,7 +5810,7 @@ module DocuSign_eSign
     end
 
     # Add an attachment to a DRAFT or IN-PROCESS envelope.
-    # 
+    # Adds an attachment to a draft or in-process envelope.
     # @param account_id The external account number (int) or account ID Guid.
     # @param attachment_id 
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -5050,7 +5822,7 @@ module DocuSign_eSign
     end
 
     # Add an attachment to a DRAFT or IN-PROCESS envelope.
-    # 
+    # Adds an attachment to a draft or in-process envelope.
     # @param account_id The external account number (int) or account ID Guid.
     # @param attachment_id 
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -5097,7 +5869,7 @@ module DocuSign_eSign
     end
 
     # Add one or more attachments to a DRAFT or IN-PROCESS envelope.
-    # 
+    # Adds one or more attachments to a draft or in-process envelope.  Envelope attachments are files that an application can include in an envelope. They are not converted to PDF. Envelope attachments are available only through the API. There is no user interface in the DocuSign web application for them.  For a list of supported file formats, see [Supported File Formats](https://support.docusign.com/guides/ndse-user-guide-supported-file-formats).
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param envelope_attachments_request  (optional parameter)
@@ -5108,7 +5880,7 @@ module DocuSign_eSign
     end
 
     # Add one or more attachments to a DRAFT or IN-PROCESS envelope.
-    # 
+    # Adds one or more attachments to a draft or in-process envelope.  Envelope attachments are files that an application can include in an envelope. They are not converted to PDF. Envelope attachments are available only through the API. There is no user interface in the DocuSign web application for them.  For a list of supported file formats, see [Supported File Formats](https://support.docusign.com/guides/ndse-user-guide-supported-file-formats).
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param envelope_attachments_request  (optional parameter)
@@ -5273,7 +6045,7 @@ module DocuSign_eSign
     end
 
     # Integrity-Check and Commit a ChunkedUpload, readying it for use elsewhere.
-    # 
+    # This method checks the integrity of a chunked upload and then commits it. When this request is successful, the chunked upload is then ready to be referenced in other API calls.  If the request is unsuccessful, ensure that you have uploaded all of the parts by using the Update method.  **Note:** After you commit a chunked upload, it no longer accepts additional parts.
     # @param account_id The external account number (int) or account ID Guid.
     # @param chunked_upload_id 
     # @param DocuSign_eSign::UpdateChunkedUploadOptions Options for modifying the behavior of the function.
@@ -5284,7 +6056,7 @@ module DocuSign_eSign
     end
 
     # Integrity-Check and Commit a ChunkedUpload, readying it for use elsewhere.
-    # 
+    # This method checks the integrity of a chunked upload and then commits it. When this request is successful, the chunked upload is then ready to be referenced in other API calls.  If the request is unsuccessful, ensure that you have uploaded all of the parts by using the Update method.  **Note:** After you commit a chunked upload, it no longer accepts additional parts.
     # @param account_id The external account number (int) or account ID Guid.
     # @param chunked_upload_id 
     # @param DocuSign_eSign::UpdateChunkedUploadOptions Options for modifying the behavior of the function.
@@ -5329,7 +6101,7 @@ module DocuSign_eSign
     end
 
     # Add a chunk, a chunk 'part', to an existing ChunkedUpload.
-    # 
+    # Adds a chunk or part to an existing chunked upload. After you use the Create method to initiate a new chunked upload and upload the first part,  use this method to upload subsequent parts.  For simplicity, DocuSign recommends that you upload the parts in their sequential order ( 1,2, 3, 4, etc.). The Create method adds the first part and assigns it the `sequence` value `0`. As a result, DocuSign recommends that you start with a `sequence` value of `1` when you use this method, and continue uploading parts contiguously until you have uploaded the entirety of the original content to DocuSign.  Example:   ``` PUT /v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}/1 PUT /v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}/2 PUT /v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}/3 ```  **Note:** You cannot replace a part that DocuSign has already received, or add parts to a chunked upload that is already successfully committed.
     # @param account_id The external account number (int) or account ID Guid.
     # @param chunked_upload_id 
     # @param chunked_upload_part_seq 
@@ -5341,7 +6113,7 @@ module DocuSign_eSign
     end
 
     # Add a chunk, a chunk &#39;part&#39;, to an existing ChunkedUpload.
-    # 
+    # Adds a chunk or part to an existing chunked upload. After you use the Create method to initiate a new chunked upload and upload the first part,  use this method to upload subsequent parts.  For simplicity, DocuSign recommends that you upload the parts in their sequential order ( 1,2, 3, 4, etc.). The Create method adds the first part and assigns it the &#x60;sequence&#x60; value &#x60;0&#x60;. As a result, DocuSign recommends that you start with a &#x60;sequence&#x60; value of &#x60;1&#x60; when you use this method, and continue uploading parts contiguously until you have uploaded the entirety of the original content to DocuSign.  Example:   &#x60;&#x60;&#x60; PUT /v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}/1 PUT /v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}/2 PUT /v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}/3 &#x60;&#x60;&#x60;  **Note:** You cannot replace a part that DocuSign has already received, or add parts to a chunked upload that is already successfully committed.
     # @param account_id The external account number (int) or account ID Guid.
     # @param chunked_upload_id 
     # @param chunked_upload_part_seq 
@@ -5559,7 +6331,7 @@ module DocuSign_eSign
     end
 
     # Updates the tabs for an envelope document
-    # 
+    # Updates tabs in the document specified by `documentId` in the envelope specified by `envelopeId`. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -5571,7 +6343,7 @@ module DocuSign_eSign
     end
 
     # Updates the tabs for an envelope document
-    # 
+    # Updates tabs in the document specified by &#x60;documentId&#x60; in the envelope specified by &#x60;envelopeId&#x60;. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
@@ -5727,8 +6499,122 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Update an envelope transfer rule for an account.
+    # Updates the delayed routing rules for an envelope's workflow step definition.
     # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow_step_id 
+    # @param delayed_routing  (optional parameter)
+    # @return [DelayedRouting]
+    def update_envelope_delayed_routing_definition(account_id, envelope_id, workflow_step_id, delayed_routing)
+      data, _status_code, _headers = update_envelope_delayed_routing_definition_with_http_info(account_id, envelope_id, workflow_step_id,  delayed_routing)
+      return data
+    end
+
+    # Updates the delayed routing rules for an envelope&#39;s workflow step definition.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow_step_id 
+    # @param delayed_routing  (optional parameter)
+    # @return [Array<(DelayedRouting, Fixnum, Hash)>] DelayedRouting data, response status code and response headers
+    def update_envelope_delayed_routing_definition_with_http_info(account_id, envelope_id, workflow_step_id, delayed_routing)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_envelope_delayed_routing_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_envelope_delayed_routing_definition" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.update_envelope_delayed_routing_definition" if envelope_id.nil?
+      # verify the required parameter 'workflow_step_id' is set
+      fail ArgumentError, "Missing the required parameter 'workflow_step_id' when calling EnvelopesApi.update_envelope_delayed_routing_definition" if workflow_step_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}/delayedRouting".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'workflowStepId' + '}', workflow_step_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(delayed_routing)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DelayedRouting')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#update_envelope_delayed_routing_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Updates the scheduled sending rules for an envelope's workflow definition.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param scheduled_sending  (optional parameter)
+    # @return [ScheduledSending]
+    def update_envelope_scheduled_sending_definition(account_id, envelope_id, scheduled_sending)
+      data, _status_code, _headers = update_envelope_scheduled_sending_definition_with_http_info(account_id, envelope_id,  scheduled_sending)
+      return data
+    end
+
+    # Updates the scheduled sending rules for an envelope&#39;s workflow definition.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param scheduled_sending  (optional parameter)
+    # @return [Array<(ScheduledSending, Fixnum, Hash)>] ScheduledSending data, response status code and response headers
+    def update_envelope_scheduled_sending_definition_with_http_info(account_id, envelope_id, scheduled_sending)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_envelope_scheduled_sending_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_envelope_scheduled_sending_definition" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.update_envelope_scheduled_sending_definition" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/scheduledSending".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(scheduled_sending)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ScheduledSending')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#update_envelope_scheduled_sending_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update an envelope transfer rule for an account.
+    # This method changes the status of an envelope transfer rule. You use this method to change whether or not the rule is enabled.  You must include the `envelopeTransferRuleId` both as a query parameter, and in the request body.  **Note:** You cannot change any other information about the envelope transfer rule. Only Administrators can update an envelope transfer rule. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_transfer_rule_id 
     # @param envelope_transfer_rule  (optional parameter)
@@ -5739,7 +6625,7 @@ module DocuSign_eSign
     end
 
     # Update an envelope transfer rule for an account.
-    # 
+    # This method changes the status of an envelope transfer rule. You use this method to change whether or not the rule is enabled.  You must include the &#x60;envelopeTransferRuleId&#x60; both as a query parameter, and in the request body.  **Note:** You cannot change any other information about the envelope transfer rule. Only Administrators can update an envelope transfer rule. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_transfer_rule_id 
     # @param envelope_transfer_rule  (optional parameter)
@@ -5783,7 +6669,7 @@ module DocuSign_eSign
     end
 
     # Update envelope transfer rules for an account.
-    # 
+    # This method changes the status for one or more envelope transfer rules based on the `envelopeTransferRuleId`s in the request body. You use this method to change whether or not the rules are enabled.  **Note:** You cannot change any other information about the envelope transfer rule. Only Administrators can update envelope transfer rules. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_transfer_rule_information  (optional parameter)
     # @return [EnvelopeTransferRuleInformation]
@@ -5793,7 +6679,7 @@ module DocuSign_eSign
     end
 
     # Update envelope transfer rules for an account.
-    # 
+    # This method changes the status for one or more envelope transfer rules based on the &#x60;envelopeTransferRuleId&#x60;s in the request body. You use this method to change whether or not the rules are enabled.  **Note:** You cannot change any other information about the envelope transfer rule. Only Administrators can update envelope transfer rules. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_transfer_rule_information  (optional parameter)
     # @return [Array<(EnvelopeTransferRuleInformation, Fixnum, Hash)>] EnvelopeTransferRuleInformation data, response status code and response headers
@@ -5834,7 +6720,7 @@ module DocuSign_eSign
     end
 
     # Updates the envelope workflow definition for an envelope.
-    # 
+    # Updates the specified envelope's workflow definition if  it has one.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param workflow  (optional parameter)
@@ -5845,7 +6731,7 @@ module DocuSign_eSign
     end
 
     # Updates the envelope workflow definition for an envelope.
-    # 
+    # Updates the specified envelope&#39;s workflow definition if  it has one.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param workflow  (optional parameter)
@@ -5884,6 +6770,65 @@ module DocuSign_eSign
         :return_type => 'Workflow')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#update_envelope_workflow_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Updates the envelope workflow step definition for an envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow_step_id 
+    # @param workflow_step  (optional parameter)
+    # @return [WorkflowStep]
+    def update_envelope_workflow_step_definition(account_id, envelope_id, workflow_step_id, workflow_step)
+      data, _status_code, _headers = update_envelope_workflow_step_definition_with_http_info(account_id, envelope_id, workflow_step_id,  workflow_step)
+      return data
+    end
+
+    # Updates the envelope workflow step definition for an envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param workflow_step_id 
+    # @param workflow_step  (optional parameter)
+    # @return [Array<(WorkflowStep, Fixnum, Hash)>] WorkflowStep data, response status code and response headers
+    def update_envelope_workflow_step_definition_with_http_info(account_id, envelope_id, workflow_step_id, workflow_step)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_envelope_workflow_step_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_envelope_workflow_step_definition" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.update_envelope_workflow_step_definition" if envelope_id.nil?
+      # verify the required parameter 'workflow_step_id' is set
+      fail ArgumentError, "Missing the required parameter 'workflow_step_id' when calling EnvelopesApi.update_envelope_workflow_step_definition" if workflow_step_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'workflowStepId' + '}', workflow_step_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(workflow_step)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WorkflowStep')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#update_envelope_workflow_step_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -5944,7 +6889,7 @@ module DocuSign_eSign
     end
 
     # Sets envelope notification (Reminders/Expirations) structure for an existing envelope.
-    # 
+    # This method sets the notifications (reminders and expirations) for an existing envelope. The request body sends a structure containing reminders and expirations settings. It also specifies whether to use the settings specified in the request, or the account default notification settings for the envelope.  Note that this request only specifies when notifications are sent; it does not initiate sending of email messages.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param envelope_notification_request  (optional parameter)
@@ -5955,7 +6900,7 @@ module DocuSign_eSign
     end
 
     # Sets envelope notification (Reminders/Expirations) structure for an existing envelope.
-    # 
+    # This method sets the notifications (reminders and expirations) for an existing envelope. The request body sends a structure containing reminders and expirations settings. It also specifies whether to use the settings specified in the request, or the account default notification settings for the envelope.  Note that this request only specifies when notifications are sent; it does not initiate sending of email messages.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param envelope_notification_request  (optional parameter)
@@ -5999,7 +6944,7 @@ module DocuSign_eSign
     end
 
     # Updates document visibility for the recipients
-    # 
+    # This method updates document visibility for a recipient.  **Note:** A document cannot be hidden from a recipient if the recipient has tabs assigned to them on the document. Carbon Copy, Certified Delivery (Needs to Sign), Editor, and Agent recipients can always see all documents.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_id The ID of the recipient being accessed.
@@ -6011,7 +6956,7 @@ module DocuSign_eSign
     end
 
     # Updates document visibility for the recipients
-    # 
+    # This method updates document visibility for a recipient.  **Note:** A document cannot be hidden from a recipient if the recipient has tabs assigned to them on the document. Carbon Copy, Certified Delivery (Needs to Sign), Editor, and Agent recipients can always see all documents.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_id The ID of the recipient being accessed.
@@ -6234,7 +7179,7 @@ module DocuSign_eSign
     end
 
     # Updates document visibility for the recipients
-    # 
+    # This method updates document visibility for one or more recipients based on the `recipientId` and `visible` values that you include in the request body.  **Note:** A document cannot be hidden from a recipient if the recipient has tabs assigned to them on the document. Carbon Copy, Certified Delivery (Needs to Sign), Editor, and Agent recipients can always see all documents.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param document_visibility_list  (optional parameter)
@@ -6245,7 +7190,7 @@ module DocuSign_eSign
     end
 
     # Updates document visibility for the recipients
-    # 
+    # This method updates document visibility for one or more recipients based on the &#x60;recipientId&#x60; and &#x60;visible&#x60; values that you include in the request body.  **Note:** A document cannot be hidden from a recipient if the recipient has tabs assigned to them on the document. Carbon Copy, Certified Delivery (Needs to Sign), Editor, and Agent recipients can always see all documents.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param document_visibility_list  (optional parameter)
@@ -6458,8 +7403,67 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Updates document visibility for the recipients
+    # Updates the delayed routing rules for a template's workflow step definition.
     # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow_step_id 
+    # @param delayed_routing  (optional parameter)
+    # @return [DelayedRouting]
+    def update_template_delayed_routing_definition(account_id, template_id, workflow_step_id, delayed_routing)
+      data, _status_code, _headers = update_template_delayed_routing_definition_with_http_info(account_id, template_id, workflow_step_id,  delayed_routing)
+      return data
+    end
+
+    # Updates the delayed routing rules for a template&#39;s workflow step definition.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow_step_id 
+    # @param delayed_routing  (optional parameter)
+    # @return [Array<(DelayedRouting, Fixnum, Hash)>] DelayedRouting data, response status code and response headers
+    def update_template_delayed_routing_definition_with_http_info(account_id, template_id, workflow_step_id, delayed_routing)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_template_delayed_routing_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_template_delayed_routing_definition" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling EnvelopesApi.update_template_delayed_routing_definition" if template_id.nil?
+      # verify the required parameter 'workflow_step_id' is set
+      fail ArgumentError, "Missing the required parameter 'workflow_step_id' when calling EnvelopesApi.update_template_delayed_routing_definition" if workflow_step_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}/delayedRouting".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s).sub('{' + 'workflowStepId' + '}', workflow_step_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(delayed_routing)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DelayedRouting')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#update_template_delayed_routing_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Updates document visibility for the recipients
+    # This method updates the document visibility for a template recipient.  **Note:** A document cannot be hidden from a recipient if the recipient has tabs assigned to them on the document. Carbon Copy, Certified Delivery (Needs to Sign), Editor, and Agent recipients can always see all documents.
     # @param account_id The external account number (int) or account ID Guid.
     # @param recipient_id The ID of the recipient being accessed.
     # @param template_id The ID of the template being accessed.
@@ -6471,7 +7475,7 @@ module DocuSign_eSign
     end
 
     # Updates document visibility for the recipients
-    # 
+    # This method updates the document visibility for a template recipient.  **Note:** A document cannot be hidden from a recipient if the recipient has tabs assigned to them on the document. Carbon Copy, Certified Delivery (Needs to Sign), Editor, and Agent recipients can always see all documents.
     # @param account_id The external account number (int) or account ID Guid.
     # @param recipient_id The ID of the recipient being accessed.
     # @param template_id The ID of the template being accessed.
@@ -6518,7 +7522,7 @@ module DocuSign_eSign
     end
 
     # Updates document visibility for the recipients
-    # 
+    # This method updates document visibility for one or more template recipients based on the `recipientId` and `visible` values that you include in the request body.   **Note:** A document cannot be hidden from a recipient if the recipient has tabs assigned to them on the document. Carbon Copy, Certified Delivery (Needs to Sign), Editor, and Agent recipients can always see all documents.
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
     # @param template_document_visibility_list  (optional parameter)
@@ -6529,7 +7533,7 @@ module DocuSign_eSign
     end
 
     # Updates document visibility for the recipients
-    # 
+    # This method updates document visibility for one or more template recipients based on the &#x60;recipientId&#x60; and &#x60;visible&#x60; values that you include in the request body.   **Note:** A document cannot be hidden from a recipient if the recipient has tabs assigned to them on the document. Carbon Copy, Certified Delivery (Needs to Sign), Editor, and Agent recipients can always see all documents.
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
     # @param template_document_visibility_list  (optional parameter)
@@ -6572,8 +7576,63 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Updates the workflow definition for a template.
+    # Updates the scheduled sending rules for a template's workflow definition.
     # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param scheduled_sending  (optional parameter)
+    # @return [ScheduledSending]
+    def update_template_scheduled_sending_definition(account_id, template_id, scheduled_sending)
+      data, _status_code, _headers = update_template_scheduled_sending_definition_with_http_info(account_id, template_id,  scheduled_sending)
+      return data
+    end
+
+    # Updates the scheduled sending rules for a template&#39;s workflow definition.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param scheduled_sending  (optional parameter)
+    # @return [Array<(ScheduledSending, Fixnum, Hash)>] ScheduledSending data, response status code and response headers
+    def update_template_scheduled_sending_definition_with_http_info(account_id, template_id, scheduled_sending)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_template_scheduled_sending_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_template_scheduled_sending_definition" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling EnvelopesApi.update_template_scheduled_sending_definition" if template_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/workflow/scheduledSending".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(scheduled_sending)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ScheduledSending')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#update_template_scheduled_sending_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Updates the workflow definition for a template.
+    # Updates the specified template's workflow definition if  it has one.
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
     # @param workflow  (optional parameter)
@@ -6584,7 +7643,7 @@ module DocuSign_eSign
     end
 
     # Updates the workflow definition for a template.
-    # 
+    # Updates the specified template&#39;s workflow definition if  it has one.
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
     # @param workflow  (optional parameter)
@@ -6623,6 +7682,65 @@ module DocuSign_eSign
         :return_type => 'Workflow')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#update_template_workflow_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Updates the template workflow step definition for an envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow_step_id 
+    # @param workflow_step  (optional parameter)
+    # @return [WorkflowStep]
+    def update_template_workflow_step_definition(account_id, template_id, workflow_step_id, workflow_step)
+      data, _status_code, _headers = update_template_workflow_step_definition_with_http_info(account_id, template_id, workflow_step_id,  workflow_step)
+      return data
+    end
+
+    # Updates the template workflow step definition for an envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @param workflow_step_id 
+    # @param workflow_step  (optional parameter)
+    # @return [Array<(WorkflowStep, Fixnum, Hash)>] WorkflowStep data, response status code and response headers
+    def update_template_workflow_step_definition_with_http_info(account_id, template_id, workflow_step_id, workflow_step)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_template_workflow_step_definition ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_template_workflow_step_definition" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling EnvelopesApi.update_template_workflow_step_definition" if template_id.nil?
+      # verify the required parameter 'workflow_step_id' is set
+      fail ArgumentError, "Missing the required parameter 'workflow_step_id' when calling EnvelopesApi.update_template_workflow_step_definition" if workflow_step_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s).sub('{' + 'workflowStepId' + '}', workflow_step_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(workflow_step)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WorkflowStep')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#update_template_workflow_step_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

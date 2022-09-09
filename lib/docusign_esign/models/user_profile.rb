@@ -13,6 +13,7 @@ require 'date'
 
 module DocuSign_eSign
   class UserProfile
+    # The user's address.
     attr_accessor :address
 
     # These properties cannot be modified in the PUT.   Indicates the authentication methods used by the user.
@@ -39,8 +40,10 @@ module DocuSign_eSign
     # 
     attr_accessor :title
 
+    # A complex element consisting of:   - `lastSentDateTime`: The date and time the user last sent an envelope.  - `lastSignedDateTime`: The date and time the user last signed an envelope. - `sentCount`: The number of envelopes the user has sent. - `signedCount`: The number of envelopes the user has signed.  
     attr_accessor :usage_history
 
+    # 
     attr_accessor :user_details
 
     # 

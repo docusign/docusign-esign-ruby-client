@@ -13,6 +13,7 @@ require 'date'
 
 module DocuSign_eSign
   class DowngradRequestBillingInfoResponse
+    # 
     attr_accessor :downgrade_plan_information
 
     # 

@@ -94,6 +94,7 @@ module DocuSign_eSign
     # The userId of the DocuSign user who last modified this object.
     attr_accessor :last_modified_by_user_id
 
+    # Reserved for DocuSign.
     attr_accessor :locale_policy
 
     # When set to **true**, the signer cannot change the data of the custom tab.
@@ -105,6 +106,7 @@ module DocuSign_eSign
     # 
     attr_accessor :max_numerical_value
 
+    # Contains the information necessary to map the tab to a field in SalesForce.
     attr_accessor :merge_field
 
     # 
@@ -144,8 +146,12 @@ module DocuSign_eSign
     attr_accessor :shared
 
     # 
+    attr_accessor :signature_provider_id
+
+    # 
     attr_accessor :stamp_type
 
+    # Metadata that indicates whether the `stampType` property is editable.
     attr_accessor :stamp_type_metadata
 
     # The label string associated with the tab.
@@ -213,6 +219,7 @@ module DocuSign_eSign
         :'scale_value' => :'scaleValue',
         :'selected' => :'selected',
         :'shared' => :'shared',
+        :'signature_provider_id' => :'signatureProviderId',
         :'stamp_type' => :'stampType',
         :'stamp_type_metadata' => :'stampTypeMetadata',
         :'tab_label' => :'tabLabel',
@@ -271,6 +278,7 @@ module DocuSign_eSign
         :'scale_value' => :'String',
         :'selected' => :'String',
         :'shared' => :'String',
+        :'signature_provider_id' => :'String',
         :'stamp_type' => :'String',
         :'stamp_type_metadata' => :'PropertyMetadata',
         :'tab_label' => :'String',
@@ -468,6 +476,10 @@ module DocuSign_eSign
         self.shared = attributes[:'shared']
       end
 
+      if attributes.has_key?(:'signatureProviderId')
+        self.signature_provider_id = attributes[:'signatureProviderId']
+      end
+
       if attributes.has_key?(:'stampType')
         self.stamp_type = attributes[:'stampType']
       end
@@ -563,6 +575,7 @@ module DocuSign_eSign
           scale_value == o.scale_value &&
           selected == o.selected &&
           shared == o.shared &&
+          signature_provider_id == o.signature_provider_id &&
           stamp_type == o.stamp_type &&
           stamp_type_metadata == o.stamp_type_metadata &&
           tab_label == o.tab_label &&
@@ -582,7 +595,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor, anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_units, anchor_x_offset, anchor_y_offset, bold, collaborative, conceal_value_on_document, created_by_display_name, created_by_user_id, custom_tab_id, disable_auto_size, editable, font, font_color, font_size, height, included_in_email, initial_value, italic, items, last_modified, last_modified_by_display_name, last_modified_by_user_id, locale_policy, locked, maximum_length, max_numerical_value, merge_field, min_numerical_value, name, numerical_value, payment_item_code, payment_item_description, payment_item_name, require_all, required, require_initial_on_shared_change, scale_value, selected, shared, stamp_type, stamp_type_metadata, tab_label, type, underline, validation_message, validation_pattern, width].hash
+      [anchor, anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_units, anchor_x_offset, anchor_y_offset, bold, collaborative, conceal_value_on_document, created_by_display_name, created_by_user_id, custom_tab_id, disable_auto_size, editable, font, font_color, font_size, height, included_in_email, initial_value, italic, items, last_modified, last_modified_by_display_name, last_modified_by_user_id, locale_policy, locked, maximum_length, max_numerical_value, merge_field, min_numerical_value, name, numerical_value, payment_item_code, payment_item_description, payment_item_name, require_all, required, require_initial_on_shared_change, scale_value, selected, shared, signature_provider_id, stamp_type, stamp_type_metadata, tab_label, type, underline, validation_message, validation_pattern, width].hash
     end
 
     # Builds the object from hash

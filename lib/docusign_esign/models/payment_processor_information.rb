@@ -13,6 +13,7 @@ require 'date'
 
 module DocuSign_eSign
   class PaymentProcessorInformation
+    # The mailing address associated with the payment processor.
     attr_accessor :address
 
     # 

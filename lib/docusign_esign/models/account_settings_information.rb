@@ -14,93 +14,120 @@ require 'date'
 module DocuSign_eSign
   # Contains account settings information.
   class AccountSettingsInformation
+    # Format of the string provided to a recipient in order to access an envelope.
     attr_accessor :access_code_format
 
     # 
     attr_accessor :account_date_time_format
 
+    # Metadata that indicates whether the `accountDateTimeFormat` property is editable.
     attr_accessor :account_date_time_format_metadata
 
     # 
     attr_accessor :account_default_language
 
+    # 
     attr_accessor :account_default_language_metadata
 
     # 
     attr_accessor :account_name
 
+    # Metadata that indicates whether the `accountName` property is editable.
     attr_accessor :account_name_metadata
 
+    # An object that specifies notifications (expirations and reminders) for the envelope.
     attr_accessor :account_notification
 
+    # An object that defines the settings to use in the UI.
     attr_accessor :account_ui_settings
 
     # 
     attr_accessor :adopt_sig_config
 
+    # Metadata that indicates whether the `adoptSigConfig` property is editable. 
     attr_accessor :adopt_sig_config_metadata
 
     # 
     attr_accessor :advanced_correct
 
+    # Metadata that indicates whether the `advancedCorrect` property is editable. 
     attr_accessor :advanced_correct_metadata
 
     # 
     attr_accessor :allow_access_code_format
 
+    # Metadata that indicates whether the `allowAccessCodeFormat` property is editable. 
     attr_accessor :allow_access_code_format_metadata
 
     # 
     attr_accessor :allow_account_management_granular
 
+    # Metadata that indicates whether the `allowAccountManagementGranular` property is editable. 
     attr_accessor :allow_account_management_granular_metadata
 
     # 
     attr_accessor :allow_account_member_name_change
 
+    # Metadata that indicates whether the `allowAccountMemberNameChange` property is editable. 
     attr_accessor :allow_account_member_name_change_metadata
 
     # 
     attr_accessor :allow_advanced_recipient_routing_conditional
 
+    # Metadata that indicates whether the ` allowAdvancedRecipientRoutingConditional` property is editable.
     attr_accessor :allow_advanced_recipient_routing_conditional_metadata
 
     # 
     attr_accessor :allow_agent_name_email_edit
 
+    # Metadata that indicates whether the `allowAgentNameEmailEdit` property is editable. 
     attr_accessor :allow_agent_name_email_edit_metadata
 
     # 
     attr_accessor :allow_agreement_actions
 
+    # Metadata about the `allowAgreementActions` property.
     attr_accessor :allow_agreement_actions_metadata
+
+    # 
+    attr_accessor :allow_agreement_orchestration_workflows
+
+    attr_accessor :allow_agreement_orchestration_workflows_metadata
 
     # 
     attr_accessor :allow_auto_nav_settings
 
+    # Metadata that indicates whether the `allowAutoNavSettings` property is editable. 
     attr_accessor :allow_auto_nav_settings_metadata
 
     # 
     attr_accessor :allow_auto_tagging
 
+    # Metadata that indicates whether the `allowAutoTagging` property is editable.
     attr_accessor :allow_auto_tagging_metadata
 
     # 
     attr_accessor :allow_bulk_send
 
+    # Metadata that indicates whether the `allowBulkSend` property is editable. 
     attr_accessor :allow_bulk_send_metadata
 
     # 
     attr_accessor :allow_cd_withdraw
 
+    # Metadata that indicates whether the `allowCDWithdraw` property is editable. 
     attr_accessor :allow_cd_withdraw_metadata
 
     # 
     attr_accessor :allow_connect_http_listener_configs
 
     # 
+    attr_accessor :allow_connect_o_auth_ui
+
+    # 
     attr_accessor :allow_connect_send_finish_later
 
+    # Metadata that indicates whether the `allowConnectSendFinishLater` property is editable. 
     attr_accessor :allow_connect_send_finish_later_metadata
 
     # 
@@ -109,116 +136,149 @@ module DocuSign_eSign
     # 
     attr_accessor :allow_consumer_disclosure_override
 
+    # Metadata that indicates whether the `allowConsumerDisclosureOverride` property is editable. 
     attr_accessor :allow_consumer_disclosure_override_metadata
 
     # 
     attr_accessor :allow_data_download
 
+    # Metadata that indicates whether the `allowDataDownload` property is editable. 
     attr_accessor :allow_data_download_metadata
 
     # \"true\" if the account has permission to use the delayed routing feature to insert delays before routing an envelope to a recipient, \"false\" otherwise.
     attr_accessor :allow_delayed_routing
 
+    # 
     attr_accessor :allow_delayed_routing_metadata
 
     # 
     attr_accessor :allow_delegated_signing
 
+    # 
     attr_accessor :allow_delegated_signing_metadata
+
+    # 
+    attr_accessor :allow_doc_gen_documents
+
+    attr_accessor :allow_doc_gen_documents_metadata
 
     # 
     attr_accessor :allow_document_disclosures
 
+    # Metadata that indicates whether the `allowDocumentDisclosures` property is editable. 
     attr_accessor :allow_document_disclosures_metadata
 
     # 
     attr_accessor :allow_documents_on_signed_envelopes
 
+    # Metadata that indicates whether the `allowDocumentsOnSignedEnvelopes` property is editable. 
     attr_accessor :allow_documents_on_signed_envelopes_metadata
 
     # 
     attr_accessor :allow_document_visibility
 
+    # Metadata that indicates whether the `allowDocumentVisibility` property is editable. 
     attr_accessor :allow_document_visibility_metadata
 
     # 
     attr_accessor :allow_e_hanko_stamps
 
+    # Metadata that indicates whether the `allowEHankoStamps` property is editable. 
     attr_accessor :allow_e_hanko_stamps_metadata
 
     # 
     attr_accessor :allow_e_note_e_original
 
+    # Metadata that indicates whether the `allowENoteEOriginal` property is editable. 
     attr_accessor :allow_e_note_e_original_metadata
 
     # 
     attr_accessor :allow_envelope_correct
 
+    # Metadata that indicates whether the `allowEnvelopeCorrect` property is editable. 
     attr_accessor :allow_envelope_correct_metadata
 
     # 
     attr_accessor :allow_envelope_custody_transfer
 
+    # Metadata that indicates whether the `allowEnvelopeCustodyTransfer` property is editable. 
     attr_accessor :allow_envelope_custody_transfer_metadata
 
     # 
     attr_accessor :allow_envelope_custom_fields
 
+    # Metadata that indicates whether the `allowEnvelopeCustomFields` property is editable. 
     attr_accessor :allow_envelope_custom_fields_metadata
 
     # 
     attr_accessor :allow_envelope_publish_reporting
 
+    # Metadata that indicates whether the `allowEnvelopePublishReporting` property is editable. 
     attr_accessor :allow_envelope_publish_reporting_metadata
 
     # 
     attr_accessor :allow_envelope_reporting
 
+    # Metadata that indicates whether the `allowEnvelopeReporting` property is editable. 
     attr_accessor :allow_envelope_reporting_metadata
 
     # 
     attr_accessor :allow_expression
 
+    # Metadata that indicates whether the `allowExpression` property is editable. 
     attr_accessor :allow_expression_metadata
 
     # 
     attr_accessor :allow_express_signer_certificate
 
+    # Metadata that indicates whether the `allowExpressSignerCertificate` property is editable. 
     attr_accessor :allow_express_signer_certificate_metadata
 
     # 
     attr_accessor :allow_extended_sending_resource_file
 
+    # Metadata that indicates whether the `allowExtendedSendingResourceFile` property is editable. 
     attr_accessor :allow_extended_sending_resource_file_metadata
 
     # 
     attr_accessor :allow_external_linked_accounts
 
+    # 
     attr_accessor :allow_external_linked_accounts_metadata
 
     # 
     attr_accessor :allow_external_signature_pad
 
+    # Metadata that indicates whether the `allowExternalSignaturePad` property is editable. 
     attr_accessor :allow_external_signature_pad_metadata
+
+    # 
+    attr_accessor :allow_idv_for_eu_qualified_signatures
+
+    attr_accessor :allow_idv_for_eu_qualified_signatures_metadata
 
     # 
     attr_accessor :allow_idv_level1
 
+    # Metadata that indicates whether the `allowIDVLevel1` property is editable.
     attr_accessor :allow_idv_level1_metadata
 
     # 
     attr_accessor :allow_idv_level2
 
+    # 
     attr_accessor :allow_idv_level2_metadata
 
     # 
     attr_accessor :allow_idv_level3
 
+    # 
     attr_accessor :allow_idv_level3_metadata
 
     # 
     attr_accessor :allow_idv_platform
 
+    # Metadata that indicates whether the `allowIDVPlatform` property is editable.
     attr_accessor :allow_idv_platform_metadata
 
     # 
@@ -230,11 +290,13 @@ module DocuSign_eSign
     # MetaData for the allowInPersonElectronicNotary flag
     attr_accessor :allow_in_person_electronic_notary_metadata
 
+    # Metadata that indicates whether the `allowInPerson` property is editable. 
     attr_accessor :allow_in_person_metadata
 
     # 
     attr_accessor :allow_managed_stamps
 
+    # Metadata that indicates whether the `allowManagedStamps` property is editable. 
     attr_accessor :allow_managed_stamps_metadata
 
     # 
@@ -245,66 +307,79 @@ module DocuSign_eSign
     # When set to **true**, Document Markup is enabled for envelope. Account must have Document Markup enabled to use this
     attr_accessor :allow_markup
 
+    # Metadata that indicates whether the `allowMarkup` property is editable. 
     attr_accessor :allow_markup_metadata
 
     # 
     attr_accessor :allow_member_time_zone
 
+    # Metadata that indicates whether the `allowMemberTimeZone` property is editable. 
     attr_accessor :allow_member_time_zone_metadata
 
     # 
     attr_accessor :allow_merge_fields
 
+    # Metadata that indicates whether the `allowMergeFields` property is editable. 
     attr_accessor :allow_merge_fields_metadata
 
     # 
     attr_accessor :allow_multiple_brand_profiles
 
+    # Metadata that indicates whether the `allowMultipleBrandProfiles` property is editable. 
     attr_accessor :allow_multiple_brand_profiles_metadata
 
     # 
     attr_accessor :allow_multiple_signer_attachments
 
+    # Metadata that indicates whether the `allowMultipleSignerAttachments` property is editable. 
     attr_accessor :allow_multiple_signer_attachments_metadata
 
     # 
     attr_accessor :allow_non_us_phone_auth
 
+    # Metadata that indicates whether the `allowNonUSPhoneAuth` property is editable. 
     attr_accessor :allow_non_us_phone_auth_metadata
 
     # 
     attr_accessor :allow_ocr_of_envelope_documents
 
+    # 
     attr_accessor :allow_ocr_of_envelope_documents_metadata
 
     # 
     attr_accessor :allow_offline_signing
 
+    # Metadata that indicates whether the `allowOfflineSigning` property is editable. 
     attr_accessor :allow_offline_signing_metadata
 
     # 
     attr_accessor :allow_open_trust_signer_certificate
 
+    # Metadata that indicates whether the `allowOpenTrustSignerCertificate` property is editable. 
     attr_accessor :allow_open_trust_signer_certificate_metadata
 
     # 
     attr_accessor :allow_organization_docusign_monitor
 
+    # 
     attr_accessor :allow_organization_docusign_monitor_metadata
 
     # 
     attr_accessor :allow_organization_domain_user_management
 
+    # 
     attr_accessor :allow_organization_domain_user_management_metadata
 
     # 
     attr_accessor :allow_organizations
 
+    # Metadata that indicates whether the `allowOrganizations` property is editable. 
     attr_accessor :allow_organizations_metadata
 
     # 
     attr_accessor :allow_organization_sso_management
 
+    # 
     attr_accessor :allow_organization_sso_management_metadata
 
     # Organization Level Flag that determines the availability to perform In Person Electronic Notarial (IPEN) actions
@@ -316,66 +391,88 @@ module DocuSign_eSign
     # 
     attr_accessor :allow_organization_to_use_remote_notary
 
+    # 
     attr_accessor :allow_organization_to_use_remote_notary_metadata
 
-    # 
+    # Org level flag that determines the abailability to perform Third Party Notary (3PN) actions.
     attr_accessor :allow_organization_to_use_third_party_electronic_notary
 
     attr_accessor :allow_organization_to_use_third_party_electronic_notary_metadata
 
     # 
+    attr_accessor :allow_participant_recipient_type
+
+    attr_accessor :allow_participant_recipient_type_metadata
+
+    # 
     attr_accessor :allow_payment_processing
 
+    # Metadata that indicates whether the `allowPaymentProcessing` property is editable. 
     attr_accessor :allow_payment_processing_metadata
+
+    # 
+    attr_accessor :allow_performance_analytics
+
+    attr_accessor :allow_performance_analytics_metadata
 
     # 
     attr_accessor :allow_phone_authentication
 
+    # Metadata that indicates whether the `allowPhoneAuthentication` property is editable. 
     attr_accessor :allow_phone_authentication_metadata
 
     # 
     attr_accessor :allow_phone_auth_override
 
+    # Metadata that indicates whether the `allowPhoneAuthOverride` property is editable. 
     attr_accessor :allow_phone_auth_override_metadata
 
     # 
     attr_accessor :allow_private_signing_groups
 
+    # Metadata that indicates whether the `allowPrivateSigningGroups` property is editable. 
     attr_accessor :allow_private_signing_groups_metadata
 
     # 
     attr_accessor :allow_recipient_connect
 
+    # 
     attr_accessor :allow_recipient_connect_metadata
 
     # 
     attr_accessor :allow_reminders
 
+    # Metadata that indicates whether the `allowReminders` property is editable. 
     attr_accessor :allow_reminders_metadata
 
     # 
     attr_accessor :allow_remote_notary
 
+    # 
     attr_accessor :allow_remote_notary_metadata
 
     # 
     attr_accessor :allow_resource_file_branding
 
+    # Metadata that indicates whether the `allowResourceFileBranding` property is editable. 
     attr_accessor :allow_resource_file_branding_metadata
 
     # 
     attr_accessor :allow_safe_bio_pharma_signer_certificate
 
+    # Metadata that indicates whether the `allowSafeBioPharmaSignerCertificate` property is editable. 
     attr_accessor :allow_safe_bio_pharma_signer_certificate_metadata
 
     # \"true\" if the account has permission to use the scheduled sending feature to send envelopes at a specified datetime in the future, \"false\" otherwise.
     attr_accessor :allow_scheduled_sending
 
+    # 
     attr_accessor :allow_scheduled_sending_metadata
 
     # 
     attr_accessor :allow_security_appliance
 
+    # Metadata that indicates whether the `allowSecurityAppliance` property is editable. 
     attr_accessor :allow_security_appliance_metadata
 
     # 
@@ -386,66 +483,79 @@ module DocuSign_eSign
     # 
     attr_accessor :allow_send_to_certified_delivery
 
+    # Metadata that indicates whether the `allowSendToCertifiedDelivery` property is editable. 
     attr_accessor :allow_send_to_certified_delivery_metadata
 
     # 
     attr_accessor :allow_send_to_intermediary
 
+    # Metadata that indicates whether the `allowSendToIntermediary` property is editable. 
     attr_accessor :allow_send_to_intermediary_metadata
 
     # 
     attr_accessor :allow_server_templates
 
+    # Metadata that indicates whether the `allowServerTemplates` property is editable. 
     attr_accessor :allow_server_templates_metadata
 
     # 
     attr_accessor :allow_set_embedded_recipient_start_url
 
+    # 
     attr_accessor :allow_set_embedded_recipient_start_url_metadata
 
     # 
     attr_accessor :allow_shared_tabs
 
+    # Metadata that indicates whether the `allowSharedTabs` property is editable. 
     attr_accessor :allow_shared_tabs_metadata
 
     # 
     attr_accessor :allow_signature_stamps
 
+    # Metadata that indicates whether the `allowSignatureStamps` property is editable. 
     attr_accessor :allow_signature_stamps_metadata
 
     # 
     attr_accessor :allow_sign_document_from_home_page
 
+    # Metadata that indicates whether the `allowSignDocumentFromHomePage` property is editable. 
     attr_accessor :allow_sign_document_from_home_page_metadata
 
     # 
     attr_accessor :allow_signer_reassign
 
+    # Metadata that indicates whether the `allowSignerReassign` property is editable. 
     attr_accessor :allow_signer_reassign_metadata
 
     # 
     attr_accessor :allow_signer_reassign_override
 
+    # Metadata that indicates whether the `allowSignerReassignOverride` property is editable. 
     attr_accessor :allow_signer_reassign_override_metadata
 
     # 
     attr_accessor :allow_signing_extensions
 
+    # Metadata that indicates whether the `allowSigningExtensions` property is editable. 
     attr_accessor :allow_signing_extensions_metadata
 
     # 
     attr_accessor :allow_signing_groups
 
+    # Metadata that indicates whether the `allowSigningGroups` property is editable. 
     attr_accessor :allow_signing_groups_metadata
 
     # 
     attr_accessor :allow_signing_insights
 
+    # 
     attr_accessor :allow_signing_insights_metadata
 
     # 
     attr_accessor :allow_signing_radio_deselect
 
+    # Metadata that indicates whether the `allowSigningRadioDeselect` property is editable. 
     attr_accessor :allow_signing_radio_deselect_metadata
 
     # 
@@ -457,19 +567,22 @@ module DocuSign_eSign
     # 
     attr_accessor :allow_sms_delivery
 
+    # 
     attr_accessor :allow_sms_delivery_metadata
 
     # 
     attr_accessor :allow_social_id_login
 
+    # Deprecated.
     attr_accessor :allow_social_id_login_metadata
 
     # 
     attr_accessor :allow_supplemental_documents
 
+    # Metadata that indicates whether the `allowSupplementalDocuments` property is editable.
     attr_accessor :allow_supplemental_documents_metadata
 
-    # 
+    # Account level flag that determines the availability to perform Third Party Notary (3PN) actions.
     attr_accessor :allow_third_party_electronic_notary
 
     attr_accessor :allow_third_party_electronic_notary_metadata
@@ -477,11 +590,13 @@ module DocuSign_eSign
     # 
     attr_accessor :allow_users_to_access_directory
 
+    # 
     attr_accessor :allow_users_to_access_directory_metadata
 
     # 
     attr_accessor :allow_value_insights
 
+    # 
     attr_accessor :allow_value_insights_metadata
 
     # 
@@ -492,45 +607,55 @@ module DocuSign_eSign
     # 
     attr_accessor :anchor_population_scope
 
+    # Metadata that indicates whether the `anchorPopulationScope` property is editable. 
     attr_accessor :anchor_population_scope_metadata
 
     # 
     attr_accessor :anchor_tag_versioned_placement_enabled
 
+    # 
     attr_accessor :anchor_tag_versioned_placement_metadata_enabled
 
     # 
     attr_accessor :attach_completed_envelope
 
+    # Metadata that indicates whether the `attachCompletedEnvelope` property is editable.
     attr_accessor :attach_completed_envelope_metadata
 
     # 
     attr_accessor :authentication_check
 
+    # Metadata that indicates whether the `authenticationCheck` property is editable. 
     attr_accessor :authentication_check_metadata
 
     # 
     attr_accessor :auto_nav_rule
 
+    # Metadata that indicates whether the `autoNavRule` property is editable. 
     attr_accessor :auto_nav_rule_metadata
 
     # 
     attr_accessor :auto_provision_signer_account
 
+    # Metadata that indicates whether the `autoProvisionSignerAccount` property is editable. 
     attr_accessor :auto_provision_signer_account_metadata
 
     # 
     attr_accessor :bcc_email_archive
 
+    # Metadata that indicates whether the `bccEmailArchive` property is editable. 
     attr_accessor :bcc_email_archive_metadata
 
     # 
     attr_accessor :beta_switch_configuration
 
+    # Reserved for DocuSign.
     attr_accessor :beta_switch_configuration_metadata
 
+    # The billing address for the account.
     attr_accessor :billing_address
 
+    # Metadata that indicates whether the `billingAddress` property is editable. 
     attr_accessor :billing_address_metadata
 
     # 
@@ -545,143 +670,172 @@ module DocuSign_eSign
     # 
     attr_accessor :bulk_send_max_unprocessed_envelopes_count
 
+    # Metadata that indicates whether the `bulkSend` property is editable. 
     attr_accessor :bulk_send_metadata
 
     # 
     attr_accessor :can_self_brand_send
 
+    # Metadata that indicates whether the `canSelfBrandSend` property is editable. 
     attr_accessor :can_self_brand_send_metadata
 
     # 
     attr_accessor :can_self_brand_sign
 
+    # Metadata that indicates whether the `canSelfBrandSign` property is editable. 
     attr_accessor :can_self_brand_sign_metadata
 
     # 
     attr_accessor :can_use_salesforce_o_auth
 
+    # 
     attr_accessor :can_use_salesforce_o_auth_metadata
 
     # 
     attr_accessor :capture_voice_recording
 
+    # Reserved for DocuSign.
     attr_accessor :capture_voice_recording_metadata
 
     # 
     attr_accessor :cfr21_simplified_signing_enabled
 
+    # 
     attr_accessor :cfr21_simplified_signing_enabled_metadata
 
     # 
     attr_accessor :cfr_use_wide_image
 
+    # Metadata that indicates whether the `cfrUseWideImage` property is editable. 
     attr_accessor :cfr_use_wide_image_metadata
 
     # 
     attr_accessor :check_for_multiple_admins_on_account
 
+    # Metadata that indicates whether the `checkForMultipleAdminsOnAccount` property is editable.
     attr_accessor :check_for_multiple_admins_on_account_metadata
 
     # 
     attr_accessor :chrome_signature_enabled
 
+    # Metadata that indicates whether the `chromeSignatureEnabled` property is editable. 
     attr_accessor :chrome_signature_enabled_metadata
 
     # 
     attr_accessor :comment_email_show_message_text
 
+    # Metadata that indicates whether the `commentEmailShowMessageText` property is editable. 
     attr_accessor :comment_email_show_message_text_metadata
 
     # 
     attr_accessor :comments_allow_envelope_override
 
+    # Metadata that indicates whether the `commentsAllowEnvelopeOverride` property is editable. 
     attr_accessor :comments_allow_envelope_override_metadata
 
     # 
     attr_accessor :conditional_fields_enabled
 
+    # Metadata that indicates whether the `conditionalFieldsEnabled` property is editable. 
     attr_accessor :conditional_fields_enabled_metadata
 
     # 
     attr_accessor :consumer_disclosure_frequency
 
+    # Metadata that indicates whether the `consumerDisclosureFrequency` property is editable. 
     attr_accessor :consumer_disclosure_frequency_metadata
 
     # 
     attr_accessor :convert_pdf_fields
 
+    # Metadata that indicates whether the `convertPdfFields` property is editable. 
     attr_accessor :convert_pdf_fields_metadata
 
     # 
     attr_accessor :data_population_scope
 
+    # Metadata that indicates whether the `dataPopulationScope` property is editable. 
     attr_accessor :data_population_scope_metadata
 
     # 
     attr_accessor :disable_auto_template_matching
 
+    # 
     attr_accessor :disable_auto_template_matching_metadata
 
     # 
     attr_accessor :disable_mobile_app
 
+    # Metadata that indicates whether the `disableMobileApp` property is editable. 
     attr_accessor :disable_mobile_app_metadata
 
     # 
     attr_accessor :disable_mobile_push_notifications
 
+    # Metadata that indicates whether the `disableMobilePushNotifications` property is editable. 
     attr_accessor :disable_mobile_push_notifications_metadata
 
     # 
     attr_accessor :disable_mobile_sending
 
+    # Metadata that indicates whether the `disableMobileSending` property is editable. 
     attr_accessor :disable_mobile_sending_metadata
 
     # 
     attr_accessor :disable_multiple_sessions
 
+    # Metadata that indicates whether the `disableMultipleSessions` property is editable. 
     attr_accessor :disable_multiple_sessions_metadata
 
+    # Reserved for DocuSign.
     attr_accessor :disable_purge_notifications_for_sender_metadata
 
     # 
     attr_accessor :disable_signer_cert_view
 
+    # Metadata that indicates whether the `disableSignerCertView` property is editable. 
     attr_accessor :disable_signer_cert_view_metadata
 
     # 
     attr_accessor :disable_signer_history_view
 
+    # Metadata that indicates whether the `disableSignerHistoryView` property is editable. 
     attr_accessor :disable_signer_history_view_metadata
 
     # 
     attr_accessor :disable_style_signature
 
+    # Metadata that indicates whether the `disableStyleSignature` property is editable. 
     attr_accessor :disable_style_signature_metadata
 
     # 
     attr_accessor :disable_upload_signature
 
+    # Metadata that indicates whether the `disableUploadSignature` property is editable. 
     attr_accessor :disable_upload_signature_metadata
 
     # 
     attr_accessor :disable_user_sharing
 
+    # Metadata that indicates whether the `disableUserSharing` property is editable. 
     attr_accessor :disable_user_sharing_metadata
 
     # 
     attr_accessor :display_beta_switch
 
+    # Metadata that indicates whether the `displayBetaSwitch` property is editable. 
     attr_accessor :display_beta_switch_metadata
 
     # 
     attr_accessor :document_conversion_restrictions
 
+    # Metadata that indicates whether the `documentConversionRestrictions` property is editable. 
     attr_accessor :document_conversion_restrictions_metadata
 
     # 
     attr_accessor :document_retention
 
+    # Metadata that indicates whether the `documentRetention` property is editable. 
     attr_accessor :document_retention_metadata
 
     # 
@@ -690,6 +844,7 @@ module DocuSign_eSign
     # 
     attr_accessor :document_visibility
 
+    # Metadata that indicates whether the `documentVisibility` property is editable. 
     attr_accessor :document_visibility_metadata
 
     # 
@@ -701,51 +856,61 @@ module DocuSign_eSign
     # 
     attr_accessor :email_template_version
 
+    # Metadata that indicates whether the `emailTemplateVersion` property is editable. 
     attr_accessor :email_template_version_metadata
 
     # 
     attr_accessor :enable_access_code_generator
 
+    # Metadata that indicates whether the `enableAccessCodeGenerator` property is editable. 
     attr_accessor :enable_access_code_generator_metadata
 
     # 
     attr_accessor :enable_advanced_payments
 
+    # Metadata that indicates whether the `enableAdvancedPayments` property is editable. 
     attr_accessor :enable_advanced_payments_metadata
 
     # 
     attr_accessor :enable_advanced_power_forms
 
+    # Metadata that indicates whether the `enableAdvancedPowerForms` property is editable. 
     attr_accessor :enable_advanced_power_forms_metadata
 
     # 
     attr_accessor :enable_agreement_actions_for_clm
 
+    # 
     attr_accessor :enable_agreement_actions_for_clm_metadata
 
     # 
     attr_accessor :enable_agreement_actions_for_e_sign
 
+    # 
     attr_accessor :enable_agreement_actions_for_e_sign_metadata
 
     # 
     attr_accessor :enable_auto_nav
 
+    # Metadata that indicates whether the `enableAutoNav` property is editable. 
     attr_accessor :enable_auto_nav_metadata
 
     # 
     attr_accessor :enable_bcc_dummy_link
 
+    # 
     attr_accessor :enable_bcc_dummy_link_metadata
 
     # 
     attr_accessor :enable_calculated_fields
 
+    # Metadata that indicates whether the `enableCalculatedFields` property is editable. 
     attr_accessor :enable_calculated_fields_metadata
 
     # 
     attr_accessor :enable_clickwraps
 
+    # Metadata that indicates whether the `enableClickwraps` property is editable. 
     attr_accessor :enable_clickwraps_metadata
 
     # 
@@ -754,31 +919,47 @@ module DocuSign_eSign
     # 
     attr_accessor :enable_comments_history_download_in_signing
 
+    # 
     attr_accessor :enable_comments_history_download_in_signing_metadata
+
+    # 
+    attr_accessor :enable_contact_suggestions
+
+    attr_accessor :enable_contact_suggestions_metadata
 
     # 
     attr_accessor :enable_customer_satisfaction_metric_tracking
 
+    # Metadata that indicates whether the `enableCustomerSatisfactionMetricTracking` property is editable. 
     attr_accessor :enable_customer_satisfaction_metric_tracking_metadata
 
     # 
     attr_accessor :enable_ds_pro
 
+    # Metadata that indicates whether the `enableDSPro` property is editable. 
     attr_accessor :enable_ds_pro_metadata
 
     # 
     attr_accessor :enable_envelope_stamping_by_account_admin
 
+    # Metadata that indicates whether the `enableEnvelopeStampingByAccountAdmin` property is editable. 
     attr_accessor :enable_envelope_stamping_by_account_admin_metadata
 
     # 
     attr_accessor :enable_envelope_stamping_by_ds_admin
 
+    # Metadata that indicates whether the `enableEnvelopeStampingByDSAdmin` property is editable. 
     attr_accessor :enable_envelope_stamping_by_ds_admin_metadata
+
+    # 
+    attr_accessor :enable_e_sign_api_hourly_limit_management
+
+    attr_accessor :enable_e_sign_api_hourly_limit_management_metadata
 
     # 
     attr_accessor :enable_esign_communities
 
+    # 
     attr_accessor :enable_esign_communities_metadata
 
     # 
@@ -789,16 +970,19 @@ module DocuSign_eSign
     # 
     attr_accessor :enable_id_fx_intuit_kba
 
+    # 
     attr_accessor :enable_id_fx_intuit_kba_metadata
 
     # 
     attr_accessor :enable_id_fx_phone_authentication
 
+    # 
     attr_accessor :enable_id_fx_phone_authentication_metadata
 
     # 
     attr_accessor :enable_in_browser_editor
 
+    # 
     attr_accessor :enable_in_browser_editor_metadata
 
     # 
@@ -806,14 +990,18 @@ module DocuSign_eSign
 
     attr_accessor :enable_key_terms_suggestions_by_document_type_metadata
 
+    attr_accessor :enable_participant_recipient_setting_metadata
+
     # 
     attr_accessor :enable_payment_processing
 
+    # Metadata that indicates whether the `enablePaymentProcessing` property is editable. 
     attr_accessor :enable_payment_processing_metadata
 
     # 
     attr_accessor :enable_pdfa_conversion
 
+    # 
     attr_accessor :enable_pdfa_conversion_metadata
 
     # 
@@ -822,48 +1010,58 @@ module DocuSign_eSign
     # 
     attr_accessor :enable_power_form_direct
 
+    # Metadata that indicates whether the `enablePowerFormDirect` property is editable. 
     attr_accessor :enable_power_form_direct_metadata
 
+    # Metadata that indicates whether the `enablePowerForm` property is editable. 
     attr_accessor :enable_power_form_metadata
 
     # 
     attr_accessor :enable_recipient_domain_validation
 
+    # Metadata that indicates whether the `enableRecipientDomainValidation` property is editable. 
     attr_accessor :enable_recipient_domain_validation_metadata
 
     # 
     attr_accessor :enable_recipient_may_provide_phone_number
 
+    # 
     attr_accessor :enable_recipient_may_provide_phone_number_metadata
 
     # 
     attr_accessor :enable_report_links
 
+    # Metadata that indicates whether the `enableReportLinks` property is editable. 
     attr_accessor :enable_report_links_metadata
 
     # 
     attr_accessor :enable_require_sign_on_paper
 
+    # Metadata that indicates whether the `enableRequireSignOnPaper` property is editable. 
     attr_accessor :enable_require_sign_on_paper_metadata
 
     # 
     attr_accessor :enable_reserved_domain
 
+    # Metadata that indicates whether the `enableReservedDomain` property is editable. 
     attr_accessor :enable_reserved_domain_metadata
 
     # 
     attr_accessor :enable_responsive_signing
 
+    # Metadata that indicates whether the `enableResponsiveSigning` property is editable. 
     attr_accessor :enable_responsive_signing_metadata
 
     # 
     attr_accessor :enable_scheduled_release
 
+    # Metadata that indicates whether the `enableScheduledRelease` property is editable. 
     attr_accessor :enable_scheduled_release_metadata
 
     # 
     attr_accessor :enable_search
 
+    # 
     attr_accessor :enable_search_metadata
 
     # 
@@ -874,86 +1072,103 @@ module DocuSign_eSign
     # 
     attr_accessor :enable_search_ui
 
+    # 
     attr_accessor :enable_search_ui_metadata
 
     # 
     attr_accessor :enable_sending_tags_font_settings
 
+    # Metadata that indicates whether the `enableSendingTagsFontSettings` property is editable. 
     attr_accessor :enable_sending_tags_font_settings_metadata
 
     # 
     attr_accessor :enable_send_to_agent
 
+    # Metadata that indicates whether the `enableSendToAgent` property is editable. 
     attr_accessor :enable_send_to_agent_metadata
 
     # 
     attr_accessor :enable_send_to_intermediary
 
+    # Metadata that indicates whether the `enableSendToIntermediary` property is editable. 
     attr_accessor :enable_send_to_intermediary_metadata
 
     # 
     attr_accessor :enable_send_to_manage
 
+    # Metadata that indicates whether the `enableSendToManage` property is editable. 
     attr_accessor :enable_send_to_manage_metadata
 
     # 
     attr_accessor :enable_sequential_signing_api
 
+    # Metadata that indicates whether the `enableSequentialSigningAPI` property is editable. 
     attr_accessor :enable_sequential_signing_api_metadata
 
     # 
     attr_accessor :enable_sequential_signing_ui
 
+    # Metadata that indicates whether the `enableSequentialSigningUI` property is editable. 
     attr_accessor :enable_sequential_signing_ui_metadata
 
     # 
     attr_accessor :enable_signer_attachments
 
+    # Metadata that indicates whether the `enableSignerAttachments` property is editable. 
     attr_accessor :enable_signer_attachments_metadata
 
     # 
     attr_accessor :enable_signing_extension_comments
 
+    # Metadata that indicates whether the `enableSigningExtensionComments` property is editable. 
     attr_accessor :enable_signing_extension_comments_metadata
 
     # 
     attr_accessor :enable_signing_extension_conversations
 
+    # Metadata that indicates whether the `enableSigningExtensionConversations` property is editable. 
     attr_accessor :enable_signing_extension_conversations_metadata
 
     # 
     attr_accessor :enable_signing_order_settings_for_account
 
+    # Metadata that indicates whether the `enableSigningOrderSettingsForAccount` property is editable. 
     attr_accessor :enable_signing_order_settings_for_account_metadata
 
     # 
     attr_accessor :enable_sign_on_paper
 
+    # Metadata that indicates whether the `enableSignOnPaper` property is editable. 
     attr_accessor :enable_sign_on_paper_metadata
 
     # 
     attr_accessor :enable_sign_on_paper_override
 
+    # Metadata that indicates whether the `enableSignOnPaperOverride` property is editable. 
     attr_accessor :enable_sign_on_paper_override_metadata
 
     # 
     attr_accessor :enable_sign_with_notary
 
+    # Metadata that indicates whether the `enableSignWithNotary` property is editable. 
     attr_accessor :enable_sign_with_notary_metadata
 
     # 
     attr_accessor :enable_smart_contracts
 
+    # Metadata that indicates whether the `enableSmartContracts` property is editable.
     attr_accessor :enable_smart_contracts_metadata
 
     # 
     attr_accessor :enable_sms_authentication
 
+    # Metadata that indicates whether the `enableSMSAuthentication` property is editable. 
     attr_accessor :enable_sms_authentication_metadata
 
     # 
     attr_accessor :enable_sms_delivery_additional_notification
 
+    # 
     attr_accessor :enable_sms_delivery_additional_notification_metadata
 
     # 
@@ -962,51 +1177,71 @@ module DocuSign_eSign
     # 
     attr_accessor :enable_social_id_login
 
+    # Deprecated.
     attr_accessor :enable_social_id_login_metadata
 
     # 
     attr_accessor :enable_strike_through
 
+    # Metadata that indicates whether the `enableStrikeThrough` property is editable. 
     attr_accessor :enable_strike_through_metadata
 
     # 
     attr_accessor :enable_transaction_point
 
+    # Reserved for DocuSign.
     attr_accessor :enable_transaction_point_metadata
 
     # 
     attr_accessor :enable_vaulting
 
+    # Metadata that indicates whether the `enableVaulting` property is editable. 
     attr_accessor :enable_vaulting_metadata
 
     # 
     attr_accessor :enable_witnessing
 
+    # Metadata that indicates whether the `enableWitnessing` property is editable. 
     attr_accessor :enable_witnessing_metadata
 
     # 
     attr_accessor :enforce_template_name_uniqueness
 
+    # Metadata that indicates whether the `enforceTemplateNameUniqueness` property is editable. 
     attr_accessor :enforce_template_name_uniqueness_metadata
 
     # 
     attr_accessor :envelope_integration_allowed
 
+    # Metadata that indicates whether the `envelopeIntegrationAllowed` property is editable. 
     attr_accessor :envelope_integration_allowed_metadata
 
     # 
     attr_accessor :envelope_integration_enabled
 
+    # Metadata that indicates whether the `envelopeIntegrationEnabled` property is editable. 
     attr_accessor :envelope_integration_enabled_metadata
+
+    # 
+    attr_accessor :envelope_limits_total_document_size_allowed_in_mb
+
+    # 
+    attr_accessor :envelope_limits_total_document_size_allowed_in_mb_enabled
+
+    attr_accessor :envelope_limits_total_document_size_allowed_in_mb_enabled_metadata
+
+    attr_accessor :envelope_limits_total_document_size_allowed_in_mb_metadata
 
     # 
     attr_accessor :envelope_stamping_default_value
 
+    # Metadata that indicates whether the `envelopeStampingDefaultValue` property is editable. 
     attr_accessor :envelope_stamping_default_value_metadata
 
     # 
     attr_accessor :exit_prompt
 
+    # 
     attr_accessor :exit_prompt_metadata
 
     # 
@@ -1015,30 +1250,37 @@ module DocuSign_eSign
     # 
     attr_accessor :express_send_allow_tabs
 
+    # Metadata that indicates whether the `expressSendAllowTabs` property is editable. 
     attr_accessor :express_send_allow_tabs_metadata
 
+    # Metadata that indicates whether the `expressSend` property is editable. 
     attr_accessor :express_send_metadata
 
+    # A list of external document sources such as DropBox and OneDrive.
     attr_accessor :external_document_sources
 
     # 
     attr_accessor :external_signature_pad_type
 
+    # Metadata that indicates whether the `externalSignaturePadType` property is editable. 
     attr_accessor :external_signature_pad_type_metadata
 
     # 
     attr_accessor :fax_out_enabled
 
+    # Metadata that indicates whether the `faxOutEnabled` property is editable. 
     attr_accessor :fax_out_enabled_metadata
 
     # 
     attr_accessor :finish_reminder
 
+    # 
     attr_accessor :finish_reminder_metadata
 
     # 
     attr_accessor :guided_forms_html_allowed
 
+    # 
     attr_accessor :guided_forms_html_allowed_metadata
 
     # 
@@ -1047,11 +1289,13 @@ module DocuSign_eSign
     # 
     attr_accessor :hide_account_address_in_co_c
 
+    # Metadata that indicates whether the `hideAccountAddressInCoC` property is editable. 
     attr_accessor :hide_account_address_in_co_c_metadata
 
     # 
     attr_accessor :hide_pricing
 
+    # Metadata that indicates whether the `hidePricing` property is editable. 
     attr_accessor :hide_pricing_metadata
 
     # 
@@ -1063,53 +1307,64 @@ module DocuSign_eSign
     # 
     attr_accessor :id_check_expire_days
 
+    # Metadata that indicates whether the `idCheckExpireDays` property is editable. 
     attr_accessor :id_check_expire_days_metadata
 
+    # Metadata that indicates whether the `idCheckExpire` property is editable. 
     attr_accessor :id_check_expire_metadata
 
     # 
     attr_accessor :id_check_expire_minutes
 
+    # Metadata that indicates whether the `idCheckExpireMinutes` property is editable. 
     attr_accessor :id_check_expire_minutes_metadata
 
     # 
     attr_accessor :id_check_required
 
+    # Metadata that indicates whether the `idCheckRequired` property is editable. 
     attr_accessor :id_check_required_metadata
 
     # 
     attr_accessor :identity_verification
 
+    # Metadata that indicates whether the `identityVerification` property is editable. 
     attr_accessor :identity_verification_metadata
 
     # 
     attr_accessor :idfx_phone_authentication_override
 
+    # 
     attr_accessor :idfx_phone_authentication_override_metadata
 
     # 
     attr_accessor :ignore_error_if_anchor_tab_not_found
 
+    # Reserved for DocuSign.
     attr_accessor :ignore_error_if_anchor_tab_not_found_metadata_enabled
 
     # 
     attr_accessor :in_person_id_check_question
 
+    # Metadata that indicates whether the `inPersonIDCheckQuestion` property is editable. 
     attr_accessor :in_person_id_check_question_metadata
 
     # 
     attr_accessor :in_person_signing_enabled
 
+    # Metadata that indicates whether the `inPersonSigningEnabled` property is editable. 
     attr_accessor :in_person_signing_enabled_metadata
 
     # 
     attr_accessor :in_session_enabled
 
+    # Metadata that indicates whether the `inSessionEnabled` property is editable. 
     attr_accessor :in_session_enabled_metadata
 
     # 
     attr_accessor :in_session_suppress_emails
 
+    # Metadata that indicates whether the `inSessionSuppressEmails` property is editable. 
     attr_accessor :in_session_suppress_emails_metadata
 
     # 
@@ -1118,11 +1373,13 @@ module DocuSign_eSign
     # 
     attr_accessor :maximum_signing_groups
 
+    # Metadata that indicates whether the `maximumSigningGroups` property is editable. 
     attr_accessor :maximum_signing_groups_metadata
 
     # 
     attr_accessor :maximum_users_per_signing_group
 
+    # Metadata that indicates whether the `maximumUsersPerSigningGroup` property is editable. 
     attr_accessor :maximum_users_per_signing_group_metadata
 
     # 
@@ -1131,6 +1388,7 @@ module DocuSign_eSign
     # 
     attr_accessor :mobile_session_timeout
 
+    # Metadata that indicates whether the `mobileSessionTimeout` property is editable. 
     attr_accessor :mobile_session_timeout_metadata
 
     # 
@@ -1139,61 +1397,88 @@ module DocuSign_eSign
     # 
     attr_accessor :opt_in_mobile_signing_v02
 
+    # Metadata that indicates whether the `optInMobileSigningV02` property is editable. 
     attr_accessor :opt_in_mobile_signing_v02_metadata
 
     # 
     attr_accessor :opt_out_auto_nav_text_and_tab_color_updates
 
+    # Metadata that indicates whether the `optOutAutoNavTextAndTabColorUpdates` property is editable. 
     attr_accessor :opt_out_auto_nav_text_and_tab_color_updates_metadata
 
     # 
     attr_accessor :opt_out_new_platform_seal
 
+    # Metadata that indicates whether the `optOutNewPlatformSealPlatform` property is editable. 
     attr_accessor :opt_out_new_platform_seal_platform_metadata
+
+    # 
+    attr_accessor :pdf_max_chunked_upload_part_size
+
+    attr_accessor :pdf_max_chunked_upload_part_size_metadata
+
+    # 
+    attr_accessor :pdf_max_chunked_upload_total_size
+
+    attr_accessor :pdf_max_chunked_upload_total_size_metadata
+
+    # 
+    attr_accessor :pdf_max_individual_upload_size
+
+    attr_accessor :pdf_max_individual_upload_size_metadata
 
     # 
     attr_accessor :phone_auth_recipient_may_provide_phone_number
 
+    # Metadata that indicates whether the `phoneAuthRecipientMayProvidePhoneNumber` property is editable. 
     attr_accessor :phone_auth_recipient_may_provide_phone_number_metadata
 
     # 
     attr_accessor :pki_sign_downloaded_pdf_docs
 
+    # Metadata that indicates whether the `pkiSignDownloadedPDFDocs` property is editable. 
     attr_accessor :pki_sign_downloaded_pdf_docs_metadata
 
     # 
     attr_accessor :read_only_mode
 
+    # 
     attr_accessor :read_only_mode_metadata
 
     # 
     attr_accessor :recipients_can_sign_offline
 
+    # Metadata that indicates whether the `recipientsCanSignOffline` property is editable. 
     attr_accessor :recipients_can_sign_offline_metadata
 
     # 
     attr_accessor :recipient_signing_auto_navigation_control
 
+    # Metadata that indicates whether the `recipientSigningAutoNavigationControl` property is editable. 
     attr_accessor :recipient_signing_auto_navigation_control_metadata
 
     # 
     attr_accessor :require21_cf_rpt11_compliance
 
+    # Metadata that indicates whether the `require21CFRpt11Compliance` property is editable. 
     attr_accessor :require21_cf_rpt11_compliance_metadata
 
     # 
     attr_accessor :require_decline_reason
 
+    # Metadata that indicates whether the `requireDeclineReason` property is editable. 
     attr_accessor :require_decline_reason_metadata
 
     # 
     attr_accessor :require_external_user_management
 
+    # Metadata that indicates whether the `requireExternalUserManagement` property is editable. 
     attr_accessor :require_external_user_management_metadata
 
     # 
     attr_accessor :require_signer_certificate_type
 
+    # Metadata that indicates whether the `requireSignerCertificateType` property is editable. 
     attr_accessor :require_signer_certificate_type_metadata
 
     # 
@@ -1211,243 +1496,292 @@ module DocuSign_eSign
     # 
     attr_accessor :self_signed_recipient_email_document
 
+    # Metadata that indicates whether the `selfSignedRecipientEmailDocument` property is editable. 
     attr_accessor :self_signed_recipient_email_document_metadata
 
     # 
     attr_accessor :self_signed_recipient_email_document_user_override
 
+    # Metadata that indicates whether the `selfSignedRecipientEmailDocumentUserOverride` property is editable. 
     attr_accessor :self_signed_recipient_email_document_user_override_metadata
 
     # 
     attr_accessor :sender_can_sign_in_each_location
 
+    # Metadata that indicates whether the `senderCanSignInEachLocation` property is editable. 
     attr_accessor :sender_can_sign_in_each_location_metadata
 
     # 
     attr_accessor :sender_must_authenticate_signing
 
+    # Metadata that indicates whether the `senderMustAuthenticateSigning` property is editable. 
     attr_accessor :sender_must_authenticate_signing_metadata
 
     # 
     attr_accessor :sending_tags_font_color
 
+    # Metadata that indicates whether the `sendingTagsFontColor` property is editable. 
     attr_accessor :sending_tags_font_color_metadata
 
     # 
     attr_accessor :sending_tags_font_name
 
+    # Metadata that indicates whether the `sendingTagsFontName` property is editable. 
     attr_accessor :sending_tags_font_name_metadata
 
     # 
     attr_accessor :sending_tags_font_size
 
+    # Metadata that indicates whether the `sendingTagsFontSize` property is editable. 
     attr_accessor :sending_tags_font_size_metadata
 
     # 
     attr_accessor :send_lockout_recipient_notification
 
+    # 
     attr_accessor :send_lockout_recipient_notification_metadata
 
     # 
     attr_accessor :send_to_certified_delivery_enabled
 
+    # Metadata that indicates whether the `sendToCertifiedDeliveryEnabled` property is editable. 
     attr_accessor :send_to_certified_delivery_enabled_metadata
 
     # 
     attr_accessor :session_timeout
 
+    # Metadata that indicates whether the `sessionTimeout` property is editable. 
     attr_accessor :session_timeout_metadata
 
     # 
     attr_accessor :set_recip_email_lang
 
+    # Metadata that indicates whether the `setRecipEmailLang` property is editable. 
     attr_accessor :set_recip_email_lang_metadata
 
     # 
     attr_accessor :set_recip_sign_lang
 
+    # Metadata that indicates whether the `setRecipSignLang` property is editable. 
     attr_accessor :set_recip_sign_lang_metadata
 
     # 
     attr_accessor :shared_template_folders
 
+    # Metadata that indicates whether the `sharedTemplateFolders` property is editable. 
     attr_accessor :shared_template_folders_metadata
 
     # 
     attr_accessor :show_complete_dialog_in_embedded_session
 
+    # Metadata that indicates whether the `showCompleteDialogInEmbeddedSession` property is editable. 
     attr_accessor :show_complete_dialog_in_embedded_session_metadata
 
     # 
     attr_accessor :show_conditional_routing_on_send
 
+    # 
     attr_accessor :show_conditional_routing_on_send_metadata
 
     # 
     attr_accessor :show_initial_conditional_fields
 
+    # Metadata that indicates whether the `showInitialConditionalFields` property is editable. 
     attr_accessor :show_initial_conditional_fields_metadata
 
     # 
     attr_accessor :show_localized_watermarks
 
+    # Metadata that indicates whether the `showLocalizedWatermarks` property is editable. 
     attr_accessor :show_localized_watermarks_metadata
 
     # 
     attr_accessor :show_masked_fields_when_downloading_document_as_sender
 
+    # 
     attr_accessor :show_masked_fields_when_downloading_document_as_sender_metadata
 
     # 
     attr_accessor :show_tutorials
 
+    # Metadata that indicates whether the `showTutorials` property is editable. 
     attr_accessor :show_tutorials_metadata
 
     # 
     attr_accessor :signature_providers
 
+    # Metadata that indicates whether the `signatureProviders` property is editable. 
     attr_accessor :signature_providers_metadata
 
     # 
     attr_accessor :sign_date_format
 
+    # Metadata that indicates whether the `signDateFormat` property is editable. 
     attr_accessor :sign_date_format_metadata
 
     # 
     attr_accessor :sign_date_time_account_language_override
 
+    # 
     attr_accessor :sign_date_time_account_language_override_metadata
 
     # 
     attr_accessor :sign_date_time_account_timezone_override
 
+    # 
     attr_accessor :sign_date_time_account_timezone_override_metadata
 
     # 
     attr_accessor :signer_attach_certificate_to_envelope_pdf
 
+    # Metadata that indicates whether the `signerAttachCertificateToEnvelopePDF` property is editable. 
     attr_accessor :signer_attach_certificate_to_envelope_pdf_metadata
 
     # 
     attr_accessor :signer_attach_concat
 
+    # Metadata that indicates whether the `signerAttachConcat` property is editable. 
     attr_accessor :signer_attach_concat_metadata
 
     # 
     attr_accessor :signer_can_create_account
 
+    # Metadata that indicates whether the `signerCanCreateAccount` property is editable. 
     attr_accessor :signer_can_create_account_metadata
 
     # 
     attr_accessor :signer_can_sign_on_mobile
 
+    # Metadata that indicates whether the `signerCanSignOnMobile` property is editable. 
     attr_accessor :signer_can_sign_on_mobile_metadata
 
     # 
     attr_accessor :signer_in_session_use_envelope_complete_email
 
+    # Metadata that indicates whether the `signerInSessionUseEnvelopeCompleteEmail` property is editable. 
     attr_accessor :signer_in_session_use_envelope_complete_email_metadata
 
     # 
     attr_accessor :signer_login_requirements
 
+    # Metadata that indicates whether the `signerLoginRequirements` property is editable. 
     attr_accessor :signer_login_requirements_metadata
 
     # 
     attr_accessor :signer_must_have_account
 
+    # Metadata that indicates whether the `signerMustHaveAccount` property is editable. 
     attr_accessor :signer_must_have_account_metadata
 
     # 
     attr_accessor :signer_must_login_to_sign
 
+    # Metadata that indicates whether the `signerMustLoginToSign` property is editable. 
     attr_accessor :signer_must_login_to_sign_metadata
 
     # 
     attr_accessor :signer_show_secure_field_initial_values
 
+    # Metadata that indicates whether the `signerShowSecureFieldInitialValues` property is editable. 
     attr_accessor :signer_show_secure_field_initial_values_metadata
 
     # 
     attr_accessor :signing_session_timeout
 
+    # Metadata that indicates whether the `signingSessionTimeout` property is editable. 
     attr_accessor :signing_session_timeout_metadata
 
     # 
     attr_accessor :signing_ui_version
 
+    # Reserved for DocuSign.
     attr_accessor :signing_ui_version_metadata
 
     # 
     attr_accessor :sign_time_format
 
+    # Metadata that indicates whether the `signTimeFormat` property is editable. 
     attr_accessor :sign_time_format_metadata
 
     # 
     attr_accessor :sign_time_show_am_pm
 
+    # Metadata that indicates whether the `signTimeShowAmPm` property is editable. 
     attr_accessor :sign_time_show_am_pm_metadata
 
     # 
     attr_accessor :simplified_sending_enabled
 
+    # Metadata that indicates whether the `simplifiedSendingEnabled` property is editable. 
     attr_accessor :simplified_sending_enabled_metadata
 
     # 
     attr_accessor :single_sign_on_enabled
 
+    # Metadata that indicates whether the `singleSignOnEnabled` property is editable. 
     attr_accessor :single_sign_on_enabled_metadata
 
     # 
     attr_accessor :skip_auth_completed_envelopes
 
+    # Metadata that indicates whether the `skipAuthCompletedEnvelopes` property is editable. 
     attr_accessor :skip_auth_completed_envelopes_metadata
 
     # 
     attr_accessor :social_id_recip_auth
 
+    # Metadata that indicates whether the `socialIdRecipAuth` property is editable. 
     attr_accessor :social_id_recip_auth_metadata
 
     # 
     attr_accessor :specify_document_visibility
 
+    # Metadata that indicates whether the `specifyDocumentVisibility` property is editable. 
     attr_accessor :specify_document_visibility_metadata
 
     # 
     attr_accessor :start_in_advanced_correct
 
+    # Metadata that indicates whether the `startInAdvancedCorrect` property is editable. 
     attr_accessor :start_in_advanced_correct_metadata
 
     # 
     attr_accessor :supplemental_documents_must_accept
 
+    # Metadata that indicates whether the `supplementalDocumentsMustAccept` property is editable. 
     attr_accessor :supplemental_documents_must_accept_metadata
 
     # 
     attr_accessor :supplemental_documents_must_read
 
+    # Metadata that indicates whether the `supplementalDocumentsMustRead` property is editable. 
     attr_accessor :supplemental_documents_must_read_metadata
 
     # 
     attr_accessor :supplemental_documents_must_view
 
+    # Metadata that indicates whether the `supplementalDocumentsMustView` property is editable. 
     attr_accessor :supplemental_documents_must_view_metadata
 
     # 
     attr_accessor :suppress_certificate_enforcement
 
+    # Metadata that indicates whether the `suppressCertificateEnforcement` property is editable. 
     attr_accessor :suppress_certificate_enforcement_metadata
 
+    # Account-wide tab settings.
     attr_accessor :tab_account_settings
 
     # 
     attr_accessor :timezone_offset_api
 
+    # Metadata that indicates whether the `timezoneOffsetAPI` property is editable. 
     attr_accessor :timezone_offset_api_metadata
 
     # 
     attr_accessor :timezone_offset_ui
 
+    # Metadata that indicates whether the `timezoneOffsetUI` property is editable. 
     attr_accessor :timezone_offset_ui_metadata
 
     # 
@@ -1456,51 +1790,61 @@ module DocuSign_eSign
     # 
     attr_accessor :use_account_level_email
 
+    # Metadata that indicates whether the `useAccountLevelEmail` property is editable. 
     attr_accessor :use_account_level_email_metadata
 
     # 
     attr_accessor :use_consumer_disclosure
 
+    # Metadata that indicates whether the `useConsumerDisclosure` property is editable. 
     attr_accessor :use_consumer_disclosure_metadata
 
     # 
     attr_accessor :use_consumer_disclosure_within_account
 
+    # Metadata that indicates whether the `useConsumerDisclosureWithinAccount` property is editable. 
     attr_accessor :use_consumer_disclosure_within_account_metadata
 
     # 
     attr_accessor :use_derived_keys
 
+    # Metadata that indicates whether the `useDerivedKeys` property is editable. 
     attr_accessor :use_derived_keys_metadata
 
     # 
     attr_accessor :use_docu_sign_express_signer_certificate
 
+    # Metadata that indicates whether the `useDocuSignExpressSignerCertificate` property is editable. 
     attr_accessor :use_docu_sign_express_signer_certificate_metadata
 
     # 
     attr_accessor :use_multi_app_groups_data
 
+    # 
     attr_accessor :use_multi_app_groups_data_metadata
 
     # 
     attr_accessor :use_new_blob_for_pdf
 
+    # Metadata that indicates whether the `useNewBlobForPdf` property is editable. 
     attr_accessor :use_new_blob_for_pdf_metadata
 
     # 
     attr_accessor :use_safe_signer_certificates
 
+    # Metadata that indicates whether the `useSAFESignerCertificates` property is editable. 
     attr_accessor :use_safe_signer_certificates_metadata
 
     # 
     attr_accessor :uses_api
 
+    # Metadata that indicates whether the `usesAPI` property is editable. 
     attr_accessor :uses_api_metadata
 
     # 
     attr_accessor :use_signature_provider_platform
 
+    # Metadata that indicates whether the `useSignatureProviderPlatform` property is editable. 
     attr_accessor :use_signature_provider_platform_metadata
 
     # 
@@ -1509,41 +1853,49 @@ module DocuSign_eSign
     # 
     attr_accessor :validations_allowed
 
+    # Metadata that indicates whether the `validationsAllowed` property is editable. 
     attr_accessor :validations_allowed_metadata
 
     # 
     attr_accessor :validations_brand
 
+    # Metadata that indicates whether the `validationsBrand` property is editable. 
     attr_accessor :validations_brand_metadata
 
     # 
     attr_accessor :validations_cadence
 
+    # Metadata that indicates whether the `validationsCadence` property is editable. 
     attr_accessor :validations_cadence_metadata
 
     # 
     attr_accessor :validations_enabled
 
+    # Metadata that indicates whether the `validationsEnabled` property is editable. 
     attr_accessor :validations_enabled_metadata
 
     # 
     attr_accessor :validations_report
 
+    # Metadata that indicates whether the `validationsReport` property is editable. 
     attr_accessor :validations_report_metadata
 
     # 
     attr_accessor :water_mark_enabled
 
+    # Metadata that indicates whether the `waterMarkEnabled` property is editable. 
     attr_accessor :water_mark_enabled_metadata
 
     # 
     attr_accessor :write_reminder_to_envelope_history
 
+    # Metadata that indicates whether the `writeReminderToEnvelopeHistory` property is editable. 
     attr_accessor :write_reminder_to_envelope_history_metadata
 
     # 
     attr_accessor :wurfl_min_allowable_screen_size
 
+    # Metadata that indicates whether the `wurflMinAllowableScreenSize` property is editable. 
     attr_accessor :wurfl_min_allowable_screen_size_metadata
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -1574,6 +1926,8 @@ module DocuSign_eSign
         :'allow_agent_name_email_edit_metadata' => :'allowAgentNameEmailEditMetadata',
         :'allow_agreement_actions' => :'allowAgreementActions',
         :'allow_agreement_actions_metadata' => :'allowAgreementActionsMetadata',
+        :'allow_agreement_orchestration_workflows' => :'allowAgreementOrchestrationWorkflows',
+        :'allow_agreement_orchestration_workflows_metadata' => :'allowAgreementOrchestrationWorkflowsMetadata',
         :'allow_auto_nav_settings' => :'allowAutoNavSettings',
         :'allow_auto_nav_settings_metadata' => :'allowAutoNavSettingsMetadata',
         :'allow_auto_tagging' => :'allowAutoTagging',
@@ -1583,6 +1937,7 @@ module DocuSign_eSign
         :'allow_cd_withdraw' => :'allowCDWithdraw',
         :'allow_cd_withdraw_metadata' => :'allowCDWithdrawMetadata',
         :'allow_connect_http_listener_configs' => :'allowConnectHttpListenerConfigs',
+        :'allow_connect_o_auth_ui' => :'allowConnectOAuthUI',
         :'allow_connect_send_finish_later' => :'allowConnectSendFinishLater',
         :'allow_connect_send_finish_later_metadata' => :'allowConnectSendFinishLaterMetadata',
         :'allow_connect_unified_payload_ui' => :'allowConnectUnifiedPayloadUI',
@@ -1594,6 +1949,8 @@ module DocuSign_eSign
         :'allow_delayed_routing_metadata' => :'allowDelayedRoutingMetadata',
         :'allow_delegated_signing' => :'allowDelegatedSigning',
         :'allow_delegated_signing_metadata' => :'allowDelegatedSigningMetadata',
+        :'allow_doc_gen_documents' => :'allowDocGenDocuments',
+        :'allow_doc_gen_documents_metadata' => :'allowDocGenDocumentsMetadata',
         :'allow_document_disclosures' => :'allowDocumentDisclosures',
         :'allow_document_disclosures_metadata' => :'allowDocumentDisclosuresMetadata',
         :'allow_documents_on_signed_envelopes' => :'allowDocumentsOnSignedEnvelopes',
@@ -1624,6 +1981,8 @@ module DocuSign_eSign
         :'allow_external_linked_accounts_metadata' => :'allowExternalLinkedAccountsMetadata',
         :'allow_external_signature_pad' => :'allowExternalSignaturePad',
         :'allow_external_signature_pad_metadata' => :'allowExternalSignaturePadMetadata',
+        :'allow_idv_for_eu_qualified_signatures' => :'allowIDVForEUQualifiedSignatures',
+        :'allow_idv_for_eu_qualified_signatures_metadata' => :'allowIDVForEUQualifiedSignaturesMetadata',
         :'allow_idv_level1' => :'allowIDVLevel1',
         :'allow_idv_level1_metadata' => :'allowIDVLevel1Metadata',
         :'allow_idv_level2' => :'allowIDVLevel2',
@@ -1672,8 +2031,12 @@ module DocuSign_eSign
         :'allow_organization_to_use_remote_notary_metadata' => :'allowOrganizationToUseRemoteNotaryMetadata',
         :'allow_organization_to_use_third_party_electronic_notary' => :'allowOrganizationToUseThirdPartyElectronicNotary',
         :'allow_organization_to_use_third_party_electronic_notary_metadata' => :'allowOrganizationToUseThirdPartyElectronicNotaryMetadata',
+        :'allow_participant_recipient_type' => :'allowParticipantRecipientType',
+        :'allow_participant_recipient_type_metadata' => :'allowParticipantRecipientTypeMetadata',
         :'allow_payment_processing' => :'allowPaymentProcessing',
         :'allow_payment_processing_metadata' => :'allowPaymentProcessingMetadata',
+        :'allow_performance_analytics' => :'allowPerformanceAnalytics',
+        :'allow_performance_analytics_metadata' => :'allowPerformanceAnalyticsMetadata',
         :'allow_phone_authentication' => :'allowPhoneAuthentication',
         :'allow_phone_authentication_metadata' => :'allowPhoneAuthenticationMetadata',
         :'allow_phone_auth_override' => :'allowPhoneAuthOverride',
@@ -1844,6 +2207,8 @@ module DocuSign_eSign
         :'enable_combined_pdf_download_for_sbs' => :'enableCombinedPDFDownloadForSBS',
         :'enable_comments_history_download_in_signing' => :'enableCommentsHistoryDownloadInSigning',
         :'enable_comments_history_download_in_signing_metadata' => :'enableCommentsHistoryDownloadInSigningMetadata',
+        :'enable_contact_suggestions' => :'enableContactSuggestions',
+        :'enable_contact_suggestions_metadata' => :'enableContactSuggestionsMetadata',
         :'enable_customer_satisfaction_metric_tracking' => :'enableCustomerSatisfactionMetricTracking',
         :'enable_customer_satisfaction_metric_tracking_metadata' => :'enableCustomerSatisfactionMetricTrackingMetadata',
         :'enable_ds_pro' => :'enableDSPro',
@@ -1852,6 +2217,8 @@ module DocuSign_eSign
         :'enable_envelope_stamping_by_account_admin_metadata' => :'enableEnvelopeStampingByAccountAdminMetadata',
         :'enable_envelope_stamping_by_ds_admin' => :'enableEnvelopeStampingByDSAdmin',
         :'enable_envelope_stamping_by_ds_admin_metadata' => :'enableEnvelopeStampingByDSAdminMetadata',
+        :'enable_e_sign_api_hourly_limit_management' => :'enableESignAPIHourlyLimitManagement',
+        :'enable_e_sign_api_hourly_limit_management_metadata' => :'enableESignAPIHourlyLimitManagementMetadata',
         :'enable_esign_communities' => :'enableEsignCommunities',
         :'enable_esign_communities_metadata' => :'enableEsignCommunitiesMetadata',
         :'enable_id_fx_accountless_sms_auth_for_part11' => :'enableIDFxAccountlessSMSAuthForPart11',
@@ -1864,6 +2231,7 @@ module DocuSign_eSign
         :'enable_in_browser_editor_metadata' => :'enableInBrowserEditorMetadata',
         :'enable_key_terms_suggestions_by_document_type' => :'enableKeyTermsSuggestionsByDocumentType',
         :'enable_key_terms_suggestions_by_document_type_metadata' => :'enableKeyTermsSuggestionsByDocumentTypeMetadata',
+        :'enable_participant_recipient_setting_metadata' => :'enableParticipantRecipientSettingMetadata',
         :'enable_payment_processing' => :'enablePaymentProcessing',
         :'enable_payment_processing_metadata' => :'enablePaymentProcessingMetadata',
         :'enable_pdfa_conversion' => :'enablePDFAConversion',
@@ -1941,6 +2309,10 @@ module DocuSign_eSign
         :'envelope_integration_allowed_metadata' => :'envelopeIntegrationAllowedMetadata',
         :'envelope_integration_enabled' => :'envelopeIntegrationEnabled',
         :'envelope_integration_enabled_metadata' => :'envelopeIntegrationEnabledMetadata',
+        :'envelope_limits_total_document_size_allowed_in_mb' => :'EnvelopeLimitsTotalDocumentSizeAllowedInMB',
+        :'envelope_limits_total_document_size_allowed_in_mb_enabled' => :'EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled',
+        :'envelope_limits_total_document_size_allowed_in_mb_enabled_metadata' => :'EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata',
+        :'envelope_limits_total_document_size_allowed_in_mb_metadata' => :'EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata',
         :'envelope_stamping_default_value' => :'envelopeStampingDefaultValue',
         :'envelope_stamping_default_value_metadata' => :'envelopeStampingDefaultValueMetadata',
         :'exit_prompt' => :'exitPrompt',
@@ -2001,6 +2373,12 @@ module DocuSign_eSign
         :'opt_out_auto_nav_text_and_tab_color_updates_metadata' => :'optOutAutoNavTextAndTabColorUpdatesMetadata',
         :'opt_out_new_platform_seal' => :'optOutNewPlatformSeal',
         :'opt_out_new_platform_seal_platform_metadata' => :'optOutNewPlatformSealPlatformMetadata',
+        :'pdf_max_chunked_upload_part_size' => :'pdfMaxChunkedUploadPartSize',
+        :'pdf_max_chunked_upload_part_size_metadata' => :'pdfMaxChunkedUploadPartSizeMetadata',
+        :'pdf_max_chunked_upload_total_size' => :'pdfMaxChunkedUploadTotalSize',
+        :'pdf_max_chunked_upload_total_size_metadata' => :'pdfMaxChunkedUploadTotalSizeMetadata',
+        :'pdf_max_individual_upload_size' => :'pdfMaxIndividualUploadSize',
+        :'pdf_max_individual_upload_size_metadata' => :'pdfMaxIndividualUploadSizeMetadata',
         :'phone_auth_recipient_may_provide_phone_number' => :'phoneAuthRecipientMayProvidePhoneNumber',
         :'phone_auth_recipient_may_provide_phone_number_metadata' => :'phoneAuthRecipientMayProvidePhoneNumberMetadata',
         :'pki_sign_downloaded_pdf_docs' => :'pkiSignDownloadedPDFDocs',
@@ -2189,6 +2567,8 @@ module DocuSign_eSign
         :'allow_agent_name_email_edit_metadata' => :'SettingsMetadata',
         :'allow_agreement_actions' => :'String',
         :'allow_agreement_actions_metadata' => :'SettingsMetadata',
+        :'allow_agreement_orchestration_workflows' => :'String',
+        :'allow_agreement_orchestration_workflows_metadata' => :'SettingsMetadata',
         :'allow_auto_nav_settings' => :'String',
         :'allow_auto_nav_settings_metadata' => :'SettingsMetadata',
         :'allow_auto_tagging' => :'String',
@@ -2198,6 +2578,7 @@ module DocuSign_eSign
         :'allow_cd_withdraw' => :'String',
         :'allow_cd_withdraw_metadata' => :'SettingsMetadata',
         :'allow_connect_http_listener_configs' => :'String',
+        :'allow_connect_o_auth_ui' => :'String',
         :'allow_connect_send_finish_later' => :'String',
         :'allow_connect_send_finish_later_metadata' => :'SettingsMetadata',
         :'allow_connect_unified_payload_ui' => :'String',
@@ -2209,6 +2590,8 @@ module DocuSign_eSign
         :'allow_delayed_routing_metadata' => :'SettingsMetadata',
         :'allow_delegated_signing' => :'String',
         :'allow_delegated_signing_metadata' => :'SettingsMetadata',
+        :'allow_doc_gen_documents' => :'String',
+        :'allow_doc_gen_documents_metadata' => :'SettingsMetadata',
         :'allow_document_disclosures' => :'String',
         :'allow_document_disclosures_metadata' => :'SettingsMetadata',
         :'allow_documents_on_signed_envelopes' => :'String',
@@ -2239,6 +2622,8 @@ module DocuSign_eSign
         :'allow_external_linked_accounts_metadata' => :'SettingsMetadata',
         :'allow_external_signature_pad' => :'String',
         :'allow_external_signature_pad_metadata' => :'SettingsMetadata',
+        :'allow_idv_for_eu_qualified_signatures' => :'String',
+        :'allow_idv_for_eu_qualified_signatures_metadata' => :'SettingsMetadata',
         :'allow_idv_level1' => :'String',
         :'allow_idv_level1_metadata' => :'SettingsMetadata',
         :'allow_idv_level2' => :'String',
@@ -2287,8 +2672,12 @@ module DocuSign_eSign
         :'allow_organization_to_use_remote_notary_metadata' => :'SettingsMetadata',
         :'allow_organization_to_use_third_party_electronic_notary' => :'String',
         :'allow_organization_to_use_third_party_electronic_notary_metadata' => :'SettingsMetadata',
+        :'allow_participant_recipient_type' => :'String',
+        :'allow_participant_recipient_type_metadata' => :'SettingsMetadata',
         :'allow_payment_processing' => :'String',
         :'allow_payment_processing_metadata' => :'SettingsMetadata',
+        :'allow_performance_analytics' => :'String',
+        :'allow_performance_analytics_metadata' => :'SettingsMetadata',
         :'allow_phone_authentication' => :'String',
         :'allow_phone_authentication_metadata' => :'SettingsMetadata',
         :'allow_phone_auth_override' => :'String',
@@ -2459,6 +2848,8 @@ module DocuSign_eSign
         :'enable_combined_pdf_download_for_sbs' => :'String',
         :'enable_comments_history_download_in_signing' => :'String',
         :'enable_comments_history_download_in_signing_metadata' => :'SettingsMetadata',
+        :'enable_contact_suggestions' => :'String',
+        :'enable_contact_suggestions_metadata' => :'SettingsMetadata',
         :'enable_customer_satisfaction_metric_tracking' => :'String',
         :'enable_customer_satisfaction_metric_tracking_metadata' => :'SettingsMetadata',
         :'enable_ds_pro' => :'String',
@@ -2467,6 +2858,8 @@ module DocuSign_eSign
         :'enable_envelope_stamping_by_account_admin_metadata' => :'SettingsMetadata',
         :'enable_envelope_stamping_by_ds_admin' => :'String',
         :'enable_envelope_stamping_by_ds_admin_metadata' => :'SettingsMetadata',
+        :'enable_e_sign_api_hourly_limit_management' => :'String',
+        :'enable_e_sign_api_hourly_limit_management_metadata' => :'SettingsMetadata',
         :'enable_esign_communities' => :'String',
         :'enable_esign_communities_metadata' => :'SettingsMetadata',
         :'enable_id_fx_accountless_sms_auth_for_part11' => :'String',
@@ -2479,6 +2872,7 @@ module DocuSign_eSign
         :'enable_in_browser_editor_metadata' => :'SettingsMetadata',
         :'enable_key_terms_suggestions_by_document_type' => :'String',
         :'enable_key_terms_suggestions_by_document_type_metadata' => :'SettingsMetadata',
+        :'enable_participant_recipient_setting_metadata' => :'SettingsMetadata',
         :'enable_payment_processing' => :'String',
         :'enable_payment_processing_metadata' => :'SettingsMetadata',
         :'enable_pdfa_conversion' => :'String',
@@ -2556,6 +2950,10 @@ module DocuSign_eSign
         :'envelope_integration_allowed_metadata' => :'SettingsMetadata',
         :'envelope_integration_enabled' => :'String',
         :'envelope_integration_enabled_metadata' => :'SettingsMetadata',
+        :'envelope_limits_total_document_size_allowed_in_mb' => :'String',
+        :'envelope_limits_total_document_size_allowed_in_mb_enabled' => :'String',
+        :'envelope_limits_total_document_size_allowed_in_mb_enabled_metadata' => :'SettingsMetadata',
+        :'envelope_limits_total_document_size_allowed_in_mb_metadata' => :'SettingsMetadata',
         :'envelope_stamping_default_value' => :'String',
         :'envelope_stamping_default_value_metadata' => :'SettingsMetadata',
         :'exit_prompt' => :'String',
@@ -2616,6 +3014,12 @@ module DocuSign_eSign
         :'opt_out_auto_nav_text_and_tab_color_updates_metadata' => :'SettingsMetadata',
         :'opt_out_new_platform_seal' => :'String',
         :'opt_out_new_platform_seal_platform_metadata' => :'SettingsMetadata',
+        :'pdf_max_chunked_upload_part_size' => :'String',
+        :'pdf_max_chunked_upload_part_size_metadata' => :'SettingsMetadata',
+        :'pdf_max_chunked_upload_total_size' => :'String',
+        :'pdf_max_chunked_upload_total_size_metadata' => :'SettingsMetadata',
+        :'pdf_max_individual_upload_size' => :'String',
+        :'pdf_max_individual_upload_size_metadata' => :'SettingsMetadata',
         :'phone_auth_recipient_may_provide_phone_number' => :'String',
         :'phone_auth_recipient_may_provide_phone_number_metadata' => :'SettingsMetadata',
         :'pki_sign_downloaded_pdf_docs' => :'String',
@@ -2884,6 +3288,14 @@ module DocuSign_eSign
         self.allow_agreement_actions_metadata = attributes[:'allowAgreementActionsMetadata']
       end
 
+      if attributes.has_key?(:'allowAgreementOrchestrationWorkflows')
+        self.allow_agreement_orchestration_workflows = attributes[:'allowAgreementOrchestrationWorkflows']
+      end
+
+      if attributes.has_key?(:'allowAgreementOrchestrationWorkflowsMetadata')
+        self.allow_agreement_orchestration_workflows_metadata = attributes[:'allowAgreementOrchestrationWorkflowsMetadata']
+      end
+
       if attributes.has_key?(:'allowAutoNavSettings')
         self.allow_auto_nav_settings = attributes[:'allowAutoNavSettings']
       end
@@ -2918,6 +3330,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'allowConnectHttpListenerConfigs')
         self.allow_connect_http_listener_configs = attributes[:'allowConnectHttpListenerConfigs']
+      end
+
+      if attributes.has_key?(:'allowConnectOAuthUI')
+        self.allow_connect_o_auth_ui = attributes[:'allowConnectOAuthUI']
       end
 
       if attributes.has_key?(:'allowConnectSendFinishLater')
@@ -2962,6 +3378,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'allowDelegatedSigningMetadata')
         self.allow_delegated_signing_metadata = attributes[:'allowDelegatedSigningMetadata']
+      end
+
+      if attributes.has_key?(:'allowDocGenDocuments')
+        self.allow_doc_gen_documents = attributes[:'allowDocGenDocuments']
+      end
+
+      if attributes.has_key?(:'allowDocGenDocumentsMetadata')
+        self.allow_doc_gen_documents_metadata = attributes[:'allowDocGenDocumentsMetadata']
       end
 
       if attributes.has_key?(:'allowDocumentDisclosures')
@@ -3082,6 +3506,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'allowExternalSignaturePadMetadata')
         self.allow_external_signature_pad_metadata = attributes[:'allowExternalSignaturePadMetadata']
+      end
+
+      if attributes.has_key?(:'allowIDVForEUQualifiedSignatures')
+        self.allow_idv_for_eu_qualified_signatures = attributes[:'allowIDVForEUQualifiedSignatures']
+      end
+
+      if attributes.has_key?(:'allowIDVForEUQualifiedSignaturesMetadata')
+        self.allow_idv_for_eu_qualified_signatures_metadata = attributes[:'allowIDVForEUQualifiedSignaturesMetadata']
       end
 
       if attributes.has_key?(:'allowIDVLevel1')
@@ -3276,12 +3708,28 @@ module DocuSign_eSign
         self.allow_organization_to_use_third_party_electronic_notary_metadata = attributes[:'allowOrganizationToUseThirdPartyElectronicNotaryMetadata']
       end
 
+      if attributes.has_key?(:'allowParticipantRecipientType')
+        self.allow_participant_recipient_type = attributes[:'allowParticipantRecipientType']
+      end
+
+      if attributes.has_key?(:'allowParticipantRecipientTypeMetadata')
+        self.allow_participant_recipient_type_metadata = attributes[:'allowParticipantRecipientTypeMetadata']
+      end
+
       if attributes.has_key?(:'allowPaymentProcessing')
         self.allow_payment_processing = attributes[:'allowPaymentProcessing']
       end
 
       if attributes.has_key?(:'allowPaymentProcessingMetadata')
         self.allow_payment_processing_metadata = attributes[:'allowPaymentProcessingMetadata']
+      end
+
+      if attributes.has_key?(:'allowPerformanceAnalytics')
+        self.allow_performance_analytics = attributes[:'allowPerformanceAnalytics']
+      end
+
+      if attributes.has_key?(:'allowPerformanceAnalyticsMetadata')
+        self.allow_performance_analytics_metadata = attributes[:'allowPerformanceAnalyticsMetadata']
       end
 
       if attributes.has_key?(:'allowPhoneAuthentication')
@@ -3964,6 +4412,14 @@ module DocuSign_eSign
         self.enable_comments_history_download_in_signing_metadata = attributes[:'enableCommentsHistoryDownloadInSigningMetadata']
       end
 
+      if attributes.has_key?(:'enableContactSuggestions')
+        self.enable_contact_suggestions = attributes[:'enableContactSuggestions']
+      end
+
+      if attributes.has_key?(:'enableContactSuggestionsMetadata')
+        self.enable_contact_suggestions_metadata = attributes[:'enableContactSuggestionsMetadata']
+      end
+
       if attributes.has_key?(:'enableCustomerSatisfactionMetricTracking')
         self.enable_customer_satisfaction_metric_tracking = attributes[:'enableCustomerSatisfactionMetricTracking']
       end
@@ -3994,6 +4450,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'enableEnvelopeStampingByDSAdminMetadata')
         self.enable_envelope_stamping_by_ds_admin_metadata = attributes[:'enableEnvelopeStampingByDSAdminMetadata']
+      end
+
+      if attributes.has_key?(:'enableESignAPIHourlyLimitManagement')
+        self.enable_e_sign_api_hourly_limit_management = attributes[:'enableESignAPIHourlyLimitManagement']
+      end
+
+      if attributes.has_key?(:'enableESignAPIHourlyLimitManagementMetadata')
+        self.enable_e_sign_api_hourly_limit_management_metadata = attributes[:'enableESignAPIHourlyLimitManagementMetadata']
       end
 
       if attributes.has_key?(:'enableEsignCommunities')
@@ -4042,6 +4506,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'enableKeyTermsSuggestionsByDocumentTypeMetadata')
         self.enable_key_terms_suggestions_by_document_type_metadata = attributes[:'enableKeyTermsSuggestionsByDocumentTypeMetadata']
+      end
+
+      if attributes.has_key?(:'enableParticipantRecipientSettingMetadata')
+        self.enable_participant_recipient_setting_metadata = attributes[:'enableParticipantRecipientSettingMetadata']
       end
 
       if attributes.has_key?(:'enablePaymentProcessing')
@@ -4352,6 +4820,22 @@ module DocuSign_eSign
         self.envelope_integration_enabled_metadata = attributes[:'envelopeIntegrationEnabledMetadata']
       end
 
+      if attributes.has_key?(:'EnvelopeLimitsTotalDocumentSizeAllowedInMB')
+        self.envelope_limits_total_document_size_allowed_in_mb = attributes[:'EnvelopeLimitsTotalDocumentSizeAllowedInMB']
+      end
+
+      if attributes.has_key?(:'EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled')
+        self.envelope_limits_total_document_size_allowed_in_mb_enabled = attributes[:'EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled']
+      end
+
+      if attributes.has_key?(:'EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata')
+        self.envelope_limits_total_document_size_allowed_in_mb_enabled_metadata = attributes[:'EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata']
+      end
+
+      if attributes.has_key?(:'EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata')
+        self.envelope_limits_total_document_size_allowed_in_mb_metadata = attributes[:'EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata']
+      end
+
       if attributes.has_key?(:'envelopeStampingDefaultValue')
         self.envelope_stamping_default_value = attributes[:'envelopeStampingDefaultValue']
       end
@@ -4596,6 +5080,30 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'optOutNewPlatformSealPlatformMetadata')
         self.opt_out_new_platform_seal_platform_metadata = attributes[:'optOutNewPlatformSealPlatformMetadata']
+      end
+
+      if attributes.has_key?(:'pdfMaxChunkedUploadPartSize')
+        self.pdf_max_chunked_upload_part_size = attributes[:'pdfMaxChunkedUploadPartSize']
+      end
+
+      if attributes.has_key?(:'pdfMaxChunkedUploadPartSizeMetadata')
+        self.pdf_max_chunked_upload_part_size_metadata = attributes[:'pdfMaxChunkedUploadPartSizeMetadata']
+      end
+
+      if attributes.has_key?(:'pdfMaxChunkedUploadTotalSize')
+        self.pdf_max_chunked_upload_total_size = attributes[:'pdfMaxChunkedUploadTotalSize']
+      end
+
+      if attributes.has_key?(:'pdfMaxChunkedUploadTotalSizeMetadata')
+        self.pdf_max_chunked_upload_total_size_metadata = attributes[:'pdfMaxChunkedUploadTotalSizeMetadata']
+      end
+
+      if attributes.has_key?(:'pdfMaxIndividualUploadSize')
+        self.pdf_max_individual_upload_size = attributes[:'pdfMaxIndividualUploadSize']
+      end
+
+      if attributes.has_key?(:'pdfMaxIndividualUploadSizeMetadata')
+        self.pdf_max_individual_upload_size_metadata = attributes[:'pdfMaxIndividualUploadSizeMetadata']
       end
 
       if attributes.has_key?(:'phoneAuthRecipientMayProvidePhoneNumber')
@@ -5272,6 +5780,8 @@ module DocuSign_eSign
           allow_agent_name_email_edit_metadata == o.allow_agent_name_email_edit_metadata &&
           allow_agreement_actions == o.allow_agreement_actions &&
           allow_agreement_actions_metadata == o.allow_agreement_actions_metadata &&
+          allow_agreement_orchestration_workflows == o.allow_agreement_orchestration_workflows &&
+          allow_agreement_orchestration_workflows_metadata == o.allow_agreement_orchestration_workflows_metadata &&
           allow_auto_nav_settings == o.allow_auto_nav_settings &&
           allow_auto_nav_settings_metadata == o.allow_auto_nav_settings_metadata &&
           allow_auto_tagging == o.allow_auto_tagging &&
@@ -5281,6 +5791,7 @@ module DocuSign_eSign
           allow_cd_withdraw == o.allow_cd_withdraw &&
           allow_cd_withdraw_metadata == o.allow_cd_withdraw_metadata &&
           allow_connect_http_listener_configs == o.allow_connect_http_listener_configs &&
+          allow_connect_o_auth_ui == o.allow_connect_o_auth_ui &&
           allow_connect_send_finish_later == o.allow_connect_send_finish_later &&
           allow_connect_send_finish_later_metadata == o.allow_connect_send_finish_later_metadata &&
           allow_connect_unified_payload_ui == o.allow_connect_unified_payload_ui &&
@@ -5292,6 +5803,8 @@ module DocuSign_eSign
           allow_delayed_routing_metadata == o.allow_delayed_routing_metadata &&
           allow_delegated_signing == o.allow_delegated_signing &&
           allow_delegated_signing_metadata == o.allow_delegated_signing_metadata &&
+          allow_doc_gen_documents == o.allow_doc_gen_documents &&
+          allow_doc_gen_documents_metadata == o.allow_doc_gen_documents_metadata &&
           allow_document_disclosures == o.allow_document_disclosures &&
           allow_document_disclosures_metadata == o.allow_document_disclosures_metadata &&
           allow_documents_on_signed_envelopes == o.allow_documents_on_signed_envelopes &&
@@ -5322,6 +5835,8 @@ module DocuSign_eSign
           allow_external_linked_accounts_metadata == o.allow_external_linked_accounts_metadata &&
           allow_external_signature_pad == o.allow_external_signature_pad &&
           allow_external_signature_pad_metadata == o.allow_external_signature_pad_metadata &&
+          allow_idv_for_eu_qualified_signatures == o.allow_idv_for_eu_qualified_signatures &&
+          allow_idv_for_eu_qualified_signatures_metadata == o.allow_idv_for_eu_qualified_signatures_metadata &&
           allow_idv_level1 == o.allow_idv_level1 &&
           allow_idv_level1_metadata == o.allow_idv_level1_metadata &&
           allow_idv_level2 == o.allow_idv_level2 &&
@@ -5370,8 +5885,12 @@ module DocuSign_eSign
           allow_organization_to_use_remote_notary_metadata == o.allow_organization_to_use_remote_notary_metadata &&
           allow_organization_to_use_third_party_electronic_notary == o.allow_organization_to_use_third_party_electronic_notary &&
           allow_organization_to_use_third_party_electronic_notary_metadata == o.allow_organization_to_use_third_party_electronic_notary_metadata &&
+          allow_participant_recipient_type == o.allow_participant_recipient_type &&
+          allow_participant_recipient_type_metadata == o.allow_participant_recipient_type_metadata &&
           allow_payment_processing == o.allow_payment_processing &&
           allow_payment_processing_metadata == o.allow_payment_processing_metadata &&
+          allow_performance_analytics == o.allow_performance_analytics &&
+          allow_performance_analytics_metadata == o.allow_performance_analytics_metadata &&
           allow_phone_authentication == o.allow_phone_authentication &&
           allow_phone_authentication_metadata == o.allow_phone_authentication_metadata &&
           allow_phone_auth_override == o.allow_phone_auth_override &&
@@ -5542,6 +6061,8 @@ module DocuSign_eSign
           enable_combined_pdf_download_for_sbs == o.enable_combined_pdf_download_for_sbs &&
           enable_comments_history_download_in_signing == o.enable_comments_history_download_in_signing &&
           enable_comments_history_download_in_signing_metadata == o.enable_comments_history_download_in_signing_metadata &&
+          enable_contact_suggestions == o.enable_contact_suggestions &&
+          enable_contact_suggestions_metadata == o.enable_contact_suggestions_metadata &&
           enable_customer_satisfaction_metric_tracking == o.enable_customer_satisfaction_metric_tracking &&
           enable_customer_satisfaction_metric_tracking_metadata == o.enable_customer_satisfaction_metric_tracking_metadata &&
           enable_ds_pro == o.enable_ds_pro &&
@@ -5550,6 +6071,8 @@ module DocuSign_eSign
           enable_envelope_stamping_by_account_admin_metadata == o.enable_envelope_stamping_by_account_admin_metadata &&
           enable_envelope_stamping_by_ds_admin == o.enable_envelope_stamping_by_ds_admin &&
           enable_envelope_stamping_by_ds_admin_metadata == o.enable_envelope_stamping_by_ds_admin_metadata &&
+          enable_e_sign_api_hourly_limit_management == o.enable_e_sign_api_hourly_limit_management &&
+          enable_e_sign_api_hourly_limit_management_metadata == o.enable_e_sign_api_hourly_limit_management_metadata &&
           enable_esign_communities == o.enable_esign_communities &&
           enable_esign_communities_metadata == o.enable_esign_communities_metadata &&
           enable_id_fx_accountless_sms_auth_for_part11 == o.enable_id_fx_accountless_sms_auth_for_part11 &&
@@ -5562,6 +6085,7 @@ module DocuSign_eSign
           enable_in_browser_editor_metadata == o.enable_in_browser_editor_metadata &&
           enable_key_terms_suggestions_by_document_type == o.enable_key_terms_suggestions_by_document_type &&
           enable_key_terms_suggestions_by_document_type_metadata == o.enable_key_terms_suggestions_by_document_type_metadata &&
+          enable_participant_recipient_setting_metadata == o.enable_participant_recipient_setting_metadata &&
           enable_payment_processing == o.enable_payment_processing &&
           enable_payment_processing_metadata == o.enable_payment_processing_metadata &&
           enable_pdfa_conversion == o.enable_pdfa_conversion &&
@@ -5639,6 +6163,10 @@ module DocuSign_eSign
           envelope_integration_allowed_metadata == o.envelope_integration_allowed_metadata &&
           envelope_integration_enabled == o.envelope_integration_enabled &&
           envelope_integration_enabled_metadata == o.envelope_integration_enabled_metadata &&
+          envelope_limits_total_document_size_allowed_in_mb == o.envelope_limits_total_document_size_allowed_in_mb &&
+          envelope_limits_total_document_size_allowed_in_mb_enabled == o.envelope_limits_total_document_size_allowed_in_mb_enabled &&
+          envelope_limits_total_document_size_allowed_in_mb_enabled_metadata == o.envelope_limits_total_document_size_allowed_in_mb_enabled_metadata &&
+          envelope_limits_total_document_size_allowed_in_mb_metadata == o.envelope_limits_total_document_size_allowed_in_mb_metadata &&
           envelope_stamping_default_value == o.envelope_stamping_default_value &&
           envelope_stamping_default_value_metadata == o.envelope_stamping_default_value_metadata &&
           exit_prompt == o.exit_prompt &&
@@ -5699,6 +6227,12 @@ module DocuSign_eSign
           opt_out_auto_nav_text_and_tab_color_updates_metadata == o.opt_out_auto_nav_text_and_tab_color_updates_metadata &&
           opt_out_new_platform_seal == o.opt_out_new_platform_seal &&
           opt_out_new_platform_seal_platform_metadata == o.opt_out_new_platform_seal_platform_metadata &&
+          pdf_max_chunked_upload_part_size == o.pdf_max_chunked_upload_part_size &&
+          pdf_max_chunked_upload_part_size_metadata == o.pdf_max_chunked_upload_part_size_metadata &&
+          pdf_max_chunked_upload_total_size == o.pdf_max_chunked_upload_total_size &&
+          pdf_max_chunked_upload_total_size_metadata == o.pdf_max_chunked_upload_total_size_metadata &&
+          pdf_max_individual_upload_size == o.pdf_max_individual_upload_size &&
+          pdf_max_individual_upload_size_metadata == o.pdf_max_individual_upload_size_metadata &&
           phone_auth_recipient_may_provide_phone_number == o.phone_auth_recipient_may_provide_phone_number &&
           phone_auth_recipient_may_provide_phone_number_metadata == o.phone_auth_recipient_may_provide_phone_number_metadata &&
           pki_sign_downloaded_pdf_docs == o.pki_sign_downloaded_pdf_docs &&
@@ -5867,7 +6401,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code_format, account_date_time_format, account_date_time_format_metadata, account_default_language, account_default_language_metadata, account_name, account_name_metadata, account_notification, account_ui_settings, adopt_sig_config, adopt_sig_config_metadata, advanced_correct, advanced_correct_metadata, allow_access_code_format, allow_access_code_format_metadata, allow_account_management_granular, allow_account_management_granular_metadata, allow_account_member_name_change, allow_account_member_name_change_metadata, allow_advanced_recipient_routing_conditional, allow_advanced_recipient_routing_conditional_metadata, allow_agent_name_email_edit, allow_agent_name_email_edit_metadata, allow_agreement_actions, allow_agreement_actions_metadata, allow_auto_nav_settings, allow_auto_nav_settings_metadata, allow_auto_tagging, allow_auto_tagging_metadata, allow_bulk_send, allow_bulk_send_metadata, allow_cd_withdraw, allow_cd_withdraw_metadata, allow_connect_http_listener_configs, allow_connect_send_finish_later, allow_connect_send_finish_later_metadata, allow_connect_unified_payload_ui, allow_consumer_disclosure_override, allow_consumer_disclosure_override_metadata, allow_data_download, allow_data_download_metadata, allow_delayed_routing, allow_delayed_routing_metadata, allow_delegated_signing, allow_delegated_signing_metadata, allow_document_disclosures, allow_document_disclosures_metadata, allow_documents_on_signed_envelopes, allow_documents_on_signed_envelopes_metadata, allow_document_visibility, allow_document_visibility_metadata, allow_e_hanko_stamps, allow_e_hanko_stamps_metadata, allow_e_note_e_original, allow_e_note_e_original_metadata, allow_envelope_correct, allow_envelope_correct_metadata, allow_envelope_custody_transfer, allow_envelope_custody_transfer_metadata, allow_envelope_custom_fields, allow_envelope_custom_fields_metadata, allow_envelope_publish_reporting, allow_envelope_publish_reporting_metadata, allow_envelope_reporting, allow_envelope_reporting_metadata, allow_expression, allow_expression_metadata, allow_express_signer_certificate, allow_express_signer_certificate_metadata, allow_extended_sending_resource_file, allow_extended_sending_resource_file_metadata, allow_external_linked_accounts, allow_external_linked_accounts_metadata, allow_external_signature_pad, allow_external_signature_pad_metadata, allow_idv_level1, allow_idv_level1_metadata, allow_idv_level2, allow_idv_level2_metadata, allow_idv_level3, allow_idv_level3_metadata, allow_idv_platform, allow_idv_platform_metadata, allow_in_person, allow_in_person_electronic_notary, allow_in_person_electronic_notary_metadata, allow_in_person_metadata, allow_managed_stamps, allow_managed_stamps_metadata, allow_managing_envelopes_on_behalf_of_others, allow_managing_envelopes_on_behalf_of_others_metadata, allow_markup, allow_markup_metadata, allow_member_time_zone, allow_member_time_zone_metadata, allow_merge_fields, allow_merge_fields_metadata, allow_multiple_brand_profiles, allow_multiple_brand_profiles_metadata, allow_multiple_signer_attachments, allow_multiple_signer_attachments_metadata, allow_non_us_phone_auth, allow_non_us_phone_auth_metadata, allow_ocr_of_envelope_documents, allow_ocr_of_envelope_documents_metadata, allow_offline_signing, allow_offline_signing_metadata, allow_open_trust_signer_certificate, allow_open_trust_signer_certificate_metadata, allow_organization_docusign_monitor, allow_organization_docusign_monitor_metadata, allow_organization_domain_user_management, allow_organization_domain_user_management_metadata, allow_organizations, allow_organizations_metadata, allow_organization_sso_management, allow_organization_sso_management_metadata, allow_organization_to_use_in_person_electronic_notary, allow_organization_to_use_in_person_electronic_notary_metadata, allow_organization_to_use_remote_notary, allow_organization_to_use_remote_notary_metadata, allow_organization_to_use_third_party_electronic_notary, allow_organization_to_use_third_party_electronic_notary_metadata, allow_payment_processing, allow_payment_processing_metadata, allow_phone_authentication, allow_phone_authentication_metadata, allow_phone_auth_override, allow_phone_auth_override_metadata, allow_private_signing_groups, allow_private_signing_groups_metadata, allow_recipient_connect, allow_recipient_connect_metadata, allow_reminders, allow_reminders_metadata, allow_remote_notary, allow_remote_notary_metadata, allow_resource_file_branding, allow_resource_file_branding_metadata, allow_safe_bio_pharma_signer_certificate, allow_safe_bio_pharma_signer_certificate_metadata, allow_scheduled_sending, allow_scheduled_sending_metadata, allow_security_appliance, allow_security_appliance_metadata, allow_sending_envelopes_on_behalf_of_others, allow_sending_envelopes_on_behalf_of_others_metadata, allow_send_to_certified_delivery, allow_send_to_certified_delivery_metadata, allow_send_to_intermediary, allow_send_to_intermediary_metadata, allow_server_templates, allow_server_templates_metadata, allow_set_embedded_recipient_start_url, allow_set_embedded_recipient_start_url_metadata, allow_shared_tabs, allow_shared_tabs_metadata, allow_signature_stamps, allow_signature_stamps_metadata, allow_sign_document_from_home_page, allow_sign_document_from_home_page_metadata, allow_signer_reassign, allow_signer_reassign_metadata, allow_signer_reassign_override, allow_signer_reassign_override_metadata, allow_signing_extensions, allow_signing_extensions_metadata, allow_signing_groups, allow_signing_groups_metadata, allow_signing_insights, allow_signing_insights_metadata, allow_signing_radio_deselect, allow_signing_radio_deselect_metadata, allow_sign_now, allow_sign_now_metadata, allow_sms_delivery, allow_sms_delivery_metadata, allow_social_id_login, allow_social_id_login_metadata, allow_supplemental_documents, allow_supplemental_documents_metadata, allow_third_party_electronic_notary, allow_third_party_electronic_notary_metadata, allow_users_to_access_directory, allow_users_to_access_directory_metadata, allow_value_insights, allow_value_insights_metadata, allow_web_forms, allow_web_forms_metadata, anchor_population_scope, anchor_population_scope_metadata, anchor_tag_versioned_placement_enabled, anchor_tag_versioned_placement_metadata_enabled, attach_completed_envelope, attach_completed_envelope_metadata, authentication_check, authentication_check_metadata, auto_nav_rule, auto_nav_rule_metadata, auto_provision_signer_account, auto_provision_signer_account_metadata, bcc_email_archive, bcc_email_archive_metadata, beta_switch_configuration, beta_switch_configuration_metadata, billing_address, billing_address_metadata, bulk_send, bulk_send_action_resend_limit, bulk_send_max_copies_in_batch, bulk_send_max_unprocessed_envelopes_count, bulk_send_metadata, can_self_brand_send, can_self_brand_send_metadata, can_self_brand_sign, can_self_brand_sign_metadata, can_use_salesforce_o_auth, can_use_salesforce_o_auth_metadata, capture_voice_recording, capture_voice_recording_metadata, cfr21_simplified_signing_enabled, cfr21_simplified_signing_enabled_metadata, cfr_use_wide_image, cfr_use_wide_image_metadata, check_for_multiple_admins_on_account, check_for_multiple_admins_on_account_metadata, chrome_signature_enabled, chrome_signature_enabled_metadata, comment_email_show_message_text, comment_email_show_message_text_metadata, comments_allow_envelope_override, comments_allow_envelope_override_metadata, conditional_fields_enabled, conditional_fields_enabled_metadata, consumer_disclosure_frequency, consumer_disclosure_frequency_metadata, convert_pdf_fields, convert_pdf_fields_metadata, data_population_scope, data_population_scope_metadata, disable_auto_template_matching, disable_auto_template_matching_metadata, disable_mobile_app, disable_mobile_app_metadata, disable_mobile_push_notifications, disable_mobile_push_notifications_metadata, disable_mobile_sending, disable_mobile_sending_metadata, disable_multiple_sessions, disable_multiple_sessions_metadata, disable_purge_notifications_for_sender_metadata, disable_signer_cert_view, disable_signer_cert_view_metadata, disable_signer_history_view, disable_signer_history_view_metadata, disable_style_signature, disable_style_signature_metadata, disable_upload_signature, disable_upload_signature_metadata, disable_user_sharing, disable_user_sharing_metadata, display_beta_switch, display_beta_switch_metadata, document_conversion_restrictions, document_conversion_restrictions_metadata, document_retention, document_retention_metadata, document_retention_purge_tabs, document_visibility, document_visibility_metadata, dss_sign_28411_enable_leave_page_prompt_radmin_option, dss_sign_29182_slide_up_bar_radmin_option, email_template_version, email_template_version_metadata, enable_access_code_generator, enable_access_code_generator_metadata, enable_advanced_payments, enable_advanced_payments_metadata, enable_advanced_power_forms, enable_advanced_power_forms_metadata, enable_agreement_actions_for_clm, enable_agreement_actions_for_clm_metadata, enable_agreement_actions_for_e_sign, enable_agreement_actions_for_e_sign_metadata, enable_auto_nav, enable_auto_nav_metadata, enable_bcc_dummy_link, enable_bcc_dummy_link_metadata, enable_calculated_fields, enable_calculated_fields_metadata, enable_clickwraps, enable_clickwraps_metadata, enable_combined_pdf_download_for_sbs, enable_comments_history_download_in_signing, enable_comments_history_download_in_signing_metadata, enable_customer_satisfaction_metric_tracking, enable_customer_satisfaction_metric_tracking_metadata, enable_ds_pro, enable_ds_pro_metadata, enable_envelope_stamping_by_account_admin, enable_envelope_stamping_by_account_admin_metadata, enable_envelope_stamping_by_ds_admin, enable_envelope_stamping_by_ds_admin_metadata, enable_esign_communities, enable_esign_communities_metadata, enable_id_fx_accountless_sms_auth_for_part11, enable_id_fx_accountless_sms_auth_for_part11_metadata, enable_id_fx_intuit_kba, enable_id_fx_intuit_kba_metadata, enable_id_fx_phone_authentication, enable_id_fx_phone_authentication_metadata, enable_in_browser_editor, enable_in_browser_editor_metadata, enable_key_terms_suggestions_by_document_type, enable_key_terms_suggestions_by_document_type_metadata, enable_payment_processing, enable_payment_processing_metadata, enable_pdfa_conversion, enable_pdfa_conversion_metadata, enable_power_form, enable_power_form_direct, enable_power_form_direct_metadata, enable_power_form_metadata, enable_recipient_domain_validation, enable_recipient_domain_validation_metadata, enable_recipient_may_provide_phone_number, enable_recipient_may_provide_phone_number_metadata, enable_report_links, enable_report_links_metadata, enable_require_sign_on_paper, enable_require_sign_on_paper_metadata, enable_reserved_domain, enable_reserved_domain_metadata, enable_responsive_signing, enable_responsive_signing_metadata, enable_scheduled_release, enable_scheduled_release_metadata, enable_search, enable_search_metadata, enable_search_site_specific_api, enable_search_site_specific_api_metadata, enable_search_ui, enable_search_ui_metadata, enable_sending_tags_font_settings, enable_sending_tags_font_settings_metadata, enable_send_to_agent, enable_send_to_agent_metadata, enable_send_to_intermediary, enable_send_to_intermediary_metadata, enable_send_to_manage, enable_send_to_manage_metadata, enable_sequential_signing_api, enable_sequential_signing_api_metadata, enable_sequential_signing_ui, enable_sequential_signing_ui_metadata, enable_signer_attachments, enable_signer_attachments_metadata, enable_signing_extension_comments, enable_signing_extension_comments_metadata, enable_signing_extension_conversations, enable_signing_extension_conversations_metadata, enable_signing_order_settings_for_account, enable_signing_order_settings_for_account_metadata, enable_sign_on_paper, enable_sign_on_paper_metadata, enable_sign_on_paper_override, enable_sign_on_paper_override_metadata, enable_sign_with_notary, enable_sign_with_notary_metadata, enable_smart_contracts, enable_smart_contracts_metadata, enable_sms_authentication, enable_sms_authentication_metadata, enable_sms_delivery_additional_notification, enable_sms_delivery_additional_notification_metadata, enable_sms_delivery_primary, enable_social_id_login, enable_social_id_login_metadata, enable_strike_through, enable_strike_through_metadata, enable_transaction_point, enable_transaction_point_metadata, enable_vaulting, enable_vaulting_metadata, enable_witnessing, enable_witnessing_metadata, enforce_template_name_uniqueness, enforce_template_name_uniqueness_metadata, envelope_integration_allowed, envelope_integration_allowed_metadata, envelope_integration_enabled, envelope_integration_enabled_metadata, envelope_stamping_default_value, envelope_stamping_default_value_metadata, exit_prompt, exit_prompt_metadata, express_send, express_send_allow_tabs, express_send_allow_tabs_metadata, express_send_metadata, external_document_sources, external_signature_pad_type, external_signature_pad_type_metadata, fax_out_enabled, fax_out_enabled_metadata, finish_reminder, finish_reminder_metadata, guided_forms_html_allowed, guided_forms_html_allowed_metadata, has_recipient_connect_claimed_domain, hide_account_address_in_co_c, hide_account_address_in_co_c_metadata, hide_pricing, hide_pricing_metadata, id_check_configurations, id_check_expire, id_check_expire_days, id_check_expire_days_metadata, id_check_expire_metadata, id_check_expire_minutes, id_check_expire_minutes_metadata, id_check_required, id_check_required_metadata, identity_verification, identity_verification_metadata, idfx_phone_authentication_override, idfx_phone_authentication_override_metadata, ignore_error_if_anchor_tab_not_found, ignore_error_if_anchor_tab_not_found_metadata_enabled, in_person_id_check_question, in_person_id_check_question_metadata, in_person_signing_enabled, in_person_signing_enabled_metadata, in_session_enabled, in_session_enabled_metadata, in_session_suppress_emails, in_session_suppress_emails_metadata, linked_external_primary_accounts, maximum_signing_groups, maximum_signing_groups_metadata, maximum_users_per_signing_group, maximum_users_per_signing_group_metadata, max_number_of_custom_stamps, mobile_session_timeout, mobile_session_timeout_metadata, number_of_active_custom_stamps, opt_in_mobile_signing_v02, opt_in_mobile_signing_v02_metadata, opt_out_auto_nav_text_and_tab_color_updates, opt_out_auto_nav_text_and_tab_color_updates_metadata, opt_out_new_platform_seal, opt_out_new_platform_seal_platform_metadata, phone_auth_recipient_may_provide_phone_number, phone_auth_recipient_may_provide_phone_number_metadata, pki_sign_downloaded_pdf_docs, pki_sign_downloaded_pdf_docs_metadata, read_only_mode, read_only_mode_metadata, recipients_can_sign_offline, recipients_can_sign_offline_metadata, recipient_signing_auto_navigation_control, recipient_signing_auto_navigation_control_metadata, require21_cf_rpt11_compliance, require21_cf_rpt11_compliance_metadata, require_decline_reason, require_decline_reason_metadata, require_external_user_management, require_external_user_management_metadata, require_signer_certificate_type, require_signer_certificate_type_metadata, rsa_verid_account_name, rsa_verid_password, rsa_verid_ruleset, rsa_verid_user_id, self_signed_recipient_email_document, self_signed_recipient_email_document_metadata, self_signed_recipient_email_document_user_override, self_signed_recipient_email_document_user_override_metadata, sender_can_sign_in_each_location, sender_can_sign_in_each_location_metadata, sender_must_authenticate_signing, sender_must_authenticate_signing_metadata, sending_tags_font_color, sending_tags_font_color_metadata, sending_tags_font_name, sending_tags_font_name_metadata, sending_tags_font_size, sending_tags_font_size_metadata, send_lockout_recipient_notification, send_lockout_recipient_notification_metadata, send_to_certified_delivery_enabled, send_to_certified_delivery_enabled_metadata, session_timeout, session_timeout_metadata, set_recip_email_lang, set_recip_email_lang_metadata, set_recip_sign_lang, set_recip_sign_lang_metadata, shared_template_folders, shared_template_folders_metadata, show_complete_dialog_in_embedded_session, show_complete_dialog_in_embedded_session_metadata, show_conditional_routing_on_send, show_conditional_routing_on_send_metadata, show_initial_conditional_fields, show_initial_conditional_fields_metadata, show_localized_watermarks, show_localized_watermarks_metadata, show_masked_fields_when_downloading_document_as_sender, show_masked_fields_when_downloading_document_as_sender_metadata, show_tutorials, show_tutorials_metadata, signature_providers, signature_providers_metadata, sign_date_format, sign_date_format_metadata, sign_date_time_account_language_override, sign_date_time_account_language_override_metadata, sign_date_time_account_timezone_override, sign_date_time_account_timezone_override_metadata, signer_attach_certificate_to_envelope_pdf, signer_attach_certificate_to_envelope_pdf_metadata, signer_attach_concat, signer_attach_concat_metadata, signer_can_create_account, signer_can_create_account_metadata, signer_can_sign_on_mobile, signer_can_sign_on_mobile_metadata, signer_in_session_use_envelope_complete_email, signer_in_session_use_envelope_complete_email_metadata, signer_login_requirements, signer_login_requirements_metadata, signer_must_have_account, signer_must_have_account_metadata, signer_must_login_to_sign, signer_must_login_to_sign_metadata, signer_show_secure_field_initial_values, signer_show_secure_field_initial_values_metadata, signing_session_timeout, signing_session_timeout_metadata, signing_ui_version, signing_ui_version_metadata, sign_time_format, sign_time_format_metadata, sign_time_show_am_pm, sign_time_show_am_pm_metadata, simplified_sending_enabled, simplified_sending_enabled_metadata, single_sign_on_enabled, single_sign_on_enabled_metadata, skip_auth_completed_envelopes, skip_auth_completed_envelopes_metadata, social_id_recip_auth, social_id_recip_auth_metadata, specify_document_visibility, specify_document_visibility_metadata, start_in_advanced_correct, start_in_advanced_correct_metadata, supplemental_documents_must_accept, supplemental_documents_must_accept_metadata, supplemental_documents_must_read, supplemental_documents_must_read_metadata, supplemental_documents_must_view, supplemental_documents_must_view_metadata, suppress_certificate_enforcement, suppress_certificate_enforcement_metadata, tab_account_settings, timezone_offset_api, timezone_offset_api_metadata, timezone_offset_ui, timezone_offset_ui_metadata, universal_signature_opt_in, use_account_level_email, use_account_level_email_metadata, use_consumer_disclosure, use_consumer_disclosure_metadata, use_consumer_disclosure_within_account, use_consumer_disclosure_within_account_metadata, use_derived_keys, use_derived_keys_metadata, use_docu_sign_express_signer_certificate, use_docu_sign_express_signer_certificate_metadata, use_multi_app_groups_data, use_multi_app_groups_data_metadata, use_new_blob_for_pdf, use_new_blob_for_pdf_metadata, use_safe_signer_certificates, use_safe_signer_certificates_metadata, uses_api, uses_api_metadata, use_signature_provider_platform, use_signature_provider_platform_metadata, use_smart_contracts_v1, validations_allowed, validations_allowed_metadata, validations_brand, validations_brand_metadata, validations_cadence, validations_cadence_metadata, validations_enabled, validations_enabled_metadata, validations_report, validations_report_metadata, water_mark_enabled, water_mark_enabled_metadata, write_reminder_to_envelope_history, write_reminder_to_envelope_history_metadata, wurfl_min_allowable_screen_size, wurfl_min_allowable_screen_size_metadata].hash
+      [access_code_format, account_date_time_format, account_date_time_format_metadata, account_default_language, account_default_language_metadata, account_name, account_name_metadata, account_notification, account_ui_settings, adopt_sig_config, adopt_sig_config_metadata, advanced_correct, advanced_correct_metadata, allow_access_code_format, allow_access_code_format_metadata, allow_account_management_granular, allow_account_management_granular_metadata, allow_account_member_name_change, allow_account_member_name_change_metadata, allow_advanced_recipient_routing_conditional, allow_advanced_recipient_routing_conditional_metadata, allow_agent_name_email_edit, allow_agent_name_email_edit_metadata, allow_agreement_actions, allow_agreement_actions_metadata, allow_agreement_orchestration_workflows, allow_agreement_orchestration_workflows_metadata, allow_auto_nav_settings, allow_auto_nav_settings_metadata, allow_auto_tagging, allow_auto_tagging_metadata, allow_bulk_send, allow_bulk_send_metadata, allow_cd_withdraw, allow_cd_withdraw_metadata, allow_connect_http_listener_configs, allow_connect_o_auth_ui, allow_connect_send_finish_later, allow_connect_send_finish_later_metadata, allow_connect_unified_payload_ui, allow_consumer_disclosure_override, allow_consumer_disclosure_override_metadata, allow_data_download, allow_data_download_metadata, allow_delayed_routing, allow_delayed_routing_metadata, allow_delegated_signing, allow_delegated_signing_metadata, allow_doc_gen_documents, allow_doc_gen_documents_metadata, allow_document_disclosures, allow_document_disclosures_metadata, allow_documents_on_signed_envelopes, allow_documents_on_signed_envelopes_metadata, allow_document_visibility, allow_document_visibility_metadata, allow_e_hanko_stamps, allow_e_hanko_stamps_metadata, allow_e_note_e_original, allow_e_note_e_original_metadata, allow_envelope_correct, allow_envelope_correct_metadata, allow_envelope_custody_transfer, allow_envelope_custody_transfer_metadata, allow_envelope_custom_fields, allow_envelope_custom_fields_metadata, allow_envelope_publish_reporting, allow_envelope_publish_reporting_metadata, allow_envelope_reporting, allow_envelope_reporting_metadata, allow_expression, allow_expression_metadata, allow_express_signer_certificate, allow_express_signer_certificate_metadata, allow_extended_sending_resource_file, allow_extended_sending_resource_file_metadata, allow_external_linked_accounts, allow_external_linked_accounts_metadata, allow_external_signature_pad, allow_external_signature_pad_metadata, allow_idv_for_eu_qualified_signatures, allow_idv_for_eu_qualified_signatures_metadata, allow_idv_level1, allow_idv_level1_metadata, allow_idv_level2, allow_idv_level2_metadata, allow_idv_level3, allow_idv_level3_metadata, allow_idv_platform, allow_idv_platform_metadata, allow_in_person, allow_in_person_electronic_notary, allow_in_person_electronic_notary_metadata, allow_in_person_metadata, allow_managed_stamps, allow_managed_stamps_metadata, allow_managing_envelopes_on_behalf_of_others, allow_managing_envelopes_on_behalf_of_others_metadata, allow_markup, allow_markup_metadata, allow_member_time_zone, allow_member_time_zone_metadata, allow_merge_fields, allow_merge_fields_metadata, allow_multiple_brand_profiles, allow_multiple_brand_profiles_metadata, allow_multiple_signer_attachments, allow_multiple_signer_attachments_metadata, allow_non_us_phone_auth, allow_non_us_phone_auth_metadata, allow_ocr_of_envelope_documents, allow_ocr_of_envelope_documents_metadata, allow_offline_signing, allow_offline_signing_metadata, allow_open_trust_signer_certificate, allow_open_trust_signer_certificate_metadata, allow_organization_docusign_monitor, allow_organization_docusign_monitor_metadata, allow_organization_domain_user_management, allow_organization_domain_user_management_metadata, allow_organizations, allow_organizations_metadata, allow_organization_sso_management, allow_organization_sso_management_metadata, allow_organization_to_use_in_person_electronic_notary, allow_organization_to_use_in_person_electronic_notary_metadata, allow_organization_to_use_remote_notary, allow_organization_to_use_remote_notary_metadata, allow_organization_to_use_third_party_electronic_notary, allow_organization_to_use_third_party_electronic_notary_metadata, allow_participant_recipient_type, allow_participant_recipient_type_metadata, allow_payment_processing, allow_payment_processing_metadata, allow_performance_analytics, allow_performance_analytics_metadata, allow_phone_authentication, allow_phone_authentication_metadata, allow_phone_auth_override, allow_phone_auth_override_metadata, allow_private_signing_groups, allow_private_signing_groups_metadata, allow_recipient_connect, allow_recipient_connect_metadata, allow_reminders, allow_reminders_metadata, allow_remote_notary, allow_remote_notary_metadata, allow_resource_file_branding, allow_resource_file_branding_metadata, allow_safe_bio_pharma_signer_certificate, allow_safe_bio_pharma_signer_certificate_metadata, allow_scheduled_sending, allow_scheduled_sending_metadata, allow_security_appliance, allow_security_appliance_metadata, allow_sending_envelopes_on_behalf_of_others, allow_sending_envelopes_on_behalf_of_others_metadata, allow_send_to_certified_delivery, allow_send_to_certified_delivery_metadata, allow_send_to_intermediary, allow_send_to_intermediary_metadata, allow_server_templates, allow_server_templates_metadata, allow_set_embedded_recipient_start_url, allow_set_embedded_recipient_start_url_metadata, allow_shared_tabs, allow_shared_tabs_metadata, allow_signature_stamps, allow_signature_stamps_metadata, allow_sign_document_from_home_page, allow_sign_document_from_home_page_metadata, allow_signer_reassign, allow_signer_reassign_metadata, allow_signer_reassign_override, allow_signer_reassign_override_metadata, allow_signing_extensions, allow_signing_extensions_metadata, allow_signing_groups, allow_signing_groups_metadata, allow_signing_insights, allow_signing_insights_metadata, allow_signing_radio_deselect, allow_signing_radio_deselect_metadata, allow_sign_now, allow_sign_now_metadata, allow_sms_delivery, allow_sms_delivery_metadata, allow_social_id_login, allow_social_id_login_metadata, allow_supplemental_documents, allow_supplemental_documents_metadata, allow_third_party_electronic_notary, allow_third_party_electronic_notary_metadata, allow_users_to_access_directory, allow_users_to_access_directory_metadata, allow_value_insights, allow_value_insights_metadata, allow_web_forms, allow_web_forms_metadata, anchor_population_scope, anchor_population_scope_metadata, anchor_tag_versioned_placement_enabled, anchor_tag_versioned_placement_metadata_enabled, attach_completed_envelope, attach_completed_envelope_metadata, authentication_check, authentication_check_metadata, auto_nav_rule, auto_nav_rule_metadata, auto_provision_signer_account, auto_provision_signer_account_metadata, bcc_email_archive, bcc_email_archive_metadata, beta_switch_configuration, beta_switch_configuration_metadata, billing_address, billing_address_metadata, bulk_send, bulk_send_action_resend_limit, bulk_send_max_copies_in_batch, bulk_send_max_unprocessed_envelopes_count, bulk_send_metadata, can_self_brand_send, can_self_brand_send_metadata, can_self_brand_sign, can_self_brand_sign_metadata, can_use_salesforce_o_auth, can_use_salesforce_o_auth_metadata, capture_voice_recording, capture_voice_recording_metadata, cfr21_simplified_signing_enabled, cfr21_simplified_signing_enabled_metadata, cfr_use_wide_image, cfr_use_wide_image_metadata, check_for_multiple_admins_on_account, check_for_multiple_admins_on_account_metadata, chrome_signature_enabled, chrome_signature_enabled_metadata, comment_email_show_message_text, comment_email_show_message_text_metadata, comments_allow_envelope_override, comments_allow_envelope_override_metadata, conditional_fields_enabled, conditional_fields_enabled_metadata, consumer_disclosure_frequency, consumer_disclosure_frequency_metadata, convert_pdf_fields, convert_pdf_fields_metadata, data_population_scope, data_population_scope_metadata, disable_auto_template_matching, disable_auto_template_matching_metadata, disable_mobile_app, disable_mobile_app_metadata, disable_mobile_push_notifications, disable_mobile_push_notifications_metadata, disable_mobile_sending, disable_mobile_sending_metadata, disable_multiple_sessions, disable_multiple_sessions_metadata, disable_purge_notifications_for_sender_metadata, disable_signer_cert_view, disable_signer_cert_view_metadata, disable_signer_history_view, disable_signer_history_view_metadata, disable_style_signature, disable_style_signature_metadata, disable_upload_signature, disable_upload_signature_metadata, disable_user_sharing, disable_user_sharing_metadata, display_beta_switch, display_beta_switch_metadata, document_conversion_restrictions, document_conversion_restrictions_metadata, document_retention, document_retention_metadata, document_retention_purge_tabs, document_visibility, document_visibility_metadata, dss_sign_28411_enable_leave_page_prompt_radmin_option, dss_sign_29182_slide_up_bar_radmin_option, email_template_version, email_template_version_metadata, enable_access_code_generator, enable_access_code_generator_metadata, enable_advanced_payments, enable_advanced_payments_metadata, enable_advanced_power_forms, enable_advanced_power_forms_metadata, enable_agreement_actions_for_clm, enable_agreement_actions_for_clm_metadata, enable_agreement_actions_for_e_sign, enable_agreement_actions_for_e_sign_metadata, enable_auto_nav, enable_auto_nav_metadata, enable_bcc_dummy_link, enable_bcc_dummy_link_metadata, enable_calculated_fields, enable_calculated_fields_metadata, enable_clickwraps, enable_clickwraps_metadata, enable_combined_pdf_download_for_sbs, enable_comments_history_download_in_signing, enable_comments_history_download_in_signing_metadata, enable_contact_suggestions, enable_contact_suggestions_metadata, enable_customer_satisfaction_metric_tracking, enable_customer_satisfaction_metric_tracking_metadata, enable_ds_pro, enable_ds_pro_metadata, enable_envelope_stamping_by_account_admin, enable_envelope_stamping_by_account_admin_metadata, enable_envelope_stamping_by_ds_admin, enable_envelope_stamping_by_ds_admin_metadata, enable_e_sign_api_hourly_limit_management, enable_e_sign_api_hourly_limit_management_metadata, enable_esign_communities, enable_esign_communities_metadata, enable_id_fx_accountless_sms_auth_for_part11, enable_id_fx_accountless_sms_auth_for_part11_metadata, enable_id_fx_intuit_kba, enable_id_fx_intuit_kba_metadata, enable_id_fx_phone_authentication, enable_id_fx_phone_authentication_metadata, enable_in_browser_editor, enable_in_browser_editor_metadata, enable_key_terms_suggestions_by_document_type, enable_key_terms_suggestions_by_document_type_metadata, enable_participant_recipient_setting_metadata, enable_payment_processing, enable_payment_processing_metadata, enable_pdfa_conversion, enable_pdfa_conversion_metadata, enable_power_form, enable_power_form_direct, enable_power_form_direct_metadata, enable_power_form_metadata, enable_recipient_domain_validation, enable_recipient_domain_validation_metadata, enable_recipient_may_provide_phone_number, enable_recipient_may_provide_phone_number_metadata, enable_report_links, enable_report_links_metadata, enable_require_sign_on_paper, enable_require_sign_on_paper_metadata, enable_reserved_domain, enable_reserved_domain_metadata, enable_responsive_signing, enable_responsive_signing_metadata, enable_scheduled_release, enable_scheduled_release_metadata, enable_search, enable_search_metadata, enable_search_site_specific_api, enable_search_site_specific_api_metadata, enable_search_ui, enable_search_ui_metadata, enable_sending_tags_font_settings, enable_sending_tags_font_settings_metadata, enable_send_to_agent, enable_send_to_agent_metadata, enable_send_to_intermediary, enable_send_to_intermediary_metadata, enable_send_to_manage, enable_send_to_manage_metadata, enable_sequential_signing_api, enable_sequential_signing_api_metadata, enable_sequential_signing_ui, enable_sequential_signing_ui_metadata, enable_signer_attachments, enable_signer_attachments_metadata, enable_signing_extension_comments, enable_signing_extension_comments_metadata, enable_signing_extension_conversations, enable_signing_extension_conversations_metadata, enable_signing_order_settings_for_account, enable_signing_order_settings_for_account_metadata, enable_sign_on_paper, enable_sign_on_paper_metadata, enable_sign_on_paper_override, enable_sign_on_paper_override_metadata, enable_sign_with_notary, enable_sign_with_notary_metadata, enable_smart_contracts, enable_smart_contracts_metadata, enable_sms_authentication, enable_sms_authentication_metadata, enable_sms_delivery_additional_notification, enable_sms_delivery_additional_notification_metadata, enable_sms_delivery_primary, enable_social_id_login, enable_social_id_login_metadata, enable_strike_through, enable_strike_through_metadata, enable_transaction_point, enable_transaction_point_metadata, enable_vaulting, enable_vaulting_metadata, enable_witnessing, enable_witnessing_metadata, enforce_template_name_uniqueness, enforce_template_name_uniqueness_metadata, envelope_integration_allowed, envelope_integration_allowed_metadata, envelope_integration_enabled, envelope_integration_enabled_metadata, envelope_limits_total_document_size_allowed_in_mb, envelope_limits_total_document_size_allowed_in_mb_enabled, envelope_limits_total_document_size_allowed_in_mb_enabled_metadata, envelope_limits_total_document_size_allowed_in_mb_metadata, envelope_stamping_default_value, envelope_stamping_default_value_metadata, exit_prompt, exit_prompt_metadata, express_send, express_send_allow_tabs, express_send_allow_tabs_metadata, express_send_metadata, external_document_sources, external_signature_pad_type, external_signature_pad_type_metadata, fax_out_enabled, fax_out_enabled_metadata, finish_reminder, finish_reminder_metadata, guided_forms_html_allowed, guided_forms_html_allowed_metadata, has_recipient_connect_claimed_domain, hide_account_address_in_co_c, hide_account_address_in_co_c_metadata, hide_pricing, hide_pricing_metadata, id_check_configurations, id_check_expire, id_check_expire_days, id_check_expire_days_metadata, id_check_expire_metadata, id_check_expire_minutes, id_check_expire_minutes_metadata, id_check_required, id_check_required_metadata, identity_verification, identity_verification_metadata, idfx_phone_authentication_override, idfx_phone_authentication_override_metadata, ignore_error_if_anchor_tab_not_found, ignore_error_if_anchor_tab_not_found_metadata_enabled, in_person_id_check_question, in_person_id_check_question_metadata, in_person_signing_enabled, in_person_signing_enabled_metadata, in_session_enabled, in_session_enabled_metadata, in_session_suppress_emails, in_session_suppress_emails_metadata, linked_external_primary_accounts, maximum_signing_groups, maximum_signing_groups_metadata, maximum_users_per_signing_group, maximum_users_per_signing_group_metadata, max_number_of_custom_stamps, mobile_session_timeout, mobile_session_timeout_metadata, number_of_active_custom_stamps, opt_in_mobile_signing_v02, opt_in_mobile_signing_v02_metadata, opt_out_auto_nav_text_and_tab_color_updates, opt_out_auto_nav_text_and_tab_color_updates_metadata, opt_out_new_platform_seal, opt_out_new_platform_seal_platform_metadata, pdf_max_chunked_upload_part_size, pdf_max_chunked_upload_part_size_metadata, pdf_max_chunked_upload_total_size, pdf_max_chunked_upload_total_size_metadata, pdf_max_individual_upload_size, pdf_max_individual_upload_size_metadata, phone_auth_recipient_may_provide_phone_number, phone_auth_recipient_may_provide_phone_number_metadata, pki_sign_downloaded_pdf_docs, pki_sign_downloaded_pdf_docs_metadata, read_only_mode, read_only_mode_metadata, recipients_can_sign_offline, recipients_can_sign_offline_metadata, recipient_signing_auto_navigation_control, recipient_signing_auto_navigation_control_metadata, require21_cf_rpt11_compliance, require21_cf_rpt11_compliance_metadata, require_decline_reason, require_decline_reason_metadata, require_external_user_management, require_external_user_management_metadata, require_signer_certificate_type, require_signer_certificate_type_metadata, rsa_verid_account_name, rsa_verid_password, rsa_verid_ruleset, rsa_verid_user_id, self_signed_recipient_email_document, self_signed_recipient_email_document_metadata, self_signed_recipient_email_document_user_override, self_signed_recipient_email_document_user_override_metadata, sender_can_sign_in_each_location, sender_can_sign_in_each_location_metadata, sender_must_authenticate_signing, sender_must_authenticate_signing_metadata, sending_tags_font_color, sending_tags_font_color_metadata, sending_tags_font_name, sending_tags_font_name_metadata, sending_tags_font_size, sending_tags_font_size_metadata, send_lockout_recipient_notification, send_lockout_recipient_notification_metadata, send_to_certified_delivery_enabled, send_to_certified_delivery_enabled_metadata, session_timeout, session_timeout_metadata, set_recip_email_lang, set_recip_email_lang_metadata, set_recip_sign_lang, set_recip_sign_lang_metadata, shared_template_folders, shared_template_folders_metadata, show_complete_dialog_in_embedded_session, show_complete_dialog_in_embedded_session_metadata, show_conditional_routing_on_send, show_conditional_routing_on_send_metadata, show_initial_conditional_fields, show_initial_conditional_fields_metadata, show_localized_watermarks, show_localized_watermarks_metadata, show_masked_fields_when_downloading_document_as_sender, show_masked_fields_when_downloading_document_as_sender_metadata, show_tutorials, show_tutorials_metadata, signature_providers, signature_providers_metadata, sign_date_format, sign_date_format_metadata, sign_date_time_account_language_override, sign_date_time_account_language_override_metadata, sign_date_time_account_timezone_override, sign_date_time_account_timezone_override_metadata, signer_attach_certificate_to_envelope_pdf, signer_attach_certificate_to_envelope_pdf_metadata, signer_attach_concat, signer_attach_concat_metadata, signer_can_create_account, signer_can_create_account_metadata, signer_can_sign_on_mobile, signer_can_sign_on_mobile_metadata, signer_in_session_use_envelope_complete_email, signer_in_session_use_envelope_complete_email_metadata, signer_login_requirements, signer_login_requirements_metadata, signer_must_have_account, signer_must_have_account_metadata, signer_must_login_to_sign, signer_must_login_to_sign_metadata, signer_show_secure_field_initial_values, signer_show_secure_field_initial_values_metadata, signing_session_timeout, signing_session_timeout_metadata, signing_ui_version, signing_ui_version_metadata, sign_time_format, sign_time_format_metadata, sign_time_show_am_pm, sign_time_show_am_pm_metadata, simplified_sending_enabled, simplified_sending_enabled_metadata, single_sign_on_enabled, single_sign_on_enabled_metadata, skip_auth_completed_envelopes, skip_auth_completed_envelopes_metadata, social_id_recip_auth, social_id_recip_auth_metadata, specify_document_visibility, specify_document_visibility_metadata, start_in_advanced_correct, start_in_advanced_correct_metadata, supplemental_documents_must_accept, supplemental_documents_must_accept_metadata, supplemental_documents_must_read, supplemental_documents_must_read_metadata, supplemental_documents_must_view, supplemental_documents_must_view_metadata, suppress_certificate_enforcement, suppress_certificate_enforcement_metadata, tab_account_settings, timezone_offset_api, timezone_offset_api_metadata, timezone_offset_ui, timezone_offset_ui_metadata, universal_signature_opt_in, use_account_level_email, use_account_level_email_metadata, use_consumer_disclosure, use_consumer_disclosure_metadata, use_consumer_disclosure_within_account, use_consumer_disclosure_within_account_metadata, use_derived_keys, use_derived_keys_metadata, use_docu_sign_express_signer_certificate, use_docu_sign_express_signer_certificate_metadata, use_multi_app_groups_data, use_multi_app_groups_data_metadata, use_new_blob_for_pdf, use_new_blob_for_pdf_metadata, use_safe_signer_certificates, use_safe_signer_certificates_metadata, uses_api, uses_api_metadata, use_signature_provider_platform, use_signature_provider_platform_metadata, use_smart_contracts_v1, validations_allowed, validations_allowed_metadata, validations_brand, validations_brand_metadata, validations_cadence, validations_cadence_metadata, validations_enabled, validations_enabled_metadata, validations_report, validations_report_metadata, water_mark_enabled, water_mark_enabled_metadata, write_reminder_to_envelope_history, write_reminder_to_envelope_history_metadata, wurfl_min_allowable_screen_size, wurfl_min_allowable_screen_size_metadata].hash
     end
 
     # Builds the object from hash

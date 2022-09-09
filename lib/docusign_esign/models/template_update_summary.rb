@@ -13,16 +13,19 @@ require 'date'
 
 module DocuSign_eSign
   class TemplateUpdateSummary
+    # An object that describes the status of the bulk send envelopes.
     attr_accessor :bulk_envelope_status
 
     # The envelope ID of the envelope status that failed to post.
     attr_accessor :envelope_id
 
+    # This object describes errors that occur. It is only valid for responses and ignored in requests.
     attr_accessor :error_details
 
     # 
     attr_accessor :list_custom_field_update_results
 
+    # Provides lock information about an envelope that a user has locked.
     attr_accessor :lock_information
 
     # 
@@ -31,6 +34,7 @@ module DocuSign_eSign
     # 
     attr_accessor :recipient_update_results
 
+    # 
     attr_accessor :tab_update_results
 
     # 
