@@ -46,7 +46,7 @@ module DocuSign_eSign
     end
 
     # Creates a blind carbon copy email archive entry
-    # 
+    # This method creates a BCC email archive configuration for an account (adds a BCC email address to the account for archiving the emails that DocuSign generates).  The only property that you must set in the request body is the BCC email address that you want to use.  **Note:** An account can have up to five active and pending email archive addresses combined, but you must use this method to add them to the account one at a time. Each email address is considered a separate BCC email archive configuration. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param bcc_email_archive  (optional parameter)
     # @return [BccEmailArchive]
@@ -56,7 +56,7 @@ module DocuSign_eSign
     end
 
     # Creates a blind carbon copy email archive entry
-    # 
+    # This method creates a BCC email archive configuration for an account (adds a BCC email address to the account for archiving the emails that DocuSign generates).  The only property that you must set in the request body is the BCC email address that you want to use.  **Note:** An account can have up to five active and pending email archive addresses combined, but you must use this method to add them to the account one at a time. Each email address is considered a separate BCC email archive configuration. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param bcc_email_archive  (optional parameter)
     # @return [Array<(BccEmailArchive, Fixnum, Hash)>] BccEmailArchive data, response status code and response headers
@@ -97,7 +97,7 @@ module DocuSign_eSign
     end
 
     # Delete a blind carbon copy email archive for an account.
-    # 
+    # This method deletes a BCC email archive configuration from an account.  When you use this method, the status of the BCC email archive configuration switches to `closed` and the BCC email address is no longer used to archive DocuSign-generated email messages. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param bcc_email_archive_id 
     # @return [nil]
@@ -107,7 +107,7 @@ module DocuSign_eSign
     end
 
     # Delete a blind carbon copy email archive for an account.
-    # 
+    # This method deletes a BCC email archive configuration from an account.  When you use this method, the status of the BCC email archive configuration switches to &#x60;closed&#x60; and the BCC email address is no longer used to archive DocuSign-generated email messages. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param bcc_email_archive_id 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -149,7 +149,7 @@ module DocuSign_eSign
     end
 
     # Get the blind carbon copy email archive history entries for the specified archive
-    # 
+    # This method returns a specific BCC email archive configuration for an account, as well as the history of changes to the email address.
     # @param account_id The external account number (int) or account ID Guid.
     # @param bcc_email_archive_id 
     # @param DocuSign_eSign::GetBCCEmailArchiveHistoryListOptions Options for modifying the behavior of the function.
@@ -160,7 +160,7 @@ module DocuSign_eSign
     end
 
     # Get the blind carbon copy email archive history entries for the specified archive
-    # 
+    # This method returns a specific BCC email archive configuration for an account, as well as the history of changes to the email address.
     # @param account_id The external account number (int) or account ID Guid.
     # @param bcc_email_archive_id 
     # @param DocuSign_eSign::GetBCCEmailArchiveHistoryListOptions Options for modifying the behavior of the function.
@@ -206,7 +206,7 @@ module DocuSign_eSign
     end
 
     # Get the blind carbon copy email archive entries owned by the specified account
-    # 
+    # This method retrieves all of the BCC email archive configurations associated with an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param DocuSign_eSign::GetBCCEmailArchiveListOptions Options for modifying the behavior of the function.
     # @return [BccEmailArchiveList]
@@ -216,7 +216,7 @@ module DocuSign_eSign
     end
 
     # Get the blind carbon copy email archive entries owned by the specified account
-    # 
+    # This method retrieves all of the BCC email archive configurations associated with an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param DocuSign_eSign::GetBCCEmailArchiveListOptions Options for modifying the behavior of the function.
     # @return [Array<(BccEmailArchiveList, Fixnum, Hash)>] BccEmailArchiveList data, response status code and response headers

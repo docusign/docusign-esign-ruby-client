@@ -125,7 +125,7 @@ module DocuSign_eSign
     end
 
     # Get metadata for a given credit card.
-    # 
+    # This method returns information about a credit card associated with an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @return [CreditCardInformation]
     def get_credit_card_info(account_id)
@@ -134,7 +134,7 @@ module DocuSign_eSign
     end
 
     # Get metadata for a given credit card.
-    # 
+    # This method returns information about a credit card associated with an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @return [Array<(CreditCardInformation, Fixnum, Hash)>] CreditCardInformation data, response status code and response headers
     def get_credit_card_info_with_http_info(account_id)

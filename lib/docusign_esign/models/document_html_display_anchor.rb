@@ -16,6 +16,7 @@ module DocuSign_eSign
     # 
     attr_accessor :case_sensitive
 
+    # This object defines how the HTML section inside the `startAnchor` and `endAnchor` displays.
     attr_accessor :display_settings
 
     # 

@@ -28,6 +28,7 @@ module DocuSign_eSign
     # 
     attr_accessor :pdf_field_handling_option
 
+    # 
     attr_accessor :recipient_auth_requirements
 
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.

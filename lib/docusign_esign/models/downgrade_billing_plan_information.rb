@@ -16,6 +16,7 @@ module DocuSign_eSign
     # 
     attr_accessor :downgrade_event_type
 
+    # An object used to identify the features and attributes of the account being created.
     attr_accessor :plan_information
 
     # 

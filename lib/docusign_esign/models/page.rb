@@ -17,6 +17,7 @@ module DocuSign_eSign
     # The number of dots per inch used for the page image.
     attr_accessor :dpi
 
+    # If an error occurs, this property describes the error.
     attr_accessor :error_details
 
     # Height of the tab in pixels.

@@ -444,7 +444,7 @@ module DocuSign_eSign
     end
 
     # Creates an acount custom field.
-    # 
+    # This method creates a custom field and makes it available for all new envelopes associated with an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param custom_field  (optional parameter)
     # @param DocuSign_eSign::CreateCustomFieldOptions Options for modifying the behavior of the function.
@@ -455,7 +455,7 @@ module DocuSign_eSign
     end
 
     # Creates an acount custom field.
-    # 
+    # This method creates a custom field and makes it available for all new envelopes associated with an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param custom_field  (optional parameter)
     # @param DocuSign_eSign::CreateCustomFieldOptions Options for modifying the behavior of the function.
@@ -498,7 +498,7 @@ module DocuSign_eSign
     end
 
     # Creates a new permission profile in the specified account.
-    # 
+    # This method creates a new permission profile for an account.  ### Related topics  - [How to create a permission profile](/docs/esign-rest-api/how-to/permission-profile-creating/) 
     # @param account_id The external account number (int) or account ID Guid.
     # @param permission_profile  (optional parameter)
     # @param DocuSign_eSign::CreatePermissionProfileOptions Options for modifying the behavior of the function.
@@ -509,7 +509,7 @@ module DocuSign_eSign
     end
 
     # Creates a new permission profile in the specified account.
-    # 
+    # This method creates a new permission profile for an account.  ### Related topics  - [How to create a permission profile](/docs/esign-rest-api/how-to/permission-profile-creating/) 
     # @param account_id The external account number (int) or account ID Guid.
     # @param permission_profile  (optional parameter)
     # @param DocuSign_eSign::CreatePermissionProfileOptions Options for modifying the behavior of the function.
@@ -709,7 +709,7 @@ module DocuSign_eSign
     end
 
     # Removes a brand.
-    # 
+    # This method deletes a brand from an account.  **Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @return [nil]
@@ -719,7 +719,7 @@ module DocuSign_eSign
     end
 
     # Removes a brand.
-    # 
+    # This method deletes a brand from an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -761,7 +761,7 @@ module DocuSign_eSign
     end
 
     # Delete one branding logo.
-    # 
+    # This method deletes a single logo from an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @param logo_type One of **Primary**, **Secondary** or **Email**.
@@ -772,7 +772,7 @@ module DocuSign_eSign
     end
 
     # Delete one branding logo.
-    # 
+    # This method deletes a single logo from an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @param logo_type One of **Primary**, **Secondary** or **Email**.
@@ -923,7 +923,7 @@ module DocuSign_eSign
     end
 
     # Delete an existing account custom field.
-    # 
+    # This method deletes an existing account custom field.
     # @param account_id The external account number (int) or account ID Guid.
     # @param custom_field_id 
     # @param DocuSign_eSign::DeleteCustomFieldOptions Options for modifying the behavior of the function.
@@ -934,7 +934,7 @@ module DocuSign_eSign
     end
 
     # Delete an existing account custom field.
-    # 
+    # This method deletes an existing account custom field.
     # @param account_id The external account number (int) or account ID Guid.
     # @param custom_field_id 
     # @param DocuSign_eSign::DeleteCustomFieldOptions Options for modifying the behavior of the function.
@@ -1026,7 +1026,7 @@ module DocuSign_eSign
     end
 
     # Deletes a permissions profile within the specified account.
-    # 
+    # This method deletes a permission profile from an account.  To delete a permission profile, it must not have any users associated with it. When you use this method to delete a permission profile, you can reassign the users associated with it to a new permission profile at the same time by using the `move_users_to` query parameter.   ### Related topics  - [How to delete a permission profile](/docs/esign-rest-api/how-to/permission-profile-deleting/)
     # @param account_id The external account number (int) or account ID Guid.
     # @param permission_profile_id 
     # @param DocuSign_eSign::DeletePermissionProfileOptions Options for modifying the behavior of the function.
@@ -1037,7 +1037,7 @@ module DocuSign_eSign
     end
 
     # Deletes a permissions profile within the specified account.
-    # 
+    # This method deletes a permission profile from an account.  To delete a permission profile, it must not have any users associated with it. When you use this method to delete a permission profile, you can reassign the users associated with it to a new permission profile at the same time by using the &#x60;move_users_to&#x60; query parameter.   ### Related topics  - [How to delete a permission profile](/docs/esign-rest-api/how-to/permission-profile-deleting/)
     # @param account_id The external account number (int) or account ID Guid.
     # @param permission_profile_id 
     # @param DocuSign_eSign::DeletePermissionProfileOptions Options for modifying the behavior of the function.
@@ -1081,7 +1081,7 @@ module DocuSign_eSign
     end
 
     # Get the list of identity verification options for an account
-    # 
+    # This method returns a list of Identity Verification workflows that are available to an account.  **Note:** To use this method, you must either be an account administrator or a sender.  ### Related topics  - [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)  
     # @param account_id The external account number (int) or account ID Guid.
     # @return [AccountIdentityVerificationResponse]
     def get_account_identity_verification(account_id)
@@ -1090,7 +1090,7 @@ module DocuSign_eSign
     end
 
     # Get the list of identity verification options for an account
-    # 
+    # This method returns a list of Identity Verification workflows that are available to an account.  **Note:** To use this method, you must either be an account administrator or a sender.  ### Related topics  - [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)  
     # @param account_id The external account number (int) or account ID Guid.
     # @return [Array<(AccountIdentityVerificationResponse, Fixnum, Hash)>] AccountIdentityVerificationResponse data, response status code and response headers
     def get_account_identity_verification_with_http_info(account_id)
@@ -1349,7 +1349,7 @@ module DocuSign_eSign
     end
 
     # Returns tab settings list for specified account
-    # 
+    # This method returns information about the tab types and tab functionality that is currently enabled for an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @return [TabAccountSettings]
     def get_account_tab_settings(account_id)
@@ -1358,7 +1358,7 @@ module DocuSign_eSign
     end
 
     # Returns tab settings list for specified account
-    # 
+    # This method returns information about the tab types and tab functionality that is currently enabled for an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @return [Array<(TabAccountSettings, Fixnum, Hash)>] TabAccountSettings data, response status code and response headers
     def get_account_tab_settings_with_http_info(account_id)
@@ -1398,7 +1398,7 @@ module DocuSign_eSign
     end
 
     # Get all payment gateway account for the provided accountId
-    # 
+    # This method returns a list of payment gateway accounts and basic information about them.
     # @param account_id The external account number (int) or account ID Guid.
     # @return [PaymentGatewayAccountsInfo]
     def get_all_payment_gateway_accounts(account_id)
@@ -1407,7 +1407,7 @@ module DocuSign_eSign
     end
 
     # Get all payment gateway account for the provided accountId
-    # 
+    # This method returns a list of payment gateway accounts and basic information about them.
     # @param account_id The external account number (int) or account ID Guid.
     # @return [Array<(PaymentGatewayAccountsInfo, Fixnum, Hash)>] PaymentGatewayAccountsInfo data, response status code and response headers
     def get_all_payment_gateway_accounts_with_http_info(account_id)
@@ -1499,7 +1499,7 @@ module DocuSign_eSign
     end
 
     # Get information for a specific brand.
-    # 
+    # This method returns details about an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @param DocuSign_eSign::GetBrandOptions Options for modifying the behavior of the function.
@@ -1510,7 +1510,7 @@ module DocuSign_eSign
     end
 
     # Get information for a specific brand.
-    # 
+    # This method returns details about an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @param DocuSign_eSign::GetBrandOptions Options for modifying the behavior of the function.
@@ -1556,7 +1556,7 @@ module DocuSign_eSign
     end
 
     # Export a specific brand.
-    # 
+    # This method exports information about a brand to an XML file.  **Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @return [nil]
@@ -1566,7 +1566,7 @@ module DocuSign_eSign
     end
 
     # Export a specific brand.
-    # 
+    # This method exports information about a brand to an XML file.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1608,7 +1608,7 @@ module DocuSign_eSign
     end
 
     # Obtains the specified image for a brand.
-    # 
+    # This method returns a specific logo that is used in a brand.  **Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @param logo_type One of **Primary**, **Secondary** or **Email**.
@@ -1619,7 +1619,7 @@ module DocuSign_eSign
     end
 
     # Obtains the specified image for a brand.
-    # 
+    # This method returns a specific logo that is used in a brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @param logo_type One of **Primary**, **Secondary** or **Email**.
@@ -1665,7 +1665,7 @@ module DocuSign_eSign
     end
 
     # Returns the specified account's list of branding resources (metadata).
-    # 
+    # This method returns metadata about the branding resources that are associated with an account.  **Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @return [BrandResourcesList]
@@ -1675,7 +1675,7 @@ module DocuSign_eSign
     end
 
     # Returns the specified account&#39;s list of branding resources (metadata).
-    # 
+    # This method returns metadata about the branding resources that are associated with an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @return [Array<(BrandResourcesList, Fixnum, Hash)>] BrandResourcesList data, response status code and response headers
@@ -1718,7 +1718,7 @@ module DocuSign_eSign
     end
 
     # Returns the specified branding resource file.
-    # 
+    # This method returns a specific branding resource file.  A brand uses a set of brand resource files to control the sending, signing, email message, and captive (embedded) signing experiences.  You can modify the default email messages and formats in these files and upload them to your brand to customize the user experience.  **Important:** When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.   **Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @param resource_content_type 
@@ -1730,7 +1730,7 @@ module DocuSign_eSign
     end
 
     # Returns the specified branding resource file.
-    # 
+    # This method returns a specific branding resource file.  A brand uses a set of brand resource files to control the sending, signing, email message, and captive (embedded) signing experiences.  You can modify the default email messages and formats in these files and upload them to your brand to customize the user experience.  **Important:** When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @param resource_content_type 
@@ -1932,7 +1932,7 @@ module DocuSign_eSign
     end
 
     # Select envelope purge configuration.
-    # 
+    # An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (`retentionDays`). This method retrieves the current envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.
     # @param account_id The external account number (int) or account ID Guid.
     # @return [EnvelopePurgeConfiguration]
     def get_envelope_purge_configuration(account_id)
@@ -1941,7 +1941,7 @@ module DocuSign_eSign
     end
 
     # Select envelope purge configuration.
-    # 
+    # An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method retrieves the current envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.
     # @param account_id The external account number (int) or account ID Guid.
     # @return [Array<(EnvelopePurgeConfiguration, Fixnum, Hash)>] EnvelopePurgeConfiguration data, response status code and response headers
     def get_envelope_purge_configuration_with_http_info(account_id)
@@ -2030,7 +2030,7 @@ module DocuSign_eSign
     end
 
     # Returns default user level settings for a specified account
-    # 
+    # This method returns the default settings for the email notifications that signers and senders receive about envelopes.
     # @param account_id The external account number (int) or account ID Guid.
     # @return [NotificationDefaults]
     def get_notification_defaults(account_id)
@@ -2039,7 +2039,7 @@ module DocuSign_eSign
     end
 
     # Returns default user level settings for a specified account
-    # 
+    # This method returns the default settings for the email notifications that signers and senders receive about envelopes.
     # @param account_id The external account number (int) or account ID Guid.
     # @return [Array<(NotificationDefaults, Fixnum, Hash)>] NotificationDefaults data, response status code and response headers
     def get_notification_defaults_with_http_info(account_id)
@@ -2079,7 +2079,7 @@ module DocuSign_eSign
     end
 
     # Get the password rules
-    # 
+    # This method retrieves the password rules for an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @return [AccountPasswordRules]
     def get_password_rules(account_id)
@@ -2088,7 +2088,7 @@ module DocuSign_eSign
     end
 
     # Get the password rules
-    # 
+    # This method retrieves the password rules for an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @return [Array<(AccountPasswordRules, Fixnum, Hash)>] AccountPasswordRules data, response status code and response headers
     def get_password_rules_with_http_info(account_id)
@@ -2173,7 +2173,7 @@ module DocuSign_eSign
     end
 
     # Returns a permissions profile in the specified account.
-    # 
+    # This method returns information about a specific permission profile that is associated with an account.  ### Related topics  - [How to set a permission profile](/docs/esign-rest-api/how-to/permission-profile-setting/) 
     # @param account_id The external account number (int) or account ID Guid.
     # @param permission_profile_id 
     # @param DocuSign_eSign::GetPermissionProfileOptions Options for modifying the behavior of the function.
@@ -2184,7 +2184,7 @@ module DocuSign_eSign
     end
 
     # Returns a permissions profile in the specified account.
-    # 
+    # This method returns information about a specific permission profile that is associated with an account.  ### Related topics  - [How to set a permission profile](/docs/esign-rest-api/how-to/permission-profile-setting/) 
     # @param account_id The external account number (int) or account ID Guid.
     # @param permission_profile_id 
     # @param DocuSign_eSign::GetPermissionProfileOptions Options for modifying the behavior of the function.
@@ -2274,7 +2274,7 @@ module DocuSign_eSign
     end
 
     # Gets list of supported languages for recipient language setting.
-    # 
+    # Retrieves a list of supported languages that you can set for an individual recipient when creating an envelope, as well as their simple type enumeration values. These are the languages that you can set for the standard email format and signing view for each recipient.  For example, in the recipient's email notification, this setting affects elements such as the standard introductory text describing the request to sign. It also determines the language used for buttons and tabs in both the email notification and the signing experience.  **Note:** Setting a language for a recipient affects only the DocuSign standard text. Any custom text that you enter for the `emailBody` and `emailSubject` of the notification is not translated, and appears exactly as you enter it.  For more information, see [Set Recipient Language and Specify Custom Email Messages](https://support.docusign.com/en/guides/ndse-user-guide-recipient-language).
     # @param account_id The external account number (int) or account ID Guid.
     # @return [SupportedLanguages]
     def get_supported_languages(account_id)
@@ -2283,7 +2283,7 @@ module DocuSign_eSign
     end
 
     # Gets list of supported languages for recipient language setting.
-    # 
+    # Retrieves a list of supported languages that you can set for an individual recipient when creating an envelope, as well as their simple type enumeration values. These are the languages that you can set for the standard email format and signing view for each recipient.  For example, in the recipient&#39;s email notification, this setting affects elements such as the standard introductory text describing the request to sign. It also determines the language used for buttons and tabs in both the email notification and the signing experience.  **Note:** Setting a language for a recipient affects only the DocuSign standard text. Any custom text that you enter for the &#x60;emailBody&#x60; and &#x60;emailSubject&#x60; of the notification is not translated, and appears exactly as you enter it.  For more information, see [Set Recipient Language and Specify Custom Email Messages](https://support.docusign.com/en/guides/ndse-user-guide-recipient-language).
     # @param account_id The external account number (int) or account ID Guid.
     # @return [Array<(SupportedLanguages, Fixnum, Hash)>] SupportedLanguages data, response status code and response headers
     def get_supported_languages_with_http_info(account_id)
@@ -2737,7 +2737,7 @@ module DocuSign_eSign
     end
 
     # Returns Account available signature providers for specified account.
-    # 
+    # Returns a list of signature providers that the specified account can use.
     # @param account_id The external account number (int) or account ID Guid.
     # @return [AccountSignatureProviders]
     def list_signature_providers(account_id)
@@ -2746,7 +2746,7 @@ module DocuSign_eSign
     end
 
     # Returns Account available signature providers for specified account.
-    # 
+    # Returns a list of signature providers that the specified account can use.
     # @param account_id The external account number (int) or account ID Guid.
     # @return [Array<(AccountSignatureProviders, Fixnum, Hash)>] AccountSignatureProviders data, response status code and response headers
     def list_signature_providers_with_http_info(account_id)
@@ -3057,7 +3057,7 @@ module DocuSign_eSign
     end
 
     # Modifies tab settings for specified account
-    # 
+    # This method modifies the tab types and tab functionality that is enabled for an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param tab_account_settings  (optional parameter)
     # @return [TabAccountSettings]
@@ -3067,7 +3067,7 @@ module DocuSign_eSign
     end
 
     # Modifies tab settings for specified account
-    # 
+    # This method modifies the tab types and tab functionality that is enabled for an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param tab_account_settings  (optional parameter)
     # @return [Array<(TabAccountSettings, Fixnum, Hash)>] TabAccountSettings data, response status code and response headers
@@ -3108,7 +3108,7 @@ module DocuSign_eSign
     end
 
     # Updates an existing brand.
-    # 
+    # This method updates an account brand.   **Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @param brand  (optional parameter)
@@ -3120,7 +3120,7 @@ module DocuSign_eSign
     end
 
     # Updates an existing brand.
-    # 
+    # This method updates an account brand.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID Guid.
     # @param brand_id The unique identifier of a brand.
     # @param brand  (optional parameter)
@@ -3166,7 +3166,7 @@ module DocuSign_eSign
     end
 
     # Put one branding logo.
-    # 
+    # This method updates a single brand logo.  You pass in the new version of the resource in the `Content-Disposition` header. Example:  `Content-Disposition: form-data; name=\"file\"; filename=\"logo.jpg\"`  **Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID GUID.
     # @param brand_id The ID of the brand.
     # @param logo_type The type of logo. Valid values are:  - `primary`  - `secondary`  - `email`
@@ -3178,7 +3178,7 @@ module DocuSign_eSign
     end
 
     # Put one branding logo.
-    # 
+    # This method updates a single brand logo.  You pass in the new version of the resource in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;logo.jpg\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
     # @param account_id The external account number (int) or account ID GUID.
     # @param brand_id The ID of the brand.
     # @param logo_type The type of logo. Valid values are:  - `primary`  - `secondary`  - `email`
@@ -3228,7 +3228,7 @@ module DocuSign_eSign
     end
 
     # Uploads a branding resource file.
-    # 
+    # This method updates a branding resource file.  You pass in the new version of the resource file in the `Content-Disposition` header. Example:  `Content-Disposition: form-data; name=\"file\"; filename=\"DocuSign_SigningResource_4328673.xml\"`  **Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).  **Important:** Customizing resource files is an advanced branding configuration option which can significantly impact your account, and should be done only by someone with expertise in XML and HTML. The master resource files are subject to change without notice. If you customize your resource files, after each release, DocuSign recommends you review any changes and update your custom files as needed.  When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.
     # @param account_id The external account number (int) or account ID GUID.
     # @param brand_id The ID of the brand.
     # @param resource_content_type The type of brand resource file that you are updating. Valid values are:  - `sending` - `signing` - `email` - `signing_captive`
@@ -3239,7 +3239,7 @@ module DocuSign_eSign
     end
 
     # Uploads a branding resource file.
-    # 
+    # This method updates a branding resource file.  You pass in the new version of the resource file in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;DocuSign_SigningResource_4328673.xml\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).  **Important:** Customizing resource files is an advanced branding configuration option which can significantly impact your account, and should be done only by someone with expertise in XML and HTML. The master resource files are subject to change without notice. If you customize your resource files, after each release, DocuSign recommends you review any changes and update your custom files as needed.  When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.
     # @param account_id The external account number (int) or account ID GUID.
     # @param brand_id The ID of the brand.
     # @param resource_content_type The type of brand resource file that you are updating. Valid values are:  - `sending` - `signing` - `email` - `signing_captive`
@@ -3290,7 +3290,7 @@ module DocuSign_eSign
     end
 
     # Update Consumer Disclosure.
-    # 
+    # Account administrators can use this method to perform the following tasks:  - Customize values in the default disclosure. - Switch to a custom disclosure that uses your own text and HTML formatting. - Change values in your existing consumer disclosure.   To specify the signer language version of the disclosure that you are updating, use the optional `langCode` query parameter.  **Note:** Only account administrators can use this method. Each time you change the disclosure content, all unsigned recipients of outstanding documents will be required to accept a new version.   ## Updating the default disclosure  When you update the default disclosure, you can edit all properties except for the following ones:  - `accountEsignId`: This property is read-only. - `custom`: The default value is **false.** Editing this property causes the default disclosure to switch to a custom disclosure. - `esignAgreement`: This property is read-only. - `esignText`: You cannot edit this property when `custom` is set to **false.** The API returns a 200 OK HTTP response, but does not update the `esignText`. - Metadata properties: These properties are read-only.  **Note:** The text of the default disclosure is always in English.  ## Switching to a custom disclosure  To switch to a custom disclosure, set the `custom` property to **true** and customize the value for the `eSignText` property.   You can also edit all of the other properties except for the following ones:  - `accountEsignId`: This property is read-only. - `esignAgreement`: This property is read-only. - Metadata properties: These properties are read-only.  **Note:** When you use a custom disclosure, you can create versions of it in different signer languages and se the `langCode` parameter to specify the signer language version that you are updating.  **Important:**  When you switch from a default to a custom disclosure, note the following information:  - You will not be able to return to using the default disclosure. - Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  ## Updating a custom disclosure  When you update a custom disclosure, you can update all of the properties except for the following ones:  - `accountEsignId`: This property is read-only.  - `esignAgreement`: This property is read-only. - Metadata properties: These properties are read-only.  **Important:** Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  
     # @param account_id The external account number (int) or account ID Guid.
     # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param consumer_disclosure  (optional parameter)
@@ -3302,7 +3302,7 @@ module DocuSign_eSign
     end
 
     # Update Consumer Disclosure.
-    # 
+    # Account administrators can use this method to perform the following tasks:  - Customize values in the default disclosure. - Switch to a custom disclosure that uses your own text and HTML formatting. - Change values in your existing consumer disclosure.   To specify the signer language version of the disclosure that you are updating, use the optional &#x60;langCode&#x60; query parameter.  **Note:** Only account administrators can use this method. Each time you change the disclosure content, all unsigned recipients of outstanding documents will be required to accept a new version.   ## Updating the default disclosure  When you update the default disclosure, you can edit all properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;custom&#x60;: The default value is **false.** Editing this property causes the default disclosure to switch to a custom disclosure. - &#x60;esignAgreement&#x60;: This property is read-only. - &#x60;esignText&#x60;: You cannot edit this property when &#x60;custom&#x60; is set to **false.** The API returns a 200 OK HTTP response, but does not update the &#x60;esignText&#x60;. - Metadata properties: These properties are read-only.  **Note:** The text of the default disclosure is always in English.  ## Switching to a custom disclosure  To switch to a custom disclosure, set the &#x60;custom&#x60; property to **true** and customize the value for the &#x60;eSignText&#x60; property.   You can also edit all of the other properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Note:** When you use a custom disclosure, you can create versions of it in different signer languages and se the &#x60;langCode&#x60; parameter to specify the signer language version that you are updating.  **Important:**  When you switch from a default to a custom disclosure, note the following information:  - You will not be able to return to using the default disclosure. - Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  ## Updating a custom disclosure  When you update a custom disclosure, you can update all of the properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only.  - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Important:** Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  
     # @param account_id The external account number (int) or account ID Guid.
     # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param consumer_disclosure  (optional parameter)
@@ -3348,7 +3348,7 @@ module DocuSign_eSign
     end
 
     # Updates an existing account custom field.
-    # 
+    # This method updates an existing account custom field.
     # @param account_id The external account number (int) or account ID Guid.
     # @param custom_field_id 
     # @param custom_field  (optional parameter)
@@ -3360,7 +3360,7 @@ module DocuSign_eSign
     end
 
     # Updates an existing account custom field.
-    # 
+    # This method updates an existing account custom field.
     # @param account_id The external account number (int) or account ID Guid.
     # @param custom_field_id 
     # @param custom_field  (optional parameter)
@@ -3457,7 +3457,7 @@ module DocuSign_eSign
     end
 
     # Updates envelope purge configuration.
-    # 
+    # An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (`retentionDays`). This method sets the envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.  For more information, see [Purge Envelopes](https://support.docusign.com/en/guides/ndse-user-guide-purge-envelopes).
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_purge_configuration  (optional parameter)
     # @return [EnvelopePurgeConfiguration]
@@ -3467,7 +3467,7 @@ module DocuSign_eSign
     end
 
     # Updates envelope purge configuration.
-    # 
+    # An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method sets the envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.  For more information, see [Purge Envelopes](https://support.docusign.com/en/guides/ndse-user-guide-purge-envelopes).
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_purge_configuration  (optional parameter)
     # @return [Array<(EnvelopePurgeConfiguration, Fixnum, Hash)>] EnvelopePurgeConfiguration data, response status code and response headers
@@ -3559,7 +3559,7 @@ module DocuSign_eSign
     end
 
     # Updates default user level settings for a specified account
-    # 
+    # This method changes the default settings for the email notifications that signers and senders receive about envelopes.
     # @param account_id The external account number (int) or account ID Guid.
     # @param notification_defaults  (optional parameter)
     # @return [NotificationDefaults]
@@ -3569,7 +3569,7 @@ module DocuSign_eSign
     end
 
     # Updates default user level settings for a specified account
-    # 
+    # This method changes the default settings for the email notifications that signers and senders receive about envelopes.
     # @param account_id The external account number (int) or account ID Guid.
     # @param notification_defaults  (optional parameter)
     # @return [Array<(NotificationDefaults, Fixnum, Hash)>] NotificationDefaults data, response status code and response headers
@@ -3610,7 +3610,7 @@ module DocuSign_eSign
     end
 
     # Update the password rules
-    # 
+    # This method updates the password rules for an account.  **Note:** To update the password rules for an account, you must be an account administrator.
     # @param account_id The external account number (int) or account ID Guid.
     # @param account_password_rules  (optional parameter)
     # @return [AccountPasswordRules]
@@ -3620,7 +3620,7 @@ module DocuSign_eSign
     end
 
     # Update the password rules
-    # 
+    # This method updates the password rules for an account.  **Note:** To update the password rules for an account, you must be an account administrator.
     # @param account_id The external account number (int) or account ID Guid.
     # @param account_password_rules  (optional parameter)
     # @return [Array<(AccountPasswordRules, Fixnum, Hash)>] AccountPasswordRules data, response status code and response headers
@@ -3661,7 +3661,7 @@ module DocuSign_eSign
     end
 
     # Updates a permission profile within the specified account.
-    # 
+    # This method updates an account permission profile.  ### Related topics  - [How to update individual permission settings](/docs/esign-rest-api/how-to/permission-profile-updating/) 
     # @param account_id The external account number (int) or account ID Guid.
     # @param permission_profile_id 
     # @param permission_profile  (optional parameter)
@@ -3673,7 +3673,7 @@ module DocuSign_eSign
     end
 
     # Updates a permission profile within the specified account.
-    # 
+    # This method updates an account permission profile.  ### Related topics  - [How to update individual permission settings](/docs/esign-rest-api/how-to/permission-profile-updating/) 
     # @param account_id The external account number (int) or account ID Guid.
     # @param permission_profile_id 
     # @param permission_profile  (optional parameter)

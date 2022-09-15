@@ -153,6 +153,57 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Sets the Connect OAuth Config for the account.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param connect_o_auth_config  (optional parameter)
+    # @return [ConnectOAuthConfig]
+    def create_connect_o_auth_config(account_id, connect_o_auth_config)
+      data, _status_code, _headers = create_connect_o_auth_config_with_http_info(account_id,  connect_o_auth_config)
+      return data
+    end
+
+    # Sets the Connect OAuth Config for the account.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param connect_o_auth_config  (optional parameter)
+    # @return [Array<(ConnectOAuthConfig, Fixnum, Hash)>] ConnectOAuthConfig data, response status code and response headers
+    def create_connect_o_auth_config_with_http_info(account_id, connect_o_auth_config)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.create_connect_o_auth_config ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.create_connect_o_auth_config" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/oauth".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(connect_o_auth_config)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ConnectOAuthConfig')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#create_connect_o_auth_config\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Deletes the specified connect configuration.
     # Deletes the specified DocuSign Connect configuration.  ###### Note: Connect must be enabled for your account to use this function.    
     # @param account_id The external account number (int) or account ID Guid.
@@ -201,6 +252,54 @@ module DocuSign_eSign
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ConnectApi#delete_configuration\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Sets the Connect OAuth Config for the account.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [nil]
+    def delete_connect_o_auth_config(account_id)
+      delete_connect_o_auth_config_with_http_info(account_id)
+      return nil
+    end
+
+    # Sets the Connect OAuth Config for the account.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_connect_o_auth_config_with_http_info(account_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.delete_connect_o_auth_config ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.delete_connect_o_auth_config" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/oauth".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#delete_connect_o_auth_config\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -519,6 +618,55 @@ module DocuSign_eSign
         :return_type => 'IntegratedConnectUserInfoList')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ConnectApi#get_connect_all_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Sets the Connect OAuth Config for the account.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [ConnectOAuthConfig]
+    def get_connect_o_auth_config(account_id)
+      data, _status_code, _headers = get_connect_o_auth_config_with_http_info(account_id)
+      return data
+    end
+
+    # Sets the Connect OAuth Config for the account.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [Array<(ConnectOAuthConfig, Fixnum, Hash)>] ConnectOAuthConfig data, response status code and response headers
+    def get_connect_o_auth_config_with_http_info(account_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ConnectApi.get_connect_o_auth_config ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ConnectApi.get_connect_o_auth_config" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/connect/oauth".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ConnectOAuthConfig')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectApi#get_connect_o_auth_config\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

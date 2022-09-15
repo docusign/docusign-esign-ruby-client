@@ -361,7 +361,7 @@ module DocuSign_eSign
     end
 
     # Provides a URL to start an edit view of the Template UI
-    # 
+    # This method returns a URL for starting an edit view of a template that uses the DocuSign Template UI.
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
     # @param return_url_request  (optional parameter)
@@ -372,7 +372,7 @@ module DocuSign_eSign
     end
 
     # Provides a URL to start an edit view of the Template UI
-    # 
+    # This method returns a URL for starting an edit view of a template that uses the DocuSign Template UI.
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
     # @param return_url_request  (optional parameter)
@@ -639,7 +639,7 @@ module DocuSign_eSign
     end
 
     # Post Responsive HTML Preview for a document in a template.
-    # 
+    # Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML version of a specific template document. This method enables you to preview a PDF document conversion to responsive HTML across device types prior to sending.  The request body is a `documentHtmlDefinition` object, which holds the responsive signing parameters that define how to generate the HTML version of the signing document.
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param template_id The ID of the template being accessed.
@@ -651,7 +651,7 @@ module DocuSign_eSign
     end
 
     # Post Responsive HTML Preview for a document in a template.
-    # 
+    # Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML version of a specific template document. This method enables you to preview a PDF document conversion to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the signing document.
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param template_id The ID of the template being accessed.
@@ -698,7 +698,7 @@ module DocuSign_eSign
     end
 
     # Adds the tabs to a tempate
-    # 
+    # Adds tabs to the document specified by `documentId` in the template specified by `templateId`.  In the request body, you only need to specify the tabs that your are adding. For example, to add a text [prefill tab](/docs/esign-rest-api/reference/templates/templatedocumenttabs/create/#definition__templatetabs_prefilltabs), your request body might look like this:  ``` {   \"prefillTabs\": {     \"textTabs\": [       {         \"value\": \"a prefill text tab\",         \"pageNumber\": \"1\",         \"documentId\": \"1\",         \"xPosition\": 316,         \"yPosition\": 97       }     ]   } } ``` 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param template_id The ID of the template being accessed.
@@ -710,7 +710,7 @@ module DocuSign_eSign
     end
 
     # Adds the tabs to a tempate
-    # 
+    # Adds tabs to the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  In the request body, you only need to specify the tabs that your are adding. For example, to add a text [prefill tab](/docs/esign-rest-api/reference/templates/templatedocumenttabs/create/#definition__templatetabs_prefilltabs), your request body might look like this:  &#x60;&#x60;&#x60; {   \&quot;prefillTabs\&quot;: {     \&quot;textTabs\&quot;: [       {         \&quot;value\&quot;: \&quot;a prefill text tab\&quot;,         \&quot;pageNumber\&quot;: \&quot;1\&quot;,         \&quot;documentId\&quot;: \&quot;1\&quot;,         \&quot;xPosition\&quot;: 316,         \&quot;yPosition\&quot;: 97       }     ]   } } &#x60;&#x60;&#x60; 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param template_id The ID of the template being accessed.
@@ -757,7 +757,7 @@ module DocuSign_eSign
     end
 
     # Provides a URL to start a recipient view of the Envelope UI
-    # 
+    # This method returns a URL for a template recipient preview  in the DocuSign UI that you can embed in your application. You use this method to enable the sender to preview the recipients' experience.  For more information, see [Preview and Send](https://support.docusign.com/en/guides/ndse-user-guide-send-your-documents).
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
     # @param recipient_preview_request  (optional parameter)
@@ -768,7 +768,7 @@ module DocuSign_eSign
     end
 
     # Provides a URL to start a recipient view of the Envelope UI
-    # 
+    # This method returns a URL for a template recipient preview  in the DocuSign UI that you can embed in your application. You use this method to enable the sender to preview the recipients&#39; experience.  For more information, see [Preview and Send](https://support.docusign.com/en/guides/ndse-user-guide-send-your-documents).
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
     # @param recipient_preview_request  (optional parameter)
@@ -812,7 +812,7 @@ module DocuSign_eSign
     end
 
     # Get Responsive HTML Preview for all documents in a template.
-    # 
+    # Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML versions of all of the documents associated with a template. This method enables you to preview the PDF document conversions to responsive HTML across device types prior to sending.  The request body is a `documentHtmlDefinition` object, which holds the responsive signing parameters that define how to generate the HTML version of the documents.
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
     # @param document_html_definition  (optional parameter)
@@ -823,7 +823,7 @@ module DocuSign_eSign
     end
 
     # Get Responsive HTML Preview for all documents in a template.
-    # 
+    # Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML versions of all of the documents associated with a template. This method enables you to preview the PDF document conversions to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the documents.
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
     # @param document_html_definition  (optional parameter)
@@ -1442,7 +1442,7 @@ module DocuSign_eSign
     end
 
     # Deletes tabs from an envelope document
-    # 
+    # Deletes tabs from the document specified by `documentId` in the template specified by `templateId`. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param template_id The ID of the template being accessed.
@@ -1454,7 +1454,7 @@ module DocuSign_eSign
     end
 
     # Deletes tabs from an envelope document
-    # 
+    # Deletes tabs from the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param template_id The ID of the template being accessed.
@@ -1685,7 +1685,7 @@ module DocuSign_eSign
     end
 
     # Returns tabs on the document.
-    # 
+    # Returns the tabs on the document specified by `documentId` in the template specified by `templateId`.  
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param template_id The ID of the template being accessed.
@@ -1697,7 +1697,7 @@ module DocuSign_eSign
     end
 
     # Returns tabs on the document.
-    # 
+    # Returns the tabs on the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param template_id The ID of the template being accessed.
@@ -1851,7 +1851,7 @@ module DocuSign_eSign
     end
 
     # Returns tabs on the specified page.
-    # 
+    # Returns the tabs from the page specified by `pageNumber` of the document specified by `documentId` in the template specified by `templateId`. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param page_number The page number being accessed.
@@ -1863,7 +1863,7 @@ module DocuSign_eSign
     end
 
     # Returns tabs on the specified page.
-    # 
+    # Returns the tabs from the page specified by &#x60;pageNumber&#x60; of the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param page_number The page number being accessed.
@@ -1912,7 +1912,7 @@ module DocuSign_eSign
     end
 
     # Returns document page image(s) based on input.
-    # 
+    # Returns images of the pages in a template document for display based on the parameters that you specify.
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param template_id The ID of the template being accessed.
@@ -1924,7 +1924,7 @@ module DocuSign_eSign
     end
 
     # Returns document page image(s) based on input.
-    # 
+    # Returns images of the pages in a template document for display based on the parameters that you specify.
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param template_id The ID of the template being accessed.
@@ -3142,7 +3142,7 @@ module DocuSign_eSign
     end
 
     # Updates the tabs for a template
-    # 
+    # Updates tabs in the document specified by `documentId` in the template specified by `templateId`. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param template_id The ID of the template being accessed.
@@ -3154,7 +3154,7 @@ module DocuSign_eSign
     end
 
     # Updates the tabs for a template
-    # 
+    # Updates tabs in the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param template_id The ID of the template being accessed.

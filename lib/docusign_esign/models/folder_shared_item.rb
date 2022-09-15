@@ -13,6 +13,7 @@ require 'date'
 
 module DocuSign_eSign
   class FolderSharedItem
+    # This object describes errors that occur. It is only valid for responses and ignored in requests.
     attr_accessor :error_details
 
     # 
@@ -21,6 +22,7 @@ module DocuSign_eSign
     # 
     attr_accessor :name
 
+    # Information about the user who owns the folder.
     attr_accessor :owner
 
     # 
@@ -41,6 +43,7 @@ module DocuSign_eSign
     # 
     attr_accessor :uri
 
+    # Information about the user associated with the folder.
     attr_accessor :user
 
     # Attribute mapping from ruby-style variable name to JSON key.

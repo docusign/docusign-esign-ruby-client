@@ -14,28 +14,37 @@ require 'date'
 module DocuSign_eSign
   # Defines an account billing plan response object.
   class AccountBillingPlanResponse
+    # The billing address for the account.
     attr_accessor :billing_address
 
     # When set to **true**, the credit card address information is the same as that returned as the billing address. If false, then the billing address is considered a billing contact address, and the credit card address can be different.
     attr_accessor :billing_address_is_credit_card_address
 
+    # An object that contains details about the billing plan.
     attr_accessor :billing_plan
 
+    # A complex type that has information about the credit card used to pay for this account.
     attr_accessor :credit_card_information
 
+    # Information about the bank that processes direct debits for the payment plan.
     attr_accessor :direct_debit_processor_information
 
+    # 
     attr_accessor :downgrade_plan_information
 
+    # 
     attr_accessor :downgrade_request_information
 
+    # 
     attr_accessor :entity_information
 
     # 
     attr_accessor :payment_method
 
+    # Information about the entity that processes payments for the billing plan.
     attr_accessor :payment_processor_information
 
+    # A complex type that contains properties for entering referral and discount information.
     attr_accessor :referral_information
 
     # 

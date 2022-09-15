@@ -14,6 +14,7 @@ require 'date'
 module DocuSign_eSign
   # A workspaceItem (file type only) representing the file. This property is only returned in response to file specific GET call.
   class WorkspaceItem
+    # 
     attr_accessor :caller_authorization
 
     # 
@@ -25,6 +26,7 @@ module DocuSign_eSign
     # 
     attr_accessor :created_by_id
 
+    # Details about the user who created the workspace item.
     attr_accessor :created_by_information
 
     # 
@@ -48,6 +50,7 @@ module DocuSign_eSign
     # Utc date and time the comment was last updated (can only be done by creator)
     attr_accessor :last_modified_by_id
 
+    # Details about the user who last modified the workspace item.
     attr_accessor :last_modified_by_information
 
     # A simple string description of the item, such as a file name or a folder name.
@@ -68,6 +71,7 @@ module DocuSign_eSign
     # 
     attr_accessor :thumb_height
 
+    # 
     attr_accessor :thumbnail
 
     # 
@@ -79,6 +83,7 @@ module DocuSign_eSign
     # 
     attr_accessor :uri
 
+    # 
     attr_accessor :user_authorization
 
     # Attribute mapping from ruby-style variable name to JSON key.

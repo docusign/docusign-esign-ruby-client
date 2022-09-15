@@ -19,26 +19,31 @@ module DocuSign_eSign
     # 
     attr_accessor :expire_password_days
 
+    # Metadata that indicates whether the `expirePasswordDays` property is editable. 
     attr_accessor :expire_password_days_metadata
 
     # 
     attr_accessor :lockout_duration_minutes
 
+    # Metadata that indicates whether the `lockoutDurationMinutes` property is editable. 
     attr_accessor :lockout_duration_minutes_metadata
 
     # 
     attr_accessor :lockout_duration_type
 
+    # Metadata that indicates whether the `lockoutDurationType` property is editable. 
     attr_accessor :lockout_duration_type_metadata
 
     # 
     attr_accessor :minimum_password_age_days
 
+    # Metadata that indicates whether the `minimumPasswordAgeDays` property is editable. 
     attr_accessor :minimum_password_age_days_metadata
 
     # 
     attr_accessor :minimum_password_length
 
+    # Metadata that indicates whether the `minimumPasswordLength` property is editable. 
     attr_accessor :minimum_password_length_metadata
 
     # 
@@ -59,11 +64,13 @@ module DocuSign_eSign
     # 
     attr_accessor :password_strength_type
 
+    # Metadata that indicates whether the `passwordStrengthType` property is editable. 
     attr_accessor :password_strength_type_metadata
 
     # 
     attr_accessor :questions_required
 
+    # Metadata that indicates whether the `questionsRequired` property is editable. 
     attr_accessor :questions_required_metadata
 
     # Attribute mapping from ruby-style variable name to JSON key.

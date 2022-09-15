@@ -16,16 +16,19 @@ module DocuSign_eSign
     # Specifies the email body of the message sent to the recipient.   Maximum length: 10000 characters. 
     attr_accessor :email_body
 
+    # Metadata that indicates whether the `emailBody` property can be edited.
     attr_accessor :email_body_metadata
 
     # Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject.
     attr_accessor :email_subject
 
+    # Metadata that indicates whether the `emailSubject` property can be edited.
     attr_accessor :email_subject_metadata
 
     # A simple type enumeration of the language used. The supported languages, with the language value shown in parenthesis, are: Arabic (ar), Armenian (hy), Bahasa Indonesia (id), Bahasa Melayu (ms) Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro),Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk), and Vietnamese (vi).
     attr_accessor :supported_language
 
+    # Metadata that indicates whether the `supportedLanguage` property can be edited.
     attr_accessor :supported_language_metadata
 
     # Attribute mapping from ruby-style variable name to JSON key.

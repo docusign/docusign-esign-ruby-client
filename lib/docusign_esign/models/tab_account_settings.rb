@@ -16,111 +16,133 @@ module DocuSign_eSign
     # 
     attr_accessor :allow_tab_order
 
+    # Metadata that indicates whether the `allowTabOrder` property is editable. 
     attr_accessor :allow_tab_order_metadata
 
     # 
     attr_accessor :approve_decline_tabs_enabled
 
+    # Metadata that indicates whether the `approveDeclineTabs` property is editable. 
     attr_accessor :approve_decline_tabs_metadata
 
     # 
     attr_accessor :calculated_fields_enabled
 
+    # Metadata that indicates whether the `calculatedFields` property is editable. 
     attr_accessor :calculated_fields_metadata
 
     # 
     attr_accessor :checkbox_tabs_enabled
 
+    # Metadata that indicates whether the `checkBoxTabs` property is editable.
     attr_accessor :check_box_tabs_metadata
 
     # 
     attr_accessor :currency_tabs_enabled
 
+    # 
     attr_accessor :currency_tabs_metadata
 
     # 
     attr_accessor :data_field_regex_enabled
 
+    # Metadata that indicates whether the `dataFieldRegex` property is editable. 
     attr_accessor :data_field_regex_metadata
 
     # 
     attr_accessor :data_field_size_enabled
 
+    # Metadata that indicates whether the `dataFieldSize` property is editable. 
     attr_accessor :data_field_size_metadata
 
     # 
     attr_accessor :draw_tabs_enabled
 
+    # 
     attr_accessor :draw_tabs_metadata
 
     # 
     attr_accessor :first_last_email_tabs_enabled
 
+    # Reserved for DocuSign.
     attr_accessor :first_last_email_tabs_metadata
 
     # 
     attr_accessor :list_tabs_enabled
 
+    # Metadata that indicates whether the `listTabs` property is editable. 
     attr_accessor :list_tabs_metadata
 
     # 
     attr_accessor :note_tabs_enabled
 
+    # Metadata that indicates whether the `noteTabs` property is editable. 
     attr_accessor :note_tabs_metadata
 
     # 
     attr_accessor :prefill_tabs_enabled
 
+    # 
     attr_accessor :prefill_tabs_metadata
 
     # 
     attr_accessor :radio_tabs_enabled
 
+    # Metadata that indicates whether the `radioTabs` property is editable. 
     attr_accessor :radio_tabs_metadata
 
     # 
     attr_accessor :saving_custom_tabs_enabled
 
+    # Metadata that indicates whether the `savingCustomTabs` property is editable. 
     attr_accessor :saving_custom_tabs_metadata
 
     # 
     attr_accessor :sender_to_change_tab_assignments_enabled
 
+    # Reserved for DocuSign.
     attr_accessor :sender_to_change_tab_assignments_metadata
 
     # 
     attr_accessor :shared_custom_tabs_enabled
 
+    # Metadata that indicates whether the `sharedCustomTabs` property is editable. 
     attr_accessor :shared_custom_tabs_metadata
 
     # 
     attr_accessor :tab_data_label_enabled
 
+    # Metadata that indicates whether the `tabDataLabel` property is editable. 
     attr_accessor :tab_data_label_metadata
 
     # 
     attr_accessor :tab_location_enabled
 
+    # Reserved for DocuSign.
     attr_accessor :tab_location_metadata
 
     # 
     attr_accessor :tab_locking_enabled
 
+    # Metadata that indicates whether the `tabLocking` property is editable. 
     attr_accessor :tab_locking_metadata
 
     # 
     attr_accessor :tab_scale_enabled
 
+    # Reserved for DocuSign.
     attr_accessor :tab_scale_metadata
 
     # 
     attr_accessor :tab_text_formatting_enabled
 
+    # Metadata that indicates whether the `tabTextFormatting` property is editable. 
     attr_accessor :tab_text_formatting_metadata
 
     # 
     attr_accessor :text_tabs_enabled
 
+    # Metadata that indicates whether the `textTabs` property is editable. 
     attr_accessor :text_tabs_metadata
 
     # Attribute mapping from ruby-style variable name to JSON key.

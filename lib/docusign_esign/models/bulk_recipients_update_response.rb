@@ -13,6 +13,7 @@ require 'date'
 
 module DocuSign_eSign
   class BulkRecipientsUpdateResponse
+    # 
     attr_accessor :signer
 
     # Attribute mapping from ruby-style variable name to JSON key.

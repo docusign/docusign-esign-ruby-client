@@ -329,7 +329,7 @@ module DocuSign_eSign
     end
 
     # Replaces a particular contact associated with an account for the DocuSign service.
-    # 
+    # This method deletes a contact associated with an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param contact_id The unique identifier of a person in the contacts address book.
     # @return [ContactUpdateResponse]
@@ -339,7 +339,7 @@ module DocuSign_eSign
     end
 
     # Replaces a particular contact associated with an account for the DocuSign service.
-    # 
+    # This method deletes a contact associated with an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param contact_id The unique identifier of a person in the contacts address book.
     # @return [Array<(ContactUpdateResponse, Fixnum, Hash)>] ContactUpdateResponse data, response status code and response headers
@@ -382,7 +382,7 @@ module DocuSign_eSign
     end
 
     # Delete contacts associated with an account for the DocuSign service.
-    # 
+    # This method deletes multiple contacts associated with an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param contact_mod_request  (optional parameter)
     # @return [ContactUpdateResponse]
@@ -392,7 +392,7 @@ module DocuSign_eSign
     end
 
     # Delete contacts associated with an account for the DocuSign service.
-    # 
+    # This method deletes multiple contacts associated with an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param contact_mod_request  (optional parameter)
     # @return [Array<(ContactUpdateResponse, Fixnum, Hash)>] ContactUpdateResponse data, response status code and response headers
@@ -657,7 +657,7 @@ module DocuSign_eSign
     end
 
     # Gets a particular contact associated with the user's account.
-    # 
+    # This method returns one or more contacts associated with a DocuSign account. You can also retrieve contacts from connected [cloud storage][CloudStorage] providers by using the `cloud_provider` query parameter. By default, contacts are retrieved from the DocuSign account's default address book.  To return a specific contact, use the `contactId` query parameter. To return all contacts associated with an account, omit this parameter.  [CloudStorage]: /docs/esign-rest-api/reference/cloudstorage/
     # @param account_id The external account number (int) or account ID Guid.
     # @param contact_id The unique identifier of a person in the contacts address book.
     # @param DocuSign_eSign::GetContactByIdOptions Options for modifying the behavior of the function.
@@ -668,7 +668,7 @@ module DocuSign_eSign
     end
 
     # Gets a particular contact associated with the user&#39;s account.
-    # 
+    # This method returns one or more contacts associated with a DocuSign account. You can also retrieve contacts from connected [cloud storage][CloudStorage] providers by using the &#x60;cloud_provider&#x60; query parameter. By default, contacts are retrieved from the DocuSign account&#39;s default address book.  To return a specific contact, use the &#x60;contactId&#x60; query parameter. To return all contacts associated with an account, omit this parameter.  [CloudStorage]: /docs/esign-rest-api/reference/cloudstorage/
     # @param account_id The external account number (int) or account ID Guid.
     # @param contact_id The unique identifier of a person in the contacts address book.
     # @param DocuSign_eSign::GetContactByIdOptions Options for modifying the behavior of the function.
@@ -1226,7 +1226,7 @@ module DocuSign_eSign
     end
 
     # Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type).
-    # 
+    # This method adds multiple contacts into a contacts list.
     # @param account_id The external account number (int) or account ID Guid.
     # @param contact_mod_request  (optional parameter)
     # @return [ContactUpdateResponse]
@@ -1236,7 +1236,7 @@ module DocuSign_eSign
     end
 
     # Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type).
-    # 
+    # This method adds multiple contacts into a contacts list.
     # @param account_id The external account number (int) or account ID Guid.
     # @param contact_mod_request  (optional parameter)
     # @return [Array<(ContactUpdateResponse, Fixnum, Hash)>] ContactUpdateResponse data, response status code and response headers
@@ -1277,7 +1277,7 @@ module DocuSign_eSign
     end
 
     # Replaces contacts associated with an account for the DocuSign service.
-    # 
+    # This method updates one or more contacts associated with an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param contact_mod_request  (optional parameter)
     # @return [ContactUpdateResponse]
@@ -1287,7 +1287,7 @@ module DocuSign_eSign
     end
 
     # Replaces contacts associated with an account for the DocuSign service.
-    # 
+    # This method updates one or more contacts associated with an account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param contact_mod_request  (optional parameter)
     # @return [Array<(ContactUpdateResponse, Fixnum, Hash)>] ContactUpdateResponse data, response status code and response headers
@@ -1731,7 +1731,7 @@ module DocuSign_eSign
     end
 
     # Updates the specified user information.
-    # 
+    # To update user information for a specific user, submit a [Users](#Users) object with updated field values in the request body of this operation.
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
     # @param user_information  (optional parameter)
@@ -1743,7 +1743,7 @@ module DocuSign_eSign
     end
 
     # Updates the specified user information.
-    # 
+    # To update user information for a specific user, submit a [Users](#Users) object with updated field values in the request body of this operation.
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
     # @param user_information  (optional parameter)
@@ -1789,7 +1789,7 @@ module DocuSign_eSign
     end
 
     # Change one or more user in the specified account.
-    # 
+    # This method updates the information about one or more account users.
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_information_list  (optional parameter)
     # @param DocuSign_eSign::UpdateUsersOptions Options for modifying the behavior of the function.
@@ -1800,7 +1800,7 @@ module DocuSign_eSign
     end
 
     # Change one or more user in the specified account.
-    # 
+    # This method updates the information about one or more account users.
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_information_list  (optional parameter)
     # @param DocuSign_eSign::UpdateUsersOptions Options for modifying the behavior of the function.

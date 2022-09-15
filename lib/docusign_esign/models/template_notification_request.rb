@@ -13,11 +13,13 @@ require 'date'
 
 module DocuSign_eSign
   class TemplateNotificationRequest
+    # A complex element that specifies the expiration settings for the envelope.
     attr_accessor :expirations
 
     # 
     attr_accessor :password
 
+    # A complex element that specifies reminder settings for the envelope.
     attr_accessor :reminders
 
     # When set to **true**, the account default notification settings are used for the envelope.

@@ -32,6 +32,7 @@ module DocuSign_eSign
     # 
     attr_accessor :created_by_id
 
+    # This object describes errors that occur. It is only valid for responses and ignored in requests.
     attr_accessor :error_details
 
     # 
@@ -43,6 +44,7 @@ module DocuSign_eSign
     # 
     attr_accessor :workspace_user_id
 
+    # An object that provides details about the workspace user.
     attr_accessor :workspace_user_information
 
     # Attribute mapping from ruby-style variable name to JSON key.

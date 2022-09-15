@@ -17,6 +17,7 @@ module DocuSign_eSign
     # 
     attr_accessor :account_payment_method
 
+    # 
     attr_accessor :billing_plan_preview
 
     # Specifies the ISO currency code for the account.

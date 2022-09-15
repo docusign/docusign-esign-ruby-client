@@ -14,6 +14,7 @@ require 'date'
 module DocuSign_eSign
   # Defines a billing plan response object.
   class BillingPlanResponse
+    # An object that contains details about the billing plan.
     attr_accessor :billing_plan
 
     # 

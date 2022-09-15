@@ -22,6 +22,7 @@ module DocuSign_eSign
     # 
     attr_accessor :searchable
 
+    # Information about the user registering to be a notary.
     attr_accessor :user_info
 
     # Attribute mapping from ruby-style variable name to JSON key.

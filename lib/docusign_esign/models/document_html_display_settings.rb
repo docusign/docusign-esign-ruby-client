@@ -16,6 +16,7 @@ module DocuSign_eSign
     # 
     attr_accessor :cell_style
 
+    # This object defines the appearance and function of a collapsible section or item.
     attr_accessor :collapsible_settings
 
     # 

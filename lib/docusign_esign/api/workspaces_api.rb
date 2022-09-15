@@ -133,7 +133,7 @@ module DocuSign_eSign
     end
 
     # Creates a workspace file.
-    # 
+    # This method adds a file to a workspace.
     # @param account_id The external account number (int) or account ID Guid.
     # @param folder_id The ID of the folder being accessed.
     # @param workspace_id Specifies the workspace ID GUID.
@@ -144,7 +144,7 @@ module DocuSign_eSign
     end
 
     # Creates a workspace file.
-    # 
+    # This method adds a file to a workspace.
     # @param account_id The external account number (int) or account ID Guid.
     # @param folder_id The ID of the folder being accessed.
     # @param workspace_id Specifies the workspace ID GUID.
@@ -243,7 +243,7 @@ module DocuSign_eSign
     end
 
     # Deletes workspace one or more specific files/folders from the given folder or root.
-    # 
+    # This method deletes one or more files or sub-folders from a workspace folder or root.  Note: To delete items from a workspace, the `status` of the workspace must be `active`.
     # @param account_id The external account number (int) or account ID Guid.
     # @param folder_id The ID of the folder being accessed.
     # @param workspace_id Specifies the workspace ID GUID.
@@ -255,7 +255,7 @@ module DocuSign_eSign
     end
 
     # Deletes workspace one or more specific files/folders from the given folder or root.
-    # 
+    # This method deletes one or more files or sub-folders from a workspace folder or root.  Note: To delete items from a workspace, the &#x60;status&#x60; of the workspace must be &#x60;active&#x60;.
     # @param account_id The external account number (int) or account ID Guid.
     # @param folder_id The ID of the folder being accessed.
     # @param workspace_id Specifies the workspace ID GUID.

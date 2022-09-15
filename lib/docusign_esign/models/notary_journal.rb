@@ -19,11 +19,13 @@ module DocuSign_eSign
     # 
     attr_accessor :document_name
 
+    # The notary's jurisdiction. 
     attr_accessor :jurisdiction
 
     # 
     attr_accessor :notary_journal_id
 
+    # Additional journal data such as the witness list and signature image.
     attr_accessor :notary_journal_meta_data
 
     # 

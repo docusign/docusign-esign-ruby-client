@@ -29,6 +29,7 @@ module DocuSign_eSign
     # A complex type defining the management and access rights of a recipient assigned assigned as an editor on the document.
     attr_accessor :editors
 
+    # This object describes errors that occur. It is only valid for responses and ignored in requests.
     attr_accessor :error_details
 
     # Specifies a signer that is in the same physical location as a DocuSign user who will act as a Signing Host for the transaction. The recipient added is the Signing Host and new separate Signer Name field appears after Sign in person is selected.

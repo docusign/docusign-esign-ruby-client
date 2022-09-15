@@ -17,6 +17,7 @@ module DocuSign_eSign
     # Specifies the ISO currency code for the account.
     attr_accessor :currency_code
 
+    # 
     attr_accessor :invoice
 
     # 

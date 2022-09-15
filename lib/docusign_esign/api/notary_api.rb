@@ -46,7 +46,7 @@ module DocuSign_eSign
     end
 
     # Add a notary to the system
-    # 
+    # Registers the current user as a notary.
     # @param notary  (optional parameter)
     # @return [Notary]
     def create_notary(notary)
@@ -55,7 +55,7 @@ module DocuSign_eSign
     end
 
     # Add a notary to the system
-    # 
+    # Registers the current user as a notary.
     # @param notary  (optional parameter)
     # @return [Array<(Notary, Fixnum, Hash)>] Notary data, response status code and response headers
     def create_notary_with_http_info(notary)
@@ -93,7 +93,7 @@ module DocuSign_eSign
     end
 
     # Add a notary jurisdiction to the system
-    # 
+    # Creates a jurisdiction object.
     # @param notary_jurisdiction  (optional parameter)
     # @return [NotaryJurisdiction]
     def create_notary_jurisdictions(notary_jurisdiction)
@@ -102,7 +102,7 @@ module DocuSign_eSign
     end
 
     # Add a notary jurisdiction to the system
-    # 
+    # Creates a jurisdiction object.
     # @param notary_jurisdiction  (optional parameter)
     # @return [Array<(NotaryJurisdiction, Fixnum, Hash)>] NotaryJurisdiction data, response status code and response headers
     def create_notary_jurisdictions_with_http_info(notary_jurisdiction)
@@ -140,7 +140,7 @@ module DocuSign_eSign
     end
 
     # Delete a notary jurisdiction a specified user.
-    # 
+    # Deletes the specified jurisdiction.
     # @param jurisdiction_id 
     # @return [nil]
     def delete_notary_jurisdiction(jurisdiction_id)
@@ -149,7 +149,7 @@ module DocuSign_eSign
     end
 
     # Delete a notary jurisdiction a specified user.
-    # 
+    # Deletes the specified jurisdiction.
     # @param jurisdiction_id 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_notary_jurisdiction_with_http_info(jurisdiction_id)
@@ -188,7 +188,7 @@ module DocuSign_eSign
     end
 
     # Get notary settings for a user
-    # 
+    # Gets settings for a notary user. The current user must be a notary.
     # @param DocuSign_eSign::GetNotaryOptions Options for modifying the behavior of the function.
     # @return [NotaryResult]
     def get_notary(options = DocuSign_eSign::GetNotaryOptions.default)
@@ -197,7 +197,7 @@ module DocuSign_eSign
     end
 
     # Get notary settings for a user
-    # 
+    # Gets settings for a notary user. The current user must be a notary.
     # @param DocuSign_eSign::GetNotaryOptions Options for modifying the behavior of the function.
     # @return [Array<(NotaryResult, Fixnum, Hash)>] NotaryResult data, response status code and response headers
     def get_notary_with_http_info(options = DocuSign_eSign::GetNotaryOptions.default)
@@ -236,7 +236,7 @@ module DocuSign_eSign
     end
 
     # Get notary a jurisdiction for a user
-    # 
+    # Gets a jurisdiction object for the current user.  The following restrictions apply:  - The current user must be a notary. - The `jurisdictionId` must be a jurisdiction that the notary is registered for. 
     # @param jurisdiction_id 
     # @return [NotaryJurisdiction]
     def get_notary_jurisdiction(jurisdiction_id)
@@ -245,7 +245,7 @@ module DocuSign_eSign
     end
 
     # Get notary a jurisdiction for a user
-    # 
+    # Gets a jurisdiction object for the current user.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; must be a jurisdiction that the notary is registered for. 
     # @param jurisdiction_id 
     # @return [Array<(NotaryJurisdiction, Fixnum, Hash)>] NotaryJurisdiction data, response status code and response headers
     def get_notary_jurisdiction_with_http_info(jurisdiction_id)
@@ -333,7 +333,7 @@ module DocuSign_eSign
     end
 
     # Get notary jurisdictions for a user
-    # 
+    # Returns a list of jurisdictions that the notary is registered in. The current user must be a notary.
     # @return [NotaryJurisdictionList]
     def get_notary_jurisdictions()
       data, _status_code, _headers = get_notary_jurisdictions_with_http_info()
@@ -341,7 +341,7 @@ module DocuSign_eSign
     end
 
     # Get notary jurisdictions for a user
-    # 
+    # Returns a list of jurisdictions that the notary is registered in. The current user must be a notary.
     # @return [Array<(NotaryJurisdictionList, Fixnum, Hash)>] NotaryJurisdictionList data, response status code and response headers
     def get_notary_jurisdictions_with_http_info()
       if @api_client.config.debugging
@@ -428,7 +428,7 @@ module DocuSign_eSign
     end
 
     # Update a notary
-    # 
+    # Updates notary information for the current user.
     # @param notary  (optional parameter)
     # @return [Notary]
     def update_notary(notary)
@@ -437,7 +437,7 @@ module DocuSign_eSign
     end
 
     # Update a notary
-    # 
+    # Updates notary information for the current user.
     # @param notary  (optional parameter)
     # @return [Array<(Notary, Fixnum, Hash)>] Notary data, response status code and response headers
     def update_notary_with_http_info(notary)
@@ -475,7 +475,7 @@ module DocuSign_eSign
     end
 
     # Update a notary jurisdiction
-    # 
+    # Updates the jurisdiction information about a notary.  The following restrictions apply:  - The current user must be a notary. - The `jurisdictionId` path parameter must be a jurisdiction that the notary is registered for. - The `jurisdictionId` path parameter must match the request body's `jurisdiction.jurisdictionId`.  The request body must have a full `jurisdiction` object for the jurisdiction property. The best way to do this is to use `getNotaryJurisdiction` to obtain the current values and update the properties you want to change.  For example, assume `getNotaryJurisdiction` returns this:  ``` {     \"jurisdiction\": {         \"jurisdictionId\": \"15\",         \"name\": \"Iowa\",         \"county\": \"\",         \"enabled\": \"true\",         \"countyInSeal\": \"false\",         \"commissionIdInSeal\": \"true\",         \"stateNameInSeal\": \"true\",         \"notaryPublicInSeal\": \"true\",         \"allowSystemCreatedSeal\": \"true\",         \"allowUserUploadedSeal\": \"false\"     },     \"commissionId\": \"123456\",     \"commissionExpiration\": \"2020-08-31T07:00:00.0000000Z\",     \"registeredName\": \"Bob Notary\",     \"county\": \"Adams\",     \"sealType\": \"system_created\" } ```  If you want to change the name of the notary from \"Bob Notary\" to \"Robert Notary\", your request body would be:  ``` {     \"jurisdiction\": {         \"jurisdictionId\": \"15\",         \"name\": \"Iowa\",         \"county\": \"\",         \"enabled\": \"true\",         \"countyInSeal\": \"false\",         \"commissionIdInSeal\": \"true\",         \"stateNameInSeal\": \"true\",         \"notaryPublicInSeal\": \"true\",         \"allowSystemCreatedSeal\": \"true\",         \"allowUserUploadedSeal\": \"false\"     },     \"commissionId\": \"123456\",     \"commissionExpiration\": \"2020-08-31T07:00:00.0000000Z\",     \"registeredName\": \"Robert Notary\",     \"county\": \"Adams\",     \"sealType\": \"system_created\" } ``` 
     # @param jurisdiction_id 
     # @param notary_jurisdiction  (optional parameter)
     # @return [NotaryJurisdiction]
@@ -485,7 +485,7 @@ module DocuSign_eSign
     end
 
     # Update a notary jurisdiction
-    # 
+    # Updates the jurisdiction information about a notary.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; path parameter must be a jurisdiction that the notary is registered for. - The &#x60;jurisdictionId&#x60; path parameter must match the request body&#39;s &#x60;jurisdiction.jurisdictionId&#x60;.  The request body must have a full &#x60;jurisdiction&#x60; object for the jurisdiction property. The best way to do this is to use &#x60;getNotaryJurisdiction&#x60; to obtain the current values and update the properties you want to change.  For example, assume &#x60;getNotaryJurisdiction&#x60; returns this:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Bob Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60;  If you want to change the name of the notary from \&quot;Bob Notary\&quot; to \&quot;Robert Notary\&quot;, your request body would be:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Robert Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60; 
     # @param jurisdiction_id 
     # @param notary_jurisdiction  (optional parameter)
     # @return [Array<(NotaryJurisdiction, Fixnum, Hash)>] NotaryJurisdiction data, response status code and response headers

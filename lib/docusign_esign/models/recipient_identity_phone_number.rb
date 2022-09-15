@@ -19,16 +19,19 @@ module DocuSign_eSign
     # 
     attr_accessor :country_code_lock
 
+    # Metadata that indicates if the `countryCode` property is editable.
     attr_accessor :country_code_metadata
 
     # 
     attr_accessor :extension
 
+    # Metadata that indicates if the `extension` property is editable.
     attr_accessor :extension_metadata
 
     # 
     attr_accessor :number
 
+    # Metadata that indicates if the `number` property is editable.
     attr_accessor :number_metadata
 
     # Attribute mapping from ruby-style variable name to JSON key.
