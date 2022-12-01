@@ -77,6 +77,9 @@ module DocuSign_eSign
     # 
     attr_accessor :include_hmac
 
+    # 
+    attr_accessor :include_o_auth
+
     # When set to **true**, Connect will include the sender account as Custom Field in the data.
     attr_accessor :include_sender_accountas_custom_field
 
@@ -161,6 +164,7 @@ module DocuSign_eSign
         :'include_documents' => :'includeDocuments',
         :'include_envelope_void_reason' => :'includeEnvelopeVoidReason',
         :'include_hmac' => :'includeHMAC',
+        :'include_o_auth' => :'includeOAuth',
         :'include_sender_accountas_custom_field' => :'includeSenderAccountasCustomField',
         :'include_time_zone_information' => :'includeTimeZoneInformation',
         :'name' => :'name',
@@ -208,6 +212,7 @@ module DocuSign_eSign
         :'include_documents' => :'String',
         :'include_envelope_void_reason' => :'String',
         :'include_hmac' => :'String',
+        :'include_o_auth' => :'String',
         :'include_sender_accountas_custom_field' => :'String',
         :'include_time_zone_information' => :'String',
         :'name' => :'String',
@@ -327,6 +332,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'includeHMAC')
         self.include_hmac = attributes[:'includeHMAC']
+      end
+
+      if attributes.has_key?(:'includeOAuth')
+        self.include_o_auth = attributes[:'includeOAuth']
       end
 
       if attributes.has_key?(:'includeSenderAccountasCustomField')
@@ -457,6 +466,7 @@ module DocuSign_eSign
           include_documents == o.include_documents &&
           include_envelope_void_reason == o.include_envelope_void_reason &&
           include_hmac == o.include_hmac &&
+          include_o_auth == o.include_o_auth &&
           include_sender_accountas_custom_field == o.include_sender_accountas_custom_field &&
           include_time_zone_information == o.include_time_zone_information &&
           name == o.name &&
@@ -488,7 +498,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_envelope_publish, allow_salesforce_publish, all_users, all_users_except, configuration_type, connect_id, delivery_mode, disabled_by, enable_log, envelope_events, event_data, events, external_folder_id, external_folder_label, group_ids, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_accountas_custom_field, include_time_zone_information, name, password, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
+      [allow_envelope_publish, allow_salesforce_publish, all_users, all_users_except, configuration_type, connect_id, delivery_mode, disabled_by, enable_log, envelope_events, event_data, events, external_folder_id, external_folder_label, group_ids, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_o_auth, include_sender_accountas_custom_field, include_time_zone_information, name, password, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
     end
 
     # Builds the object from hash

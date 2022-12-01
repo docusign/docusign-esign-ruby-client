@@ -44,6 +44,9 @@ module DocuSign_eSign
     # 
     attr_accessor :include_hmac
 
+    # 
+    attr_accessor :include_o_auth
+
     # When set to **true**, the sender account ID is included as a envelope custom field in the data. 
     attr_accessor :include_sender_account_as_custom_field
 
@@ -84,6 +87,7 @@ module DocuSign_eSign
         :'include_documents' => :'includeDocuments',
         :'include_envelope_void_reason' => :'includeEnvelopeVoidReason',
         :'include_hmac' => :'includeHMAC',
+        :'include_o_auth' => :'includeOAuth',
         :'include_sender_account_as_custom_field' => :'includeSenderAccountAsCustomField',
         :'include_time_zone' => :'includeTimeZone',
         :'logging_enabled' => :'loggingEnabled',
@@ -109,6 +113,7 @@ module DocuSign_eSign
         :'include_documents' => :'String',
         :'include_envelope_void_reason' => :'String',
         :'include_hmac' => :'String',
+        :'include_o_auth' => :'String',
         :'include_sender_account_as_custom_field' => :'String',
         :'include_time_zone' => :'String',
         :'logging_enabled' => :'String',
@@ -171,6 +176,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'includeHMAC')
         self.include_hmac = attributes[:'includeHMAC']
+      end
+
+      if attributes.has_key?(:'includeOAuth')
+        self.include_o_auth = attributes[:'includeOAuth']
       end
 
       if attributes.has_key?(:'includeSenderAccountAsCustomField')
@@ -240,6 +249,7 @@ module DocuSign_eSign
           include_documents == o.include_documents &&
           include_envelope_void_reason == o.include_envelope_void_reason &&
           include_hmac == o.include_hmac &&
+          include_o_auth == o.include_o_auth &&
           include_sender_account_as_custom_field == o.include_sender_account_as_custom_field &&
           include_time_zone == o.include_time_zone &&
           logging_enabled == o.logging_enabled &&
@@ -260,7 +270,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [delivery_mode, envelope_events, event_data, events, include_certificate_of_completion, include_certificate_with_soap, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_sender_account_as_custom_field, include_time_zone, logging_enabled, recipient_events, require_acknowledgment, sign_message_with_x509_cert, soap_name_space, url, use_soap_interface].hash
+      [delivery_mode, envelope_events, event_data, events, include_certificate_of_completion, include_certificate_with_soap, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_o_auth, include_sender_account_as_custom_field, include_time_zone, logging_enabled, recipient_events, require_acknowledgment, sign_message_with_x509_cert, soap_name_space, url, use_soap_interface].hash
     end
 
     # Builds the object from hash

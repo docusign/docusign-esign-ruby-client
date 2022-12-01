@@ -39,6 +39,15 @@ module DocuSign_eSign
     attr_accessor :display_metadata
 
     # 
+    attr_accessor :doc_gen_document_status
+
+    # 
+    attr_accessor :doc_gen_errors
+
+    # 
+    attr_accessor :doc_gen_form_fields
+
+    # 
     attr_accessor :document_base64
 
     # 
@@ -58,6 +67,9 @@ module DocuSign_eSign
 
     # Metadata that indicates if the sender can edit the `includeInDownload` property. Not applicable for template documents.
     attr_accessor :include_in_download_metadata
+
+    # 
+    attr_accessor :is_doc_gen_document
 
     # 
     attr_accessor :name
@@ -103,6 +115,9 @@ module DocuSign_eSign
         :'contains_pdf_form_fields' => :'containsPdfFormFields',
         :'display' => :'display',
         :'display_metadata' => :'displayMetadata',
+        :'doc_gen_document_status' => :'docGenDocumentStatus',
+        :'doc_gen_errors' => :'docGenErrors',
+        :'doc_gen_form_fields' => :'docGenFormFields',
         :'document_base64' => :'documentBase64',
         :'document_fields' => :'documentFields',
         :'document_id' => :'documentId',
@@ -110,6 +125,7 @@ module DocuSign_eSign
         :'error_details' => :'errorDetails',
         :'include_in_download' => :'includeInDownload',
         :'include_in_download_metadata' => :'includeInDownloadMetadata',
+        :'is_doc_gen_document' => :'isDocGenDocument',
         :'name' => :'name',
         :'name_metadata' => :'nameMetadata',
         :'order' => :'order',
@@ -135,6 +151,9 @@ module DocuSign_eSign
         :'contains_pdf_form_fields' => :'String',
         :'display' => :'String',
         :'display_metadata' => :'PropertyMetadata',
+        :'doc_gen_document_status' => :'String',
+        :'doc_gen_errors' => :'Array<DocGenSyntaxError>',
+        :'doc_gen_form_fields' => :'Array<DocGenFormField>',
         :'document_base64' => :'String',
         :'document_fields' => :'Array<NameValue>',
         :'document_id' => :'String',
@@ -142,6 +161,7 @@ module DocuSign_eSign
         :'error_details' => :'ErrorDetails',
         :'include_in_download' => :'String',
         :'include_in_download_metadata' => :'PropertyMetadata',
+        :'is_doc_gen_document' => :'String',
         :'name' => :'String',
         :'name_metadata' => :'PropertyMetadata',
         :'order' => :'String',
@@ -200,6 +220,22 @@ module DocuSign_eSign
         self.display_metadata = attributes[:'displayMetadata']
       end
 
+      if attributes.has_key?(:'docGenDocumentStatus')
+        self.doc_gen_document_status = attributes[:'docGenDocumentStatus']
+      end
+
+      if attributes.has_key?(:'docGenErrors')
+        if (value = attributes[:'docGenErrors']).is_a?(Array)
+          self.doc_gen_errors = value
+        end
+      end
+
+      if attributes.has_key?(:'docGenFormFields')
+        if (value = attributes[:'docGenFormFields']).is_a?(Array)
+          self.doc_gen_form_fields = value
+        end
+      end
+
       if attributes.has_key?(:'documentBase64')
         self.document_base64 = attributes[:'documentBase64']
       end
@@ -228,6 +264,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'includeInDownloadMetadata')
         self.include_in_download_metadata = attributes[:'includeInDownloadMetadata']
+      end
+
+      if attributes.has_key?(:'isDocGenDocument')
+        self.is_doc_gen_document = attributes[:'isDocGenDocument']
       end
 
       if attributes.has_key?(:'name')
@@ -303,6 +343,9 @@ module DocuSign_eSign
           contains_pdf_form_fields == o.contains_pdf_form_fields &&
           display == o.display &&
           display_metadata == o.display_metadata &&
+          doc_gen_document_status == o.doc_gen_document_status &&
+          doc_gen_errors == o.doc_gen_errors &&
+          doc_gen_form_fields == o.doc_gen_form_fields &&
           document_base64 == o.document_base64 &&
           document_fields == o.document_fields &&
           document_id == o.document_id &&
@@ -310,6 +353,7 @@ module DocuSign_eSign
           error_details == o.error_details &&
           include_in_download == o.include_in_download &&
           include_in_download_metadata == o.include_in_download_metadata &&
+          is_doc_gen_document == o.is_doc_gen_document &&
           name == o.name &&
           name_metadata == o.name_metadata &&
           order == o.order &&
@@ -332,7 +376,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [added_recipient_ids, attachment_tab_id, authoritative_copy, authoritative_copy_metadata, available_document_types, contains_pdf_form_fields, display, display_metadata, document_base64, document_fields, document_id, document_id_guid, error_details, include_in_download, include_in_download_metadata, name, name_metadata, order, pages, signer_must_acknowledge, signer_must_acknowledge_metadata, size_bytes, template_locked, template_required, type, uri].hash
+      [added_recipient_ids, attachment_tab_id, authoritative_copy, authoritative_copy_metadata, available_document_types, contains_pdf_form_fields, display, display_metadata, doc_gen_document_status, doc_gen_errors, doc_gen_form_fields, document_base64, document_fields, document_id, document_id_guid, error_details, include_in_download, include_in_download_metadata, is_doc_gen_document, name, name_metadata, order, pages, signer_must_acknowledge, signer_must_acknowledge_metadata, size_bytes, template_locked, template_required, type, uri].hash
     end
 
     # Builds the object from hash

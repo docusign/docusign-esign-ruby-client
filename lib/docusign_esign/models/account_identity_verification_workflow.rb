@@ -33,6 +33,9 @@ module DocuSign_eSign
     attr_accessor :workflow_id
 
     # 
+    attr_accessor :workflow_label
+
+    # 
     attr_accessor :workflow_resource_key
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -44,6 +47,7 @@ module DocuSign_eSign
         :'signature_provider' => :'signatureProvider',
         :'steps' => :'steps',
         :'workflow_id' => :'workflowId',
+        :'workflow_label' => :'workflowLabel',
         :'workflow_resource_key' => :'workflowResourceKey'
       }
     end
@@ -57,6 +61,7 @@ module DocuSign_eSign
         :'signature_provider' => :'AccountSignatureProvider',
         :'steps' => :'Array<AccountIdentityVerificationStep>',
         :'workflow_id' => :'String',
+        :'workflow_label' => :'String',
         :'workflow_resource_key' => :'String'
       }
     end
@@ -97,6 +102,10 @@ module DocuSign_eSign
         self.workflow_id = attributes[:'workflowId']
       end
 
+      if attributes.has_key?(:'workflowLabel')
+        self.workflow_label = attributes[:'workflowLabel']
+      end
+
       if attributes.has_key?(:'workflowResourceKey')
         self.workflow_resource_key = attributes[:'workflowResourceKey']
       end
@@ -126,6 +135,7 @@ module DocuSign_eSign
           signature_provider == o.signature_provider &&
           steps == o.steps &&
           workflow_id == o.workflow_id &&
+          workflow_label == o.workflow_label &&
           workflow_resource_key == o.workflow_resource_key
     end
 
@@ -138,7 +148,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_description, default_name, input_options, signature_provider, steps, workflow_id, workflow_resource_key].hash
+      [default_description, default_name, input_options, signature_provider, steps, workflow_id, workflow_label, workflow_resource_key].hash
     end
 
     # Builds the object from hash
