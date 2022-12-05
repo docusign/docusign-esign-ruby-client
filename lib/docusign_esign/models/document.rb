@@ -23,6 +23,9 @@ module DocuSign_eSign
     # 
     attr_accessor :display
 
+    # 
+    attr_accessor :doc_gen_form_fields
+
     # The document's bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding.
     attr_accessor :document_base64
 
@@ -46,6 +49,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :include_in_download
+
+    # 
+    attr_accessor :is_doc_gen_document
 
     # Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.  
     attr_accessor :match_boxes
@@ -95,6 +101,7 @@ module DocuSign_eSign
         :'apply_anchor_tabs' => :'applyAnchorTabs',
         :'assign_tabs_to_recipient_id' => :'assignTabsToRecipientId',
         :'display' => :'display',
+        :'doc_gen_form_fields' => :'docGenFormFields',
         :'document_base64' => :'documentBase64',
         :'document_fields' => :'documentFields',
         :'document_id' => :'documentId',
@@ -103,6 +110,7 @@ module DocuSign_eSign
         :'file_format_hint' => :'fileFormatHint',
         :'html_definition' => :'htmlDefinition',
         :'include_in_download' => :'includeInDownload',
+        :'is_doc_gen_document' => :'isDocGenDocument',
         :'match_boxes' => :'matchBoxes',
         :'name' => :'name',
         :'order' => :'order',
@@ -126,6 +134,7 @@ module DocuSign_eSign
         :'apply_anchor_tabs' => :'String',
         :'assign_tabs_to_recipient_id' => :'String',
         :'display' => :'String',
+        :'doc_gen_form_fields' => :'Array<DocGenFormField>',
         :'document_base64' => :'String',
         :'document_fields' => :'Array<NameValue>',
         :'document_id' => :'String',
@@ -134,6 +143,7 @@ module DocuSign_eSign
         :'file_format_hint' => :'String',
         :'html_definition' => :'DocumentHtmlDefinition',
         :'include_in_download' => :'String',
+        :'is_doc_gen_document' => :'String',
         :'match_boxes' => :'Array<MatchBox>',
         :'name' => :'String',
         :'order' => :'String',
@@ -171,6 +181,12 @@ module DocuSign_eSign
         self.display = attributes[:'display']
       end
 
+      if attributes.has_key?(:'docGenFormFields')
+        if (value = attributes[:'docGenFormFields']).is_a?(Array)
+          self.doc_gen_form_fields = value
+        end
+      end
+
       if attributes.has_key?(:'documentBase64')
         self.document_base64 = attributes[:'documentBase64']
       end
@@ -203,6 +219,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'includeInDownload')
         self.include_in_download = attributes[:'includeInDownload']
+      end
+
+      if attributes.has_key?(:'isDocGenDocument')
+        self.is_doc_gen_document = attributes[:'isDocGenDocument']
       end
 
       if attributes.has_key?(:'matchBoxes')
@@ -285,6 +305,7 @@ module DocuSign_eSign
           apply_anchor_tabs == o.apply_anchor_tabs &&
           assign_tabs_to_recipient_id == o.assign_tabs_to_recipient_id &&
           display == o.display &&
+          doc_gen_form_fields == o.doc_gen_form_fields &&
           document_base64 == o.document_base64 &&
           document_fields == o.document_fields &&
           document_id == o.document_id &&
@@ -293,6 +314,7 @@ module DocuSign_eSign
           file_format_hint == o.file_format_hint &&
           html_definition == o.html_definition &&
           include_in_download == o.include_in_download &&
+          is_doc_gen_document == o.is_doc_gen_document &&
           match_boxes == o.match_boxes &&
           name == o.name &&
           order == o.order &&
@@ -318,7 +340,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [apply_anchor_tabs, assign_tabs_to_recipient_id, display, document_base64, document_fields, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, match_boxes, name, order, pages, password, pdf_form_field_option, remote_url, signer_must_acknowledge, signer_must_acknowledge_use_account_default, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
+      [apply_anchor_tabs, assign_tabs_to_recipient_id, display, doc_gen_form_fields, document_base64, document_fields, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, is_doc_gen_document, match_boxes, name, order, pages, password, pdf_form_field_option, remote_url, signer_must_acknowledge, signer_must_acknowledge_use_account_default, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
     end
 
     # Builds the object from hash

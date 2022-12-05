@@ -23,6 +23,9 @@ module DocuSign_eSign
     attr_accessor :client_secret
 
     # 
+    attr_accessor :custom_parameters
+
+    # 
     attr_accessor :scope
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -31,6 +34,7 @@ module DocuSign_eSign
         :'authorization_server_url' => :'authorizationServerUrl',
         :'client_id' => :'clientId',
         :'client_secret' => :'clientSecret',
+        :'custom_parameters' => :'customParameters',
         :'scope' => :'scope'
       }
     end
@@ -41,6 +45,7 @@ module DocuSign_eSign
         :'authorization_server_url' => :'String',
         :'client_id' => :'String',
         :'client_secret' => :'String',
+        :'custom_parameters' => :'String',
         :'scope' => :'String'
       }
     end
@@ -63,6 +68,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'clientSecret')
         self.client_secret = attributes[:'clientSecret']
+      end
+
+      if attributes.has_key?(:'customParameters')
+        self.custom_parameters = attributes[:'customParameters']
       end
 
       if attributes.has_key?(:'scope')
@@ -91,6 +100,7 @@ module DocuSign_eSign
           authorization_server_url == o.authorization_server_url &&
           client_id == o.client_id &&
           client_secret == o.client_secret &&
+          custom_parameters == o.custom_parameters &&
           scope == o.scope
     end
 
@@ -103,7 +113,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [authorization_server_url, client_id, client_secret, scope].hash
+      [authorization_server_url, client_id, client_secret, custom_parameters, scope].hash
     end
 
     # Builds the object from hash
