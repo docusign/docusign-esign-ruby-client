@@ -23,12 +23,16 @@ module DocuSign_eSign
     # 
     attr_accessor :workflow_id_metadata
 
+    # 
+    attr_accessor :workflow_label
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'input_options' => :'inputOptions',
         :'workflow_id' => :'workflowId',
-        :'workflow_id_metadata' => :'workflowIdMetadata'
+        :'workflow_id_metadata' => :'workflowIdMetadata',
+        :'workflow_label' => :'workflowLabel'
       }
     end
 
@@ -37,7 +41,8 @@ module DocuSign_eSign
       {
         :'input_options' => :'Array<RecipientIdentityInputOption>',
         :'workflow_id' => :'String',
-        :'workflow_id_metadata' => :'PropertyMetadata'
+        :'workflow_id_metadata' => :'PropertyMetadata',
+        :'workflow_label' => :'String'
       }
     end
 
@@ -62,6 +67,10 @@ module DocuSign_eSign
       if attributes.has_key?(:'workflowIdMetadata')
         self.workflow_id_metadata = attributes[:'workflowIdMetadata']
       end
+
+      if attributes.has_key?(:'workflowLabel')
+        self.workflow_label = attributes[:'workflowLabel']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -84,7 +93,8 @@ module DocuSign_eSign
       self.class == o.class &&
           input_options == o.input_options &&
           workflow_id == o.workflow_id &&
-          workflow_id_metadata == o.workflow_id_metadata
+          workflow_id_metadata == o.workflow_id_metadata &&
+          workflow_label == o.workflow_label
     end
 
     # @see the `==` method
@@ -96,7 +106,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [input_options, workflow_id, workflow_id_metadata].hash
+      [input_options, workflow_id, workflow_id_metadata, workflow_label].hash
     end
 
     # Builds the object from hash

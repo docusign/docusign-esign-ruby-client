@@ -40,6 +40,8 @@ module DocuSign_eSign
     # 
     attr_accessor :name
 
+    attr_accessor :notary_contact_details
+
     # 
     attr_accessor :organization
 
@@ -67,6 +69,7 @@ module DocuSign_eSign
         :'error_details' => :'errorDetails',
         :'is_owner' => :'isOwner',
         :'name' => :'name',
+        :'notary_contact_details' => :'notaryContactDetails',
         :'organization' => :'organization',
         :'room_contact_type' => :'roomContactType',
         :'shared' => :'shared',
@@ -87,6 +90,7 @@ module DocuSign_eSign
         :'error_details' => :'ErrorDetails',
         :'is_owner' => :'BOOLEAN',
         :'name' => :'String',
+        :'notary_contact_details' => :'NotaryContactDetails',
         :'organization' => :'String',
         :'room_contact_type' => :'String',
         :'shared' => :'String',
@@ -143,6 +147,10 @@ module DocuSign_eSign
         self.name = attributes[:'name']
       end
 
+      if attributes.has_key?(:'notaryContactDetails')
+        self.notary_contact_details = attributes[:'notaryContactDetails']
+      end
+
       if attributes.has_key?(:'organization')
         self.organization = attributes[:'organization']
       end
@@ -191,6 +199,7 @@ module DocuSign_eSign
           error_details == o.error_details &&
           is_owner == o.is_owner &&
           name == o.name &&
+          notary_contact_details == o.notary_contact_details &&
           organization == o.organization &&
           room_contact_type == o.room_contact_type &&
           shared == o.shared &&
@@ -207,7 +216,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cloud_provider, cloud_provider_container_id, contact_id, contact_phone_numbers, contact_uri, emails, error_details, is_owner, name, organization, room_contact_type, shared, signing_group, signing_group_name].hash
+      [cloud_provider, cloud_provider_container_id, contact_id, contact_phone_numbers, contact_uri, emails, error_details, is_owner, name, notary_contact_details, organization, room_contact_type, shared, signing_group, signing_group_name].hash
     end
 
     # Builds the object from hash

@@ -15,6 +15,9 @@ module DocuSign_eSign
 
   class ListOptions
     # 
+    attr_accessor :count
+
+    # 
     attr_accessor :include
 
     # 
@@ -22,6 +25,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :start_position
+
+    # 
+    attr_accessor :sub_folder_depth
 
     # Specifies the items that are returned. Valid values are:   * include - The folder list will return normal folders plus template folders.  * only - Only the list of template folders are returned.
     attr_accessor :template
@@ -128,9 +134,11 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'count'] = options.count if !options.count.nil?
       query_params[:'include'] = options.include if !options.include.nil?
       query_params[:'include_items'] = options.include_items if !options.include_items.nil?
       query_params[:'start_position'] = options.start_position if !options.start_position.nil?
+      query_params[:'sub_folder_depth'] = options.sub_folder_depth if !options.sub_folder_depth.nil?
       query_params[:'template'] = options.template if !options.template.nil?
       query_params[:'user_filter'] = options.user_filter if !options.user_filter.nil?
 

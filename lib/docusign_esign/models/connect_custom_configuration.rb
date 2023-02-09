@@ -86,6 +86,9 @@ module DocuSign_eSign
     # When set to **true**, Connect will include the envelope time zone information.
     attr_accessor :include_time_zone_information
 
+    # 
+    attr_accessor :integrator_managed
+
     # The name of the Connect configuration. The name helps identify the configuration in the list.
     attr_accessor :name
 
@@ -167,6 +170,7 @@ module DocuSign_eSign
         :'include_o_auth' => :'includeOAuth',
         :'include_sender_accountas_custom_field' => :'includeSenderAccountasCustomField',
         :'include_time_zone_information' => :'includeTimeZoneInformation',
+        :'integrator_managed' => :'integratorManaged',
         :'name' => :'name',
         :'password' => :'password',
         :'recipient_events' => :'recipientEvents',
@@ -215,6 +219,7 @@ module DocuSign_eSign
         :'include_o_auth' => :'String',
         :'include_sender_accountas_custom_field' => :'String',
         :'include_time_zone_information' => :'String',
+        :'integrator_managed' => :'String',
         :'name' => :'String',
         :'password' => :'String',
         :'recipient_events' => :'Array<String>',
@@ -346,6 +351,10 @@ module DocuSign_eSign
         self.include_time_zone_information = attributes[:'includeTimeZoneInformation']
       end
 
+      if attributes.has_key?(:'integratorManaged')
+        self.integrator_managed = attributes[:'integratorManaged']
+      end
+
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
       end
@@ -469,6 +478,7 @@ module DocuSign_eSign
           include_o_auth == o.include_o_auth &&
           include_sender_accountas_custom_field == o.include_sender_accountas_custom_field &&
           include_time_zone_information == o.include_time_zone_information &&
+          integrator_managed == o.integrator_managed &&
           name == o.name &&
           password == o.password &&
           recipient_events == o.recipient_events &&
@@ -498,7 +508,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_envelope_publish, allow_salesforce_publish, all_users, all_users_except, configuration_type, connect_id, delivery_mode, disabled_by, enable_log, envelope_events, event_data, events, external_folder_id, external_folder_label, group_ids, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_o_auth, include_sender_accountas_custom_field, include_time_zone_information, name, password, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
+      [allow_envelope_publish, allow_salesforce_publish, all_users, all_users_except, configuration_type, connect_id, delivery_mode, disabled_by, enable_log, envelope_events, event_data, events, external_folder_id, external_folder_label, group_ids, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_o_auth, include_sender_accountas_custom_field, include_time_zone_information, integrator_managed, name, password, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
     end
 
     # Builds the object from hash
