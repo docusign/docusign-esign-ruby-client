@@ -92,6 +92,9 @@ module DocuSign_eSign
     attr_accessor :number_tabs
 
     # 
+    attr_accessor :numerical_tabs
+
+    # 
     attr_accessor :phone_number_tabs
 
     # 
@@ -159,6 +162,7 @@ module DocuSign_eSign
         :'notary_seal_tabs' => :'notarySealTabs',
         :'note_tabs' => :'noteTabs',
         :'number_tabs' => :'numberTabs',
+        :'numerical_tabs' => :'numericalTabs',
         :'phone_number_tabs' => :'phoneNumberTabs',
         :'poly_line_overlay_tabs' => :'polyLineOverlayTabs',
         :'prefill_tabs' => :'prefillTabs',
@@ -204,6 +208,7 @@ module DocuSign_eSign
         :'notary_seal_tabs' => :'Array<NotarySeal>',
         :'note_tabs' => :'Array<Note>',
         :'number_tabs' => :'Array<Number>',
+        :'numerical_tabs' => :'Array<Numerical>',
         :'phone_number_tabs' => :'Array<PhoneNumber>',
         :'poly_line_overlay_tabs' => :'Array<PolyLineOverlay>',
         :'prefill_tabs' => :'PrefillTabs',
@@ -384,6 +389,12 @@ module DocuSign_eSign
         end
       end
 
+      if attributes.has_key?(:'numericalTabs')
+        if (value = attributes[:'numericalTabs']).is_a?(Array)
+          self.numerical_tabs = value
+        end
+      end
+
       if attributes.has_key?(:'phoneNumberTabs')
         if (value = attributes[:'phoneNumberTabs']).is_a?(Array)
           self.phone_number_tabs = value
@@ -505,6 +516,7 @@ module DocuSign_eSign
           notary_seal_tabs == o.notary_seal_tabs &&
           note_tabs == o.note_tabs &&
           number_tabs == o.number_tabs &&
+          numerical_tabs == o.numerical_tabs &&
           phone_number_tabs == o.phone_number_tabs &&
           poly_line_overlay_tabs == o.poly_line_overlay_tabs &&
           prefill_tabs == o.prefill_tabs &&
@@ -529,7 +541,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [approve_tabs, checkbox_tabs, comment_thread_tabs, commission_county_tabs, commission_expiration_tabs, commission_number_tabs, commission_state_tabs, company_tabs, currency_tabs, date_signed_tabs, date_tabs, decline_tabs, draw_tabs, email_address_tabs, email_tabs, envelope_id_tabs, first_name_tabs, formula_tabs, full_name_tabs, initial_here_tabs, last_name_tabs, list_tabs, notarize_tabs, notary_seal_tabs, note_tabs, number_tabs, phone_number_tabs, poly_line_overlay_tabs, prefill_tabs, radio_group_tabs, signer_attachment_tabs, sign_here_tabs, smart_section_tabs, ssn_tabs, tab_groups, text_tabs, title_tabs, view_tabs, zip_tabs].hash
+      [approve_tabs, checkbox_tabs, comment_thread_tabs, commission_county_tabs, commission_expiration_tabs, commission_number_tabs, commission_state_tabs, company_tabs, currency_tabs, date_signed_tabs, date_tabs, decline_tabs, draw_tabs, email_address_tabs, email_tabs, envelope_id_tabs, first_name_tabs, formula_tabs, full_name_tabs, initial_here_tabs, last_name_tabs, list_tabs, notarize_tabs, notary_seal_tabs, note_tabs, number_tabs, numerical_tabs, phone_number_tabs, poly_line_overlay_tabs, prefill_tabs, radio_group_tabs, signer_attachment_tabs, sign_here_tabs, smart_section_tabs, ssn_tabs, tab_groups, text_tabs, title_tabs, view_tabs, zip_tabs].hash
     end
 
     # Builds the object from hash

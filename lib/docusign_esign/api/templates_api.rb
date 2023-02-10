@@ -97,18 +97,6 @@ module DocuSign_eSign
     end
   end
 
-  class ListBulkRecipientsOptions
-    # 
-    attr_accessor :include_tabs
-
-    # 
-    attr_accessor :start_position
-
-    def self.default
-      @@default ||= ListBulkRecipientsOptions.new
-    end
-  end
-
   class ListDocumentsOptions
     # 
     attr_accessor :include_tabs
@@ -2083,67 +2071,6 @@ module DocuSign_eSign
         :return_type => 'DocumentHtmlDefinitionOriginals')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TemplatesApi#get_template_html_definitions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Gets the bulk recipient file from a template.
-    # Retrieves the bulk recipient file information from a template that has a bulk recipient.
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param recipient_id The ID of the recipient being accessed.
-    # @param template_id The ID of the template being accessed.
-    # @param DocuSign_eSign::ListBulkRecipientsOptions Options for modifying the behavior of the function.
-    # @return [BulkRecipientsResponse]
-    def list_bulk_recipients(account_id, recipient_id, template_id, options = DocuSign_eSign::ListBulkRecipientsOptions.default)
-      data, _status_code, _headers = list_bulk_recipients_with_http_info(account_id, recipient_id, template_id, options)
-      return data
-    end
-
-    # Gets the bulk recipient file from a template.
-    # Retrieves the bulk recipient file information from a template that has a bulk recipient.
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param recipient_id The ID of the recipient being accessed.
-    # @param template_id The ID of the template being accessed.
-    # @param DocuSign_eSign::ListBulkRecipientsOptions Options for modifying the behavior of the function.
-    # @return [Array<(BulkRecipientsResponse, Fixnum, Hash)>] BulkRecipientsResponse data, response status code and response headers
-    def list_bulk_recipients_with_http_info(account_id, recipient_id, template_id, options = DocuSign_eSign::ListBulkRecipientsOptions.default)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: TemplatesApi.list_bulk_recipients ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.list_bulk_recipients" if account_id.nil?
-      # verify the required parameter 'recipient_id' is set
-      fail ArgumentError, "Missing the required parameter 'recipient_id' when calling TemplatesApi.list_bulk_recipients" if recipient_id.nil?
-      # verify the required parameter 'template_id' is set
-      fail ArgumentError, "Missing the required parameter 'template_id' when calling TemplatesApi.list_bulk_recipients" if template_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'recipientId' + '}', recipient_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
-
-      # query parameters
-      query_params = {}
-      query_params[:'include_tabs'] = options.include_tabs if !options.include_tabs.nil?
-      query_params[:'start_position'] = options.start_position if !options.start_position.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'BulkRecipientsResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TemplatesApi#list_bulk_recipients\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

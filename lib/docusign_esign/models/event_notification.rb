@@ -53,6 +53,9 @@ module DocuSign_eSign
     # When set to **true**, the envelope time zone information is included in the message. 
     attr_accessor :include_time_zone
 
+    # 
+    attr_accessor :integrator_managed
+
     # When set to **true**, logging is turned on for envelope events on the Web Console Connect page. 
     attr_accessor :logging_enabled
 
@@ -90,6 +93,7 @@ module DocuSign_eSign
         :'include_o_auth' => :'includeOAuth',
         :'include_sender_account_as_custom_field' => :'includeSenderAccountAsCustomField',
         :'include_time_zone' => :'includeTimeZone',
+        :'integrator_managed' => :'integratorManaged',
         :'logging_enabled' => :'loggingEnabled',
         :'recipient_events' => :'recipientEvents',
         :'require_acknowledgment' => :'requireAcknowledgment',
@@ -116,6 +120,7 @@ module DocuSign_eSign
         :'include_o_auth' => :'String',
         :'include_sender_account_as_custom_field' => :'String',
         :'include_time_zone' => :'String',
+        :'integrator_managed' => :'String',
         :'logging_enabled' => :'String',
         :'recipient_events' => :'Array<RecipientEvent>',
         :'require_acknowledgment' => :'String',
@@ -190,6 +195,10 @@ module DocuSign_eSign
         self.include_time_zone = attributes[:'includeTimeZone']
       end
 
+      if attributes.has_key?(:'integratorManaged')
+        self.integrator_managed = attributes[:'integratorManaged']
+      end
+
       if attributes.has_key?(:'loggingEnabled')
         self.logging_enabled = attributes[:'loggingEnabled']
       end
@@ -252,6 +261,7 @@ module DocuSign_eSign
           include_o_auth == o.include_o_auth &&
           include_sender_account_as_custom_field == o.include_sender_account_as_custom_field &&
           include_time_zone == o.include_time_zone &&
+          integrator_managed == o.integrator_managed &&
           logging_enabled == o.logging_enabled &&
           recipient_events == o.recipient_events &&
           require_acknowledgment == o.require_acknowledgment &&
@@ -270,7 +280,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [delivery_mode, envelope_events, event_data, events, include_certificate_of_completion, include_certificate_with_soap, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_o_auth, include_sender_account_as_custom_field, include_time_zone, logging_enabled, recipient_events, require_acknowledgment, sign_message_with_x509_cert, soap_name_space, url, use_soap_interface].hash
+      [delivery_mode, envelope_events, event_data, events, include_certificate_of_completion, include_certificate_with_soap, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_o_auth, include_sender_account_as_custom_field, include_time_zone, integrator_managed, logging_enabled, recipient_events, require_acknowledgment, sign_message_with_x509_cert, soap_name_space, url, use_soap_interface].hash
     end
 
     # Builds the object from hash

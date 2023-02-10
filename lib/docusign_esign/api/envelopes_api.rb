@@ -80,7 +80,7 @@ module DocuSign_eSign
   end
 
   class GetConsumerDisclosureOptions
-    # The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     attr_accessor :lang_code2
 
     def self.default
@@ -6223,9 +6223,10 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param document_file_bytes Updated document content. 
     # @return [EnvelopeDocument]
-    def update_document(account_id, document_id, envelope_id)
-      data, _status_code, _headers = update_document_with_http_info(account_id, document_id, envelope_id)
+    def update_document(account_id, document_id, envelope_id, document_file_bytes)
+      data, _status_code, _headers = update_document_with_http_info(account_id, document_id, envelope_id,  document_file_bytes)
       return data
     end
 
@@ -6234,8 +6235,9 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param document_id The ID of the document being accessed.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param document_file_bytes Updated document content. 
     # @return [Array<(EnvelopeDocument, Fixnum, Hash)>] EnvelopeDocument data, response status code and response headers
-    def update_document_with_http_info(account_id, document_id, envelope_id)
+    def update_document_with_http_info(account_id, document_id, envelope_id, document_file_bytes)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: EnvelopesApi.update_document ..."
       end
@@ -6245,6 +6247,8 @@ module DocuSign_eSign
       fail ArgumentError, "Missing the required parameter 'document_id' when calling EnvelopesApi.update_document" if document_id.nil?
       # verify the required parameter 'envelope_id' is set
       fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.update_document" if envelope_id.nil?
+      # verify the required parameter 'document_file_bytes' is set
+      fail ArgumentError, "Missing the required parameter 'document_file_bytes' when calling EnvelopesApi.update_document" if document_file_bytes.nil?
       # resource path
       local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
 
@@ -6255,12 +6259,14 @@ module DocuSign_eSign
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/pdf'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(document_file_bytes)
       auth_names = []
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
@@ -7233,65 +7239,6 @@ module DocuSign_eSign
         :return_type => 'DocumentVisibilityList')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#update_recipients_document_visibility\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Retrieves a PDF document from the envelope with no CoC.
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param regen_document_id 
-    # @param document  (optional parameter)
-    # @return [File]
-    def update_regen_document(account_id, envelope_id, regen_document_id, document)
-      data, _status_code, _headers = update_regen_document_with_http_info(account_id, envelope_id, regen_document_id,  document)
-      return data
-    end
-
-    # Retrieves a PDF document from the envelope with no CoC.
-    # 
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param regen_document_id 
-    # @param document  (optional parameter)
-    # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
-    def update_regen_document_with_http_info(account_id, envelope_id, regen_document_id, document)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_regen_document ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_regen_document" if account_id.nil?
-      # verify the required parameter 'envelope_id' is set
-      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.update_regen_document" if envelope_id.nil?
-      # verify the required parameter 'regen_document_id' is set
-      fail ArgumentError, "Missing the required parameter 'regen_document_id' when calling EnvelopesApi.update_regen_document" if regen_document_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{regenDocumentId}/regen".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'regenDocumentId' + '}', regen_document_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/pdf'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(document)
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'File')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EnvelopesApi#update_regen_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

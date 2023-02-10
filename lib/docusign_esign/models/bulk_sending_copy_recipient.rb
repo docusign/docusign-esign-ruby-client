@@ -53,6 +53,8 @@ module DocuSign_eSign
     # 
     attr_accessor :identification_method
 
+    attr_accessor :identity_verification
+
     # 
     attr_accessor :name
 
@@ -102,6 +104,7 @@ module DocuSign_eSign
         :'id_check_configuration_name' => :'idCheckConfigurationName',
         :'id_check_information_input' => :'idCheckInformationInput',
         :'identification_method' => :'identificationMethod',
+        :'identity_verification' => :'identityVerification',
         :'name' => :'name',
         :'note' => :'note',
         :'phone_authentication' => :'phoneAuthentication',
@@ -132,6 +135,7 @@ module DocuSign_eSign
         :'id_check_configuration_name' => :'String',
         :'id_check_information_input' => :'IdCheckInformationInput',
         :'identification_method' => :'String',
+        :'identity_verification' => :'RecipientIdentityVerification',
         :'name' => :'String',
         :'note' => :'String',
         :'phone_authentication' => :'RecipientPhoneAuthentication',
@@ -206,6 +210,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'identificationMethod')
         self.identification_method = attributes[:'identificationMethod']
+      end
+
+      if attributes.has_key?(:'identityVerification')
+        self.identity_verification = attributes[:'identityVerification']
       end
 
       if attributes.has_key?(:'name')
@@ -290,6 +298,7 @@ module DocuSign_eSign
           id_check_configuration_name == o.id_check_configuration_name &&
           id_check_information_input == o.id_check_information_input &&
           identification_method == o.identification_method &&
+          identity_verification == o.identity_verification &&
           name == o.name &&
           note == o.note &&
           phone_authentication == o.phone_authentication &&
@@ -312,7 +321,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, client_user_id, custom_fields, delivery_method, email, email_notification, embedded_recipient_start_url, fax_number, host_email, host_name, id_check_configuration_name, id_check_information_input, identification_method, name, note, phone_authentication, recipient_id, recipient_signature_providers, role_name, signer_name, signing_group_id, sms_authentication, social_authentications, tabs].hash
+      [access_code, client_user_id, custom_fields, delivery_method, email, email_notification, embedded_recipient_start_url, fax_number, host_email, host_name, id_check_configuration_name, id_check_information_input, identification_method, identity_verification, name, note, phone_authentication, recipient_id, recipient_signature_providers, role_name, signer_name, signing_group_id, sms_authentication, social_authentications, tabs].hash
     end
 
     # Builds the object from hash

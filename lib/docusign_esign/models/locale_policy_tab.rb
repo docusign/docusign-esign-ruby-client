@@ -52,6 +52,9 @@ module DocuSign_eSign
     # 
     attr_accessor :time_zone
 
+    # 
+    attr_accessor :use_long_currency_format
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -67,7 +70,8 @@ module DocuSign_eSign
         :'initial_format' => :'initialFormat',
         :'name_format' => :'nameFormat',
         :'time_format' => :'timeFormat',
-        :'time_zone' => :'timeZone'
+        :'time_zone' => :'timeZone',
+        :'use_long_currency_format' => :'useLongCurrencyFormat'
       }
     end
 
@@ -86,7 +90,8 @@ module DocuSign_eSign
         :'initial_format' => :'String',
         :'name_format' => :'String',
         :'time_format' => :'String',
-        :'time_zone' => :'String'
+        :'time_zone' => :'String',
+        :'use_long_currency_format' => :'String'
       }
     end
 
@@ -149,6 +154,10 @@ module DocuSign_eSign
       if attributes.has_key?(:'timeZone')
         self.time_zone = attributes[:'timeZone']
       end
+
+      if attributes.has_key?(:'useLongCurrencyFormat')
+        self.use_long_currency_format = attributes[:'useLongCurrencyFormat']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -181,7 +190,8 @@ module DocuSign_eSign
           initial_format == o.initial_format &&
           name_format == o.name_format &&
           time_format == o.time_format &&
-          time_zone == o.time_zone
+          time_zone == o.time_zone &&
+          use_long_currency_format == o.use_long_currency_format
     end
 
     # @see the `==` method
@@ -193,7 +203,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [address_format, calendar_type, culture_name, currency_code, currency_negative_format, currency_positive_format, custom_date_format, custom_time_format, date_format, initial_format, name_format, time_format, time_zone].hash
+      [address_format, calendar_type, culture_name, currency_code, currency_negative_format, currency_positive_format, custom_date_format, custom_time_format, date_format, initial_format, name_format, time_format, time_zone, use_long_currency_format].hash
     end
 
     # Builds the object from hash

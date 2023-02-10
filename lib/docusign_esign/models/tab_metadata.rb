@@ -169,6 +169,9 @@ module DocuSign_eSign
     # A regular expression used to validate input for the tab.
     attr_accessor :validation_pattern
 
+    # 
+    attr_accessor :validation_type
+
     # Width of the tab in pixels.
     attr_accessor :width
 
@@ -227,6 +230,7 @@ module DocuSign_eSign
         :'underline' => :'underline',
         :'validation_message' => :'validationMessage',
         :'validation_pattern' => :'validationPattern',
+        :'validation_type' => :'validationType',
         :'width' => :'width'
       }
     end
@@ -286,6 +290,7 @@ module DocuSign_eSign
         :'underline' => :'String',
         :'validation_message' => :'String',
         :'validation_pattern' => :'String',
+        :'validation_type' => :'String',
         :'width' => :'String'
       }
     end
@@ -508,6 +513,10 @@ module DocuSign_eSign
         self.validation_pattern = attributes[:'validationPattern']
       end
 
+      if attributes.has_key?(:'validationType')
+        self.validation_type = attributes[:'validationType']
+      end
+
       if attributes.has_key?(:'width')
         self.width = attributes[:'width']
       end
@@ -583,6 +592,7 @@ module DocuSign_eSign
           underline == o.underline &&
           validation_message == o.validation_message &&
           validation_pattern == o.validation_pattern &&
+          validation_type == o.validation_type &&
           width == o.width
     end
 
@@ -595,7 +605,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor, anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_units, anchor_x_offset, anchor_y_offset, bold, collaborative, conceal_value_on_document, created_by_display_name, created_by_user_id, custom_tab_id, disable_auto_size, editable, font, font_color, font_size, height, included_in_email, initial_value, italic, items, last_modified, last_modified_by_display_name, last_modified_by_user_id, locale_policy, locked, maximum_length, max_numerical_value, merge_field, min_numerical_value, name, numerical_value, payment_item_code, payment_item_description, payment_item_name, require_all, required, require_initial_on_shared_change, scale_value, selected, shared, signature_provider_id, stamp_type, stamp_type_metadata, tab_label, type, underline, validation_message, validation_pattern, width].hash
+      [anchor, anchor_case_sensitive, anchor_horizontal_alignment, anchor_ignore_if_not_present, anchor_match_whole_word, anchor_units, anchor_x_offset, anchor_y_offset, bold, collaborative, conceal_value_on_document, created_by_display_name, created_by_user_id, custom_tab_id, disable_auto_size, editable, font, font_color, font_size, height, included_in_email, initial_value, italic, items, last_modified, last_modified_by_display_name, last_modified_by_user_id, locale_policy, locked, maximum_length, max_numerical_value, merge_field, min_numerical_value, name, numerical_value, payment_item_code, payment_item_description, payment_item_name, require_all, required, require_initial_on_shared_change, scale_value, selected, shared, signature_provider_id, stamp_type, stamp_type_metadata, tab_label, type, underline, validation_message, validation_pattern, validation_type, width].hash
     end
 
     # Builds the object from hash

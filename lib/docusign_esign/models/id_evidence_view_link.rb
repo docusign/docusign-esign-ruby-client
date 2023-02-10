@@ -19,7 +19,7 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'view_link' => :'ViewLink'
+        :'view_link' => :'viewLink'
       }
     end
 
@@ -38,8 +38,8 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'ViewLink')
-        self.view_link = attributes[:'ViewLink']
+      if attributes.has_key?(:'viewLink')
+        self.view_link = attributes[:'viewLink']
       end
     end
 
