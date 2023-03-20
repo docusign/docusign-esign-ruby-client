@@ -40,14 +40,14 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'declined_time' => :'declinedTime',
-        :'delivered_time' => :'deliveredTime',
+        :'declined_time' => :'DeclinedTime',
+        :'delivered_time' => :'DeliveredTime',
         :'email' => :'email',
         :'form_data' => :'formData',
         :'name' => :'name',
         :'recipient_id' => :'recipientId',
-        :'sent_time' => :'sentTime',
-        :'signed_time' => :'signedTime'
+        :'sent_time' => :'SentTime',
+        :'signed_time' => :'SignedTime'
       }
     end
 
@@ -73,12 +73,12 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'declinedTime')
-        self.declined_time = attributes[:'declinedTime']
+      if attributes.has_key?(:'DeclinedTime')
+        self.declined_time = attributes[:'DeclinedTime']
       end
 
-      if attributes.has_key?(:'deliveredTime')
-        self.delivered_time = attributes[:'deliveredTime']
+      if attributes.has_key?(:'DeliveredTime')
+        self.delivered_time = attributes[:'DeliveredTime']
       end
 
       if attributes.has_key?(:'email')
@@ -99,12 +99,12 @@ module DocuSign_eSign
         self.recipient_id = attributes[:'recipientId']
       end
 
-      if attributes.has_key?(:'sentTime')
-        self.sent_time = attributes[:'sentTime']
+      if attributes.has_key?(:'SentTime')
+        self.sent_time = attributes[:'SentTime']
       end
 
-      if attributes.has_key?(:'signedTime')
-        self.signed_time = attributes[:'signedTime']
+      if attributes.has_key?(:'SignedTime')
+        self.signed_time = attributes[:'SignedTime']
       end
     end
 

@@ -43,6 +43,9 @@ module DocuSign_eSign
     # Contains a URI for an endpoint that allows you to easily retrieve bulk recipient information.
     attr_accessor :bulk_recipients_uri
 
+    # 
+    attr_accessor :bulk_send_v2_recipient
+
     # When set to **true**, specifies that the signer can perform the signing ceremony offline.
     attr_accessor :can_sign_offline
 
@@ -100,7 +103,7 @@ module DocuSign_eSign
     # Metadata that indicates whether the `email` property is editable. This property is read-only.
     attr_accessor :email_metadata
 
-    # An optional complex type that sets a specific email subject and body for this recipient's notification email.   **Note:** You can set the `emailNotification` property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level `emailSubject` and `emailBlurb`. 
+    # A complex type that contains information sets the language of the recipient's email information.   **IMPORTANT**: If you enable email notification for one recipient, you must enable email notification for all recipients as it overrides the Envelope Subject and `EmailBlurb` property settings. 
     attr_accessor :email_notification
 
     # 
@@ -109,7 +112,7 @@ module DocuSign_eSign
     # Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender's system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to `SIGN_AT_DOCUSIGN`, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient's identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets `EmbeddedRecipientStartURL=SIGN_AT_DOCUSIGN`, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the `clientUserId` property is NOT set, and the `embeddedRecipientStartURL` is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The `customFields` property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   `http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&[[mergeField3]]` 
     attr_accessor :embedded_recipient_start_url
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # Specifies the documents that are not visible to this recipient. Document Visibility must be enabled for the account and the `enforceSignerVisibility` property must be set to **true** for the envelope to use this.  When enforce signer visibility is enabled, documents with tabs can only be viewed by signers that have a tab on that document. Recipients that have an administrative role (Agent, Editor, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent.
@@ -329,6 +332,7 @@ module DocuSign_eSign
         :'auto_navigation' => :'autoNavigation',
         :'auto_responded_reason' => :'autoRespondedReason',
         :'bulk_recipients_uri' => :'bulkRecipientsUri',
+        :'bulk_send_v2_recipient' => :'bulkSendV2Recipient',
         :'can_sign_offline' => :'canSignOffline',
         :'client_user_id' => :'clientUserId',
         :'completed_count' => :'completedCount',
@@ -436,6 +440,7 @@ module DocuSign_eSign
         :'auto_navigation' => :'String',
         :'auto_responded_reason' => :'String',
         :'bulk_recipients_uri' => :'String',
+        :'bulk_send_v2_recipient' => :'String',
         :'can_sign_offline' => :'String',
         :'client_user_id' => :'String',
         :'completed_count' => :'String',
@@ -578,6 +583,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'bulkRecipientsUri')
         self.bulk_recipients_uri = attributes[:'bulkRecipientsUri']
+      end
+
+      if attributes.has_key?(:'bulkSendV2Recipient')
+        self.bulk_send_v2_recipient = attributes[:'bulkSendV2Recipient']
       end
 
       if attributes.has_key?(:'canSignOffline')
@@ -995,6 +1004,7 @@ module DocuSign_eSign
           auto_navigation == o.auto_navigation &&
           auto_responded_reason == o.auto_responded_reason &&
           bulk_recipients_uri == o.bulk_recipients_uri &&
+          bulk_send_v2_recipient == o.bulk_send_v2_recipient &&
           can_sign_offline == o.can_sign_offline &&
           client_user_id == o.client_user_id &&
           completed_count == o.completed_count &&
@@ -1097,7 +1107,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_navigation, auto_responded_reason, bulk_recipients_uri, can_sign_offline, client_user_id, completed_count, consent_details_list, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delegated_by, delegated_to, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, live_oak_start_url, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_id, notary_signer_email_sent, notary_signers, notary_source_type, notary_type, note, note_metadata, offline_attributes, phone_authentication, phone_number, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_navigation, auto_responded_reason, bulk_recipients_uri, bulk_send_v2_recipient, can_sign_offline, client_user_id, completed_count, consent_details_list, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delegated_by, delegated_to, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, live_oak_start_url, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_id, notary_signer_email_sent, notary_signers, notary_source_type, notary_type, note, note_metadata, offline_attributes, phone_authentication, phone_number, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash

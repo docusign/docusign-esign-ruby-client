@@ -28,10 +28,10 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'email' => :'email',
-        :'name' => :'name',
-        :'user_authorization_id' => :'userAuthorizationId',
-        :'user_id' => :'userId'
+        :'email' => :'Email',
+        :'name' => :'Name',
+        :'user_authorization_id' => :'UserAuthorizationId',
+        :'user_id' => :'UserId'
       }
     end
 
@@ -53,20 +53,20 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'email')
-        self.email = attributes[:'email']
+      if attributes.has_key?(:'Email')
+        self.email = attributes[:'Email']
       end
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.has_key?(:'Name')
+        self.name = attributes[:'Name']
       end
 
-      if attributes.has_key?(:'userAuthorizationId')
-        self.user_authorization_id = attributes[:'userAuthorizationId']
+      if attributes.has_key?(:'UserAuthorizationId')
+        self.user_authorization_id = attributes[:'UserAuthorizationId']
       end
 
-      if attributes.has_key?(:'userId')
-        self.user_id = attributes[:'userId']
+      if attributes.has_key?(:'UserId')
+        self.user_id = attributes[:'UserId']
       end
     end
 

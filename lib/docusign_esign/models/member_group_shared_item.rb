@@ -14,7 +14,7 @@ require 'date'
 module DocuSign_eSign
   # Information about items shared among groups.
   class MemberGroupSharedItem
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # The group sharing the item.

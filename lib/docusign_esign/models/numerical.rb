@@ -16,93 +16,112 @@ module DocuSign_eSign
     # 
     attr_accessor :anchor_allow_white_space_in_characters
 
+    # 
     attr_accessor :anchor_allow_white_space_in_characters_metadata
 
     # When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**.
     attr_accessor :anchor_case_sensitive
 
+    # 
     attr_accessor :anchor_case_sensitive_metadata
 
     # Specifies the alignment of anchor tabs with anchor strings. Possible values are **left** or **right**. The default value is **left**.
     attr_accessor :anchor_horizontal_alignment
 
+    # 
     attr_accessor :anchor_horizontal_alignment_metadata
 
     # When set to **true**, this tab is ignored if anchorString is not found in the document.
     attr_accessor :anchor_ignore_if_not_present
 
+    # 
     attr_accessor :anchor_ignore_if_not_present_metadata
 
     # When set to **true**, the anchor string in this tab matches whole words only (strings embedded in other strings are ignored.) The default value is **true**.
     attr_accessor :anchor_match_whole_word
 
+    # 
     attr_accessor :anchor_match_whole_word_metadata
 
     # Anchor text information for a radio button.
     attr_accessor :anchor_string
 
+    # 
     attr_accessor :anchor_string_metadata
 
     # 
     attr_accessor :anchor_tab_processor_version
 
+    # 
     attr_accessor :anchor_tab_processor_version_metadata
 
     # Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches.
     attr_accessor :anchor_units
 
+    # 
     attr_accessor :anchor_units_metadata
 
     # Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.
     attr_accessor :anchor_x_offset
 
+    # 
     attr_accessor :anchor_x_offset_metadata
 
     # Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.
     attr_accessor :anchor_y_offset
 
+    # 
     attr_accessor :anchor_y_offset_metadata
 
     # When set to **true**, the information in the tab is bold.
     attr_accessor :bold
 
+    # 
     attr_accessor :bold_metadata
 
     # 
     attr_accessor :caption
 
+    # 
     attr_accessor :caption_metadata
 
     # When set to **true**, the field appears normally while the recipient is adding or modifying the information in the field, but the data is not visible (the characters are hidden by asterisks) to any other signer or the sender.  When an envelope is completed the information is available to the sender through the Form Data link in the DocuSign Console.  This setting applies only to text boxes and does not affect list boxes, radio buttons, or check boxes.
     attr_accessor :conceal_value_on_document
 
+    # 
     attr_accessor :conceal_value_on_document_metadata
 
     # For conditional fields this is the TabLabel of the parent tab that controls this tab's visibility.
     attr_accessor :conditional_parent_label
 
+    # 
     attr_accessor :conditional_parent_label_metadata
 
     # For conditional fields, this is the value of the parent tab that controls the tab's visibility.  If the parent tab is a Checkbox, Radio button, Optional Signature, or Optional Initial use \"on\" as the value to show that the parent tab is active. 
     attr_accessor :conditional_parent_value
 
+    # 
     attr_accessor :conditional_parent_value_metadata
 
     # The DocuSign generated custom tab ID for the custom tab to be applied. This can only be used when adding new tabs for a recipient. When used, the new tab inherits all the custom tab properties.
     attr_accessor :custom_tab_id
 
+    # 
     attr_accessor :custom_tab_id_metadata
 
     # When set to **true**, disables the auto sizing of single line text boxes in the signing screen when the signer enters data. If disabled users will only be able enter as much data as the text box can hold. By default this is false. This property only affects single line text boxes.
     attr_accessor :disable_auto_size
 
+    # 
     attr_accessor :disable_auto_size_metadata
 
     # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
     attr_accessor :document_id
 
+    # 
     attr_accessor :document_id_metadata
 
+    # Array or errors.
     attr_accessor :error_details
 
     # The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.
@@ -111,55 +130,67 @@ module DocuSign_eSign
     # The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White.
     attr_accessor :font_color
 
+    # 
     attr_accessor :font_color_metadata
 
+    # 
     attr_accessor :font_metadata
 
     # The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72.
     attr_accessor :font_size
 
+    # 
     attr_accessor :font_size_metadata
 
     # 
     attr_accessor :form_order
 
+    # 
     attr_accessor :form_order_metadata
 
     # 
     attr_accessor :form_page_label
 
+    # 
     attr_accessor :form_page_label_metadata
 
     # 
     attr_accessor :form_page_number
 
+    # 
     attr_accessor :form_page_number_metadata
 
     # Height of the tab in pixels.
     attr_accessor :height
 
+    # 
     attr_accessor :height_metadata
 
     # When set to **true**, the information in the tab is italic.
     attr_accessor :italic
 
+    # 
     attr_accessor :italic_metadata
 
+    # 
     attr_accessor :locale_policy
 
     # When set to **true**, the signer cannot change the data of the custom tab.
     attr_accessor :locked
 
+    # 
     attr_accessor :locked_metadata
 
     # An optional value that describes the maximum length of the property when the property is a string.
     attr_accessor :max_length
 
+    # 
     attr_accessor :max_length_metadata
 
     # 
     attr_accessor :max_numerical_value
 
+    # 
     attr_accessor :merge_field
 
     # 
@@ -171,19 +202,25 @@ module DocuSign_eSign
     # 
     attr_accessor :name
 
+    # 
     attr_accessor :name_metadata
 
     # 
     attr_accessor :numerical_value
 
+    # 
+    attr_accessor :original_numerical_value
+
     # The initial value of the tab when it was sent to the recipient. 
     attr_accessor :original_value
 
+    # 
     attr_accessor :original_value_metadata
 
     # Specifies the page number on which the tab is located.
     attr_accessor :page_number
 
+    # 
     attr_accessor :page_number_metadata
 
     # Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
@@ -192,40 +229,49 @@ module DocuSign_eSign
     # 
     attr_accessor :recipient_id_guid
 
+    # 
     attr_accessor :recipient_id_guid_metadata
 
+    # 
     attr_accessor :recipient_id_metadata
 
     # When set to **true** and shared is true, information must be entered in this field to complete the envelope. 
     attr_accessor :require_all
 
+    # 
     attr_accessor :require_all_metadata
 
     # When set to **true**, the signer is required to fill out this tab
     attr_accessor :required
 
+    # 
     attr_accessor :required_metadata
 
     # Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field.
     attr_accessor :require_initial_on_shared_change
 
+    # 
     attr_accessor :require_initial_on_shared_change_metadata
 
     # When set to **true**, the sender must populate the tab before an envelope can be sent using the template.   This value tab can only be changed by modifying (PUT) the template.   Tabs with a `senderRequired` value of true cannot be deleted from an envelope.
     attr_accessor :sender_required
 
+    # 
     attr_accessor :sender_required_metadata
 
     # When set to **true**, this custom tab is shared.
     attr_accessor :shared
 
+    # 
     attr_accessor :shared_metadata
 
     # 
     attr_accessor :share_to_recipients
 
+    # 
     attr_accessor :share_to_recipients_metadata
 
+    # 
     attr_accessor :smart_contract_information
 
     # 
@@ -234,51 +280,61 @@ module DocuSign_eSign
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
     attr_accessor :status
 
+    # 
     attr_accessor :status_metadata
 
     # 
     attr_accessor :tab_group_labels
 
+    # 
     attr_accessor :tab_group_labels_metadata
 
     # The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     
     attr_accessor :tab_id
 
+    # 
     attr_accessor :tab_id_metadata
 
     # The label string associated with the tab.
     attr_accessor :tab_label
 
+    # 
     attr_accessor :tab_label_metadata
 
     # 
     attr_accessor :tab_order
 
+    # 
     attr_accessor :tab_order_metadata
 
     # 
     attr_accessor :tab_type
 
+    # 
     attr_accessor :tab_type_metadata
 
     # When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
     attr_accessor :template_locked
 
+    # 
     attr_accessor :template_locked_metadata
 
     # When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.
     attr_accessor :template_required
 
+    # 
     attr_accessor :template_required_metadata
 
     # 
     attr_accessor :tooltip
 
+    # 
     attr_accessor :tool_tip_metadata
 
     # When set to **true**, the information in the tab is underlined.
     attr_accessor :underline
 
+    # 
     attr_accessor :underline_metadata
 
     # 
@@ -287,21 +343,25 @@ module DocuSign_eSign
     # Specifies the value of the tab. 
     attr_accessor :value
 
+    # 
     attr_accessor :value_metadata
 
     # Width of the tab in pixels.
     attr_accessor :width
 
+    # 
     attr_accessor :width_metadata
 
     # This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.
     attr_accessor :x_position
 
+    # 
     attr_accessor :x_position_metadata
 
     # This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.
     attr_accessor :y_position
 
+    # 
     attr_accessor :y_position_metadata
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -372,6 +432,7 @@ module DocuSign_eSign
         :'name' => :'name',
         :'name_metadata' => :'nameMetadata',
         :'numerical_value' => :'numericalValue',
+        :'original_numerical_value' => :'originalNumericalValue',
         :'original_value' => :'originalValue',
         :'original_value_metadata' => :'originalValueMetadata',
         :'page_number' => :'pageNumber',
@@ -494,6 +555,7 @@ module DocuSign_eSign
         :'name' => :'String',
         :'name_metadata' => :'PropertyMetadata',
         :'numerical_value' => :'String',
+        :'original_numerical_value' => :'String',
         :'original_value' => :'String',
         :'original_value_metadata' => :'PropertyMetadata',
         :'page_number' => :'String',
@@ -816,6 +878,10 @@ module DocuSign_eSign
         self.numerical_value = attributes[:'numericalValue']
       end
 
+      if attributes.has_key?(:'originalNumericalValue')
+        self.original_numerical_value = attributes[:'originalNumericalValue']
+      end
+
       if attributes.has_key?(:'originalValue')
         self.original_value = attributes[:'originalValue']
       end
@@ -1106,6 +1172,7 @@ module DocuSign_eSign
           name == o.name &&
           name_metadata == o.name_metadata &&
           numerical_value == o.numerical_value &&
+          original_numerical_value == o.original_numerical_value &&
           original_value == o.original_value &&
           original_value_metadata == o.original_value_metadata &&
           page_number == o.page_number &&
@@ -1168,7 +1235,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, caption, caption_metadata, conceal_value_on_document, conceal_value_on_document_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, custom_tab_id, custom_tab_id_metadata, disable_auto_size, disable_auto_size_metadata, document_id, document_id_metadata, error_details, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, height, height_metadata, italic, italic_metadata, locale_policy, locked, locked_metadata, max_length, max_length_metadata, max_numerical_value, merge_field, merge_field_xml, min_numerical_value, name, name_metadata, numerical_value, original_value, original_value_metadata, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, require_all, require_all_metadata, required, required_metadata, require_initial_on_shared_change, require_initial_on_shared_change_metadata, sender_required, sender_required_metadata, shared, shared_metadata, share_to_recipients, share_to_recipients_metadata, smart_contract_information, source, status, status_metadata, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_label_metadata, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, underline, underline_metadata, validation_type, value, value_metadata, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
+      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, caption, caption_metadata, conceal_value_on_document, conceal_value_on_document_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, custom_tab_id, custom_tab_id_metadata, disable_auto_size, disable_auto_size_metadata, document_id, document_id_metadata, error_details, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, height, height_metadata, italic, italic_metadata, locale_policy, locked, locked_metadata, max_length, max_length_metadata, max_numerical_value, merge_field, merge_field_xml, min_numerical_value, name, name_metadata, numerical_value, original_numerical_value, original_value, original_value_metadata, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, require_all, require_all_metadata, required, required_metadata, require_initial_on_shared_change, require_initial_on_shared_change_metadata, sender_required, sender_required_metadata, shared, shared_metadata, share_to_recipients, share_to_recipients_metadata, smart_contract_information, source, status, status_metadata, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_label_metadata, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, underline, underline_metadata, validation_type, value, value_metadata, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
     end
 
     # Builds the object from hash

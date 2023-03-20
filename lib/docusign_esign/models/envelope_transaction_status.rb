@@ -16,7 +16,7 @@ module DocuSign_eSign
     # The envelope ID of the envelope status that failed to post.
     attr_accessor :envelope_id
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.

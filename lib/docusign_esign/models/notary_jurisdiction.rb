@@ -23,7 +23,7 @@ module DocuSign_eSign
     # 
     attr_accessor :county
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # Description of the jurisdiction for this notary. This is a read-only property.

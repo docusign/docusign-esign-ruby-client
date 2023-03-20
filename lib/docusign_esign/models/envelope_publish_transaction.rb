@@ -46,6 +46,7 @@ module DocuSign_eSign
     # 
     attr_accessor :submission_date
 
+    # 
     attr_accessor :submitted_by_user_info
 
     # 

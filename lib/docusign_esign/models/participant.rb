@@ -16,6 +16,7 @@ module DocuSign_eSign
     # If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account's access code format setting.  If blank, but the signer `accessCode` property is set in the envelope, then that value is used.  If blank and the signer `accessCode` property is not set, then the access code is not required.
     attr_accessor :access_code
 
+    # 
     attr_accessor :access_code_metadata
 
     # This Optional attribute indicates that the access code will be added to the email sent to the recipient; this nullifies the Security measure of Access Code on the recipient.
@@ -29,6 +30,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :auto_responded_reason
+
+    # 
+    attr_accessor :bulk_send_v2_recipient
 
     # Specifies whether the recipient is embedded or remote.   If the `clientUserId` property is not null then the recipient is embedded. Note that if the `ClientUserId` property is set and either `SignerMustHaveAccount` or `SignerMustLoginToSign` property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. 
     attr_accessor :client_user_id
@@ -54,6 +58,7 @@ module DocuSign_eSign
     # Reserved: For DocuSign use only.
     attr_accessor :delivery_method
 
+    # 
     attr_accessor :delivery_method_metadata
 
     # 
@@ -68,8 +73,10 @@ module DocuSign_eSign
     # 
     attr_accessor :email
 
+    # 
     attr_accessor :email_metadata
 
+    # A complex type that contains information sets the language of the recipient's email information.   **IMPORTANT**: If you enable email notification for one recipient, you must enable email notification for all recipients as it overrides the Envelope Subject and `EmailBlurb` property settings. 
     attr_accessor :email_notification
 
     # 
@@ -78,30 +85,37 @@ module DocuSign_eSign
     # Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender's system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to `SIGN_AT_DOCUSIGN`, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient's identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets `EmbeddedRecipientStartURL=SIGN_AT_DOCUSIGN`, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the `clientUserId` property is NOT set, and the `embeddedRecipientStartURL` is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The `customFields` property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   `http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&[[mergeField3]]` 
     attr_accessor :embedded_recipient_start_url
 
+    # Array or errors.
     attr_accessor :error_details
 
     # Reserved:
     attr_accessor :fax_number
 
+    # 
     attr_accessor :fax_number_metadata
 
     # The user's first name.  Maximum Length: 50 characters.
     attr_accessor :first_name
 
+    # 
     attr_accessor :first_name_metadata
 
     # 
     attr_accessor :full_name
 
+    # 
     attr_accessor :full_name_metadata
 
     # Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as 'ID Check $' and 'SMS Auth $'. To use ID check in an envelope, the idCheckConfigurationName should be 'ID Check '. If you wanted to use SMS, it would be 'SMS Auth $' and you would need to add you would need to add phone number information to the `smsAuthentication` node.
     attr_accessor :id_check_configuration_name
 
+    # 
     attr_accessor :id_check_configuration_name_metadata
 
+    # 
     attr_accessor :id_check_information_input
 
+    # 
     attr_accessor :identity_verification
 
     # When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient's account. 
@@ -110,6 +124,7 @@ module DocuSign_eSign
     # 
     attr_accessor :last_name
 
+    # 
     attr_accessor :last_name_metadata
 
     # 
@@ -121,11 +136,13 @@ module DocuSign_eSign
     # 
     attr_accessor :name
 
+    # 
     attr_accessor :name_metadata
 
     # Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters.
     attr_accessor :note
 
+    # 
     attr_accessor :note_metadata
 
     # 
@@ -134,13 +151,16 @@ module DocuSign_eSign
     # 
     attr_accessor :participate_for_guid
 
+    # 
     attr_accessor :phone_authentication
 
+    # 
     attr_accessor :phone_number
 
     # Reserved:
     attr_accessor :recipient_attachments
 
+    # 
     attr_accessor :recipient_authentication_status
 
     # 
@@ -155,11 +175,13 @@ module DocuSign_eSign
     # 
     attr_accessor :recipient_type
 
+    # 
     attr_accessor :recipient_type_metadata
 
     # When set to **true**, the recipient is required to use the specified ID check method (including Phone and SMS authentication) to validate their identity. 
     attr_accessor :require_id_lookup
 
+    # 
     attr_accessor :require_id_lookup_metadata
 
     # Optional element. Specifies the role name associated with the recipient.<br/><br/>This is required when working with template recipients.
@@ -168,6 +190,7 @@ module DocuSign_eSign
     # Specifies the routing order of the recipient in the envelope. 
     attr_accessor :routing_order
 
+    # 
     attr_accessor :routing_order_metadata
 
     # The date and time the envelope was sent.
@@ -179,6 +202,7 @@ module DocuSign_eSign
     # When set to **true** and the feature is enabled in the sender's account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once).
     attr_accessor :signing_group_id
 
+    # 
     attr_accessor :signing_group_id_metadata
 
     # The display name for the signing group.   Maximum Length: 100 characters. 
@@ -187,6 +211,7 @@ module DocuSign_eSign
     # A complex type that contains information about users in the signing group.
     attr_accessor :signing_group_users
 
+    # 
     attr_accessor :sms_authentication
 
     #  Lists the social ID type that can be used for recipient authentication.
@@ -222,6 +247,7 @@ module DocuSign_eSign
         :'additional_notifications' => :'additionalNotifications',
         :'allow_system_override_for_locked_recipient' => :'allowSystemOverrideForLockedRecipient',
         :'auto_responded_reason' => :'autoRespondedReason',
+        :'bulk_send_v2_recipient' => :'bulkSendV2Recipient',
         :'client_user_id' => :'clientUserId',
         :'completed_count' => :'completedCount',
         :'consent_details_list' => :'consentDetailsList',
@@ -302,6 +328,7 @@ module DocuSign_eSign
         :'additional_notifications' => :'Array<RecipientAdditionalNotification>',
         :'allow_system_override_for_locked_recipient' => :'String',
         :'auto_responded_reason' => :'String',
+        :'bulk_send_v2_recipient' => :'String',
         :'client_user_id' => :'String',
         :'completed_count' => :'String',
         :'consent_details_list' => :'Array<ConsentDetails>',
@@ -405,6 +432,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'autoRespondedReason')
         self.auto_responded_reason = attributes[:'autoRespondedReason']
+      end
+
+      if attributes.has_key?(:'bulkSendV2Recipient')
+        self.bulk_send_v2_recipient = attributes[:'bulkSendV2Recipient']
       end
 
       if attributes.has_key?(:'clientUserId')
@@ -718,6 +749,7 @@ module DocuSign_eSign
           additional_notifications == o.additional_notifications &&
           allow_system_override_for_locked_recipient == o.allow_system_override_for_locked_recipient &&
           auto_responded_reason == o.auto_responded_reason &&
+          bulk_send_v2_recipient == o.bulk_send_v2_recipient &&
           client_user_id == o.client_user_id &&
           completed_count == o.completed_count &&
           consent_details_list == o.consent_details_list &&
@@ -797,7 +829,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, allow_system_override_for_locked_recipient, auto_responded_reason, client_user_id, completed_count, consent_details_list, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, participate_for, participate_for_guid, phone_authentication, phone_number, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, role_name, routing_order, routing_order_metadata, sent_date_time, signed_date_time, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, allow_system_override_for_locked_recipient, auto_responded_reason, bulk_send_v2_recipient, client_user_id, completed_count, consent_details_list, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, participate_for, participate_for_guid, phone_authentication, phone_number, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, role_name, routing_order, routing_order_metadata, sent_date_time, signed_date_time, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash

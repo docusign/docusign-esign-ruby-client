@@ -17,7 +17,7 @@ module DocuSign_eSign
     # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
     attr_accessor :document_id
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.

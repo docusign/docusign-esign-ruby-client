@@ -13,7 +13,7 @@ require 'date'
 
 module DocuSign_eSign
   class FormDataItem
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # 
@@ -24,6 +24,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :numerical_value
+
+    # 
+    attr_accessor :original_numerical_value
 
     # The initial value of the tab when it was sent to the recipient. 
     attr_accessor :original_value
@@ -38,6 +41,7 @@ module DocuSign_eSign
         :'list_selected_value' => :'listSelectedValue',
         :'name' => :'name',
         :'numerical_value' => :'numericalValue',
+        :'original_numerical_value' => :'originalNumericalValue',
         :'original_value' => :'originalValue',
         :'value' => :'value'
       }
@@ -50,6 +54,7 @@ module DocuSign_eSign
         :'list_selected_value' => :'String',
         :'name' => :'String',
         :'numerical_value' => :'String',
+        :'original_numerical_value' => :'String',
         :'original_value' => :'String',
         :'value' => :'String'
       }
@@ -77,6 +82,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'numericalValue')
         self.numerical_value = attributes[:'numericalValue']
+      end
+
+      if attributes.has_key?(:'originalNumericalValue')
+        self.original_numerical_value = attributes[:'originalNumericalValue']
       end
 
       if attributes.has_key?(:'originalValue')
@@ -110,6 +119,7 @@ module DocuSign_eSign
           list_selected_value == o.list_selected_value &&
           name == o.name &&
           numerical_value == o.numerical_value &&
+          original_numerical_value == o.original_numerical_value &&
           original_value == o.original_value &&
           value == o.value
     end
@@ -123,7 +133,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [error_details, list_selected_value, name, numerical_value, original_value, value].hash
+      [error_details, list_selected_value, name, numerical_value, original_numerical_value, original_value, value].hash
     end
 
     # Builds the object from hash

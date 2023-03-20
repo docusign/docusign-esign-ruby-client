@@ -38,9 +38,6 @@ module DocuSign_eSign
     # Specifies a tag on the document where you want the recipient's company name to appear.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
     attr_accessor :company_tabs
 
-    # 
-    attr_accessor :currency_tabs
-
     # Specifies a tab on the document where the date the document was signed will automatically appear.
     attr_accessor :date_signed_tabs
 
@@ -145,7 +142,6 @@ module DocuSign_eSign
         :'commission_number_tabs' => :'commissionNumberTabs',
         :'commission_state_tabs' => :'commissionStateTabs',
         :'company_tabs' => :'companyTabs',
-        :'currency_tabs' => :'currencyTabs',
         :'date_signed_tabs' => :'dateSignedTabs',
         :'date_tabs' => :'dateTabs',
         :'decline_tabs' => :'declineTabs',
@@ -191,7 +187,6 @@ module DocuSign_eSign
         :'commission_number_tabs' => :'Array<CommissionNumber>',
         :'commission_state_tabs' => :'Array<CommissionState>',
         :'company_tabs' => :'Array<Company>',
-        :'currency_tabs' => :'Array<Currency>',
         :'date_signed_tabs' => :'Array<DateSigned>',
         :'date_tabs' => :'Array<DocuSign_eSign::Date>',
         :'decline_tabs' => :'Array<Decline>',
@@ -279,12 +274,6 @@ module DocuSign_eSign
       if attributes.has_key?(:'companyTabs')
         if (value = attributes[:'companyTabs']).is_a?(Array)
           self.company_tabs = value
-        end
-      end
-
-      if attributes.has_key?(:'currencyTabs')
-        if (value = attributes[:'currencyTabs']).is_a?(Array)
-          self.currency_tabs = value
         end
       end
 
@@ -499,7 +488,6 @@ module DocuSign_eSign
           commission_number_tabs == o.commission_number_tabs &&
           commission_state_tabs == o.commission_state_tabs &&
           company_tabs == o.company_tabs &&
-          currency_tabs == o.currency_tabs &&
           date_signed_tabs == o.date_signed_tabs &&
           date_tabs == o.date_tabs &&
           decline_tabs == o.decline_tabs &&
@@ -542,7 +530,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [approve_tabs, checkbox_tabs, comment_thread_tabs, commission_county_tabs, commission_expiration_tabs, commission_number_tabs, commission_state_tabs, company_tabs, currency_tabs, date_signed_tabs, date_tabs, decline_tabs, draw_tabs, email_address_tabs, email_tabs, envelope_id_tabs, first_name_tabs, formula_tabs, full_name_tabs, initial_here_tabs, last_name_tabs, list_tabs, notarize_tabs, notary_seal_tabs, note_tabs, number_tabs, numerical_tabs, phone_number_tabs, poly_line_overlay_tabs, prefill_tabs, radio_group_tabs, signer_attachment_tabs, sign_here_tabs, smart_section_tabs, ssn_tabs, tab_groups, text_tabs, title_tabs, view_tabs, zip_tabs].hash
+      [approve_tabs, checkbox_tabs, comment_thread_tabs, commission_county_tabs, commission_expiration_tabs, commission_number_tabs, commission_state_tabs, company_tabs, date_signed_tabs, date_tabs, decline_tabs, draw_tabs, email_address_tabs, email_tabs, envelope_id_tabs, first_name_tabs, formula_tabs, full_name_tabs, initial_here_tabs, last_name_tabs, list_tabs, notarize_tabs, notary_seal_tabs, note_tabs, number_tabs, numerical_tabs, phone_number_tabs, poly_line_overlay_tabs, prefill_tabs, radio_group_tabs, signer_attachment_tabs, sign_here_tabs, smart_section_tabs, ssn_tabs, tab_groups, text_tabs, title_tabs, view_tabs, zip_tabs].hash
     end
 
     # Builds the object from hash

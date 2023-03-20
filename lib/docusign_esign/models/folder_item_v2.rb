@@ -44,7 +44,7 @@ module DocuSign_eSign
     # 
     attr_accessor :owner_name
 
-    # An array of recipient objects that provides details about the recipients of the envelope.
+    # An array of powerform recipients.
     attr_accessor :recipients
 
     # Contains a URI for an endpoint that you can use to retrieve the recipients.

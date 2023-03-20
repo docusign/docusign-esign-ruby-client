@@ -59,6 +59,7 @@ module DocuSign_eSign
     # 
     attr_accessor :can_manage_joint_agreements
 
+    # 
     attr_accessor :can_manage_joint_agreements_metadata
 
     # 
@@ -82,6 +83,7 @@ module DocuSign_eSign
     # 
     attr_accessor :can_manage_stamps
 
+    # 
     attr_accessor :can_manage_stamps_metadata
 
     # 

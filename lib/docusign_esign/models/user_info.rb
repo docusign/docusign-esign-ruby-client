@@ -25,8 +25,11 @@ module DocuSign_eSign
     # 
     attr_accessor :email
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
+
+    # 
+    attr_accessor :ip_address
 
     # 
     attr_accessor :login_status
@@ -60,6 +63,7 @@ module DocuSign_eSign
         :'activation_access_code' => :'activationAccessCode',
         :'email' => :'email',
         :'error_details' => :'errorDetails',
+        :'ip_address' => :'ipAddress',
         :'login_status' => :'loginStatus',
         :'membership_id' => :'membershipId',
         :'send_activation_email' => :'sendActivationEmail',
@@ -79,6 +83,7 @@ module DocuSign_eSign
         :'activation_access_code' => :'String',
         :'email' => :'String',
         :'error_details' => :'ErrorDetails',
+        :'ip_address' => :'String',
         :'login_status' => :'String',
         :'membership_id' => :'String',
         :'send_activation_email' => :'String',
@@ -116,6 +121,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'errorDetails')
         self.error_details = attributes[:'errorDetails']
+      end
+
+      if attributes.has_key?(:'ipAddress')
+        self.ip_address = attributes[:'ipAddress']
       end
 
       if attributes.has_key?(:'loginStatus')
@@ -174,6 +183,7 @@ module DocuSign_eSign
           activation_access_code == o.activation_access_code &&
           email == o.email &&
           error_details == o.error_details &&
+          ip_address == o.ip_address &&
           login_status == o.login_status &&
           membership_id == o.membership_id &&
           send_activation_email == o.send_activation_email &&
@@ -193,7 +203,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id, account_name, activation_access_code, email, error_details, login_status, membership_id, send_activation_email, uri, user_id, user_name, user_status, user_type].hash
+      [account_id, account_name, activation_access_code, email, error_details, ip_address, login_status, membership_id, send_activation_email, uri, user_id, user_name, user_status, user_type].hash
     end
 
     # Builds the object from hash

@@ -23,6 +23,7 @@ module DocuSign_eSign
     # 
     attr_accessor :clickwrap_schema_version
 
+    # 
     attr_accessor :clickwrap_schema_version_metadata
 
     # 
@@ -52,6 +53,7 @@ module DocuSign_eSign
     # 
     attr_accessor :enable_legacy_sendflow_link
 
+    # 
     attr_accessor :enable_legacy_sendflow_link_metadata
 
     # 

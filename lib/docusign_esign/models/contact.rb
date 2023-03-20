@@ -31,7 +31,7 @@ module DocuSign_eSign
     # 
     attr_accessor :emails
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # 
@@ -40,6 +40,7 @@ module DocuSign_eSign
     # 
     attr_accessor :name
 
+    # 
     attr_accessor :notary_contact_details
 
     # 

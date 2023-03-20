@@ -14,7 +14,7 @@ require 'date'
 module DocuSign_eSign
   # This object contains details about a folder.
   class Folder
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # An object used to present a filtered view of the items in a folder.
