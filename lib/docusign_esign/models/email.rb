@@ -83,6 +83,7 @@ module DocuSign_eSign
     # 
     attr_accessor :caption
 
+    # 
     attr_accessor :caption_metadata
 
     # When set to **true**, the field appears normally while the recipient is adding or modifying the information in the field, but the data is not visible (the characters are hidden by asterisks) to any other signer or the sender.  When an envelope is completed the information is available to the sender through the Form Data link in the DocuSign Console.  This setting applies only to text boxes and does not affect list boxes, radio buttons, or check boxes.
@@ -121,7 +122,7 @@ module DocuSign_eSign
     # Metadata that indicates whether the `documentId` property is editable.
     attr_accessor :document_id_metadata
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.

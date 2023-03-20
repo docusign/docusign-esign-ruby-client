@@ -16,7 +16,7 @@ module DocuSign_eSign
     # 
     attr_accessor :email
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # The name of the group member.   Maximum Length: 100 characters. 

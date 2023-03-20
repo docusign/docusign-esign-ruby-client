@@ -14,7 +14,7 @@ require 'date'
 module DocuSign_eSign
   # Information about the shared item.
   class SharedItem
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # When set to **true**, this custom tab is shared.

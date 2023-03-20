@@ -14,7 +14,7 @@ require 'date'
 module DocuSign_eSign
   # A name-value pair that describes an item and provides a value for the item.
   class NameValue
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # The name or key of a name/value pair.

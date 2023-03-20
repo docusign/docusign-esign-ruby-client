@@ -13,6 +13,7 @@ require 'date'
 
 module DocuSign_eSign
   class ConnectHistoricalEnvelopeRepublish
+    # 
     attr_accessor :config
 
     # 

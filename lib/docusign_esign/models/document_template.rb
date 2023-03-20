@@ -22,7 +22,7 @@ module DocuSign_eSign
     # 
     attr_accessor :document_start_page
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # The unique identifier of the template. If this is not provided, DocuSign will generate a value. 

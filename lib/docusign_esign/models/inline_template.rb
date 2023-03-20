@@ -13,7 +13,7 @@ require 'date'
 
 module DocuSign_eSign
   class InlineTemplate
-    # An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each `customField` string can be a maximum of 100 characters.
+    # An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
     attr_accessor :custom_fields
 
     # Complex element contains the details on the documents in the envelope.
@@ -22,7 +22,7 @@ module DocuSign_eSign
     # A container used to send documents to recipients. The envelope carries information about the sender and timestamps to indicate the progress of the delivery procedure. It can contain collections of Documents, Tabs and Recipients.
     attr_accessor :envelope
 
-    # An array of recipient objects that provides details about the recipients of the envelope.
+    # An array of powerform recipients.
     attr_accessor :recipients
 
     # Specifies the order in which templates are overlaid.

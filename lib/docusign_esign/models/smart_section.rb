@@ -76,6 +76,7 @@ module DocuSign_eSign
     # 
     attr_accessor :caption
 
+    # 
     attr_accessor :caption_metadata
 
     # 
@@ -111,10 +112,10 @@ module DocuSign_eSign
     # 
     attr_accessor :end_anchor
 
-    # The last index position in the result set. 
+    # The last position in the result set. 
     attr_accessor :end_position
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # 
@@ -198,7 +199,7 @@ module DocuSign_eSign
     # 
     attr_accessor :start_anchor
 
-    # The starting index position of the current result set.
+    # Starting position of the current result set.
     attr_accessor :start_position
 
     # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.

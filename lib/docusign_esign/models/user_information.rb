@@ -41,7 +41,7 @@ module DocuSign_eSign
     # Specifies whether the user is enabled for updates from DocuSign Connect. Valid values: true or false.
     attr_accessor :enable_connect_for_user
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # The user's first name.  Maximum Length: 50 characters.
@@ -134,7 +134,7 @@ module DocuSign_eSign
     # 
     attr_accessor :user_profile_last_modified_date
 
-    # The collection of settings representing the actions a user can perform. See [userSettingsInformation](/docs/esign-rest-api/reference/users/users/get/#userSettingsInformation) for available settings.
+    #  The name/value pair information for user settings. These determine the actions that a user can take in the account. The `[ML:userSettings]` are listed and described below.
     attr_accessor :user_settings
 
     # 

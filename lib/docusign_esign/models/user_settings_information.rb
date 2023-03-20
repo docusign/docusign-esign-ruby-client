@@ -176,6 +176,7 @@ module DocuSign_eSign
     # 
     attr_accessor :enable_key_terms_suggestions_by_document_type
 
+    # 
     attr_accessor :enable_key_terms_suggestions_by_document_type_metadata
 
     # 
@@ -385,6 +386,7 @@ module DocuSign_eSign
     # 
     attr_accessor :web_forms
 
+    # 
     attr_accessor :web_forms_metadata
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -17,7 +17,7 @@ module DocuSign_eSign
     # If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
     attr_accessor :configuration_type
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # An ID used to specify a custom field.

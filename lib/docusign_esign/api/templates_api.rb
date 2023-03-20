@@ -854,63 +854,6 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Deletes the bulk recipient list on a template.
-    # Deletes the bulk recipient list on a template.
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param recipient_id The ID of the recipient being accessed.
-    # @param template_id The ID of the template being accessed.
-    # @return [BulkRecipientsUpdateResponse]
-    def delete_bulk_recipients(account_id, recipient_id, template_id)
-      data, _status_code, _headers = delete_bulk_recipients_with_http_info(account_id, recipient_id, template_id)
-      return data
-    end
-
-    # Deletes the bulk recipient list on a template.
-    # Deletes the bulk recipient list on a template.
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param recipient_id The ID of the recipient being accessed.
-    # @param template_id The ID of the template being accessed.
-    # @return [Array<(BulkRecipientsUpdateResponse, Fixnum, Hash)>] BulkRecipientsUpdateResponse data, response status code and response headers
-    def delete_bulk_recipients_with_http_info(account_id, recipient_id, template_id)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: TemplatesApi.delete_bulk_recipients ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.delete_bulk_recipients" if account_id.nil?
-      # verify the required parameter 'recipient_id' is set
-      fail ArgumentError, "Missing the required parameter 'recipient_id' when calling TemplatesApi.delete_bulk_recipients" if recipient_id.nil?
-      # verify the required parameter 'template_id' is set
-      fail ArgumentError, "Missing the required parameter 'template_id' when calling TemplatesApi.delete_bulk_recipients" if template_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'recipientId' + '}', recipient_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'BulkRecipientsUpdateResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TemplatesApi#delete_bulk_recipients\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Deletes envelope custom fields in a template.
     # Deletes envelope custom fields in a template.
     # @param account_id The external account number (int) or account ID Guid.

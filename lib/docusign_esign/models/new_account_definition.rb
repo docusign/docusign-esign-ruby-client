@@ -16,7 +16,7 @@ module DocuSign_eSign
     # The account name for the new account.
     attr_accessor :account_name
 
-    # The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  
+    # The list of account settings. These determine the features available for the account. Note that some features are determined by the plan used to create the account, and cannot be overridden.
     attr_accessor :account_settings
 
     # A complex type that contains the following information for the new account: `Street1`, `Street2`, `City`, `State`, `Zip`, `Phone`, and `Fax`.
@@ -61,7 +61,7 @@ module DocuSign_eSign
     # A complex type that contains properties for entering referral and discount information.
     attr_accessor :referral_information
 
-    # Contains properties that map a DocuSign user to a social account such as Facebook or Yahoo.
+    # Contains properties that map a DocuSign user to a social account (Facebook, Yahoo, etc.)
     attr_accessor :social_account_information
 
     # 

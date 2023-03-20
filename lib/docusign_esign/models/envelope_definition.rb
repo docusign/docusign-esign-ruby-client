@@ -80,7 +80,7 @@ module DocuSign_eSign
     # Indicates the date and time the item was created.
     attr_accessor :created_date_time
 
-    # An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each `customField` string can be a maximum of 100 characters.   **Note:** Any custom fields you set with this API method will _replace_ custom fields you have defined with [Envelope Custom Fields in Admin](https://support.docusign.com/en/guides/ndse-admin-guide-document-labels), whether the **Show field to envelope creators** or **Make fields required for envelopes** options are checked or not. 
+    # An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
     attr_accessor :custom_fields
 
     # Contains a URI for an endpoint that you can use to retrieve the custom fields.
@@ -227,7 +227,7 @@ module DocuSign_eSign
     # Initiates a purge request. Valid values are: * documents_queued: Places envelope documents in the purge queue. * documents_and_metadata_queued: Places envelope documents and metadata in the purge queue. 
     attr_accessor :purge_state
 
-    # Specifies the envelope recipients.
+    # An array of powerform recipients.
     attr_accessor :recipients
 
     # When set to **true**, prevents senders from changing, correcting, or deleting the recipient information for the envelope.

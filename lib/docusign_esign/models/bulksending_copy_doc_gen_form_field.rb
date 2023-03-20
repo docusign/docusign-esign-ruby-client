@@ -14,7 +14,7 @@ require 'date'
 module DocuSign_eSign
   class BulksendingCopyDocGenFormField
     # 
-    attr_accessor :label
+    attr_accessor :name
 
     # Specifies the value of the tab. 
     attr_accessor :value
@@ -22,7 +22,7 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'label' => :'label',
+        :'name' => :'name',
         :'value' => :'value'
       }
     end
@@ -30,7 +30,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'label' => :'String',
+        :'name' => :'String',
         :'value' => :'String'
       }
     end
@@ -43,8 +43,8 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'label')
-        self.label = attributes[:'label']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'value')
@@ -70,7 +70,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          label == o.label &&
+          name == o.name &&
           value == o.value
     end
 
@@ -83,7 +83,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [label, value].hash
+      [name, value].hash
     end
 
     # Builds the object from hash

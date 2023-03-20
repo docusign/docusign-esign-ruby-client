@@ -67,7 +67,7 @@ module DocuSign_eSign
     # Indicates the date and time the item was created.
     attr_accessor :created_date_time
 
-    # An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each `customField` string can be a maximum of 100 characters.
+    # An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
     attr_accessor :custom_fields
 
     # Contains a URI for an endpoint that you can use to retrieve the custom fields.
@@ -202,7 +202,7 @@ module DocuSign_eSign
     # 
     attr_accessor :purge_state
 
-    # An array of recipient objects that provides details about the recipients of the envelope.
+    # An array of powerform recipients.
     attr_accessor :recipients
 
     # When set to **true**, prevents senders from changing, correcting, or deleting the recipient information for the envelope.

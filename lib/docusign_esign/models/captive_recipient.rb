@@ -20,7 +20,7 @@ module DocuSign_eSign
     # Specifies the email address associated with the captive recipient.
     attr_accessor :email
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # Specifies the user name associated with the captive recipient.

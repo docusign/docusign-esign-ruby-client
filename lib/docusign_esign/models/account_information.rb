@@ -20,7 +20,7 @@ module DocuSign_eSign
     # The name of the current account.
     attr_accessor :account_name
 
-    # The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  
+    # The list of account settings. These determine the features available for the account. Note that some features are determined by the plan used to create the account, and cannot be overridden.
     attr_accessor :account_settings
 
     # When set to **true**, the transaction rooms feature exposed through the Workspaces API is enabled.
@@ -44,6 +44,7 @@ module DocuSign_eSign
     # Reserved: TBD
     attr_accessor :billing_profile
 
+    # 
     attr_accessor :brands
 
     # When set to **true**, specifies that you can upgrade the account through the API.

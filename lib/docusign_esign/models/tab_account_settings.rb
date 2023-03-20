@@ -38,12 +38,6 @@ module DocuSign_eSign
     attr_accessor :check_box_tabs_metadata
 
     # 
-    attr_accessor :currency_tabs_enabled
-
-    # 
-    attr_accessor :currency_tabs_metadata
-
-    # 
     attr_accessor :data_field_regex_enabled
 
     # Metadata that indicates whether the `dataFieldRegex` property is editable. 
@@ -78,6 +72,12 @@ module DocuSign_eSign
 
     # Metadata that indicates whether the `noteTabs` property is editable. 
     attr_accessor :note_tabs_metadata
+
+    # 
+    attr_accessor :numerical_tabs_enabled
+
+    # 
+    attr_accessor :numerical_tabs_metadata
 
     # 
     attr_accessor :prefill_tabs_enabled
@@ -156,8 +156,6 @@ module DocuSign_eSign
         :'calculated_fields_metadata' => :'calculatedFieldsMetadata',
         :'checkbox_tabs_enabled' => :'checkboxTabsEnabled',
         :'check_box_tabs_metadata' => :'checkBoxTabsMetadata',
-        :'currency_tabs_enabled' => :'currencyTabsEnabled',
-        :'currency_tabs_metadata' => :'currencyTabsMetadata',
         :'data_field_regex_enabled' => :'dataFieldRegexEnabled',
         :'data_field_regex_metadata' => :'dataFieldRegexMetadata',
         :'data_field_size_enabled' => :'dataFieldSizeEnabled',
@@ -170,6 +168,8 @@ module DocuSign_eSign
         :'list_tabs_metadata' => :'listTabsMetadata',
         :'note_tabs_enabled' => :'noteTabsEnabled',
         :'note_tabs_metadata' => :'noteTabsMetadata',
+        :'numerical_tabs_enabled' => :'numericalTabsEnabled',
+        :'numerical_tabs_metadata' => :'numericalTabsMetadata',
         :'prefill_tabs_enabled' => :'prefillTabsEnabled',
         :'prefill_tabs_metadata' => :'prefillTabsMetadata',
         :'radio_tabs_enabled' => :'radioTabsEnabled',
@@ -206,8 +206,6 @@ module DocuSign_eSign
         :'calculated_fields_metadata' => :'SettingsMetadata',
         :'checkbox_tabs_enabled' => :'String',
         :'check_box_tabs_metadata' => :'SettingsMetadata',
-        :'currency_tabs_enabled' => :'String',
-        :'currency_tabs_metadata' => :'SettingsMetadata',
         :'data_field_regex_enabled' => :'String',
         :'data_field_regex_metadata' => :'SettingsMetadata',
         :'data_field_size_enabled' => :'String',
@@ -220,6 +218,8 @@ module DocuSign_eSign
         :'list_tabs_metadata' => :'SettingsMetadata',
         :'note_tabs_enabled' => :'String',
         :'note_tabs_metadata' => :'SettingsMetadata',
+        :'numerical_tabs_enabled' => :'String',
+        :'numerical_tabs_metadata' => :'SettingsMetadata',
         :'prefill_tabs_enabled' => :'String',
         :'prefill_tabs_metadata' => :'SettingsMetadata',
         :'radio_tabs_enabled' => :'String',
@@ -285,14 +285,6 @@ module DocuSign_eSign
         self.check_box_tabs_metadata = attributes[:'checkBoxTabsMetadata']
       end
 
-      if attributes.has_key?(:'currencyTabsEnabled')
-        self.currency_tabs_enabled = attributes[:'currencyTabsEnabled']
-      end
-
-      if attributes.has_key?(:'currencyTabsMetadata')
-        self.currency_tabs_metadata = attributes[:'currencyTabsMetadata']
-      end
-
       if attributes.has_key?(:'dataFieldRegexEnabled')
         self.data_field_regex_enabled = attributes[:'dataFieldRegexEnabled']
       end
@@ -339,6 +331,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'noteTabsMetadata')
         self.note_tabs_metadata = attributes[:'noteTabsMetadata']
+      end
+
+      if attributes.has_key?(:'numericalTabsEnabled')
+        self.numerical_tabs_enabled = attributes[:'numericalTabsEnabled']
+      end
+
+      if attributes.has_key?(:'numericalTabsMetadata')
+        self.numerical_tabs_metadata = attributes[:'numericalTabsMetadata']
       end
 
       if attributes.has_key?(:'prefillTabsEnabled')
@@ -456,8 +456,6 @@ module DocuSign_eSign
           calculated_fields_metadata == o.calculated_fields_metadata &&
           checkbox_tabs_enabled == o.checkbox_tabs_enabled &&
           check_box_tabs_metadata == o.check_box_tabs_metadata &&
-          currency_tabs_enabled == o.currency_tabs_enabled &&
-          currency_tabs_metadata == o.currency_tabs_metadata &&
           data_field_regex_enabled == o.data_field_regex_enabled &&
           data_field_regex_metadata == o.data_field_regex_metadata &&
           data_field_size_enabled == o.data_field_size_enabled &&
@@ -470,6 +468,8 @@ module DocuSign_eSign
           list_tabs_metadata == o.list_tabs_metadata &&
           note_tabs_enabled == o.note_tabs_enabled &&
           note_tabs_metadata == o.note_tabs_metadata &&
+          numerical_tabs_enabled == o.numerical_tabs_enabled &&
+          numerical_tabs_metadata == o.numerical_tabs_metadata &&
           prefill_tabs_enabled == o.prefill_tabs_enabled &&
           prefill_tabs_metadata == o.prefill_tabs_metadata &&
           radio_tabs_enabled == o.radio_tabs_enabled &&
@@ -503,7 +503,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_tab_order, allow_tab_order_metadata, approve_decline_tabs_enabled, approve_decline_tabs_metadata, calculated_fields_enabled, calculated_fields_metadata, checkbox_tabs_enabled, check_box_tabs_metadata, currency_tabs_enabled, currency_tabs_metadata, data_field_regex_enabled, data_field_regex_metadata, data_field_size_enabled, data_field_size_metadata, draw_tabs_enabled, draw_tabs_metadata, first_last_email_tabs_enabled, first_last_email_tabs_metadata, list_tabs_enabled, list_tabs_metadata, note_tabs_enabled, note_tabs_metadata, prefill_tabs_enabled, prefill_tabs_metadata, radio_tabs_enabled, radio_tabs_metadata, saving_custom_tabs_enabled, saving_custom_tabs_metadata, sender_to_change_tab_assignments_enabled, sender_to_change_tab_assignments_metadata, shared_custom_tabs_enabled, shared_custom_tabs_metadata, tab_data_label_enabled, tab_data_label_metadata, tab_location_enabled, tab_location_metadata, tab_locking_enabled, tab_locking_metadata, tab_scale_enabled, tab_scale_metadata, tab_text_formatting_enabled, tab_text_formatting_metadata, text_tabs_enabled, text_tabs_metadata].hash
+      [allow_tab_order, allow_tab_order_metadata, approve_decline_tabs_enabled, approve_decline_tabs_metadata, calculated_fields_enabled, calculated_fields_metadata, checkbox_tabs_enabled, check_box_tabs_metadata, data_field_regex_enabled, data_field_regex_metadata, data_field_size_enabled, data_field_size_metadata, draw_tabs_enabled, draw_tabs_metadata, first_last_email_tabs_enabled, first_last_email_tabs_metadata, list_tabs_enabled, list_tabs_metadata, note_tabs_enabled, note_tabs_metadata, numerical_tabs_enabled, numerical_tabs_metadata, prefill_tabs_enabled, prefill_tabs_metadata, radio_tabs_enabled, radio_tabs_metadata, saving_custom_tabs_enabled, saving_custom_tabs_metadata, sender_to_change_tab_assignments_enabled, sender_to_change_tab_assignments_metadata, shared_custom_tabs_enabled, shared_custom_tabs_metadata, tab_data_label_enabled, tab_data_label_metadata, tab_location_enabled, tab_location_metadata, tab_locking_enabled, tab_locking_metadata, tab_scale_enabled, tab_scale_metadata, tab_text_formatting_enabled, tab_text_formatting_metadata, text_tabs_enabled, text_tabs_metadata].hash
     end
 
     # Builds the object from hash

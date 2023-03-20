@@ -89,6 +89,7 @@ module DocuSign_eSign
     # 
     attr_accessor :caption
 
+    # 
     attr_accessor :caption_metadata
 
     # For conditional fields this is the TabLabel of the parent tab that controls this tab's visibility.
@@ -115,7 +116,7 @@ module DocuSign_eSign
     # Metadata that indicates whether the `documentId` property is editable.
     attr_accessor :document_id_metadata
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.

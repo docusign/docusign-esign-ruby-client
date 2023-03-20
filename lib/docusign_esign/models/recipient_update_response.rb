@@ -17,7 +17,7 @@ module DocuSign_eSign
     # 
     attr_accessor :combined
 
-    # This object describes errors that occur. It is only valid for responses and ignored in requests.
+    # Array or errors.
     attr_accessor :error_details
 
     # Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
