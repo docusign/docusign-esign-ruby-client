@@ -100,6 +100,30 @@ module DocuSign_eSign
     end
   end
 
+  class GetAgentUserAuthorizationsOptions
+    # 
+    attr_accessor :active_only
+
+    # 
+    attr_accessor :count
+
+    # 
+    attr_accessor :email_substring
+
+    # 
+    attr_accessor :permissions
+
+    # 
+    attr_accessor :start_position
+
+    # 
+    attr_accessor :user_name_substring
+
+    def self.default
+      @@default ||= GetAgentUserAuthorizationsOptions.new
+    end
+  end
+
   class GetBillingChargesOptions
     # Specifies which billing charges to return. Valid values are:  * envelopes * seats 
     attr_accessor :include_charges
@@ -148,6 +172,30 @@ module DocuSign_eSign
 
     def self.default
       @@default ||= GetPermissionProfileOptions.new
+    end
+  end
+
+  class GetPrincipalUserAuthorizationsOptions
+    # 
+    attr_accessor :active_only
+
+    # 
+    attr_accessor :count
+
+    # 
+    attr_accessor :email_substring
+
+    # 
+    attr_accessor :permissions
+
+    # 
+    attr_accessor :start_position
+
+    # 
+    attr_accessor :user_name_substring
+
+    def self.default
+      @@default ||= GetPrincipalUserAuthorizationsOptions.new
     end
   end
 
@@ -547,6 +595,116 @@ module DocuSign_eSign
         :return_type => 'PermissionProfile')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AccountsApi#create_permission_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Creates the user authorization
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param user_authorization_create_request  (optional parameter)
+    # @return [UserAuthorization]
+    def create_user_authorization(account_id, user_id, user_authorization_create_request)
+      data, _status_code, _headers = create_user_authorization_with_http_info(account_id, user_id,  user_authorization_create_request)
+      return data
+    end
+
+    # Creates the user authorization
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param user_authorization_create_request  (optional parameter)
+    # @return [Array<(UserAuthorization, Fixnum, Hash)>] UserAuthorization data, response status code and response headers
+    def create_user_authorization_with_http_info(account_id, user_id, user_authorization_create_request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.create_user_authorization ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.create_user_authorization" if account_id.nil?
+      # verify the required parameter 'user_id' is set
+      fail ArgumentError, "Missing the required parameter 'user_id' when calling AccountsApi.create_user_authorization" if user_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/users/{userId}/authorization".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(user_authorization_create_request)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'UserAuthorization')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#create_user_authorization\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Creates ot updates user authorizations
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param user_authorizations_request  (optional parameter)
+    # @return [UserAuthorizationsResponse]
+    def create_user_authorizations(account_id, user_id, user_authorizations_request)
+      data, _status_code, _headers = create_user_authorizations_with_http_info(account_id, user_id,  user_authorizations_request)
+      return data
+    end
+
+    # Creates ot updates user authorizations
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param user_authorizations_request  (optional parameter)
+    # @return [Array<(UserAuthorizationsResponse, Fixnum, Hash)>] UserAuthorizationsResponse data, response status code and response headers
+    def create_user_authorizations_with_http_info(account_id, user_id, user_authorizations_request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.create_user_authorizations ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.create_user_authorizations" if account_id.nil?
+      # verify the required parameter 'user_id' is set
+      fail ArgumentError, "Missing the required parameter 'user_id' when calling AccountsApi.create_user_authorizations" if user_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/users/{userId}/authorizations".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(user_authorizations_request)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'UserAuthorizationsResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#create_user_authorizations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1080,6 +1238,117 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Deletes the user authorization
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param authorization_id 
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @return [nil]
+    def delete_user_authorization(account_id, authorization_id, user_id)
+      delete_user_authorization_with_http_info(account_id, authorization_id, user_id)
+      return nil
+    end
+
+    # Deletes the user authorization
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param authorization_id 
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_user_authorization_with_http_info(account_id, authorization_id, user_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.delete_user_authorization ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.delete_user_authorization" if account_id.nil?
+      # verify the required parameter 'authorization_id' is set
+      fail ArgumentError, "Missing the required parameter 'authorization_id' when calling AccountsApi.delete_user_authorization" if authorization_id.nil?
+      # verify the required parameter 'user_id' is set
+      fail ArgumentError, "Missing the required parameter 'user_id' when calling AccountsApi.delete_user_authorization" if user_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/users/{userId}/authorization/{authorizationId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'authorizationId' + '}', authorization_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#delete_user_authorization\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Creates ot updates user authorizations
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param user_authorizations_delete_request  (optional parameter)
+    # @return [UserAuthorizationsDeleteResponse]
+    def delete_user_authorizations(account_id, user_id, user_authorizations_delete_request)
+      data, _status_code, _headers = delete_user_authorizations_with_http_info(account_id, user_id,  user_authorizations_delete_request)
+      return data
+    end
+
+    # Creates ot updates user authorizations
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param user_authorizations_delete_request  (optional parameter)
+    # @return [Array<(UserAuthorizationsDeleteResponse, Fixnum, Hash)>] UserAuthorizationsDeleteResponse data, response status code and response headers
+    def delete_user_authorizations_with_http_info(account_id, user_id, user_authorizations_delete_request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.delete_user_authorizations ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.delete_user_authorizations" if account_id.nil?
+      # verify the required parameter 'user_id' is set
+      fail ArgumentError, "Missing the required parameter 'user_id' when calling AccountsApi.delete_user_authorizations" if user_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/users/{userId}/authorizations".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(user_authorizations_delete_request)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'UserAuthorizationsDeleteResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#delete_user_authorizations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get the list of identity verification options for an account
     # This method returns a list of Identity Verification workflows that are available to an account.  **Note:** To use this method, you must either be an account administrator or a sender.  ### Related topics  - [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)  
     # @param account_id The external account number (int) or account ID Guid.
@@ -1393,6 +1662,67 @@ module DocuSign_eSign
         :return_type => 'TabAccountSettings')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AccountsApi#get_account_tab_settings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns the agent user authorizations
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param DocuSign_eSign::GetAgentUserAuthorizationsOptions Options for modifying the behavior of the function.
+    # @return [UserAuthorizations]
+    def get_agent_user_authorizations(account_id, user_id, options = DocuSign_eSign::GetAgentUserAuthorizationsOptions.default)
+      data, _status_code, _headers = get_agent_user_authorizations_with_http_info(account_id, user_id, options)
+      return data
+    end
+
+    # Returns the agent user authorizations
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param DocuSign_eSign::GetAgentUserAuthorizationsOptions Options for modifying the behavior of the function.
+    # @return [Array<(UserAuthorizations, Fixnum, Hash)>] UserAuthorizations data, response status code and response headers
+    def get_agent_user_authorizations_with_http_info(account_id, user_id, options = DocuSign_eSign::GetAgentUserAuthorizationsOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.get_agent_user_authorizations ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.get_agent_user_authorizations" if account_id.nil?
+      # verify the required parameter 'user_id' is set
+      fail ArgumentError, "Missing the required parameter 'user_id' when calling AccountsApi.get_agent_user_authorizations" if user_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/users/{userId}/authorizations/agent".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'active_only'] = options.active_only if !options.active_only.nil?
+      query_params[:'count'] = options.count if !options.count.nil?
+      query_params[:'email_substring'] = options.email_substring if !options.email_substring.nil?
+      query_params[:'permissions'] = options.permissions if !options.permissions.nil?
+      query_params[:'start_position'] = options.start_position if !options.start_position.nil?
+      query_params[:'user_name_substring'] = options.user_name_substring if !options.user_name_substring.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'UserAuthorizations')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#get_agent_user_authorizations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2228,6 +2558,67 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Returns the principal user authorizations
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param DocuSign_eSign::GetPrincipalUserAuthorizationsOptions Options for modifying the behavior of the function.
+    # @return [UserAuthorizations]
+    def get_principal_user_authorizations(account_id, user_id, options = DocuSign_eSign::GetPrincipalUserAuthorizationsOptions.default)
+      data, _status_code, _headers = get_principal_user_authorizations_with_http_info(account_id, user_id, options)
+      return data
+    end
+
+    # Returns the principal user authorizations
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param DocuSign_eSign::GetPrincipalUserAuthorizationsOptions Options for modifying the behavior of the function.
+    # @return [Array<(UserAuthorizations, Fixnum, Hash)>] UserAuthorizations data, response status code and response headers
+    def get_principal_user_authorizations_with_http_info(account_id, user_id, options = DocuSign_eSign::GetPrincipalUserAuthorizationsOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.get_principal_user_authorizations ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.get_principal_user_authorizations" if account_id.nil?
+      # verify the required parameter 'user_id' is set
+      fail ArgumentError, "Missing the required parameter 'user_id' when calling AccountsApi.get_principal_user_authorizations" if user_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/users/{userId}/authorizations".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'active_only'] = options.active_only if !options.active_only.nil?
+      query_params[:'count'] = options.count if !options.count.nil?
+      query_params[:'email_substring'] = options.email_substring if !options.email_substring.nil?
+      query_params[:'permissions'] = options.permissions if !options.permissions.nil?
+      query_params[:'start_position'] = options.start_position if !options.start_position.nil?
+      query_params[:'user_name_substring'] = options.user_name_substring if !options.user_name_substring.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'UserAuthorizations')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#get_principal_user_authorizations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Retrieves the account provisioning information for the account.
     # Retrieves the account provisioning information for the account.
     # @return [ProvisioningInformation]
@@ -2318,6 +2709,63 @@ module DocuSign_eSign
         :return_type => 'SupportedLanguages')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AccountsApi#get_supported_languages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Returns the user authorization for a given authorization id
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param authorization_id 
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @return [UserAuthorization]
+    def get_user_authorization(account_id, authorization_id, user_id)
+      data, _status_code, _headers = get_user_authorization_with_http_info(account_id, authorization_id, user_id)
+      return data
+    end
+
+    # Returns the user authorization for a given authorization id
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param authorization_id 
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @return [Array<(UserAuthorization, Fixnum, Hash)>] UserAuthorization data, response status code and response headers
+    def get_user_authorization_with_http_info(account_id, authorization_id, user_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.get_user_authorization ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.get_user_authorization" if account_id.nil?
+      # verify the required parameter 'authorization_id' is set
+      fail ArgumentError, "Missing the required parameter 'authorization_id' when calling AccountsApi.get_user_authorization" if authorization_id.nil?
+      # verify the required parameter 'user_id' is set
+      fail ArgumentError, "Missing the required parameter 'user_id' when calling AccountsApi.get_user_authorization" if user_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/users/{userId}/authorization/{authorizationId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'authorizationId' + '}', authorization_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'UserAuthorization')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#get_user_authorization\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3820,6 +4268,65 @@ module DocuSign_eSign
         :return_type => 'AccountSharedAccess')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AccountsApi#update_shared_access\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Updates the user authorization
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param authorization_id 
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param user_authorization_update_request  (optional parameter)
+    # @return [UserAuthorization]
+    def update_user_authorization(account_id, authorization_id, user_id, user_authorization_update_request)
+      data, _status_code, _headers = update_user_authorization_with_http_info(account_id, authorization_id, user_id,  user_authorization_update_request)
+      return data
+    end
+
+    # Updates the user authorization
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param authorization_id 
+    # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param user_authorization_update_request  (optional parameter)
+    # @return [Array<(UserAuthorization, Fixnum, Hash)>] UserAuthorization data, response status code and response headers
+    def update_user_authorization_with_http_info(account_id, authorization_id, user_id, user_authorization_update_request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.update_user_authorization ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.update_user_authorization" if account_id.nil?
+      # verify the required parameter 'authorization_id' is set
+      fail ArgumentError, "Missing the required parameter 'authorization_id' when calling AccountsApi.update_user_authorization" if authorization_id.nil?
+      # verify the required parameter 'user_id' is set
+      fail ArgumentError, "Missing the required parameter 'user_id' when calling AccountsApi.update_user_authorization" if user_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/users/{userId}/authorization/{authorizationId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'authorizationId' + '}', authorization_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(user_authorization_update_request)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'UserAuthorization')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#update_user_authorization\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
