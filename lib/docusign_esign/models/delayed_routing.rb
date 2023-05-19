@@ -19,7 +19,7 @@ module DocuSign_eSign
     # A list of envelope delay rules specified by the user indicating how and when the envelope should be sent in the future for the current workflow step and its associated recipients. Currently only 1 rule may be specified.
     attr_accessor :rules
 
-    # Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+    # \\\"pending\\\" if the current workflow step has not been reached and the delay has not yet started. \\\"started\\\" if the delay is in progress. \\\"completed\\\" if the delay has elapsed and the envelope has been sent to the current workflow step's recipients.
     attr_accessor :status
 
     # Attribute mapping from ruby-style variable name to JSON key.

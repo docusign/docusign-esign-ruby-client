@@ -18,6 +18,12 @@ module DocuSign_eSign
     attr_accessor :admin_message
 
     # 
+    attr_accessor :allow_users_to_edit_shared_access
+
+    # 
+    attr_accessor :allow_users_to_edit_shared_access_metadata
+
+    # 
     attr_accessor :ask_an_admin
 
     # 
@@ -108,6 +114,8 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'admin_message' => :'adminMessage',
+        :'allow_users_to_edit_shared_access' => :'allowUsersToEditSharedAccess',
+        :'allow_users_to_edit_shared_access_metadata' => :'allowUsersToEditSharedAccessMetadata',
         :'ask_an_admin' => :'askAnAdmin',
         :'clickwrap_schema_version' => :'clickwrapSchemaVersion',
         :'clickwrap_schema_version_metadata' => :'clickwrapSchemaVersionMetadata',
@@ -144,6 +152,8 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'admin_message' => :'AdminMessage',
+        :'allow_users_to_edit_shared_access' => :'String',
+        :'allow_users_to_edit_shared_access_metadata' => :'SettingsMetadata',
         :'ask_an_admin' => :'AskAnAdmin',
         :'clickwrap_schema_version' => :'String',
         :'clickwrap_schema_version_metadata' => :'SettingsMetadata',
@@ -186,6 +196,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'adminMessage')
         self.admin_message = attributes[:'adminMessage']
+      end
+
+      if attributes.has_key?(:'allowUsersToEditSharedAccess')
+        self.allow_users_to_edit_shared_access = attributes[:'allowUsersToEditSharedAccess']
+      end
+
+      if attributes.has_key?(:'allowUsersToEditSharedAccessMetadata')
+        self.allow_users_to_edit_shared_access_metadata = attributes[:'allowUsersToEditSharedAccessMetadata']
       end
 
       if attributes.has_key?(:'askAnAdmin')
@@ -324,6 +342,8 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           admin_message == o.admin_message &&
+          allow_users_to_edit_shared_access == o.allow_users_to_edit_shared_access &&
+          allow_users_to_edit_shared_access_metadata == o.allow_users_to_edit_shared_access_metadata &&
           ask_an_admin == o.ask_an_admin &&
           clickwrap_schema_version == o.clickwrap_schema_version &&
           clickwrap_schema_version_metadata == o.clickwrap_schema_version_metadata &&
@@ -364,7 +384,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [admin_message, ask_an_admin, clickwrap_schema_version, clickwrap_schema_version_metadata, enable_admin_message, enable_admin_message_metadata, enable_easy_sign_can_use_multi_template_apply, enable_easy_sign_can_use_multi_template_apply_metadata, enable_easy_sign_template_upload, enable_easy_sign_template_upload_metadata, enable_envelope_copy_with_data, enable_envelope_copy_with_data_metadata, enable_legacy_sendflow_link, enable_legacy_sendflow_link_metadata, has_external_linked_accounts, has_external_linked_accounts_metadata, hide_send_an_envelope, hide_send_an_envelope_metadata, hide_use_a_template, hide_use_a_template_in_prepare, hide_use_a_template_in_prepare_metadata, hide_use_a_template_metadata, order_based_recipient_id_generation, order_based_recipient_id_generation_metadata, remove_envelope_forwarding, remove_envelope_forwarding_metadata, should_redact_access_code, should_redact_access_code_metadata, upload_new_image_to_sign_or_initial, upload_new_image_to_sign_or_initial_metadata].hash
+      [admin_message, allow_users_to_edit_shared_access, allow_users_to_edit_shared_access_metadata, ask_an_admin, clickwrap_schema_version, clickwrap_schema_version_metadata, enable_admin_message, enable_admin_message_metadata, enable_easy_sign_can_use_multi_template_apply, enable_easy_sign_can_use_multi_template_apply_metadata, enable_easy_sign_template_upload, enable_easy_sign_template_upload_metadata, enable_envelope_copy_with_data, enable_envelope_copy_with_data_metadata, enable_legacy_sendflow_link, enable_legacy_sendflow_link_metadata, has_external_linked_accounts, has_external_linked_accounts_metadata, hide_send_an_envelope, hide_send_an_envelope_metadata, hide_use_a_template, hide_use_a_template_in_prepare, hide_use_a_template_in_prepare_metadata, hide_use_a_template_metadata, order_based_recipient_id_generation, order_based_recipient_id_generation_metadata, remove_envelope_forwarding, remove_envelope_forwarding_metadata, should_redact_access_code, should_redact_access_code_metadata, upload_new_image_to_sign_or_initial, upload_new_image_to_sign_or_initial_metadata].hash
     end
 
     # Builds the object from hash

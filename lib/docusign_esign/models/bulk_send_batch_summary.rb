@@ -15,6 +15,12 @@ module DocuSign_eSign
   # Summary status of a single batch.
   class BulkSendBatchSummary
     # 
+    attr_accessor :action
+
+    # 
+    attr_accessor :action_status
+
+    # 
     attr_accessor :batch_id
 
     # 
@@ -41,6 +47,8 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'action' => :'action',
+        :'action_status' => :'actionStatus',
         :'batch_id' => :'batchId',
         :'batch_name' => :'batchName',
         :'batch_size' => :'batchSize',
@@ -55,6 +63,8 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'action' => :'String',
+        :'action_status' => :'String',
         :'batch_id' => :'String',
         :'batch_name' => :'String',
         :'batch_size' => :'String',
@@ -73,6 +83,14 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'action')
+        self.action = attributes[:'action']
+      end
+
+      if attributes.has_key?(:'actionStatus')
+        self.action_status = attributes[:'actionStatus']
+      end
 
       if attributes.has_key?(:'batchId')
         self.batch_id = attributes[:'batchId']
@@ -125,6 +143,8 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          action == o.action &&
+          action_status == o.action_status &&
           batch_id == o.batch_id &&
           batch_name == o.batch_name &&
           batch_size == o.batch_size &&
@@ -144,7 +164,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [batch_id, batch_name, batch_size, batch_uri, failed, queued, sent, submitted_date].hash
+      [action, action_status, batch_id, batch_name, batch_size, batch_uri, failed, queued, sent, submitted_date].hash
     end
 
     # Builds the object from hash
