@@ -36,6 +36,9 @@ module DocuSign_eSign
     attr_accessor :encrypt
 
     # 
+    attr_accessor :file_type
+
+    # 
     attr_accessor :show_changes
 
     def self.default
@@ -1522,6 +1525,7 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'encrypt'] = options.encrypt if !options.encrypt.nil?
+      query_params[:'file_type'] = options.file_type if !options.file_type.nil?
       query_params[:'show_changes'] = options.show_changes if !options.show_changes.nil?
 
       # header parameters

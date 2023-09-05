@@ -39,6 +39,9 @@ module DocuSign_eSign
     attr_accessor :error_details
 
     # 
+    attr_accessor :is_organization_brand
+
+    # 
     attr_accessor :is_overriding_company_name
 
     # 
@@ -56,6 +59,9 @@ module DocuSign_eSign
     # The URIs for retrieving the logos that are associated with the brand.
     attr_accessor :logos
 
+    # 
+    attr_accessor :organization_brand_logo
+
     # An object containing the URLs for the four DocuSign master resource files that the brand uses for sending, signing, email messages, and captive (embedded) signing. You can modify the default email messages and formats in these file to customize the user experience.  **Note:** This object is returned only when the `resourceContentType` is `sending`, `signing`, `email`, or `signing_captive`.
     attr_accessor :resources
 
@@ -70,12 +76,14 @@ module DocuSign_eSign
         :'default_brand_language' => :'defaultBrandLanguage',
         :'email_content' => :'emailContent',
         :'error_details' => :'errorDetails',
+        :'is_organization_brand' => :'isOrganizationBrand',
         :'is_overriding_company_name' => :'isOverridingCompanyName',
         :'is_sending_default' => :'isSendingDefault',
         :'is_signing_default' => :'isSigningDefault',
         :'landing_pages' => :'landingPages',
         :'links' => :'links',
         :'logos' => :'logos',
+        :'organization_brand_logo' => :'organizationBrandLogo',
         :'resources' => :'resources'
       }
     end
@@ -91,12 +99,14 @@ module DocuSign_eSign
         :'default_brand_language' => :'String',
         :'email_content' => :'Array<BrandEmailContent>',
         :'error_details' => :'ErrorDetails',
+        :'is_organization_brand' => :'String',
         :'is_overriding_company_name' => :'BOOLEAN',
         :'is_sending_default' => :'BOOLEAN',
         :'is_signing_default' => :'BOOLEAN',
         :'landing_pages' => :'Array<NameValue>',
         :'links' => :'Array<BrandLink>',
         :'logos' => :'BrandLogos',
+        :'organization_brand_logo' => :'String',
         :'resources' => :'BrandResourceUrls'
       }
     end
@@ -147,6 +157,10 @@ module DocuSign_eSign
         self.error_details = attributes[:'errorDetails']
       end
 
+      if attributes.has_key?(:'isOrganizationBrand')
+        self.is_organization_brand = attributes[:'isOrganizationBrand']
+      end
+
       if attributes.has_key?(:'isOverridingCompanyName')
         self.is_overriding_company_name = attributes[:'isOverridingCompanyName']
       end
@@ -173,6 +187,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'logos')
         self.logos = attributes[:'logos']
+      end
+
+      if attributes.has_key?(:'organizationBrandLogo')
+        self.organization_brand_logo = attributes[:'organizationBrandLogo']
       end
 
       if attributes.has_key?(:'resources')
@@ -206,12 +224,14 @@ module DocuSign_eSign
           default_brand_language == o.default_brand_language &&
           email_content == o.email_content &&
           error_details == o.error_details &&
+          is_organization_brand == o.is_organization_brand &&
           is_overriding_company_name == o.is_overriding_company_name &&
           is_sending_default == o.is_sending_default &&
           is_signing_default == o.is_signing_default &&
           landing_pages == o.landing_pages &&
           links == o.links &&
           logos == o.logos &&
+          organization_brand_logo == o.organization_brand_logo &&
           resources == o.resources
     end
 
@@ -224,7 +244,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [brand_company, brand_id, brand_languages, brand_name, colors, default_brand_language, email_content, error_details, is_overriding_company_name, is_sending_default, is_signing_default, landing_pages, links, logos, resources].hash
+      [brand_company, brand_id, brand_languages, brand_name, colors, default_brand_language, email_content, error_details, is_organization_brand, is_overriding_company_name, is_sending_default, is_signing_default, landing_pages, links, logos, organization_brand_logo, resources].hash
     end
 
     # Builds the object from hash

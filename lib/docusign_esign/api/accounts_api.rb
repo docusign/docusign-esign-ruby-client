@@ -49,6 +49,15 @@ module DocuSign_eSign
     end
   end
 
+  class DeleteOptions
+    # 
+    attr_accessor :redact_user_data
+
+    def self.default
+      @@default ||= DeleteOptions.new
+    end
+  end
+
   class DeleteCustomFieldOptions
     # 
     attr_accessor :apply_to_templates
@@ -64,6 +73,15 @@ module DocuSign_eSign
 
     def self.default
       @@default ||= DeletePermissionProfileOptions.new
+    end
+  end
+
+  class GetAccountIdentityVerificationOptions
+    # 
+    attr_accessor :identity_verification_workflow_status
+
+    def self.default
+      @@default ||= GetAccountIdentityVerificationOptions.new
     end
   end
 
@@ -718,17 +736,19 @@ module DocuSign_eSign
     # Deletes the specified account.
     # This closes the specified account. You must be an account admin to close your account. Once closed, an account must be reopened by DocuSign.
     # @param account_id The external account number (int) or account ID Guid.
+    # @param DocuSign_eSign::DeleteOptions Options for modifying the behavior of the function.
     # @return [nil]
-    def delete(account_id)
-      delete_with_http_info(account_id)
+    def delete(account_id, options = DocuSign_eSign::DeleteOptions.default)
+      delete_with_http_info(account_id, options)
       return nil
     end
 
     # Deletes the specified account.
     # This closes the specified account. You must be an account admin to close your account. Once closed, an account must be reopened by DocuSign.
     # @param account_id The external account number (int) or account ID Guid.
+    # @param DocuSign_eSign::DeleteOptions Options for modifying the behavior of the function.
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def delete_with_http_info(account_id)
+    def delete_with_http_info(account_id, options = DocuSign_eSign::DeleteOptions.default)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: AccountsApi.delete ..."
       end
@@ -739,6 +759,7 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'redact_user_data'] = options.redact_user_data if !options.redact_user_data.nil?
 
       # header parameters
       header_params = {}
@@ -1358,17 +1379,19 @@ module DocuSign_eSign
     # Get the list of identity verification options for an account
     # This method returns a list of Identity Verification workflows that are available to an account.  **Note:** To use this method, you must either be an account administrator or a sender.  ### Related topics  - [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)  
     # @param account_id The external account number (int) or account ID Guid.
+    # @param DocuSign_eSign::GetAccountIdentityVerificationOptions Options for modifying the behavior of the function.
     # @return [AccountIdentityVerificationResponse]
-    def get_account_identity_verification(account_id)
-      data, _status_code, _headers = get_account_identity_verification_with_http_info(account_id)
+    def get_account_identity_verification(account_id, options = DocuSign_eSign::GetAccountIdentityVerificationOptions.default)
+      data, _status_code, _headers = get_account_identity_verification_with_http_info(account_id, options)
       return data
     end
 
     # Get the list of identity verification options for an account
     # This method returns a list of Identity Verification workflows that are available to an account.  **Note:** To use this method, you must either be an account administrator or a sender.  ### Related topics  - [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)  
     # @param account_id The external account number (int) or account ID Guid.
+    # @param DocuSign_eSign::GetAccountIdentityVerificationOptions Options for modifying the behavior of the function.
     # @return [Array<(AccountIdentityVerificationResponse, Fixnum, Hash)>] AccountIdentityVerificationResponse data, response status code and response headers
-    def get_account_identity_verification_with_http_info(account_id)
+    def get_account_identity_verification_with_http_info(account_id, options = DocuSign_eSign::GetAccountIdentityVerificationOptions.default)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: AccountsApi.get_account_identity_verification ..."
       end
@@ -1379,6 +1402,7 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'identity_verification_workflow_status'] = options.identity_verification_workflow_status if !options.identity_verification_workflow_status.nil?
 
       # header parameters
       header_params = {}
@@ -2117,7 +2141,7 @@ module DocuSign_eSign
     # Gets the Electronic Record and Signature Disclosure.
     # Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, for the requested envelope recipient. This might be different than the current account disclosure depending on account settings, such as branding, and when the account disclosure was last updated. An optional query string can be included to return the language for the disclosure.  
     # @param account_id The external account number (int) or account ID Guid.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @return [ConsumerDisclosure]
     def get_consumer_disclosure(account_id, lang_code)
       data, _status_code, _headers = get_consumer_disclosure_with_http_info(account_id, lang_code)
@@ -2127,7 +2151,7 @@ module DocuSign_eSign
     # Gets the Electronic Record and Signature Disclosure.
     # Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, for the requested envelope recipient. This might be different than the current account disclosure depending on account settings, such as branding, and when the account disclosure was last updated. An optional query string can be included to return the language for the disclosure.  
     # @param account_id The external account number (int) or account ID Guid.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @return [Array<(ConsumerDisclosure, Fixnum, Hash)>] ConsumerDisclosure data, response status code and response headers
     def get_consumer_disclosure_with_http_info(account_id, lang_code)
       if @api_client.config.debugging
@@ -3688,9 +3712,10 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID GUID.
     # @param brand_id The ID of the brand.
     # @param resource_content_type The type of brand resource file that you are updating. Valid values are:  - `sending` - `signing` - `email` - `signing_captive`
+    # @param file_xml Brand resource XML file. 
     # @return [BrandResources]
-    def update_brand_resources_by_content_type(account_id, brand_id, resource_content_type)
-      data, _status_code, _headers = update_brand_resources_by_content_type_with_http_info(account_id, brand_id, resource_content_type)
+    def update_brand_resources_by_content_type(account_id, brand_id, resource_content_type, file_xml)
+      data, _status_code, _headers = update_brand_resources_by_content_type_with_http_info(account_id, brand_id, resource_content_type, file_xml)
       return data
     end
 
@@ -3699,8 +3724,9 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID GUID.
     # @param brand_id The ID of the brand.
     # @param resource_content_type The type of brand resource file that you are updating. Valid values are:  - `sending` - `signing` - `email` - `signing_captive`
+    # @param file_xml Brand resource XML file. 
     # @return [Array<(BrandResources, Fixnum, Hash)>] BrandResources data, response status code and response headers
-    def update_brand_resources_by_content_type_with_http_info(account_id, brand_id, resource_content_type)
+    def update_brand_resources_by_content_type_with_http_info(account_id, brand_id, resource_content_type, file_xml)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: AccountsApi.update_brand_resources_by_content_type ..."
       end
@@ -3748,7 +3774,7 @@ module DocuSign_eSign
     # Update Consumer Disclosure.
     # Account administrators can use this method to perform the following tasks:  - Customize values in the default disclosure. - Switch to a custom disclosure that uses your own text and HTML formatting. - Change values in your existing consumer disclosure.   To specify the signer language version of the disclosure that you are updating, use the optional `langCode` query parameter.  **Note:** Only account administrators can use this method. Each time you change the disclosure content, all unsigned recipients of outstanding documents will be required to accept a new version.   ## Updating the default disclosure  When you update the default disclosure, you can edit all properties except for the following ones:  - `accountEsignId`: This property is read-only. - `custom`: The default value is **false.** Editing this property causes the default disclosure to switch to a custom disclosure. - `esignAgreement`: This property is read-only. - `esignText`: You cannot edit this property when `custom` is set to **false.** The API returns a 200 OK HTTP response, but does not update the `esignText`. - Metadata properties: These properties are read-only.  **Note:** The text of the default disclosure is always in English.  ## Switching to a custom disclosure  To switch to a custom disclosure, set the `custom` property to **true** and customize the value for the `eSignText` property.   You can also edit all of the other properties except for the following ones:  - `accountEsignId`: This property is read-only. - `esignAgreement`: This property is read-only. - Metadata properties: These properties are read-only.  **Note:** When you use a custom disclosure, you can create versions of it in different signer languages and se the `langCode` parameter to specify the signer language version that you are updating.  **Important:**  When you switch from a default to a custom disclosure, note the following information:  - You will not be able to return to using the default disclosure. - Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  ## Updating a custom disclosure  When you update a custom disclosure, you can update all of the properties except for the following ones:  - `accountEsignId`: This property is read-only.  - `esignAgreement`: This property is read-only. - Metadata properties: These properties are read-only.  **Important:** Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  
     # @param account_id The external account number (int) or account ID Guid.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param consumer_disclosure  (optional parameter)
     # @param DocuSign_eSign::UpdateConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [ConsumerDisclosure]
@@ -3760,7 +3786,7 @@ module DocuSign_eSign
     # Update Consumer Disclosure.
     # Account administrators can use this method to perform the following tasks:  - Customize values in the default disclosure. - Switch to a custom disclosure that uses your own text and HTML formatting. - Change values in your existing consumer disclosure.   To specify the signer language version of the disclosure that you are updating, use the optional &#x60;langCode&#x60; query parameter.  **Note:** Only account administrators can use this method. Each time you change the disclosure content, all unsigned recipients of outstanding documents will be required to accept a new version.   ## Updating the default disclosure  When you update the default disclosure, you can edit all properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;custom&#x60;: The default value is **false.** Editing this property causes the default disclosure to switch to a custom disclosure. - &#x60;esignAgreement&#x60;: This property is read-only. - &#x60;esignText&#x60;: You cannot edit this property when &#x60;custom&#x60; is set to **false.** The API returns a 200 OK HTTP response, but does not update the &#x60;esignText&#x60;. - Metadata properties: These properties are read-only.  **Note:** The text of the default disclosure is always in English.  ## Switching to a custom disclosure  To switch to a custom disclosure, set the &#x60;custom&#x60; property to **true** and customize the value for the &#x60;eSignText&#x60; property.   You can also edit all of the other properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Note:** When you use a custom disclosure, you can create versions of it in different signer languages and se the &#x60;langCode&#x60; parameter to specify the signer language version that you are updating.  **Important:**  When you switch from a default to a custom disclosure, note the following information:  - You will not be able to return to using the default disclosure. - Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  ## Updating a custom disclosure  When you update a custom disclosure, you can update all of the properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only.  - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Important:** Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  
     # @param account_id The external account number (int) or account ID Guid.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param consumer_disclosure  (optional parameter)
     # @param DocuSign_eSign::UpdateConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [Array<(ConsumerDisclosure, Fixnum, Hash)>] ConsumerDisclosure data, response status code and response headers

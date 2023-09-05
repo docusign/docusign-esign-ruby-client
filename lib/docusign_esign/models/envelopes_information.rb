@@ -24,6 +24,9 @@ module DocuSign_eSign
     attr_accessor :envelopes
 
     # 
+    attr_accessor :envelope_search_source
+
+    # 
     attr_accessor :envelope_transaction_statuses
 
     # 
@@ -53,6 +56,7 @@ module DocuSign_eSign
         :'continuation_token' => :'continuationToken',
         :'end_position' => :'endPosition',
         :'envelopes' => :'envelopes',
+        :'envelope_search_source' => :'envelopeSearchSource',
         :'envelope_transaction_statuses' => :'envelopeTransactionStatuses',
         :'folders' => :'folders',
         :'last_queried_date_time' => :'lastQueriedDateTime',
@@ -70,6 +74,7 @@ module DocuSign_eSign
         :'continuation_token' => :'String',
         :'end_position' => :'String',
         :'envelopes' => :'Array<Envelope>',
+        :'envelope_search_source' => :'String',
         :'envelope_transaction_statuses' => :'Array<EnvelopeTransactionStatus>',
         :'folders' => :'Array<Folder>',
         :'last_queried_date_time' => :'String',
@@ -101,6 +106,10 @@ module DocuSign_eSign
         if (value = attributes[:'envelopes']).is_a?(Array)
           self.envelopes = value
         end
+      end
+
+      if attributes.has_key?(:'envelopeSearchSource')
+        self.envelope_search_source = attributes[:'envelopeSearchSource']
       end
 
       if attributes.has_key?(:'envelopeTransactionStatuses')
@@ -161,6 +170,7 @@ module DocuSign_eSign
           continuation_token == o.continuation_token &&
           end_position == o.end_position &&
           envelopes == o.envelopes &&
+          envelope_search_source == o.envelope_search_source &&
           envelope_transaction_statuses == o.envelope_transaction_statuses &&
           folders == o.folders &&
           last_queried_date_time == o.last_queried_date_time &&
@@ -180,7 +190,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [continuation_token, end_position, envelopes, envelope_transaction_statuses, folders, last_queried_date_time, next_uri, previous_uri, result_set_size, start_position, total_set_size].hash
+      [continuation_token, end_position, envelopes, envelope_search_source, envelope_transaction_statuses, folders, last_queried_date_time, next_uri, previous_uri, result_set_size, start_position, total_set_size].hash
     end
 
     # Builds the object from hash
