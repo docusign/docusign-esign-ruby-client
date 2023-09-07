@@ -191,6 +191,9 @@ module DocuSign_eSign
     attr_accessor :notary_source_type
 
     # 
+    attr_accessor :notary_third_party_partner
+
+    # 
     attr_accessor :notary_type
 
     # Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters.
@@ -381,6 +384,7 @@ module DocuSign_eSign
         :'notary_signer_email_sent' => :'notarySignerEmailSent',
         :'notary_signers' => :'notarySigners',
         :'notary_source_type' => :'notarySourceType',
+        :'notary_third_party_partner' => :'notaryThirdPartyPartner',
         :'notary_type' => :'notaryType',
         :'note' => :'note',
         :'note_metadata' => :'noteMetadata',
@@ -489,6 +493,7 @@ module DocuSign_eSign
         :'notary_signer_email_sent' => :'String',
         :'notary_signers' => :'Array<String>',
         :'notary_source_type' => :'String',
+        :'notary_third_party_partner' => :'String',
         :'notary_type' => :'String',
         :'note' => :'String',
         :'note_metadata' => :'PropertyMetadata',
@@ -793,6 +798,10 @@ module DocuSign_eSign
         self.notary_source_type = attributes[:'notarySourceType']
       end
 
+      if attributes.has_key?(:'notaryThirdPartyPartner')
+        self.notary_third_party_partner = attributes[:'notaryThirdPartyPartner']
+      end
+
       if attributes.has_key?(:'notaryType')
         self.notary_type = attributes[:'notaryType']
       end
@@ -1053,6 +1062,7 @@ module DocuSign_eSign
           notary_signer_email_sent == o.notary_signer_email_sent &&
           notary_signers == o.notary_signers &&
           notary_source_type == o.notary_source_type &&
+          notary_third_party_partner == o.notary_third_party_partner &&
           notary_type == o.notary_type &&
           note == o.note &&
           note_metadata == o.note_metadata &&
@@ -1107,7 +1117,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_navigation, auto_responded_reason, bulk_recipients_uri, bulk_send_v2_recipient, can_sign_offline, client_user_id, completed_count, consent_details_list, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delegated_by, delegated_to, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, live_oak_start_url, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_id, notary_signer_email_sent, notary_signers, notary_source_type, notary_type, note, note_metadata, offline_attributes, phone_authentication, phone_number, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_navigation, auto_responded_reason, bulk_recipients_uri, bulk_send_v2_recipient, can_sign_offline, client_user_id, completed_count, consent_details_list, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delegated_by, delegated_to, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, live_oak_start_url, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_id, notary_signer_email_sent, notary_signers, notary_source_type, notary_third_party_partner, notary_type, note, note_metadata, offline_attributes, phone_authentication, phone_number, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
     end
 
     # Builds the object from hash

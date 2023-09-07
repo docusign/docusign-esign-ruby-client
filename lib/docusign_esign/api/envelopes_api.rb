@@ -384,6 +384,9 @@ module DocuSign_eSign
     attr_accessor :requester_date_format
 
     # 
+    attr_accessor :search_mode
+
+    # 
     attr_accessor :search_text
 
     # 
@@ -3337,10 +3340,10 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param attachment_id 
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [nil]
+    # @return [File]
     def get_attachment(account_id, attachment_id, envelope_id)
-      get_attachment_with_http_info(account_id, attachment_id, envelope_id)
-      return nil
+      data, _status_code, _headers = get_attachment_with_http_info(account_id, attachment_id, envelope_id)
+      return data
     end
 
     # Retrieves an attachment from the envelope.
@@ -3348,7 +3351,7 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param attachment_id 
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
     def get_attachment_with_http_info(account_id, attachment_id, envelope_id)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: EnvelopesApi.get_attachment ..."
@@ -3368,7 +3371,7 @@ module DocuSign_eSign
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/octet-stream'])
 
       # form parameters
       form_params = {}
@@ -3381,7 +3384,8 @@ module DocuSign_eSign
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#get_attachment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -3557,7 +3561,7 @@ module DocuSign_eSign
     # Reserved: Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param recipient_id The ID of the recipient being accessed.
     # @param DocuSign_eSign::GetConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [ConsumerDisclosure]
@@ -3570,7 +3574,7 @@ module DocuSign_eSign
     # Reserved: Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param recipient_id The ID of the recipient being accessed.
     # @param DocuSign_eSign::GetConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [Array<(ConsumerDisclosure, Fixnum, Hash)>] ConsumerDisclosure data, response status code and response headers
@@ -5665,6 +5669,7 @@ module DocuSign_eSign
       query_params[:'powerformids'] = options.powerformids if !options.powerformids.nil?
       query_params[:'query_budget'] = options.query_budget if !options.query_budget.nil?
       query_params[:'requester_date_format'] = options.requester_date_format if !options.requester_date_format.nil?
+      query_params[:'search_mode'] = options.search_mode if !options.search_mode.nil?
       query_params[:'search_text'] = options.search_text if !options.search_text.nil?
       query_params[:'start_position'] = options.start_position if !options.start_position.nil?
       query_params[:'status'] = options.status if !options.status.nil?

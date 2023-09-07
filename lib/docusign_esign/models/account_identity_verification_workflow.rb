@@ -23,6 +23,12 @@ module DocuSign_eSign
     # 
     attr_accessor :input_options
 
+    # 
+    attr_accessor :is_disabled
+
+    # 
+    attr_accessor :owner_type
+
     # The signature provider associated with the Identity Verification workflow.
     attr_accessor :signature_provider
 
@@ -44,6 +50,8 @@ module DocuSign_eSign
         :'default_description' => :'defaultDescription',
         :'default_name' => :'defaultName',
         :'input_options' => :'inputOptions',
+        :'is_disabled' => :'isDisabled',
+        :'owner_type' => :'ownerType',
         :'signature_provider' => :'signatureProvider',
         :'steps' => :'steps',
         :'workflow_id' => :'workflowId',
@@ -58,6 +66,8 @@ module DocuSign_eSign
         :'default_description' => :'String',
         :'default_name' => :'String',
         :'input_options' => :'Array<AccountIdentityInputOption>',
+        :'is_disabled' => :'String',
+        :'owner_type' => :'String',
         :'signature_provider' => :'AccountSignatureProvider',
         :'steps' => :'Array<AccountIdentityVerificationStep>',
         :'workflow_id' => :'String',
@@ -86,6 +96,14 @@ module DocuSign_eSign
         if (value = attributes[:'inputOptions']).is_a?(Array)
           self.input_options = value
         end
+      end
+
+      if attributes.has_key?(:'isDisabled')
+        self.is_disabled = attributes[:'isDisabled']
+      end
+
+      if attributes.has_key?(:'ownerType')
+        self.owner_type = attributes[:'ownerType']
       end
 
       if attributes.has_key?(:'signatureProvider')
@@ -132,6 +150,8 @@ module DocuSign_eSign
           default_description == o.default_description &&
           default_name == o.default_name &&
           input_options == o.input_options &&
+          is_disabled == o.is_disabled &&
+          owner_type == o.owner_type &&
           signature_provider == o.signature_provider &&
           steps == o.steps &&
           workflow_id == o.workflow_id &&
@@ -148,7 +168,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_description, default_name, input_options, signature_provider, steps, workflow_id, workflow_label, workflow_resource_key].hash
+      [default_description, default_name, input_options, is_disabled, owner_type, signature_provider, steps, workflow_id, workflow_label, workflow_resource_key].hash
     end
 
     # Builds the object from hash
