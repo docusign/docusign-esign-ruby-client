@@ -20,6 +20,9 @@ module DocuSign_eSign
     # 
     attr_accessor :assign_tabs_to_recipient_id
 
+    # Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
+    attr_accessor :authoritative_copy
+
     # 
     attr_accessor :display
 
@@ -100,6 +103,7 @@ module DocuSign_eSign
       {
         :'apply_anchor_tabs' => :'applyAnchorTabs',
         :'assign_tabs_to_recipient_id' => :'assignTabsToRecipientId',
+        :'authoritative_copy' => :'authoritativeCopy',
         :'display' => :'display',
         :'doc_gen_form_fields' => :'docGenFormFields',
         :'document_base64' => :'documentBase64',
@@ -133,6 +137,7 @@ module DocuSign_eSign
       {
         :'apply_anchor_tabs' => :'String',
         :'assign_tabs_to_recipient_id' => :'String',
+        :'authoritative_copy' => :'BOOLEAN',
         :'display' => :'String',
         :'doc_gen_form_fields' => :'Array<DocGenFormField>',
         :'document_base64' => :'String',
@@ -175,6 +180,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'assignTabsToRecipientId')
         self.assign_tabs_to_recipient_id = attributes[:'assignTabsToRecipientId']
+      end
+
+      if attributes.has_key?(:'authoritativeCopy')
+        self.authoritative_copy = attributes[:'authoritativeCopy']
       end
 
       if attributes.has_key?(:'display')
@@ -304,6 +313,7 @@ module DocuSign_eSign
       self.class == o.class &&
           apply_anchor_tabs == o.apply_anchor_tabs &&
           assign_tabs_to_recipient_id == o.assign_tabs_to_recipient_id &&
+          authoritative_copy == o.authoritative_copy &&
           display == o.display &&
           doc_gen_form_fields == o.doc_gen_form_fields &&
           document_base64 == o.document_base64 &&
@@ -340,7 +350,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [apply_anchor_tabs, assign_tabs_to_recipient_id, display, doc_gen_form_fields, document_base64, document_fields, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, is_doc_gen_document, match_boxes, name, order, pages, password, pdf_form_field_option, remote_url, signer_must_acknowledge, signer_must_acknowledge_use_account_default, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
+      [apply_anchor_tabs, assign_tabs_to_recipient_id, authoritative_copy, display, doc_gen_form_fields, document_base64, document_fields, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, is_doc_gen_document, match_boxes, name, order, pages, password, pdf_form_field_option, remote_url, signer_must_acknowledge, signer_must_acknowledge_use_account_default, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
     end
 
     # Builds the object from hash

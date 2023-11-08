@@ -1615,10 +1615,11 @@ module DocuSign_eSign
     # @param image_type One of **signature_image** or **initials_image**.
     # @param signature_id The ID of the signature being accessed.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param image_bytes Image content. 
     # @param DocuSign_eSign::UpdateSignatureImageOptions Options for modifying the behavior of the function.
     # @return [UserSignature]
-    def update_signature_image(account_id, image_type, signature_id, user_id, options = DocuSign_eSign::UpdateSignatureImageOptions.default)
-      data, _status_code, _headers = update_signature_image_with_http_info(account_id, image_type, signature_id, user_id, options)
+    def update_signature_image(account_id, image_type, signature_id, user_id, image_bytes, options = DocuSign_eSign::UpdateSignatureImageOptions.default)
+      data, _status_code, _headers = update_signature_image_with_http_info(account_id, image_type, signature_id, user_id,  image_bytes, options)
       return data
     end
 
@@ -1628,9 +1629,10 @@ module DocuSign_eSign
     # @param image_type One of **signature_image** or **initials_image**.
     # @param signature_id The ID of the signature being accessed.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+    # @param image_bytes Image content. 
     # @param DocuSign_eSign::UpdateSignatureImageOptions Options for modifying the behavior of the function.
     # @return [Array<(UserSignature, Fixnum, Hash)>] UserSignature data, response status code and response headers
-    def update_signature_image_with_http_info(account_id, image_type, signature_id, user_id, options = DocuSign_eSign::UpdateSignatureImageOptions.default)
+    def update_signature_image_with_http_info(account_id, image_type, signature_id, user_id, image_bytes, options = DocuSign_eSign::UpdateSignatureImageOptions.default)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UsersApi.update_signature_image ..."
       end
@@ -1642,6 +1644,8 @@ module DocuSign_eSign
       fail ArgumentError, "Missing the required parameter 'signature_id' when calling UsersApi.update_signature_image" if signature_id.nil?
       # verify the required parameter 'user_id' is set
       fail ArgumentError, "Missing the required parameter 'user_id' when calling UsersApi.update_signature_image" if user_id.nil?
+      # verify the required parameter 'image_bytes' is set
+      fail ArgumentError, "Missing the required parameter 'image_bytes' when calling UsersApi.update_signature_image" if image_bytes.nil?
       # resource path
       local_var_path = "/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'imageType' + '}', image_type.to_s).sub('{' + 'signatureId' + '}', signature_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
 
@@ -1660,7 +1664,7 @@ module DocuSign_eSign
       form_params = {}
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(image_bytes)
       auth_names = []
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
