@@ -14,10 +14,19 @@ require 'date'
 module DocuSign_eSign
   class DocGenFormField
     # 
+    attr_accessor :description
+
+    # 
     attr_accessor :label
 
     # 
     attr_accessor :name
+
+    # 
+    attr_accessor :options
+
+    # 
+    attr_accessor :predefined_validation
 
     # When set to **true**, the signer is required to fill out this tab
     attr_accessor :required
@@ -25,16 +34,23 @@ module DocuSign_eSign
     # 
     attr_accessor :type
 
+    # 
+    attr_accessor :validation
+
     # Specifies the value of the tab. 
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'description' => :'description',
         :'label' => :'label',
         :'name' => :'name',
+        :'options' => :'options',
+        :'predefined_validation' => :'predefinedValidation',
         :'required' => :'required',
         :'type' => :'type',
+        :'validation' => :'validation',
         :'value' => :'value'
       }
     end
@@ -42,10 +58,14 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'description' => :'String',
         :'label' => :'String',
         :'name' => :'String',
+        :'options' => :'Array<DocGenFormFieldOption>',
+        :'predefined_validation' => :'String',
         :'required' => :'String',
         :'type' => :'String',
+        :'validation' => :'DocGenFormFieldValidation',
         :'value' => :'String'
       }
     end
@@ -58,6 +78,10 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
+      end
+
       if attributes.has_key?(:'label')
         self.label = attributes[:'label']
       end
@@ -66,12 +90,26 @@ module DocuSign_eSign
         self.name = attributes[:'name']
       end
 
+      if attributes.has_key?(:'options')
+        if (value = attributes[:'options']).is_a?(Array)
+          self.options = value
+        end
+      end
+
+      if attributes.has_key?(:'predefinedValidation')
+        self.predefined_validation = attributes[:'predefinedValidation']
+      end
+
       if attributes.has_key?(:'required')
         self.required = attributes[:'required']
       end
 
       if attributes.has_key?(:'type')
         self.type = attributes[:'type']
+      end
+
+      if attributes.has_key?(:'validation')
+        self.validation = attributes[:'validation']
       end
 
       if attributes.has_key?(:'value')
@@ -97,10 +135,14 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          description == o.description &&
           label == o.label &&
           name == o.name &&
+          options == o.options &&
+          predefined_validation == o.predefined_validation &&
           required == o.required &&
           type == o.type &&
+          validation == o.validation &&
           value == o.value
     end
 
@@ -113,7 +155,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [label, name, required, type, value].hash
+      [description, label, name, options, predefined_validation, required, type, validation, value].hash
     end
 
     # Builds the object from hash
