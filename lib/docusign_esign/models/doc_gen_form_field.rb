@@ -32,6 +32,9 @@ module DocuSign_eSign
     attr_accessor :required
 
     # 
+    attr_accessor :row_values
+
+    # 
     attr_accessor :type
 
     # 
@@ -49,6 +52,7 @@ module DocuSign_eSign
         :'options' => :'options',
         :'predefined_validation' => :'predefinedValidation',
         :'required' => :'required',
+        :'row_values' => :'rowValues',
         :'type' => :'type',
         :'validation' => :'validation',
         :'value' => :'value'
@@ -64,6 +68,7 @@ module DocuSign_eSign
         :'options' => :'Array<DocGenFormFieldOption>',
         :'predefined_validation' => :'String',
         :'required' => :'String',
+        :'row_values' => :'Array<DocGenFormFieldRowValue>',
         :'type' => :'String',
         :'validation' => :'DocGenFormFieldValidation',
         :'value' => :'String'
@@ -104,6 +109,12 @@ module DocuSign_eSign
         self.required = attributes[:'required']
       end
 
+      if attributes.has_key?(:'rowValues')
+        if (value = attributes[:'rowValues']).is_a?(Array)
+          self.row_values = value
+        end
+      end
+
       if attributes.has_key?(:'type')
         self.type = attributes[:'type']
       end
@@ -141,6 +152,7 @@ module DocuSign_eSign
           options == o.options &&
           predefined_validation == o.predefined_validation &&
           required == o.required &&
+          row_values == o.row_values &&
           type == o.type &&
           validation == o.validation &&
           value == o.value
@@ -155,7 +167,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [description, label, name, options, predefined_validation, required, type, validation, value].hash
+      [description, label, name, options, predefined_validation, required, row_values, type, validation, value].hash
     end
 
     # Builds the object from hash

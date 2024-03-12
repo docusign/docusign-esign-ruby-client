@@ -1615,7 +1615,7 @@ module DocuSign_eSign
     # @param image_type One of **signature_image** or **initials_image**.
     # @param signature_id The ID of the signature being accessed.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-    # @param image_bytes Image content. 
+    # @param image_bytes Updated image content. 
     # @param DocuSign_eSign::UpdateSignatureImageOptions Options for modifying the behavior of the function.
     # @return [UserSignature]
     def update_signature_image(account_id, image_type, signature_id, user_id, image_bytes, options = DocuSign_eSign::UpdateSignatureImageOptions.default)
@@ -1629,7 +1629,7 @@ module DocuSign_eSign
     # @param image_type One of **signature_image** or **initials_image**.
     # @param signature_id The ID of the signature being accessed.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-    # @param image_bytes Image content. 
+    # @param image_bytes Updated image content. 
     # @param DocuSign_eSign::UpdateSignatureImageOptions Options for modifying the behavior of the function.
     # @return [Array<(UserSignature, Fixnum, Hash)>] UserSignature data, response status code and response headers
     def update_signature_image_with_http_info(account_id, image_type, signature_id, user_id, image_bytes, options = DocuSign_eSign::UpdateSignatureImageOptions.default)
