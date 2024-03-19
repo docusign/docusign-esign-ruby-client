@@ -15,6 +15,9 @@ module DocuSign_eSign
   # This object contains information about a group.
   class Group
     # 
+    attr_accessor :access_type
+
+    # 
     attr_accessor :ds_group_id
 
     # Array or errors.
@@ -41,6 +44,7 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'access_type' => :'accessType',
         :'ds_group_id' => :'dsGroupId',
         :'error_details' => :'errorDetails',
         :'group_id' => :'groupId',
@@ -55,6 +59,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'access_type' => :'String',
         :'ds_group_id' => :'String',
         :'error_details' => :'ErrorDetails',
         :'group_id' => :'String',
@@ -73,6 +78,10 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'accessType')
+        self.access_type = attributes[:'accessType']
+      end
 
       if attributes.has_key?(:'dsGroupId')
         self.ds_group_id = attributes[:'dsGroupId']
@@ -127,6 +136,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          access_type == o.access_type &&
           ds_group_id == o.ds_group_id &&
           error_details == o.error_details &&
           group_id == o.group_id &&
@@ -146,7 +156,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [ds_group_id, error_details, group_id, group_name, group_type, permission_profile_id, users, users_count].hash
+      [access_type, ds_group_id, error_details, group_id, group_name, group_type, permission_profile_id, users, users_count].hash
     end
 
     # Builds the object from hash
