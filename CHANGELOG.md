@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v3.27.0] - eSignature API v2.1-23.4.02.00 - 2024-04-30
+### Changed
+- Updated logic to derive the `oauth_base_path` from `base_path`.
+- Added support for version v2.1-23.4.02.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
 ## [v3.27.0.rc1] - eSignature API v2.1-23.4.02.00 - 2024-03-12
 ### Changed
 - Added support for version v2.1-23.4.02.00 of the DocuSign ESignature API.
