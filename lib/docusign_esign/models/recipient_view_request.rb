@@ -29,6 +29,9 @@ module DocuSign_eSign
     # A sender created value that shows the recipient is embedded (captive).   Maximum length: 100 characters.
     attr_accessor :client_user_id
 
+    # 
+    attr_accessor :display_format
+
     # Specifies the email of the recipient. You can use either email and userName or userId to identify the recipient.
     attr_accessor :email
 
@@ -73,6 +76,7 @@ module DocuSign_eSign
         :'authentication_method' => :'authenticationMethod',
         :'client_ur_ls' => :'clientURLs',
         :'client_user_id' => :'clientUserId',
+        :'display_format' => :'displayFormat',
         :'email' => :'email',
         :'frame_ancestors' => :'frameAncestors',
         :'message_origins' => :'messageOrigins',
@@ -96,6 +100,7 @@ module DocuSign_eSign
         :'authentication_method' => :'String',
         :'client_ur_ls' => :'RecipientTokenClientURLs',
         :'client_user_id' => :'String',
+        :'display_format' => :'String',
         :'email' => :'String',
         :'frame_ancestors' => :'Array<String>',
         :'message_origins' => :'Array<String>',
@@ -137,6 +142,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'clientUserId')
         self.client_user_id = attributes[:'clientUserId']
+      end
+
+      if attributes.has_key?(:'displayFormat')
+        self.display_format = attributes[:'displayFormat']
       end
 
       if attributes.has_key?(:'email')
@@ -215,6 +224,7 @@ module DocuSign_eSign
           authentication_method == o.authentication_method &&
           client_ur_ls == o.client_ur_ls &&
           client_user_id == o.client_user_id &&
+          display_format == o.display_format &&
           email == o.email &&
           frame_ancestors == o.frame_ancestors &&
           message_origins == o.message_origins &&
@@ -238,7 +248,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [assertion_id, authentication_instant, authentication_method, client_ur_ls, client_user_id, email, frame_ancestors, message_origins, ping_frequency, ping_url, recipient_id, return_url, security_domain, user_id, user_name, x_frame_options, x_frame_options_allow_from_url].hash
+      [assertion_id, authentication_instant, authentication_method, client_ur_ls, client_user_id, display_format, email, frame_ancestors, message_origins, ping_frequency, ping_url, recipient_id, return_url, security_domain, user_id, user_name, x_frame_options, x_frame_options_allow_from_url].hash
     end
 
     # Builds the object from hash

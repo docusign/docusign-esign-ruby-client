@@ -61,6 +61,15 @@ module DocuSign_eSign
     end
   end
 
+  class CreateRecipientProofFileResourceTokenOptions
+    # 
+    attr_accessor :token_scopes
+
+    def self.default
+      @@default ||= CreateRecipientProofFileResourceTokenOptions.new
+    end
+  end
+
   class GetChunkedUploadOptions
     # 
     attr_accessor :include
@@ -80,7 +89,7 @@ module DocuSign_eSign
   end
 
   class GetConsumerDisclosureOptions
-    # The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     attr_accessor :lang_code2
 
     def self.default
@@ -1011,10 +1020,10 @@ module DocuSign_eSign
     # Returns a URL that allows you to embed the edit view of the DocuSign UI in your applications. This is a one-time use login token that allows the user to be placed into the DocuSign editing view.   Upon sending completion, the user is returned to the return URL provided by the API application.  Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param return_url_request  (optional parameter)
+    # @param envelope_view_request  (optional parameter)
     # @return [ViewUrl]
-    def create_edit_view(account_id, envelope_id, return_url_request)
-      data, _status_code, _headers = create_edit_view_with_http_info(account_id, envelope_id,  return_url_request)
+    def create_edit_view(account_id, envelope_id, envelope_view_request)
+      data, _status_code, _headers = create_edit_view_with_http_info(account_id, envelope_id,  envelope_view_request)
       return data
     end
 
@@ -1022,9 +1031,9 @@ module DocuSign_eSign
     # Returns a URL that allows you to embed the edit view of the DocuSign UI in your applications. This is a one-time use login token that allows the user to be placed into the DocuSign editing view.   Upon sending completion, the user is returned to the return URL provided by the API application.  Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param return_url_request  (optional parameter)
+    # @param envelope_view_request  (optional parameter)
     # @return [Array<(ViewUrl, Fixnum, Hash)>] ViewUrl data, response status code and response headers
-    def create_edit_view_with_http_info(account_id, envelope_id, return_url_request)
+    def create_edit_view_with_http_info(account_id, envelope_id, envelope_view_request)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: EnvelopesApi.create_edit_view ..."
       end
@@ -1047,7 +1056,7 @@ module DocuSign_eSign
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(return_url_request)
+      post_body = @api_client.object_to_http_body(envelope_view_request)
       auth_names = []
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
@@ -1729,10 +1738,10 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_id The ID of the recipient being accessed.
-    # @param token_scopes 
+    # @param DocuSign_eSign::CreateRecipientProofFileResourceTokenOptions Options for modifying the behavior of the function.
     # @return [IdEvidenceResourceToken]
-    def create_recipient_proof_file_resource_token(account_id, envelope_id, recipient_id, token_scopes)
-      data, _status_code, _headers = create_recipient_proof_file_resource_token_with_http_info(account_id, envelope_id, recipient_id, token_scopes)
+    def create_recipient_proof_file_resource_token(account_id, envelope_id, recipient_id, options = DocuSign_eSign::CreateRecipientProofFileResourceTokenOptions.default)
+      data, _status_code, _headers = create_recipient_proof_file_resource_token_with_http_info(account_id, envelope_id, recipient_id, options)
       return data
     end
 
@@ -1741,9 +1750,9 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
     # @param recipient_id The ID of the recipient being accessed.
-    # @param token_scopes 
+    # @param DocuSign_eSign::CreateRecipientProofFileResourceTokenOptions Options for modifying the behavior of the function.
     # @return [Array<(IdEvidenceResourceToken, Fixnum, Hash)>] IdEvidenceResourceToken data, response status code and response headers
-    def create_recipient_proof_file_resource_token_with_http_info(account_id, envelope_id, recipient_id, token_scopes)
+    def create_recipient_proof_file_resource_token_with_http_info(account_id, envelope_id, recipient_id, options = DocuSign_eSign::CreateRecipientProofFileResourceTokenOptions.default)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: EnvelopesApi.create_recipient_proof_file_resource_token ..."
       end
@@ -1753,13 +1762,12 @@ module DocuSign_eSign
       fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.create_recipient_proof_file_resource_token" if envelope_id.nil?
       # verify the required parameter 'recipient_id' is set
       fail ArgumentError, "Missing the required parameter 'recipient_id' when calling EnvelopesApi.create_recipient_proof_file_resource_token" if recipient_id.nil?
-      # verify the required parameter 'token_scopes' is set
-      fail ArgumentError, "Missing the required parameter 'token_scopes' when calling EnvelopesApi.create_recipient_proof_file_resource_token" if token_scopes.nil?
       # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/identity_proof_token".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'recipientId' + '}', recipient_id.to_s).sub('{' + 'token_scopes' + '}', token_scopes.to_s)
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/identity_proof_token".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'recipientId' + '}', recipient_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'token_scopes'] = options.token_scopes if !options.token_scopes.nil?
 
       # header parameters
       header_params = {}
@@ -1899,10 +1907,10 @@ module DocuSign_eSign
     # Returns a URL that allows you to embed the sender view of the DocuSign UI in your applications. This is a one-time use login token that allows the user to be placed into the DocuSign sending view.   Upon sending completion, the user is returned to the return URL provided by the API application.  Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param return_url_request  (optional parameter)
+    # @param envelope_view_request  (optional parameter)
     # @return [ViewUrl]
-    def create_sender_view(account_id, envelope_id, return_url_request)
-      data, _status_code, _headers = create_sender_view_with_http_info(account_id, envelope_id,  return_url_request)
+    def create_sender_view(account_id, envelope_id, envelope_view_request)
+      data, _status_code, _headers = create_sender_view_with_http_info(account_id, envelope_id,  envelope_view_request)
       return data
     end
 
@@ -1910,9 +1918,9 @@ module DocuSign_eSign
     # Returns a URL that allows you to embed the sender view of the DocuSign UI in your applications. This is a one-time use login token that allows the user to be placed into the DocuSign sending view.   Upon sending completion, the user is returned to the return URL provided by the API application.  Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param return_url_request  (optional parameter)
+    # @param envelope_view_request  (optional parameter)
     # @return [Array<(ViewUrl, Fixnum, Hash)>] ViewUrl data, response status code and response headers
-    def create_sender_view_with_http_info(account_id, envelope_id, return_url_request)
+    def create_sender_view_with_http_info(account_id, envelope_id, envelope_view_request)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: EnvelopesApi.create_sender_view ..."
       end
@@ -1935,7 +1943,7 @@ module DocuSign_eSign
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(return_url_request)
+      post_body = @api_client.object_to_http_body(envelope_view_request)
       auth_names = []
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,

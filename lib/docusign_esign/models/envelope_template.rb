@@ -313,6 +313,9 @@ module DocuSign_eSign
     # When set to **true**, the disclosure is shown to recipients in accordance with the account's Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the `useDisclosure` property is not set, then the account's normal disclosure setting is used and the value of the `useDisclosure` property is not returned in responses when getting envelope information.
     attr_accessor :use_disclosure
 
+    # 
+    attr_accessor :u_sig_state
+
     # The date and time the envelope or template was voided.
     attr_accessor :voided_date_time
 
@@ -425,6 +428,7 @@ module DocuSign_eSign
         :'transaction_id' => :'transactionId',
         :'uri' => :'uri',
         :'use_disclosure' => :'useDisclosure',
+        :'u_sig_state' => :'uSigState',
         :'voided_date_time' => :'voidedDateTime',
         :'voided_reason' => :'voidedReason',
         :'workflow' => :'workflow'
@@ -534,6 +538,7 @@ module DocuSign_eSign
         :'transaction_id' => :'String',
         :'uri' => :'String',
         :'use_disclosure' => :'String',
+        :'u_sig_state' => :'String',
         :'voided_date_time' => :'String',
         :'voided_reason' => :'String',
         :'workflow' => :'Workflow'
@@ -960,6 +965,10 @@ module DocuSign_eSign
         self.use_disclosure = attributes[:'useDisclosure']
       end
 
+      if attributes.has_key?(:'uSigState')
+        self.u_sig_state = attributes[:'uSigState']
+      end
+
       if attributes.has_key?(:'voidedDateTime')
         self.voided_date_time = attributes[:'voidedDateTime']
       end
@@ -1091,6 +1100,7 @@ module DocuSign_eSign
           transaction_id == o.transaction_id &&
           uri == o.uri &&
           use_disclosure == o.use_disclosure &&
+          u_sig_state == o.u_sig_state &&
           voided_date_time == o.voided_date_time &&
           voided_reason == o.voided_reason &&
           workflow == o.workflow
@@ -1105,7 +1115,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_control_list_base64, allow_comments, allow_markup, allow_reassign, allow_view_history, any_signer, asynchronous, attachments_uri, authoritative_copy, authoritative_copy_default, auto_match, auto_match_specified_by_user, auto_navigation, brand_id, brand_lock, burn_default_tab_data, certificate_uri, completed_date_time, copy_recipient_data, created, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, description, disable_responsive_document, document_base64, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_attachments, envelope_custom_metadata, envelope_documents, envelope_id, envelope_id_stamping, envelope_location, envelope_metadata, envelope_uri, expire_after, expire_date_time, expire_enabled, external_envelope_id, favorited_by_me, folder_id, folder_ids, folder_name, folders, has_comments, has_form_data_changed, has_wav_file, holder, initial_sent_date_time, is21_cfr_part11, is_ace_gen_template, is_doc_gen_template, is_dynamic_envelope, is_signature_provider_envelope, last_modified, last_modified_by, last_modified_date_time, last_used, location, lock_information, message_lock, name, new_password, notification, notification_uri, owner, page_count, password, password_protected, power_form, power_forms, purge_completed_date, purge_request_date, purge_state, recipients, recipients_lock, recipients_uri, sender, sent_date_time, shared, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, status_date_time, template_id, templates_uri, transaction_id, uri, use_disclosure, voided_date_time, voided_reason, workflow].hash
+      [access_control_list_base64, allow_comments, allow_markup, allow_reassign, allow_view_history, any_signer, asynchronous, attachments_uri, authoritative_copy, authoritative_copy_default, auto_match, auto_match_specified_by_user, auto_navigation, brand_id, brand_lock, burn_default_tab_data, certificate_uri, completed_date_time, copy_recipient_data, created, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, description, disable_responsive_document, document_base64, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_attachments, envelope_custom_metadata, envelope_documents, envelope_id, envelope_id_stamping, envelope_location, envelope_metadata, envelope_uri, expire_after, expire_date_time, expire_enabled, external_envelope_id, favorited_by_me, folder_id, folder_ids, folder_name, folders, has_comments, has_form_data_changed, has_wav_file, holder, initial_sent_date_time, is21_cfr_part11, is_ace_gen_template, is_doc_gen_template, is_dynamic_envelope, is_signature_provider_envelope, last_modified, last_modified_by, last_modified_date_time, last_used, location, lock_information, message_lock, name, new_password, notification, notification_uri, owner, page_count, password, password_protected, power_form, power_forms, purge_completed_date, purge_request_date, purge_state, recipients, recipients_lock, recipients_uri, sender, sent_date_time, shared, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, status_date_time, template_id, templates_uri, transaction_id, uri, use_disclosure, u_sig_state, voided_date_time, voided_reason, workflow].hash
     end
 
     # Builds the object from hash

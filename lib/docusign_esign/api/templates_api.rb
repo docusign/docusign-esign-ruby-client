@@ -355,10 +355,10 @@ module DocuSign_eSign
     # This method returns a URL for starting an edit view of a template that uses the DocuSign Template UI.
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
-    # @param return_url_request  (optional parameter)
+    # @param template_view_request  (optional parameter)
     # @return [ViewUrl]
-    def create_edit_view(account_id, template_id, return_url_request)
-      data, _status_code, _headers = create_edit_view_with_http_info(account_id, template_id,  return_url_request)
+    def create_edit_view(account_id, template_id, template_view_request)
+      data, _status_code, _headers = create_edit_view_with_http_info(account_id, template_id,  template_view_request)
       return data
     end
 
@@ -366,9 +366,9 @@ module DocuSign_eSign
     # This method returns a URL for starting an edit view of a template that uses the DocuSign Template UI.
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_id The ID of the template being accessed.
-    # @param return_url_request  (optional parameter)
+    # @param template_view_request  (optional parameter)
     # @return [Array<(ViewUrl, Fixnum, Hash)>] ViewUrl data, response status code and response headers
-    def create_edit_view_with_http_info(account_id, template_id, return_url_request)
+    def create_edit_view_with_http_info(account_id, template_id, template_view_request)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: TemplatesApi.create_edit_view ..."
       end
@@ -391,7 +391,7 @@ module DocuSign_eSign
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(return_url_request)
+      post_body = @api_client.object_to_http_body(template_view_request)
       auth_names = []
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
