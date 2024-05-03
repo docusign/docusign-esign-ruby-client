@@ -14,6 +14,12 @@ require 'date'
 module DocuSign_eSign
   # Properties that configure the settings for a user. Some elements of this object have a `metadata` property, which includes the following: - `rights`: The calling users permissions to edit this setting (can be `editable` or `read_only`) - `uiHint`: Internally used to build UIs (can be `available` or `hidden`) - `options`: The values supported for this setting (not all settings have this element)
   class UserSettingsInformation
+    # 
+    attr_accessor :account_agreements_access_type
+
+    # 
+    attr_accessor :account_agreements_access_type_metadata
+
     # Describes which account management capabilities a user has.
     attr_accessor :account_management_granular
 
@@ -102,6 +108,12 @@ module DocuSign_eSign
     attr_accessor :bulk_send_metadata
 
     # 
+    attr_accessor :can_bulk_upload_agreements
+
+    # 
+    attr_accessor :can_bulk_upload_agreements_metadata
+
+    # 
     attr_accessor :can_charge_account
 
     # Reserved for DocuSign.
@@ -142,6 +154,12 @@ module DocuSign_eSign
 
     # Metadata about the `canManageAccountMetadata` property.
     attr_accessor :can_manage_account_metadata
+
+    # 
+    attr_accessor :can_manage_agreement_parties
+
+    # 
+    attr_accessor :can_manage_agreement_parties_metadata
 
     # 
     attr_accessor :can_manage_distributor
@@ -428,6 +446,8 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'account_agreements_access_type' => :'accountAgreementsAccessType',
+        :'account_agreements_access_type_metadata' => :'accountAgreementsAccessTypeMetadata',
         :'account_management_granular' => :'accountManagementGranular',
         :'admin_only' => :'adminOnly',
         :'admin_only_metadata' => :'adminOnlyMetadata',
@@ -457,6 +477,8 @@ module DocuSign_eSign
         :'api_can_export_ac_metadata' => :'apiCanExportACMetadata',
         :'bulk_send' => :'bulkSend',
         :'bulk_send_metadata' => :'bulkSendMetadata',
+        :'can_bulk_upload_agreements' => :'canBulkUploadAgreements',
+        :'can_bulk_upload_agreements_metadata' => :'canBulkUploadAgreementsMetadata',
         :'can_charge_account' => :'canChargeAccount',
         :'can_charge_account_metadata' => :'canChargeAccountMetadata',
         :'can_create_transaction' => :'canCreateTransaction',
@@ -471,6 +493,8 @@ module DocuSign_eSign
         :'can_lock_envelopes_metadata' => :'canLockEnvelopesMetadata',
         :'can_manage_account' => :'canManageAccount',
         :'can_manage_account_metadata' => :'canManageAccountMetadata',
+        :'can_manage_agreement_parties' => :'canManageAgreementParties',
+        :'can_manage_agreement_parties_metadata' => :'canManageAgreementPartiesMetadata',
         :'can_manage_distributor' => :'canManageDistributor',
         :'can_manage_distributor_metadata' => :'canManageDistributorMetadata',
         :'can_manage_templates' => :'canManageTemplates',
@@ -571,6 +595,8 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'account_agreements_access_type' => :'String',
+        :'account_agreements_access_type_metadata' => :'SettingsMetadata',
         :'account_management_granular' => :'UserAccountManagementGranularInformation',
         :'admin_only' => :'String',
         :'admin_only_metadata' => :'SettingsMetadata',
@@ -600,6 +626,8 @@ module DocuSign_eSign
         :'api_can_export_ac_metadata' => :'SettingsMetadata',
         :'bulk_send' => :'String',
         :'bulk_send_metadata' => :'SettingsMetadata',
+        :'can_bulk_upload_agreements' => :'String',
+        :'can_bulk_upload_agreements_metadata' => :'SettingsMetadata',
         :'can_charge_account' => :'String',
         :'can_charge_account_metadata' => :'SettingsMetadata',
         :'can_create_transaction' => :'String',
@@ -614,6 +642,8 @@ module DocuSign_eSign
         :'can_lock_envelopes_metadata' => :'SettingsMetadata',
         :'can_manage_account' => :'String',
         :'can_manage_account_metadata' => :'SettingsMetadata',
+        :'can_manage_agreement_parties' => :'String',
+        :'can_manage_agreement_parties_metadata' => :'SettingsMetadata',
         :'can_manage_distributor' => :'String',
         :'can_manage_distributor_metadata' => :'SettingsMetadata',
         :'can_manage_templates' => :'String',
@@ -718,6 +748,14 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'accountAgreementsAccessType')
+        self.account_agreements_access_type = attributes[:'accountAgreementsAccessType']
+      end
+
+      if attributes.has_key?(:'accountAgreementsAccessTypeMetadata')
+        self.account_agreements_access_type_metadata = attributes[:'accountAgreementsAccessTypeMetadata']
+      end
 
       if attributes.has_key?(:'accountManagementGranular')
         self.account_management_granular = attributes[:'accountManagementGranular']
@@ -835,6 +873,14 @@ module DocuSign_eSign
         self.bulk_send_metadata = attributes[:'bulkSendMetadata']
       end
 
+      if attributes.has_key?(:'canBulkUploadAgreements')
+        self.can_bulk_upload_agreements = attributes[:'canBulkUploadAgreements']
+      end
+
+      if attributes.has_key?(:'canBulkUploadAgreementsMetadata')
+        self.can_bulk_upload_agreements_metadata = attributes[:'canBulkUploadAgreementsMetadata']
+      end
+
       if attributes.has_key?(:'canChargeAccount')
         self.can_charge_account = attributes[:'canChargeAccount']
       end
@@ -889,6 +935,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'canManageAccountMetadata')
         self.can_manage_account_metadata = attributes[:'canManageAccountMetadata']
+      end
+
+      if attributes.has_key?(:'canManageAgreementParties')
+        self.can_manage_agreement_parties = attributes[:'canManageAgreementParties']
+      end
+
+      if attributes.has_key?(:'canManageAgreementPartiesMetadata')
+        self.can_manage_agreement_parties_metadata = attributes[:'canManageAgreementPartiesMetadata']
       end
 
       if attributes.has_key?(:'canManageDistributor')
@@ -1288,6 +1342,8 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          account_agreements_access_type == o.account_agreements_access_type &&
+          account_agreements_access_type_metadata == o.account_agreements_access_type_metadata &&
           account_management_granular == o.account_management_granular &&
           admin_only == o.admin_only &&
           admin_only_metadata == o.admin_only_metadata &&
@@ -1317,6 +1373,8 @@ module DocuSign_eSign
           api_can_export_ac_metadata == o.api_can_export_ac_metadata &&
           bulk_send == o.bulk_send &&
           bulk_send_metadata == o.bulk_send_metadata &&
+          can_bulk_upload_agreements == o.can_bulk_upload_agreements &&
+          can_bulk_upload_agreements_metadata == o.can_bulk_upload_agreements_metadata &&
           can_charge_account == o.can_charge_account &&
           can_charge_account_metadata == o.can_charge_account_metadata &&
           can_create_transaction == o.can_create_transaction &&
@@ -1331,6 +1389,8 @@ module DocuSign_eSign
           can_lock_envelopes_metadata == o.can_lock_envelopes_metadata &&
           can_manage_account == o.can_manage_account &&
           can_manage_account_metadata == o.can_manage_account_metadata &&
+          can_manage_agreement_parties == o.can_manage_agreement_parties &&
+          can_manage_agreement_parties_metadata == o.can_manage_agreement_parties_metadata &&
           can_manage_distributor == o.can_manage_distributor &&
           can_manage_distributor_metadata == o.can_manage_distributor_metadata &&
           can_manage_templates == o.can_manage_templates &&
@@ -1436,7 +1496,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_management_granular, admin_only, admin_only_metadata, allow_access_to_all_account_agreements, allow_access_to_all_account_agreements_metadata, allow_auto_tagging, allowed_orchestration_access, allowed_orchestration_access_metadata, allow_envelope_transfer_to, allow_envelope_transfer_to_metadata, allow_eseal_recipients, allow_eseal_recipients_metadata, allow_power_forms_admin_to_access_all_power_form_envelope, allow_power_forms_admin_to_access_all_power_form_envelope_metadata, allow_recipient_language_selection, allow_recipient_language_selection_metadata, allow_send_on_behalf_of, allow_send_on_behalf_of_metadata, allow_supplemental_documents, allow_supplemental_documents_metadata, allow_transactions, allow_transactions_metadata, anchor_tag_versioned_placement_enabled, api_account_wide_access, api_account_wide_access_metadata, api_can_export_ac, api_can_export_ac_metadata, bulk_send, bulk_send_metadata, can_charge_account, can_charge_account_metadata, can_create_transaction, can_create_transaction_metadata, can_delete_documents_in_transaction, can_delete_documents_in_transaction_metadata, can_delete_transaction, can_delete_transaction_metadata, can_edit_shared_addressbook, can_edit_shared_addressbook_metadata, can_lock_envelopes, can_lock_envelopes_metadata, can_manage_account, can_manage_account_metadata, can_manage_distributor, can_manage_distributor_metadata, can_manage_templates, can_manage_templates_metadata, can_send_api_requests, can_send_api_requests_metadata, can_send_envelope, can_send_envelope_metadata, can_send_envelopes_via_sms, can_send_envelopes_via_sms_metadata, can_sign_envelope, can_sign_envelope_metadata, can_use_scratchpad, can_use_scratchpad_metadata, can_use_smart_contracts, can_use_smart_contracts_metadata, disable_document_upload, disable_document_upload_metadata, disable_other_actions, disable_other_actions_metadata, enable_ds_pro, enable_ds_pro_metadata, enable_key_terms_suggestions_by_document_type, enable_key_terms_suggestions_by_document_type_metadata, enable_sequential_signing_api, enable_sequential_signing_api_metadata, enable_sequential_signing_ui, enable_sequential_signing_ui_metadata, enable_signer_attachments, enable_signer_attachments_metadata, enable_sign_on_paper_override, enable_sign_on_paper_override_metadata, enable_transaction_point, enable_transaction_point_metadata, enable_vaulting, enable_vaulting_metadata, express_send_only, locale, locale_metadata, locale_policy, manage_clickwraps_mode, manage_clickwraps_mode_metadata, modified_by, modified_by_metadata, modified_date, modified_date_metadata, modified_page, modified_page_metadata, new_send_ui, new_send_ui_metadata, power_form_mode, power_form_mode_metadata, recipient_viewed_notification, recipient_viewed_notification_metadata, seal_identifiers, self_signed_recipient_email_document, self_signed_recipient_email_document_metadata, sender_email_notifications, signer_email_notifications, supplemental_document_include_in_download, supplemental_documents_must_accept, supplemental_documents_must_accept_metadata, supplemental_documents_must_read, supplemental_documents_must_read_metadata, supplemental_documents_must_view, supplemental_documents_must_view_metadata, template_active_creation, template_active_creation_metadata, template_apply_notify, template_apply_notify_metadata, template_auto_matching, template_auto_matching_metadata, template_matching_sensitivity, template_matching_sensitivity_metadata, template_page_level_matching, template_page_level_matching_metadata, timezone_dst, timezone_dst_metadata, timezone_mask, timezone_mask_metadata, timezone_offset, timezone_offset_metadata, timezone_sending_pref, timezone_sending_pref_metadata, timezone_signing_pref, timezone_signing_pref_metadata, transaction_point_site_name_url, transaction_point_site_name_url_metadata, transaction_point_user_name, transaction_point_user_name_metadata, vaulting_mode, vaulting_mode_metadata, web_forms, web_forms_metadata].hash
+      [account_agreements_access_type, account_agreements_access_type_metadata, account_management_granular, admin_only, admin_only_metadata, allow_access_to_all_account_agreements, allow_access_to_all_account_agreements_metadata, allow_auto_tagging, allowed_orchestration_access, allowed_orchestration_access_metadata, allow_envelope_transfer_to, allow_envelope_transfer_to_metadata, allow_eseal_recipients, allow_eseal_recipients_metadata, allow_power_forms_admin_to_access_all_power_form_envelope, allow_power_forms_admin_to_access_all_power_form_envelope_metadata, allow_recipient_language_selection, allow_recipient_language_selection_metadata, allow_send_on_behalf_of, allow_send_on_behalf_of_metadata, allow_supplemental_documents, allow_supplemental_documents_metadata, allow_transactions, allow_transactions_metadata, anchor_tag_versioned_placement_enabled, api_account_wide_access, api_account_wide_access_metadata, api_can_export_ac, api_can_export_ac_metadata, bulk_send, bulk_send_metadata, can_bulk_upload_agreements, can_bulk_upload_agreements_metadata, can_charge_account, can_charge_account_metadata, can_create_transaction, can_create_transaction_metadata, can_delete_documents_in_transaction, can_delete_documents_in_transaction_metadata, can_delete_transaction, can_delete_transaction_metadata, can_edit_shared_addressbook, can_edit_shared_addressbook_metadata, can_lock_envelopes, can_lock_envelopes_metadata, can_manage_account, can_manage_account_metadata, can_manage_agreement_parties, can_manage_agreement_parties_metadata, can_manage_distributor, can_manage_distributor_metadata, can_manage_templates, can_manage_templates_metadata, can_send_api_requests, can_send_api_requests_metadata, can_send_envelope, can_send_envelope_metadata, can_send_envelopes_via_sms, can_send_envelopes_via_sms_metadata, can_sign_envelope, can_sign_envelope_metadata, can_use_scratchpad, can_use_scratchpad_metadata, can_use_smart_contracts, can_use_smart_contracts_metadata, disable_document_upload, disable_document_upload_metadata, disable_other_actions, disable_other_actions_metadata, enable_ds_pro, enable_ds_pro_metadata, enable_key_terms_suggestions_by_document_type, enable_key_terms_suggestions_by_document_type_metadata, enable_sequential_signing_api, enable_sequential_signing_api_metadata, enable_sequential_signing_ui, enable_sequential_signing_ui_metadata, enable_signer_attachments, enable_signer_attachments_metadata, enable_sign_on_paper_override, enable_sign_on_paper_override_metadata, enable_transaction_point, enable_transaction_point_metadata, enable_vaulting, enable_vaulting_metadata, express_send_only, locale, locale_metadata, locale_policy, manage_clickwraps_mode, manage_clickwraps_mode_metadata, modified_by, modified_by_metadata, modified_date, modified_date_metadata, modified_page, modified_page_metadata, new_send_ui, new_send_ui_metadata, power_form_mode, power_form_mode_metadata, recipient_viewed_notification, recipient_viewed_notification_metadata, seal_identifiers, self_signed_recipient_email_document, self_signed_recipient_email_document_metadata, sender_email_notifications, signer_email_notifications, supplemental_document_include_in_download, supplemental_documents_must_accept, supplemental_documents_must_accept_metadata, supplemental_documents_must_read, supplemental_documents_must_read_metadata, supplemental_documents_must_view, supplemental_documents_must_view_metadata, template_active_creation, template_active_creation_metadata, template_apply_notify, template_apply_notify_metadata, template_auto_matching, template_auto_matching_metadata, template_matching_sensitivity, template_matching_sensitivity_metadata, template_page_level_matching, template_page_level_matching_metadata, timezone_dst, timezone_dst_metadata, timezone_mask, timezone_mask_metadata, timezone_offset, timezone_offset_metadata, timezone_sending_pref, timezone_sending_pref_metadata, timezone_signing_pref, timezone_signing_pref_metadata, transaction_point_site_name_url, transaction_point_site_name_url_metadata, transaction_point_user_name, transaction_point_user_name_metadata, vaulting_mode, vaulting_mode_metadata, web_forms, web_forms_metadata].hash
     end
 
     # Builds the object from hash
