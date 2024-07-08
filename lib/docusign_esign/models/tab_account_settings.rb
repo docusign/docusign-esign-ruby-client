@@ -1,7 +1,7 @@
 =begin
-#DocuSign REST API
+#Docusign eSignature REST API
 
-#The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+#The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
 
 OpenAPI spec version: v2.1
 Contact: devcenter@docusign.com
@@ -54,6 +54,12 @@ module DocuSign_eSign
 
     # 
     attr_accessor :draw_tabs_metadata
+
+    # 
+    attr_accessor :enable_tab_agreement_details
+
+    # 
+    attr_accessor :enable_tab_agreement_details_metadata
 
     # 
     attr_accessor :first_last_email_tabs_enabled
@@ -162,6 +168,8 @@ module DocuSign_eSign
         :'data_field_size_metadata' => :'dataFieldSizeMetadata',
         :'draw_tabs_enabled' => :'drawTabsEnabled',
         :'draw_tabs_metadata' => :'drawTabsMetadata',
+        :'enable_tab_agreement_details' => :'enableTabAgreementDetails',
+        :'enable_tab_agreement_details_metadata' => :'enableTabAgreementDetailsMetadata',
         :'first_last_email_tabs_enabled' => :'firstLastEmailTabsEnabled',
         :'first_last_email_tabs_metadata' => :'firstLastEmailTabsMetadata',
         :'list_tabs_enabled' => :'listTabsEnabled',
@@ -212,6 +220,8 @@ module DocuSign_eSign
         :'data_field_size_metadata' => :'SettingsMetadata',
         :'draw_tabs_enabled' => :'String',
         :'draw_tabs_metadata' => :'SettingsMetadata',
+        :'enable_tab_agreement_details' => :'String',
+        :'enable_tab_agreement_details_metadata' => :'SettingsMetadata',
         :'first_last_email_tabs_enabled' => :'String',
         :'first_last_email_tabs_metadata' => :'SettingsMetadata',
         :'list_tabs_enabled' => :'String',
@@ -307,6 +317,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'drawTabsMetadata')
         self.draw_tabs_metadata = attributes[:'drawTabsMetadata']
+      end
+
+      if attributes.has_key?(:'enableTabAgreementDetails')
+        self.enable_tab_agreement_details = attributes[:'enableTabAgreementDetails']
+      end
+
+      if attributes.has_key?(:'enableTabAgreementDetailsMetadata')
+        self.enable_tab_agreement_details_metadata = attributes[:'enableTabAgreementDetailsMetadata']
       end
 
       if attributes.has_key?(:'firstLastEmailTabsEnabled')
@@ -462,6 +480,8 @@ module DocuSign_eSign
           data_field_size_metadata == o.data_field_size_metadata &&
           draw_tabs_enabled == o.draw_tabs_enabled &&
           draw_tabs_metadata == o.draw_tabs_metadata &&
+          enable_tab_agreement_details == o.enable_tab_agreement_details &&
+          enable_tab_agreement_details_metadata == o.enable_tab_agreement_details_metadata &&
           first_last_email_tabs_enabled == o.first_last_email_tabs_enabled &&
           first_last_email_tabs_metadata == o.first_last_email_tabs_metadata &&
           list_tabs_enabled == o.list_tabs_enabled &&
@@ -503,7 +523,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_tab_order, allow_tab_order_metadata, approve_decline_tabs_enabled, approve_decline_tabs_metadata, calculated_fields_enabled, calculated_fields_metadata, checkbox_tabs_enabled, check_box_tabs_metadata, data_field_regex_enabled, data_field_regex_metadata, data_field_size_enabled, data_field_size_metadata, draw_tabs_enabled, draw_tabs_metadata, first_last_email_tabs_enabled, first_last_email_tabs_metadata, list_tabs_enabled, list_tabs_metadata, note_tabs_enabled, note_tabs_metadata, numerical_tabs_enabled, numerical_tabs_metadata, prefill_tabs_enabled, prefill_tabs_metadata, radio_tabs_enabled, radio_tabs_metadata, saving_custom_tabs_enabled, saving_custom_tabs_metadata, sender_to_change_tab_assignments_enabled, sender_to_change_tab_assignments_metadata, shared_custom_tabs_enabled, shared_custom_tabs_metadata, tab_data_label_enabled, tab_data_label_metadata, tab_location_enabled, tab_location_metadata, tab_locking_enabled, tab_locking_metadata, tab_scale_enabled, tab_scale_metadata, tab_text_formatting_enabled, tab_text_formatting_metadata, text_tabs_enabled, text_tabs_metadata].hash
+      [allow_tab_order, allow_tab_order_metadata, approve_decline_tabs_enabled, approve_decline_tabs_metadata, calculated_fields_enabled, calculated_fields_metadata, checkbox_tabs_enabled, check_box_tabs_metadata, data_field_regex_enabled, data_field_regex_metadata, data_field_size_enabled, data_field_size_metadata, draw_tabs_enabled, draw_tabs_metadata, enable_tab_agreement_details, enable_tab_agreement_details_metadata, first_last_email_tabs_enabled, first_last_email_tabs_metadata, list_tabs_enabled, list_tabs_metadata, note_tabs_enabled, note_tabs_metadata, numerical_tabs_enabled, numerical_tabs_metadata, prefill_tabs_enabled, prefill_tabs_metadata, radio_tabs_enabled, radio_tabs_metadata, saving_custom_tabs_enabled, saving_custom_tabs_metadata, sender_to_change_tab_assignments_enabled, sender_to_change_tab_assignments_metadata, shared_custom_tabs_enabled, shared_custom_tabs_metadata, tab_data_label_enabled, tab_data_label_metadata, tab_location_enabled, tab_location_metadata, tab_locking_enabled, tab_locking_metadata, tab_scale_enabled, tab_scale_metadata, tab_text_formatting_enabled, tab_text_formatting_metadata, text_tabs_enabled, text_tabs_metadata].hash
     end
 
     # Builds the object from hash
