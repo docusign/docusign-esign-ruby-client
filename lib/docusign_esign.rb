@@ -1,7 +1,7 @@
 =begin
-#DocuSign REST API
+#Docusign eSignature REST API
 
-#The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+#The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
 
 OpenAPI spec version: v2.1
 Contact: devcenter@docusign.com
@@ -120,6 +120,7 @@ require 'docusign_esign/models/bulk_send_response'
 require 'docusign_esign/models/bulk_send_test_response'
 require 'docusign_esign/models/bulk_sending_copy'
 require 'docusign_esign/models/bulk_sending_copy_custom_field'
+require 'docusign_esign/models/bulk_sending_copy_doc_gen_form_field_row_value'
 require 'docusign_esign/models/bulk_sending_copy_recipient'
 require 'docusign_esign/models/bulk_sending_copy_tab'
 require 'docusign_esign/models/bulk_sending_list'

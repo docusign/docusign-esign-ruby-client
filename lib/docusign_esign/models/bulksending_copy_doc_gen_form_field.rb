@@ -1,7 +1,7 @@
 =begin
-#DocuSign REST API
+#Docusign eSignature REST API
 
-#The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+#The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
 
 OpenAPI spec version: v2.1
 Contact: devcenter@docusign.com
@@ -16,6 +16,9 @@ module DocuSign_eSign
     # 
     attr_accessor :name
 
+    # 
+    attr_accessor :row_values
+
     # Specifies the value of the tab. 
     attr_accessor :value
 
@@ -23,6 +26,7 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'name' => :'name',
+        :'row_values' => :'rowValues',
         :'value' => :'value'
       }
     end
@@ -31,6 +35,7 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'name' => :'String',
+        :'row_values' => :'Array<BulkSendingCopyDocGenFormFieldRowValue>',
         :'value' => :'String'
       }
     end
@@ -45,6 +50,12 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'rowValues')
+        if (value = attributes[:'rowValues']).is_a?(Array)
+          self.row_values = value
+        end
       end
 
       if attributes.has_key?(:'value')
@@ -71,6 +82,7 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           name == o.name &&
+          row_values == o.row_values &&
           value == o.value
     end
 
@@ -83,7 +95,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, value].hash
+      [name, row_values, value].hash
     end
 
     # Builds the object from hash

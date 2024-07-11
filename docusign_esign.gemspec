@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
 
 =begin
-#DocuSign REST API
+#Docusign eSignature REST API
 
-#The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+#The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
 
 OpenAPI spec version: v2.1
 Contact: devcenter@docusign.com
@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.authors     = ["DocuSign"]
   s.email       = ["devcenter@docusign.com"]
   s.homepage    = "https://github.com/docusign/docusign-esign-ruby-client"
-  s.summary     = "DocuSign REST API Ruby Gem"
+  s.summary     = "Docusign eSignature REST API Ruby Gem"
   s.description = "The DocuSign package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-esign-ruby-client repository. Join the eSign revolution!"
   s.license     = "MIT"
   s.required_ruby_version = ">= 1.9"

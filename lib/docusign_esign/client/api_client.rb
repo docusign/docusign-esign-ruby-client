@@ -1,7 +1,7 @@
 =begin
-#DocuSign REST API
+#Docusign eSignature REST API
 
-#The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+#The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
 
 OpenAPI spec version: v2.1
 Contact: devcenter@docusign.com
@@ -35,7 +35,7 @@ module DocuSign_eSign
     # @option config [Configuration] Configuration for initializing the object, default to Configuration.default
     def initialize(config = Configuration.default)
       @config = config
-      @user_agent = "Swagger-Codegen/v2.1/4.0.0/ruby-#{RUBY_VERSION}p#{RUBY_PATCHLEVEL}"
+      @user_agent = "Swagger-Codegen/v2.1/5.0.0.rc1/ruby-#{RUBY_VERSION}p#{RUBY_PATCHLEVEL}"
       @default_headers = {
         'Content-Type' => "application/json",
         'User-Agent' => @user_agent

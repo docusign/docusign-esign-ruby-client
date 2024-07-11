@@ -1,7 +1,7 @@
 =begin
-#DocuSign REST API
+#Docusign eSignature REST API
 
-#The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+#The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
 
 OpenAPI spec version: v2.1
 Contact: devcenter@docusign.com
@@ -175,6 +175,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :include
+
+    # 
+    attr_accessor :include_anchor_tab_locations
 
     def self.default
       @@default ||= GetEnvelopeOptions.new
@@ -458,6 +461,9 @@ module DocuSign_eSign
     # When set to **true**, allows the caller to update recipients, tabs, custom fields, notification, email settings and other envelope attributes.
     attr_accessor :advanced_update
 
+    # 
+    attr_accessor :recycle_on_void
+
     # When set to **true**, sends the specified envelope again.
     attr_accessor :resend_envelope
 
@@ -733,10 +739,10 @@ module DocuSign_eSign
     # Returns a URL that allows you to embed the envelope correction view of the DocuSign UI in your applications.  Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param correct_view_request  (optional parameter)
+    # @param envelope_view_request  (optional parameter)
     # @return [ViewUrl]
-    def create_correct_view(account_id, envelope_id, correct_view_request)
-      data, _status_code, _headers = create_correct_view_with_http_info(account_id, envelope_id,  correct_view_request)
+    def create_correct_view(account_id, envelope_id, envelope_view_request)
+      data, _status_code, _headers = create_correct_view_with_http_info(account_id, envelope_id,  envelope_view_request)
       return data
     end
 
@@ -744,9 +750,9 @@ module DocuSign_eSign
     # Returns a URL that allows you to embed the envelope correction view of the DocuSign UI in your applications.  Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView. 
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param correct_view_request  (optional parameter)
+    # @param envelope_view_request  (optional parameter)
     # @return [Array<(ViewUrl, Fixnum, Hash)>] ViewUrl data, response status code and response headers
-    def create_correct_view_with_http_info(account_id, envelope_id, correct_view_request)
+    def create_correct_view_with_http_info(account_id, envelope_id, envelope_view_request)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: EnvelopesApi.create_correct_view ..."
       end
@@ -769,7 +775,7 @@ module DocuSign_eSign
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(correct_view_request)
+      post_body = @api_client.object_to_http_body(envelope_view_request)
       auth_names = []
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
@@ -3970,6 +3976,7 @@ module DocuSign_eSign
       query_params = {}
       query_params[:'advanced_update'] = options.advanced_update if !options.advanced_update.nil?
       query_params[:'include'] = options.include if !options.include.nil?
+      query_params[:'include_anchor_tab_locations'] = options.include_anchor_tab_locations if !options.include_anchor_tab_locations.nil?
 
       # header parameters
       header_params = {}
@@ -6097,6 +6104,7 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'advanced_update'] = options.advanced_update if !options.advanced_update.nil?
+      query_params[:'recycle_on_void'] = options.recycle_on_void if !options.recycle_on_void.nil?
       query_params[:'resend_envelope'] = options.resend_envelope if !options.resend_envelope.nil?
 
       # header parameters

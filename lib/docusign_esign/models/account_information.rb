@@ -1,7 +1,7 @@
 =begin
-#DocuSign REST API
+#Docusign eSignature REST API
 
-#The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+#The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
 
 OpenAPI spec version: v2.1
 Contact: devcenter@docusign.com
@@ -90,6 +90,9 @@ module DocuSign_eSign
     attr_accessor :forgotten_password_questions_count
 
     # 
+    attr_accessor :free_envelope_sends_remaining_for_advanced_doc_gen
+
+    # 
     attr_accessor :is_downgrade
 
     # 
@@ -156,6 +159,7 @@ module DocuSign_eSign
         :'envelope_unit_price' => :'envelopeUnitPrice',
         :'external_account_id' => :'externalAccountId',
         :'forgotten_password_questions_count' => :'forgottenPasswordQuestionsCount',
+        :'free_envelope_sends_remaining_for_advanced_doc_gen' => :'freeEnvelopeSendsRemainingForAdvancedDocGen',
         :'is_downgrade' => :'isDowngrade',
         :'payment_method' => :'paymentMethod',
         :'plan_classification' => :'planClassification',
@@ -200,6 +204,7 @@ module DocuSign_eSign
         :'envelope_unit_price' => :'String',
         :'external_account_id' => :'String',
         :'forgotten_password_questions_count' => :'String',
+        :'free_envelope_sends_remaining_for_advanced_doc_gen' => :'Integer',
         :'is_downgrade' => :'String',
         :'payment_method' => :'String',
         :'plan_classification' => :'String',
@@ -326,6 +331,10 @@ module DocuSign_eSign
         self.forgotten_password_questions_count = attributes[:'forgottenPasswordQuestionsCount']
       end
 
+      if attributes.has_key?(:'freeEnvelopeSendsRemainingForAdvancedDocGen')
+        self.free_envelope_sends_remaining_for_advanced_doc_gen = attributes[:'freeEnvelopeSendsRemainingForAdvancedDocGen']
+      end
+
       if attributes.has_key?(:'isDowngrade')
         self.is_downgrade = attributes[:'isDowngrade']
       end
@@ -424,6 +433,7 @@ module DocuSign_eSign
           envelope_unit_price == o.envelope_unit_price &&
           external_account_id == o.external_account_id &&
           forgotten_password_questions_count == o.forgotten_password_questions_count &&
+          free_envelope_sends_remaining_for_advanced_doc_gen == o.free_envelope_sends_remaining_for_advanced_doc_gen &&
           is_downgrade == o.is_downgrade &&
           payment_method == o.payment_method &&
           plan_classification == o.plan_classification &&
@@ -448,7 +458,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id_guid, account_name, account_settings, allow_transaction_rooms, billing_period_days_remaining, billing_period_end_date, billing_period_envelopes_allowed, billing_period_envelopes_sent, billing_period_start_date, billing_profile, brands, can_upgrade, connect_permission, created_date, currency_code, current_plan_id, display_appliance_start_url, display_appliance_url, distributor_code, docu_sign_landing_url, dss_values, envelope_sending_blocked, envelope_unit_price, external_account_id, forgotten_password_questions_count, is_downgrade, payment_method, plan_classification, plan_end_date, plan_name, plan_start_date, recipient_domains, seats_allowed, seats_in_use, status21_cfr_part11, suspension_date, suspension_status, use_display_appliance].hash
+      [account_id_guid, account_name, account_settings, allow_transaction_rooms, billing_period_days_remaining, billing_period_end_date, billing_period_envelopes_allowed, billing_period_envelopes_sent, billing_period_start_date, billing_profile, brands, can_upgrade, connect_permission, created_date, currency_code, current_plan_id, display_appliance_start_url, display_appliance_url, distributor_code, docu_sign_landing_url, dss_values, envelope_sending_blocked, envelope_unit_price, external_account_id, forgotten_password_questions_count, free_envelope_sends_remaining_for_advanced_doc_gen, is_downgrade, payment_method, plan_classification, plan_end_date, plan_name, plan_start_date, recipient_domains, seats_allowed, seats_in_use, status21_cfr_part11, suspension_date, suspension_status, use_display_appliance].hash
     end
 
     # Builds the object from hash
