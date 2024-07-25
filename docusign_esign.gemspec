@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.email       = ["devcenter@docusign.com"]
   s.homepage    = "https://github.com/docusign/docusign-esign-ruby-client"
   s.summary     = "Docusign eSignature REST API Ruby Gem"
-  s.description = "The DocuSign package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-esign-ruby-client repository. Join the eSign revolution!"
+  s.description = "The Docusign package makes integrating Docusign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-esign-ruby-client repository. Join the eSign revolution!"
   s.license     = "MIT"
   s.required_ruby_version = ">= 1.9"
 
