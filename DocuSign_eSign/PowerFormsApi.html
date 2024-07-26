@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class DocuSign_eSign::PowerFormsApi - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="../Object.html">Object</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-i-create_power_form">#create_power_form</a>
+    <li ><a href="#method-i-create_power_form_with_http_info">#create_power_form_with_http_info</a>
+    <li ><a href="#method-i-delete_power_form">#delete_power_form</a>
+    <li ><a href="#method-i-delete_power_form_with_http_info">#delete_power_form_with_http_info</a>
+    <li ><a href="#method-i-delete_power_forms">#delete_power_forms</a>
+    <li ><a href="#method-i-delete_power_forms_with_http_info">#delete_power_forms_with_http_info</a>
+    <li ><a href="#method-i-get_power_form">#get_power_form</a>
+    <li ><a href="#method-i-get_power_form_data">#get_power_form_data</a>
+    <li ><a href="#method-i-get_power_form_data_with_http_info">#get_power_form_data_with_http_info</a>
+    <li ><a href="#method-i-get_power_form_with_http_info">#get_power_form_with_http_info</a>
+    <li ><a href="#method-i-list_power_form_senders">#list_power_form_senders</a>
+    <li ><a href="#method-i-list_power_form_senders_with_http_info">#list_power_form_senders_with_http_info</a>
+    <li ><a href="#method-i-list_power_forms">#list_power_forms</a>
+    <li ><a href="#method-i-list_power_forms_with_http_info">#list_power_forms_with_http_info</a>
+    <li ><a href="#method-i-update_power_form">#update_power_form</a>
+    <li ><a href="#method-i-update_power_form_with_http_info">#update_power_form_with_http_info</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-DocuSign_eSign::PowerFormsApi">
+  <h1 id="class-DocuSign_eSign::PowerFormsApi" class="class">
+    class DocuSign_eSign::PowerFormsApi
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-api_client" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">api_client</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(api_client = PowerFormsApi.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">api_client</span> = <span class="ruby-constant">PowerFormsApi</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-ivar">@api_client</span> = <span class="ruby-identifier">api_client</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-create_power_form" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">create_power_form</span><span
+            class="method-args">(account_id, power_form)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Creates a new <a href="PowerForm.html"><code>PowerForm</code></a>. This method creates a new <a href="PowerForm.html"><code>PowerForm</code></a>.  You create a <a href="PowerForm.html"><code>PowerForm</code></a> from an existing DocuSign [template](/docs/esign-rest-api/reference/templates/templates/create/), based on the `templateId` in the request body.   PowerForms that you create from a template are referred to as *web PowerForms*.  *<strong>Note:</strong>* The DocuSign Admin console also supports creating a <a href="PowerForm.html"><code>PowerForm</code></a> by uploading a PDF file that has active form fields (referred to as a *PDF PowerForm*). However, PDF PowerForms are deprecated and are not supported in the API.  *<strong>Note:</strong>* A <a href="PowerForm.html"><code>PowerForm</code></a> can have only one sender. (Because PowerForms are not necessarily sent by email, this user is also referred to as the <a href="PowerForm.html"><code>PowerForm</code></a> <strong>initiator</strong>.) If you need to associate multiple senders with a <a href="PowerForm.html"><code>PowerForm</code></a>, create multiple copies of the <a href="PowerForm.html"><code>PowerForm</code></a> by using the same template (one copy for each sender). By default, the sender is the <a href="PowerForm.html"><code>PowerForm</code></a> Administrator who creates the <a href="PowerForm.html"><code>PowerForm</code></a>.   ### Signing modes  You can use one of the following signing modes for a PowerForm:  **`email`**  This mode verifies the recipient&#39;s identity by using email authentication before the recipient can sign a document. The recipient enters their email address on the landing page and then clicks **Begin Signing** to begin the signing process. The system then sends an email message with a validation code to the recipient. If the recipient does not provide a valid email address, they do not receive the email message containing the access code and are not able to open and sign the document.  Alternatively, you can make the process easier for signers by using email authentication only and omitting the access code. To do this, you append the `activateonly` flag to the <a href="PowerForm.html"><code>PowerForm</code></a> URL and set it to true by passing in the value `1`.  When the flag is active, the first recipient receives an email with a link that initiates the signing session without having to enter access code.  Example: `activateonly=1`  **`direct`**  This mode does not require any verification. After a recipient enters their email address on the landing page and clicks **Begin Signing,** a new browser tab opens and the recipient can immediately begin the signing process.  Because the `direct` signing mode does not verify the recipient&#39;s identity by using email authentication, we strongly recommend that you use this mode only when the <a href="PowerForm.html"><code>PowerForm</code></a> is accessible behind a secure portal where the recipient&#39;s identity is already authenticated, or where another form of authentication is specified for the recipient in the DocuSign template (for example, an access code, phone authentication, or ID check).  *<strong>Note:</strong>* In the account settings, `enablePowerFormDirect` must be *<strong>true</strong>* to use `direct` as the `signingMode`.  ### Redirect URLs  You can control the URL to which signers are redirected after signing your <a href="PowerForm.html"><code>PowerForm</code></a>. However, the URL is specified elsewhere, outside of the <a href="PowerForm.html"><code>PowerForm</code></a> creation process. For details, see [How do I specify a URL to redirect to when a <a href="PowerForm.html"><code>PowerForm</code></a> is completed?](<a href="https://support.docusign.com/en/articles/How-do-I-specify-a-URL-to-redirect-to-when-a-Powerform-is-completed">support.docusign.com/en/articles/How-do-I-specify-a-URL-to-redirect-to-when-a-Powerform-is-completed</a>).  ### More information  For more information about creating PowerForms, see [Create a PowerForm](<a href="https://support.docusign.com/en/guides/ndse-user-guide-create-a-powerform">support.docusign.com/en/guides/ndse-user-guide-create-a-powerform</a>).</p>
+
+<p>@param account_id The external account number (int) or account ID Guid. @param power_form  (optional parameter) @return [PowerForm]</p>
+
+          <div class="method-source-code" id="create_power_form-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_power_form</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_form</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">create_power_form_with_http_info</span>(<span class="ruby-identifier">account_id</span>,  <span class="ruby-identifier">power_form</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-create_power_form_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">create_power_form_with_http_info</span><span
+            class="method-args">(account_id, power_form)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Creates a new <a href="PowerForm.html"><code>PowerForm</code></a>. This method creates a new <a href="PowerForm.html"><code>PowerForm</code></a>.  You create a <a href="PowerForm.html"><code>PowerForm</code></a> from an existing DocuSign [template](/docs/esign-rest-api/reference/templates/templates/create/), based on the &amp;#x60;templateId&amp;#x60; in the request body.   PowerForms that you create from a template are referred to as *web PowerForms*.  *<strong>Note:</strong>* The DocuSign Admin console also supports creating a <a href="PowerForm.html"><code>PowerForm</code></a> by uploading a PDF file that has active form fields (referred to as a *PDF PowerForm*). However, PDF PowerForms are deprecated and are not supported in the API.  *<strong>Note:</strong>* A <a href="PowerForm.html"><code>PowerForm</code></a> can have only one sender. (Because PowerForms are not necessarily sent by email, this user is also referred to as the <a href="PowerForm.html"><code>PowerForm</code></a> <strong>initiator</strong>.) If you need to associate multiple senders with a <a href="PowerForm.html"><code>PowerForm</code></a>, create multiple copies of the <a href="PowerForm.html"><code>PowerForm</code></a> by using the same template (one copy for each sender). By default, the sender is the <a href="PowerForm.html"><code>PowerForm</code></a> Administrator who creates the <a href="PowerForm.html"><code>PowerForm</code></a>.   ### Signing modes  You can use one of the following signing modes for a PowerForm:  **&amp;#x60;email&amp;#x60;**  This mode verifies the recipient&amp;#39;s identity by using email authentication before the recipient can sign a document. The recipient enters their email address on the landing page and then clicks **Begin Signing** to begin the signing process. The system then sends an email message with a validation code to the recipient. If the recipient does not provide a valid email address, they do not receive the email message containing the access code and are not able to open and sign the document.  Alternatively, you can make the process easier for signers by using email authentication only and omitting the access code. To do this, you append the &amp;#x60;activateonly&amp;#x60; flag to the <a href="PowerForm.html"><code>PowerForm</code></a> URL and set it to true by passing in the value &amp;#x60;1&amp;#x60;.  When the flag is active, the first recipient receives an email with a link that initiates the signing session without having to enter access code.  Example: &amp;#x60;activateonly&amp;#x3D;1&amp;#x60;  **&amp;#x60;direct&amp;#x60;**  This mode does not require any verification. After a recipient enters their email address on the landing page and clicks **Begin Signing,** a new browser tab opens and the recipient can immediately begin the signing process.  Because the &amp;#x60;direct&amp;#x60; signing mode does not verify the recipient&amp;#39;s identity by using email authentication, we strongly recommend that you use this mode only when the <a href="PowerForm.html"><code>PowerForm</code></a> is accessible behind a secure portal where the recipient&amp;#39;s identity is already authenticated, or where another form of authentication is specified for the recipient in the DocuSign template (for example, an access code, phone authentication, or ID check).  *<strong>Note:</strong>* In the account settings, &amp;#x60;enablePowerFormDirect&amp;#x60; must be *<strong>true</strong>* to use &amp;#x60;direct&amp;#x60; as the &amp;#x60;signingMode&amp;#x60;.  ### Redirect URLs  You can control the URL to which signers are redirected after signing your <a href="PowerForm.html"><code>PowerForm</code></a>. However, the URL is specified elsewhere, outside of the <a href="PowerForm.html"><code>PowerForm</code></a> creation process. For details, see [How do I specify a URL to redirect to when a <a href="PowerForm.html"><code>PowerForm</code></a> is completed?](<a href="https://support.docusign.com/en/articles/How-do-I-specify-a-URL-to-redirect-to-when-a-Powerform-is-completed">support.docusign.com/en/articles/How-do-I-specify-a-URL-to-redirect-to-when-a-Powerform-is-completed</a>).  ### More information  For more information about creating PowerForms, see [Create a PowerForm](<a href="https://support.docusign.com/en/guides/ndse-user-guide-create-a-powerform">support.docusign.com/en/guides/ndse-user-guide-create-a-powerform</a>).</p>
+
+<p>@param account_id The external account number (int) or account ID Guid. @param power_form  (optional parameter) @return [Array&lt;(<a href="PowerForm.html"><code>PowerForm</code></a>, Fixnum, Hash)&gt;] <a href="PowerForm.html"><code>PowerForm</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="create_power_form_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_power_form_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_form</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: PowerFormsApi.create_power_form ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling PowerFormsApi.create_power_form&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/powerforms&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">object_to_http_body</span>(<span class="ruby-identifier">power_form</span>)
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:POST</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;PowerForm&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: PowerFormsApi#create_power_form\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-delete_power_form" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">delete_power_form</span><span
+            class="method-args">(account_id, power_form_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Delete a <a href="PowerForm.html"><code>PowerForm</code></a>. This method deletes a <a href="PowerForm.html"><code>PowerForm</code></a>. @param account_id The external account number (int) or account ID Guid. @param power_form_id  @return [nil]</p>
+
+          <div class="method-source-code" id="delete_power_form-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_power_form</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_form_id</span>)
+  <span class="ruby-identifier">delete_power_form_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_form_id</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-delete_power_form_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">delete_power_form_with_http_info</span><span
+            class="method-args">(account_id, power_form_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Delete a <a href="PowerForm.html"><code>PowerForm</code></a>. This method deletes a <a href="PowerForm.html"><code>PowerForm</code></a>. @param account_id The external account number (int) or account ID Guid. @param power_form_id  @return [Array&lt;(nil, Fixnum, Hash)&gt;] nil, response status code and response headers</p>
+
+          <div class="method-source-code" id="delete_power_form_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_power_form_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_form_id</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: PowerFormsApi.delete_power_form ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling PowerFormsApi.delete_power_form&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># verify the required parameter &#39;power_form_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;power_form_id&#39; when calling PowerFormsApi.delete_power_form&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">power_form_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/powerforms/{powerFormId}&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;powerFormId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">power_form_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:DELETE</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: PowerFormsApi#delete_power_form\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-delete_power_forms" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">delete_power_forms</span><span
+            class="method-args">(account_id, power_forms_request)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Deletes one or more PowerForms This method deletes one or more PowerForms. The request body takes an array of <a href="PowerForm.html"><code>PowerForm</code></a> objects that are deleted based on the `powerFormId`. @param account_id The external account number (int) or account ID Guid. @param power_forms_request  (optional parameter) @return [PowerFormsResponse]</p>
+
+          <div class="method-source-code" id="delete_power_forms-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_power_forms</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_forms_request</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">delete_power_forms_with_http_info</span>(<span class="ruby-identifier">account_id</span>,  <span class="ruby-identifier">power_forms_request</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-delete_power_forms_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">delete_power_forms_with_http_info</span><span
+            class="method-args">(account_id, power_forms_request)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Deletes one or more PowerForms This method deletes one or more PowerForms. The request body takes an array of <a href="PowerForm.html"><code>PowerForm</code></a> objects that are deleted based on the &amp;#x60;powerFormId&amp;#x60;. @param account_id The external account number (int) or account ID Guid. @param power_forms_request  (optional parameter) @return [Array&lt;(<a href="PowerFormsResponse.html"><code>PowerFormsResponse</code></a>, Fixnum, Hash)&gt;] <a href="PowerFormsResponse.html"><code>PowerFormsResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="delete_power_forms_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_power_forms_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_forms_request</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: PowerFormsApi.delete_power_forms ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling PowerFormsApi.delete_power_forms&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/powerforms&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">object_to_http_body</span>(<span class="ruby-identifier">power_forms_request</span>)
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:DELETE</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;PowerFormsResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: PowerFormsApi#delete_power_forms\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_power_form" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_power_form</span><span
+            class="method-args">(account_id, power_form_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns a single <a href="PowerForm.html"><code>PowerForm</code></a>. This method returns detailed information about a specific <a href="PowerForm.html"><code>PowerForm</code></a>. @param account_id The external account number (int) or account ID Guid. @param power_form_id  @return [PowerForm]</p>
+
+          <div class="method-source-code" id="get_power_form-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_power_form</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_form_id</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">get_power_form_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_form_id</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_power_form_data" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_power_form_data</span><span
+            class="method-args">(account_id, power_form_id, options = DocuSign_eSign::GetPowerFormDataOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns the form data associated with the usage of a <a href="PowerForm.html"><code>PowerForm</code></a>. This method enables Powerform Administrators or the sender of a <a href="PowerForm.html"><code>PowerForm</code></a> to download the data that recipients have entered into a <a href="PowerForm.html"><code>PowerForm</code></a>.  You specify the format in which you want to retrieve the data in the `Accept` header. This header accepts the following values:   - `application/json`: JSON format - `application/xml`: XML format - `text/csv`: Comma-separated value (CSV) format  *<strong>Note:</strong>* Only <a href="PowerForm.html"><code>PowerForm</code></a> Administrators or the <a href="PowerForm.html"><code>PowerForm</code></a> <a href="Sender.html"><code>Sender</code></a> can download the data associated with a <a href="PowerForm.html"><code>PowerForm</code></a>. @param account_id The external account number (int) or account ID Guid. @param power_form_id  @param <a href="GetPowerFormDataOptions.html"><code>DocuSign_eSign::GetPowerFormDataOptions</code></a> Options for modifying the behavior of the function. @return [PowerFormsFormDataResponse]</p>
+
+          <div class="method-source-code" id="get_power_form_data-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 285</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_power_form_data</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_form_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">GetPowerFormDataOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">get_power_form_data_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_form_id</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_power_form_data_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_power_form_data_with_http_info</span><span
+            class="method-args">(account_id, power_form_id, options = DocuSign_eSign::GetPowerFormDataOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns the form data associated with the usage of a <a href="PowerForm.html"><code>PowerForm</code></a>. This method enables Powerform Administrators or the sender of a <a href="PowerForm.html"><code>PowerForm</code></a> to download the data that recipients have entered into a <a href="PowerForm.html"><code>PowerForm</code></a>.  You specify the format in which you want to retrieve the data in the &amp;#x60;Accept&amp;#x60; header. This header accepts the following values:   - &amp;#x60;application/json&amp;#x60;: JSON format - &amp;#x60;application/xml&amp;#x60;: XML format - &amp;#x60;text/csv&amp;#x60;: Comma-separated value (CSV) format  *<strong>Note:</strong>* Only <a href="PowerForm.html"><code>PowerForm</code></a> Administrators or the <a href="PowerForm.html"><code>PowerForm</code></a> <a href="Sender.html"><code>Sender</code></a> can download the data associated with a <a href="PowerForm.html"><code>PowerForm</code></a>. @param account_id The external account number (int) or account ID Guid. @param power_form_id  @param <a href="GetPowerFormDataOptions.html"><code>DocuSign_eSign::GetPowerFormDataOptions</code></a> Options for modifying the behavior of the function. @return [Array&lt;(<a href="PowerFormsFormDataResponse.html"><code>PowerFormsFormDataResponse</code></a>, Fixnum, Hash)&gt;] <a href="PowerFormsFormDataResponse.html"><code>PowerFormsFormDataResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="get_power_form_data_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 296</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_power_form_data_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_form_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">GetPowerFormDataOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: PowerFormsApi.get_power_form_data ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling PowerFormsApi.get_power_form_data&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># verify the required parameter &#39;power_form_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;power_form_id&#39; when calling PowerFormsApi.get_power_form_data&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">power_form_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/powerforms/{powerFormId}/form_data&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;powerFormId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">power_form_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;data_layout&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">data_layout</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">data_layout</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;from_date&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">from_date</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">from_date</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;to_date&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_date</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_date</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;PowerFormsFormDataResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: PowerFormsApi#get_power_form_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_power_form_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_power_form_with_http_info</span><span
+            class="method-args">(account_id, power_form_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns a single <a href="PowerForm.html"><code>PowerForm</code></a>. This method returns detailed information about a specific <a href="PowerForm.html"><code>PowerForm</code></a>. @param account_id The external account number (int) or account ID Guid. @param power_form_id  @return [Array&lt;(<a href="PowerForm.html"><code>PowerForm</code></a>, Fixnum, Hash)&gt;] <a href="PowerForm.html"><code>PowerForm</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="get_power_form_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_power_form_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_form_id</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: PowerFormsApi.get_power_form ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling PowerFormsApi.get_power_form&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># verify the required parameter &#39;power_form_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;power_form_id&#39; when calling PowerFormsApi.get_power_form&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">power_form_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/powerforms/{powerFormId}&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;powerFormId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">power_form_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;PowerForm&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: PowerFormsApi#get_power_form\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_power_form_senders" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_power_form_senders</span><span
+            class="method-args">(account_id, options = DocuSign_eSign::ListPowerFormSendersOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns the list of PowerForms available to the user. This method returns a list of users who have sent PowerForms. @param account_id The external account number (int) or account ID Guid. @param <a href="ListPowerFormSendersOptions.html"><code>DocuSign_eSign::ListPowerFormSendersOptions</code></a> Options for modifying the behavior of the function. @return [PowerFormSendersResponse]</p>
+
+          <div class="method-source-code" id="list_power_form_senders-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 342</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_power_form_senders</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">ListPowerFormSendersOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">list_power_form_senders_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_power_form_senders_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_power_form_senders_with_http_info</span><span
+            class="method-args">(account_id, options = DocuSign_eSign::ListPowerFormSendersOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns the list of PowerForms available to the user. This method returns a list of users who have sent PowerForms. @param account_id The external account number (int) or account ID Guid. @param <a href="ListPowerFormSendersOptions.html"><code>DocuSign_eSign::ListPowerFormSendersOptions</code></a> Options for modifying the behavior of the function. @return [Array&lt;(<a href="PowerFormSendersResponse.html"><code>PowerFormSendersResponse</code></a>, Fixnum, Hash)&gt;] <a href="PowerFormSendersResponse.html"><code>PowerFormSendersResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="list_power_form_senders_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 352</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_power_form_senders_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">ListPowerFormSendersOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: PowerFormsApi.list_power_form_senders ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling PowerFormsApi.list_power_form_senders&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/powerforms/senders&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;start_position&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">start_position</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">start_position</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;PowerFormSendersResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: PowerFormsApi#list_power_form_senders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_power_forms" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_power_forms</span><span
+            class="method-args">(account_id, options = DocuSign_eSign::ListPowerFormsOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns the list of PowerForms available to the user. This method returns a list of PowerForms that are available to the user. @param account_id The external account number (int) or account ID Guid. @param <a href="ListPowerFormsOptions.html"><code>DocuSign_eSign::ListPowerFormsOptions</code></a> Options for modifying the behavior of the function. @return [PowerFormsResponse]</p>
+
+          <div class="method-source-code" id="list_power_forms-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 394</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_power_forms</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">ListPowerFormsOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">list_power_forms_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_power_forms_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_power_forms_with_http_info</span><span
+            class="method-args">(account_id, options = DocuSign_eSign::ListPowerFormsOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns the list of PowerForms available to the user. This method returns a list of PowerForms that are available to the user. @param account_id The external account number (int) or account ID Guid. @param <a href="ListPowerFormsOptions.html"><code>DocuSign_eSign::ListPowerFormsOptions</code></a> Options for modifying the behavior of the function. @return [Array&lt;(<a href="PowerFormsResponse.html"><code>PowerFormsResponse</code></a>, Fixnum, Hash)&gt;] <a href="PowerFormsResponse.html"><code>PowerFormsResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="list_power_forms_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 404</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_power_forms_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">ListPowerFormsOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: PowerFormsApi.list_power_forms ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling PowerFormsApi.list_power_forms&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/powerforms&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;from_date&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">from_date</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">from_date</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;order&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">order</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">order</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;order_by&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">order_by</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">order_by</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;search_fields&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">search_fields</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">search_fields</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;search_text&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">search_text</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">search_text</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;to_date&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_date</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_date</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;PowerFormsResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: PowerFormsApi#list_power_forms\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-update_power_form" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">update_power_form</span><span
+            class="method-args">(account_id, power_form_id, power_form)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Creates a new <a href="PowerForm.html"><code>PowerForm</code></a>. This method updates an existing <a href="PowerForm.html"><code>PowerForm</code></a>. @param account_id The external account number (int) or account ID Guid. @param power_form_id  @param power_form  (optional parameter) @return [PowerForm]</p>
+
+          <div class="method-source-code" id="update_power_form-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 452</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_power_form</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_form_id</span>, <span class="ruby-identifier">power_form</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">update_power_form_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_form_id</span>,  <span class="ruby-identifier">power_form</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-update_power_form_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">update_power_form_with_http_info</span><span
+            class="method-args">(account_id, power_form_id, power_form)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Creates a new <a href="PowerForm.html"><code>PowerForm</code></a>. This method updates an existing <a href="PowerForm.html"><code>PowerForm</code></a>. @param account_id The external account number (int) or account ID Guid. @param power_form_id  @param power_form  (optional parameter) @return [Array&lt;(<a href="PowerForm.html"><code>PowerForm</code></a>, Fixnum, Hash)&gt;] <a href="PowerForm.html"><code>PowerForm</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="update_power_form_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/power_forms_api.rb, line 463</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_power_form_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">power_form_id</span>, <span class="ruby-identifier">power_form</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: PowerFormsApi.update_power_form ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling PowerFormsApi.update_power_form&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># verify the required parameter &#39;power_form_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;power_form_id&#39; when calling PowerFormsApi.update_power_form&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">power_form_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/powerforms/{powerFormId}&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;powerFormId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">power_form_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">object_to_http_body</span>(<span class="ruby-identifier">power_form</span>)
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:PUT</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;PowerForm&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: PowerFormsApi#update_power_form\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

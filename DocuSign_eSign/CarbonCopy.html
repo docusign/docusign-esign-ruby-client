@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class DocuSign_eSign::CarbonCopy - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="../Object.html">Object</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-attribute_map">::attribute_map</a>
+    <li ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-c-swagger_types">::swagger_types</a>
+    <li ><a href="#method-i-3D-3D">#==</a>
+    <li ><a href="#method-i-_deserialize">#_deserialize</a>
+    <li ><a href="#method-i-_to_hash">#_to_hash</a>
+    <li ><a href="#method-i-build_from_hash">#build_from_hash</a>
+    <li ><a href="#method-i-eql-3F">#eql?</a>
+    <li ><a href="#method-i-hash">#hash</a>
+    <li ><a href="#method-i-list_invalid_properties">#list_invalid_properties</a>
+    <li ><a href="#method-i-to_body">#to_body</a>
+    <li ><a href="#method-i-to_hash">#to_hash</a>
+    <li ><a href="#method-i-to_s">#to_s</a>
+    <li ><a href="#method-i-valid-3F">#valid?</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-DocuSign_eSign::CarbonCopy">
+  <h1 id="class-DocuSign_eSign::CarbonCopy" class="class">
+    class DocuSign_eSign::CarbonCopy
+  </h1>
+
+  <section class="description">
+    
+<p>Contains information about a carbon copy recipient. Carbon copy recipients get a copy of the envelope but don&#39;t need to sign, initial, date or add information to any of the documents.</p>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-access_code" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">access_code</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account&#39;s access code format setting.  If blank, but the signer `accessCode` property is set in the envelope, then that value is used.  If blank and the signer `accessCode` property is not set, then the access code is not required.</p>
+        </div>
+      </div>
+      <div id="attribute-i-access_code_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">access_code_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `accessCode` property is editable. This property is read-only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-add_access_code_to_email" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">add_access_code_to_email</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>This Optional attribute indicates that the access code will be added to the email sent to the recipient; this nullifies the Security measure of Access Code on the recipient.</p>
+        </div>
+      </div>
+      <div id="attribute-i-additional_notifications" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">additional_notifications</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-agent_can_edit_email" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">agent_can_edit_email</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-agent_can_edit_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">agent_can_edit_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-allow_system_override_for_locked_recipient" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">allow_system_override_for_locked_recipient</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-auto_responded_reason" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">auto_responded_reason</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-bulk_send_v2_recipient" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">bulk_send_v2_recipient</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-client_user_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">client_user_id</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies whether the recipient is embedded or remote.   If the `clientUserId` property is not null then the recipient is embedded. <a href="Note.html"><code>Note</code></a> that if the `ClientUserId` property is set and either `SignerMustHaveAccount` or `SignerMustLoginToSign` property of the account settings is set to  *<strong>true</strong>*, an error is generated on sending.ng.   Maximum length: 100 characters.</p>
+        </div>
+      </div>
+      <div id="attribute-i-completed_count" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">completed_count</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-consent_details_list" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">consent_details_list</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-custom_fields" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">custom_fields</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.</p>
+        </div>
+      </div>
+      <div id="attribute-i-declined_date_time" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">declined_date_time</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The date and time the recipient declined the document.</p>
+        </div>
+      </div>
+      <div id="attribute-i-declined_reason" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">declined_reason</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The reason the recipient declined the document.</p>
+        </div>
+      </div>
+      <div id="attribute-i-delivered_date_time" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">delivered_date_time</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Reserved: For DocuSign use only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-delivery_method" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">delivery_method</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Reserved: For DocuSign use only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-delivery_method_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">delivery_method_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Reserved for DocuSign.</p>
+        </div>
+      </div>
+      <div id="attribute-i-designator_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">designator_id</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-designator_id_guid" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">designator_id_guid</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-document_visibility" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">document_visibility</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-email" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">email</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p><a href="Email.html"><code>Email</code></a> id of the recipient. <a href="Notification.html"><code>Notification</code></a> of the document to sign is sent to this email id.   Maximum length: 100 characters.</p>
+        </div>
+      </div>
+      <div id="attribute-i-email_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">email_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `email` property is editable. This property is read-only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-email_notification" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">email_notification</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>A complex type that contains information sets the language of the recipient&#39;s email information.   *<strong>IMPORTANT</strong>*: If you enable email notification for one recipient, you must enable email notification for all recipients as it overrides the <a href="Envelope.html"><code>Envelope</code></a> Subject and `EmailBlurb` property settings.</p>
+        </div>
+      </div>
+      <div id="attribute-i-email_recipient_post_signing_url" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">email_recipient_post_signing_url</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-embedded_recipient_start_url" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">embedded_recipient_start_url</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender&#39;s system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to `SIGN_AT_DOCUSIGN`, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient&#39;s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets `EmbeddedRecipientStartURL=SIGN_AT_DOCUSIGN`, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the `clientUserId` property is NOT set, and the `embeddedRecipientStartURL` is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The `customFields` property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   <strong>Example</strong>:   `<a href="http://senderHost/[[mergeField1]">senderHost/[[mergeField1]</a>]/ beginSigningSession? [[<a href="mergeField3">mergeField2]]&[</a>]`</p>
+        </div>
+      </div>
+      <div id="attribute-i-error_details" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">error_details</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Array or errors.</p>
+        </div>
+      </div>
+      <div id="attribute-i-excluded_documents" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">excluded_documents</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies the documents that are not visible to this recipient. <a href="Document.html"><code>Document</code></a> Visibility must be enabled for the account and the `enforceSignerVisibility` property must be set to *<strong>true</strong>* for the envelope to use this.  When enforce signer visibility is enabled, documents with tabs can only be viewed by signers that have a tab on that document. <a href="Recipients.html"><code>Recipients</code></a> that have an administrative role (<a href="Agent.html"><code>Agent</code></a>, <a href="Editor.html"><code>Editor</code></a>, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent.</p>
+        </div>
+      </div>
+      <div id="attribute-i-fax_number" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">fax_number</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Reserved:</p>
+        </div>
+      </div>
+      <div id="attribute-i-fax_number_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">fax_number_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Reserved for DocuSign.</p>
+        </div>
+      </div>
+      <div id="attribute-i-first_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">first_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The user&#39;s first name.  Maximum Length: 50 characters.</p>
+        </div>
+      </div>
+      <div id="attribute-i-first_name_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">first_name_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `firstName` property is editable. This property is read-only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-full_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">full_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-full_name_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">full_name_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Reserved for DocuSign.</p>
+        </div>
+      </div>
+      <div id="attribute-i-id_check_configuration_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">id_check_configuration_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  <strong>Example</strong>: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as &#39;ID Check $&#39; and &#39;SMS Auth $&#39;. To use ID check in an envelope, the idCheckConfigurationName should be &#39;ID Check &#39;. If you wanted to use SMS, it would be &#39;SMS Auth $&#39; and you would need to add you would need to add phone number information to the `smsAuthentication` node.</p>
+        </div>
+      </div>
+      <div id="attribute-i-id_check_configuration_name_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">id_check_configuration_name_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `idCheckConfigurationName` property is editable. This property is read-only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-id_check_information_input" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">id_check_information_input</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>An object that contains input information related to a recipient ID check.</p>
+        </div>
+      </div>
+      <div id="attribute-i-identity_verification" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">identity_verification</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies the ID Verification workflow applied on an envelope by workflow ID. &lt;br/&gt;See the [list](/docs/esign-rest-api/reference/accounts/identityverifications/list/) method in the [IdentityVerifications](/docs/esign-rest-api/reference/accounts/identityverifications/) resource for more information on how to retrieve workflow IDs available for an account. &lt;br/&gt;This can be used in addition to other [recipient authentication](<a href="https://support.docusign.com/en/guides/ndse-user-guide-recipient-authentication">support.docusign.com/en/guides/ndse-user-guide-recipient-authentication</a>) methods. &lt;br/&gt;Note that ID Verification and ID Check are two distinct methods. ID Verification checks recipients&#39; identity by verifying their ID while ID Check relies on data available on public records (such as current and former address).</p>
+        </div>
+      </div>
+      <div id="attribute-i-inherit_email_notification_configuration" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">inherit_email_notification_configuration</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>* and the envelope recipient creates a DocuSign account after signing, the Manage Account <a href="Email.html"><code>Email</code></a> <a href="Notification.html"><code>Notification</code></a> settings are used as the default settings for the recipient&#39;s account.</p>
+        </div>
+      </div>
+      <div id="attribute-i-last_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">last_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-last_name_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">last_name_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `lastName` property is editable. This property is read-only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-linked_account_configuration_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">linked_account_configuration_id</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-locked_recipient_phone_auth_editable" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">locked_recipient_phone_auth_editable</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-locked_recipient_sms_editable" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">locked_recipient_sms_editable</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>legal name of the recipient.  Maximum Length: 100 characters.</p>
+        </div>
+      </div>
+      <div id="attribute-i-name_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">name_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `name` property is editable. This property is read-only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-note" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">note</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters.</p>
+        </div>
+      </div>
+      <div id="attribute-i-note_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">note_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `note` property is editable. This property is read-only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-phone_authentication" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">phone_authentication</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When `idCheckConfigurationName` is set to `Phone Auth $`, you use this complex type to provide the recipient authentication method details. It contains the following elements:  * `recipMayProvideNumber`: Boolean. When *<strong>true,</strong>* the recipient can use whatever phone number they choose. * `senderProvidedNumbers`: ArrayOfStrings.  A list of phone numbers the recipient can use. * `recordVoicePrint`: Reserved for DocuSign. * `validateRecipProvidedNumber`: Reserved for DocuSign.</p>
+        </div>
+      </div>
+      <div id="attribute-i-phone_number" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">phone_number</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Describes the recipient phone number.</p>
+        </div>
+      </div>
+      <div id="attribute-i-proof_file" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">proof_file</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The proof file of the recipient.</p>
+        </div>
+      </div>
+      <div id="attribute-i-recipient_attachments" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">recipient_attachments</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Reserved:</p>
+        </div>
+      </div>
+      <div id="attribute-i-recipient_authentication_status" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">recipient_authentication_status</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Information about the recipient&#39;s authentication status. This property is read-only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-recipient_feature_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">recipient_feature_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-recipient_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">recipient_id</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the <a href="Document.html"><code>Document</code></a>.</p>
+        </div>
+      </div>
+      <div id="attribute-i-recipient_id_guid" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">recipient_id_guid</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-recipient_type" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">recipient_type</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-recipient_type_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">recipient_type_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `recipientType` property is editable. This property is read-only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-require_id_lookup" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">require_id_lookup</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the recipient is required to use the specified ID check method (including Phone and SMS authentication) to validate their identity.</p>
+        </div>
+      </div>
+      <div id="attribute-i-require_id_lookup_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">require_id_lookup_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `requireIdLookup` property is editable. This property is read-only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-role_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">role_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Optional element. Specifies the role name associated with the recipient.&lt;br/&gt;&lt;br/&gt;This is required when working with template recipients.</p>
+        </div>
+      </div>
+      <div id="attribute-i-routing_order" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">routing_order</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies the routing order of the recipient in the envelope.</p>
+        </div>
+      </div>
+      <div id="attribute-i-routing_order_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">routing_order_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `routingOrder` property is editable. This property is read-only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-sent_date_time" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">sent_date_time</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The date and time the envelope was sent.</p>
+        </div>
+      </div>
+      <div id="attribute-i-signed_date_time" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">signed_date_time</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Reserved: For DocuSign use only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-signing_group_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">signing_group_id</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>* and the feature is enabled in the sender&#39;s account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once).</p>
+        </div>
+      </div>
+      <div id="attribute-i-signing_group_id_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">signing_group_id_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `signingGroupId` property is editable. This property is read-only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-signing_group_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">signing_group_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The display name for the signing group.   Maximum Length: 100 characters.</p>
+        </div>
+      </div>
+      <div id="attribute-i-signing_group_users" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">signing_group_users</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>A complex type that contains information about users in the signing group.</p>
+        </div>
+      </div>
+      <div id="attribute-i-sms_authentication" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">sms_authentication</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When `idCheckConfigurationName` is set to `SMS Auth $`, you use this complex type to provide the recipient authentication method details. It contains the element `senderProvidedNumbers`, which is an array of phone numbers that the recipient can use for SMS text authentication.</p>
+        </div>
+      </div>
+      <div id="attribute-i-social_authentications" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">social_authentications</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Lists the social ID type that can be used for recipient authentication.</p>
+        </div>
+      </div>
+      <div id="attribute-i-status" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">status</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.</p>
+        </div>
+      </div>
+      <div id="attribute-i-status_code" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">status_code</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-suppress_emails" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">suppress_emails</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-tabs" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tabs</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>A list of `commentTabs` that contains the Carbon Copy recipient&#39;s comments.</p>
+        </div>
+      </div>
+      <div id="attribute-i-template_locked" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">template_locked</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the sender cannot change any attributes of the recipient. Used only when working with template recipients.</p>
+        </div>
+      </div>
+      <div id="attribute-i-template_required" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">template_required</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the sender may not remove the recipient. Used only when working with template recipients.</p>
+        </div>
+      </div>
+      <div id="attribute-i-total_tab_count" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">total_tab_count</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-user_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">user_id</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-attribute_map" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">attribute_map</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Attribute mapping from ruby-style variable name to JSON key.</p>
+
+          <div class="method-source-code" id="attribute_map-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/carbon_copy.rb, line 255</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">attribute_map</span>
+  {
+    <span class="ruby-value">:&#39;access_code&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;accessCode&#39;</span>,
+    <span class="ruby-value">:&#39;access_code_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;accessCodeMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;add_access_code_to_email&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;addAccessCodeToEmail&#39;</span>,
+    <span class="ruby-value">:&#39;additional_notifications&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;additionalNotifications&#39;</span>,
+    <span class="ruby-value">:&#39;agent_can_edit_email&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;agentCanEditEmail&#39;</span>,
+    <span class="ruby-value">:&#39;agent_can_edit_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;agentCanEditName&#39;</span>,
+    <span class="ruby-value">:&#39;allow_system_override_for_locked_recipient&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;allowSystemOverrideForLockedRecipient&#39;</span>,
+    <span class="ruby-value">:&#39;auto_responded_reason&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;autoRespondedReason&#39;</span>,
+    <span class="ruby-value">:&#39;bulk_send_v2_recipient&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;bulkSendV2Recipient&#39;</span>,
+    <span class="ruby-value">:&#39;client_user_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;clientUserId&#39;</span>,
+    <span class="ruby-value">:&#39;completed_count&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;completedCount&#39;</span>,
+    <span class="ruby-value">:&#39;consent_details_list&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;consentDetailsList&#39;</span>,
+    <span class="ruby-value">:&#39;custom_fields&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;customFields&#39;</span>,
+    <span class="ruby-value">:&#39;declined_date_time&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;declinedDateTime&#39;</span>,
+    <span class="ruby-value">:&#39;declined_reason&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;declinedReason&#39;</span>,
+    <span class="ruby-value">:&#39;delivered_date_time&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;deliveredDateTime&#39;</span>,
+    <span class="ruby-value">:&#39;delivery_method&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;deliveryMethod&#39;</span>,
+    <span class="ruby-value">:&#39;delivery_method_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;deliveryMethodMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;designator_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;designatorId&#39;</span>,
+    <span class="ruby-value">:&#39;designator_id_guid&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;designatorIdGuid&#39;</span>,
+    <span class="ruby-value">:&#39;document_visibility&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;documentVisibility&#39;</span>,
+    <span class="ruby-value">:&#39;email&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;email&#39;</span>,
+    <span class="ruby-value">:&#39;email_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;emailMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;email_notification&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;emailNotification&#39;</span>,
+    <span class="ruby-value">:&#39;email_recipient_post_signing_url&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;emailRecipientPostSigningURL&#39;</span>,
+    <span class="ruby-value">:&#39;embedded_recipient_start_url&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;embeddedRecipientStartURL&#39;</span>,
+    <span class="ruby-value">:&#39;error_details&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;errorDetails&#39;</span>,
+    <span class="ruby-value">:&#39;excluded_documents&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;excludedDocuments&#39;</span>,
+    <span class="ruby-value">:&#39;fax_number&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;faxNumber&#39;</span>,
+    <span class="ruby-value">:&#39;fax_number_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;faxNumberMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;first_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;firstName&#39;</span>,
+    <span class="ruby-value">:&#39;first_name_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;firstNameMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;full_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;fullName&#39;</span>,
+    <span class="ruby-value">:&#39;full_name_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;fullNameMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;id_check_configuration_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;idCheckConfigurationName&#39;</span>,
+    <span class="ruby-value">:&#39;id_check_configuration_name_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;idCheckConfigurationNameMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;id_check_information_input&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;idCheckInformationInput&#39;</span>,
+    <span class="ruby-value">:&#39;identity_verification&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;identityVerification&#39;</span>,
+    <span class="ruby-value">:&#39;inherit_email_notification_configuration&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;inheritEmailNotificationConfiguration&#39;</span>,
+    <span class="ruby-value">:&#39;last_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;lastName&#39;</span>,
+    <span class="ruby-value">:&#39;last_name_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;lastNameMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;linked_account_configuration_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;linkedAccountConfigurationId&#39;</span>,
+    <span class="ruby-value">:&#39;locked_recipient_phone_auth_editable&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;lockedRecipientPhoneAuthEditable&#39;</span>,
+    <span class="ruby-value">:&#39;locked_recipient_sms_editable&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;lockedRecipientSmsEditable&#39;</span>,
+    <span class="ruby-value">:&#39;name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;name&#39;</span>,
+    <span class="ruby-value">:&#39;name_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;nameMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;note&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;note&#39;</span>,
+    <span class="ruby-value">:&#39;note_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;noteMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;phone_authentication&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;phoneAuthentication&#39;</span>,
+    <span class="ruby-value">:&#39;phone_number&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;phoneNumber&#39;</span>,
+    <span class="ruby-value">:&#39;proof_file&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;proofFile&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_attachments&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;recipientAttachments&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_authentication_status&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;recipientAuthenticationStatus&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_feature_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;recipientFeatureMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;recipientId&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_id_guid&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;recipientIdGuid&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_type&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;recipientType&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_type_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;recipientTypeMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;require_id_lookup&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;requireIdLookup&#39;</span>,
+    <span class="ruby-value">:&#39;require_id_lookup_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;requireIdLookupMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;role_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;roleName&#39;</span>,
+    <span class="ruby-value">:&#39;routing_order&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;routingOrder&#39;</span>,
+    <span class="ruby-value">:&#39;routing_order_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;routingOrderMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;sent_date_time&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;sentDateTime&#39;</span>,
+    <span class="ruby-value">:&#39;signed_date_time&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;signedDateTime&#39;</span>,
+    <span class="ruby-value">:&#39;signing_group_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;signingGroupId&#39;</span>,
+    <span class="ruby-value">:&#39;signing_group_id_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;signingGroupIdMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;signing_group_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;signingGroupName&#39;</span>,
+    <span class="ruby-value">:&#39;signing_group_users&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;signingGroupUsers&#39;</span>,
+    <span class="ruby-value">:&#39;sms_authentication&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;smsAuthentication&#39;</span>,
+    <span class="ruby-value">:&#39;social_authentications&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;socialAuthentications&#39;</span>,
+    <span class="ruby-value">:&#39;status&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;status&#39;</span>,
+    <span class="ruby-value">:&#39;status_code&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;statusCode&#39;</span>,
+    <span class="ruby-value">:&#39;suppress_emails&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;suppressEmails&#39;</span>,
+    <span class="ruby-value">:&#39;tabs&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;tabs&#39;</span>,
+    <span class="ruby-value">:&#39;template_locked&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;templateLocked&#39;</span>,
+    <span class="ruby-value">:&#39;template_required&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;templateRequired&#39;</span>,
+    <span class="ruby-value">:&#39;total_tab_count&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;totalTabCount&#39;</span>,
+    <span class="ruby-value">:&#39;user_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;userId&#39;</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(attributes = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Initializes the object @param [Hash] attributes Model attributes in the form of hash</p>
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/carbon_copy.rb, line 426</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">attributes</span> = {})
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+
+  <span class="ruby-comment"># convert string to symbol for hash key</span>
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">each_with_object</span>({}) { <span class="ruby-operator">|</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>), <span class="ruby-identifier">h</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">v</span> }
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;accessCode&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">access_code</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;accessCode&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;accessCodeMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">access_code_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;accessCodeMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;addAccessCodeToEmail&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_access_code_to_email</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;addAccessCodeToEmail&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;additionalNotifications&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;additionalNotifications&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">additional_notifications</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;agentCanEditEmail&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">agent_can_edit_email</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;agentCanEditEmail&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;agentCanEditName&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">agent_can_edit_name</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;agentCanEditName&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;allowSystemOverrideForLockedRecipient&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">allow_system_override_for_locked_recipient</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;allowSystemOverrideForLockedRecipient&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;autoRespondedReason&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">auto_responded_reason</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;autoRespondedReason&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;bulkSendV2Recipient&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">bulk_send_v2_recipient</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;bulkSendV2Recipient&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;clientUserId&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">client_user_id</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;clientUserId&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;completedCount&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">completed_count</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;completedCount&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;consentDetailsList&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;consentDetailsList&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">consent_details_list</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;customFields&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;customFields&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">custom_fields</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;declinedDateTime&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">declined_date_time</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;declinedDateTime&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;declinedReason&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">declined_reason</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;declinedReason&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;deliveredDateTime&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">delivered_date_time</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;deliveredDateTime&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;deliveryMethod&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">delivery_method</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;deliveryMethod&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;deliveryMethodMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">delivery_method_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;deliveryMethodMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;designatorId&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">designator_id</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;designatorId&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;designatorIdGuid&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">designator_id_guid</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;designatorIdGuid&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;documentVisibility&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;documentVisibility&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">document_visibility</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;email&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">email</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;email&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;emailMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">email_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;emailMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;emailNotification&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">email_notification</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;emailNotification&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;emailRecipientPostSigningURL&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">email_recipient_post_signing_url</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;emailRecipientPostSigningURL&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;embeddedRecipientStartURL&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">embedded_recipient_start_url</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;embeddedRecipientStartURL&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;errorDetails&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">error_details</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;errorDetails&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;excludedDocuments&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;excludedDocuments&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">excluded_documents</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;faxNumber&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">fax_number</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;faxNumber&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;faxNumberMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">fax_number_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;faxNumberMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;firstName&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">first_name</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;firstName&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;firstNameMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">first_name_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;firstNameMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;fullName&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">full_name</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;fullName&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;fullNameMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">full_name_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;fullNameMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;idCheckConfigurationName&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id_check_configuration_name</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;idCheckConfigurationName&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;idCheckConfigurationNameMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id_check_configuration_name_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;idCheckConfigurationNameMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;idCheckInformationInput&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id_check_information_input</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;idCheckInformationInput&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;identityVerification&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">identity_verification</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;identityVerification&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;inheritEmailNotificationConfiguration&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inherit_email_notification_configuration</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;inheritEmailNotificationConfiguration&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;lastName&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">last_name</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;lastName&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;lastNameMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">last_name_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;lastNameMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;linkedAccountConfigurationId&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">linked_account_configuration_id</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;linkedAccountConfigurationId&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;lockedRecipientPhoneAuthEditable&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">locked_recipient_phone_auth_editable</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;lockedRecipientPhoneAuthEditable&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;lockedRecipientSmsEditable&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">locked_recipient_sms_editable</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;lockedRecipientSmsEditable&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;name&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;name&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;nameMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;nameMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;note&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">note</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;note&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;noteMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">note_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;noteMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;phoneAuthentication&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">phone_authentication</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;phoneAuthentication&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;phoneNumber&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">phone_number</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;phoneNumber&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;proofFile&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">proof_file</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;proofFile&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;recipientAttachments&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;recipientAttachments&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">recipient_attachments</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;recipientAuthenticationStatus&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">recipient_authentication_status</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;recipientAuthenticationStatus&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;recipientFeatureMetadata&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;recipientFeatureMetadata&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">recipient_feature_metadata</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;recipientId&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">recipient_id</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;recipientId&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;recipientIdGuid&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">recipient_id_guid</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;recipientIdGuid&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;recipientType&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">recipient_type</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;recipientType&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;recipientTypeMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">recipient_type_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;recipientTypeMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;requireIdLookup&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">require_id_lookup</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;requireIdLookup&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;requireIdLookupMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">require_id_lookup_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;requireIdLookupMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;roleName&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">role_name</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;roleName&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;routingOrder&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">routing_order</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;routingOrder&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;routingOrderMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">routing_order_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;routingOrderMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;sentDateTime&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">sent_date_time</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;sentDateTime&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;signedDateTime&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">signed_date_time</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;signedDateTime&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;signingGroupId&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">signing_group_id</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;signingGroupId&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;signingGroupIdMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">signing_group_id_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;signingGroupIdMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;signingGroupName&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">signing_group_name</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;signingGroupName&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;signingGroupUsers&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;signingGroupUsers&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">signing_group_users</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;smsAuthentication&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">sms_authentication</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;smsAuthentication&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;socialAuthentications&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;socialAuthentications&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">social_authentications</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;status&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">status</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;status&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;statusCode&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">status_code</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;statusCode&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;suppressEmails&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">suppress_emails</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;suppressEmails&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;tabs&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tabs</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;tabs&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;templateLocked&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">template_locked</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;templateLocked&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;templateRequired&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">template_required</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;templateRequired&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;totalTabCount&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">total_tab_count</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;totalTabCount&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;userId&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">user_id</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;userId&#39;</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-swagger_types" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">swagger_types</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Attribute type mapping.</p>
+
+          <div class="method-source-code" id="swagger_types-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/carbon_copy.rb, line 340</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">swagger_types</span>
+  {
+    <span class="ruby-value">:&#39;access_code&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;access_code_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;add_access_code_to_email&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;additional_notifications&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;RecipientAdditionalNotification&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;agent_can_edit_email&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;agent_can_edit_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;allow_system_override_for_locked_recipient&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;auto_responded_reason&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;bulk_send_v2_recipient&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;client_user_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;completed_count&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;consent_details_list&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;ConsentDetails&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;custom_fields&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;String&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;declined_date_time&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;declined_reason&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;delivered_date_time&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;delivery_method&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;delivery_method_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;designator_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;designator_id_guid&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;document_visibility&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;DocumentVisibility&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;email&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;email_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;email_notification&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;RecipientEmailNotification&#39;</span>,
+    <span class="ruby-value">:&#39;email_recipient_post_signing_url&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;embedded_recipient_start_url&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;error_details&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;ErrorDetails&#39;</span>,
+    <span class="ruby-value">:&#39;excluded_documents&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;String&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;fax_number&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;fax_number_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;first_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;first_name_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;full_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;full_name_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;id_check_configuration_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;id_check_configuration_name_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;id_check_information_input&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;IdCheckInformationInput&#39;</span>,
+    <span class="ruby-value">:&#39;identity_verification&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;RecipientIdentityVerification&#39;</span>,
+    <span class="ruby-value">:&#39;inherit_email_notification_configuration&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;last_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;last_name_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;linked_account_configuration_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;locked_recipient_phone_auth_editable&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;locked_recipient_sms_editable&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;name_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;note&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;note_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;phone_authentication&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;RecipientPhoneAuthentication&#39;</span>,
+    <span class="ruby-value">:&#39;phone_number&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;RecipientPhoneNumber&#39;</span>,
+    <span class="ruby-value">:&#39;proof_file&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;RecipientProofFile&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_attachments&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;RecipientAttachment&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_authentication_status&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;AuthenticationStatus&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_feature_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;FeatureAvailableMetadata&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_id_guid&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_type&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_type_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;require_id_lookup&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;require_id_lookup_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;role_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;routing_order&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;routing_order_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;sent_date_time&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;signed_date_time&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;signing_group_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;signing_group_id_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;signing_group_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;signing_group_users&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;UserInfo&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;sms_authentication&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;RecipientSMSAuthentication&#39;</span>,
+    <span class="ruby-value">:&#39;social_authentications&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;SocialAuthentication&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;status&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;status_code&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;suppress_emails&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;tabs&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Tabs&#39;</span>,
+    <span class="ruby-value">:&#39;template_locked&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;template_required&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;total_tab_count&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;user_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-3D-3D" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(o)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Checks equality by comparing each attribute. @param [Object] <a href="../Object.html"><code>Object</code></a> to be compared</p>
+
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/carbon_copy.rb, line 782</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">equal?</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">access_code</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">access_code</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">access_code_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">access_code_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">add_access_code_to_email</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">add_access_code_to_email</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">additional_notifications</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">additional_notifications</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">agent_can_edit_email</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">agent_can_edit_email</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">agent_can_edit_name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">agent_can_edit_name</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">allow_system_override_for_locked_recipient</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">allow_system_override_for_locked_recipient</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">auto_responded_reason</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">auto_responded_reason</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">bulk_send_v2_recipient</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">bulk_send_v2_recipient</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">client_user_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">client_user_id</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">completed_count</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">completed_count</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">consent_details_list</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">consent_details_list</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">custom_fields</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">custom_fields</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">declined_date_time</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">declined_date_time</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">declined_reason</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">declined_reason</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">delivered_date_time</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">delivered_date_time</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">delivery_method</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">delivery_method</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">delivery_method_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">delivery_method_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">designator_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">designator_id</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">designator_id_guid</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">designator_id_guid</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">document_visibility</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">document_visibility</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">email</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">email</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">email_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">email_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">email_notification</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">email_notification</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">email_recipient_post_signing_url</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">email_recipient_post_signing_url</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">embedded_recipient_start_url</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">embedded_recipient_start_url</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">error_details</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">error_details</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">excluded_documents</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">excluded_documents</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">fax_number</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">fax_number</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">fax_number_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">fax_number_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">first_name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">first_name</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">first_name_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">first_name_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">full_name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">full_name</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">full_name_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">full_name_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">id_check_configuration_name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">id_check_configuration_name</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">id_check_configuration_name_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">id_check_configuration_name_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">id_check_information_input</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">id_check_information_input</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">identity_verification</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">identity_verification</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">inherit_email_notification_configuration</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">inherit_email_notification_configuration</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">last_name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">last_name</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">last_name_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">last_name_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">linked_account_configuration_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">linked_account_configuration_id</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">locked_recipient_phone_auth_editable</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">locked_recipient_phone_auth_editable</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">locked_recipient_sms_editable</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">locked_recipient_sms_editable</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">name_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">name_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">note</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">note</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">note_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">note_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">phone_authentication</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">phone_authentication</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">phone_number</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">phone_number</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">proof_file</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">proof_file</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">recipient_attachments</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">recipient_attachments</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">recipient_authentication_status</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">recipient_authentication_status</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">recipient_feature_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">recipient_feature_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">recipient_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">recipient_id</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">recipient_id_guid</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">recipient_id_guid</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">recipient_type</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">recipient_type</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">recipient_type_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">recipient_type_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">require_id_lookup</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">require_id_lookup</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">require_id_lookup_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">require_id_lookup_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">role_name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">role_name</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">routing_order</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">routing_order</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">routing_order_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">routing_order_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">sent_date_time</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">sent_date_time</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">signed_date_time</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">signed_date_time</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">signing_group_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">signing_group_id</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">signing_group_id_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">signing_group_id_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">signing_group_name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">signing_group_name</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">signing_group_users</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">signing_group_users</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">sms_authentication</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">sms_authentication</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">social_authentications</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">social_authentications</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">status_code</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">status_code</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">suppress_emails</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">suppress_emails</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">tabs</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tabs</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">template_locked</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">template_locked</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">template_required</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">template_required</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">total_tab_count</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">total_tab_count</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">user_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">user_id</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-_deserialize" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">_deserialize</span><span
+            class="method-args">(type, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Deserializes the data based on type @param string type Data type @param string value Value to be deserialized @return [Object] Deserialized data</p>
+
+          <div class="method-source-code" id="_deserialize-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/carbon_copy.rb, line 902</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_deserialize</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">to_sym</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:DateTime</span>
+    <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:Date</span>
+    <span class="ruby-constant">Date</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:String</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:Integer</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:Float</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:BOOLEAN</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\A(true|t|yes|y|1)\z/i</span>
+      <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:Object</span>
+    <span class="ruby-comment"># generic object (usually a Hash), return directly</span>
+    <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\AArray&lt;(?&lt;inner_type&gt;.+)&gt;\z/</span>
+    <span class="ruby-identifier">inner_type</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>[<span class="ruby-value">:inner_type</span>]
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_deserialize</span>(<span class="ruby-identifier">inner_type</span>, <span class="ruby-identifier">v</span>) }
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\AHash&lt;(?&lt;k_type&gt;.+?), (?&lt;v_type&gt;.+)&gt;\z/</span>
+    <span class="ruby-identifier">k_type</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>[<span class="ruby-value">:k_type</span>]
+    <span class="ruby-identifier">v_type</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>[<span class="ruby-value">:v_type</span>]
+    {}.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">value</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">_deserialize</span>(<span class="ruby-identifier">k_type</span>, <span class="ruby-identifier">k</span>)] = <span class="ruby-identifier">_deserialize</span>(<span class="ruby-identifier">v_type</span>, <span class="ruby-identifier">v</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span> <span class="ruby-comment"># model</span>
+    <span class="ruby-identifier">temp_model</span> = <span class="ruby-constant">DocuSign_eSign</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">type</span>).<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">temp_model</span>.<span class="ruby-identifier">build_from_hash</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-_to_hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">_to_hash</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Outputs non-array value in the form of hash For object, use to_hash. Otherwise, just return the value @param [Object] value Any valid value @return [Hash] Returns the value in the form of hash</p>
+
+          <div class="method-source-code" id="_to_hash-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/carbon_copy.rb, line 968</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_to_hash</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_to_hash</span>(<span class="ruby-identifier">v</span>) }
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+    {}.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">value</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">_to_hash</span>(<span class="ruby-identifier">v</span>) }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:to_hash</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_hash</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-build_from_hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">build_from_hash</span><span
+            class="method-args">(attributes)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Builds the object from hash @param [Hash] attributes Model attributes in the form of hash @return [Object] Returns the model itself</p>
+
+          <div class="method-source-code" id="build_from_hash-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/carbon_copy.rb, line 881</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build_from_hash</span>(<span class="ruby-identifier">attributes</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">swagger_types</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\AArray&lt;(.*)&gt;/i</span>
+      <span class="ruby-comment"># check to ensure the input is an array given that the attribute</span>
+      <span class="ruby-comment"># is documented as an array but the input is not</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>[<span class="ruby-identifier">key</span>]].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{key}=&quot;</span>, <span class="ruby-identifier">attributes</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>[<span class="ruby-identifier">key</span>]].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_deserialize</span>(<span class="ruby-node">$1</span>, <span class="ruby-identifier">v</span>) })
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">attributes</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>[<span class="ruby-identifier">key</span>]].<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{key}=&quot;</span>, <span class="ruby-identifier">_deserialize</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">attributes</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>[<span class="ruby-identifier">key</span>]]))
+    <span class="ruby-keyword">end</span> <span class="ruby-comment"># or else data not found in attributes(hash), not an issue as the data can be optional</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-eql-3F" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">eql?</span><span
+            class="method-args">(o)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>@see the `==` method @param [Object] <a href="../Object.html"><code>Object</code></a> to be compared</p>
+
+          <div class="method-source-code" id="eql-3F-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/carbon_copy.rb, line 868</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-keyword">self</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Calculates hash code according to all attributes. @return [Fixnum] Hash code</p>
+
+          <div class="method-source-code" id="hash-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/carbon_copy.rb, line 874</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span>
+  [<span class="ruby-identifier">access_code</span>, <span class="ruby-identifier">access_code_metadata</span>, <span class="ruby-identifier">add_access_code_to_email</span>, <span class="ruby-identifier">additional_notifications</span>, <span class="ruby-identifier">agent_can_edit_email</span>, <span class="ruby-identifier">agent_can_edit_name</span>, <span class="ruby-identifier">allow_system_override_for_locked_recipient</span>, <span class="ruby-identifier">auto_responded_reason</span>, <span class="ruby-identifier">bulk_send_v2_recipient</span>, <span class="ruby-identifier">client_user_id</span>, <span class="ruby-identifier">completed_count</span>, <span class="ruby-identifier">consent_details_list</span>, <span class="ruby-identifier">custom_fields</span>, <span class="ruby-identifier">declined_date_time</span>, <span class="ruby-identifier">declined_reason</span>, <span class="ruby-identifier">delivered_date_time</span>, <span class="ruby-identifier">delivery_method</span>, <span class="ruby-identifier">delivery_method_metadata</span>, <span class="ruby-identifier">designator_id</span>, <span class="ruby-identifier">designator_id_guid</span>, <span class="ruby-identifier">document_visibility</span>, <span class="ruby-identifier">email</span>, <span class="ruby-identifier">email_metadata</span>, <span class="ruby-identifier">email_notification</span>, <span class="ruby-identifier">email_recipient_post_signing_url</span>, <span class="ruby-identifier">embedded_recipient_start_url</span>, <span class="ruby-identifier">error_details</span>, <span class="ruby-identifier">excluded_documents</span>, <span class="ruby-identifier">fax_number</span>, <span class="ruby-identifier">fax_number_metadata</span>, <span class="ruby-identifier">first_name</span>, <span class="ruby-identifier">first_name_metadata</span>, <span class="ruby-identifier">full_name</span>, <span class="ruby-identifier">full_name_metadata</span>, <span class="ruby-identifier">id_check_configuration_name</span>, <span class="ruby-identifier">id_check_configuration_name_metadata</span>, <span class="ruby-identifier">id_check_information_input</span>, <span class="ruby-identifier">identity_verification</span>, <span class="ruby-identifier">inherit_email_notification_configuration</span>, <span class="ruby-identifier">last_name</span>, <span class="ruby-identifier">last_name_metadata</span>, <span class="ruby-identifier">linked_account_configuration_id</span>, <span class="ruby-identifier">locked_recipient_phone_auth_editable</span>, <span class="ruby-identifier">locked_recipient_sms_editable</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">name_metadata</span>, <span class="ruby-identifier">note</span>, <span class="ruby-identifier">note_metadata</span>, <span class="ruby-identifier">phone_authentication</span>, <span class="ruby-identifier">phone_number</span>, <span class="ruby-identifier">proof_file</span>, <span class="ruby-identifier">recipient_attachments</span>, <span class="ruby-identifier">recipient_authentication_status</span>, <span class="ruby-identifier">recipient_feature_metadata</span>, <span class="ruby-identifier">recipient_id</span>, <span class="ruby-identifier">recipient_id_guid</span>, <span class="ruby-identifier">recipient_type</span>, <span class="ruby-identifier">recipient_type_metadata</span>, <span class="ruby-identifier">require_id_lookup</span>, <span class="ruby-identifier">require_id_lookup_metadata</span>, <span class="ruby-identifier">role_name</span>, <span class="ruby-identifier">routing_order</span>, <span class="ruby-identifier">routing_order_metadata</span>, <span class="ruby-identifier">sent_date_time</span>, <span class="ruby-identifier">signed_date_time</span>, <span class="ruby-identifier">signing_group_id</span>, <span class="ruby-identifier">signing_group_id_metadata</span>, <span class="ruby-identifier">signing_group_name</span>, <span class="ruby-identifier">signing_group_users</span>, <span class="ruby-identifier">sms_authentication</span>, <span class="ruby-identifier">social_authentications</span>, <span class="ruby-identifier">status</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">suppress_emails</span>, <span class="ruby-identifier">tabs</span>, <span class="ruby-identifier">template_locked</span>, <span class="ruby-identifier">template_required</span>, <span class="ruby-identifier">total_tab_count</span>, <span class="ruby-identifier">user_id</span>].<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_invalid_properties" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_invalid_properties</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Show invalid properties with the reasons. Usually used together with valid? @return Array for valid properties with the reasons</p>
+
+          <div class="method-source-code" id="list_invalid_properties-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/carbon_copy.rb, line 769</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_invalid_properties</span>
+  <span class="ruby-identifier">invalid_properties</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">invalid_properties</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-to_body" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">to_body</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p><a href="CarbonCopy.html#method-i-to_body"><code>to_body</code></a> is an alias to <a href="CarbonCopy.html#method-i-to_hash"><code>to_hash</code></a> (backward compatibility) @return [Hash] Returns the object in the form of hash</p>
+
+          <div class="method-source-code" id="to_body-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/carbon_copy.rb, line 948</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_body</span>
+  <span class="ruby-identifier">to_hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-to_hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">to_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns the object in the form of hash @return [Hash] Returns the object in the form of hash</p>
+
+          <div class="method-source-code" id="to_hash-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/carbon_copy.rb, line 954</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_hash</span>
+  <span class="ruby-identifier">hash</span> = {}
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">attr</span>, <span class="ruby-identifier">param</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">value</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">attr</span>)
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">param</span>] = <span class="ruby-identifier">_to_hash</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-to_s" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns the string representation of the object @return [String] String presentation of the object</p>
+
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/carbon_copy.rb, line 942</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-identifier">to_hash</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-valid-3F" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">valid?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Check to see if the all the properties in the model are valid @return true if the model is valid</p>
+
+          <div class="method-source-code" id="valid-3F-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/carbon_copy.rb, line 776</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valid?</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class DocuSign_eSign::FoldersApi - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="../Object.html">Object</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-i-list">#list</a>
+    <li ><a href="#method-i-list_items">#list_items</a>
+    <li ><a href="#method-i-list_items_with_http_info">#list_items_with_http_info</a>
+    <li ><a href="#method-i-list_with_http_info">#list_with_http_info</a>
+    <li ><a href="#method-i-move_envelopes">#move_envelopes</a>
+    <li ><a href="#method-i-move_envelopes_with_http_info">#move_envelopes_with_http_info</a>
+    <li ><a href="#method-i-search">#search</a>
+    <li ><a href="#method-i-search_with_http_info">#search_with_http_info</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-DocuSign_eSign::FoldersApi">
+  <h1 id="class-DocuSign_eSign::FoldersApi" class="class">
+    class DocuSign_eSign::FoldersApi
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-api_client" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">api_client</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(api_client = FoldersApi.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/folders_api.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">api_client</span> = <span class="ruby-constant">FoldersApi</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-ivar">@api_client</span> = <span class="ruby-identifier">api_client</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-list" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list</span><span
+            class="method-args">(account_id, options = DocuSign_eSign::ListOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets a list of the folders for the account. Retrieves a list of the folders for the account, including the folder hierarchy. You can specify whether to return just the template folder or template folder and normal folders by setting the `template` query string parameter. @param account_id The external account number (int) or account ID Guid. @param <a href="ListOptions.html"><code>DocuSign_eSign::ListOptions</code></a> Options for modifying the behavior of the function. @return [FoldersResponse]</p>
+
+          <div class="method-source-code" id="list-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/folders_api.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">ListOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">list_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_items" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_items</span><span
+            class="method-args">(account_id, folder_id, options = DocuSign_eSign::ListItemsOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets a list of the envelopes in the specified folder. Retrieves a list of the envelopes in the specified folder. You can narrow the query by specifying search criteria in the query string parameters. @param account_id The external account number (int) or account ID Guid. @param folder_id The ID of the folder being accessed. @param <a href="ListItemsOptions.html"><code>DocuSign_eSign::ListItemsOptions</code></a> Options for modifying the behavior of the function. @return [FolderItemsResponse]</p>
+
+          <div class="method-source-code" id="list_items-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/folders_api.rb, line 175</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_items</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">folder_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">ListItemsOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">list_items_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">folder_id</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_items_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_items_with_http_info</span><span
+            class="method-args">(account_id, folder_id, options = DocuSign_eSign::ListItemsOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets a list of the envelopes in the specified folder. Retrieves a list of the envelopes in the specified folder. You can narrow the query by specifying search criteria in the query string parameters. @param account_id The external account number (int) or account ID Guid. @param folder_id The ID of the folder being accessed. @param <a href="ListItemsOptions.html"><code>DocuSign_eSign::ListItemsOptions</code></a> Options for modifying the behavior of the function. @return [Array&lt;(<a href="FolderItemsResponse.html"><code>FolderItemsResponse</code></a>, Fixnum, Hash)&gt;] <a href="FolderItemsResponse.html"><code>FolderItemsResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="list_items_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/folders_api.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_items_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">folder_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">ListItemsOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: FoldersApi.list_items ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling FoldersApi.list_items&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># verify the required parameter &#39;folder_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;folder_id&#39; when calling FoldersApi.list_items&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">folder_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/folders/{folderId}&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;folderId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">folder_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;from_date&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">from_date</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">from_date</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;include_items&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_items</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_items</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;owner_email&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">owner_email</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">owner_email</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;owner_name&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">owner_name</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">owner_name</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;search_text&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">search_text</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">search_text</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;start_position&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">start_position</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">start_position</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;status&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">status</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">status</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;to_date&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_date</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_date</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;FolderItemsResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: FoldersApi#list_items\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_with_http_info</span><span
+            class="method-args">(account_id, options = DocuSign_eSign::ListOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets a list of the folders for the account. Retrieves a list of the folders for the account, including the folder hierarchy. You can specify whether to return just the template folder or template folder and normal folders by setting the &amp;#x60;template&amp;#x60; query string parameter. @param account_id The external account number (int) or account ID Guid. @param <a href="ListOptions.html"><code>DocuSign_eSign::ListOptions</code></a> Options for modifying the behavior of the function. @return [Array&lt;(<a href="FoldersResponse.html"><code>FoldersResponse</code></a>, Fixnum, Hash)&gt;] <a href="FoldersResponse.html"><code>FoldersResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="list_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/folders_api.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">ListOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: FoldersApi.list ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling FoldersApi.list&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/folders&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;count&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">count</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">count</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;include&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">include</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">include</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;include_items&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_items</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_items</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;start_position&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">start_position</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">start_position</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;sub_folder_depth&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">sub_folder_depth</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">sub_folder_depth</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;template&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">template</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">template</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;user_filter&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">user_filter</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">user_filter</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;FoldersResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: FoldersApi#list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-move_envelopes" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">move_envelopes</span><span
+            class="method-args">(account_id, folder_id, folders_request)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Moves an envelope from its current folder to the specified folder. Moves envelopes to the specified folder. @param account_id The external account number (int) or account ID Guid. @param folder_id The ID of the folder being accessed. @param folders_request  (optional parameter) @return [FoldersResponse]</p>
+
+          <div class="method-source-code" id="move_envelopes-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/folders_api.rb, line 238</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">move_envelopes</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">folder_id</span>, <span class="ruby-identifier">folders_request</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">move_envelopes_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">folder_id</span>,  <span class="ruby-identifier">folders_request</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-move_envelopes_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">move_envelopes_with_http_info</span><span
+            class="method-args">(account_id, folder_id, folders_request)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Moves an envelope from its current folder to the specified folder. Moves envelopes to the specified folder. @param account_id The external account number (int) or account ID Guid. @param folder_id The ID of the folder being accessed. @param folders_request  (optional parameter) @return [Array&lt;(<a href="FoldersResponse.html"><code>FoldersResponse</code></a>, Fixnum, Hash)&gt;] <a href="FoldersResponse.html"><code>FoldersResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="move_envelopes_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/folders_api.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">move_envelopes_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">folder_id</span>, <span class="ruby-identifier">folders_request</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: FoldersApi.move_envelopes ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling FoldersApi.move_envelopes&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># verify the required parameter &#39;folder_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;folder_id&#39; when calling FoldersApi.move_envelopes&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">folder_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/folders/{folderId}&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;folderId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">folder_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">object_to_http_body</span>(<span class="ruby-identifier">folders_request</span>)
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:PUT</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;FoldersResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: FoldersApi#move_envelopes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-search" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">search</span><span
+            class="method-args">(account_id, search_folder_id, options = DocuSign_eSign::SearchOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets a list of envelopes in folders matching the specified criteria. Retrieves a list of envelopes that match the criteria specified in the query.  If the user ID of the user making the call is the same as the user ID for any returned recipient, then the userId property is added to the returned information for those recipients. @param account_id The external account number (int) or account ID Guid. @param search_folder_id Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature. @param <a href="SearchOptions.html"><code>DocuSign_eSign::SearchOptions</code></a> Options for modifying the behavior of the function. @return [FolderItemResponse]</p>
+
+          <div class="method-source-code" id="search-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/folders_api.rb, line 293</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">search_folder_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">SearchOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">search_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">search_folder_id</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-search_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">search_with_http_info</span><span
+            class="method-args">(account_id, search_folder_id, options = DocuSign_eSign::SearchOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets a list of envelopes in folders matching the specified criteria. Retrieves a list of envelopes that match the criteria specified in the query.  If the user ID of the user making the call is the same as the user ID for any returned recipient, then the userId property is added to the returned information for those recipients. @param account_id The external account number (int) or account ID Guid. @param search_folder_id Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature. @param <a href="SearchOptions.html"><code>DocuSign_eSign::SearchOptions</code></a> Options for modifying the behavior of the function. @return [Array&lt;(<a href="FolderItemResponse.html"><code>FolderItemResponse</code></a>, Fixnum, Hash)&gt;] <a href="FolderItemResponse.html"><code>FolderItemResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="search_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/folders_api.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">search_folder_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">SearchOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: FoldersApi.search ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling FoldersApi.search&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># verify the required parameter &#39;search_folder_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;search_folder_id&#39; when calling FoldersApi.search&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">search_folder_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/search_folders/{searchFolderId}&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;searchFolderId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">search_folder_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;all&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">all</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">all</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;count&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">count</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">count</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;from_date&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">from_date</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">from_date</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;include_recipients&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_recipients</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_recipients</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;order&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">order</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">order</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;order_by&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">order_by</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">order_by</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;start_position&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">start_position</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">start_position</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;to_date&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_date</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_date</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;FolderItemResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: FoldersApi#search\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

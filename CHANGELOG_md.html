@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>CHANGELOG - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Change+Log">Change Log</a>
+    <li><a href="#label-5Bv5.0.0-5D+-+eSignature+API+v2.1-24.2.00.00+-+2024-07-23">[v5.0.0] - eSignature API v2.1-24.2.00.00 - 2024-07-23</a>
+    <li><a href="#label-Breaking+Changes">Breaking Changes</a>
+    <li><a href="#label-Other+Changes">Other Changes</a>
+    <li><a href="#label-5Bv5.0.0.rc1-5D+-+eSignature+API+v2.1-24.2.00.00+-+2024-06-28">[v5.0.0.rc1] - eSignature API v2.1-24.2.00.00 - 2024-06-28</a>
+    <li><a href="#label-Breaking+Changes">Breaking Changes</a>
+    <li><a href="#label-Other+Changes">Other Changes</a>
+    <li><a href="#label-5Bv4.0.0-5D+-+eSignature+API+v2.1-24.1.01.00+-+2024-05-22">[v4.0.0] - eSignature API v2.1-24.1.01.00 - 2024-05-22</a>
+    <li><a href="#label-Endpoint-Specific+Changes">Endpoint-Specific Changes</a>
+    <li><a href="#label-Updated+EnvelopeRecipients-3A+createRecipientProofFileResourceToken">Updated <a href="https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/enveloperecipients/createrecipientprooffileresourcetoken/">EnvelopeRecipients: createRecipientProofFileResourceToken</a></a>
+    <li><a href="#label-Updated+EnvelopeView-3ACreateSender+and+EnvelopeView-3ACreateEdit">Updated <a href="https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopeviews/createsender/">EnvelopeView:CreateSender</a> and <a href="https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopeviews/createedit/">EnvelopeView:CreateEdit</a></a>
+    <li><a href="#label-Updated+TemplateViews-3A+createEdit">Updated <a href="https://developers.docusign.com/docs/esign-rest-api/reference/templates/templateviews/createedit/">TemplateViews: createEdit</a></a>
+    <li><a href="#label-Model+Changes">Model Changes</a>
+    <li><a href="#label-accountSettingsInformation"><code>accountSettingsInformation</code></a>
+    <li><a href="#label-accountUISettings"><code>accountUISettings</code></a>
+    <li><a href="#label-envelopDefinitions"><code>envelopDefinitions</code></a>
+    <li><a href="#label-envelopTemplate"><code>envelopTemplate</code></a>
+    <li><a href="#label-group"><code>group</code></a>
+    <li><a href="#label-receipientViewRequest"><code>receipientViewRequest</code></a>
+    <li><a href="#label-userSettingsInformation"><code>userSettingsInformation</code></a>
+    <li><a href="#label-Newly+added+Models">Newly added Models</a>
+    <li><a href="#label-Removed+Models">Removed Models</a>
+    <li><a href="#label-5Bv4.0.0.rc1-5D+-+eSignature+API+v2.1-24.1.01.00+-+2024-05-02">[v4.0.0.rc1] - eSignature API v2.1-24.1.01.00 - 2024-05-02</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.27.0-5D+-+eSignature+API+v2.1-23.4.02.00+-+2024-04-30">[v3.27.0] - eSignature API v2.1-23.4.02.00 - 2024-04-30</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.27.0.rc1-5D+-+eSignature+API+v2.1-23.4.02.00+-+2024-03-12">[v3.27.0.rc1] - eSignature API v2.1-23.4.02.00 - 2024-03-12</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.27.0.alpha1-5D+-+eSignature+API+v2.1-23.4.02.00+-+2024-03-07">[v3.27.0.alpha1] - eSignature API v2.1-23.4.02.00 - 2024-03-07</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.26.0-5D+-+eSignature+API+v2.1-23.3.01.02+-+2023-10-25">[v3.26.0] - eSignature API v2.1-23.3.01.02 - 2023-10-25</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.25.0-5D+-+eSignature+API+v2.1-23.3.00.01+-+2023-08-30">[v3.25.0] - eSignature API v2.1-23.3.00.01 - 2023-08-30</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.24.0-5D+-+eSignature+API+v2.1-23.2.00.00+-+2023-05-15">[v3.24.0] - eSignature API v2.1-23.2.00.00 - 2023-05-15</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.23.0-5D+-+eSignature+API+v2.1-23.1.01.01+-+2023-04-05">[v3.23.0] - eSignature API v2.1-23.1.01.01 - 2023-04-05</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.22.0-5D+-+eSignature+API+v2.1-23.1.01.00+-+2023-03-17">[v3.22.0] - eSignature API v2.1-23.1.01.00 - 2023-03-17</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.21.0-5D+-+eSignature+API+v2.1-22.4.02.00+-+2023-02-02">[v3.21.0] - eSignature API v2.1-22.4.02.00 - 2023-02-02</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.20.0-5D+-+eSignature+API+v2.1-22.3.01.00+-+2022-11-18">[v3.20.0] - eSignature API v2.1-22.3.01.00 - 2022-11-18</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.19.0-5D+-+eSignature+API+v2.1-22.3.00.00+-+2022-09-08">[v3.19.0] - eSignature API v2.1-22.3.00.00 - 2022-09-08</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.18.0-5D+-+eSignature+API+v2.1-22.2.00.00+-+2022-06-17">[v3.18.0] - eSignature API v2.1-22.2.00.00 - 2022-06-17</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.17.0-5D+-+eSignature+API+v2.1-22.1.02.00+-+2022-05-18">[v3.17.0] - eSignature API v2.1-22.1.02.00 - 2022-05-18</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.16.0-5D+-+eSignature+API+v2.1-22.1.01.00+-+2022-04-07">[v3.16.0] - eSignature API v2.1-22.1.01.00 - 2022-04-07</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-Breaking">Breaking</a>
+    <li><a href="#label-5Bv3.15.0-5D+-+eSignature+API+v2.1-21.4.02.00+-+2022-02-08">[v3.15.0] - eSignature API v2.1-21.4.02.00 - 2022-02-08</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.14.0-5D+-+eSignature+API+v2.1-21.4.01.00+-+2022-01-06">[v3.14.0] - eSignature API v2.1-21.4.01.00 - 2022-01-06</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5B3.14.0.rc1-5D+-+ESignature+API+v2.1-21.4.00.00+-+2021-12-13">[3.14.0.rc1] - ESignature API v2.1-21.4.00.00 - 2021-12-13</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5B3.13.0-5D+-+ESignature+API+v2.1-21.3.02.00+-+2021-10-29">[3.13.0] - ESignature API v2.1-21.3.02.00 - 2021-10-29</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5B3.13.0.rc1-5D+-+ESignature+API+v2.1-21.3.00.00+-+2021-09-21">[3.13.0.rc1] - ESignature API v2.1-21.3.00.00 - 2021-09-21</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.12.0-5D+-+ESignature+API+v2.1-21.2.02.00+-+2021-09-03">[v3.12.0] - ESignature API v2.1-21.2.02.00 - 2021-09-03</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.11.0-5D+-+eSignature+API+v2.1-21.2.00.00+-+2021-07-22">[v3.11.0] - eSignature API v2.1-21.2.00.00 - 2021-07-22</a>
+    <li><a href="#label-Added">Added</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.10.0-5D+-+eSignature+API+v2.1-21.1.02.00+-+2021-06-04">[v3.10.0] - eSignature API v2.1-21.1.02.00 - 2021-06-04</a>
+    <li><a href="#label-Breaking">Breaking</a>
+    <li><a href="#label-Added">Added</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.9.0-5D+-+eSignature+API+v2.1-21.1.01.03+-+2021-04-25">[v3.9.0] - eSignature API v2.1-21.1.01.03 - 2021-04-25</a>
+    <li><a href="#label-Added">Added</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.3.0-5D+-+eSignature+API+v2.1-20.1.02+-+2020-05-31">[v3.3.0] - eSignature API v2.1-20.1.02 - 2020-05-31</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.2.1-5D+-+eSignature+API+v2.1-20.1.00+-+2020-04-15">[v3.2.1] - eSignature API v2.1-20.1.00 - 2020-04-15</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-5Bv3.2.0-5D+-+eSignature+API+v2.1-20.1.00+-+2020-03-30">[v3.2.0] - eSignature API v2.1-20.1.00 - 2020-03-30</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-Added">Added</a>
+    <li><a href="#label-5Bv3.0.0-5D+-+eSignature+API+v2.1-19.2.02+-+2019-10-08">[v3.0.0] - eSignature API v2.1-19.2.02 - 2019-10-08</a>
+    <li><a href="#label-BREAKING">BREAKING</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-Fixed">Fixed</a>
+    <li><a href="#label-5Bv2.1.0-5D+-+eSignature+API+v2-19.2.02+-+2019-10-08">[v2.1.0] - eSignature API v2-19.2.02 - 2019-10-08</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-Fixed">Fixed</a>
+    <li><a href="#label-5B2.0.0-5D+-+eSignature+API+v19.1.02+-+2019-06-08">[2.0.0] - eSignature API v19.1.02 - 2019-06-08</a>
+    <li><a href="#label-BREAKING">BREAKING</a>
+    <li><a href="#label-Removed">Removed</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-Added">Added</a>
+    <li><a href="#label-Fixed">Fixed</a>
+    <li><a href="#label-5B1.0.2-5D+-+Updates+Json+gem+dependency+from+1.8+to+2.1+-+2018-10-22">[1.0.2] - Updates Json gem dependency from 1.8 to 2.1 - 2018-10-22</a>
+    <li><a href="#label-5B1.0.1-5D+-+Updated+JWT+version+requirement+-+2018-10-22">[1.0.1] - Updated JWT version requirement - 2018-10-22</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    
+<div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+    <li><a href="./CHANGELOG_md.html">CHANGELOG</a>
+    <li><a href="./Gemfile.html">Gemfile</a>
+    <li><a href="./LICENSE.html">LICENSE</a>
+    <li><a href="./README_md.html">README</a>
+    <li><a href="./Rakefile.html">Rakefile</a>
+    <li><a href="./git_push_sh.html">git_push.sh</a>
+    <li><a href="./runLinter_sh.html">runLinter.sh</a>
+    <li><a href="./tests/Gemfile.html">Gemfile</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page CHANGELOG.md">
+
+<h1 id="label-Change+Log">Change Log<span><a href="#label-Change+Log">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>All notable changes to this project will be documented in this file.</p>
+
+<p>See <a href="https://support.docusign.com/en/releasenotes/">DocuSign Support Center</a> for Product Release Notes.</p>
+
+<h2 id="label-5Bv5.0.0-5D+-+eSignature+API+v2.1-24.2.00.00+-+2024-07-23">[v5.0.0] - eSignature API v2.1-24.2.00.00 - 2024-07-23<span><a href="#label-5Bv5.0.0-5D+-+eSignature+API+v2.1-24.2.00.00+-+2024-07-23">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Breaking+Changes">Breaking Changes<span><a href="#label-Breaking+Changes">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>&lt;details&gt; &lt;summary&gt;API Changes (Click to expand)&lt;/summary&gt;</p>
+<div style="margin-left: 20px;">
+
+<br/>
+Added support for version v2.1-24.2.00.00 of the Docusign ESignature API.
+
+  ## Endpoint-Specific Changes
+
+  ### Updated [Envelopes: get](https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopes/get/)
+  Added new optional query parameter named `include_anchor_tab_locations` of type string.
+
+  ### Updated [Envelopes: update](https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopes/update/)
+  Added new optional query parameter named `recycle_on_void` of type string.
+
+  ### Updated [EnvelopeViews : createCorrect](https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopeviews/createcorrect/)
+  Request body object `correctViewRequest` has been changed to `envelopeViewRequest`.
+
+  ## Model Changes
+
+  ### Updated existing models
+
+  ### `accountInformation`
+
+  - **Added fields:**
+    - `freeEnvelopeSendsRemainingForAdvancedDocGen`
+
+  ### `accountSettingsInformation`
+
+  - **Added fields:**
+    - `defaultSigningResponsiveView`
+    - `defaultSigningResponsiveViewMetadata`
+    - `dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb`
+    - `enableAdditionalAdvancedWebFormsFeatures`
+    - `enableAdditionalAdvancedWebFormsFeaturesMetadata`
+
+- **Removed fields:**
+    - `enableSaveAsEnvelopeCustomFieldInWebForms`
+    - `enableSaveAsEnvelopeCustomFieldInWebFormsMetadata`
+
+### `bulksendingCopyDocGenFormField`
+
+- **Added field:**
+  - `rowValues`
+
+### `notaryRecipient`
+
+- **Added field:**
+  - `canNotaryCorrectEnvelope`
+
+### `tabAccountSettings`
+
+- **Added field:**
+  - `enableTabAgreementDetails`
+  - `enableTabAgreementDetailsMetadata`
+
+
+### Newly added Models
+
+- `bulkSendingCopyDocGenFormFieldRowValue`
+
+</div>
+<p>&lt;/details&gt;</p>
+
+<h3 id="label-Other+Changes">Other Changes<span><a href="#label-Other+Changes">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv5.0.0.rc1-5D+-+eSignature+API+v2.1-24.2.00.00+-+2024-06-28">[v5.0.0.rc1] - eSignature API v2.1-24.2.00.00 - 2024-06-28<span><a href="#label-5Bv5.0.0.rc1-5D+-+eSignature+API+v2.1-24.2.00.00+-+2024-06-28">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Breaking+Changes">Breaking Changes<span><a href="#label-Breaking+Changes">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>&lt;details&gt; &lt;summary&gt;API Changes (Click to expand)&lt;/summary&gt;</p>
+<div style="margin-left: 20px;">
+
+<br/>
+Added support for version v2.1-24.2.00.00 of the Docusign ESignature API.
+
+  ## Endpoint-Specific Changes
+
+  ### Updated [Envelopes: get](https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopes/get/)
+  Added new optional query parameter named `include_anchor_tab_locations` of type string.
+
+  ### Updated [Envelopes: update](https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopes/update/)
+  Added new optional query parameter named `recycle_on_void` of type string.
+
+  ### Updated [EnvelopeViews : createCorrect](https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopeviews/createcorrect/)
+  Request body object `correctViewRequest` has been changed to `envelopeViewRequest`.
+
+  ## Model Changes
+
+  ### Updated existing models
+
+  ### `accountInformation`
+
+  - **Added fields:**
+    - `freeEnvelopeSendsRemainingForAdvancedDocGen`
+
+  ### `accountSettingsInformation`
+
+  - **Added fields:**
+    - `defaultSigningResponsiveView`
+    - `defaultSigningResponsiveViewMetadata`
+    - `dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb`
+    - `enableAdditionalAdvancedWebFormsFeatures`
+    - `enableAdditionalAdvancedWebFormsFeaturesMetadata`
+
+- **Removed fields:**
+    - `enableSaveAsEnvelopeCustomFieldInWebForms`
+    - `enableSaveAsEnvelopeCustomFieldInWebFormsMetadata`
+
+### `bulksendingCopyDocGenFormField`
+
+- **Added field:**
+  - `rowValues`
+
+### `notaryRecipient`
+
+- **Added field:**
+  - `canNotaryCorrectEnvelope`
+
+### `tabAccountSettings`
+
+- **Added field:**
+  - `enableTabAgreementDetails`
+  - `enableTabAgreementDetailsMetadata`
+
+
+### Newly added Models
+
+- `bulkSendingCopyDocGenFormFieldRowValue`
+
+</div>
+<p>&lt;/details&gt;</p>
+
+<h3 id="label-Other+Changes">Other Changes<span><a href="#label-Other+Changes">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv4.0.0-5D+-+eSignature+API+v2.1-24.1.01.00+-+2024-05-22">[v4.0.0] - eSignature API v2.1-24.1.01.00 - 2024-05-22<span><a href="#label-5Bv4.0.0-5D+-+eSignature+API+v2.1-24.1.01.00+-+2024-05-22">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h2 id="label-Endpoint-Specific+Changes">Endpoint-Specific Changes<span><a href="#label-Endpoint-Specific+Changes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Updated+EnvelopeRecipients-3A+createRecipientProofFileResourceToken">Updated <a href="https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/enveloperecipients/createrecipientprooffileresourcetoken/">EnvelopeRecipients: createRecipientProofFileResourceToken</a><span><a href="#label-Updated+EnvelopeRecipients-3A+createRecipientProofFileResourceToken">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The <code>&quot;token_scopes&quot;</code> parameter has been moved from path parameters to query parameters for the above mentioned endpoint.</p>
+
+<h3 id="label-Updated+EnvelopeView-3ACreateSender+and+EnvelopeView-3ACreateEdit">Updated <a href="https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopeviews/createsender/">EnvelopeView:CreateSender</a> and <a href="https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopeviews/createedit/">EnvelopeView:CreateEdit</a><span><a href="#label-Updated+EnvelopeView-3ACreateSender+and+EnvelopeView-3ACreateEdit">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The body parameter <code>returnUrlRequest</code> has been changed to <code>envelopeViewRequest</code>. <code>envelopeViewRequest</code> has the same properties as the previous <code>returnUrlRequest</code> but now includes additional <code>viewAccess</code> and <code>settings</code> properties, where settings is a complex object with several UI controls for the view experience.</p>
+
+<h3 id="label-Updated+TemplateViews-3A+createEdit">Updated <a href="https://developers.docusign.com/docs/esign-rest-api/reference/templates/templateviews/createedit/">TemplateViews: createEdit</a><span><a href="#label-Updated+TemplateViews-3A+createEdit">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The body parameter <code>returnUrlRequest</code> has been changed to <code>templateViewRequest</code>. <code>templateViewRequest</code> has the same properties as the previous <code>returnUrlRequest</code> but now includes an additional <code>viewAccess</code> string.</p>
+
+<h2 id="label-Model+Changes">Model Changes<span><a href="#label-Model+Changes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Updated existing models</p>
+</li></ul>
+
+<h3 id="label-accountSettingsInformation"><code>accountSettingsInformation</code><span><a href="#label-accountSettingsInformation">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong>Added fields:</strong></p>
+</li><li>
+<p><code>allowConnectEnvelopeRemovedEvent</code></p>
+</li><li>
+<p><code>allowOrganizationBranding</code></p>
+</li><li>
+<p><code>allowOrganizationBrandingMetadata</code></p>
+</li><li>
+<p><code>allowPendingDestinationUrlEdition</code></p>
+</li><li>
+<p><code>allowPendingDestinationUrlEditionMetadata</code></p>
+</li><li>
+<p><code>disableBulkSendRecipientLimit</code></p>
+</li><li>
+<p><code>disableBulkSendRecipientLimitMetaData</code></p>
+</li><li>
+<p><code>enableAdvancedSearch</code></p>
+</li><li>
+<p><code>enableAdvancedSearchMetadata</code></p>
+</li><li>
+<p><code>enableContentSearch</code></p>
+</li><li>
+<p><code>enableContentSearchMetadata</code></p>
+</li><li>
+<p><code>enableMultiUserRepositoryFeatures</code></p>
+</li><li>
+<p><code>enableMultiUserRepositoryFeaturesMetadata</code></p>
+</li><li>
+<p><code>enablePremiumDataVerificationExtensions</code></p>
+</li><li>
+<p><code>enablePremiumDataVerificationExtensionsMetadata</code></p>
+</li><li>
+<p><code>enableSaveAsEnvelopeCustomFieldInWebForms</code></p>
+</li><li>
+<p><code>enableSaveAsEnvelopeCustomFieldInWebFormsMetadata</code></p>
+</li><li>
+<p><code>enableScheduledRelease</code></p>
+</li><li>
+<p><code>enableScheduledReleaseMetadata</code></p>
+</li><li>
+<p><code>isvOemEmbed</code></p>
+</li><li>
+<p><code>isvOemEmbedMetaData</code></p>
+</li><li>
+<p><strong>Removed fields:</strong></p>
+</li><li>
+<p><code>enableInboxRelevanceSortForRecentAccounts</code></p>
+</li><li>
+<p><code>enableInboxRelevanceSortForRecentAccountsMetadata</code></p>
+</li><li>
+<p><code>enableScheduledRelease</code></p>
+</li><li>
+<p><code>enableScheduledReleaseMetadata</code></p>
+</li><li>
+<p><code>enableSearch</code></p>
+</li><li>
+<p><code>enableSearchMetadata</code></p>
+</li><li>
+<p><code>enableSearchUI</code></p>
+</li><li>
+<p><code>enableSearchUIMetadata</code></p>
+</li></ul>
+
+<h3 id="label-accountUISettings"><code>accountUISettings</code><span><a href="#label-accountUISettings">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong>Added fields:</strong></p>
+</li><li>
+<p><code>enableEnvelopeTypes</code></p>
+</li><li>
+<p><code>enableEnvelopeTypesMetadata</code></p>
+</li></ul>
+
+<h3 id="label-envelopDefinitions"><code>envelopDefinitions</code><span><a href="#label-envelopDefinitions">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong>Added field:</strong></p>
+</li><li>
+<p><code>uSigState</code></p>
+</li></ul>
+
+<h3 id="label-envelopTemplate"><code>envelopTemplate</code><span><a href="#label-envelopTemplate">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong>Added field:</strong></p>
+</li><li>
+<p><code>uSigState</code></p>
+</li></ul>
+
+<h3 id="label-group"><code>group</code><span><a href="#label-group">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong>Added property:</strong></p>
+</li><li>
+<p><code>lastModifiedOn</code></p>
+</li></ul>
+
+<h3 id="label-receipientViewRequest"><code>receipientViewRequest</code><span><a href="#label-receipientViewRequest">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong>Added property:</strong></p>
+</li><li>
+<p><code>displayFormat</code></p>
+</li></ul>
+
+<h3 id="label-userSettingsInformation"><code>userSettingsInformation</code><span><a href="#label-userSettingsInformation">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong>Added properties:</strong></p>
+</li><li>
+<p><code>accountAgreementsAccessType</code></p>
+</li><li>
+<p><code>accountAgreementsAccessTypeMetadata</code></p>
+</li><li>
+<p><code>canBulkUploadAgreements</code></p>
+</li><li>
+<p><code>canBulkUploadAgreementsMetadata</code></p>
+</li><li>
+<p><code>canManageAgreementParties</code></p>
+</li><li>
+<p><code>canManageAgreementPartiesMetadata</code></p>
+</li></ul>
+
+<h3 id="label-Newly+added+Models">Newly added Models<span><a href="#label-Newly+added+Models">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>envelopeViewDocumentSettings</code></p>
+</li><li>
+<p><code>envelopeViewEnvelopeCustomFieldSettings</code></p>
+</li><li>
+<p><code>envelopeViewRecipientSettings</code></p>
+</li><li>
+<p><code>envelopeViewRequest</code></p>
+</li><li>
+<p><code>envelopeViewSettings</code></p>
+</li><li>
+<p><code>envelopeViewTaggerSettings</code></p>
+</li><li>
+<p><code>envelopeViewTemplateSettings</code></p>
+</li><li>
+<p><code>paletteItemSettings</code></p>
+</li><li>
+<p><code>paletteSettings</code></p>
+</li><li>
+<p><code>templateViewRequest</code></p>
+</li></ul>
+
+<h3 id="label-Removed+Models">Removed Models<span><a href="#label-Removed+Models">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>returnUrlRequest</code></p>
+</li></ul>
+
+<h2 id="label-5Bv4.0.0.rc1-5D+-+eSignature+API+v2.1-24.1.01.00+-+2024-05-02">[v4.0.0.rc1] - eSignature API v2.1-24.1.01.00 - 2024-05-02<span><a href="#label-5Bv4.0.0.rc1-5D+-+eSignature+API+v2.1-24.1.01.00+-+2024-05-02">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-24.1.01.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.27.0-5D+-+eSignature+API+v2.1-23.4.02.00+-+2024-04-30">[v3.27.0] - eSignature API v2.1-23.4.02.00 - 2024-04-30<span><a href="#label-5Bv3.27.0-5D+-+eSignature+API+v2.1-23.4.02.00+-+2024-04-30">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Updated logic to derive the <code>oauth_base_path</code> from <code>base_path</code>.</p>
+</li><li>
+<p>Added support for version v2.1-23.4.02.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+
+<h2 id="label-5Bv3.27.0.rc1-5D+-+eSignature+API+v2.1-23.4.02.00+-+2024-03-12">[v3.27.0.rc1] - eSignature API v2.1-23.4.02.00 - 2024-03-12<span><a href="#label-5Bv3.27.0.rc1-5D+-+eSignature+API+v2.1-23.4.02.00+-+2024-03-12">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+</li><li>
+<p>Added support for version v2.1-23.4.02.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.27.0.alpha1-5D+-+eSignature+API+v2.1-23.4.02.00+-+2024-03-07">[v3.27.0.alpha1] - eSignature API v2.1-23.4.02.00 - 2024-03-07<span><a href="#label-5Bv3.27.0.alpha1-5D+-+eSignature+API+v2.1-23.4.02.00+-+2024-03-07">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Updated logic to derive the <code>oauth_base_path</code> from <code>base_path</code>.</p>
+</li><li>
+<p>Added support for version v2.1-23.4.02.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.26.0-5D+-+eSignature+API+v2.1-23.3.01.02+-+2023-10-25">[v3.26.0] - eSignature API v2.1-23.3.01.02 - 2023-10-25<span><a href="#label-5Bv3.26.0-5D+-+eSignature+API+v2.1-23.3.01.02+-+2023-10-25">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-23.3.01.02 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.25.0-5D+-+eSignature+API+v2.1-23.3.00.01+-+2023-08-30">[v3.25.0] - eSignature API v2.1-23.3.00.01 - 2023-08-30<span><a href="#label-5Bv3.25.0-5D+-+eSignature+API+v2.1-23.3.00.01+-+2023-08-30">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-23.3.00.01 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.24.0-5D+-+eSignature+API+v2.1-23.2.00.00+-+2023-05-15">[v3.24.0] - eSignature API v2.1-23.2.00.00 - 2023-05-15<span><a href="#label-5Bv3.24.0-5D+-+eSignature+API+v2.1-23.2.00.00+-+2023-05-15">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-23.2.00.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.23.0-5D+-+eSignature+API+v2.1-23.1.01.01+-+2023-04-05">[v3.23.0] - eSignature API v2.1-23.1.01.01 - 2023-04-05<span><a href="#label-5Bv3.23.0-5D+-+eSignature+API+v2.1-23.1.01.01+-+2023-04-05">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-23.1.01.01 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.22.0-5D+-+eSignature+API+v2.1-23.1.01.00+-+2023-03-17">[v3.22.0] - eSignature API v2.1-23.1.01.00 - 2023-03-17<span><a href="#label-5Bv3.22.0-5D+-+eSignature+API+v2.1-23.1.01.00+-+2023-03-17">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-23.1.01.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.21.0-5D+-+eSignature+API+v2.1-22.4.02.00+-+2023-02-02">[v3.21.0] - eSignature API v2.1-22.4.02.00 - 2023-02-02<span><a href="#label-5Bv3.21.0-5D+-+eSignature+API+v2.1-22.4.02.00+-+2023-02-02">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-22.4.02.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.20.0-5D+-+eSignature+API+v2.1-22.3.01.00+-+2022-11-18">[v3.20.0] - eSignature API v2.1-22.3.01.00 - 2022-11-18<span><a href="#label-5Bv3.20.0-5D+-+eSignature+API+v2.1-22.3.01.00+-+2022-11-18">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-22.3.01.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.19.0-5D+-+eSignature+API+v2.1-22.3.00.00+-+2022-09-08">[v3.19.0] - eSignature API v2.1-22.3.00.00 - 2022-09-08<span><a href="#label-5Bv3.19.0-5D+-+eSignature+API+v2.1-22.3.00.00+-+2022-09-08">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-22.3.00.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.18.0-5D+-+eSignature+API+v2.1-22.2.00.00+-+2022-06-17">[v3.18.0] - eSignature API v2.1-22.2.00.00 - 2022-06-17<span><a href="#label-5Bv3.18.0-5D+-+eSignature+API+v2.1-22.2.00.00+-+2022-06-17">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-22.2.00.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.17.0-5D+-+eSignature+API+v2.1-22.1.02.00+-+2022-05-18">[v3.17.0] - eSignature API v2.1-22.1.02.00 - 2022-05-18<span><a href="#label-5Bv3.17.0-5D+-+eSignature+API+v2.1-22.1.02.00+-+2022-05-18">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-22.1.02.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.16.0-5D+-+eSignature+API+v2.1-22.1.01.00+-+2022-04-07">[v3.16.0] - eSignature API v2.1-22.1.01.00 - 2022-04-07<span><a href="#label-5Bv3.16.0-5D+-+eSignature+API+v2.1-22.1.01.00+-+2022-04-07">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-22.1.01.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h3 id="label-Breaking">Breaking<span><a href="#label-Breaking">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Following types are renamed</p>
+<ul><li>
+<p><code>ScheduledSendingApiModel</code> is renamed to <code>ScheduledSending</code></p>
+</li><li>
+<p><code>DelayedRoutingApiModel</code> is renamed to <code>DelayedRouting</code></p>
+</li></ul>
+</li></ul>
+
+<h2 id="label-5Bv3.15.0-5D+-+eSignature+API+v2.1-21.4.02.00+-+2022-02-08">[v3.15.0] - eSignature API v2.1-21.4.02.00 - 2022-02-08<span><a href="#label-5Bv3.15.0-5D+-+eSignature+API+v2.1-21.4.02.00+-+2022-02-08">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-21.4.02.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.14.0-5D+-+eSignature+API+v2.1-21.4.01.00+-+2022-01-06">[v3.14.0] - eSignature API v2.1-21.4.01.00 - 2022-01-06<span><a href="#label-5Bv3.14.0-5D+-+eSignature+API+v2.1-21.4.01.00+-+2022-01-06">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-21.4.01.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5B3.14.0.rc1-5D+-+ESignature+API+v2.1-21.4.00.00+-+2021-12-13">[3.14.0.rc1] - ESignature API v2.1-21.4.00.00 - 2021-12-13<span><a href="#label-5B3.14.0.rc1-5D+-+ESignature+API+v2.1-21.4.00.00+-+2021-12-13">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-21.4.00.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5B3.13.0-5D+-+ESignature+API+v2.1-21.3.02.00+-+2021-10-29">[3.13.0] - ESignature API v2.1-21.3.02.00 - 2021-10-29<span><a href="#label-5B3.13.0-5D+-+ESignature+API+v2.1-21.3.02.00+-+2021-10-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-21.3.02.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5B3.13.0.rc1-5D+-+ESignature+API+v2.1-21.3.00.00+-+2021-09-21">[3.13.0.rc1] - ESignature API v2.1-21.3.00.00 - 2021-09-21<span><a href="#label-5B3.13.0.rc1-5D+-+ESignature+API+v2.1-21.3.00.00+-+2021-09-21">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-21.3.00.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.12.0-5D+-+ESignature+API+v2.1-21.2.02.00+-+2021-09-03">[v3.12.0] - ESignature API v2.1-21.2.02.00 - 2021-09-03<span><a href="#label-5Bv3.12.0-5D+-+ESignature+API+v2.1-21.2.02.00+-+2021-09-03">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-21.2.02.00 of the DocuSign ESignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.11.0-5D+-+eSignature+API+v2.1-21.2.00.00+-+2021-07-22">[v3.11.0] - eSignature API v2.1-21.2.00.00 - 2021-07-22<span><a href="#label-5Bv3.11.0-5D+-+eSignature+API+v2.1-21.2.00.00+-+2021-07-22">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Added">Added<span><a href="#label-Added">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added new models and properties.</p>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+</li><li>
+<p>Added support for version v2.1-21.2.00.00 of the DocuSign eSignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.10.0-5D+-+eSignature+API+v2.1-21.1.02.00+-+2021-06-04">[v3.10.0] - eSignature API v2.1-21.1.02.00 - 2021-06-04<span><a href="#label-5Bv3.10.0-5D+-+eSignature+API+v2.1-21.1.02.00+-+2021-06-04">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Breaking">Breaking<span><a href="#label-Breaking">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Removed methods <code>get_account_settings_export</code>,<code>get_seal_providers</code> from Accounts.</p>
+</li><li>
+<p>Removed methods <code>create_connect_secret</code>,<code>delete_connect_secret</code>,<code>generate_connect_secret</code>,<code>get_connect_secrets</code> from Connect.</p>
+</li><li>
+<p>Removed methods <code>create_page_info</code>, <code>create_pdf_blob</code>, <code>delete_custom_fields_0</code>, <code>delete_custom_fields_v2</code>, <code>delete_document</code>, <code>delete_page_info</code>, <code>delete_recipient_denied_document_copy</code>, <code>delete_signer_attachment</code>, <code>get_account</code>, <code>get_appliance_info</code>, <code>get_custom_fields</code>, <code>get_document_pages</code>, <code>get_dynamic_system_settings</code>, <code>get_image</code>, <code>get_locale_policy</code>, <code>get_pdf</code>, <code>get_pdf_blob</code>, <code>get_signer_attachment</code>, <code>get_tabs_blob</code>, <code>update_document</code>, <code>update_document_0</code>, <code>update_page_info</code>, <code>update_pdf</code>, <code>update_pdf_blob</code>, <code>update_recipient_denied_document_copy</code> from Envelopes.</p>
+</li><li>
+<p>Removed methods <code>complete_sign_hash</code>,<code>get_user_info</code>,<code>health_check</code>,<code>sign_hash_session_info</code>,<code>update_transaction</code> from TrustServiceProviders.</p>
+</li><li>
+<p>Removed methods <code>get_user_list_export</code> from Users.</p>
+
+<h3 id="label-Added">Added<span><a href="#label-Added">&para;</a> <a href="#top">&uarr;</a></span></h3>
+</li><li>
+<p>Added new methods <code>get_bulk_send_batch_envelopes</code> to BulkEnvelopes.</p>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+</li><li>
+<p>Added support for version v2.1-21.1.02.00 of the DocuSign eSignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.9.0-5D+-+eSignature+API+v2.1-21.1.01.03+-+2021-04-25">[v3.9.0] - eSignature API v2.1-21.1.01.03 - 2021-04-25<span><a href="#label-5Bv3.9.0-5D+-+eSignature+API+v2.1-21.1.01.03+-+2021-04-25">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Added">Added<span><a href="#label-Added">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added new methods <code>delete_custom_fields_v2</code>, <code>delete_page_info_v2</code>, <code>get_appliance_envelope_info</code>, <code>get_template_info</code> to envelopes.</p>
+</li><li>
+<p>Added new method <code>delete_connect_secret</code> to connect.</p>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+</li><li>
+<p>Added support for version v2.1-21.1.01.03 of the DocuSign eSignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.3.0-5D+-+eSignature+API+v2.1-20.1.02+-+2020-05-31">[v3.3.0] - eSignature API v2.1-20.1.02 - 2020-05-31<span><a href="#label-5Bv3.3.0-5D+-+eSignature+API+v2.1-20.1.02+-+2020-05-31">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-20.1.02 of the DocuSign eSignature API.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.2.1-5D+-+eSignature+API+v2.1-20.1.00+-+2020-04-15">[v3.2.1] - eSignature API v2.1-20.1.00 - 2020-04-15<span><a href="#label-5Bv3.2.1-5D+-+eSignature+API+v2.1-20.1.00+-+2020-04-15">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Updated jwt to version 2.2.1.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.2.0-5D+-+eSignature+API+v2.1-20.1.00+-+2020-03-30">[v3.2.0] - eSignature API v2.1-20.1.00 - 2020-03-30<span><a href="#label-5Bv3.2.0-5D+-+eSignature+API+v2.1-20.1.00+-+2020-03-30">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for version v2.1-20.1.00 of the DocuSign eSignature API.</p>
+</li><li>
+<p>Updated rake to version 12.3.3.</p>
+</li><li>
+<p>Updated the SDK release version.</p>
+
+<h3 id="label-Added">Added<span><a href="#label-Added">&para;</a> <a href="#top">&uarr;</a></span></h3>
+</li><li>
+<p>Added the new property <code>copy_recipient_data</code> to envelopes. When set to <strong>true</strong>, the information that recipients enter is retained when you clone an envelope. For example, if you resend an envelope that was declined or voided after one or more recipients entered data, that data is retained. Note that the account setting <code>enable_envelope_copy_with_data</code> must be set to <strong>true</strong>.</p>
+</li><li>
+<p>Added a new object, <code>RecipientIdentityInputOption</code>: Reserved for DocuSign.</p>
+</li><li>
+<p>Added a new parameter, <code>input_options</code>, to <code>AccountIdentityVerificationWorkflow</code>: Reserved for DocuSign.</p>
+</li></ul>
+
+<h2 id="label-5Bv3.0.0-5D+-+eSignature+API+v2.1-19.2.02+-+2019-10-08">[v3.0.0] - eSignature API v2.1-19.2.02 - 2019-10-08<span><a href="#label-5Bv3.0.0-5D+-+eSignature+API+v2.1-19.2.02+-+2019-10-08">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-BREAKING">BREAKING<span><a href="#label-BREAKING">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>The SDK now supports version 19.2.02 of the DocuSign eSignature v2.1 API.</p>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+</li><li>
+<p>SDK Release Version updated.</p>
+
+<h2 id="label-Fixed">Fixed<span><a href="#label-Fixed">&para;</a> <a href="#top">&uarr;</a></span></h2>
+</li><li>
+<p>Issue <a href="https://github.com/docusign/docusign-ruby-client/issues/23">#23</a>: Support for DocuSign API 2.1. (DCM-3546)</p>
+</li><li>
+<p>Issue <a href="https://github.com/docusign/docusign-ruby-client/issues/22">#22</a>: JSON version of version 2.0. (DCM-3375)</p>
+</li><li>
+<p>Issue <a href="https://github.com/docusign/docusign-ruby-client/issues/17">#17</a>: Client doesn&#39;t properly handle Dropdown. (DCM-3192)</p>
+</li><li>
+<p>Issue <a href="https://github.com/docusign/docusign-ruby-client/issues/16">#16</a>: Client doesn&#39;t properly handle Text tabs with Date Validation. (DCM-3193)</p>
+</li><li>
+<p>Issue <a href="https://github.com/docusign/docusign-ruby-client/issues/15">#15</a>: ListStatus not accepting envelope_ids. (DCM-3123)</p>
+</li><li>
+<p>Issue <a href="https://github.com/docusign/docusign-ruby-client/issues/7">#7</a>: Allow passing in JWT. (DCM-2312)</p>
+</li></ul>
+
+<h2 id="label-5Bv2.1.0-5D+-+eSignature+API+v2-19.2.02+-+2019-10-08">[v2.1.0] - eSignature API v2-19.2.02 - 2019-10-08<span><a href="#label-5Bv2.1.0-5D+-+eSignature+API+v2-19.2.02+-+2019-10-08">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>The SDK now supports version 19.2.02 of the DocuSign eSignature v2 API.</p>
+</li><li>
+<p>SDK Release Version updated.</p>
+
+<h2 id="label-Fixed">Fixed<span><a href="#label-Fixed">&para;</a> <a href="#top">&uarr;</a></span></h2>
+</li><li>
+<p>Issue <a href="https://github.com/docusign/docusign-ruby-client/issues/23">#23</a>: Support for DocuSign API 2.1. (DCM-3546)</p>
+</li><li>
+<p>Issue <a href="https://github.com/docusign/docusign-ruby-client/issues/22">#22</a>: JSON version of version 2.0. (DCM-3375)</p>
+</li><li>
+<p>Issue <a href="https://github.com/docusign/docusign-ruby-client/issues/17">#17</a>: Client doesn&#39;t properly handle Dropdown. (DCM-3192)</p>
+</li><li>
+<p>Issue <a href="https://github.com/docusign/docusign-ruby-client/issues/16">#16</a>: Client doesn&#39;t properly handle Text tabs with Date Validation. (DCM-3193)</p>
+</li><li>
+<p>Issue <a href="https://github.com/docusign/docusign-ruby-client/issues/15">#15</a>: ListStatus not accepting envelope_ids. (DCM-3123)</p>
+</li><li>
+<p>Issue <a href="https://github.com/docusign/docusign-ruby-client/issues/7">#7</a>: Allow passing in JWT. (DCM-2312)</p>
+</li></ul>
+
+<h2 id="label-5B2.0.0-5D+-+eSignature+API+v19.1.02+-+2019-06-08">[2.0.0] - eSignature API v19.1.02 - 2019-06-08<span><a href="#label-5B2.0.0-5D+-+eSignature+API+v19.1.02+-+2019-06-08">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-BREAKING">BREAKING<span><a href="#label-BREAKING">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Moved ApiClient and ApiException under Client folder</p>
+
+<h3 id="label-Removed">Removed<span><a href="#label-Removed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+</li><li>
+<p>empty test placeholder files</p>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+</li><li>
+<p>updated existing test cases to use JWT instead of the legacy auth (still not fully working yet)</p>
+
+<h3 id="label-Added">Added<span><a href="#label-Added">&para;</a> <a href="#top">&uarr;</a></span></h3>
+</li><li>
+<p>OAuth models under Client/Auth folder</p>
+</li><li>
+<p>new dependency for OAuth support (firebase/php-jwt)</p>
+</li><li>
+<p>OAuthTests.php for OAuth support test</p>
+
+<h3 id="label-Fixed">Fixed<span><a href="#label-Fixed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+</li><li>
+<p>A bug with that could cause the <em>moveEnvelopes</em> method call to return a response without a <em>Content-Type</em> header. (DCM-2871)</p>
+</li></ul>
+
+<h2 id="label-5B1.0.2-5D+-+Updates+Json+gem+dependency+from+1.8+to+2.1+-+2018-10-22">[1.0.2] - Updates Json gem dependency from 1.8 to 2.1 - 2018-10-22<span><a href="#label-5B1.0.2-5D+-+Updates+Json+gem+dependency+from+1.8+to+2.1+-+2018-10-22">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h2 id="label-5B1.0.1-5D+-+Updated+JWT+version+requirement+-+2018-10-22">[1.0.1] - Updated JWT version requirement - 2018-10-22<span><a href="#label-5B1.0.1-5D+-+Updated+JWT+version+requirement+-+2018-10-22">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

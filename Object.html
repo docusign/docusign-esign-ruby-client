@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Object - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link">BasicObject
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-i-create_api_client">#create_api_client</a>
+    <li ><a href="#method-i-create_envelope_on_document">#create_envelope_on_document</a>
+    <li ><a href="#method-i-login">#login</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Object">
+  <h1 id="class-Object" class="class">
+    class Object
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-create_api_client" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">create_api_client</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="create_api_client-source">
+            <pre><span class="ruby-comment"># File tests/spec/unit_tests_using_jwt_spec.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_api_client</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$api_client</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">login</span>()
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">$api_client</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-create_envelope_on_document" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">create_envelope_on_document</span><span
+            class="method-args">(status, is_embedded_signing)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="create_envelope_on_document-source">
+            <pre><span class="ruby-comment"># File tests/spec/unit_tests_using_jwt_spec.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_envelope_on_document</span>(<span class="ruby-identifier">status</span>, <span class="ruby-identifier">is_embedded_signing</span>)
+  <span class="ruby-keyword">if</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">$account_id</span>.<span class="ruby-identifier">nil?</span>)
+    <span class="ruby-comment"># STEP 2: Create envelope definition</span>
+    <span class="ruby-comment"># Add a document to the envelope</span>
+    <span class="ruby-identifier">document_path</span> = <span class="ruby-string">&quot;../docs/Test.pdf&quot;</span>
+    <span class="ruby-identifier">document_name</span> = <span class="ruby-string">&quot;Test.docx&quot;</span>
+    <span class="ruby-identifier">document</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">document</span>.<span class="ruby-identifier">document_base64</span> = <span class="ruby-constant">Base64</span>.<span class="ruby-identifier">encode64</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">document_path</span>).<span class="ruby-identifier">read</span>)
+    <span class="ruby-identifier">document</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">document_name</span>
+    <span class="ruby-identifier">document</span>.<span class="ruby-identifier">document_id</span> = <span class="ruby-string">&#39;1&#39;</span>
+
+    <span class="ruby-comment"># Create a |SignHere| tab somewhere on the document for the recipient to sign</span>
+    <span class="ruby-identifier">signHere</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">SignHere</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">signHere</span>.<span class="ruby-identifier">x_position</span> = <span class="ruby-string">&quot;100&quot;</span>
+    <span class="ruby-identifier">signHere</span>.<span class="ruby-identifier">y_position</span> = <span class="ruby-string">&quot;100&quot;</span>
+    <span class="ruby-identifier">signHere</span>.<span class="ruby-identifier">document_id</span> = <span class="ruby-string">&quot;1&quot;</span>
+    <span class="ruby-identifier">signHere</span>.<span class="ruby-identifier">page_number</span> = <span class="ruby-string">&quot;1&quot;</span>
+    <span class="ruby-identifier">signHere</span>.<span class="ruby-identifier">recipient_id</span> = <span class="ruby-string">&quot;1&quot;</span>
+
+    <span class="ruby-identifier">tabs</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">Tabs</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">tabs</span>.<span class="ruby-identifier">sign_here_tabs</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">signHere</span>)
+
+    <span class="ruby-identifier">signer</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">Signer</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">signer</span>.<span class="ruby-identifier">email</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-string">&quot;RECIPIENT_EMAIL&quot;</span>]
+    <span class="ruby-identifier">signer</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">$recipient_name</span>
+    <span class="ruby-identifier">signer</span>.<span class="ruby-identifier">recipient_id</span> = <span class="ruby-string">&quot;1&quot;</span>
+
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">is_embedded_signing</span>)
+      <span class="ruby-identifier">signer</span>.<span class="ruby-identifier">client_user_id</span> = <span class="ruby-identifier">$client_user_id</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">signer</span>.<span class="ruby-identifier">tabs</span> = <span class="ruby-identifier">tabs</span>
+
+    <span class="ruby-comment"># Add a recipient to sign the document</span>
+    <span class="ruby-identifier">recipients</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">Recipients</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">recipients</span>.<span class="ruby-identifier">signers</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">signer</span>)
+
+    <span class="ruby-identifier">envelop_definition</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">EnvelopeDefinition</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">envelop_definition</span>.<span class="ruby-identifier">email_subject</span> = <span class="ruby-string">&quot;[DocuSign Ruby SDK] - Please sign this doc&quot;</span>
+
+    <span class="ruby-comment"># set envelope status to &quot;sent&quot; to immediately send the signature request</span>
+    <span class="ruby-identifier">envelop_definition</span>.<span class="ruby-identifier">status</span> = <span class="ruby-identifier">status</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-string">&#39;sent&#39;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">status</span>
+    <span class="ruby-identifier">envelop_definition</span>.<span class="ruby-identifier">recipients</span> = <span class="ruby-identifier">recipients</span>
+    <span class="ruby-identifier">envelop_definition</span>.<span class="ruby-identifier">documents</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">document</span>)
+
+    <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">CreateEnvelopeOptions</span>.<span class="ruby-identifier">new</span>
+
+    <span class="ruby-comment"># STEP 3: Create envelope</span>
+    <span class="ruby-identifier">api_client</span> = <span class="ruby-identifier">create_api_client</span>()
+    <span class="ruby-identifier">envelopes_api</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">EnvelopesApi</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_client</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">envelopes_api</span>.<span class="ruby-identifier">create_envelope</span>(<span class="ruby-identifier">$account_id</span>, <span class="ruby-identifier">envelop_definition</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-login" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">login</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="login-source">
+            <pre><span class="ruby-comment"># File tests/spec/unit_tests_using_jwt_spec.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">login</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">$api_client</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">configuration</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">Configuration</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">host</span> = <span class="ruby-identifier">$host</span>
+
+      <span class="ruby-identifier">$api_client</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">ApiClient</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">configuration</span>)
+      <span class="ruby-identifier">$api_client</span>.<span class="ruby-identifier">set_oauth_base_path</span>(<span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">DEMO_OAUTH_BASE_PATH</span>)
+      <span class="ruby-comment"># IMPORTANT NOTE:</span>
+      <span class="ruby-comment"># the first time you ask for a JWT access token, you should grant access by making the following call</span>
+      <span class="ruby-comment"># visit DocuSign OAuth authorization url in the browser, login, grant access and restart the tests</span>
+      <span class="ruby-comment"># url = $api_client.get_authorization_uri($integrator_key,%w[signature organization_read impersonation],$return_url,&#39;code&#39;)</span>
+      <span class="ruby-comment"># Launchy.open(url)</span>
+      <span class="ruby-comment"># abort &quot;Please restart the tests&quot;</span>
+      <span class="ruby-comment"># END OF NOTE</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">decode_base64_content</span> = <span class="ruby-constant">Base64</span>.<span class="ruby-identifier">decode64</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-string">&quot;PRIVATE_KEY&quot;</span>])
+
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">$private_key_filename</span>, <span class="ruby-string">&quot;wb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">decode_base64_content</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">token_obj</span> = <span class="ruby-identifier">$api_client</span>.<span class="ruby-identifier">request_jwt_user_token</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-string">&quot;INTEGRATOR_KEY_JWT&quot;</span>], <span class="ruby-constant">ENV</span>[<span class="ruby-string">&quot;USER_ID&quot;</span>], <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">$private_key_filename</span>), <span class="ruby-identifier">$expires_in_seconds</span>)
+
+    <span class="ruby-identifier">user_info</span> = <span class="ruby-identifier">$api_client</span>.<span class="ruby-identifier">get_user_info</span>(<span class="ruby-identifier">token_obj</span>.<span class="ruby-identifier">access_token</span>)
+
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">user_info</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">user_info</span>.<span class="ruby-identifier">accounts</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">account</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">account</span>.<span class="ruby-identifier">is_default</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;true&quot;</span>
+          <span class="ruby-identifier">$base_uri</span> = <span class="ruby-identifier">account</span>.<span class="ruby-identifier">base_uri</span>
+          <span class="ruby-identifier">$account_id</span> = <span class="ruby-identifier">account</span>.<span class="ruby-identifier">account_id</span>
+
+          <span class="ruby-comment"># IMPORTANT: Use the base url from the login account to instantiant the api_client</span>
+          <span class="ruby-identifier">base_uri</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">$base_uri</span>)
+          <span class="ruby-identifier">$api_client</span>.<span class="ruby-identifier">set_base_path</span>(<span class="ruby-string">&quot;%s://%s/restapi&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">base_uri</span>.<span class="ruby-identifier">scheme</span>, <span class="ruby-identifier">base_uri</span>.<span class="ruby-identifier">host</span>])
+
+          <span class="ruby-keyword">return</span> <span class="ruby-identifier">account</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Error during processing: #{$!}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

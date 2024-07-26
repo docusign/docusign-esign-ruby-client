@@ -1,1 +1,0 @@
-./vendor/bundle/ruby/2.6.0/bin/rubocop -a

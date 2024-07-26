@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class DocuSign_eSign::ListStatusChangesOptions - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="../Object.html">Object</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-default">::default</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-DocuSign_eSign::ListStatusChangesOptions">
+  <h1 id="class-DocuSign_eSign::ListStatusChangesOptions" class="class">
+    class DocuSign_eSign::ListStatusChangesOptions
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-ac_status" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">ac_status</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies the Authoritative Copy Status for the envelopes. The possible values are: Unknown, Original, Transferred, AuthoritativeCopy, AuthoritativeCopyExportPending, AuthoritativeCopyExported, DepositPending, Deposited, DepositedEO, or DepositFailed.</p>
+        </div>
+      </div>
+      <div id="attribute-i-block" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">block</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-cdse_mode" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">cdse_mode</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-continuation_token" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">continuation_token</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-count" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">count</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-custom_field" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">custom_field</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>This specifies the envelope custom field name and value searched for in the envelope information. The value portion of the query can use partial strings by adding &#39;%&#39; (percent sign) around the custom field query value.   Example 1: If you have an envelope custom field called "Region&quot; and you want to search for all envelopes where the value is "West&quot; you would use the query: `?custom_field=Region=West`.   Example 2: To search for envelopes where the `ApplicationID` custom field has the value or partial value of "DocuSign&quot; in field, the query would be: `?custom_field=ApplicationId=%DocuSign%` This would find envelopes where the custom field value is "DocuSign for Salesforce&quot; or "DocuSign envelope.&quot;</p>
+        </div>
+      </div>
+      <div id="attribute-i-email" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">email</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-envelope_ids" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">envelope_ids</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-exclude" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">exclude</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-folder_ids" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">folder_ids</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-folder_types" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">folder_types</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-from_date" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">from_date</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The date/time setting that specifies the date/time when the request begins checking for status changes for envelopes in the account.  This is required unless &#39;envelopeId&#39;s are used.</p>
+        </div>
+      </div>
+      <div id="attribute-i-from_to_status" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">from_to_status</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>This is the status type checked for in the `from_date`/`to_date` period. If `changed` is specified, then envelopes that changed status during the period are found. If for example, `created` is specified, then envelopes created during the period are found. Default is `changed`.   Possible values are: Voided, Changed, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.</p>
+        </div>
+      </div>
+      <div id="attribute-i-include" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">include</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-include_purge_information" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">include_purge_information</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-intersecting_folder_ids" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">intersecting_folder_ids</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-last_queried_date" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">last_queried_date</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-order" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">order</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-order_by" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">order_by</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-powerformids" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">powerformids</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-query_budget" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">query_budget</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-requester_date_format" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">requester_date_format</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-search_mode" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">search_mode</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-search_text" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">search_text</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-start_position" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">start_position</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-status" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">status</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The list of current statuses to include in the response. By default, all envelopes found are returned. If values are specified, then of the envelopes found, only those with the current status specified are returned in the results.   Possible values are: Voided, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.</p>
+        </div>
+      </div>
+      <div id="attribute-i-to_date" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">to_date</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Optional date/time setting that specifies the date/time when the request stops for status changes for envelopes in the account. If no entry, the system uses the time of the call as the `to_date`.</p>
+        </div>
+      </div>
+      <div id="attribute-i-transaction_ids" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">transaction_ids</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>If included in the query string, this is a comma separated list of envelope `transactionId`s.   If included in the `request_body`, this is a list of envelope `transactionId`s.   ###### Note: `transactionId`s are only valid in the DocuSign system for seven days.</p>
+        </div>
+      </div>
+      <div id="attribute-i-user_filter" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">user_filter</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-user_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">user_id</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-user_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">user_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-default" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">default</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="default-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/envelopes_api.rb, line 425</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">default</span>
+  <span class="ruby-identifier">@@default</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ListStatusChangesOptions</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

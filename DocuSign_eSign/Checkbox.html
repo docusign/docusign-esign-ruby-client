@@ -1,0 +1,2224 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class DocuSign_eSign::Checkbox - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="../Object.html">Object</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-attribute_map">::attribute_map</a>
+    <li ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-c-swagger_types">::swagger_types</a>
+    <li ><a href="#method-i-3D-3D">#==</a>
+    <li ><a href="#method-i-_deserialize">#_deserialize</a>
+    <li ><a href="#method-i-_to_hash">#_to_hash</a>
+    <li ><a href="#method-i-build_from_hash">#build_from_hash</a>
+    <li ><a href="#method-i-eql-3F">#eql?</a>
+    <li ><a href="#method-i-hash">#hash</a>
+    <li ><a href="#method-i-list_invalid_properties">#list_invalid_properties</a>
+    <li ><a href="#method-i-to_body">#to_body</a>
+    <li ><a href="#method-i-to_hash">#to_hash</a>
+    <li ><a href="#method-i-to_s">#to_s</a>
+    <li ><a href="#method-i-valid-3F">#valid?</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-DocuSign_eSign::Checkbox">
+  <h1 id="class-DocuSign_eSign::Checkbox" class="class">
+    class DocuSign_eSign::Checkbox
+  </h1>
+
+  <section class="description">
+    
+<p>A tab that allows the recipient to select a yes/no (on/off) option.</p>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-anchor_allow_white_space_in_characters" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_allow_white_space_in_characters</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-anchor_allow_white_space_in_characters_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_allow_white_space_in_characters_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `anchorAllowWhiteSpaceInCharacters` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_case_sensitive" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_case_sensitive</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the anchor string does not consider case when matching strings in the document. The default value is *<strong>true</strong>*.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_case_sensitive_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_case_sensitive_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `anchorCaseSensitive` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_horizontal_alignment" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_horizontal_alignment</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies the alignment of anchor tabs with anchor strings. Possible values are *<strong>left</strong>* or *<strong>right</strong>*. The default value is *<strong>left</strong>*.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_horizontal_alignment_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_horizontal_alignment_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `anchorHorizontalAlignment` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_ignore_if_not_present" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_ignore_if_not_present</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, this tab is ignored if anchorString is not found in the document.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_ignore_if_not_present_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_ignore_if_not_present_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `anchorIgnoreIfNotPresent` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_match_whole_word" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_match_whole_word</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the anchor string in this tab matches whole words only (strings embedded in other strings are ignored.) The default value is *<strong>true</strong>*.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_match_whole_word_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_match_whole_word_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `anchorMatchWholeWord` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_string" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_string</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Anchor text information for a radio button.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_string_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_string_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `anchorString` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_tab_processor_version" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_tab_processor_version</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-anchor_tab_processor_version_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_tab_processor_version_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Reserved for DocuSign.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_units" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_units</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_units_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_units_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `anchorUnits` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_x_offset" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_x_offset</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_x_offset_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_x_offset_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `anchorXOffset` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_y_offset" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_y_offset</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.</p>
+        </div>
+      </div>
+      <div id="attribute-i-anchor_y_offset_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anchor_y_offset_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `anchorYOffset` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-bold" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">bold</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the information in the tab is bold.</p>
+        </div>
+      </div>
+      <div id="attribute-i-bold_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">bold_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `bold` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-caption" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">caption</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-caption_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">caption_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-conditional_parent_label" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">conditional_parent_label</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>For conditional fields this is the TabLabel of the parent tab that controls this tab&#39;s visibility.</p>
+        </div>
+      </div>
+      <div id="attribute-i-conditional_parent_label_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">conditional_parent_label_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `conditionalParentLabel` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-conditional_parent_value" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">conditional_parent_value</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>For conditional fields, this is the value of the parent tab that controls the tab&#39;s visibility.  If the parent tab is a <a href="Checkbox.html"><code>Checkbox</code></a>, <a href="Radio.html"><code>Radio</code></a> button, Optional Signature, or Optional Initial use "on&quot; as the value to show that the parent tab is active.</p>
+        </div>
+      </div>
+      <div id="attribute-i-conditional_parent_value_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">conditional_parent_value_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `conditionalParentValue` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-custom_tab_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">custom_tab_id</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The DocuSign generated custom tab ID for the custom tab to be applied. This can only be used when adding new tabs for a recipient. When used, the new tab inherits all the custom tab properties.</p>
+        </div>
+      </div>
+      <div id="attribute-i-custom_tab_id_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">custom_tab_id_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `customTabId` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-document_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">document_id</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute.</p>
+        </div>
+      </div>
+      <div id="attribute-i-document_id_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">document_id_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `documentId` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-error_details" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">error_details</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Array or errors.</p>
+        </div>
+      </div>
+      <div id="attribute-i-font" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">font</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.</p>
+        </div>
+      </div>
+      <div id="attribute-i-font_color" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">font_color</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White.</p>
+        </div>
+      </div>
+      <div id="attribute-i-font_color_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">font_color_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `fontColor` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-font_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">font_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `font` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-font_size" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">font_size</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72.</p>
+        </div>
+      </div>
+      <div id="attribute-i-font_size_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">font_size_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `fontSize` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-form_order" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">form_order</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-form_order_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">form_order_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `formOrder` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-form_page_label" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">form_page_label</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-form_page_label_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">form_page_label_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `formPageLabel` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-form_page_number" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">form_page_number</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-form_page_number_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">form_page_number_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `fromPageNumber` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-height" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">height</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Height of the tab in pixels.</p>
+        </div>
+      </div>
+      <div id="attribute-i-height_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">height_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `height` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-italic" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">italic</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the information in the tab is italic.</p>
+        </div>
+      </div>
+      <div id="attribute-i-italic_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">italic_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `italic` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-locked" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">locked</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the signer cannot change the data of the custom tab.</p>
+        </div>
+      </div>
+      <div id="attribute-i-locked_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">locked_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `locked` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-merge_field" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">merge_field</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Contains the information necessary to map the tab to a field in SalesForce.</p>
+        </div>
+      </div>
+      <div id="attribute-i-merge_field_xml" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">merge_field_xml</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies the tool tip text for the tab.</p>
+        </div>
+      </div>
+      <div id="attribute-i-name_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">name_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `name` property is editable. This property is read-only.</p>
+        </div>
+      </div>
+      <div id="attribute-i-page_number" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">page_number</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies the page number on which the tab is located.</p>
+        </div>
+      </div>
+      <div id="attribute-i-page_number_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">page_number_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `pageNumber` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-recipient_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">recipient_id</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the <a href="Document.html"><code>Document</code></a>.</p>
+        </div>
+      </div>
+      <div id="attribute-i-recipient_id_guid" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">recipient_id_guid</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-recipient_id_guid_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">recipient_id_guid_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `recipientIdGuid` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-recipient_id_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">recipient_id_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `recipientId` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-require_initial_on_shared_change" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">require_initial_on_shared_change</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Optional element for field markup. When set to *<strong>true</strong>*, the signer is required to initial when they modify a shared field.</p>
+        </div>
+      </div>
+      <div id="attribute-i-require_initial_on_shared_change_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">require_initial_on_shared_change_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `requireInitialOnSharedChange` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-required" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">required</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the signer is required to fill out this tab</p>
+        </div>
+      </div>
+      <div id="attribute-i-required_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">required_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `required` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-selected" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">selected</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the checkbox is selected.</p>
+        </div>
+      </div>
+      <div id="attribute-i-selected_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">selected_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `selected` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-selected_original" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">selected_original</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-selected_original_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">selected_original_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-share_to_recipients" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">share_to_recipients</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-share_to_recipients_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">share_to_recipients_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Reserved for DocuSign.</p>
+        </div>
+      </div>
+      <div id="attribute-i-shared" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">shared</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, this custom tab is shared.</p>
+        </div>
+      </div>
+      <div id="attribute-i-shared_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">shared_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `shared` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-smart_contract_information" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">smart_contract_information</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Reserved for DocuSign.</p>
+        </div>
+      </div>
+      <div id="attribute-i-source" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">source</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-status" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">status</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.</p>
+        </div>
+      </div>
+      <div id="attribute-i-status_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">status_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `status` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-tab_group_labels" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tab_group_labels</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-tab_group_labels_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tab_group_labels_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `tabGroupLabels` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-tab_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tab_id</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].  </p>
+        </div>
+      </div>
+      <div id="attribute-i-tab_id_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tab_id_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `tabId` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-tab_label" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tab_label</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The label string associated with the tab.</p>
+        </div>
+      </div>
+      <div id="attribute-i-tab_label_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tab_label_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `tabLabel` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-tab_order" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tab_order</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-tab_order_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tab_order_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `tabOrder` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-tab_type" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tab_type</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-tab_type_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tab_type_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `tabType` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-template_locked" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">template_locked</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the sender cannot change any attributes of the recipient. Used only when working with template recipients.</p>
+        </div>
+      </div>
+      <div id="attribute-i-template_locked_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">template_locked_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `templateLocked` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-template_required" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">template_required</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the sender may not remove the recipient. Used only when working with template recipients.</p>
+        </div>
+      </div>
+      <div id="attribute-i-template_required_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">template_required_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `templateRequired` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-tool_tip_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tool_tip_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `toolTip` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-tooltip" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tooltip</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-underline" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">underline</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the information in the tab is underlined.</p>
+        </div>
+      </div>
+      <div id="attribute-i-underline_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">underline_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `underline` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-width" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">width</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Width of the tab in pixels.</p>
+        </div>
+      </div>
+      <div id="attribute-i-width_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">width_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `width` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-x_position" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">x_position</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.</p>
+        </div>
+      </div>
+      <div id="attribute-i-x_position_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">x_position_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `xPosition` property is editable.</p>
+        </div>
+      </div>
+      <div id="attribute-i-y_position" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">y_position</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.</p>
+        </div>
+      </div>
+      <div id="attribute-i-y_position_metadata" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">y_position_metadata</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Metadata that indicates whether the `yPosition` property is editable.</p>
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-attribute_map" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">attribute_map</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Attribute mapping from ruby-style variable name to JSON key.</p>
+
+          <div class="method-source-code" id="attribute_map-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/checkbox.rb, line 321</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">attribute_map</span>
+  {
+    <span class="ruby-value">:&#39;anchor_allow_white_space_in_characters&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorAllowWhiteSpaceInCharacters&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_allow_white_space_in_characters_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorAllowWhiteSpaceInCharactersMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_case_sensitive&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorCaseSensitive&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_case_sensitive_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorCaseSensitiveMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_horizontal_alignment&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorHorizontalAlignment&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_horizontal_alignment_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorHorizontalAlignmentMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_ignore_if_not_present&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorIgnoreIfNotPresent&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_ignore_if_not_present_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorIgnoreIfNotPresentMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_match_whole_word&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorMatchWholeWord&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_match_whole_word_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorMatchWholeWordMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_string&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorString&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_string_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorStringMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_tab_processor_version&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorTabProcessorVersion&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_tab_processor_version_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorTabProcessorVersionMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_units&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorUnits&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_units_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorUnitsMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_x_offset&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorXOffset&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_x_offset_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorXOffsetMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_y_offset&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorYOffset&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_y_offset_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;anchorYOffsetMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;bold&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;bold&#39;</span>,
+    <span class="ruby-value">:&#39;bold_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;boldMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;caption&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;caption&#39;</span>,
+    <span class="ruby-value">:&#39;caption_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;captionMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;conditional_parent_label&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;conditionalParentLabel&#39;</span>,
+    <span class="ruby-value">:&#39;conditional_parent_label_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;conditionalParentLabelMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;conditional_parent_value&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;conditionalParentValue&#39;</span>,
+    <span class="ruby-value">:&#39;conditional_parent_value_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;conditionalParentValueMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;custom_tab_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;customTabId&#39;</span>,
+    <span class="ruby-value">:&#39;custom_tab_id_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;customTabIdMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;document_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;documentId&#39;</span>,
+    <span class="ruby-value">:&#39;document_id_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;documentIdMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;error_details&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;errorDetails&#39;</span>,
+    <span class="ruby-value">:&#39;font&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;font&#39;</span>,
+    <span class="ruby-value">:&#39;font_color&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;fontColor&#39;</span>,
+    <span class="ruby-value">:&#39;font_color_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;fontColorMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;font_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;fontMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;font_size&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;fontSize&#39;</span>,
+    <span class="ruby-value">:&#39;font_size_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;fontSizeMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;form_order&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;formOrder&#39;</span>,
+    <span class="ruby-value">:&#39;form_order_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;formOrderMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;form_page_label&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;formPageLabel&#39;</span>,
+    <span class="ruby-value">:&#39;form_page_label_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;formPageLabelMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;form_page_number&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;formPageNumber&#39;</span>,
+    <span class="ruby-value">:&#39;form_page_number_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;formPageNumberMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;height&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;height&#39;</span>,
+    <span class="ruby-value">:&#39;height_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;heightMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;italic&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;italic&#39;</span>,
+    <span class="ruby-value">:&#39;italic_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;italicMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;locked&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;locked&#39;</span>,
+    <span class="ruby-value">:&#39;locked_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;lockedMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;merge_field&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;mergeField&#39;</span>,
+    <span class="ruby-value">:&#39;merge_field_xml&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;mergeFieldXml&#39;</span>,
+    <span class="ruby-value">:&#39;name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;name&#39;</span>,
+    <span class="ruby-value">:&#39;name_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;nameMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;page_number&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;pageNumber&#39;</span>,
+    <span class="ruby-value">:&#39;page_number_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;pageNumberMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;recipientId&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_id_guid&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;recipientIdGuid&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_id_guid_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;recipientIdGuidMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_id_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;recipientIdMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;required&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;required&#39;</span>,
+    <span class="ruby-value">:&#39;required_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;requiredMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;require_initial_on_shared_change&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;requireInitialOnSharedChange&#39;</span>,
+    <span class="ruby-value">:&#39;require_initial_on_shared_change_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;requireInitialOnSharedChangeMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;selected&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;selected&#39;</span>,
+    <span class="ruby-value">:&#39;selected_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;selectedMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;selected_original&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;selectedOriginal&#39;</span>,
+    <span class="ruby-value">:&#39;selected_original_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;selectedOriginalMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;shared&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;shared&#39;</span>,
+    <span class="ruby-value">:&#39;shared_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;sharedMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;share_to_recipients&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;shareToRecipients&#39;</span>,
+    <span class="ruby-value">:&#39;share_to_recipients_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;shareToRecipientsMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;smart_contract_information&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;smartContractInformation&#39;</span>,
+    <span class="ruby-value">:&#39;source&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;source&#39;</span>,
+    <span class="ruby-value">:&#39;status&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;status&#39;</span>,
+    <span class="ruby-value">:&#39;status_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;statusMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;tab_group_labels&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;tabGroupLabels&#39;</span>,
+    <span class="ruby-value">:&#39;tab_group_labels_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;tabGroupLabelsMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;tab_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;tabId&#39;</span>,
+    <span class="ruby-value">:&#39;tab_id_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;tabIdMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;tab_label&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;tabLabel&#39;</span>,
+    <span class="ruby-value">:&#39;tab_label_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;tabLabelMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;tab_order&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;tabOrder&#39;</span>,
+    <span class="ruby-value">:&#39;tab_order_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;tabOrderMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;tab_type&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;tabType&#39;</span>,
+    <span class="ruby-value">:&#39;tab_type_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;tabTypeMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;template_locked&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;templateLocked&#39;</span>,
+    <span class="ruby-value">:&#39;template_locked_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;templateLockedMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;template_required&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;templateRequired&#39;</span>,
+    <span class="ruby-value">:&#39;template_required_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;templateRequiredMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;tooltip&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;tooltip&#39;</span>,
+    <span class="ruby-value">:&#39;tool_tip_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;toolTipMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;underline&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;underline&#39;</span>,
+    <span class="ruby-value">:&#39;underline_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;underlineMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;width&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;width&#39;</span>,
+    <span class="ruby-value">:&#39;width_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;widthMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;x_position&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;xPosition&#39;</span>,
+    <span class="ruby-value">:&#39;x_position_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;xPositionMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;y_position&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;yPosition&#39;</span>,
+    <span class="ruby-value">:&#39;y_position_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;yPositionMetadata&#39;</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(attributes = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Initializes the object @param [Hash] attributes Model attributes in the form of hash</p>
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/checkbox.rb, line 536</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">attributes</span> = {})
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+
+  <span class="ruby-comment"># convert string to symbol for hash key</span>
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">each_with_object</span>({}) { <span class="ruby-operator">|</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>), <span class="ruby-identifier">h</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">v</span> }
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorAllowWhiteSpaceInCharacters&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_allow_white_space_in_characters</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorAllowWhiteSpaceInCharacters&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorAllowWhiteSpaceInCharactersMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_allow_white_space_in_characters_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorAllowWhiteSpaceInCharactersMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorCaseSensitive&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_case_sensitive</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorCaseSensitive&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorCaseSensitiveMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_case_sensitive_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorCaseSensitiveMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorHorizontalAlignment&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_horizontal_alignment</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorHorizontalAlignment&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorHorizontalAlignmentMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_horizontal_alignment_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorHorizontalAlignmentMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorIgnoreIfNotPresent&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_ignore_if_not_present</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorIgnoreIfNotPresent&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorIgnoreIfNotPresentMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_ignore_if_not_present_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorIgnoreIfNotPresentMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorMatchWholeWord&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_match_whole_word</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorMatchWholeWord&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorMatchWholeWordMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_match_whole_word_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorMatchWholeWordMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorString&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_string</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorString&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorStringMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_string_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorStringMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorTabProcessorVersion&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_tab_processor_version</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorTabProcessorVersion&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorTabProcessorVersionMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_tab_processor_version_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorTabProcessorVersionMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorUnits&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_units</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorUnits&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorUnitsMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_units_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorUnitsMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorXOffset&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_x_offset</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorXOffset&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorXOffsetMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_x_offset_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorXOffsetMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorYOffset&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_y_offset</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorYOffset&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;anchorYOffsetMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anchor_y_offset_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;anchorYOffsetMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;bold&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">bold</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;bold&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;boldMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">bold_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;boldMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;caption&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">caption</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;caption&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;captionMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">caption_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;captionMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;conditionalParentLabel&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">conditional_parent_label</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;conditionalParentLabel&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;conditionalParentLabelMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">conditional_parent_label_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;conditionalParentLabelMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;conditionalParentValue&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">conditional_parent_value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;conditionalParentValue&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;conditionalParentValueMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">conditional_parent_value_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;conditionalParentValueMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;customTabId&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">custom_tab_id</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;customTabId&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;customTabIdMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">custom_tab_id_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;customTabIdMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;documentId&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">document_id</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;documentId&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;documentIdMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">document_id_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;documentIdMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;errorDetails&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">error_details</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;errorDetails&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;font&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">font</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;font&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;fontColor&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">font_color</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;fontColor&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;fontColorMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">font_color_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;fontColorMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;fontMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">font_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;fontMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;fontSize&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">font_size</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;fontSize&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;fontSizeMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">font_size_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;fontSizeMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;formOrder&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">form_order</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;formOrder&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;formOrderMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">form_order_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;formOrderMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;formPageLabel&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">form_page_label</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;formPageLabel&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;formPageLabelMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">form_page_label_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;formPageLabelMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;formPageNumber&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">form_page_number</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;formPageNumber&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;formPageNumberMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">form_page_number_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;formPageNumberMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;height&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">height</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;height&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;heightMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">height_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;heightMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;italic&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">italic</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;italic&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;italicMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">italic_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;italicMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;locked&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">locked</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;locked&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;lockedMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">locked_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;lockedMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;mergeField&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">merge_field</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;mergeField&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;mergeFieldXml&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">merge_field_xml</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;mergeFieldXml&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;name&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;name&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;nameMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;nameMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;pageNumber&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">page_number</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;pageNumber&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;pageNumberMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">page_number_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;pageNumberMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;recipientId&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">recipient_id</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;recipientId&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;recipientIdGuid&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">recipient_id_guid</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;recipientIdGuid&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;recipientIdGuidMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">recipient_id_guid_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;recipientIdGuidMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;recipientIdMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">recipient_id_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;recipientIdMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;required&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">required</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;required&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;requiredMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">required_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;requiredMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;requireInitialOnSharedChange&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">require_initial_on_shared_change</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;requireInitialOnSharedChange&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;requireInitialOnSharedChangeMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">require_initial_on_shared_change_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;requireInitialOnSharedChangeMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;selected&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">selected</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;selected&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;selectedMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">selected_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;selectedMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;selectedOriginal&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">selected_original</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;selectedOriginal&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;selectedOriginalMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">selected_original_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;selectedOriginalMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;shared&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">shared</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;shared&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;sharedMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">shared_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;sharedMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;shareToRecipients&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">share_to_recipients</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;shareToRecipients&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;shareToRecipientsMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">share_to_recipients_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;shareToRecipientsMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;smartContractInformation&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">smart_contract_information</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;smartContractInformation&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;source&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">source</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;source&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;status&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">status</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;status&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;statusMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">status_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;statusMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;tabGroupLabels&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;tabGroupLabels&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tab_group_labels</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;tabGroupLabelsMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tab_group_labels_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;tabGroupLabelsMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;tabId&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tab_id</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;tabId&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;tabIdMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tab_id_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;tabIdMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;tabLabel&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tab_label</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;tabLabel&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;tabLabelMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tab_label_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;tabLabelMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;tabOrder&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tab_order</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;tabOrder&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;tabOrderMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tab_order_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;tabOrderMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;tabType&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tab_type</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;tabType&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;tabTypeMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tab_type_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;tabTypeMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;templateLocked&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">template_locked</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;templateLocked&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;templateLockedMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">template_locked_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;templateLockedMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;templateRequired&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">template_required</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;templateRequired&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;templateRequiredMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">template_required_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;templateRequiredMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;tooltip&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tooltip</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;tooltip&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;toolTipMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tool_tip_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;toolTipMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;underline&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">underline</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;underline&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;underlineMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">underline_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;underlineMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;width&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">width</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;width&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;widthMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">width_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;widthMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;xPosition&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x_position</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;xPosition&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;xPositionMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x_position_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;xPositionMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;yPosition&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y_position</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;yPosition&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;yPositionMetadata&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y_position_metadata</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;yPositionMetadata&#39;</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-swagger_types" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">swagger_types</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Attribute type mapping.</p>
+
+          <div class="method-source-code" id="swagger_types-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/checkbox.rb, line 428</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">swagger_types</span>
+  {
+    <span class="ruby-value">:&#39;anchor_allow_white_space_in_characters&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_allow_white_space_in_characters_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_case_sensitive&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_case_sensitive_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_horizontal_alignment&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_horizontal_alignment_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_ignore_if_not_present&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_ignore_if_not_present_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_match_whole_word&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_match_whole_word_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_string&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_string_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_tab_processor_version&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_tab_processor_version_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_units&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_units_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_x_offset&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_x_offset_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_y_offset&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;anchor_y_offset_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;bold&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;bold_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;caption&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;caption_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;conditional_parent_label&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;conditional_parent_label_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;conditional_parent_value&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;conditional_parent_value_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;custom_tab_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;custom_tab_id_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;document_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;document_id_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;error_details&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;ErrorDetails&#39;</span>,
+    <span class="ruby-value">:&#39;font&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;font_color&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;font_color_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;font_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;font_size&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;font_size_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;form_order&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;form_order_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;form_page_label&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;form_page_label_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;form_page_number&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;form_page_number_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;height&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;height_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;italic&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;italic_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;locked&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;locked_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;merge_field&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;MergeField&#39;</span>,
+    <span class="ruby-value">:&#39;merge_field_xml&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;name_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;page_number&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;page_number_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_id_guid&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_id_guid_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_id_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;required&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;required_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;require_initial_on_shared_change&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;require_initial_on_shared_change_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;selected&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;selected_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;selected_original&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;selected_original_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;shared&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;shared_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;share_to_recipients&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;share_to_recipients_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;smart_contract_information&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;SmartContractInformation&#39;</span>,
+    <span class="ruby-value">:&#39;source&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;status&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;status_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;tab_group_labels&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;String&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;tab_group_labels_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;tab_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;tab_id_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;tab_label&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;tab_label_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;tab_order&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;tab_order_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;tab_type&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;tab_type_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;template_locked&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;template_locked_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;template_required&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;template_required_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;tooltip&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;tool_tip_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;underline&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;underline_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;width&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;width_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;x_position&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;x_position_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>,
+    <span class="ruby-value">:&#39;y_position&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;y_position_metadata&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;PropertyMetadata&#39;</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-3D-3D" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(o)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Checks equality by comparing each attribute. @param [Object] <a href="../Object.html"><code>Object</code></a> to be compared</p>
+
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/checkbox.rb, line 964</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">equal?</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_allow_white_space_in_characters</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_allow_white_space_in_characters</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_allow_white_space_in_characters_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_allow_white_space_in_characters_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_case_sensitive</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_case_sensitive</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_case_sensitive_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_case_sensitive_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_horizontal_alignment</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_horizontal_alignment</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_horizontal_alignment_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_horizontal_alignment_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_ignore_if_not_present</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_ignore_if_not_present</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_ignore_if_not_present_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_ignore_if_not_present_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_match_whole_word</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_match_whole_word</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_match_whole_word_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_match_whole_word_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_string</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_string</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_string_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_string_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_tab_processor_version</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_tab_processor_version</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_tab_processor_version_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_tab_processor_version_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_units</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_units</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_units_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_units_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_x_offset</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_x_offset</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_x_offset_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_x_offset_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_y_offset</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_y_offset</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">anchor_y_offset_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">anchor_y_offset_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">bold</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">bold</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">bold_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">bold_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">caption</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">caption</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">caption_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">caption_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">conditional_parent_label</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">conditional_parent_label</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">conditional_parent_label_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">conditional_parent_label_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">conditional_parent_value</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">conditional_parent_value</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">conditional_parent_value_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">conditional_parent_value_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">custom_tab_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">custom_tab_id</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">custom_tab_id_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">custom_tab_id_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">document_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">document_id</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">document_id_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">document_id_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">error_details</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">error_details</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">font</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">font</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">font_color</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">font_color</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">font_color_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">font_color_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">font_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">font_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">font_size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">font_size</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">font_size_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">font_size_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">form_order</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">form_order</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">form_order_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">form_order_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">form_page_label</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">form_page_label</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">form_page_label_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">form_page_label_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">form_page_number</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">form_page_number</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">form_page_number_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">form_page_number_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">height</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">height</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">height_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">height_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">italic</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">italic</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">italic_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">italic_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">locked</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">locked</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">locked_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">locked_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">merge_field</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">merge_field</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">merge_field_xml</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">merge_field_xml</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">name_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">name_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">page_number</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">page_number</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">page_number_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">page_number_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">recipient_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">recipient_id</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">recipient_id_guid</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">recipient_id_guid</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">recipient_id_guid_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">recipient_id_guid_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">recipient_id_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">recipient_id_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">required</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">required</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">required_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">required_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">require_initial_on_shared_change</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">require_initial_on_shared_change</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">require_initial_on_shared_change_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">require_initial_on_shared_change_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">selected</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">selected</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">selected_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">selected_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">selected_original</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">selected_original</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">selected_original_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">selected_original_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">shared</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">shared</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">shared_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">shared_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">share_to_recipients</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">share_to_recipients</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">share_to_recipients_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">share_to_recipients_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">smart_contract_information</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">smart_contract_information</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">source</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">source</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">status_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">status_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">tab_group_labels</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tab_group_labels</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">tab_group_labels_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tab_group_labels_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">tab_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tab_id</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">tab_id_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tab_id_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">tab_label</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tab_label</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">tab_label_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tab_label_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">tab_order</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tab_order</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">tab_order_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tab_order_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">tab_type</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tab_type</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">tab_type_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tab_type_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">template_locked</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">template_locked</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">template_locked_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">template_locked_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">template_required</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">template_required</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">template_required_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">template_required_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">tooltip</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tooltip</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">tool_tip_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tool_tip_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">underline</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">underline</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">underline_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">underline_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">width</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">width</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">width_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">width_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">x_position</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">x_position</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">x_position_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">x_position_metadata</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">y_position</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">y_position</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">y_position_metadata</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">y_position_metadata</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-_deserialize" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">_deserialize</span><span
+            class="method-args">(type, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Deserializes the data based on type @param string type Data type @param string value Value to be deserialized @return [Object] Deserialized data</p>
+
+          <div class="method-source-code" id="_deserialize-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/checkbox.rb, line 1106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_deserialize</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">to_sym</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:DateTime</span>
+    <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:Date</span>
+    <span class="ruby-constant">Date</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:String</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:Integer</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:Float</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:BOOLEAN</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\A(true|t|yes|y|1)\z/i</span>
+      <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:Object</span>
+    <span class="ruby-comment"># generic object (usually a Hash), return directly</span>
+    <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\AArray&lt;(?&lt;inner_type&gt;.+)&gt;\z/</span>
+    <span class="ruby-identifier">inner_type</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>[<span class="ruby-value">:inner_type</span>]
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_deserialize</span>(<span class="ruby-identifier">inner_type</span>, <span class="ruby-identifier">v</span>) }
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\AHash&lt;(?&lt;k_type&gt;.+?), (?&lt;v_type&gt;.+)&gt;\z/</span>
+    <span class="ruby-identifier">k_type</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>[<span class="ruby-value">:k_type</span>]
+    <span class="ruby-identifier">v_type</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>[<span class="ruby-value">:v_type</span>]
+    {}.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">value</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">_deserialize</span>(<span class="ruby-identifier">k_type</span>, <span class="ruby-identifier">k</span>)] = <span class="ruby-identifier">_deserialize</span>(<span class="ruby-identifier">v_type</span>, <span class="ruby-identifier">v</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span> <span class="ruby-comment"># model</span>
+    <span class="ruby-identifier">temp_model</span> = <span class="ruby-constant">DocuSign_eSign</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">type</span>).<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">temp_model</span>.<span class="ruby-identifier">build_from_hash</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-_to_hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">_to_hash</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Outputs non-array value in the form of hash For object, use to_hash. Otherwise, just return the value @param [Object] value Any valid value @return [Hash] Returns the value in the form of hash</p>
+
+          <div class="method-source-code" id="_to_hash-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/checkbox.rb, line 1172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_to_hash</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_to_hash</span>(<span class="ruby-identifier">v</span>) }
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+    {}.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">value</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">_to_hash</span>(<span class="ruby-identifier">v</span>) }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:to_hash</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_hash</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-build_from_hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">build_from_hash</span><span
+            class="method-args">(attributes)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Builds the object from hash @param [Hash] attributes Model attributes in the form of hash @return [Object] Returns the model itself</p>
+
+          <div class="method-source-code" id="build_from_hash-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/checkbox.rb, line 1085</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build_from_hash</span>(<span class="ruby-identifier">attributes</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">swagger_types</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\AArray&lt;(.*)&gt;/i</span>
+      <span class="ruby-comment"># check to ensure the input is an array given that the attribute</span>
+      <span class="ruby-comment"># is documented as an array but the input is not</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>[<span class="ruby-identifier">key</span>]].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{key}=&quot;</span>, <span class="ruby-identifier">attributes</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>[<span class="ruby-identifier">key</span>]].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_deserialize</span>(<span class="ruby-node">$1</span>, <span class="ruby-identifier">v</span>) })
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">attributes</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>[<span class="ruby-identifier">key</span>]].<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{key}=&quot;</span>, <span class="ruby-identifier">_deserialize</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">attributes</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>[<span class="ruby-identifier">key</span>]]))
+    <span class="ruby-keyword">end</span> <span class="ruby-comment"># or else data not found in attributes(hash), not an issue as the data can be optional</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-eql-3F" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">eql?</span><span
+            class="method-args">(o)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>@see the `==` method @param [Object] <a href="../Object.html"><code>Object</code></a> to be compared</p>
+
+          <div class="method-source-code" id="eql-3F-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/checkbox.rb, line 1072</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-keyword">self</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Calculates hash code according to all attributes. @return [Fixnum] Hash code</p>
+
+          <div class="method-source-code" id="hash-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/checkbox.rb, line 1078</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span>
+  [<span class="ruby-identifier">anchor_allow_white_space_in_characters</span>, <span class="ruby-identifier">anchor_allow_white_space_in_characters_metadata</span>, <span class="ruby-identifier">anchor_case_sensitive</span>, <span class="ruby-identifier">anchor_case_sensitive_metadata</span>, <span class="ruby-identifier">anchor_horizontal_alignment</span>, <span class="ruby-identifier">anchor_horizontal_alignment_metadata</span>, <span class="ruby-identifier">anchor_ignore_if_not_present</span>, <span class="ruby-identifier">anchor_ignore_if_not_present_metadata</span>, <span class="ruby-identifier">anchor_match_whole_word</span>, <span class="ruby-identifier">anchor_match_whole_word_metadata</span>, <span class="ruby-identifier">anchor_string</span>, <span class="ruby-identifier">anchor_string_metadata</span>, <span class="ruby-identifier">anchor_tab_processor_version</span>, <span class="ruby-identifier">anchor_tab_processor_version_metadata</span>, <span class="ruby-identifier">anchor_units</span>, <span class="ruby-identifier">anchor_units_metadata</span>, <span class="ruby-identifier">anchor_x_offset</span>, <span class="ruby-identifier">anchor_x_offset_metadata</span>, <span class="ruby-identifier">anchor_y_offset</span>, <span class="ruby-identifier">anchor_y_offset_metadata</span>, <span class="ruby-identifier">bold</span>, <span class="ruby-identifier">bold_metadata</span>, <span class="ruby-identifier">caption</span>, <span class="ruby-identifier">caption_metadata</span>, <span class="ruby-identifier">conditional_parent_label</span>, <span class="ruby-identifier">conditional_parent_label_metadata</span>, <span class="ruby-identifier">conditional_parent_value</span>, <span class="ruby-identifier">conditional_parent_value_metadata</span>, <span class="ruby-identifier">custom_tab_id</span>, <span class="ruby-identifier">custom_tab_id_metadata</span>, <span class="ruby-identifier">document_id</span>, <span class="ruby-identifier">document_id_metadata</span>, <span class="ruby-identifier">error_details</span>, <span class="ruby-identifier">font</span>, <span class="ruby-identifier">font_color</span>, <span class="ruby-identifier">font_color_metadata</span>, <span class="ruby-identifier">font_metadata</span>, <span class="ruby-identifier">font_size</span>, <span class="ruby-identifier">font_size_metadata</span>, <span class="ruby-identifier">form_order</span>, <span class="ruby-identifier">form_order_metadata</span>, <span class="ruby-identifier">form_page_label</span>, <span class="ruby-identifier">form_page_label_metadata</span>, <span class="ruby-identifier">form_page_number</span>, <span class="ruby-identifier">form_page_number_metadata</span>, <span class="ruby-identifier">height</span>, <span class="ruby-identifier">height_metadata</span>, <span class="ruby-identifier">italic</span>, <span class="ruby-identifier">italic_metadata</span>, <span class="ruby-identifier">locked</span>, <span class="ruby-identifier">locked_metadata</span>, <span class="ruby-identifier">merge_field</span>, <span class="ruby-identifier">merge_field_xml</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">name_metadata</span>, <span class="ruby-identifier">page_number</span>, <span class="ruby-identifier">page_number_metadata</span>, <span class="ruby-identifier">recipient_id</span>, <span class="ruby-identifier">recipient_id_guid</span>, <span class="ruby-identifier">recipient_id_guid_metadata</span>, <span class="ruby-identifier">recipient_id_metadata</span>, <span class="ruby-identifier">required</span>, <span class="ruby-identifier">required_metadata</span>, <span class="ruby-identifier">require_initial_on_shared_change</span>, <span class="ruby-identifier">require_initial_on_shared_change_metadata</span>, <span class="ruby-identifier">selected</span>, <span class="ruby-identifier">selected_metadata</span>, <span class="ruby-identifier">selected_original</span>, <span class="ruby-identifier">selected_original_metadata</span>, <span class="ruby-identifier">shared</span>, <span class="ruby-identifier">shared_metadata</span>, <span class="ruby-identifier">share_to_recipients</span>, <span class="ruby-identifier">share_to_recipients_metadata</span>, <span class="ruby-identifier">smart_contract_information</span>, <span class="ruby-identifier">source</span>, <span class="ruby-identifier">status</span>, <span class="ruby-identifier">status_metadata</span>, <span class="ruby-identifier">tab_group_labels</span>, <span class="ruby-identifier">tab_group_labels_metadata</span>, <span class="ruby-identifier">tab_id</span>, <span class="ruby-identifier">tab_id_metadata</span>, <span class="ruby-identifier">tab_label</span>, <span class="ruby-identifier">tab_label_metadata</span>, <span class="ruby-identifier">tab_order</span>, <span class="ruby-identifier">tab_order_metadata</span>, <span class="ruby-identifier">tab_type</span>, <span class="ruby-identifier">tab_type_metadata</span>, <span class="ruby-identifier">template_locked</span>, <span class="ruby-identifier">template_locked_metadata</span>, <span class="ruby-identifier">template_required</span>, <span class="ruby-identifier">template_required_metadata</span>, <span class="ruby-identifier">tooltip</span>, <span class="ruby-identifier">tool_tip_metadata</span>, <span class="ruby-identifier">underline</span>, <span class="ruby-identifier">underline_metadata</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">width_metadata</span>, <span class="ruby-identifier">x_position</span>, <span class="ruby-identifier">x_position_metadata</span>, <span class="ruby-identifier">y_position</span>, <span class="ruby-identifier">y_position_metadata</span>].<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_invalid_properties" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_invalid_properties</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Show invalid properties with the reasons. Usually used together with valid? @return Array for valid properties with the reasons</p>
+
+          <div class="method-source-code" id="list_invalid_properties-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/checkbox.rb, line 951</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_invalid_properties</span>
+  <span class="ruby-identifier">invalid_properties</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">invalid_properties</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-to_body" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">to_body</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p><a href="Checkbox.html#method-i-to_body"><code>to_body</code></a> is an alias to <a href="Checkbox.html#method-i-to_hash"><code>to_hash</code></a> (backward compatibility) @return [Hash] Returns the object in the form of hash</p>
+
+          <div class="method-source-code" id="to_body-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/checkbox.rb, line 1152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_body</span>
+  <span class="ruby-identifier">to_hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-to_hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">to_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns the object in the form of hash @return [Hash] Returns the object in the form of hash</p>
+
+          <div class="method-source-code" id="to_hash-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/checkbox.rb, line 1158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_hash</span>
+  <span class="ruby-identifier">hash</span> = {}
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">attr</span>, <span class="ruby-identifier">param</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">value</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">attr</span>)
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">param</span>] = <span class="ruby-identifier">_to_hash</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-to_s" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns the string representation of the object @return [String] String presentation of the object</p>
+
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/checkbox.rb, line 1146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-identifier">to_hash</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-valid-3F" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">valid?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Check to see if the all the properties in the model are valid @return true if the model is valid</p>
+
+          <div class="method-source-code" id="valid-3F-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/checkbox.rb, line 958</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valid?</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

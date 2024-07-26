@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class DocuSign_eSign::ConnectCustomConfiguration - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="../Object.html">Object</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-attribute_map">::attribute_map</a>
+    <li ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-c-swagger_types">::swagger_types</a>
+    <li ><a href="#method-i-3D-3D">#==</a>
+    <li ><a href="#method-i-_deserialize">#_deserialize</a>
+    <li ><a href="#method-i-_to_hash">#_to_hash</a>
+    <li ><a href="#method-i-build_from_hash">#build_from_hash</a>
+    <li ><a href="#method-i-eql-3F">#eql?</a>
+    <li ><a href="#method-i-hash">#hash</a>
+    <li ><a href="#method-i-list_invalid_properties">#list_invalid_properties</a>
+    <li ><a href="#method-i-to_body">#to_body</a>
+    <li ><a href="#method-i-to_hash">#to_hash</a>
+    <li ><a href="#method-i-to_s">#to_s</a>
+    <li ><a href="#method-i-valid-3F">#valid?</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-DocuSign_eSign::ConnectCustomConfiguration">
+  <h1 id="class-DocuSign_eSign::ConnectCustomConfiguration" class="class">
+    class DocuSign_eSign::ConnectCustomConfiguration
+  </h1>
+
+  <section class="description">
+    
+<p>The `connectCustomConfiguration` object describes how Connect is configured for your account.</p>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-all_users" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">all_users</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the tracked envelope and recipient events for all users, including users that are added a later time, are sent through Connect.</p>
+        </div>
+      </div>
+      <div id="attribute-i-all_users_except" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">all_users_except</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-allow_envelope_publish" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">allow_envelope_publish</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, data is sent to the urlToPublishTo web address. This option can be set to false to stop sending data while maintaining the Connect configuration information.</p>
+        </div>
+      </div>
+      <div id="attribute-i-allow_salesforce_publish" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">allow_salesforce_publish</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-configuration_type" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">configuration_type</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>If merge field&#39;s are being used, specifies the type of the merge field. The only  supported value is *<strong>salesforce</strong>*.</p>
+        </div>
+      </div>
+      <div id="attribute-i-connect_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">connect_id</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Specifies the DocuSign generated ID for the Connect configuration.</p>
+        </div>
+      </div>
+      <div id="attribute-i-delivery_mode" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">delivery_mode</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-disabled_by" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">disabled_by</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-enable_log" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">enable_log</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>This turns Connect logging on or off. When set to *<strong>true</strong>*, logging is turned on.</p>
+        </div>
+      </div>
+      <div id="attribute-i-envelope_events" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">envelope_events</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.</p>
+        </div>
+      </div>
+      <div id="attribute-i-event_data" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">event_data</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Allows you to specify the format of the information the Connect webhooks returns. For more information, see [Connect webhooks with JSON notifications](<a href="https://www.docusign.com/blog/developers/connect-webhooks-json-notifications">www.docusign.com/blog/developers/connect-webhooks-json-notifications</a>)</p>
+        </div>
+      </div>
+      <div id="attribute-i-events" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">events</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-external_folder_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">external_folder_id</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-external_folder_label" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">external_folder_label</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-group_ids" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">group_ids</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-include_cert_soap_header" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">include_cert_soap_header</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-include_certificate_of_completion" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">include_certificate_of_completion</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the Connect Service includes the Certificate of Completion with completed envelopes.</p>
+        </div>
+      </div>
+      <div id="attribute-i-include_document_fields" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">include_document_fields</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, the <a href="Document.html"><code>Document</code></a> Fields associated with envelope documents are included in the data. <a href="Document.html"><code>Document</code></a> Fields are optional custom name-value pairs added to documents using the API.</p>
+        </div>
+      </div>
+      <div id="attribute-i-include_documents" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">include_documents</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, Connect will send the PDF document along with the update XML.</p>
+        </div>
+      </div>
+      <div id="attribute-i-include_envelope_void_reason" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">include_envelope_void_reason</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, Connect will include the voidedReason for voided envelopes.</p>
+        </div>
+      </div>
+      <div id="attribute-i-include_hmac" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">include_hmac</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-include_o_auth" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">include_o_auth</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-include_sender_accountas_custom_field" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">include_sender_accountas_custom_field</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, Connect will include the sender account as Custom Field in the data.</p>
+        </div>
+      </div>
+      <div id="attribute-i-include_time_zone_information" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">include_time_zone_information</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, Connect will include the envelope time zone information.</p>
+        </div>
+      </div>
+      <div id="attribute-i-integrator_managed" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">integrator_managed</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The name of the Connect configuration. The name helps identify the configuration in the list.</p>
+        </div>
+      </div>
+      <div id="attribute-i-password" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">password</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-recipient_events" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">recipient_events</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.</p>
+        </div>
+      </div>
+      <div id="attribute-i-require_mutual_tls" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">require_mutual_tls</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-requires_acknowledgement" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">requires_acknowledgement</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, and a publication message fails to be acknowledged, the message goes back into the queue and the system will retry delivery after a successful acknowledgement is received. If the delivery fails a second time, the message is not returned to the queue for sending until Connect receives a successful acknowledgement and it has been at least 24 hours since the previous retry. There is a maximum of ten retries Alternately, you can use Republish Connect Information to manually republish the envelope information.</p>
+        </div>
+      </div>
+      <div id="attribute-i-salesforce_api_version" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">salesforce_api_version</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-salesforce_authcode" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">salesforce_authcode</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-salesforce_call_back_url" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">salesforce_call_back_url</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-salesforce_documents_as_content_files" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">salesforce_documents_as_content_files</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-sender_override" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">sender_override</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-sender_selectable_items" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">sender_selectable_items</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-sf_objects" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">sf_objects</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-sign_message_with_x509_certificate" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">sign_message_with_x509_certificate</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, Connect messages are signed with an X509 certificate. This provides support for 2-way SSL.</p>
+        </div>
+      </div>
+      <div id="attribute-i-soap_namespace" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">soap_namespace</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The namespace of the SOAP interface.  The namespace value must be set if useSoapInterface is set to true.</p>
+        </div>
+      </div>
+      <div id="attribute-i-url_to_publish_to" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">url_to_publish_to</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>This is the web address and name of your listener or Retrieving Service endpoint. You need to include HTTPS:// in the web address.</p>
+        </div>
+      </div>
+      <div id="attribute-i-use_soap_interface" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">use_soap_interface</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>When set to *<strong>true</strong>*, indicates that the `urlToPublishTo` property contains a SOAP endpoint.</p>
+        </div>
+      </div>
+      <div id="attribute-i-user_ids" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">user_ids</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s.</p>
+        </div>
+      </div>
+      <div id="attribute-i-user_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">user_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-attribute_map" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">attribute_map</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Attribute mapping from ruby-style variable name to JSON key.</p>
+
+          <div class="method-source-code" id="attribute_map-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/connect_custom_configuration.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">attribute_map</span>
+  {
+    <span class="ruby-value">:&#39;allow_envelope_publish&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;allowEnvelopePublish&#39;</span>,
+    <span class="ruby-value">:&#39;allow_salesforce_publish&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;allowSalesforcePublish&#39;</span>,
+    <span class="ruby-value">:&#39;all_users&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;allUsers&#39;</span>,
+    <span class="ruby-value">:&#39;all_users_except&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;allUsersExcept&#39;</span>,
+    <span class="ruby-value">:&#39;configuration_type&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;configurationType&#39;</span>,
+    <span class="ruby-value">:&#39;connect_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;connectId&#39;</span>,
+    <span class="ruby-value">:&#39;delivery_mode&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;deliveryMode&#39;</span>,
+    <span class="ruby-value">:&#39;disabled_by&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;disabledBy&#39;</span>,
+    <span class="ruby-value">:&#39;enable_log&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;enableLog&#39;</span>,
+    <span class="ruby-value">:&#39;envelope_events&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;envelopeEvents&#39;</span>,
+    <span class="ruby-value">:&#39;event_data&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;eventData&#39;</span>,
+    <span class="ruby-value">:&#39;events&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;events&#39;</span>,
+    <span class="ruby-value">:&#39;external_folder_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;externalFolderId&#39;</span>,
+    <span class="ruby-value">:&#39;external_folder_label&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;externalFolderLabel&#39;</span>,
+    <span class="ruby-value">:&#39;group_ids&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;groupIds&#39;</span>,
+    <span class="ruby-value">:&#39;include_certificate_of_completion&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;includeCertificateOfCompletion&#39;</span>,
+    <span class="ruby-value">:&#39;include_cert_soap_header&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;includeCertSoapHeader&#39;</span>,
+    <span class="ruby-value">:&#39;include_document_fields&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;includeDocumentFields&#39;</span>,
+    <span class="ruby-value">:&#39;include_documents&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;includeDocuments&#39;</span>,
+    <span class="ruby-value">:&#39;include_envelope_void_reason&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;includeEnvelopeVoidReason&#39;</span>,
+    <span class="ruby-value">:&#39;include_hmac&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;includeHMAC&#39;</span>,
+    <span class="ruby-value">:&#39;include_o_auth&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;includeOAuth&#39;</span>,
+    <span class="ruby-value">:&#39;include_sender_accountas_custom_field&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;includeSenderAccountasCustomField&#39;</span>,
+    <span class="ruby-value">:&#39;include_time_zone_information&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;includeTimeZoneInformation&#39;</span>,
+    <span class="ruby-value">:&#39;integrator_managed&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;integratorManaged&#39;</span>,
+    <span class="ruby-value">:&#39;name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;name&#39;</span>,
+    <span class="ruby-value">:&#39;password&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;password&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_events&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;recipientEvents&#39;</span>,
+    <span class="ruby-value">:&#39;require_mutual_tls&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;requireMutualTls&#39;</span>,
+    <span class="ruby-value">:&#39;requires_acknowledgement&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;requiresAcknowledgement&#39;</span>,
+    <span class="ruby-value">:&#39;salesforce_api_version&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;salesforceApiVersion&#39;</span>,
+    <span class="ruby-value">:&#39;salesforce_authcode&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;salesforceAuthcode&#39;</span>,
+    <span class="ruby-value">:&#39;salesforce_call_back_url&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;salesforceCallBackUrl&#39;</span>,
+    <span class="ruby-value">:&#39;salesforce_documents_as_content_files&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;salesforceDocumentsAsContentFiles&#39;</span>,
+    <span class="ruby-value">:&#39;sender_override&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;senderOverride&#39;</span>,
+    <span class="ruby-value">:&#39;sender_selectable_items&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;senderSelectableItems&#39;</span>,
+    <span class="ruby-value">:&#39;sf_objects&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;sfObjects&#39;</span>,
+    <span class="ruby-value">:&#39;sign_message_with_x509_certificate&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;signMessageWithX509Certificate&#39;</span>,
+    <span class="ruby-value">:&#39;soap_namespace&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;soapNamespace&#39;</span>,
+    <span class="ruby-value">:&#39;url_to_publish_to&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;urlToPublishTo&#39;</span>,
+    <span class="ruby-value">:&#39;user_ids&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;userIds&#39;</span>,
+    <span class="ruby-value">:&#39;user_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;userName&#39;</span>,
+    <span class="ruby-value">:&#39;use_soap_interface&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;useSoapInterface&#39;</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(attributes = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Initializes the object @param [Hash] attributes Model attributes in the form of hash</p>
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/connect_custom_configuration.rb, line 246</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">attributes</span> = {})
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+
+  <span class="ruby-comment"># convert string to symbol for hash key</span>
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">each_with_object</span>({}) { <span class="ruby-operator">|</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>), <span class="ruby-identifier">h</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">v</span> }
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;allowEnvelopePublish&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">allow_envelope_publish</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;allowEnvelopePublish&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;allowSalesforcePublish&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">allow_salesforce_publish</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;allowSalesforcePublish&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;allUsers&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_users</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;allUsers&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;allUsersExcept&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_users_except</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;allUsersExcept&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;configurationType&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">configuration_type</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;configurationType&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;connectId&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">connect_id</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;connectId&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;deliveryMode&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">delivery_mode</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;deliveryMode&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;disabledBy&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">disabled_by</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;disabledBy&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;enableLog&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">enable_log</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;enableLog&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;envelopeEvents&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;envelopeEvents&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">envelope_events</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;eventData&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">event_data</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;eventData&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;events&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;events&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">events</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;externalFolderId&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">external_folder_id</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;externalFolderId&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;externalFolderLabel&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">external_folder_label</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;externalFolderLabel&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;groupIds&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;groupIds&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">group_ids</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;includeCertificateOfCompletion&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include_certificate_of_completion</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;includeCertificateOfCompletion&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;includeCertSoapHeader&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include_cert_soap_header</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;includeCertSoapHeader&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;includeDocumentFields&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include_document_fields</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;includeDocumentFields&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;includeDocuments&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include_documents</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;includeDocuments&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;includeEnvelopeVoidReason&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include_envelope_void_reason</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;includeEnvelopeVoidReason&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;includeHMAC&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include_hmac</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;includeHMAC&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;includeOAuth&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include_o_auth</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;includeOAuth&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;includeSenderAccountasCustomField&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include_sender_accountas_custom_field</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;includeSenderAccountasCustomField&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;includeTimeZoneInformation&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include_time_zone_information</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;includeTimeZoneInformation&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;integratorManaged&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">integrator_managed</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;integratorManaged&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;name&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;name&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;password&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">password</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;password&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;recipientEvents&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;recipientEvents&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">recipient_events</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;requireMutualTls&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">require_mutual_tls</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;requireMutualTls&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;requiresAcknowledgement&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">requires_acknowledgement</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;requiresAcknowledgement&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;salesforceApiVersion&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">salesforce_api_version</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;salesforceApiVersion&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;salesforceAuthcode&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">salesforce_authcode</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;salesforceAuthcode&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;salesforceCallBackUrl&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">salesforce_call_back_url</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;salesforceCallBackUrl&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;salesforceDocumentsAsContentFiles&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">salesforce_documents_as_content_files</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;salesforceDocumentsAsContentFiles&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;senderOverride&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">sender_override</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;senderOverride&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;senderSelectableItems&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;senderSelectableItems&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">sender_selectable_items</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;sfObjects&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;sfObjects&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">sf_objects</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;signMessageWithX509Certificate&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">sign_message_with_x509_certificate</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;signMessageWithX509Certificate&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;soapNamespace&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">soap_namespace</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;soapNamespace&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;urlToPublishTo&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">url_to_publish_to</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;urlToPublishTo&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;userIds&#39;</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;userIds&#39;</span>]).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">user_ids</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;userName&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">user_name</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;userName&#39;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:&#39;useSoapInterface&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">use_soap_interface</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-value">:&#39;useSoapInterface&#39;</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-swagger_types" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">swagger_types</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Attribute type mapping.</p>
+
+          <div class="method-source-code" id="swagger_types-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/connect_custom_configuration.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">swagger_types</span>
+  {
+    <span class="ruby-value">:&#39;allow_envelope_publish&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;allow_salesforce_publish&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;all_users&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;all_users_except&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;configuration_type&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;connect_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;delivery_mode&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;disabled_by&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;enable_log&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;envelope_events&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;String&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;event_data&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;ConnectEventData&#39;</span>,
+    <span class="ruby-value">:&#39;events&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;String&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;external_folder_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;external_folder_label&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;group_ids&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;String&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;include_certificate_of_completion&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;include_cert_soap_header&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;include_document_fields&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;include_documents&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;include_envelope_void_reason&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;include_hmac&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;include_o_auth&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;include_sender_accountas_custom_field&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;include_time_zone_information&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;integrator_managed&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;password&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;recipient_events&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;String&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;require_mutual_tls&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;requires_acknowledgement&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;salesforce_api_version&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;salesforce_authcode&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;salesforce_call_back_url&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;salesforce_documents_as_content_files&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;sender_override&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;sender_selectable_items&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;String&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;sf_objects&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;ConnectSalesforceObject&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;sign_message_with_x509_certificate&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;soap_namespace&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;url_to_publish_to&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;user_ids&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;Array&lt;String&gt;&#39;</span>,
+    <span class="ruby-value">:&#39;user_name&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>,
+    <span class="ruby-value">:&#39;use_soap_interface&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:&#39;String&#39;</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-3D-3D" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(o)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Checks equality by comparing each attribute. @param [Object] <a href="../Object.html"><code>Object</code></a> to be compared</p>
+
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/connect_custom_configuration.rb, line 454</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">equal?</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">allow_envelope_publish</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">allow_envelope_publish</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">allow_salesforce_publish</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">allow_salesforce_publish</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">all_users</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">all_users</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">all_users_except</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">all_users_except</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">configuration_type</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">configuration_type</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">connect_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">connect_id</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">delivery_mode</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">delivery_mode</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">disabled_by</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">disabled_by</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">enable_log</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">enable_log</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">envelope_events</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">envelope_events</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">event_data</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">event_data</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">events</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">events</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">external_folder_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">external_folder_id</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">external_folder_label</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">external_folder_label</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">group_ids</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">group_ids</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">include_certificate_of_completion</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">include_certificate_of_completion</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">include_cert_soap_header</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">include_cert_soap_header</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">include_document_fields</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">include_document_fields</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">include_documents</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">include_documents</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">include_envelope_void_reason</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">include_envelope_void_reason</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">include_hmac</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">include_hmac</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">include_o_auth</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">include_o_auth</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">include_sender_accountas_custom_field</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">include_sender_accountas_custom_field</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">include_time_zone_information</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">include_time_zone_information</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">integrator_managed</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">integrator_managed</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">password</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">password</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">recipient_events</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">recipient_events</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">require_mutual_tls</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">require_mutual_tls</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">requires_acknowledgement</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">requires_acknowledgement</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">salesforce_api_version</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">salesforce_api_version</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">salesforce_authcode</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">salesforce_authcode</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">salesforce_call_back_url</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">salesforce_call_back_url</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">salesforce_documents_as_content_files</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">salesforce_documents_as_content_files</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">sender_override</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">sender_override</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">sender_selectable_items</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">sender_selectable_items</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">sf_objects</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">sf_objects</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">sign_message_with_x509_certificate</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">sign_message_with_x509_certificate</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">soap_namespace</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">soap_namespace</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">url_to_publish_to</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">url_to_publish_to</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">user_ids</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">user_ids</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">user_name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">user_name</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">use_soap_interface</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">use_soap_interface</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-_deserialize" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">_deserialize</span><span
+            class="method-args">(type, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Deserializes the data based on type @param string type Data type @param string value Value to be deserialized @return [Object] Deserialized data</p>
+
+          <div class="method-source-code" id="_deserialize-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/connect_custom_configuration.rb, line 538</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_deserialize</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">to_sym</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:DateTime</span>
+    <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:Date</span>
+    <span class="ruby-constant">Date</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:String</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:Integer</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:Float</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:BOOLEAN</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\A(true|t|yes|y|1)\z/i</span>
+      <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:Object</span>
+    <span class="ruby-comment"># generic object (usually a Hash), return directly</span>
+    <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\AArray&lt;(?&lt;inner_type&gt;.+)&gt;\z/</span>
+    <span class="ruby-identifier">inner_type</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>[<span class="ruby-value">:inner_type</span>]
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_deserialize</span>(<span class="ruby-identifier">inner_type</span>, <span class="ruby-identifier">v</span>) }
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\AHash&lt;(?&lt;k_type&gt;.+?), (?&lt;v_type&gt;.+)&gt;\z/</span>
+    <span class="ruby-identifier">k_type</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>[<span class="ruby-value">:k_type</span>]
+    <span class="ruby-identifier">v_type</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>[<span class="ruby-value">:v_type</span>]
+    {}.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">value</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">_deserialize</span>(<span class="ruby-identifier">k_type</span>, <span class="ruby-identifier">k</span>)] = <span class="ruby-identifier">_deserialize</span>(<span class="ruby-identifier">v_type</span>, <span class="ruby-identifier">v</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span> <span class="ruby-comment"># model</span>
+    <span class="ruby-identifier">temp_model</span> = <span class="ruby-constant">DocuSign_eSign</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">type</span>).<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">temp_model</span>.<span class="ruby-identifier">build_from_hash</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-_to_hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">_to_hash</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Outputs non-array value in the form of hash For object, use to_hash. Otherwise, just return the value @param [Object] value Any valid value @return [Hash] Returns the value in the form of hash</p>
+
+          <div class="method-source-code" id="_to_hash-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/connect_custom_configuration.rb, line 604</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_to_hash</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_to_hash</span>(<span class="ruby-identifier">v</span>) }
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+    {}.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">value</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">_to_hash</span>(<span class="ruby-identifier">v</span>) }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:to_hash</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_hash</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-build_from_hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">build_from_hash</span><span
+            class="method-args">(attributes)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Builds the object from hash @param [Hash] attributes Model attributes in the form of hash @return [Object] Returns the model itself</p>
+
+          <div class="method-source-code" id="build_from_hash-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/connect_custom_configuration.rb, line 517</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build_from_hash</span>(<span class="ruby-identifier">attributes</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">swagger_types</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\AArray&lt;(.*)&gt;/i</span>
+      <span class="ruby-comment"># check to ensure the input is an array given that the attribute</span>
+      <span class="ruby-comment"># is documented as an array but the input is not</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>[<span class="ruby-identifier">key</span>]].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{key}=&quot;</span>, <span class="ruby-identifier">attributes</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>[<span class="ruby-identifier">key</span>]].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_deserialize</span>(<span class="ruby-node">$1</span>, <span class="ruby-identifier">v</span>) })
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">attributes</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>[<span class="ruby-identifier">key</span>]].<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{key}=&quot;</span>, <span class="ruby-identifier">_deserialize</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">attributes</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>[<span class="ruby-identifier">key</span>]]))
+    <span class="ruby-keyword">end</span> <span class="ruby-comment"># or else data not found in attributes(hash), not an issue as the data can be optional</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-eql-3F" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">eql?</span><span
+            class="method-args">(o)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>@see the `==` method @param [Object] <a href="../Object.html"><code>Object</code></a> to be compared</p>
+
+          <div class="method-source-code" id="eql-3F-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/connect_custom_configuration.rb, line 504</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-keyword">self</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Calculates hash code according to all attributes. @return [Fixnum] Hash code</p>
+
+          <div class="method-source-code" id="hash-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/connect_custom_configuration.rb, line 510</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span>
+  [<span class="ruby-identifier">allow_envelope_publish</span>, <span class="ruby-identifier">allow_salesforce_publish</span>, <span class="ruby-identifier">all_users</span>, <span class="ruby-identifier">all_users_except</span>, <span class="ruby-identifier">configuration_type</span>, <span class="ruby-identifier">connect_id</span>, <span class="ruby-identifier">delivery_mode</span>, <span class="ruby-identifier">disabled_by</span>, <span class="ruby-identifier">enable_log</span>, <span class="ruby-identifier">envelope_events</span>, <span class="ruby-identifier">event_data</span>, <span class="ruby-identifier">events</span>, <span class="ruby-identifier">external_folder_id</span>, <span class="ruby-identifier">external_folder_label</span>, <span class="ruby-identifier">group_ids</span>, <span class="ruby-identifier">include_certificate_of_completion</span>, <span class="ruby-identifier">include_cert_soap_header</span>, <span class="ruby-identifier">include_document_fields</span>, <span class="ruby-identifier">include_documents</span>, <span class="ruby-identifier">include_envelope_void_reason</span>, <span class="ruby-identifier">include_hmac</span>, <span class="ruby-identifier">include_o_auth</span>, <span class="ruby-identifier">include_sender_accountas_custom_field</span>, <span class="ruby-identifier">include_time_zone_information</span>, <span class="ruby-identifier">integrator_managed</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">password</span>, <span class="ruby-identifier">recipient_events</span>, <span class="ruby-identifier">require_mutual_tls</span>, <span class="ruby-identifier">requires_acknowledgement</span>, <span class="ruby-identifier">salesforce_api_version</span>, <span class="ruby-identifier">salesforce_authcode</span>, <span class="ruby-identifier">salesforce_call_back_url</span>, <span class="ruby-identifier">salesforce_documents_as_content_files</span>, <span class="ruby-identifier">sender_override</span>, <span class="ruby-identifier">sender_selectable_items</span>, <span class="ruby-identifier">sf_objects</span>, <span class="ruby-identifier">sign_message_with_x509_certificate</span>, <span class="ruby-identifier">soap_namespace</span>, <span class="ruby-identifier">url_to_publish_to</span>, <span class="ruby-identifier">user_ids</span>, <span class="ruby-identifier">user_name</span>, <span class="ruby-identifier">use_soap_interface</span>].<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_invalid_properties" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_invalid_properties</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Show invalid properties with the reasons. Usually used together with valid? @return Array for valid properties with the reasons</p>
+
+          <div class="method-source-code" id="list_invalid_properties-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/connect_custom_configuration.rb, line 441</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_invalid_properties</span>
+  <span class="ruby-identifier">invalid_properties</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">invalid_properties</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-to_body" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">to_body</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p><a href="ConnectCustomConfiguration.html#method-i-to_body"><code>to_body</code></a> is an alias to <a href="ConnectCustomConfiguration.html#method-i-to_hash"><code>to_hash</code></a> (backward compatibility) @return [Hash] Returns the object in the form of hash</p>
+
+          <div class="method-source-code" id="to_body-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/connect_custom_configuration.rb, line 584</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_body</span>
+  <span class="ruby-identifier">to_hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-to_hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">to_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns the object in the form of hash @return [Hash] Returns the object in the form of hash</p>
+
+          <div class="method-source-code" id="to_hash-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/connect_custom_configuration.rb, line 590</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_hash</span>
+  <span class="ruby-identifier">hash</span> = {}
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_map</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">attr</span>, <span class="ruby-identifier">param</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">value</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">attr</span>)
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">param</span>] = <span class="ruby-identifier">_to_hash</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-to_s" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns the string representation of the object @return [String] String presentation of the object</p>
+
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/connect_custom_configuration.rb, line 578</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-identifier">to_hash</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-valid-3F" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">valid?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Check to see if the all the properties in the model are valid @return true if the model is valid</p>
+
+          <div class="method-source-code" id="valid-3F-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/models/connect_custom_configuration.rb, line 448</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valid?</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class DocuSign_eSign::ApiClient - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="../Object.html">Object</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-default">::default</a>
+    <li ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-i-build_collection_param">#build_collection_param</a>
+    <li ><a href="#method-i-build_request">#build_request</a>
+    <li ><a href="#method-i-build_request_body">#build_request_body</a>
+    <li ><a href="#method-i-build_request_url">#build_request_url</a>
+    <li ><a href="#method-i-call_api">#call_api</a>
+    <li ><a href="#method-i-convert_to_type">#convert_to_type</a>
+    <li ><a href="#method-i-deserialize">#deserialize</a>
+    <li ><a href="#method-i-download_file">#download_file</a>
+    <li ><a href="#method-i-generate_access_token">#generate_access_token</a>
+    <li ><a href="#method-i-get_authorization_uri">#get_authorization_uri</a>
+    <li ><a href="#method-i-get_oauth_base_path">#get_oauth_base_path</a>
+    <li ><a href="#method-i-get_user_info">#get_user_info</a>
+    <li ><a href="#method-i-json_mime-3F">#json_mime?</a>
+    <li ><a href="#method-i-object_to_hash">#object_to_hash</a>
+    <li ><a href="#method-i-object_to_http_body">#object_to_http_body</a>
+    <li ><a href="#method-i-request_jwt_application_token">#request_jwt_application_token</a>
+    <li ><a href="#method-i-request_jwt_user_token">#request_jwt_user_token</a>
+    <li ><a href="#method-i-sanitize_filename">#sanitize_filename</a>
+    <li ><a href="#method-i-select_header_accept">#select_header_accept</a>
+    <li ><a href="#method-i-select_header_content_type">#select_header_content_type</a>
+    <li ><a href="#method-i-set_base_path">#set_base_path</a>
+    <li ><a href="#method-i-set_default_header">#set_default_header</a>
+    <li ><a href="#method-i-set_oauth_base_path">#set_oauth_base_path</a>
+    <li ><a href="#method-i-update_params_for_auth-21">#update_params_for_auth!</a>
+    <li ><a href="#method-i-user_agent-3D">#user_agent=</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-DocuSign_eSign::ApiClient">
+  <h1 id="class-DocuSign_eSign::ApiClient" class="class">
+    class DocuSign_eSign::ApiClient
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-base_path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">base_path</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-config" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">config</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The <a href="Configuration.html"><code>Configuration</code></a> object holding settings to be used in the API client.</p>
+        </div>
+      </div>
+      <div id="attribute-i-default_headers" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">default_headers</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Defines the headers to be used in HTTP requests of all API calls by default.</p>
+
+<p>@return [Hash]</p>
+        </div>
+      </div>
+      <div id="attribute-i-oauth_base_path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">oauth_base_path</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-default" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">default</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="default-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">default</span>
+  <span class="ruby-identifier">@@default</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ApiClient</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(config = Configuration.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Initializes the <a href="ApiClient.html"><code>ApiClient</code></a> @option config [Configuration] <a href="Configuration.html"><code>Configuration</code></a> for initializing the object, default to <a href="Configuration.html#method-c-default"><code>Configuration.default</code></a></p>
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">config</span> = <span class="ruby-constant">Configuration</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-ivar">@config</span> = <span class="ruby-identifier">config</span>
+  <span class="ruby-ivar">@user_agent</span> = <span class="ruby-node">&quot;Swagger-Codegen/v2.1/5.0.0/ruby-#{RUBY_VERSION}p#{RUBY_PATCHLEVEL}&quot;</span>
+  <span class="ruby-ivar">@default_headers</span> = {
+    <span class="ruby-string">&#39;Content-Type&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;application/json&quot;</span>,
+    <span class="ruby-string">&#39;User-Agent&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-ivar">@user_agent</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-build_collection_param" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">build_collection_param</span><span
+            class="method-args">(param, collection_format)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Build parameter value according to the given collection format. @param [String] collection_format one of :csv, :ssv, :tsv, :pipes and :multi</p>
+
+          <div class="method-source-code" id="build_collection_param-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 373</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build_collection_param</span>(<span class="ruby-identifier">param</span>, <span class="ruby-identifier">collection_format</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">collection_format</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:csv</span>
+    <span class="ruby-identifier">param</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;,&#39;</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:ssv</span>
+    <span class="ruby-identifier">param</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39; &#39;</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:tsv</span>
+    <span class="ruby-identifier">param</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\t&quot;</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:pipes</span>
+    <span class="ruby-identifier">param</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;|&#39;</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:multi</span>
+    <span class="ruby-comment"># return the array directly as typhoeus will handle it as expected</span>
+    <span class="ruby-identifier">param</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">fail</span> <span class="ruby-node">&quot;unknown collection format: #{collection_format.inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-build_request" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">build_request</span><span
+            class="method-args">(http_method, path, opts = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Builds the HTTP request</p>
+
+<p>@param [String] http_method HTTP method/verb (e.g. POST) @param [String] path URL path (e.g. /account/new) @option opts [Hash] :header_params Header parameters @option opts [Hash] :query_params Query parameters @option opts [Hash] :form_params Query parameters @option opts [Object] :body HTTP body (JSON/XML) @return [Typhoeus::Request] A Typhoeus Request</p>
+
+          <div class="method-source-code" id="build_request-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build_request</span>(<span class="ruby-identifier">http_method</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">opts</span> = {})
+  <span class="ruby-identifier">url</span> = <span class="ruby-identifier">build_request_url</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">http_method</span> = <span class="ruby-identifier">http_method</span>.<span class="ruby-identifier">to_sym</span>.<span class="ruby-identifier">downcase</span>
+
+  <span class="ruby-identifier">header_params</span> = <span class="ruby-ivar">@default_headers</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">opts</span>[<span class="ruby-value">:header_params</span>] <span class="ruby-operator">||</span> {})
+
+  <span class="ruby-comment"># Add SDK default header</span>
+  <span class="ruby-identifier">header_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;X-DocuSign-SDK&quot;</span>, <span class="ruby-string">&quot;Ruby&quot;</span>)
+
+  <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:query_params</span>] <span class="ruby-operator">||</span> {}
+  <span class="ruby-identifier">form_params</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:form_params</span>] <span class="ruby-operator">||</span> {}
+
+  <span class="ruby-identifier">update_params_for_auth!</span> <span class="ruby-identifier">header_params</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">opts</span>[<span class="ruby-value">:auth_names</span>]
+
+  <span class="ruby-comment"># set ssl_verifyhosts option based on @config.verify_ssl_host (true/false)</span>
+  <span class="ruby-identifier">_verify_ssl_host</span> = <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">verify_ssl_host</span> <span class="ruby-operator">?</span> <span class="ruby-value">2</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+  
+  <span class="ruby-identifier">req_opts</span> = {
+    <span class="ruby-value">:method</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">http_method</span>,
+    <span class="ruby-value">:headers</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:params_encoding</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">params_encoding</span>,
+    <span class="ruby-value">:timeout</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">timeout</span>,
+    <span class="ruby-value">:ssl_verifypeer</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">verify_ssl</span>,
+    <span class="ruby-value">:ssl_verifyhost</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">_verify_ssl_host</span>,
+    <span class="ruby-value">:sslcert</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">cert_file</span>,
+    <span class="ruby-value">:sslkey</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">key_file</span>,
+    <span class="ruby-value">:verbose</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">debugging</span>
+  }
+
+  <span class="ruby-comment"># set custom cert, if provided</span>
+  <span class="ruby-identifier">req_opts</span>[<span class="ruby-value">:cainfo</span>] = <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">ssl_ca_cert</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">ssl_ca_cert</span>
+
+  <span class="ruby-keyword">if</span> [<span class="ruby-value">:post</span>, <span class="ruby-value">:patch</span>, <span class="ruby-value">:put</span>, <span class="ruby-value">:delete</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">http_method</span>)
+    <span class="ruby-identifier">req_body</span> = <span class="ruby-identifier">build_request_body</span>(<span class="ruby-identifier">header_params</span>, <span class="ruby-identifier">form_params</span>, <span class="ruby-identifier">opts</span>[<span class="ruby-value">:body</span>])
+    <span class="ruby-identifier">req_opts</span>.<span class="ruby-identifier">update</span> <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">req_body</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">debugging</span>
+      <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;HTTP request body param ~BEGIN~\n#{req_body}\n~END~\n&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">Typhoeus</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">req_opts</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-build_request_body" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">build_request_body</span><span
+            class="method-args">(header_params, form_params, body)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Builds the HTTP request body</p>
+
+<p>@param [Hash] header_params Header parameters @param [Hash] form_params Query parameters @param [Object] body HTTP body (JSON/XML) @return [String] HTTP body data in the form of string</p>
+
+          <div class="method-source-code" id="build_request_body-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build_request_body</span>(<span class="ruby-identifier">header_params</span>, <span class="ruby-identifier">form_params</span>, <span class="ruby-identifier">body</span>)
+  <span class="ruby-comment"># http form</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Content-Type&#39;</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;application/x-www-form-urlencoded&#39;</span> <span class="ruby-operator">||</span>
+      <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Content-Type&#39;</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;multipart/form-data&#39;</span>
+    <span class="ruby-identifier">data</span> = {}
+    <span class="ruby-identifier">form_params</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">File</span>, <span class="ruby-constant">Array</span>, <span class="ruby-keyword">nil</span>
+        <span class="ruby-comment"># let typhoeus handle File, Array and nil parameters</span>
+        <span class="ruby-identifier">data</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Content-Type&#39;</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;multipart/form-data&#39;</span>
+          <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Content-Disposition&#39;</span>] = <span class="ruby-string">&#39;form-data; name=file; filename=&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">key</span>
+          <span class="ruby-identifier">data</span> = <span class="ruby-identifier">value</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">data</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">body</span>
+    <span class="ruby-identifier">data</span> = <span class="ruby-identifier">body</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">body</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">body</span>.<span class="ruby-identifier">to_json</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">data</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-build_request_url" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">build_request_url</span><span
+            class="method-args">(path, opts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="build_request_url-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build_request_url</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">opts</span>)
+  <span class="ruby-comment"># Add leading and trailing slashes to path</span>
+  <span class="ruby-identifier">path</span> = <span class="ruby-node">&quot;/#{path}&quot;</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\/+/</span>, <span class="ruby-string">&#39;/&#39;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Addressable</span><span class="ruby-operator">::</span><span class="ruby-constant">URI</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-string">&quot;https://&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_oauth_base_path</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">path</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:oauth</span>]
+  <span class="ruby-constant">Addressable</span><span class="ruby-operator">::</span><span class="ruby-constant">URI</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-ivar">@config</span>.<span class="ruby-identifier">base_url</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-call_api" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">call_api</span><span
+            class="method-args">(http_method, path, opts = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Call an API with given options.</p>
+
+<p>@return [Array&lt;(<a href="../Object.html"><code>Object</code></a>, Fixnum, Hash)&gt;] an array of 3 elements:</p>
+
+<pre>the data deserialized from response body (could be nil), response status code and response headers.</pre>
+
+          <div class="method-source-code" id="call_api-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">call_api</span>(<span class="ruby-identifier">http_method</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">opts</span> = {})
+  <span class="ruby-identifier">request</span> = <span class="ruby-identifier">build_request</span>(<span class="ruby-identifier">http_method</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">response</span> = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">run</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;HTTP response body ~BEGIN~\n#{response.body}\n~END~\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">success?</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">timed_out?</span>
+      <span class="ruby-identifier">fail</span> <span class="ruby-constant">ApiError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Connection timed out&#39;</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+      <span class="ruby-comment"># Errors from libcurl will be made visible here</span>
+      <span class="ruby-identifier">fail</span> <span class="ruby-constant">ApiError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:code</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">0</span>,
+                        <span class="ruby-value">:message</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">return_message</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">fail</span> <span class="ruby-constant">ApiError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:code</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,
+                        <span class="ruby-value">:response_headers</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">headers</span>,
+                        <span class="ruby-value">:response_body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>),
+           <span class="ruby-identifier">response</span>.<span class="ruby-identifier">status_message</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:return_type</span>]
+    <span class="ruby-identifier">data</span> = <span class="ruby-identifier">deserialize</span>(<span class="ruby-identifier">response</span>, <span class="ruby-identifier">opts</span>[<span class="ruby-value">:return_type</span>])
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">data</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>, <span class="ruby-identifier">response</span>.<span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-convert_to_type" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">convert_to_type</span><span
+            class="method-args">(data, return_type)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Convert data to the given return type. @param [Object] data Data to be converted @param [String] return_type Return type @return [Mixed] Data in a particular type</p>
+
+          <div class="method-source-code" id="convert_to_type-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 185</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">convert_to_type</span>(<span class="ruby-identifier">data</span>, <span class="ruby-identifier">return_type</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">return_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;String&#39;</span>
+    <span class="ruby-identifier">data</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;Integer&#39;</span>
+    <span class="ruby-identifier">data</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;Float&#39;</span>
+    <span class="ruby-identifier">data</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;BOOLEAN&#39;</span>
+    <span class="ruby-identifier">data</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;DateTime&#39;</span>
+    <span class="ruby-comment"># parse date time (expecting ISO 8601 format)</span>
+    <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">parse</span> <span class="ruby-identifier">data</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;Date&#39;</span>
+    <span class="ruby-comment"># parse date time (expecting ISO 8601 format)</span>
+    <span class="ruby-constant">Date</span>.<span class="ruby-identifier">parse</span> <span class="ruby-identifier">data</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;Object&#39;</span>
+    <span class="ruby-comment"># generic object (usually a Hash), return directly</span>
+    <span class="ruby-identifier">data</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\AArray&lt;(.+)&gt;\z/</span>
+    <span class="ruby-comment"># e.g. Array&lt;Pet&gt;</span>
+    <span class="ruby-identifier">sub_type</span> = <span class="ruby-node">$1</span>
+    <span class="ruby-identifier">data</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-identifier">convert_to_type</span>(<span class="ruby-identifier">item</span>, <span class="ruby-identifier">sub_type</span>) }
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\AHash\&lt;String, (.+)\&gt;\z/</span>
+    <span class="ruby-comment"># e.g. Hash&lt;String, Integer&gt;</span>
+    <span class="ruby-identifier">sub_type</span> = <span class="ruby-node">$1</span>
+    {}.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">convert_to_type</span>(<span class="ruby-identifier">v</span>, <span class="ruby-identifier">sub_type</span>) }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># models, e.g. Pet</span>
+    <span class="ruby-constant">DocuSign_eSign</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">return_type</span>).<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">model</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">model</span>.<span class="ruby-identifier">build_from_hash</span> <span class="ruby-identifier">data</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-deserialize" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">deserialize</span><span
+            class="method-args">(response, return_type)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Deserialize the response to the given return type.</p>
+
+<p>@param [Response] response HTTP response @param [String] return_type some examples: “User”, “<a href="User">Array</a>”, “<a href="String,Integer">Hash</a>”</p>
+
+          <div class="method-source-code" id="deserialize-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deserialize</span>(<span class="ruby-identifier">response</span>, <span class="ruby-identifier">return_type</span>)
+  <span class="ruby-identifier">body</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">body</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">body</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-comment"># return response body directly for String return type</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">body</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">return_type</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;String&#39;</span>
+
+  <span class="ruby-comment"># handle file downloading - save response body into a tmp file and return the File instance</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">download_file</span>(<span class="ruby-identifier">response</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">return_type</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;File&#39;</span>
+
+  <span class="ruby-comment"># ensuring a default content type</span>
+  <span class="ruby-identifier">content_type</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&#39;Content-Type&#39;</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&#39;application/json&#39;</span>
+
+  <span class="ruby-identifier">fail</span> <span class="ruby-node">&quot;Content-Type is not supported: #{content_type}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">json_mime?</span>(<span class="ruby-identifier">content_type</span>)
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">data</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-node">&quot;[#{body}]&quot;</span>, <span class="ruby-value">:symbolize_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">true</span>)[<span class="ruby-value">0</span>]
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">JSON</span><span class="ruby-operator">::</span><span class="ruby-constant">ParserError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-node">%w(String Date DateTime)</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">return_type</span>)
+      <span class="ruby-identifier">data</span> = <span class="ruby-identifier">body</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">convert_to_type</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">return_type</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-download_file" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">download_file</span><span
+            class="method-args">(response)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Save response body into a file in (the defined) temporary folder, using the filename from the “Content-Disposition” header if provided, otherwise a random filename.</p>
+
+<p>@see <a href="Configuration.html#attribute-i-temp_folder_path"><code>Configuration#temp_folder_path</code></a> @return [Tempfile] the file downloaded</p>
+
+          <div class="method-source-code" id="download_file-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 228</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">download_file</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-identifier">content_disposition</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&#39;Content-Disposition&#39;</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">content_disposition</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">content_disposition</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/filename=/i</span>
+    <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">content_disposition</span>[<span class="ruby-regexp">/filename=[&#39;&quot;]?([^&#39;&quot;\s]+)[&#39;&quot;]?/</span>, <span class="ruby-value">1</span>]
+    <span class="ruby-identifier">prefix</span> = <span class="ruby-identifier">sanitize_filename</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">prefix</span> = <span class="ruby-string">&#39;download-&#39;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">prefix</span> = <span class="ruby-identifier">prefix</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;-&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">prefix</span>.<span class="ruby-identifier">end_with?</span>(<span class="ruby-string">&#39;-&#39;</span>)
+
+  <span class="ruby-identifier">tempfile</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">encoding</span>
+  <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">prefix</span>, <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">temp_folder_path</span>, <span class="ruby-value">encoding:</span> <span class="ruby-identifier">encoding</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">file</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">tempfile</span> = <span class="ruby-identifier">file</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Temp file written to #{tempfile.path}, please copy the file to a proper folder &quot;</span>\
+                      <span class="ruby-string">&quot;with e.g. `FileUtils.cp(tempfile.path, &#39;/new/file/path&#39;)` otherwise the temp file &quot;</span>\
+                      <span class="ruby-string">&quot;will be deleted automatically with GC. It&#39;s also recommended to delete the temp file &quot;</span>\
+                      <span class="ruby-string">&quot;explicitly with `tempfile.delete`&quot;</span>
+  <span class="ruby-identifier">tempfile</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-generate_access_token" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">generate_access_token</span><span
+            class="method-args">(client_id, client_secret, code)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>GenerateAccessToken will exchange the authorization code for an access token and refresh tokens. @param [String] client_id Docusign <a href="OAuth.html"><code>OAuth</code></a> Client Id(AKA Integrator Key) @param [String] client_secret The secret key you generated when you set up the integration in Docusign Admin console. @param [String] code The authorization code</p>
+
+          <div class="method-source-code" id="generate_access_token-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 565</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_access_token</span>(<span class="ruby-identifier">client_id</span>, <span class="ruby-identifier">client_secret</span>, <span class="ruby-identifier">code</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;client_id cannot be empty&#39;</span>)  <span class="ruby-keyword">if</span> <span class="ruby-identifier">client_id</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;client_secret cannot be empty&#39;</span>)  <span class="ruby-keyword">if</span> <span class="ruby-identifier">client_secret</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;code cannot be empty&#39;</span>)  <span class="ruby-keyword">if</span> <span class="ruby-identifier">code</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">authcode</span> = <span class="ruby-string">&quot;Basic &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Base64</span>.<span class="ruby-identifier">strict_encode64</span>(<span class="ruby-node">&quot;#{client_id}:#{client_secret}&quot;</span>)
+  <span class="ruby-identifier">params</span> = {
+      <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> {
+          <span class="ruby-string">&quot;Authorization&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">authcode</span>,
+          <span class="ruby-string">&quot;Content-Type&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;application/x-www-form-urlencoded&quot;</span>
+      },
+      <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> {
+        <span class="ruby-string">&quot;grant_type&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;authorization_code&#39;</span>,
+        <span class="ruby-string">&quot;code&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">code</span>,
+      },
+      <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;OAuth::OAuthToken&#39;</span>,
+      <span class="ruby-value">:oauth</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">true</span>
+  }
+  
+  <span class="ruby-identifier">token</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-string">&quot;POST&quot;</span>, <span class="ruby-string">&#39;/oauth/token&#39;</span>, <span class="ruby-identifier">params</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">status_code</span> <span class="ruby-operator">==</span> <span class="ruby-value">200</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">default_headers</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&#39;Authorization&#39;</span>, <span class="ruby-node">&quot;#{token.token_type} #{token.access_token}&quot;</span>)
+
+    <span class="ruby-identifier">token</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_authorization_uri" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_authorization_uri</span><span
+            class="method-args">(client_id, scopes, redirect_uri, response_type, state=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Helper method to configure the <a href="OAuth.html"><code>OAuth</code></a> accessCode/implicit flow parameters @param [String] client_id Docusign <a href="OAuth.html"><code>OAuth</code></a> Client Id(AKA Integrator Key) @param scopes The list of requested scopes.  Client applications may be scoped to a limited set of system access. @param [String] redirect_uri This determines where to deliver the response containing the authorization code @param [String] response_type Determines the response type of the authorization request, NOTE: these response types are mutually exclusive for a client application. A public/native client application may only request a response type</p>
+
+<pre>of &quot;token&quot;. A private/trusted client application may only request a response type of &quot;code&quot;.</pre>
+
+<p>@param [String] state Allows for arbitrary state that may be useful to your application. The value in this parameter</p>
+
+<pre>will be round-tripped along with the response so you can make sure it didn&#39;t change.</pre>
+
+<p>@return [String]</p>
+
+          <div class="method-source-code" id="get_authorization_uri-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 437</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_authorization_uri</span>(<span class="ruby-identifier">client_id</span>, <span class="ruby-identifier">scopes</span>, <span class="ruby-identifier">redirect_uri</span>, <span class="ruby-identifier">response_type</span>, <span class="ruby-identifier">state</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">oauth_base_path</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_oauth_base_path</span>
+
+  <span class="ruby-identifier">scopes</span> = <span class="ruby-identifier">scopes</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39; &#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">scopes</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>)
+  <span class="ruby-identifier">scopes</span> = <span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">SCOPE_SIGNATURE</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">scopes</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">uri</span> = <span class="ruby-string">&quot;https://%{base_path}/oauth/auth?response_type=%{response_type}&amp;scope=%{scopes}&amp;client_id=%{client_id}&amp;redirect_uri=%{redirect_uri}&quot;</span>
+  <span class="ruby-identifier">uri</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;&amp;state=%{state}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">state</span>
+  <span class="ruby-identifier">uri</span>  <span class="ruby-operator">%</span> {<span class="ruby-value">base_path:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">oauth_base_path</span>, <span class="ruby-value">response_type:</span><span class="ruby-identifier">response_type</span>, <span class="ruby-value">scopes:</span> <span class="ruby-identifier">scopes</span>, <span class="ruby-value">client_id:</span> <span class="ruby-identifier">client_id</span>, <span class="ruby-value">redirect_uri:</span> <span class="ruby-identifier">redirect_uri</span>, <span class="ruby-value">state:</span> <span class="ruby-identifier">state</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_oauth_base_path" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_oauth_base_path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Helper method to get oauth base path</p>
+
+          <div class="method-source-code" id="get_oauth_base_path-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 420</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_oauth_base_path</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">oauth_base_path</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">set_oauth_base_path</span>()
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">oauth_base_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_user_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_user_info</span><span
+            class="method-args">(access_token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Get <a href="User.html"><code>User</code></a> Info method takes the accessToken to retrieve <a href="User.html"><code>User</code></a> Account Data. @param [String] access_token @return [OAuth::UserInfo]</p>
+
+          <div class="method-source-code" id="get_user_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 549</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_user_info</span>(<span class="ruby-identifier">access_token</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Cannot find a valid access token. Cannot find a valid access token.&#39;</span>)  <span class="ruby-keyword">if</span> <span class="ruby-identifier">access_token</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">params</span> = {
+      <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> {<span class="ruby-string">&quot;Authorization&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;Bearer &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">access_token</span>},
+      <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;OAuth::UserInfo&#39;</span>,
+      <span class="ruby-value">:oauth</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">true</span>
+  }
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-string">&quot;GET&quot;</span>, <span class="ruby-string">&#39;/oauth/userinfo&#39;</span>, <span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-json_mime-3F" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">json_mime?</span><span
+            class="method-args">(mime)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Check if the given MIME is a JSON MIME. JSON MIME examples:</p>
+
+<pre>application/json
+application/json; charset=UTF8
+APPLICATION/JSON
+*/*</pre>
+
+<p>@param [String] mime MIME @return [Boolean] True if the MIME is application/json</p>
+
+          <div class="method-source-code" id="json_mime-3F-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">json_mime?</span>(<span class="ruby-identifier">mime</span>)
+   (<span class="ruby-identifier">mime</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;*/*&quot;</span>) <span class="ruby-operator">||</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">mime</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\Aapplication\/json(;.*)?\z/i</span>).<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-object_to_hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">object_to_hash</span><span
+            class="method-args">(obj)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Convert object(non-array) to hash. @param [Object] obj object to be converted into JSON string @return [String] JSON string representation of the object</p>
+
+          <div class="method-source-code" id="object_to_hash-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 363</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">object_to_hash</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_hash</span>)
+    <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">to_hash</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">obj</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-object_to_http_body" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">object_to_http_body</span><span
+            class="method-args">(model)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Convert object (array, hash, object, etc) to JSON string. @param [Object] model object to be converted into JSON string @return [String] JSON string representation of the object</p>
+
+          <div class="method-source-code" id="object_to_http_body-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 349</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">object_to_http_body</span>(<span class="ruby-identifier">model</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">model</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+  <span class="ruby-identifier">local_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+    <span class="ruby-identifier">local_body</span> = <span class="ruby-identifier">model</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">object_to_hash</span>(<span class="ruby-identifier">m</span>) }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">local_body</span> = <span class="ruby-identifier">object_to_hash</span>(<span class="ruby-identifier">model</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">local_body</span>.<span class="ruby-identifier">to_json</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-request_jwt_application_token" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">request_jwt_application_token</span><span
+            class="method-args">(client_id, private_key_or_filename, expires_in = 3600,scopes=OAuth::SCOPE_SIGNATURE)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Request JWT <a href="User.html"><code>User</code></a> Token @param [String] client_id Docusign <a href="OAuth.html"><code>OAuth</code></a> Client Id(AKA Integrator Key) @param [String] private_key_or_filename the RSA private key @param [Number] expires_in number of seconds remaining before the JWT assertion is considered as invalid @param scopes The list of requested scopes.  Client applications may be scoped to a limited set of system access. @return [OAuth::OAuthToken]</p>
+
+          <div class="method-source-code" id="request_jwt_application_token-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 505</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">request_jwt_application_token</span>(<span class="ruby-identifier">client_id</span>, <span class="ruby-identifier">private_key_or_filename</span>, <span class="ruby-identifier">expires_in</span> = <span class="ruby-value">3600</span>,<span class="ruby-identifier">scopes</span>=<span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">SCOPE_SIGNATURE</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;client_id cannot be empty&#39;</span>)  <span class="ruby-keyword">if</span> <span class="ruby-identifier">client_id</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;private_key_or_filename cannot be empty&#39;</span>)  <span class="ruby-keyword">if</span> <span class="ruby-identifier">private_key_or_filename</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">scopes</span> = <span class="ruby-identifier">scopes</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39; &#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">scopes</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>)
+  <span class="ruby-identifier">scopes</span> = <span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">SCOPE_SIGNATURE</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">scopes</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">expires_in</span> = <span class="ruby-value">3600</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">expires_in</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">3600</span>
+  <span class="ruby-identifier">now</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-identifier">claim</span> = {
+      <span class="ruby-string">&quot;iss&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">client_id</span>,
+      <span class="ruby-string">&quot;aud&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_oauth_base_path</span>,
+      <span class="ruby-string">&quot;iat&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">now</span>,
+      <span class="ruby-string">&quot;exp&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">expires_in</span>,
+      <span class="ruby-string">&quot;scope&quot;</span><span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">scopes</span>
+  }
+  
+  <span class="ruby-identifier">private_key</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">private_key_or_filename</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;-----BEGIN RSA PRIVATE KEY-----&quot;</span>)
+                  <span class="ruby-identifier">private_key_or_filename</span>
+                <span class="ruby-keyword">else</span>
+                  <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">private_key_or_filename</span>)
+                <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">private_key_bytes</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">PKey</span><span class="ruby-operator">::</span><span class="ruby-constant">RSA</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">private_key</span>
+  <span class="ruby-identifier">token</span> = <span class="ruby-constant">JWT</span>.<span class="ruby-identifier">encode</span> <span class="ruby-identifier">claim</span>, <span class="ruby-identifier">private_key_bytes</span>, <span class="ruby-string">&#39;RS256&#39;</span>
+  <span class="ruby-identifier">params</span> = {
+      <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> {<span class="ruby-string">&quot;Content-Type&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;application/x-www-form-urlencoded&quot;</span>},
+      <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> {
+          <span class="ruby-string">&quot;assertion&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">token</span>,
+          <span class="ruby-string">&quot;grant_type&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">GRANT_TYPE_JWT</span>
+      },
+      <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;OAuth::OAuthToken&#39;</span>,
+      <span class="ruby-value">:oauth</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">true</span>
+  }
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-string">&quot;POST&quot;</span>, <span class="ruby-string">&quot;/oauth/token&quot;</span>, <span class="ruby-identifier">params</span>)
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ApiError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Some error accrued during process&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">set_default_header</span>(<span class="ruby-string">&#39;Authorization&#39;</span>, <span class="ruby-identifier">data</span>.<span class="ruby-identifier">token_type</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39; &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">access_token</span>)
+  <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-request_jwt_user_token" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">request_jwt_user_token</span><span
+            class="method-args">(client_id, user_id, private_key_or_filename, expires_in = 3600,scopes=OAuth::SCOPE_SIGNATURE)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Request JWT <a href="User.html"><code>User</code></a> Token @param [String] client_id Docusign <a href="OAuth.html"><code>OAuth</code></a> Client Id(AKA Integrator Key) @param [String] user_id Docusign user Id to be impersonated @param [String] private_key_or_filename the RSA private key @param [Number] expires_in number of seconds remaining before the JWT assertion is considered as invalid @param scopes The list of requested scopes.  Client applications may be scoped to a limited set of system access. @return [OAuth::OAuthToken]</p>
+
+          <div class="method-source-code" id="request_jwt_user_token-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 455</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">request_jwt_user_token</span>(<span class="ruby-identifier">client_id</span>, <span class="ruby-identifier">user_id</span>, <span class="ruby-identifier">private_key_or_filename</span>, <span class="ruby-identifier">expires_in</span> = <span class="ruby-value">3600</span>,<span class="ruby-identifier">scopes</span>=<span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">SCOPE_SIGNATURE</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;client_id cannot be empty&#39;</span>)  <span class="ruby-keyword">if</span> <span class="ruby-identifier">client_id</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;user_id cannot be empty&#39;</span>)  <span class="ruby-keyword">if</span> <span class="ruby-identifier">user_id</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;private_key_or_filename cannot be empty&#39;</span>)  <span class="ruby-keyword">if</span> <span class="ruby-identifier">private_key_or_filename</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">scopes</span> = <span class="ruby-identifier">scopes</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39; &#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">scopes</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>)
+  <span class="ruby-identifier">scopes</span> = <span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">SCOPE_SIGNATURE</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">scopes</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">expires_in</span> = <span class="ruby-value">3600</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">expires_in</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">3600</span>
+  <span class="ruby-identifier">now</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-identifier">claim</span> = {
+    <span class="ruby-string">&quot;iss&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">client_id</span>,
+    <span class="ruby-string">&quot;sub&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">user_id</span>,
+    <span class="ruby-string">&quot;aud&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_oauth_base_path</span>,
+    <span class="ruby-string">&quot;iat&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">now</span>,
+    <span class="ruby-string">&quot;exp&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">expires_in</span>,
+    <span class="ruby-string">&quot;scope&quot;</span><span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">scopes</span>
+  }
+
+  <span class="ruby-identifier">private_key</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">private_key_or_filename</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;-----BEGIN RSA PRIVATE KEY-----&quot;</span>)
+                  <span class="ruby-identifier">private_key_or_filename</span>
+                <span class="ruby-keyword">else</span>
+                  <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">private_key_or_filename</span>)
+                <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">private_key_bytes</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">PKey</span><span class="ruby-operator">::</span><span class="ruby-constant">RSA</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">private_key</span>
+  <span class="ruby-identifier">token</span> = <span class="ruby-constant">JWT</span>.<span class="ruby-identifier">encode</span> <span class="ruby-identifier">claim</span>, <span class="ruby-identifier">private_key_bytes</span>, <span class="ruby-string">&#39;RS256&#39;</span>
+  <span class="ruby-identifier">params</span> = {
+      <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> {<span class="ruby-string">&quot;Content-Type&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;application/x-www-form-urlencoded&quot;</span>},
+      <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> {
+          <span class="ruby-string">&quot;assertion&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">token</span>,
+          <span class="ruby-string">&quot;grant_type&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">GRANT_TYPE_JWT</span>
+      },
+      <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;OAuth::OAuthToken&#39;</span>,
+      <span class="ruby-value">:oauth</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">true</span>
+  }
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-string">&quot;POST&quot;</span>, <span class="ruby-string">&quot;/oauth/token&quot;</span>, <span class="ruby-identifier">params</span>)
+
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ApiError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Some error accrued during process&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">set_default_header</span>(<span class="ruby-string">&#39;Authorization&#39;</span>, <span class="ruby-identifier">data</span>.<span class="ruby-identifier">token_type</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39; &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">access_token</span>)
+  <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-sanitize_filename" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">sanitize_filename</span><span
+            class="method-args">(filename)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Sanitize filename by removing path. e.g. ../../sun.gif becomes sun.gif</p>
+
+<p>@param [String] filename the filename to be sanitized @return [String] the sanitized filename</p>
+
+          <div class="method-source-code" id="sanitize_filename-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 256</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sanitize_filename</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">filename</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/.*[\/\\]/</span>, <span class="ruby-string">&#39;&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-select_header_accept" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">select_header_accept</span><span
+            class="method-args">(accepts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Return Accept header based on an array of accepts provided. @param [Array] accepts array for Accept @return [String] the Accept header (e.g. application/json)</p>
+
+          <div class="method-source-code" id="select_header_accept-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 328</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">select_header_accept</span>(<span class="ruby-identifier">accepts</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">accepts</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">accepts</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-comment"># use JSON when present, otherwise use all of the provided</span>
+  <span class="ruby-identifier">json_accept</span> = <span class="ruby-identifier">accepts</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">json_mime?</span>(<span class="ruby-identifier">s</span>) }
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">json_accept</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">accepts</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;,&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-select_header_content_type" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">select_header_content_type</span><span
+            class="method-args">(content_types)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Return Content-Type header based on an array of content types provided. @param [Array] content_types array for Content-Type @return [String] the Content-Type header  (e.g. application/json)</p>
+
+          <div class="method-source-code" id="select_header_content_type-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 338</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">select_header_content_type</span>(<span class="ruby-identifier">content_types</span>)
+  <span class="ruby-comment"># use application/json by default</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-string">&#39;application/json&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">content_types</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">content_types</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-comment"># use JSON when present, otherwise use the first one</span>
+  <span class="ruby-identifier">json_content_type</span> = <span class="ruby-identifier">content_types</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">json_mime?</span>(<span class="ruby-identifier">s</span>) }
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">json_content_type</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">content_types</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-set_base_path" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">set_base_path</span><span
+            class="method-args">(base_path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Helper method to set <a href="ApiClient.html#attribute-i-base_path"><code>base_path</code></a> @param [String] <a href="ApiClient.html#attribute-i-base_path"><code>base_path</code></a></p>
+
+          <div class="method-source-code" id="set_base_path-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 393</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_base_path</span>(<span class="ruby-identifier">base_path</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_path</span> = <span class="ruby-identifier">base_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-set_default_header" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">set_default_header</span><span
+            class="method-args">(header_name, header_value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Helper method to add default header params @param [String] header_name @param [String] header_value</p>
+
+          <div class="method-source-code" id="set_default_header-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 596</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_default_header</span>(<span class="ruby-identifier">header_name</span>, <span class="ruby-identifier">header_value</span>)
+    <span class="ruby-ivar">@default_headers</span>[<span class="ruby-identifier">header_name</span>] = <span class="ruby-identifier">header_value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-set_oauth_base_path" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">set_oauth_base_path</span><span
+            class="method-args">(oauth_base_path=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Helper method to set oauth base path @param [String] <a href="ApiClient.html#attribute-i-oauth_base_path"><code>oauth_base_path</code></a> if passed nil it will determined from <a href="ApiClient.html#attribute-i-base_path"><code>base_path</code></a></p>
+
+          <div class="method-source-code" id="set_oauth_base_path-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 399</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_oauth_base_path</span>(<span class="ruby-identifier">oauth_base_path</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">oauth_base_path</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;OAuth base path should only include domain name (without https://)&#39;</span>)  <span class="ruby-keyword">if</span> <span class="ruby-identifier">oauth_base_path</span>.<span class="ruby-identifier">include?</span> <span class="ruby-string">&quot;//&quot;</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">oauth_base_path</span> = <span class="ruby-identifier">oauth_base_path</span>
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># did we need this check as we can determine it from base path</span>
+  <span class="ruby-comment">#raise ArgumentError.new(&#39;oAuthBasePath cannot be empty&#39;)  unless oauth_base_path</span>
+
+  <span class="ruby-comment"># Derive OAuth Base Path if not given</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_path</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_path</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;https://demo&quot;</span>) <span class="ruby-keyword">or</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_path</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;http://demo&quot;</span>) <span class="ruby-keyword">or</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_path</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;https://apps-d&quot;</span>) <span class="ruby-keyword">or</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_path</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;http://apps-d&quot;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">oauth_base_path</span> = <span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">DEMO_OAUTH_BASE_PATH</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_path</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;https://stage&quot;</span>) <span class="ruby-keyword">or</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_path</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;http://stage&quot;</span>) <span class="ruby-keyword">or</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_path</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;https://apps-s&quot;</span>) <span class="ruby-keyword">or</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_path</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;http://apps-s&quot;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">oauth_base_path</span> = <span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">STAGE_OAUTH_BASE_PATH</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">oauth_base_path</span> = <span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">PRODUCTION_OAUTH_BASE_PATH</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-update_params_for_auth-21" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">update_params_for_auth!</span><span
+            class="method-args">(header_params, query_params, auth_names)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Update hearder and query params based on authentication settings.</p>
+
+<p>@param [Hash] header_params Header parameters @param [Hash] query_params Query parameters @param [String] auth_names Authentication scheme name</p>
+
+          <div class="method-source-code" id="update_params_for_auth-21-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 305</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_params_for_auth!</span>(<span class="ruby-identifier">header_params</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">auth_names</span>)
+  <span class="ruby-constant">Array</span>(<span class="ruby-identifier">auth_names</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">auth_name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">auth_setting</span> = <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">auth_settings</span>[<span class="ruby-identifier">auth_name</span>]
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">auth_setting</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">auth_setting</span>[<span class="ruby-value">:in</span>]
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;header&#39;</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">header_params</span>[<span class="ruby-identifier">auth_setting</span>[<span class="ruby-value">:key</span>]] = <span class="ruby-identifier">auth_setting</span>[<span class="ruby-value">:value</span>]
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;query&#39;</span>  <span class="ruby-keyword">then</span> <span class="ruby-identifier">query_params</span>[<span class="ruby-identifier">auth_setting</span>[<span class="ruby-value">:key</span>]] = <span class="ruby-identifier">auth_setting</span>[<span class="ruby-value">:value</span>]
+    <span class="ruby-keyword">else</span> <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;Authentication token must be in `query` of `header`&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-user_agent-3D" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">user_agent=</span><span
+            class="method-args">(user_agent)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Sets user agent in HTTP header</p>
+
+<p>@param [String] user_agent <a href="User.html"><code>User</code></a> agent (e.g. swagger-codegen/ruby/1.0.0)</p>
+
+          <div class="method-source-code" id="user_agent-3D-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/client/api_client.rb, line 320</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">user_agent=</span>(<span class="ruby-identifier">user_agent</span>)
+  <span class="ruby-ivar">@user_agent</span> = <span class="ruby-identifier">user_agent</span>
+  <span class="ruby-ivar">@default_headers</span>[<span class="ruby-string">&#39;User-Agent&#39;</span>] = <span class="ruby-ivar">@user_agent</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
