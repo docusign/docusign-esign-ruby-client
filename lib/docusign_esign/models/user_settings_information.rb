@@ -39,6 +39,12 @@ module DocuSign_eSign
     attr_accessor :allow_auto_tagging
 
     # 
+    attr_accessor :allowed_document_template_library_access
+
+    # 
+    attr_accessor :allowed_document_template_library_access_metadata
+
+    # 
     attr_accessor :allowed_orchestration_access
 
     # 
@@ -273,6 +279,18 @@ module DocuSign_eSign
     attr_accessor :express_send_only
 
     # 
+    attr_accessor :is_managed_by_scim
+
+    # 
+    attr_accessor :is_managed_by_scim_metadata
+
+    # 
+    attr_accessor :is_membership_managed_by_scim
+
+    # 
+    attr_accessor :is_membership_managed_by_scim_metadata
+
+    # 
     attr_accessor :locale
 
     # Metadata about the `locale` property.
@@ -454,6 +472,8 @@ module DocuSign_eSign
         :'allow_access_to_all_account_agreements' => :'allowAccessToAllAccountAgreements',
         :'allow_access_to_all_account_agreements_metadata' => :'allowAccessToAllAccountAgreementsMetadata',
         :'allow_auto_tagging' => :'allowAutoTagging',
+        :'allowed_document_template_library_access' => :'allowedDocumentTemplateLibraryAccess',
+        :'allowed_document_template_library_access_metadata' => :'allowedDocumentTemplateLibraryAccessMetadata',
         :'allowed_orchestration_access' => :'allowedOrchestrationAccess',
         :'allowed_orchestration_access_metadata' => :'allowedOrchestrationAccessMetadata',
         :'allow_envelope_transfer_to' => :'allowEnvelopeTransferTo',
@@ -532,6 +552,10 @@ module DocuSign_eSign
         :'enable_vaulting' => :'enableVaulting',
         :'enable_vaulting_metadata' => :'enableVaultingMetadata',
         :'express_send_only' => :'expressSendOnly',
+        :'is_managed_by_scim' => :'isManagedByScim',
+        :'is_managed_by_scim_metadata' => :'isManagedByScimMetadata',
+        :'is_membership_managed_by_scim' => :'isMembershipManagedByScim',
+        :'is_membership_managed_by_scim_metadata' => :'isMembershipManagedByScimMetadata',
         :'locale' => :'locale',
         :'locale_metadata' => :'localeMetadata',
         :'locale_policy' => :'localePolicy',
@@ -603,6 +627,8 @@ module DocuSign_eSign
         :'allow_access_to_all_account_agreements' => :'String',
         :'allow_access_to_all_account_agreements_metadata' => :'SettingsMetadata',
         :'allow_auto_tagging' => :'String',
+        :'allowed_document_template_library_access' => :'String',
+        :'allowed_document_template_library_access_metadata' => :'SettingsMetadata',
         :'allowed_orchestration_access' => :'String',
         :'allowed_orchestration_access_metadata' => :'SettingsMetadata',
         :'allow_envelope_transfer_to' => :'String',
@@ -681,6 +707,10 @@ module DocuSign_eSign
         :'enable_vaulting' => :'String',
         :'enable_vaulting_metadata' => :'SettingsMetadata',
         :'express_send_only' => :'String',
+        :'is_managed_by_scim' => :'String',
+        :'is_managed_by_scim_metadata' => :'SettingsMetadata',
+        :'is_membership_managed_by_scim' => :'String',
+        :'is_membership_managed_by_scim_metadata' => :'SettingsMetadata',
         :'locale' => :'String',
         :'locale_metadata' => :'SettingsMetadata',
         :'locale_policy' => :'LocalePolicy',
@@ -779,6 +809,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'allowAutoTagging')
         self.allow_auto_tagging = attributes[:'allowAutoTagging']
+      end
+
+      if attributes.has_key?(:'allowedDocumentTemplateLibraryAccess')
+        self.allowed_document_template_library_access = attributes[:'allowedDocumentTemplateLibraryAccess']
+      end
+
+      if attributes.has_key?(:'allowedDocumentTemplateLibraryAccessMetadata')
+        self.allowed_document_template_library_access_metadata = attributes[:'allowedDocumentTemplateLibraryAccessMetadata']
       end
 
       if attributes.has_key?(:'allowedOrchestrationAccess')
@@ -1093,6 +1131,22 @@ module DocuSign_eSign
         self.express_send_only = attributes[:'expressSendOnly']
       end
 
+      if attributes.has_key?(:'isManagedByScim')
+        self.is_managed_by_scim = attributes[:'isManagedByScim']
+      end
+
+      if attributes.has_key?(:'isManagedByScimMetadata')
+        self.is_managed_by_scim_metadata = attributes[:'isManagedByScimMetadata']
+      end
+
+      if attributes.has_key?(:'isMembershipManagedByScim')
+        self.is_membership_managed_by_scim = attributes[:'isMembershipManagedByScim']
+      end
+
+      if attributes.has_key?(:'isMembershipManagedByScimMetadata')
+        self.is_membership_managed_by_scim_metadata = attributes[:'isMembershipManagedByScimMetadata']
+      end
+
       if attributes.has_key?(:'locale')
         self.locale = attributes[:'locale']
       end
@@ -1350,6 +1404,8 @@ module DocuSign_eSign
           allow_access_to_all_account_agreements == o.allow_access_to_all_account_agreements &&
           allow_access_to_all_account_agreements_metadata == o.allow_access_to_all_account_agreements_metadata &&
           allow_auto_tagging == o.allow_auto_tagging &&
+          allowed_document_template_library_access == o.allowed_document_template_library_access &&
+          allowed_document_template_library_access_metadata == o.allowed_document_template_library_access_metadata &&
           allowed_orchestration_access == o.allowed_orchestration_access &&
           allowed_orchestration_access_metadata == o.allowed_orchestration_access_metadata &&
           allow_envelope_transfer_to == o.allow_envelope_transfer_to &&
@@ -1428,6 +1484,10 @@ module DocuSign_eSign
           enable_vaulting == o.enable_vaulting &&
           enable_vaulting_metadata == o.enable_vaulting_metadata &&
           express_send_only == o.express_send_only &&
+          is_managed_by_scim == o.is_managed_by_scim &&
+          is_managed_by_scim_metadata == o.is_managed_by_scim_metadata &&
+          is_membership_managed_by_scim == o.is_membership_managed_by_scim &&
+          is_membership_managed_by_scim_metadata == o.is_membership_managed_by_scim_metadata &&
           locale == o.locale &&
           locale_metadata == o.locale_metadata &&
           locale_policy == o.locale_policy &&
@@ -1496,7 +1556,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_agreements_access_type, account_agreements_access_type_metadata, account_management_granular, admin_only, admin_only_metadata, allow_access_to_all_account_agreements, allow_access_to_all_account_agreements_metadata, allow_auto_tagging, allowed_orchestration_access, allowed_orchestration_access_metadata, allow_envelope_transfer_to, allow_envelope_transfer_to_metadata, allow_eseal_recipients, allow_eseal_recipients_metadata, allow_power_forms_admin_to_access_all_power_form_envelope, allow_power_forms_admin_to_access_all_power_form_envelope_metadata, allow_recipient_language_selection, allow_recipient_language_selection_metadata, allow_send_on_behalf_of, allow_send_on_behalf_of_metadata, allow_supplemental_documents, allow_supplemental_documents_metadata, allow_transactions, allow_transactions_metadata, anchor_tag_versioned_placement_enabled, api_account_wide_access, api_account_wide_access_metadata, api_can_export_ac, api_can_export_ac_metadata, bulk_send, bulk_send_metadata, can_bulk_upload_agreements, can_bulk_upload_agreements_metadata, can_charge_account, can_charge_account_metadata, can_create_transaction, can_create_transaction_metadata, can_delete_documents_in_transaction, can_delete_documents_in_transaction_metadata, can_delete_transaction, can_delete_transaction_metadata, can_edit_shared_addressbook, can_edit_shared_addressbook_metadata, can_lock_envelopes, can_lock_envelopes_metadata, can_manage_account, can_manage_account_metadata, can_manage_agreement_parties, can_manage_agreement_parties_metadata, can_manage_distributor, can_manage_distributor_metadata, can_manage_templates, can_manage_templates_metadata, can_send_api_requests, can_send_api_requests_metadata, can_send_envelope, can_send_envelope_metadata, can_send_envelopes_via_sms, can_send_envelopes_via_sms_metadata, can_sign_envelope, can_sign_envelope_metadata, can_use_scratchpad, can_use_scratchpad_metadata, can_use_smart_contracts, can_use_smart_contracts_metadata, disable_document_upload, disable_document_upload_metadata, disable_other_actions, disable_other_actions_metadata, enable_ds_pro, enable_ds_pro_metadata, enable_key_terms_suggestions_by_document_type, enable_key_terms_suggestions_by_document_type_metadata, enable_sequential_signing_api, enable_sequential_signing_api_metadata, enable_sequential_signing_ui, enable_sequential_signing_ui_metadata, enable_signer_attachments, enable_signer_attachments_metadata, enable_sign_on_paper_override, enable_sign_on_paper_override_metadata, enable_transaction_point, enable_transaction_point_metadata, enable_vaulting, enable_vaulting_metadata, express_send_only, locale, locale_metadata, locale_policy, manage_clickwraps_mode, manage_clickwraps_mode_metadata, modified_by, modified_by_metadata, modified_date, modified_date_metadata, modified_page, modified_page_metadata, new_send_ui, new_send_ui_metadata, power_form_mode, power_form_mode_metadata, recipient_viewed_notification, recipient_viewed_notification_metadata, seal_identifiers, self_signed_recipient_email_document, self_signed_recipient_email_document_metadata, sender_email_notifications, signer_email_notifications, supplemental_document_include_in_download, supplemental_documents_must_accept, supplemental_documents_must_accept_metadata, supplemental_documents_must_read, supplemental_documents_must_read_metadata, supplemental_documents_must_view, supplemental_documents_must_view_metadata, template_active_creation, template_active_creation_metadata, template_apply_notify, template_apply_notify_metadata, template_auto_matching, template_auto_matching_metadata, template_matching_sensitivity, template_matching_sensitivity_metadata, template_page_level_matching, template_page_level_matching_metadata, timezone_dst, timezone_dst_metadata, timezone_mask, timezone_mask_metadata, timezone_offset, timezone_offset_metadata, timezone_sending_pref, timezone_sending_pref_metadata, timezone_signing_pref, timezone_signing_pref_metadata, transaction_point_site_name_url, transaction_point_site_name_url_metadata, transaction_point_user_name, transaction_point_user_name_metadata, vaulting_mode, vaulting_mode_metadata, web_forms, web_forms_metadata].hash
+      [account_agreements_access_type, account_agreements_access_type_metadata, account_management_granular, admin_only, admin_only_metadata, allow_access_to_all_account_agreements, allow_access_to_all_account_agreements_metadata, allow_auto_tagging, allowed_document_template_library_access, allowed_document_template_library_access_metadata, allowed_orchestration_access, allowed_orchestration_access_metadata, allow_envelope_transfer_to, allow_envelope_transfer_to_metadata, allow_eseal_recipients, allow_eseal_recipients_metadata, allow_power_forms_admin_to_access_all_power_form_envelope, allow_power_forms_admin_to_access_all_power_form_envelope_metadata, allow_recipient_language_selection, allow_recipient_language_selection_metadata, allow_send_on_behalf_of, allow_send_on_behalf_of_metadata, allow_supplemental_documents, allow_supplemental_documents_metadata, allow_transactions, allow_transactions_metadata, anchor_tag_versioned_placement_enabled, api_account_wide_access, api_account_wide_access_metadata, api_can_export_ac, api_can_export_ac_metadata, bulk_send, bulk_send_metadata, can_bulk_upload_agreements, can_bulk_upload_agreements_metadata, can_charge_account, can_charge_account_metadata, can_create_transaction, can_create_transaction_metadata, can_delete_documents_in_transaction, can_delete_documents_in_transaction_metadata, can_delete_transaction, can_delete_transaction_metadata, can_edit_shared_addressbook, can_edit_shared_addressbook_metadata, can_lock_envelopes, can_lock_envelopes_metadata, can_manage_account, can_manage_account_metadata, can_manage_agreement_parties, can_manage_agreement_parties_metadata, can_manage_distributor, can_manage_distributor_metadata, can_manage_templates, can_manage_templates_metadata, can_send_api_requests, can_send_api_requests_metadata, can_send_envelope, can_send_envelope_metadata, can_send_envelopes_via_sms, can_send_envelopes_via_sms_metadata, can_sign_envelope, can_sign_envelope_metadata, can_use_scratchpad, can_use_scratchpad_metadata, can_use_smart_contracts, can_use_smart_contracts_metadata, disable_document_upload, disable_document_upload_metadata, disable_other_actions, disable_other_actions_metadata, enable_ds_pro, enable_ds_pro_metadata, enable_key_terms_suggestions_by_document_type, enable_key_terms_suggestions_by_document_type_metadata, enable_sequential_signing_api, enable_sequential_signing_api_metadata, enable_sequential_signing_ui, enable_sequential_signing_ui_metadata, enable_signer_attachments, enable_signer_attachments_metadata, enable_sign_on_paper_override, enable_sign_on_paper_override_metadata, enable_transaction_point, enable_transaction_point_metadata, enable_vaulting, enable_vaulting_metadata, express_send_only, is_managed_by_scim, is_managed_by_scim_metadata, is_membership_managed_by_scim, is_membership_managed_by_scim_metadata, locale, locale_metadata, locale_policy, manage_clickwraps_mode, manage_clickwraps_mode_metadata, modified_by, modified_by_metadata, modified_date, modified_date_metadata, modified_page, modified_page_metadata, new_send_ui, new_send_ui_metadata, power_form_mode, power_form_mode_metadata, recipient_viewed_notification, recipient_viewed_notification_metadata, seal_identifiers, self_signed_recipient_email_document, self_signed_recipient_email_document_metadata, sender_email_notifications, signer_email_notifications, supplemental_document_include_in_download, supplemental_documents_must_accept, supplemental_documents_must_accept_metadata, supplemental_documents_must_read, supplemental_documents_must_read_metadata, supplemental_documents_must_view, supplemental_documents_must_view_metadata, template_active_creation, template_active_creation_metadata, template_apply_notify, template_apply_notify_metadata, template_auto_matching, template_auto_matching_metadata, template_matching_sensitivity, template_matching_sensitivity_metadata, template_page_level_matching, template_page_level_matching_metadata, timezone_dst, timezone_dst_metadata, timezone_mask, timezone_mask_metadata, timezone_offset, timezone_offset_metadata, timezone_sending_pref, timezone_sending_pref_metadata, timezone_signing_pref, timezone_signing_pref_metadata, transaction_point_site_name_url, transaction_point_site_name_url_metadata, transaction_point_user_name, transaction_point_user_name_metadata, vaulting_mode, vaulting_mode_metadata, web_forms, web_forms_metadata].hash
     end
 
     # Builds the object from hash

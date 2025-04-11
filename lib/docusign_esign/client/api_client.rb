@@ -35,7 +35,7 @@ module DocuSign_eSign
     # @option config [Configuration] Configuration for initializing the object, default to Configuration.default
     def initialize(config = Configuration.default)
       @config = config
-      @user_agent = "Swagger-Codegen/v2.1/5.0.0/ruby-#{RUBY_VERSION}p#{RUBY_PATCHLEVEL}"
+      @user_agent = "Swagger-Codegen/v2.1/5.1.0.rc1/ruby-#{RUBY_VERSION}p#{RUBY_PATCHLEVEL}"
       @default_headers = {
         'Content-Type' => "application/json",
         'User-Agent' => @user_agent
@@ -409,8 +409,6 @@ module DocuSign_eSign
       # Derive OAuth Base Path if not given
       if self.base_path.nil? or self.base_path.start_with?("https://demo") or self.base_path.start_with?("http://demo") or self.base_path.start_with?("https://apps-d") or self.base_path.start_with?("http://apps-d")
         self.oauth_base_path = OAuth::DEMO_OAUTH_BASE_PATH
-      elsif self.base_path.start_with?("https://stage") or self.base_path.start_with?("http://stage") or self.base_path.start_with?("https://apps-s") or self.base_path.start_with?("http://apps-s")
-        self.oauth_base_path = OAuth::STAGE_OAUTH_BASE_PATH
       else
         self.oauth_base_path = OAuth::PRODUCTION_OAUTH_BASE_PATH
       end

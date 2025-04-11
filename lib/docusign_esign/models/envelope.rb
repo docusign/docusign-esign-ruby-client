@@ -152,6 +152,9 @@ module DocuSign_eSign
     attr_accessor :has_comments
 
     # 
+    attr_accessor :has_document_template_library
+
+    # 
     attr_accessor :has_form_data_changed
 
     # 
@@ -302,6 +305,7 @@ module DocuSign_eSign
         :'external_envelope_id' => :'externalEnvelopeId',
         :'folders' => :'folders',
         :'has_comments' => :'hasComments',
+        :'has_document_template_library' => :'hasDocumentTemplateLibrary',
         :'has_form_data_changed' => :'hasFormDataChanged',
         :'has_wav_file' => :'hasWavFile',
         :'holder' => :'holder',
@@ -388,6 +392,7 @@ module DocuSign_eSign
         :'external_envelope_id' => :'String',
         :'folders' => :'Array<Folder>',
         :'has_comments' => :'String',
+        :'has_document_template_library' => :'String',
         :'has_form_data_changed' => :'String',
         :'has_wav_file' => :'String',
         :'holder' => :'String',
@@ -623,6 +628,10 @@ module DocuSign_eSign
         self.has_comments = attributes[:'hasComments']
       end
 
+      if attributes.has_key?(:'hasDocumentTemplateLibrary')
+        self.has_document_template_library = attributes[:'hasDocumentTemplateLibrary']
+      end
+
       if attributes.has_key?(:'hasFormDataChanged')
         self.has_form_data_changed = attributes[:'hasFormDataChanged']
       end
@@ -824,6 +833,7 @@ module DocuSign_eSign
           external_envelope_id == o.external_envelope_id &&
           folders == o.folders &&
           has_comments == o.has_comments &&
+          has_document_template_library == o.has_document_template_library &&
           has_form_data_changed == o.has_form_data_changed &&
           has_wav_file == o.has_wav_file &&
           holder == o.holder &&
@@ -869,7 +879,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_control_list_base64, allow_comments, allow_markup, allow_reassign, allow_view_history, any_signer, asynchronous, attachments_uri, authoritative_copy, authoritative_copy_default, auto_navigation, brand_id, brand_lock, burn_default_tab_data, certificate_uri, completed_date_time, copy_recipient_data, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, disable_responsive_document, document_base64, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_attachments, envelope_custom_metadata, envelope_documents, envelope_id, envelope_id_stamping, envelope_location, envelope_metadata, envelope_uri, expire_after, expire_date_time, expire_enabled, external_envelope_id, folders, has_comments, has_form_data_changed, has_wav_file, holder, initial_sent_date_time, is21_cfr_part11, is_dynamic_envelope, is_signature_provider_envelope, last_modified_date_time, location, lock_information, message_lock, notification, notification_uri, power_form, purge_completed_date, purge_request_date, purge_state, recipients, recipients_lock, recipients_uri, sender, sent_date_time, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, status_date_time, templates_uri, transaction_id, use_disclosure, u_sig_state, voided_date_time, voided_reason, workflow].hash
+      [access_control_list_base64, allow_comments, allow_markup, allow_reassign, allow_view_history, any_signer, asynchronous, attachments_uri, authoritative_copy, authoritative_copy_default, auto_navigation, brand_id, brand_lock, burn_default_tab_data, certificate_uri, completed_date_time, copy_recipient_data, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, disable_responsive_document, document_base64, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_attachments, envelope_custom_metadata, envelope_documents, envelope_id, envelope_id_stamping, envelope_location, envelope_metadata, envelope_uri, expire_after, expire_date_time, expire_enabled, external_envelope_id, folders, has_comments, has_document_template_library, has_form_data_changed, has_wav_file, holder, initial_sent_date_time, is21_cfr_part11, is_dynamic_envelope, is_signature_provider_envelope, last_modified_date_time, location, lock_information, message_lock, notification, notification_uri, power_form, purge_completed_date, purge_request_date, purge_state, recipients, recipients_lock, recipients_uri, sender, sent_date_time, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, status_date_time, templates_uri, transaction_id, use_disclosure, u_sig_state, voided_date_time, voided_reason, workflow].hash
     end
 
     # Builds the object from hash

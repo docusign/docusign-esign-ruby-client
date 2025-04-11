@@ -15,6 +15,12 @@ module DocuSign_eSign
   # A tab that allows the recipient to enter any type of text. 
   class Text
     # 
+    attr_accessor :agreement_attribute
+
+    # 
+    attr_accessor :agreement_attribute_locked
+
+    # 
     attr_accessor :anchor_allow_white_space_in_characters
 
     # Metadata that indicates whether the `anchorAllowWhiteSpaceInCharacters` property is editable.
@@ -104,6 +110,9 @@ module DocuSign_eSign
     # Metadata that indicates whether the `conditionalParentValue` property is editable.
     attr_accessor :conditional_parent_value_metadata
 
+    # 
+    attr_accessor :connected_object_details
+
     # The DocuSign generated custom tab ID for the custom tab to be applied. This can only be used when adding new tabs for a recipient. When used, the new tab inherits all the custom tab properties.
     attr_accessor :custom_tab_id
 
@@ -124,6 +133,9 @@ module DocuSign_eSign
 
     # Array or errors.
     attr_accessor :error_details
+
+    # 
+    attr_accessor :extension_data
 
     # The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.
     attr_accessor :font
@@ -285,6 +297,9 @@ module DocuSign_eSign
     attr_accessor :status_metadata
 
     # 
+    attr_accessor :tab_fully_qualified_path
+
+    # 
     attr_accessor :tab_group_labels
 
     # Metadata that indicates whether the `tabGroupLabels` property is editable.
@@ -356,6 +371,9 @@ module DocuSign_eSign
     # Metadata that indicates whether the `value` property is editable.
     attr_accessor :value_metadata
 
+    # 
+    attr_accessor :warning_details
+
     # Width of the tab in pixels.
     attr_accessor :width
 
@@ -377,6 +395,8 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'agreement_attribute' => :'agreementAttribute',
+        :'agreement_attribute_locked' => :'agreementAttributeLocked',
         :'anchor_allow_white_space_in_characters' => :'anchorAllowWhiteSpaceInCharacters',
         :'anchor_allow_white_space_in_characters_metadata' => :'anchorAllowWhiteSpaceInCharactersMetadata',
         :'anchor_case_sensitive' => :'anchorCaseSensitive',
@@ -407,6 +427,7 @@ module DocuSign_eSign
         :'conditional_parent_label_metadata' => :'conditionalParentLabelMetadata',
         :'conditional_parent_value' => :'conditionalParentValue',
         :'conditional_parent_value_metadata' => :'conditionalParentValueMetadata',
+        :'connected_object_details' => :'connectedObjectDetails',
         :'custom_tab_id' => :'customTabId',
         :'custom_tab_id_metadata' => :'customTabIdMetadata',
         :'disable_auto_size' => :'disableAutoSize',
@@ -414,6 +435,7 @@ module DocuSign_eSign
         :'document_id' => :'documentId',
         :'document_id_metadata' => :'documentIdMetadata',
         :'error_details' => :'errorDetails',
+        :'extension_data' => :'extensionData',
         :'font' => :'font',
         :'font_color' => :'fontColor',
         :'font_color_metadata' => :'fontColorMetadata',
@@ -467,6 +489,7 @@ module DocuSign_eSign
         :'source' => :'source',
         :'status' => :'status',
         :'status_metadata' => :'statusMetadata',
+        :'tab_fully_qualified_path' => :'tabFullyQualifiedPath',
         :'tab_group_labels' => :'tabGroupLabels',
         :'tab_group_labels_metadata' => :'tabGroupLabelsMetadata',
         :'tab_id' => :'tabId',
@@ -491,6 +514,7 @@ module DocuSign_eSign
         :'validation_pattern_metadata' => :'validationPatternMetadata',
         :'value' => :'value',
         :'value_metadata' => :'valueMetadata',
+        :'warning_details' => :'warningDetails',
         :'width' => :'width',
         :'width_metadata' => :'widthMetadata',
         :'x_position' => :'xPosition',
@@ -503,6 +527,8 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'agreement_attribute' => :'String',
+        :'agreement_attribute_locked' => :'String',
         :'anchor_allow_white_space_in_characters' => :'String',
         :'anchor_allow_white_space_in_characters_metadata' => :'PropertyMetadata',
         :'anchor_case_sensitive' => :'String',
@@ -533,6 +559,7 @@ module DocuSign_eSign
         :'conditional_parent_label_metadata' => :'PropertyMetadata',
         :'conditional_parent_value' => :'String',
         :'conditional_parent_value_metadata' => :'PropertyMetadata',
+        :'connected_object_details' => :'ConnectedObjectDetails',
         :'custom_tab_id' => :'String',
         :'custom_tab_id_metadata' => :'PropertyMetadata',
         :'disable_auto_size' => :'String',
@@ -540,6 +567,7 @@ module DocuSign_eSign
         :'document_id' => :'String',
         :'document_id_metadata' => :'PropertyMetadata',
         :'error_details' => :'ErrorDetails',
+        :'extension_data' => :'ExtensionData',
         :'font' => :'String',
         :'font_color' => :'String',
         :'font_color_metadata' => :'PropertyMetadata',
@@ -593,6 +621,7 @@ module DocuSign_eSign
         :'source' => :'String',
         :'status' => :'String',
         :'status_metadata' => :'PropertyMetadata',
+        :'tab_fully_qualified_path' => :'String',
         :'tab_group_labels' => :'Array<String>',
         :'tab_group_labels_metadata' => :'PropertyMetadata',
         :'tab_id' => :'String',
@@ -617,6 +646,7 @@ module DocuSign_eSign
         :'validation_pattern_metadata' => :'PropertyMetadata',
         :'value' => :'String',
         :'value_metadata' => :'PropertyMetadata',
+        :'warning_details' => :'ErrorDetails',
         :'width' => :'String',
         :'width_metadata' => :'PropertyMetadata',
         :'x_position' => :'String',
@@ -633,6 +663,14 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'agreementAttribute')
+        self.agreement_attribute = attributes[:'agreementAttribute']
+      end
+
+      if attributes.has_key?(:'agreementAttributeLocked')
+        self.agreement_attribute_locked = attributes[:'agreementAttributeLocked']
+      end
 
       if attributes.has_key?(:'anchorAllowWhiteSpaceInCharacters')
         self.anchor_allow_white_space_in_characters = attributes[:'anchorAllowWhiteSpaceInCharacters']
@@ -754,6 +792,10 @@ module DocuSign_eSign
         self.conditional_parent_value_metadata = attributes[:'conditionalParentValueMetadata']
       end
 
+      if attributes.has_key?(:'connectedObjectDetails')
+        self.connected_object_details = attributes[:'connectedObjectDetails']
+      end
+
       if attributes.has_key?(:'customTabId')
         self.custom_tab_id = attributes[:'customTabId']
       end
@@ -780,6 +822,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'errorDetails')
         self.error_details = attributes[:'errorDetails']
+      end
+
+      if attributes.has_key?(:'extensionData')
+        self.extension_data = attributes[:'extensionData']
       end
 
       if attributes.has_key?(:'font')
@@ -994,6 +1040,10 @@ module DocuSign_eSign
         self.status_metadata = attributes[:'statusMetadata']
       end
 
+      if attributes.has_key?(:'tabFullyQualifiedPath')
+        self.tab_fully_qualified_path = attributes[:'tabFullyQualifiedPath']
+      end
+
       if attributes.has_key?(:'tabGroupLabels')
         if (value = attributes[:'tabGroupLabels']).is_a?(Array)
           self.tab_group_labels = value
@@ -1092,6 +1142,10 @@ module DocuSign_eSign
         self.value_metadata = attributes[:'valueMetadata']
       end
 
+      if attributes.has_key?(:'warningDetails')
+        self.warning_details = attributes[:'warningDetails']
+      end
+
       if attributes.has_key?(:'width')
         self.width = attributes[:'width']
       end
@@ -1135,6 +1189,8 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          agreement_attribute == o.agreement_attribute &&
+          agreement_attribute_locked == o.agreement_attribute_locked &&
           anchor_allow_white_space_in_characters == o.anchor_allow_white_space_in_characters &&
           anchor_allow_white_space_in_characters_metadata == o.anchor_allow_white_space_in_characters_metadata &&
           anchor_case_sensitive == o.anchor_case_sensitive &&
@@ -1165,6 +1221,7 @@ module DocuSign_eSign
           conditional_parent_label_metadata == o.conditional_parent_label_metadata &&
           conditional_parent_value == o.conditional_parent_value &&
           conditional_parent_value_metadata == o.conditional_parent_value_metadata &&
+          connected_object_details == o.connected_object_details &&
           custom_tab_id == o.custom_tab_id &&
           custom_tab_id_metadata == o.custom_tab_id_metadata &&
           disable_auto_size == o.disable_auto_size &&
@@ -1172,6 +1229,7 @@ module DocuSign_eSign
           document_id == o.document_id &&
           document_id_metadata == o.document_id_metadata &&
           error_details == o.error_details &&
+          extension_data == o.extension_data &&
           font == o.font &&
           font_color == o.font_color &&
           font_color_metadata == o.font_color_metadata &&
@@ -1225,6 +1283,7 @@ module DocuSign_eSign
           source == o.source &&
           status == o.status &&
           status_metadata == o.status_metadata &&
+          tab_fully_qualified_path == o.tab_fully_qualified_path &&
           tab_group_labels == o.tab_group_labels &&
           tab_group_labels_metadata == o.tab_group_labels_metadata &&
           tab_id == o.tab_id &&
@@ -1249,6 +1308,7 @@ module DocuSign_eSign
           validation_pattern_metadata == o.validation_pattern_metadata &&
           value == o.value &&
           value_metadata == o.value_metadata &&
+          warning_details == o.warning_details &&
           width == o.width &&
           width_metadata == o.width_metadata &&
           x_position == o.x_position &&
@@ -1266,7 +1326,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, caption, caption_metadata, conceal_value_on_document, conceal_value_on_document_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, custom_tab_id, custom_tab_id_metadata, disable_auto_size, disable_auto_size_metadata, document_id, document_id_metadata, error_details, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, formula, formula_metadata, height, height_metadata, is_payment_amount, is_payment_amount_metadata, italic, italic_metadata, locale_policy, locked, locked_metadata, max_length, max_length_metadata, merge_field, merge_field_xml, name, name_metadata, original_value, original_value_metadata, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, require_all, require_all_metadata, required, required_metadata, require_initial_on_shared_change, require_initial_on_shared_change_metadata, sender_required, sender_required_metadata, shared, shared_metadata, share_to_recipients, share_to_recipients_metadata, smart_contract_information, source, status, status_metadata, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_label_metadata, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, underline, underline_metadata, validation_message, validation_message_metadata, validation_pattern, validation_pattern_metadata, value, value_metadata, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
+      [agreement_attribute, agreement_attribute_locked, anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, caption, caption_metadata, conceal_value_on_document, conceal_value_on_document_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, connected_object_details, custom_tab_id, custom_tab_id_metadata, disable_auto_size, disable_auto_size_metadata, document_id, document_id_metadata, error_details, extension_data, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, formula, formula_metadata, height, height_metadata, is_payment_amount, is_payment_amount_metadata, italic, italic_metadata, locale_policy, locked, locked_metadata, max_length, max_length_metadata, merge_field, merge_field_xml, name, name_metadata, original_value, original_value_metadata, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, require_all, require_all_metadata, required, required_metadata, require_initial_on_shared_change, require_initial_on_shared_change_metadata, sender_required, sender_required_metadata, shared, shared_metadata, share_to_recipients, share_to_recipients_metadata, smart_contract_information, source, status, status_metadata, tab_fully_qualified_path, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_label_metadata, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, underline, underline_metadata, validation_message, validation_message_metadata, validation_pattern, validation_pattern_metadata, value, value_metadata, warning_details, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
     end
 
     # Builds the object from hash

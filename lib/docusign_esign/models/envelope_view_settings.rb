@@ -44,6 +44,9 @@ module DocuSign_eSign
     attr_accessor :show_header_actions
 
     # 
+    attr_accessor :show_sign_now
+
+    # 
     attr_accessor :starting_screen
 
     # 
@@ -65,6 +68,7 @@ module DocuSign_eSign
         :'show_back_button' => :'showBackButton',
         :'show_discard_action' => :'showDiscardAction',
         :'show_header_actions' => :'showHeaderActions',
+        :'show_sign_now' => :'showSignNow',
         :'starting_screen' => :'startingScreen',
         :'tagger_settings' => :'taggerSettings',
         :'template_settings' => :'templateSettings'
@@ -84,6 +88,7 @@ module DocuSign_eSign
         :'show_back_button' => :'String',
         :'show_discard_action' => :'String',
         :'show_header_actions' => :'String',
+        :'show_sign_now' => :'String',
         :'starting_screen' => :'String',
         :'tagger_settings' => :'EnvelopeViewTaggerSettings',
         :'template_settings' => :'EnvelopeViewTemplateSettings'
@@ -138,6 +143,10 @@ module DocuSign_eSign
         self.show_header_actions = attributes[:'showHeaderActions']
       end
 
+      if attributes.has_key?(:'showSignNow')
+        self.show_sign_now = attributes[:'showSignNow']
+      end
+
       if attributes.has_key?(:'startingScreen')
         self.starting_screen = attributes[:'startingScreen']
       end
@@ -179,6 +188,7 @@ module DocuSign_eSign
           show_back_button == o.show_back_button &&
           show_discard_action == o.show_discard_action &&
           show_header_actions == o.show_header_actions &&
+          show_sign_now == o.show_sign_now &&
           starting_screen == o.starting_screen &&
           tagger_settings == o.tagger_settings &&
           template_settings == o.template_settings
@@ -193,7 +203,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [back_button_action, document_settings, envelope_custom_field_settings, lock_token, recipient_settings, send_button_action, show_advanced_options, show_back_button, show_discard_action, show_header_actions, starting_screen, tagger_settings, template_settings].hash
+      [back_button_action, document_settings, envelope_custom_field_settings, lock_token, recipient_settings, send_button_action, show_advanced_options, show_back_button, show_discard_action, show_header_actions, show_sign_now, starting_screen, tagger_settings, template_settings].hash
     end
 
     # Builds the object from hash

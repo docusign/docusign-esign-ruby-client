@@ -104,7 +104,7 @@ module DocuSign_eSign
         :'is_sending_default' => :'BOOLEAN',
         :'is_signing_default' => :'BOOLEAN',
         :'landing_pages' => :'Array<NameValue>',
-        :'links' => :'Array<BrandLink>',
+        :'links' => :'String',
         :'logos' => :'BrandLogos',
         :'organization_brand_logo' => :'String',
         :'resources' => :'BrandResourceUrls'
@@ -180,9 +180,7 @@ module DocuSign_eSign
       end
 
       if attributes.has_key?(:'links')
-        if (value = attributes[:'links']).is_a?(Array)
-          self.links = value
-        end
+        self.links = attributes[:'links']
       end
 
       if attributes.has_key?(:'logos')

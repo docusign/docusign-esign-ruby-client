@@ -69,6 +69,12 @@ module DocuSign_eSign
     attr_accessor :is_alternate_admin
 
     # 
+    attr_accessor :is_managed_by_scim
+
+    # 
+    attr_accessor :is_membership_managed_by_scim
+
+    # 
     attr_accessor :is_nar_enabled
 
     # 
@@ -79,6 +85,12 @@ module DocuSign_eSign
 
     # The user's last name.  Maximum Length: 50 characters.
     attr_accessor :last_name
+
+    # 
+    attr_accessor :license_status
+
+    # 
+    attr_accessor :license_type
 
     # Shows the current status of the user's password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  
     attr_accessor :login_status
@@ -167,10 +179,14 @@ module DocuSign_eSign
         :'initials_image_uri' => :'initialsImageUri',
         :'is_admin' => :'isAdmin',
         :'is_alternate_admin' => :'isAlternateAdmin',
+        :'is_managed_by_scim' => :'isManagedByScim',
+        :'is_membership_managed_by_scim' => :'isMembershipManagedByScim',
         :'is_nar_enabled' => :'isNAREnabled',
         :'job_title' => :'jobTitle',
         :'last_login' => :'lastLogin',
         :'last_name' => :'lastName',
+        :'license_status' => :'licenseStatus',
+        :'license_type' => :'licenseType',
         :'login_status' => :'loginStatus',
         :'middle_name' => :'middleName',
         :'password' => :'password',
@@ -217,10 +233,14 @@ module DocuSign_eSign
         :'initials_image_uri' => :'String',
         :'is_admin' => :'String',
         :'is_alternate_admin' => :'String',
+        :'is_managed_by_scim' => :'String',
+        :'is_membership_managed_by_scim' => :'String',
         :'is_nar_enabled' => :'String',
         :'job_title' => :'String',
         :'last_login' => :'String',
         :'last_name' => :'String',
+        :'license_status' => :'String',
+        :'license_type' => :'String',
         :'login_status' => :'String',
         :'middle_name' => :'String',
         :'password' => :'String',
@@ -332,6 +352,14 @@ module DocuSign_eSign
         self.is_alternate_admin = attributes[:'isAlternateAdmin']
       end
 
+      if attributes.has_key?(:'isManagedByScim')
+        self.is_managed_by_scim = attributes[:'isManagedByScim']
+      end
+
+      if attributes.has_key?(:'isMembershipManagedByScim')
+        self.is_membership_managed_by_scim = attributes[:'isMembershipManagedByScim']
+      end
+
       if attributes.has_key?(:'isNAREnabled')
         self.is_nar_enabled = attributes[:'isNAREnabled']
       end
@@ -346,6 +374,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'lastName')
         self.last_name = attributes[:'lastName']
+      end
+
+      if attributes.has_key?(:'licenseStatus')
+        self.license_status = attributes[:'licenseStatus']
+      end
+
+      if attributes.has_key?(:'licenseType')
+        self.license_type = attributes[:'licenseType']
       end
 
       if attributes.has_key?(:'loginStatus')
@@ -473,10 +509,14 @@ module DocuSign_eSign
           initials_image_uri == o.initials_image_uri &&
           is_admin == o.is_admin &&
           is_alternate_admin == o.is_alternate_admin &&
+          is_managed_by_scim == o.is_managed_by_scim &&
+          is_membership_managed_by_scim == o.is_membership_managed_by_scim &&
           is_nar_enabled == o.is_nar_enabled &&
           job_title == o.job_title &&
           last_login == o.last_login &&
           last_name == o.last_name &&
+          license_status == o.license_status &&
+          license_type == o.license_type &&
           login_status == o.login_status &&
           middle_name == o.middle_name &&
           password == o.password &&
@@ -510,7 +550,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [activation_access_code, company, connect_configurations, country_code, created_date_time, custom_settings, default_account_id, email, enable_connect_for_user, error_details, first_name, forgotten_password_info, group_list, has_remote_notary, home_address, initials_image_uri, is_admin, is_alternate_admin, is_nar_enabled, job_title, last_login, last_name, login_status, middle_name, password, password_expiration, permission_profile_id, permission_profile_name, profile_image_uri, send_activation_email, send_activation_on_invalid_login, signature_image_uri, subscribe, suffix_name, title, uri, user_added_to_account_date_time, user_id, user_name, user_profile_last_modified_date, user_settings, user_status, user_type, work_address].hash
+      [activation_access_code, company, connect_configurations, country_code, created_date_time, custom_settings, default_account_id, email, enable_connect_for_user, error_details, first_name, forgotten_password_info, group_list, has_remote_notary, home_address, initials_image_uri, is_admin, is_alternate_admin, is_managed_by_scim, is_membership_managed_by_scim, is_nar_enabled, job_title, last_login, last_name, license_status, license_type, login_status, middle_name, password, password_expiration, permission_profile_id, permission_profile_name, profile_image_uri, send_activation_email, send_activation_on_invalid_login, signature_image_uri, subscribe, suffix_name, title, uri, user_added_to_account_date_time, user_id, user_name, user_profile_last_modified_date, user_settings, user_status, user_type, work_address].hash
     end
 
     # Builds the object from hash

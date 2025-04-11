@@ -3073,5 +3073,107 @@ module DocuSign_eSign
       end
       return data, status_code, headers
     end
+
+    # Update template autoMatch setting.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_auto_match_list  (optional parameter)
+    # @return [TemplateAutoMatchList]
+    def update_templates(account_id, template_auto_match_list)
+      data, _status_code, _headers = update_templates_with_http_info(account_id,  template_auto_match_list)
+      return data
+    end
+
+    # Update template autoMatch setting.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_auto_match_list  (optional parameter)
+    # @return [Array<(TemplateAutoMatchList, Fixnum, Hash)>] TemplateAutoMatchList data, response status code and response headers
+    def update_templates_with_http_info(account_id, template_auto_match_list)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: TemplatesApi.update_templates ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.update_templates" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(template_auto_match_list)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TemplateAutoMatchList')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TemplatesApi#update_templates\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update template autoMatch setting.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_auto_match_list  (optional parameter)
+    # @return [TemplateAutoMatchList]
+    def update_templates_auto_match(account_id, template_auto_match_list)
+      data, _status_code, _headers = update_templates_auto_match_with_http_info(account_id,  template_auto_match_list)
+      return data
+    end
+
+    # Update template autoMatch setting.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_auto_match_list  (optional parameter)
+    # @return [Array<(TemplateAutoMatchList, Fixnum, Hash)>] TemplateAutoMatchList data, response status code and response headers
+    def update_templates_auto_match_with_http_info(account_id, template_auto_match_list)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: TemplatesApi.update_templates_auto_match ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.update_templates_auto_match" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/auto_match".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(template_auto_match_list)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TemplateAutoMatchList')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TemplatesApi#update_templates_auto_match\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
   end
 end

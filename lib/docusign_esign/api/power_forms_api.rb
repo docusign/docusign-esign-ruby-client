@@ -39,6 +39,9 @@ module DocuSign_eSign
 
   class ListPowerFormsOptions
     # 
+    attr_accessor :count
+
+    # 
     attr_accessor :from_date
 
     # 
@@ -52,6 +55,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :search_text
+
+    # 
+    attr_accessor :start_position
 
     # 
     attr_accessor :to_date
@@ -412,11 +418,13 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'count'] = options.count if !options.count.nil?
       query_params[:'from_date'] = options.from_date if !options.from_date.nil?
       query_params[:'order'] = options.order if !options.order.nil?
       query_params[:'order_by'] = options.order_by if !options.order_by.nil?
       query_params[:'search_fields'] = options.search_fields if !options.search_fields.nil?
       query_params[:'search_text'] = options.search_text if !options.search_text.nil?
+      query_params[:'start_position'] = options.start_position if !options.start_position.nil?
       query_params[:'to_date'] = options.to_date if !options.to_date.nil?
 
       # header parameters

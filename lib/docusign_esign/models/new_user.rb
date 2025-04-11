@@ -27,6 +27,12 @@ module DocuSign_eSign
     attr_accessor :error_details
 
     # 
+    attr_accessor :license_status
+
+    # 
+    attr_accessor :license_type
+
+    # 
     attr_accessor :membership_id
 
     # 
@@ -54,6 +60,8 @@ module DocuSign_eSign
         :'created_date_time' => :'createdDateTime',
         :'email' => :'email',
         :'error_details' => :'errorDetails',
+        :'license_status' => :'licenseStatus',
+        :'license_type' => :'licenseType',
         :'membership_id' => :'membershipId',
         :'permission_profile_id' => :'permissionProfileId',
         :'permission_profile_name' => :'permissionProfileName',
@@ -71,6 +79,8 @@ module DocuSign_eSign
         :'created_date_time' => :'String',
         :'email' => :'String',
         :'error_details' => :'ErrorDetails',
+        :'license_status' => :'String',
+        :'license_type' => :'String',
         :'membership_id' => :'String',
         :'permission_profile_id' => :'String',
         :'permission_profile_name' => :'String',
@@ -103,6 +113,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'errorDetails')
         self.error_details = attributes[:'errorDetails']
+      end
+
+      if attributes.has_key?(:'licenseStatus')
+        self.license_status = attributes[:'licenseStatus']
+      end
+
+      if attributes.has_key?(:'licenseType')
+        self.license_type = attributes[:'licenseType']
       end
 
       if attributes.has_key?(:'membershipId')
@@ -156,6 +174,8 @@ module DocuSign_eSign
           created_date_time == o.created_date_time &&
           email == o.email &&
           error_details == o.error_details &&
+          license_status == o.license_status &&
+          license_type == o.license_type &&
           membership_id == o.membership_id &&
           permission_profile_id == o.permission_profile_id &&
           permission_profile_name == o.permission_profile_name &&
@@ -174,7 +194,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [api_password, created_date_time, email, error_details, membership_id, permission_profile_id, permission_profile_name, uri, user_id, user_name, user_status].hash
+      [api_password, created_date_time, email, error_details, license_status, license_type, membership_id, permission_profile_id, permission_profile_name, uri, user_id, user_name, user_status].hash
     end
 
     # Builds the object from hash
