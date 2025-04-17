@@ -63,6 +63,9 @@ module DocuSign_eSign
     attr_accessor :designator_id_guid
 
     # 
+    attr_accessor :document_template_id
+
+    # 
     attr_accessor :document_visibility
 
     # 
@@ -209,6 +212,9 @@ module DocuSign_eSign
     # 
     attr_accessor :user_id
 
+    # 
+    attr_accessor :web_form_recipient_view_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -228,6 +234,7 @@ module DocuSign_eSign
         :'delivery_method_metadata' => :'deliveryMethodMetadata',
         :'designator_id' => :'designatorId',
         :'designator_id_guid' => :'designatorIdGuid',
+        :'document_template_id' => :'documentTemplateId',
         :'document_visibility' => :'documentVisibility',
         :'email' => :'email',
         :'email_metadata' => :'emailMetadata',
@@ -276,7 +283,8 @@ module DocuSign_eSign
         :'template_locked' => :'templateLocked',
         :'template_required' => :'templateRequired',
         :'total_tab_count' => :'totalTabCount',
-        :'user_id' => :'userId'
+        :'user_id' => :'userId',
+        :'web_form_recipient_view_id' => :'webFormRecipientViewId'
       }
     end
 
@@ -299,6 +307,7 @@ module DocuSign_eSign
         :'delivery_method_metadata' => :'PropertyMetadata',
         :'designator_id' => :'String',
         :'designator_id_guid' => :'String',
+        :'document_template_id' => :'String',
         :'document_visibility' => :'Array<DocumentVisibility>',
         :'email' => :'String',
         :'email_metadata' => :'PropertyMetadata',
@@ -347,7 +356,8 @@ module DocuSign_eSign
         :'template_locked' => :'String',
         :'template_required' => :'String',
         :'total_tab_count' => :'String',
-        :'user_id' => :'String'
+        :'user_id' => :'String',
+        :'web_form_recipient_view_id' => :'String'
       }
     end
 
@@ -423,6 +433,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'designatorIdGuid')
         self.designator_id_guid = attributes[:'designatorIdGuid']
+      end
+
+      if attributes.has_key?(:'documentTemplateId')
+        self.document_template_id = attributes[:'documentTemplateId']
       end
 
       if attributes.has_key?(:'documentVisibility')
@@ -630,6 +644,10 @@ module DocuSign_eSign
       if attributes.has_key?(:'userId')
         self.user_id = attributes[:'userId']
       end
+
+      if attributes.has_key?(:'webFormRecipientViewId')
+        self.web_form_recipient_view_id = attributes[:'webFormRecipientViewId']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -666,6 +684,7 @@ module DocuSign_eSign
           delivery_method_metadata == o.delivery_method_metadata &&
           designator_id == o.designator_id &&
           designator_id_guid == o.designator_id_guid &&
+          document_template_id == o.document_template_id &&
           document_visibility == o.document_visibility &&
           email == o.email &&
           email_metadata == o.email_metadata &&
@@ -714,7 +733,8 @@ module DocuSign_eSign
           template_locked == o.template_locked &&
           template_required == o.template_required &&
           total_tab_count == o.total_tab_count &&
-          user_id == o.user_id
+          user_id == o.user_id &&
+          web_form_recipient_view_id == o.web_form_recipient_view_id
     end
 
     # @see the `==` method
@@ -726,7 +746,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, allow_system_override_for_locked_recipient, auto_responded_reason, bulk_send_v2_recipient, client_user_id, completed_count, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, fax_number, fax_number_metadata, host_recipient_id, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, role_name, routing_order, routing_order_metadata, sent_date_time, signed_date_time, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id].hash
+      [access_code, access_code_metadata, add_access_code_to_email, allow_system_override_for_locked_recipient, auto_responded_reason, bulk_send_v2_recipient, client_user_id, completed_count, custom_fields, declined_date_time, declined_reason, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_template_id, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, fax_number, fax_number_metadata, host_recipient_id, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, note, note_metadata, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, role_name, routing_order, routing_order_metadata, sent_date_time, signed_date_time, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id, web_form_recipient_view_id].hash
     end
 
     # Builds the object from hash

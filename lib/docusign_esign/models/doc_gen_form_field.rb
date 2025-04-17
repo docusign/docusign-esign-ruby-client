@@ -14,7 +14,13 @@ require 'date'
 module DocuSign_eSign
   class DocGenFormField
     # 
+    attr_accessor :connected_object_details
+
+    # 
     attr_accessor :description
+
+    # 
+    attr_accessor :fully_qualified_path
 
     # 
     attr_accessor :label
@@ -24,6 +30,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :options
+
+    # 
+    attr_accessor :order
 
     # 
     attr_accessor :predefined_validation
@@ -46,10 +55,13 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'connected_object_details' => :'connectedObjectDetails',
         :'description' => :'description',
+        :'fully_qualified_path' => :'fullyQualifiedPath',
         :'label' => :'label',
         :'name' => :'name',
         :'options' => :'options',
+        :'order' => :'order',
         :'predefined_validation' => :'predefinedValidation',
         :'required' => :'required',
         :'row_values' => :'rowValues',
@@ -62,10 +74,13 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'connected_object_details' => :'ConnectedObjectDetails',
         :'description' => :'String',
+        :'fully_qualified_path' => :'String',
         :'label' => :'String',
         :'name' => :'String',
         :'options' => :'Array<DocGenFormFieldOption>',
+        :'order' => :'String',
         :'predefined_validation' => :'String',
         :'required' => :'String',
         :'row_values' => :'Array<DocGenFormFieldRowValue>',
@@ -83,8 +98,16 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'connectedObjectDetails')
+        self.connected_object_details = attributes[:'connectedObjectDetails']
+      end
+
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
+      end
+
+      if attributes.has_key?(:'fullyQualifiedPath')
+        self.fully_qualified_path = attributes[:'fullyQualifiedPath']
       end
 
       if attributes.has_key?(:'label')
@@ -99,6 +122,10 @@ module DocuSign_eSign
         if (value = attributes[:'options']).is_a?(Array)
           self.options = value
         end
+      end
+
+      if attributes.has_key?(:'order')
+        self.order = attributes[:'order']
       end
 
       if attributes.has_key?(:'predefinedValidation')
@@ -146,10 +173,13 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          connected_object_details == o.connected_object_details &&
           description == o.description &&
+          fully_qualified_path == o.fully_qualified_path &&
           label == o.label &&
           name == o.name &&
           options == o.options &&
+          order == o.order &&
           predefined_validation == o.predefined_validation &&
           required == o.required &&
           row_values == o.row_values &&
@@ -167,7 +197,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [description, label, name, options, predefined_validation, required, row_values, type, validation, value].hash
+      [connected_object_details, description, fully_qualified_path, label, name, options, order, predefined_validation, required, row_values, type, validation, value].hash
     end
 
     # Builds the object from hash

@@ -37,6 +37,9 @@ module DocuSign_eSign
     # The number of results returned in this response. 
     attr_accessor :result_set_size
 
+    # 
+    attr_accessor :sky_drive_skip_token
+
     # Starting position of the current result set.
     attr_accessor :start_position
 
@@ -54,6 +57,7 @@ module DocuSign_eSign
         :'next_uri' => :'nextUri',
         :'previous_uri' => :'previousUri',
         :'result_set_size' => :'resultSetSize',
+        :'sky_drive_skip_token' => :'skyDriveSkipToken',
         :'start_position' => :'startPosition',
         :'total_set_size' => :'totalSetSize'
       }
@@ -70,6 +74,7 @@ module DocuSign_eSign
         :'next_uri' => :'String',
         :'previous_uri' => :'String',
         :'result_set_size' => :'String',
+        :'sky_drive_skip_token' => :'String',
         :'start_position' => :'String',
         :'total_set_size' => :'String'
       }
@@ -117,6 +122,10 @@ module DocuSign_eSign
         self.result_set_size = attributes[:'resultSetSize']
       end
 
+      if attributes.has_key?(:'skyDriveSkipToken')
+        self.sky_drive_skip_token = attributes[:'skyDriveSkipToken']
+      end
+
       if attributes.has_key?(:'startPosition')
         self.start_position = attributes[:'startPosition']
       end
@@ -152,6 +161,7 @@ module DocuSign_eSign
           next_uri == o.next_uri &&
           previous_uri == o.previous_uri &&
           result_set_size == o.result_set_size &&
+          sky_drive_skip_token == o.sky_drive_skip_token &&
           start_position == o.start_position &&
           total_set_size == o.total_set_size
     end
@@ -165,7 +175,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [end_position, error_details, id, items, name, next_uri, previous_uri, result_set_size, start_position, total_set_size].hash
+      [end_position, error_details, id, items, name, next_uri, previous_uri, result_set_size, sky_drive_skip_token, start_position, total_set_size].hash
     end
 
     # Builds the object from hash

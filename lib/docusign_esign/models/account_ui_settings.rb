@@ -33,6 +33,12 @@ module DocuSign_eSign
     attr_accessor :clickwrap_schema_version_metadata
 
     # 
+    attr_accessor :disable_web_app_access
+
+    # 
+    attr_accessor :disable_web_app_access_metadata
+
+    # 
     attr_accessor :enable_admin_message
 
     # 
@@ -125,6 +131,8 @@ module DocuSign_eSign
         :'ask_an_admin' => :'askAnAdmin',
         :'clickwrap_schema_version' => :'clickwrapSchemaVersion',
         :'clickwrap_schema_version_metadata' => :'clickwrapSchemaVersionMetadata',
+        :'disable_web_app_access' => :'disableWebAppAccess',
+        :'disable_web_app_access_metadata' => :'disableWebAppAccessMetadata',
         :'enable_admin_message' => :'enableAdminMessage',
         :'enable_admin_message_metadata' => :'enableAdminMessageMetadata',
         :'enable_easy_sign_can_use_multi_template_apply' => :'enableEasySignCanUseMultiTemplateApply',
@@ -165,6 +173,8 @@ module DocuSign_eSign
         :'ask_an_admin' => :'AskAnAdmin',
         :'clickwrap_schema_version' => :'String',
         :'clickwrap_schema_version_metadata' => :'SettingsMetadata',
+        :'disable_web_app_access' => :'String',
+        :'disable_web_app_access_metadata' => :'SettingsMetadata',
         :'enable_admin_message' => :'String',
         :'enable_admin_message_metadata' => :'SettingsMetadata',
         :'enable_easy_sign_can_use_multi_template_apply' => :'String',
@@ -226,6 +236,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'clickwrapSchemaVersionMetadata')
         self.clickwrap_schema_version_metadata = attributes[:'clickwrapSchemaVersionMetadata']
+      end
+
+      if attributes.has_key?(:'disableWebAppAccess')
+        self.disable_web_app_access = attributes[:'disableWebAppAccess']
+      end
+
+      if attributes.has_key?(:'disableWebAppAccessMetadata')
+        self.disable_web_app_access_metadata = attributes[:'disableWebAppAccessMetadata']
       end
 
       if attributes.has_key?(:'enableAdminMessage')
@@ -365,6 +383,8 @@ module DocuSign_eSign
           ask_an_admin == o.ask_an_admin &&
           clickwrap_schema_version == o.clickwrap_schema_version &&
           clickwrap_schema_version_metadata == o.clickwrap_schema_version_metadata &&
+          disable_web_app_access == o.disable_web_app_access &&
+          disable_web_app_access_metadata == o.disable_web_app_access_metadata &&
           enable_admin_message == o.enable_admin_message &&
           enable_admin_message_metadata == o.enable_admin_message_metadata &&
           enable_easy_sign_can_use_multi_template_apply == o.enable_easy_sign_can_use_multi_template_apply &&
@@ -404,7 +424,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [admin_message, allow_users_to_edit_shared_access, allow_users_to_edit_shared_access_metadata, ask_an_admin, clickwrap_schema_version, clickwrap_schema_version_metadata, enable_admin_message, enable_admin_message_metadata, enable_easy_sign_can_use_multi_template_apply, enable_easy_sign_can_use_multi_template_apply_metadata, enable_easy_sign_template_upload, enable_easy_sign_template_upload_metadata, enable_envelope_copy_with_data, enable_envelope_copy_with_data_metadata, enable_envelope_types, enable_envelope_types_metadata, enable_legacy_sendflow_link, enable_legacy_sendflow_link_metadata, has_external_linked_accounts, has_external_linked_accounts_metadata, hide_send_an_envelope, hide_send_an_envelope_metadata, hide_use_a_template, hide_use_a_template_in_prepare, hide_use_a_template_in_prepare_metadata, hide_use_a_template_metadata, order_based_recipient_id_generation, order_based_recipient_id_generation_metadata, remove_envelope_forwarding, remove_envelope_forwarding_metadata, should_redact_access_code, should_redact_access_code_metadata, upload_new_image_to_sign_or_initial, upload_new_image_to_sign_or_initial_metadata].hash
+      [admin_message, allow_users_to_edit_shared_access, allow_users_to_edit_shared_access_metadata, ask_an_admin, clickwrap_schema_version, clickwrap_schema_version_metadata, disable_web_app_access, disable_web_app_access_metadata, enable_admin_message, enable_admin_message_metadata, enable_easy_sign_can_use_multi_template_apply, enable_easy_sign_can_use_multi_template_apply_metadata, enable_easy_sign_template_upload, enable_easy_sign_template_upload_metadata, enable_envelope_copy_with_data, enable_envelope_copy_with_data_metadata, enable_envelope_types, enable_envelope_types_metadata, enable_legacy_sendflow_link, enable_legacy_sendflow_link_metadata, has_external_linked_accounts, has_external_linked_accounts_metadata, hide_send_an_envelope, hide_send_an_envelope_metadata, hide_use_a_template, hide_use_a_template_in_prepare, hide_use_a_template_in_prepare_metadata, hide_use_a_template_metadata, order_based_recipient_id_generation, order_based_recipient_id_generation_metadata, remove_envelope_forwarding, remove_envelope_forwarding_metadata, should_redact_access_code, should_redact_access_code_metadata, upload_new_image_to_sign_or_initial, upload_new_image_to_sign_or_initial_metadata].hash
     end
 
     # Builds the object from hash

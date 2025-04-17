@@ -38,6 +38,12 @@ module DocuSign_eSign
     # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
     attr_accessor :document_id
 
+    # 
+    attr_accessor :document_template_agreement_type_id
+
+    # 
+    attr_accessor :document_template_id
+
     # When set to **true**, the document is been already encrypted by the sender for use with the DocuSign Key Manager Security Appliance.  
     attr_accessor :encrypted_with_key_manager
 
@@ -109,6 +115,8 @@ module DocuSign_eSign
         :'document_base64' => :'documentBase64',
         :'document_fields' => :'documentFields',
         :'document_id' => :'documentId',
+        :'document_template_agreement_type_id' => :'documentTemplateAgreementTypeId',
+        :'document_template_id' => :'documentTemplateId',
         :'encrypted_with_key_manager' => :'encryptedWithKeyManager',
         :'file_extension' => :'fileExtension',
         :'file_format_hint' => :'fileFormatHint',
@@ -143,6 +151,8 @@ module DocuSign_eSign
         :'document_base64' => :'String',
         :'document_fields' => :'Array<NameValue>',
         :'document_id' => :'String',
+        :'document_template_agreement_type_id' => :'String',
+        :'document_template_id' => :'String',
         :'encrypted_with_key_manager' => :'String',
         :'file_extension' => :'String',
         :'file_format_hint' => :'String',
@@ -208,6 +218,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'documentId')
         self.document_id = attributes[:'documentId']
+      end
+
+      if attributes.has_key?(:'documentTemplateAgreementTypeId')
+        self.document_template_agreement_type_id = attributes[:'documentTemplateAgreementTypeId']
+      end
+
+      if attributes.has_key?(:'documentTemplateId')
+        self.document_template_id = attributes[:'documentTemplateId']
       end
 
       if attributes.has_key?(:'encryptedWithKeyManager')
@@ -319,6 +337,8 @@ module DocuSign_eSign
           document_base64 == o.document_base64 &&
           document_fields == o.document_fields &&
           document_id == o.document_id &&
+          document_template_agreement_type_id == o.document_template_agreement_type_id &&
+          document_template_id == o.document_template_id &&
           encrypted_with_key_manager == o.encrypted_with_key_manager &&
           file_extension == o.file_extension &&
           file_format_hint == o.file_format_hint &&
@@ -350,7 +370,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [apply_anchor_tabs, assign_tabs_to_recipient_id, authoritative_copy, display, doc_gen_form_fields, document_base64, document_fields, document_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, is_doc_gen_document, match_boxes, name, order, pages, password, pdf_form_field_option, remote_url, signer_must_acknowledge, signer_must_acknowledge_use_account_default, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
+      [apply_anchor_tabs, assign_tabs_to_recipient_id, authoritative_copy, display, doc_gen_form_fields, document_base64, document_fields, document_id, document_template_agreement_type_id, document_template_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, is_doc_gen_document, match_boxes, name, order, pages, password, pdf_form_field_option, remote_url, signer_must_acknowledge, signer_must_acknowledge_use_account_default, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
     end
 
     # Builds the object from hash

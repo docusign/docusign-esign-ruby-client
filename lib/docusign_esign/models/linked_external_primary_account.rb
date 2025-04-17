@@ -23,10 +23,22 @@ module DocuSign_eSign
     attr_accessor :email
 
     # 
+    attr_accessor :exempt_members_of_same_account_from_auth
+
+    # 
     attr_accessor :link_id
 
     # 
     attr_accessor :pdf_field_handling_option
+
+    # 
+    attr_accessor :pdf_field_handling_prefill_tab_permission
+
+    # 
+    attr_accessor :pdf_field_handling_standard_input_tab_permission
+
+    # 
+    attr_accessor :pdf_field_handling_standard_tab_permission
 
     # 
     attr_accessor :recipient_auth_requirements
@@ -43,8 +55,12 @@ module DocuSign_eSign
         :'account_name' => :'accountName',
         :'configuration_id' => :'configurationId',
         :'email' => :'email',
+        :'exempt_members_of_same_account_from_auth' => :'exemptMembersOfSameAccountFromAuth',
         :'link_id' => :'linkId',
         :'pdf_field_handling_option' => :'pdfFieldHandlingOption',
+        :'pdf_field_handling_prefill_tab_permission' => :'pdfFieldHandlingPrefillTabPermission',
+        :'pdf_field_handling_standard_input_tab_permission' => :'pdfFieldHandlingStandardInputTabPermission',
+        :'pdf_field_handling_standard_tab_permission' => :'pdfFieldHandlingStandardTabPermission',
         :'recipient_auth_requirements' => :'recipientAuthRequirements',
         :'status' => :'status',
         :'user_id' => :'userId'
@@ -57,8 +73,12 @@ module DocuSign_eSign
         :'account_name' => :'String',
         :'configuration_id' => :'String',
         :'email' => :'String',
+        :'exempt_members_of_same_account_from_auth' => :'String',
         :'link_id' => :'String',
         :'pdf_field_handling_option' => :'String',
+        :'pdf_field_handling_prefill_tab_permission' => :'String',
+        :'pdf_field_handling_standard_input_tab_permission' => :'String',
+        :'pdf_field_handling_standard_tab_permission' => :'String',
         :'recipient_auth_requirements' => :'ExternalPrimaryAccountRecipientAuthRequirements',
         :'status' => :'String',
         :'user_id' => :'String'
@@ -85,12 +105,28 @@ module DocuSign_eSign
         self.email = attributes[:'email']
       end
 
+      if attributes.has_key?(:'exemptMembersOfSameAccountFromAuth')
+        self.exempt_members_of_same_account_from_auth = attributes[:'exemptMembersOfSameAccountFromAuth']
+      end
+
       if attributes.has_key?(:'linkId')
         self.link_id = attributes[:'linkId']
       end
 
       if attributes.has_key?(:'pdfFieldHandlingOption')
         self.pdf_field_handling_option = attributes[:'pdfFieldHandlingOption']
+      end
+
+      if attributes.has_key?(:'pdfFieldHandlingPrefillTabPermission')
+        self.pdf_field_handling_prefill_tab_permission = attributes[:'pdfFieldHandlingPrefillTabPermission']
+      end
+
+      if attributes.has_key?(:'pdfFieldHandlingStandardInputTabPermission')
+        self.pdf_field_handling_standard_input_tab_permission = attributes[:'pdfFieldHandlingStandardInputTabPermission']
+      end
+
+      if attributes.has_key?(:'pdfFieldHandlingStandardTabPermission')
+        self.pdf_field_handling_standard_tab_permission = attributes[:'pdfFieldHandlingStandardTabPermission']
       end
 
       if attributes.has_key?(:'recipientAuthRequirements')
@@ -127,8 +163,12 @@ module DocuSign_eSign
           account_name == o.account_name &&
           configuration_id == o.configuration_id &&
           email == o.email &&
+          exempt_members_of_same_account_from_auth == o.exempt_members_of_same_account_from_auth &&
           link_id == o.link_id &&
           pdf_field_handling_option == o.pdf_field_handling_option &&
+          pdf_field_handling_prefill_tab_permission == o.pdf_field_handling_prefill_tab_permission &&
+          pdf_field_handling_standard_input_tab_permission == o.pdf_field_handling_standard_input_tab_permission &&
+          pdf_field_handling_standard_tab_permission == o.pdf_field_handling_standard_tab_permission &&
           recipient_auth_requirements == o.recipient_auth_requirements &&
           status == o.status &&
           user_id == o.user_id
@@ -143,7 +183,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_name, configuration_id, email, link_id, pdf_field_handling_option, recipient_auth_requirements, status, user_id].hash
+      [account_name, configuration_id, email, exempt_members_of_same_account_from_auth, link_id, pdf_field_handling_option, pdf_field_handling_prefill_tab_permission, pdf_field_handling_standard_input_tab_permission, pdf_field_handling_standard_tab_permission, recipient_auth_requirements, status, user_id].hash
     end
 
     # Builds the object from hash

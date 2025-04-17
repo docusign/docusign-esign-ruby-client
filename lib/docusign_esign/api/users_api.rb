@@ -38,6 +38,9 @@ module DocuSign_eSign
     # 
     attr_accessor :email
 
+    # 
+    attr_accessor :include_license
+
     def self.default
       @@default ||= GetInformationOptions.new
     end
@@ -82,6 +85,9 @@ module DocuSign_eSign
 
     # Filters user records returned by one or more group Id's.
     attr_accessor :group_id
+
+    # 
+    attr_accessor :include_license
 
     # 
     attr_accessor :include_usersettings_for_csv
@@ -744,6 +750,7 @@ module DocuSign_eSign
       query_params = {}
       query_params[:'additional_info'] = options.additional_info if !options.additional_info.nil?
       query_params[:'email'] = options.email if !options.email.nil?
+      query_params[:'include_license'] = options.include_license if !options.include_license.nil?
 
       # header parameters
       header_params = {}
@@ -1085,6 +1092,7 @@ module DocuSign_eSign
       query_params[:'email'] = options.email if !options.email.nil?
       query_params[:'email_substring'] = options.email_substring if !options.email_substring.nil?
       query_params[:'group_id'] = options.group_id if !options.group_id.nil?
+      query_params[:'include_license'] = options.include_license if !options.include_license.nil?
       query_params[:'include_usersettings_for_csv'] = options.include_usersettings_for_csv if !options.include_usersettings_for_csv.nil?
       query_params[:'login_status'] = options.login_status if !options.login_status.nil?
       query_params[:'not_group_id'] = options.not_group_id if !options.not_group_id.nil?

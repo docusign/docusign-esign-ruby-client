@@ -86,8 +86,14 @@ module DocuSign_eSign
     # 
     attr_accessor :caption_metadata
 
+    # 
+    attr_accessor :connected_object_details
+
     # Array or errors.
     attr_accessor :error_details
+
+    # 
+    attr_accessor :extension_data
 
     # The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.
     attr_accessor :font
@@ -145,6 +151,9 @@ module DocuSign_eSign
 
     # Metadata that indicates whether the `status` property is editable.
     attr_accessor :status_metadata
+
+    # 
+    attr_accessor :tab_fully_qualified_path
 
     # The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     
     attr_accessor :tab_id
@@ -209,7 +218,9 @@ module DocuSign_eSign
         :'bold_metadata' => :'boldMetadata',
         :'caption' => :'caption',
         :'caption_metadata' => :'captionMetadata',
+        :'connected_object_details' => :'connectedObjectDetails',
         :'error_details' => :'errorDetails',
+        :'extension_data' => :'extensionData',
         :'font' => :'font',
         :'font_color' => :'fontColor',
         :'font_color_metadata' => :'fontColorMetadata',
@@ -229,6 +240,7 @@ module DocuSign_eSign
         :'selected_metadata' => :'selectedMetadata',
         :'status' => :'status',
         :'status_metadata' => :'statusMetadata',
+        :'tab_fully_qualified_path' => :'tabFullyQualifiedPath',
         :'tab_id' => :'tabId',
         :'tab_id_metadata' => :'tabIdMetadata',
         :'tab_order' => :'tabOrder',
@@ -271,7 +283,9 @@ module DocuSign_eSign
         :'bold_metadata' => :'PropertyMetadata',
         :'caption' => :'String',
         :'caption_metadata' => :'PropertyMetadata',
+        :'connected_object_details' => :'ConnectedObjectDetails',
         :'error_details' => :'ErrorDetails',
+        :'extension_data' => :'ExtensionData',
         :'font' => :'String',
         :'font_color' => :'String',
         :'font_color_metadata' => :'PropertyMetadata',
@@ -291,6 +305,7 @@ module DocuSign_eSign
         :'selected_metadata' => :'PropertyMetadata',
         :'status' => :'String',
         :'status_metadata' => :'PropertyMetadata',
+        :'tab_fully_qualified_path' => :'String',
         :'tab_id' => :'String',
         :'tab_id_metadata' => :'PropertyMetadata',
         :'tab_order' => :'String',
@@ -410,8 +425,16 @@ module DocuSign_eSign
         self.caption_metadata = attributes[:'captionMetadata']
       end
 
+      if attributes.has_key?(:'connectedObjectDetails')
+        self.connected_object_details = attributes[:'connectedObjectDetails']
+      end
+
       if attributes.has_key?(:'errorDetails')
         self.error_details = attributes[:'errorDetails']
+      end
+
+      if attributes.has_key?(:'extensionData')
+        self.extension_data = attributes[:'extensionData']
       end
 
       if attributes.has_key?(:'font')
@@ -488,6 +511,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'statusMetadata')
         self.status_metadata = attributes[:'statusMetadata']
+      end
+
+      if attributes.has_key?(:'tabFullyQualifiedPath')
+        self.tab_fully_qualified_path = attributes[:'tabFullyQualifiedPath']
       end
 
       if attributes.has_key?(:'tabId')
@@ -581,7 +608,9 @@ module DocuSign_eSign
           bold_metadata == o.bold_metadata &&
           caption == o.caption &&
           caption_metadata == o.caption_metadata &&
+          connected_object_details == o.connected_object_details &&
           error_details == o.error_details &&
+          extension_data == o.extension_data &&
           font == o.font &&
           font_color == o.font_color &&
           font_color_metadata == o.font_color_metadata &&
@@ -601,6 +630,7 @@ module DocuSign_eSign
           selected_metadata == o.selected_metadata &&
           status == o.status &&
           status_metadata == o.status_metadata &&
+          tab_fully_qualified_path == o.tab_fully_qualified_path &&
           tab_id == o.tab_id &&
           tab_id_metadata == o.tab_id_metadata &&
           tab_order == o.tab_order &&
@@ -624,7 +654,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, caption, caption_metadata, error_details, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, italic, italic_metadata, locked, locked_metadata, merge_field_xml, page_number, page_number_metadata, required, required_metadata, selected, selected_metadata, status, status_metadata, tab_id, tab_id_metadata, tab_order, tab_order_metadata, underline, underline_metadata, value, value_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
+      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, caption, caption_metadata, connected_object_details, error_details, extension_data, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, italic, italic_metadata, locked, locked_metadata, merge_field_xml, page_number, page_number_metadata, required, required_metadata, selected, selected_metadata, status, status_metadata, tab_fully_qualified_path, tab_id, tab_id_metadata, tab_order, tab_order_metadata, underline, underline_metadata, value, value_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
     end
 
     # Builds the object from hash

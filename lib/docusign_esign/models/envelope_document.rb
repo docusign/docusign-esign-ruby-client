@@ -59,8 +59,17 @@ module DocuSign_eSign
     # 
     attr_accessor :document_id_guid
 
+    # 
+    attr_accessor :document_template_agreement_type_id
+
+    # 
+    attr_accessor :document_template_id
+
     # Array or errors.
     attr_accessor :error_details
+
+    # 
+    attr_accessor :has_digital_signature
 
     # 
     attr_accessor :include_in_download
@@ -73,6 +82,12 @@ module DocuSign_eSign
 
     # 
     attr_accessor :is_doc_gen_document
+
+    # 
+    attr_accessor :is_externally_available
+
+    # 
+    attr_accessor :is_flattened
 
     # 
     attr_accessor :name
@@ -125,11 +140,16 @@ module DocuSign_eSign
         :'document_fields' => :'documentFields',
         :'document_id' => :'documentId',
         :'document_id_guid' => :'documentIdGuid',
+        :'document_template_agreement_type_id' => :'documentTemplateAgreementTypeId',
+        :'document_template_id' => :'documentTemplateId',
         :'error_details' => :'errorDetails',
+        :'has_digital_signature' => :'hasDigitalSignature',
         :'include_in_download' => :'includeInDownload',
         :'include_in_download_metadata' => :'includeInDownloadMetadata',
         :'is_ace_gen_document' => :'isAceGenDocument',
         :'is_doc_gen_document' => :'isDocGenDocument',
+        :'is_externally_available' => :'isExternallyAvailable',
+        :'is_flattened' => :'isFlattened',
         :'name' => :'name',
         :'name_metadata' => :'nameMetadata',
         :'order' => :'order',
@@ -162,11 +182,16 @@ module DocuSign_eSign
         :'document_fields' => :'Array<NameValue>',
         :'document_id' => :'String',
         :'document_id_guid' => :'String',
+        :'document_template_agreement_type_id' => :'String',
+        :'document_template_id' => :'String',
         :'error_details' => :'ErrorDetails',
+        :'has_digital_signature' => :'String',
         :'include_in_download' => :'String',
         :'include_in_download_metadata' => :'PropertyMetadata',
         :'is_ace_gen_document' => :'String',
         :'is_doc_gen_document' => :'String',
+        :'is_externally_available' => :'String',
+        :'is_flattened' => :'String',
         :'name' => :'String',
         :'name_metadata' => :'PropertyMetadata',
         :'order' => :'String',
@@ -259,8 +284,20 @@ module DocuSign_eSign
         self.document_id_guid = attributes[:'documentIdGuid']
       end
 
+      if attributes.has_key?(:'documentTemplateAgreementTypeId')
+        self.document_template_agreement_type_id = attributes[:'documentTemplateAgreementTypeId']
+      end
+
+      if attributes.has_key?(:'documentTemplateId')
+        self.document_template_id = attributes[:'documentTemplateId']
+      end
+
       if attributes.has_key?(:'errorDetails')
         self.error_details = attributes[:'errorDetails']
+      end
+
+      if attributes.has_key?(:'hasDigitalSignature')
+        self.has_digital_signature = attributes[:'hasDigitalSignature']
       end
 
       if attributes.has_key?(:'includeInDownload')
@@ -277,6 +314,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'isDocGenDocument')
         self.is_doc_gen_document = attributes[:'isDocGenDocument']
+      end
+
+      if attributes.has_key?(:'isExternallyAvailable')
+        self.is_externally_available = attributes[:'isExternallyAvailable']
+      end
+
+      if attributes.has_key?(:'isFlattened')
+        self.is_flattened = attributes[:'isFlattened']
       end
 
       if attributes.has_key?(:'name')
@@ -359,11 +404,16 @@ module DocuSign_eSign
           document_fields == o.document_fields &&
           document_id == o.document_id &&
           document_id_guid == o.document_id_guid &&
+          document_template_agreement_type_id == o.document_template_agreement_type_id &&
+          document_template_id == o.document_template_id &&
           error_details == o.error_details &&
+          has_digital_signature == o.has_digital_signature &&
           include_in_download == o.include_in_download &&
           include_in_download_metadata == o.include_in_download_metadata &&
           is_ace_gen_document == o.is_ace_gen_document &&
           is_doc_gen_document == o.is_doc_gen_document &&
+          is_externally_available == o.is_externally_available &&
+          is_flattened == o.is_flattened &&
           name == o.name &&
           name_metadata == o.name_metadata &&
           order == o.order &&
@@ -386,7 +436,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [added_recipient_ids, attachment_tab_id, authoritative_copy, authoritative_copy_metadata, available_document_types, contains_pdf_form_fields, display, display_metadata, doc_gen_document_status, doc_gen_errors, doc_gen_form_fields, document_base64, document_fields, document_id, document_id_guid, error_details, include_in_download, include_in_download_metadata, is_ace_gen_document, is_doc_gen_document, name, name_metadata, order, pages, signer_must_acknowledge, signer_must_acknowledge_metadata, size_bytes, template_locked, template_required, type, uri].hash
+      [added_recipient_ids, attachment_tab_id, authoritative_copy, authoritative_copy_metadata, available_document_types, contains_pdf_form_fields, display, display_metadata, doc_gen_document_status, doc_gen_errors, doc_gen_form_fields, document_base64, document_fields, document_id, document_id_guid, document_template_agreement_type_id, document_template_id, error_details, has_digital_signature, include_in_download, include_in_download_metadata, is_ace_gen_document, is_doc_gen_document, is_externally_available, is_flattened, name, name_metadata, order, pages, signer_must_acknowledge, signer_must_acknowledge_metadata, size_bytes, template_locked, template_required, type, uri].hash
     end
 
     # Builds the object from hash

@@ -20,6 +20,9 @@ module DocuSign_eSign
     attr_accessor :phone_number_list
 
     # 
+    attr_accessor :string_value
+
+    # 
     attr_accessor :value_type
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -27,6 +30,7 @@ module DocuSign_eSign
       {
         :'name' => :'name',
         :'phone_number_list' => :'phoneNumberList',
+        :'string_value' => :'stringValue',
         :'value_type' => :'valueType'
       }
     end
@@ -36,6 +40,7 @@ module DocuSign_eSign
       {
         :'name' => :'String',
         :'phone_number_list' => :'Array<RecipientIdentityPhoneNumber>',
+        :'string_value' => :'String',
         :'value_type' => :'String'
       }
     end
@@ -56,6 +61,10 @@ module DocuSign_eSign
         if (value = attributes[:'phoneNumberList']).is_a?(Array)
           self.phone_number_list = value
         end
+      end
+
+      if attributes.has_key?(:'stringValue')
+        self.string_value = attributes[:'stringValue']
       end
 
       if attributes.has_key?(:'valueType')
@@ -83,6 +92,7 @@ module DocuSign_eSign
       self.class == o.class &&
           name == o.name &&
           phone_number_list == o.phone_number_list &&
+          string_value == o.string_value &&
           value_type == o.value_type
     end
 
@@ -95,7 +105,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, phone_number_list, value_type].hash
+      [name, phone_number_list, string_value, value_type].hash
     end
 
     # Builds the object from hash

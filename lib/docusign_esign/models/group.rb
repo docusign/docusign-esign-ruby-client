@@ -33,6 +33,9 @@ module DocuSign_eSign
     attr_accessor :group_type
 
     # 
+    attr_accessor :is_managed_by_scim
+
+    # 
     attr_accessor :last_modified_on
 
     # The ID of the permission profile associated with the group.
@@ -53,6 +56,7 @@ module DocuSign_eSign
         :'group_id' => :'groupId',
         :'group_name' => :'groupName',
         :'group_type' => :'groupType',
+        :'is_managed_by_scim' => :'isManagedByScim',
         :'last_modified_on' => :'lastModifiedOn',
         :'permission_profile_id' => :'permissionProfileId',
         :'users' => :'users',
@@ -69,6 +73,7 @@ module DocuSign_eSign
         :'group_id' => :'String',
         :'group_name' => :'String',
         :'group_type' => :'String',
+        :'is_managed_by_scim' => :'String',
         :'last_modified_on' => :'String',
         :'permission_profile_id' => :'String',
         :'users' => :'Array<UserInfo>',
@@ -106,6 +111,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'groupType')
         self.group_type = attributes[:'groupType']
+      end
+
+      if attributes.has_key?(:'isManagedByScim')
+        self.is_managed_by_scim = attributes[:'isManagedByScim']
       end
 
       if attributes.has_key?(:'lastModifiedOn')
@@ -151,6 +160,7 @@ module DocuSign_eSign
           group_id == o.group_id &&
           group_name == o.group_name &&
           group_type == o.group_type &&
+          is_managed_by_scim == o.is_managed_by_scim &&
           last_modified_on == o.last_modified_on &&
           permission_profile_id == o.permission_profile_id &&
           users == o.users &&
@@ -166,7 +176,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_type, ds_group_id, error_details, group_id, group_name, group_type, last_modified_on, permission_profile_id, users, users_count].hash
+      [access_type, ds_group_id, error_details, group_id, group_name, group_type, is_managed_by_scim, last_modified_on, permission_profile_id, users, users_count].hash
     end
 
     # Builds the object from hash

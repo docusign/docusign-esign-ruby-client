@@ -41,6 +41,9 @@ module DocuSign_eSign
     # 
     attr_accessor :search_text
 
+    # 
+    attr_accessor :sky_drive_skip_token
+
     # Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0.  
     attr_accessor :start_position
 
@@ -361,6 +364,7 @@ module DocuSign_eSign
       query_params[:'order'] = options.order if !options.order.nil?
       query_params[:'order_by'] = options.order_by if !options.order_by.nil?
       query_params[:'search_text'] = options.search_text if !options.search_text.nil?
+      query_params[:'sky_drive_skip_token'] = options.sky_drive_skip_token if !options.sky_drive_skip_token.nil?
       query_params[:'start_position'] = options.start_position if !options.start_position.nil?
 
       # header parameters
