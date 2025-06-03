@@ -42,6 +42,9 @@ module DocuSign_eSign
     attr_accessor :permission_profile_id
 
     # 
+    attr_accessor :user_group_type
+
+    # 
     attr_accessor :users
 
     # 
@@ -59,6 +62,7 @@ module DocuSign_eSign
         :'is_managed_by_scim' => :'isManagedByScim',
         :'last_modified_on' => :'lastModifiedOn',
         :'permission_profile_id' => :'permissionProfileId',
+        :'user_group_type' => :'userGroupType',
         :'users' => :'users',
         :'users_count' => :'usersCount'
       }
@@ -73,9 +77,10 @@ module DocuSign_eSign
         :'group_id' => :'String',
         :'group_name' => :'String',
         :'group_type' => :'String',
-        :'is_managed_by_scim' => :'String',
+        :'is_managed_by_scim' => :'BOOLEAN',
         :'last_modified_on' => :'String',
         :'permission_profile_id' => :'String',
+        :'user_group_type' => :'String',
         :'users' => :'Array<UserInfo>',
         :'users_count' => :'String'
       }
@@ -125,6 +130,10 @@ module DocuSign_eSign
         self.permission_profile_id = attributes[:'permissionProfileId']
       end
 
+      if attributes.has_key?(:'userGroupType')
+        self.user_group_type = attributes[:'userGroupType']
+      end
+
       if attributes.has_key?(:'users')
         if (value = attributes[:'users']).is_a?(Array)
           self.users = value
@@ -163,6 +172,7 @@ module DocuSign_eSign
           is_managed_by_scim == o.is_managed_by_scim &&
           last_modified_on == o.last_modified_on &&
           permission_profile_id == o.permission_profile_id &&
+          user_group_type == o.user_group_type &&
           users == o.users &&
           users_count == o.users_count
     end
@@ -176,7 +186,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_type, ds_group_id, error_details, group_id, group_name, group_type, is_managed_by_scim, last_modified_on, permission_profile_id, users, users_count].hash
+      [access_type, ds_group_id, error_details, group_id, group_name, group_type, is_managed_by_scim, last_modified_on, permission_profile_id, user_group_type, users, users_count].hash
     end
 
     # Builds the object from hash

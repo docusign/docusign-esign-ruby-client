@@ -27,9 +27,6 @@ module DocuSign_eSign
     attr_accessor :error_details
 
     # 
-    attr_accessor :has_document_template_library
-
-    # 
     attr_accessor :name
 
     # The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
@@ -48,7 +45,6 @@ module DocuSign_eSign
         :'document_id' => :'documentId',
         :'document_name' => :'documentName',
         :'error_details' => :'errorDetails',
-        :'has_document_template_library' => :'hasDocumentTemplateLibrary',
         :'name' => :'name',
         :'template_id' => :'templateId',
         :'template_match' => :'templateMatch',
@@ -63,7 +59,6 @@ module DocuSign_eSign
         :'document_id' => :'String',
         :'document_name' => :'String',
         :'error_details' => :'ErrorDetails',
-        :'has_document_template_library' => :'String',
         :'name' => :'String',
         :'template_id' => :'String',
         :'template_match' => :'TemplateMatch',
@@ -93,10 +88,6 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'errorDetails')
         self.error_details = attributes[:'errorDetails']
-      end
-
-      if attributes.has_key?(:'hasDocumentTemplateLibrary')
-        self.has_document_template_library = attributes[:'hasDocumentTemplateLibrary']
       end
 
       if attributes.has_key?(:'name')
@@ -138,7 +129,6 @@ module DocuSign_eSign
           document_id == o.document_id &&
           document_name == o.document_name &&
           error_details == o.error_details &&
-          has_document_template_library == o.has_document_template_library &&
           name == o.name &&
           template_id == o.template_id &&
           template_match == o.template_match &&
@@ -154,7 +144,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [applied, document_id, document_name, error_details, has_document_template_library, name, template_id, template_match, uri].hash
+      [applied, document_id, document_name, error_details, name, template_id, template_match, uri].hash
     end
 
     # Builds the object from hash

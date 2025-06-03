@@ -241,9 +241,21 @@ module DocuSign_eSign
     end
   end
 
+  class ListAuditEventsOptions
+    # Locale setting for the response, e.g., 'en-US'.
+    attr_accessor :locale
+
+    def self.default
+      @@default ||= ListAuditEventsOptions.new
+    end
+  end
+
   class ListDocumentsOptions
     # 
     attr_accessor :documents_by_userid
+
+    # 
+    attr_accessor :include_agreement_type
 
     # 
     attr_accessor :include_docgen_formfields
@@ -3575,7 +3587,7 @@ module DocuSign_eSign
     # Reserved: Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param recipient_id The ID of the recipient being accessed.
     # @param DocuSign_eSign::GetConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [ConsumerDisclosure]
@@ -3588,7 +3600,7 @@ module DocuSign_eSign
     # Reserved: Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
-    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+    # @param lang_code The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
     # @param recipient_id The ID of the recipient being accessed.
     # @param DocuSign_eSign::GetConsumerDisclosureOptions Options for modifying the behavior of the function.
     # @return [Array<(ConsumerDisclosure, Fixnum, Hash)>] ConsumerDisclosure data, response status code and response headers
@@ -5291,9 +5303,10 @@ module DocuSign_eSign
     # Gets the envelope audit events for the specified envelope.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param DocuSign_eSign::ListAuditEventsOptions Options for modifying the behavior of the function.
     # @return [EnvelopeAuditEventResponse]
-    def list_audit_events(account_id, envelope_id)
-      data, _status_code, _headers = list_audit_events_with_http_info(account_id, envelope_id)
+    def list_audit_events(account_id, envelope_id, options = DocuSign_eSign::ListAuditEventsOptions.default)
+      data, _status_code, _headers = list_audit_events_with_http_info(account_id, envelope_id, options)
       return data
     end
 
@@ -5301,8 +5314,9 @@ module DocuSign_eSign
     # Gets the envelope audit events for the specified envelope.
     # @param account_id The external account number (int) or account ID Guid.
     # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param DocuSign_eSign::ListAuditEventsOptions Options for modifying the behavior of the function.
     # @return [Array<(EnvelopeAuditEventResponse, Fixnum, Hash)>] EnvelopeAuditEventResponse data, response status code and response headers
-    def list_audit_events_with_http_info(account_id, envelope_id)
+    def list_audit_events_with_http_info(account_id, envelope_id, options = DocuSign_eSign::ListAuditEventsOptions.default)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: EnvelopesApi.list_audit_events ..."
       end
@@ -5315,6 +5329,7 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'locale'] = options.locale if !options.locale.nil?
 
       # header parameters
       header_params = {}
@@ -5481,6 +5496,7 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'documents_by_userid'] = options.documents_by_userid if !options.documents_by_userid.nil?
+      query_params[:'include_agreement_type'] = options.include_agreement_type if !options.include_agreement_type.nil?
       query_params[:'include_docgen_formfields'] = options.include_docgen_formfields if !options.include_docgen_formfields.nil?
       query_params[:'include_document_size'] = options.include_document_size if !options.include_document_size.nil?
       query_params[:'include_metadata'] = options.include_metadata if !options.include_metadata.nil?
