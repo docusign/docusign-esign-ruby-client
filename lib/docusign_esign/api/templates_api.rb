@@ -102,6 +102,9 @@ module DocuSign_eSign
 
   class ListDocumentsOptions
     # 
+    attr_accessor :include_agreement_type
+
+    # 
     attr_accessor :include_tabs
 
     def self.default
@@ -2162,6 +2165,7 @@ module DocuSign_eSign
 
       # query parameters
       query_params = {}
+      query_params[:'include_agreement_type'] = options.include_agreement_type if !options.include_agreement_type.nil?
       query_params[:'include_tabs'] = options.include_tabs if !options.include_tabs.nil?
 
       # header parameters

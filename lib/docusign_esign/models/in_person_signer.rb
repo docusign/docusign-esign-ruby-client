@@ -167,6 +167,9 @@ module DocuSign_eSign
     # When `idCheckConfigurationName` is set to `Phone Auth $`, you use this complex type to provide the recipient authentication method details. It contains the following elements:  * `recipMayProvideNumber`: Boolean. When **true,** the recipient can use whatever phone number they choose. * `senderProvidedNumbers`: ArrayOfStrings.  A list of phone numbers the recipient can use. * `recordVoicePrint`: Reserved for DocuSign. * `validateRecipProvidedNumber`: Reserved for DocuSign.  
     attr_accessor :phone_authentication
 
+    # 
+    attr_accessor :proof_file
+
     # Reserved:
     attr_accessor :recipient_attachments
 
@@ -356,6 +359,7 @@ module DocuSign_eSign
         :'note_metadata' => :'noteMetadata',
         :'offline_attributes' => :'offlineAttributes',
         :'phone_authentication' => :'phoneAuthentication',
+        :'proof_file' => :'proofFile',
         :'recipient_attachments' => :'recipientAttachments',
         :'recipient_authentication_status' => :'recipientAuthenticationStatus',
         :'recipient_feature_metadata' => :'recipientFeatureMetadata',
@@ -458,6 +462,7 @@ module DocuSign_eSign
         :'note_metadata' => :'PropertyMetadata',
         :'offline_attributes' => :'OfflineAttributes',
         :'phone_authentication' => :'RecipientPhoneAuthentication',
+        :'proof_file' => :'RecipientProofFile',
         :'recipient_attachments' => :'Array<RecipientAttachment>',
         :'recipient_authentication_status' => :'AuthenticationStatus',
         :'recipient_feature_metadata' => :'Array<FeatureAvailableMetadata>',
@@ -724,6 +729,10 @@ module DocuSign_eSign
         self.phone_authentication = attributes[:'phoneAuthentication']
       end
 
+      if attributes.has_key?(:'proofFile')
+        self.proof_file = attributes[:'proofFile']
+      end
+
       if attributes.has_key?(:'recipientAttachments')
         if (value = attributes[:'recipientAttachments']).is_a?(Array)
           self.recipient_attachments = value
@@ -984,6 +993,7 @@ module DocuSign_eSign
           note_metadata == o.note_metadata &&
           offline_attributes == o.offline_attributes &&
           phone_authentication == o.phone_authentication &&
+          proof_file == o.proof_file &&
           recipient_attachments == o.recipient_attachments &&
           recipient_authentication_status == o.recipient_authentication_status &&
           recipient_feature_metadata == o.recipient_feature_metadata &&
@@ -1040,7 +1050,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, allow_system_override_for_locked_recipient, auto_navigation, auto_responded_reason, bulk_send_v2_recipient, can_sign_offline, client_user_id, completed_count, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_template_id, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, host_email, host_email_metadata, host_name, host_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, in_person_signing_type, in_person_signing_type_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_host, notary_id, note, note_metadata, offline_attributes, phone_authentication, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, signer_email, signer_email_metadata, signer_first_name, signer_first_name_metadata, signer_last_name, signer_last_name_metadata, signer_name, signer_name_metadata, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id, web_form_recipient_view_id].hash
+      [access_code, access_code_metadata, add_access_code_to_email, allow_system_override_for_locked_recipient, auto_navigation, auto_responded_reason, bulk_send_v2_recipient, can_sign_offline, client_user_id, completed_count, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_template_id, document_visibility, email, email_metadata, email_notification, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, host_email, host_email_metadata, host_name, host_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, in_person_signing_type, in_person_signing_type_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_host, notary_id, note, note_metadata, offline_attributes, phone_authentication, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, signer_email, signer_email_metadata, signer_first_name, signer_first_name_metadata, signer_last_name, signer_last_name_metadata, signer_name, signer_name_metadata, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id, web_form_recipient_view_id].hash
     end
 
     # Builds the object from hash

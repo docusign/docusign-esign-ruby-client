@@ -18,6 +18,12 @@ module DocuSign_eSign
     attr_accessor :added_recipient_ids
 
     # 
+    attr_accessor :agreement_type
+
+    # 
+    attr_accessor :agreement_type_source
+
+    # 
     attr_accessor :attachment_tab_id
 
     # Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
@@ -58,9 +64,6 @@ module DocuSign_eSign
 
     # 
     attr_accessor :document_id_guid
-
-    # 
-    attr_accessor :document_template_agreement_type_id
 
     # 
     attr_accessor :document_template_id
@@ -126,6 +129,8 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'added_recipient_ids' => :'addedRecipientIds',
+        :'agreement_type' => :'agreementType',
+        :'agreement_type_source' => :'agreementTypeSource',
         :'attachment_tab_id' => :'attachmentTabId',
         :'authoritative_copy' => :'authoritativeCopy',
         :'authoritative_copy_metadata' => :'authoritativeCopyMetadata',
@@ -140,7 +145,6 @@ module DocuSign_eSign
         :'document_fields' => :'documentFields',
         :'document_id' => :'documentId',
         :'document_id_guid' => :'documentIdGuid',
-        :'document_template_agreement_type_id' => :'documentTemplateAgreementTypeId',
         :'document_template_id' => :'documentTemplateId',
         :'error_details' => :'errorDetails',
         :'has_digital_signature' => :'hasDigitalSignature',
@@ -168,6 +172,8 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'added_recipient_ids' => :'Array<String>',
+        :'agreement_type' => :'String',
+        :'agreement_type_source' => :'String',
         :'attachment_tab_id' => :'String',
         :'authoritative_copy' => :'String',
         :'authoritative_copy_metadata' => :'PropertyMetadata',
@@ -182,7 +188,6 @@ module DocuSign_eSign
         :'document_fields' => :'Array<NameValue>',
         :'document_id' => :'String',
         :'document_id_guid' => :'String',
-        :'document_template_agreement_type_id' => :'String',
         :'document_template_id' => :'String',
         :'error_details' => :'ErrorDetails',
         :'has_digital_signature' => :'String',
@@ -218,6 +223,14 @@ module DocuSign_eSign
         if (value = attributes[:'addedRecipientIds']).is_a?(Array)
           self.added_recipient_ids = value
         end
+      end
+
+      if attributes.has_key?(:'agreementType')
+        self.agreement_type = attributes[:'agreementType']
+      end
+
+      if attributes.has_key?(:'agreementTypeSource')
+        self.agreement_type_source = attributes[:'agreementTypeSource']
       end
 
       if attributes.has_key?(:'attachmentTabId')
@@ -282,10 +295,6 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'documentIdGuid')
         self.document_id_guid = attributes[:'documentIdGuid']
-      end
-
-      if attributes.has_key?(:'documentTemplateAgreementTypeId')
-        self.document_template_agreement_type_id = attributes[:'documentTemplateAgreementTypeId']
       end
 
       if attributes.has_key?(:'documentTemplateId')
@@ -390,6 +399,8 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           added_recipient_ids == o.added_recipient_ids &&
+          agreement_type == o.agreement_type &&
+          agreement_type_source == o.agreement_type_source &&
           attachment_tab_id == o.attachment_tab_id &&
           authoritative_copy == o.authoritative_copy &&
           authoritative_copy_metadata == o.authoritative_copy_metadata &&
@@ -404,7 +415,6 @@ module DocuSign_eSign
           document_fields == o.document_fields &&
           document_id == o.document_id &&
           document_id_guid == o.document_id_guid &&
-          document_template_agreement_type_id == o.document_template_agreement_type_id &&
           document_template_id == o.document_template_id &&
           error_details == o.error_details &&
           has_digital_signature == o.has_digital_signature &&
@@ -436,7 +446,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [added_recipient_ids, attachment_tab_id, authoritative_copy, authoritative_copy_metadata, available_document_types, contains_pdf_form_fields, display, display_metadata, doc_gen_document_status, doc_gen_errors, doc_gen_form_fields, document_base64, document_fields, document_id, document_id_guid, document_template_agreement_type_id, document_template_id, error_details, has_digital_signature, include_in_download, include_in_download_metadata, is_ace_gen_document, is_doc_gen_document, is_externally_available, is_flattened, name, name_metadata, order, pages, signer_must_acknowledge, signer_must_acknowledge_metadata, size_bytes, template_locked, template_required, type, uri].hash
+      [added_recipient_ids, agreement_type, agreement_type_source, attachment_tab_id, authoritative_copy, authoritative_copy_metadata, available_document_types, contains_pdf_form_fields, display, display_metadata, doc_gen_document_status, doc_gen_errors, doc_gen_form_fields, document_base64, document_fields, document_id, document_id_guid, document_template_id, error_details, has_digital_signature, include_in_download, include_in_download_metadata, is_ace_gen_document, is_doc_gen_document, is_externally_available, is_flattened, name, name_metadata, order, pages, signer_must_acknowledge, signer_must_acknowledge_metadata, size_bytes, template_locked, template_required, type, uri].hash
     end
 
     # Builds the object from hash

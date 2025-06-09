@@ -96,6 +96,9 @@ module DocuSign_eSign
     attr_accessor :is_downgrade
 
     # 
+    attr_accessor :is_free_to_trial_eligible
+
+    # 
     attr_accessor :payment_method
 
     # Identifies the type of plan. Examples include Business, Corporate, Enterprise, Free.
@@ -161,6 +164,7 @@ module DocuSign_eSign
         :'forgotten_password_questions_count' => :'forgottenPasswordQuestionsCount',
         :'free_envelope_sends_remaining_for_advanced_doc_gen' => :'freeEnvelopeSendsRemainingForAdvancedDocGen',
         :'is_downgrade' => :'isDowngrade',
+        :'is_free_to_trial_eligible' => :'isFreeToTrialEligible',
         :'payment_method' => :'paymentMethod',
         :'plan_classification' => :'planClassification',
         :'plan_end_date' => :'planEndDate',
@@ -206,6 +210,7 @@ module DocuSign_eSign
         :'forgotten_password_questions_count' => :'String',
         :'free_envelope_sends_remaining_for_advanced_doc_gen' => :'Integer',
         :'is_downgrade' => :'String',
+        :'is_free_to_trial_eligible' => :'String',
         :'payment_method' => :'String',
         :'plan_classification' => :'String',
         :'plan_end_date' => :'String',
@@ -339,6 +344,10 @@ module DocuSign_eSign
         self.is_downgrade = attributes[:'isDowngrade']
       end
 
+      if attributes.has_key?(:'isFreeToTrialEligible')
+        self.is_free_to_trial_eligible = attributes[:'isFreeToTrialEligible']
+      end
+
       if attributes.has_key?(:'paymentMethod')
         self.payment_method = attributes[:'paymentMethod']
       end
@@ -435,6 +444,7 @@ module DocuSign_eSign
           forgotten_password_questions_count == o.forgotten_password_questions_count &&
           free_envelope_sends_remaining_for_advanced_doc_gen == o.free_envelope_sends_remaining_for_advanced_doc_gen &&
           is_downgrade == o.is_downgrade &&
+          is_free_to_trial_eligible == o.is_free_to_trial_eligible &&
           payment_method == o.payment_method &&
           plan_classification == o.plan_classification &&
           plan_end_date == o.plan_end_date &&
@@ -458,7 +468,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id_guid, account_name, account_settings, allow_transaction_rooms, billing_period_days_remaining, billing_period_end_date, billing_period_envelopes_allowed, billing_period_envelopes_sent, billing_period_start_date, billing_profile, brands, can_upgrade, connect_permission, created_date, currency_code, current_plan_id, display_appliance_start_url, display_appliance_url, distributor_code, docu_sign_landing_url, dss_values, envelope_sending_blocked, envelope_unit_price, external_account_id, forgotten_password_questions_count, free_envelope_sends_remaining_for_advanced_doc_gen, is_downgrade, payment_method, plan_classification, plan_end_date, plan_name, plan_start_date, recipient_domains, seats_allowed, seats_in_use, status21_cfr_part11, suspension_date, suspension_status, use_display_appliance].hash
+      [account_id_guid, account_name, account_settings, allow_transaction_rooms, billing_period_days_remaining, billing_period_end_date, billing_period_envelopes_allowed, billing_period_envelopes_sent, billing_period_start_date, billing_profile, brands, can_upgrade, connect_permission, created_date, currency_code, current_plan_id, display_appliance_start_url, display_appliance_url, distributor_code, docu_sign_landing_url, dss_values, envelope_sending_blocked, envelope_unit_price, external_account_id, forgotten_password_questions_count, free_envelope_sends_remaining_for_advanced_doc_gen, is_downgrade, is_free_to_trial_eligible, payment_method, plan_classification, plan_end_date, plan_name, plan_start_date, recipient_domains, seats_allowed, seats_in_use, status21_cfr_part11, suspension_date, suspension_status, use_display_appliance].hash
     end
 
     # Builds the object from hash

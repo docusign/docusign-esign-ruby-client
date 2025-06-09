@@ -27,6 +27,9 @@ module DocuSign_eSign
     attr_accessor :display
 
     # 
+    attr_accessor :doc_gen_document_status
+
+    # 
     attr_accessor :doc_gen_form_fields
 
     # The document's bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding.
@@ -37,9 +40,6 @@ module DocuSign_eSign
 
     # Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
     attr_accessor :document_id
-
-    # 
-    attr_accessor :document_template_agreement_type_id
 
     # 
     attr_accessor :document_template_id
@@ -111,11 +111,11 @@ module DocuSign_eSign
         :'assign_tabs_to_recipient_id' => :'assignTabsToRecipientId',
         :'authoritative_copy' => :'authoritativeCopy',
         :'display' => :'display',
+        :'doc_gen_document_status' => :'docGenDocumentStatus',
         :'doc_gen_form_fields' => :'docGenFormFields',
         :'document_base64' => :'documentBase64',
         :'document_fields' => :'documentFields',
         :'document_id' => :'documentId',
-        :'document_template_agreement_type_id' => :'documentTemplateAgreementTypeId',
         :'document_template_id' => :'documentTemplateId',
         :'encrypted_with_key_manager' => :'encryptedWithKeyManager',
         :'file_extension' => :'fileExtension',
@@ -147,11 +147,11 @@ module DocuSign_eSign
         :'assign_tabs_to_recipient_id' => :'String',
         :'authoritative_copy' => :'BOOLEAN',
         :'display' => :'String',
+        :'doc_gen_document_status' => :'String',
         :'doc_gen_form_fields' => :'Array<DocGenFormField>',
         :'document_base64' => :'String',
         :'document_fields' => :'Array<NameValue>',
         :'document_id' => :'String',
-        :'document_template_agreement_type_id' => :'String',
         :'document_template_id' => :'String',
         :'encrypted_with_key_manager' => :'String',
         :'file_extension' => :'String',
@@ -200,6 +200,10 @@ module DocuSign_eSign
         self.display = attributes[:'display']
       end
 
+      if attributes.has_key?(:'docGenDocumentStatus')
+        self.doc_gen_document_status = attributes[:'docGenDocumentStatus']
+      end
+
       if attributes.has_key?(:'docGenFormFields')
         if (value = attributes[:'docGenFormFields']).is_a?(Array)
           self.doc_gen_form_fields = value
@@ -218,10 +222,6 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'documentId')
         self.document_id = attributes[:'documentId']
-      end
-
-      if attributes.has_key?(:'documentTemplateAgreementTypeId')
-        self.document_template_agreement_type_id = attributes[:'documentTemplateAgreementTypeId']
       end
 
       if attributes.has_key?(:'documentTemplateId')
@@ -333,11 +333,11 @@ module DocuSign_eSign
           assign_tabs_to_recipient_id == o.assign_tabs_to_recipient_id &&
           authoritative_copy == o.authoritative_copy &&
           display == o.display &&
+          doc_gen_document_status == o.doc_gen_document_status &&
           doc_gen_form_fields == o.doc_gen_form_fields &&
           document_base64 == o.document_base64 &&
           document_fields == o.document_fields &&
           document_id == o.document_id &&
-          document_template_agreement_type_id == o.document_template_agreement_type_id &&
           document_template_id == o.document_template_id &&
           encrypted_with_key_manager == o.encrypted_with_key_manager &&
           file_extension == o.file_extension &&
@@ -370,7 +370,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [apply_anchor_tabs, assign_tabs_to_recipient_id, authoritative_copy, display, doc_gen_form_fields, document_base64, document_fields, document_id, document_template_agreement_type_id, document_template_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, is_doc_gen_document, match_boxes, name, order, pages, password, pdf_form_field_option, remote_url, signer_must_acknowledge, signer_must_acknowledge_use_account_default, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
+      [apply_anchor_tabs, assign_tabs_to_recipient_id, authoritative_copy, display, doc_gen_document_status, doc_gen_form_fields, document_base64, document_fields, document_id, document_template_id, encrypted_with_key_manager, file_extension, file_format_hint, html_definition, include_in_download, is_doc_gen_document, match_boxes, name, order, pages, password, pdf_form_field_option, remote_url, signer_must_acknowledge, signer_must_acknowledge_use_account_default, tabs, template_locked, template_required, transform_pdf_fields, uri].hash
     end
 
     # Builds the object from hash
