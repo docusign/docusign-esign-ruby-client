@@ -17,12 +17,16 @@ module DocuSign_eSign
     attr_accessor :return_url
 
     # 
+    attr_accessor :settings
+
+    # 
     attr_accessor :view_access
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'return_url' => :'returnUrl',
+        :'settings' => :'settings',
         :'view_access' => :'viewAccess'
       }
     end
@@ -31,6 +35,7 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'return_url' => :'String',
+        :'settings' => :'TemplateViewSettings',
         :'view_access' => :'String'
       }
     end
@@ -45,6 +50,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'returnUrl')
         self.return_url = attributes[:'returnUrl']
+      end
+
+      if attributes.has_key?(:'settings')
+        self.settings = attributes[:'settings']
       end
 
       if attributes.has_key?(:'viewAccess')
@@ -71,6 +80,7 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           return_url == o.return_url &&
+          settings == o.settings &&
           view_access == o.view_access
     end
 
@@ -83,7 +93,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [return_url, view_access].hash
+      [return_url, settings, view_access].hash
     end
 
     # Builds the object from hash
