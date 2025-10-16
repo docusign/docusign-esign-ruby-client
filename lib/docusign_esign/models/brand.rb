@@ -56,6 +56,9 @@ module DocuSign_eSign
     # 
     attr_accessor :links
 
+    # 
+    attr_accessor :logo_ids
+
     # The URIs for retrieving the logos that are associated with the brand.
     attr_accessor :logos
 
@@ -82,6 +85,7 @@ module DocuSign_eSign
         :'is_signing_default' => :'isSigningDefault',
         :'landing_pages' => :'landingPages',
         :'links' => :'links',
+        :'logo_ids' => :'logoIds',
         :'logos' => :'logos',
         :'organization_brand_logo' => :'organizationBrandLogo',
         :'resources' => :'resources'
@@ -105,6 +109,7 @@ module DocuSign_eSign
         :'is_signing_default' => :'BOOLEAN',
         :'landing_pages' => :'Array<NameValue>',
         :'links' => :'Array<BrandLink>',
+        :'logo_ids' => :'BrandLogoIds',
         :'logos' => :'BrandLogos',
         :'organization_brand_logo' => :'String',
         :'resources' => :'BrandResourceUrls'
@@ -185,6 +190,10 @@ module DocuSign_eSign
         end
       end
 
+      if attributes.has_key?(:'logoIds')
+        self.logo_ids = attributes[:'logoIds']
+      end
+
       if attributes.has_key?(:'logos')
         self.logos = attributes[:'logos']
       end
@@ -230,6 +239,7 @@ module DocuSign_eSign
           is_signing_default == o.is_signing_default &&
           landing_pages == o.landing_pages &&
           links == o.links &&
+          logo_ids == o.logo_ids &&
           logos == o.logos &&
           organization_brand_logo == o.organization_brand_logo &&
           resources == o.resources
@@ -244,7 +254,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [brand_company, brand_id, brand_languages, brand_name, colors, default_brand_language, email_content, error_details, is_organization_brand, is_overriding_company_name, is_sending_default, is_signing_default, landing_pages, links, logos, organization_brand_logo, resources].hash
+      [brand_company, brand_id, brand_languages, brand_name, colors, default_brand_language, email_content, error_details, is_organization_brand, is_overriding_company_name, is_sending_default, is_signing_default, landing_pages, links, logo_ids, logos, organization_brand_logo, resources].hash
     end
 
     # Builds the object from hash
