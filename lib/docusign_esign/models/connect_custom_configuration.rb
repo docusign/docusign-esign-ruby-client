@@ -41,6 +41,9 @@ module DocuSign_eSign
     # This turns Connect logging on or off. When set to **true**, logging is turned on.
     attr_accessor :enable_log
 
+    # 
+    attr_accessor :enable_o_auth_per_configuration
+
     # A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
     attr_accessor :envelope_events
 
@@ -91,6 +94,9 @@ module DocuSign_eSign
 
     # The name of the Connect configuration. The name helps identify the configuration in the list.
     attr_accessor :name
+
+    # 
+    attr_accessor :o_auth_configuration
 
     # 
     attr_accessor :password
@@ -158,6 +164,7 @@ module DocuSign_eSign
         :'delivery_mode' => :'deliveryMode',
         :'disabled_by' => :'disabledBy',
         :'enable_log' => :'enableLog',
+        :'enable_o_auth_per_configuration' => :'enableOAuthPerConfiguration',
         :'envelope_events' => :'envelopeEvents',
         :'event_data' => :'eventData',
         :'events' => :'events',
@@ -175,6 +182,7 @@ module DocuSign_eSign
         :'include_time_zone_information' => :'includeTimeZoneInformation',
         :'integrator_managed' => :'integratorManaged',
         :'name' => :'name',
+        :'o_auth_configuration' => :'oAuthConfiguration',
         :'password' => :'password',
         :'pause_publish' => :'pausePublish',
         :'recipient_events' => :'recipientEvents',
@@ -208,6 +216,7 @@ module DocuSign_eSign
         :'delivery_mode' => :'String',
         :'disabled_by' => :'String',
         :'enable_log' => :'String',
+        :'enable_o_auth_per_configuration' => :'String',
         :'envelope_events' => :'Array<String>',
         :'event_data' => :'ConnectEventData',
         :'events' => :'Array<String>',
@@ -225,6 +234,7 @@ module DocuSign_eSign
         :'include_time_zone_information' => :'String',
         :'integrator_managed' => :'String',
         :'name' => :'String',
+        :'o_auth_configuration' => :'ConnectOAuthConfig',
         :'password' => :'String',
         :'pause_publish' => :'String',
         :'recipient_events' => :'Array<String>',
@@ -288,6 +298,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'enableLog')
         self.enable_log = attributes[:'enableLog']
+      end
+
+      if attributes.has_key?(:'enableOAuthPerConfiguration')
+        self.enable_o_auth_per_configuration = attributes[:'enableOAuthPerConfiguration']
       end
 
       if attributes.has_key?(:'envelopeEvents')
@@ -362,6 +376,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'oAuthConfiguration')
+        self.o_auth_configuration = attributes[:'oAuthConfiguration']
       end
 
       if attributes.has_key?(:'password')
@@ -472,6 +490,7 @@ module DocuSign_eSign
           delivery_mode == o.delivery_mode &&
           disabled_by == o.disabled_by &&
           enable_log == o.enable_log &&
+          enable_o_auth_per_configuration == o.enable_o_auth_per_configuration &&
           envelope_events == o.envelope_events &&
           event_data == o.event_data &&
           events == o.events &&
@@ -489,6 +508,7 @@ module DocuSign_eSign
           include_time_zone_information == o.include_time_zone_information &&
           integrator_managed == o.integrator_managed &&
           name == o.name &&
+          o_auth_configuration == o.o_auth_configuration &&
           password == o.password &&
           pause_publish == o.pause_publish &&
           recipient_events == o.recipient_events &&
@@ -518,7 +538,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_envelope_publish, allow_salesforce_publish, all_users, all_users_except, configuration_type, connect_id, delivery_mode, disabled_by, enable_log, envelope_events, event_data, events, external_folder_id, external_folder_label, group_ids, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_o_auth, include_sender_accountas_custom_field, include_time_zone_information, integrator_managed, name, password, pause_publish, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
+      [allow_envelope_publish, allow_salesforce_publish, all_users, all_users_except, configuration_type, connect_id, delivery_mode, disabled_by, enable_log, enable_o_auth_per_configuration, envelope_events, event_data, events, external_folder_id, external_folder_label, group_ids, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_o_auth, include_sender_accountas_custom_field, include_time_zone_information, integrator_managed, name, o_auth_configuration, password, pause_publish, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
     end
 
     # Builds the object from hash
