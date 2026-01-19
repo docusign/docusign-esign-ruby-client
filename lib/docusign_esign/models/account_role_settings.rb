@@ -15,6 +15,15 @@ module DocuSign_eSign
   # This object defines account permissions for users who are associated with the account permission profile. 
   class AccountRoleSettings
     # 
+    attr_accessor :account_agreements_access_type
+
+    # 
+    attr_accessor :account_agreements_access_type_metadata
+
+    # 
+    attr_accessor :account_management_granular
+
+    # 
     attr_accessor :allow_account_management
 
     # Metadata that indicates whether the `allowAccountManagement` property is editable. 
@@ -159,6 +168,12 @@ module DocuSign_eSign
     attr_accessor :allow_wet_signing_override_metadata
 
     # 
+    attr_accessor :can_bulk_upload_agreements
+
+    # 
+    attr_accessor :can_bulk_upload_agreements_metadata
+
+    # 
     attr_accessor :can_create_transaction
 
     # 
@@ -181,6 +196,18 @@ module DocuSign_eSign
 
     # 
     attr_accessor :can_delete_transaction_metadata
+
+    # 
+    attr_accessor :can_manage_agreement_desk_request
+
+    # 
+    attr_accessor :can_manage_agreement_desk_request_metadata
+
+    # 
+    attr_accessor :can_manage_agreement_desk_request_setting
+
+    # 
+    attr_accessor :can_manage_agreement_desk_request_setting_metadata
 
     # 
     attr_accessor :can_send_envelopes_via_sms
@@ -229,6 +256,12 @@ module DocuSign_eSign
 
     # Reserved for DocuSign.
     attr_accessor :enable_transaction_point_integration_metadata
+
+    # 
+    attr_accessor :playbook_access
+
+    # 
+    attr_accessor :playbook_access_metadata
 
     # 
     attr_accessor :power_form_role
@@ -290,6 +323,9 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'account_agreements_access_type' => :'accountAgreementsAccessType',
+        :'account_agreements_access_type_metadata' => :'accountAgreementsAccessTypeMetadata',
+        :'account_management_granular' => :'accountManagementGranular',
         :'allow_account_management' => :'allowAccountManagement',
         :'allow_account_management_metadata' => :'allowAccountManagementMetadata',
         :'allow_api_access' => :'allowApiAccess',
@@ -338,6 +374,8 @@ module DocuSign_eSign
         :'allow_vaulting_metadata' => :'allowVaultingMetadata',
         :'allow_wet_signing_override' => :'allowWetSigningOverride',
         :'allow_wet_signing_override_metadata' => :'allowWetSigningOverrideMetadata',
+        :'can_bulk_upload_agreements' => :'canBulkUploadAgreements',
+        :'can_bulk_upload_agreements_metadata' => :'canBulkUploadAgreementsMetadata',
         :'can_create_transaction' => :'canCreateTransaction',
         :'can_create_transaction_metadata' => :'canCreateTransactionMetadata',
         :'can_create_workspaces' => :'canCreateWorkspaces',
@@ -346,6 +384,10 @@ module DocuSign_eSign
         :'can_delete_documents_in_transaction_metadata' => :'canDeleteDocumentsInTransactionMetadata',
         :'can_delete_transaction' => :'canDeleteTransaction',
         :'can_delete_transaction_metadata' => :'canDeleteTransactionMetadata',
+        :'can_manage_agreement_desk_request' => :'canManageAgreementDeskRequest',
+        :'can_manage_agreement_desk_request_metadata' => :'canManageAgreementDeskRequestMetadata',
+        :'can_manage_agreement_desk_request_setting' => :'canManageAgreementDeskRequestSetting',
+        :'can_manage_agreement_desk_request_setting_metadata' => :'canManageAgreementDeskRequestSettingMetadata',
         :'can_send_envelopes_via_sms' => :'canSendEnvelopesViaSMS',
         :'can_send_envelopes_via_sms_metadata' => :'canSendEnvelopesViaSMSMetadata',
         :'disable_document_upload' => :'disableDocumentUpload',
@@ -362,6 +404,8 @@ module DocuSign_eSign
         :'enable_sequential_signing_interface_metadata' => :'enableSequentialSigningInterfaceMetadata',
         :'enable_transaction_point_integration' => :'enableTransactionPointIntegration',
         :'enable_transaction_point_integration_metadata' => :'enableTransactionPointIntegrationMetadata',
+        :'playbook_access' => :'playbookAccess',
+        :'playbook_access_metadata' => :'playbookAccessMetadata',
         :'power_form_role' => :'powerFormRole',
         :'power_form_role_metadata' => :'powerFormRoleMetadata',
         :'receive_completed_self_signed_documents_as_email_links' => :'receiveCompletedSelfSignedDocumentsAsEmailLinks',
@@ -387,6 +431,9 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'account_agreements_access_type' => :'String',
+        :'account_agreements_access_type_metadata' => :'SettingsMetadata',
+        :'account_management_granular' => :'AccountManagementGranular',
         :'allow_account_management' => :'String',
         :'allow_account_management_metadata' => :'SettingsMetadata',
         :'allow_api_access' => :'String',
@@ -435,6 +482,8 @@ module DocuSign_eSign
         :'allow_vaulting_metadata' => :'SettingsMetadata',
         :'allow_wet_signing_override' => :'String',
         :'allow_wet_signing_override_metadata' => :'SettingsMetadata',
+        :'can_bulk_upload_agreements' => :'String',
+        :'can_bulk_upload_agreements_metadata' => :'SettingsMetadata',
         :'can_create_transaction' => :'String',
         :'can_create_transaction_metadata' => :'SettingsMetadata',
         :'can_create_workspaces' => :'String',
@@ -443,6 +492,10 @@ module DocuSign_eSign
         :'can_delete_documents_in_transaction_metadata' => :'SettingsMetadata',
         :'can_delete_transaction' => :'String',
         :'can_delete_transaction_metadata' => :'SettingsMetadata',
+        :'can_manage_agreement_desk_request' => :'String',
+        :'can_manage_agreement_desk_request_metadata' => :'SettingsMetadata',
+        :'can_manage_agreement_desk_request_setting' => :'String',
+        :'can_manage_agreement_desk_request_setting_metadata' => :'SettingsMetadata',
         :'can_send_envelopes_via_sms' => :'String',
         :'can_send_envelopes_via_sms_metadata' => :'SettingsMetadata',
         :'disable_document_upload' => :'String',
@@ -459,6 +512,8 @@ module DocuSign_eSign
         :'enable_sequential_signing_interface_metadata' => :'SettingsMetadata',
         :'enable_transaction_point_integration' => :'String',
         :'enable_transaction_point_integration_metadata' => :'SettingsMetadata',
+        :'playbook_access' => :'String',
+        :'playbook_access_metadata' => :'SettingsMetadata',
         :'power_form_role' => :'String',
         :'power_form_role_metadata' => :'SettingsMetadata',
         :'receive_completed_self_signed_documents_as_email_links' => :'String',
@@ -488,6 +543,18 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'accountAgreementsAccessType')
+        self.account_agreements_access_type = attributes[:'accountAgreementsAccessType']
+      end
+
+      if attributes.has_key?(:'accountAgreementsAccessTypeMetadata')
+        self.account_agreements_access_type_metadata = attributes[:'accountAgreementsAccessTypeMetadata']
+      end
+
+      if attributes.has_key?(:'accountManagementGranular')
+        self.account_management_granular = attributes[:'accountManagementGranular']
+      end
 
       if attributes.has_key?(:'allowAccountManagement')
         self.allow_account_management = attributes[:'allowAccountManagement']
@@ -681,6 +748,14 @@ module DocuSign_eSign
         self.allow_wet_signing_override_metadata = attributes[:'allowWetSigningOverrideMetadata']
       end
 
+      if attributes.has_key?(:'canBulkUploadAgreements')
+        self.can_bulk_upload_agreements = attributes[:'canBulkUploadAgreements']
+      end
+
+      if attributes.has_key?(:'canBulkUploadAgreementsMetadata')
+        self.can_bulk_upload_agreements_metadata = attributes[:'canBulkUploadAgreementsMetadata']
+      end
+
       if attributes.has_key?(:'canCreateTransaction')
         self.can_create_transaction = attributes[:'canCreateTransaction']
       end
@@ -711,6 +786,22 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'canDeleteTransactionMetadata')
         self.can_delete_transaction_metadata = attributes[:'canDeleteTransactionMetadata']
+      end
+
+      if attributes.has_key?(:'canManageAgreementDeskRequest')
+        self.can_manage_agreement_desk_request = attributes[:'canManageAgreementDeskRequest']
+      end
+
+      if attributes.has_key?(:'canManageAgreementDeskRequestMetadata')
+        self.can_manage_agreement_desk_request_metadata = attributes[:'canManageAgreementDeskRequestMetadata']
+      end
+
+      if attributes.has_key?(:'canManageAgreementDeskRequestSetting')
+        self.can_manage_agreement_desk_request_setting = attributes[:'canManageAgreementDeskRequestSetting']
+      end
+
+      if attributes.has_key?(:'canManageAgreementDeskRequestSettingMetadata')
+        self.can_manage_agreement_desk_request_setting_metadata = attributes[:'canManageAgreementDeskRequestSettingMetadata']
       end
 
       if attributes.has_key?(:'canSendEnvelopesViaSMS')
@@ -775,6 +866,14 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'enableTransactionPointIntegrationMetadata')
         self.enable_transaction_point_integration_metadata = attributes[:'enableTransactionPointIntegrationMetadata']
+      end
+
+      if attributes.has_key?(:'playbookAccess')
+        self.playbook_access = attributes[:'playbookAccess']
+      end
+
+      if attributes.has_key?(:'playbookAccessMetadata')
+        self.playbook_access_metadata = attributes[:'playbookAccessMetadata']
       end
 
       if attributes.has_key?(:'powerFormRole')
@@ -872,6 +971,9 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          account_agreements_access_type == o.account_agreements_access_type &&
+          account_agreements_access_type_metadata == o.account_agreements_access_type_metadata &&
+          account_management_granular == o.account_management_granular &&
           allow_account_management == o.allow_account_management &&
           allow_account_management_metadata == o.allow_account_management_metadata &&
           allow_api_access == o.allow_api_access &&
@@ -920,6 +1022,8 @@ module DocuSign_eSign
           allow_vaulting_metadata == o.allow_vaulting_metadata &&
           allow_wet_signing_override == o.allow_wet_signing_override &&
           allow_wet_signing_override_metadata == o.allow_wet_signing_override_metadata &&
+          can_bulk_upload_agreements == o.can_bulk_upload_agreements &&
+          can_bulk_upload_agreements_metadata == o.can_bulk_upload_agreements_metadata &&
           can_create_transaction == o.can_create_transaction &&
           can_create_transaction_metadata == o.can_create_transaction_metadata &&
           can_create_workspaces == o.can_create_workspaces &&
@@ -928,6 +1032,10 @@ module DocuSign_eSign
           can_delete_documents_in_transaction_metadata == o.can_delete_documents_in_transaction_metadata &&
           can_delete_transaction == o.can_delete_transaction &&
           can_delete_transaction_metadata == o.can_delete_transaction_metadata &&
+          can_manage_agreement_desk_request == o.can_manage_agreement_desk_request &&
+          can_manage_agreement_desk_request_metadata == o.can_manage_agreement_desk_request_metadata &&
+          can_manage_agreement_desk_request_setting == o.can_manage_agreement_desk_request_setting &&
+          can_manage_agreement_desk_request_setting_metadata == o.can_manage_agreement_desk_request_setting_metadata &&
           can_send_envelopes_via_sms == o.can_send_envelopes_via_sms &&
           can_send_envelopes_via_sms_metadata == o.can_send_envelopes_via_sms_metadata &&
           disable_document_upload == o.disable_document_upload &&
@@ -944,6 +1052,8 @@ module DocuSign_eSign
           enable_sequential_signing_interface_metadata == o.enable_sequential_signing_interface_metadata &&
           enable_transaction_point_integration == o.enable_transaction_point_integration &&
           enable_transaction_point_integration_metadata == o.enable_transaction_point_integration_metadata &&
+          playbook_access == o.playbook_access &&
+          playbook_access_metadata == o.playbook_access_metadata &&
           power_form_role == o.power_form_role &&
           power_form_role_metadata == o.power_form_role_metadata &&
           receive_completed_self_signed_documents_as_email_links == o.receive_completed_self_signed_documents_as_email_links &&
@@ -974,7 +1084,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_account_management, allow_account_management_metadata, allow_api_access, allow_api_access_metadata, allow_api_access_to_account, allow_api_access_to_account_metadata, allow_api_sending_on_behalf_of_others, allow_api_sending_on_behalf_of_others_metadata, allow_api_sequential_signing, allow_api_sequential_signing_metadata, allow_auto_tagging, allow_auto_tagging_metadata, allow_bulk_sending, allow_bulk_sending_metadata, allow_docu_sign_desktop_client, allow_docu_sign_desktop_client_metadata, allowed_address_book_access, allowed_address_book_access_metadata, allowed_clickwraps_access, allowed_clickwraps_access_metadata, allowed_document_template_library_access, allowed_document_template_library_access_metadata, allowed_orchestration_access, allowed_orchestration_access_metadata, allowed_template_access, allowed_template_access_metadata, allowed_to_be_envelope_transfer_recipient, allowed_to_be_envelope_transfer_recipient_metadata, allow_envelope_sending, allow_envelope_sending_metadata, allow_e_seal_recipients, allow_e_seal_recipients_metadata, allow_power_forms_admin_to_access_all_power_form_envelopes, allow_power_forms_admin_to_access_all_power_form_envelopes_metadata, allow_senders_to_set_recipient_email_language, allow_senders_to_set_recipient_email_language_metadata, allow_signer_attachments, allow_signer_attachments_metadata, allow_supplemental_documents, allow_supplemental_documents_metadata, allow_tagging_in_send_and_correct, allow_tagging_in_send_and_correct_metadata, allow_transactions, allow_transactions_metadata, allow_vaulting, allow_vaulting_metadata, allow_wet_signing_override, allow_wet_signing_override_metadata, can_create_transaction, can_create_transaction_metadata, can_create_workspaces, can_create_workspaces_metadata, can_delete_documents_in_transaction, can_delete_documents_in_transaction_metadata, can_delete_transaction, can_delete_transaction_metadata, can_send_envelopes_via_sms, can_send_envelopes_via_sms_metadata, disable_document_upload, disable_document_upload_metadata, disable_other_actions, disable_other_actions_metadata, enable_api_request_logging, enable_api_request_logging_metadata, enable_key_terms_suggestions_by_document_type, enable_key_terms_suggestions_by_document_type_metadata, enable_recipient_viewing_notifications, enable_recipient_viewing_notifications_metadata, enable_sequential_signing_interface, enable_sequential_signing_interface_metadata, enable_transaction_point_integration, enable_transaction_point_integration_metadata, power_form_role, power_form_role_metadata, receive_completed_self_signed_documents_as_email_links, receive_completed_self_signed_documents_as_email_links_metadata, signing_ui_version_metadata, supplemental_documents_must_accept, supplemental_documents_must_accept_metadata, supplemental_documents_must_read, supplemental_documents_must_read_metadata, supplemental_documents_must_view, supplemental_documents_must_view_metadata, use_new_docu_sign_experience_interface, use_new_docu_sign_experience_interface_metadata, use_new_sending_interface, use_new_sending_interface_metadata, vaulting_mode, vaulting_mode_metadata, web_forms, web_forms_metadata].hash
+      [account_agreements_access_type, account_agreements_access_type_metadata, account_management_granular, allow_account_management, allow_account_management_metadata, allow_api_access, allow_api_access_metadata, allow_api_access_to_account, allow_api_access_to_account_metadata, allow_api_sending_on_behalf_of_others, allow_api_sending_on_behalf_of_others_metadata, allow_api_sequential_signing, allow_api_sequential_signing_metadata, allow_auto_tagging, allow_auto_tagging_metadata, allow_bulk_sending, allow_bulk_sending_metadata, allow_docu_sign_desktop_client, allow_docu_sign_desktop_client_metadata, allowed_address_book_access, allowed_address_book_access_metadata, allowed_clickwraps_access, allowed_clickwraps_access_metadata, allowed_document_template_library_access, allowed_document_template_library_access_metadata, allowed_orchestration_access, allowed_orchestration_access_metadata, allowed_template_access, allowed_template_access_metadata, allowed_to_be_envelope_transfer_recipient, allowed_to_be_envelope_transfer_recipient_metadata, allow_envelope_sending, allow_envelope_sending_metadata, allow_e_seal_recipients, allow_e_seal_recipients_metadata, allow_power_forms_admin_to_access_all_power_form_envelopes, allow_power_forms_admin_to_access_all_power_form_envelopes_metadata, allow_senders_to_set_recipient_email_language, allow_senders_to_set_recipient_email_language_metadata, allow_signer_attachments, allow_signer_attachments_metadata, allow_supplemental_documents, allow_supplemental_documents_metadata, allow_tagging_in_send_and_correct, allow_tagging_in_send_and_correct_metadata, allow_transactions, allow_transactions_metadata, allow_vaulting, allow_vaulting_metadata, allow_wet_signing_override, allow_wet_signing_override_metadata, can_bulk_upload_agreements, can_bulk_upload_agreements_metadata, can_create_transaction, can_create_transaction_metadata, can_create_workspaces, can_create_workspaces_metadata, can_delete_documents_in_transaction, can_delete_documents_in_transaction_metadata, can_delete_transaction, can_delete_transaction_metadata, can_manage_agreement_desk_request, can_manage_agreement_desk_request_metadata, can_manage_agreement_desk_request_setting, can_manage_agreement_desk_request_setting_metadata, can_send_envelopes_via_sms, can_send_envelopes_via_sms_metadata, disable_document_upload, disable_document_upload_metadata, disable_other_actions, disable_other_actions_metadata, enable_api_request_logging, enable_api_request_logging_metadata, enable_key_terms_suggestions_by_document_type, enable_key_terms_suggestions_by_document_type_metadata, enable_recipient_viewing_notifications, enable_recipient_viewing_notifications_metadata, enable_sequential_signing_interface, enable_sequential_signing_interface_metadata, enable_transaction_point_integration, enable_transaction_point_integration_metadata, playbook_access, playbook_access_metadata, power_form_role, power_form_role_metadata, receive_completed_self_signed_documents_as_email_links, receive_completed_self_signed_documents_as_email_links_metadata, signing_ui_version_metadata, supplemental_documents_must_accept, supplemental_documents_must_accept_metadata, supplemental_documents_must_read, supplemental_documents_must_read_metadata, supplemental_documents_must_view, supplemental_documents_must_view_metadata, use_new_docu_sign_experience_interface, use_new_docu_sign_experience_interface_metadata, use_new_sending_interface, use_new_sending_interface_metadata, vaulting_mode, vaulting_mode_metadata, web_forms, web_forms_metadata].hash
     end
 
     # Builds the object from hash

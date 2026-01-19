@@ -14,6 +14,9 @@ require 'date'
 module DocuSign_eSign
   # A complex element that specifies reminder settings for the envelope
   class Reminders
+    # 
+    attr_accessor :maximum_reminder_count
+
     # An interger that sets the number of days after the recipient receives the envelope that reminder emails are sent to the recipient.
     attr_accessor :reminder_delay
 
@@ -26,6 +29,7 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'maximum_reminder_count' => :'maximumReminderCount',
         :'reminder_delay' => :'reminderDelay',
         :'reminder_enabled' => :'reminderEnabled',
         :'reminder_frequency' => :'reminderFrequency'
@@ -35,6 +39,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'maximum_reminder_count' => :'String',
         :'reminder_delay' => :'String',
         :'reminder_enabled' => :'String',
         :'reminder_frequency' => :'String'
@@ -48,6 +53,10 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'maximumReminderCount')
+        self.maximum_reminder_count = attributes[:'maximumReminderCount']
+      end
 
       if attributes.has_key?(:'reminderDelay')
         self.reminder_delay = attributes[:'reminderDelay']
@@ -80,6 +89,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          maximum_reminder_count == o.maximum_reminder_count &&
           reminder_delay == o.reminder_delay &&
           reminder_enabled == o.reminder_enabled &&
           reminder_frequency == o.reminder_frequency
@@ -94,7 +104,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [reminder_delay, reminder_enabled, reminder_frequency].hash
+      [maximum_reminder_count, reminder_delay, reminder_enabled, reminder_frequency].hash
     end
 
     # Builds the object from hash
