@@ -41,6 +41,9 @@ module DocuSign_eSign
     attr_accessor :notaries
 
     # 
+    attr_accessor :notary_witnesses
+
+    # 
     attr_accessor :participants
 
     # The list of recipient event statuses that will trigger Connect to send updates to the url. It can be a two-part list with:  * recipientEventStatusCode - The recipient status, this can be Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded. * includeDocuments - When set to **true**, the envelope time zone information is included in the message.
@@ -67,6 +70,7 @@ module DocuSign_eSign
         :'in_person_signers' => :'inPersonSigners',
         :'intermediaries' => :'intermediaries',
         :'notaries' => :'notaries',
+        :'notary_witnesses' => :'notaryWitnesses',
         :'participants' => :'participants',
         :'recipient_count' => :'recipientCount',
         :'seals' => :'seals',
@@ -87,6 +91,7 @@ module DocuSign_eSign
         :'in_person_signers' => :'Array<InPersonSigner>',
         :'intermediaries' => :'Array<Intermediary>',
         :'notaries' => :'Array<NotaryRecipient>',
+        :'notary_witnesses' => :'Array<NotaryWitness>',
         :'participants' => :'Array<Participant>',
         :'recipient_count' => :'String',
         :'seals' => :'Array<SealSign>',
@@ -153,6 +158,12 @@ module DocuSign_eSign
         end
       end
 
+      if attributes.has_key?(:'notaryWitnesses')
+        if (value = attributes[:'notaryWitnesses']).is_a?(Array)
+          self.notary_witnesses = value
+        end
+      end
+
       if attributes.has_key?(:'participants')
         if (value = attributes[:'participants']).is_a?(Array)
           self.participants = value
@@ -209,6 +220,7 @@ module DocuSign_eSign
           in_person_signers == o.in_person_signers &&
           intermediaries == o.intermediaries &&
           notaries == o.notaries &&
+          notary_witnesses == o.notary_witnesses &&
           participants == o.participants &&
           recipient_count == o.recipient_count &&
           seals == o.seals &&
@@ -225,7 +237,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [agents, carbon_copies, certified_deliveries, current_routing_order, editors, error_details, in_person_signers, intermediaries, notaries, participants, recipient_count, seals, signers, witnesses].hash
+      [agents, carbon_copies, certified_deliveries, current_routing_order, editors, error_details, in_person_signers, intermediaries, notaries, notary_witnesses, participants, recipient_count, seals, signers, witnesses].hash
     end
 
     # Builds the object from hash

@@ -179,6 +179,9 @@ module DocuSign_eSign
     # 
     attr_accessor :include_anchor_tab_locations
 
+    # 
+    attr_accessor :user_id
+
     def self.default
       @@default ||= GetEnvelopeOptions.new
     end
@@ -3989,6 +3992,7 @@ module DocuSign_eSign
       query_params[:'advanced_update'] = options.advanced_update if !options.advanced_update.nil?
       query_params[:'include'] = options.include if !options.include.nil?
       query_params[:'include_anchor_tab_locations'] = options.include_anchor_tab_locations if !options.include_anchor_tab_locations.nil?
+      query_params[:'user_id'] = options.user_id if !options.user_id.nil?
 
       # header parameters
       header_params = {}
