@@ -1476,6 +1476,61 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Creates new envelopes shares
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param envelopes_shares_request  (optional parameter)
+    # @return [EnvelopesSharesResponse]
+    def create_envelopes_shares(account_id, envelope_id, envelopes_shares_request)
+      data, _status_code, _headers = create_envelopes_shares_with_http_info(account_id, envelope_id,  envelopes_shares_request)
+      return data
+    end
+
+    # Creates new envelopes shares
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param envelopes_shares_request  (optional parameter)
+    # @return [Array<(EnvelopesSharesResponse, Fixnum, Hash)>] EnvelopesSharesResponse data, response status code and response headers
+    def create_envelopes_shares_with_http_info(account_id, envelope_id, envelopes_shares_request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_envelopes_shares ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_envelopes_shares" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.create_envelopes_shares" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/shares".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(envelopes_shares_request)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'EnvelopesSharesResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_envelopes_shares\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Submits a batch of historical envelopes for republish to an adhoc config.
     # 
     # @param account_id The external account number (int) or account ID Guid.
