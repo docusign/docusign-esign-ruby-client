@@ -278,6 +278,9 @@ module DocuSign_eSign
     # The display name for the signing group.   Maximum Length: 100 characters. 
     attr_accessor :signing_group_name
 
+    # 
+    attr_accessor :signing_group_type
+
     # A complex type that contains information about users in the signing group.
     attr_accessor :signing_group_users
 
@@ -411,6 +414,7 @@ module DocuSign_eSign
         :'signing_group_id' => :'signingGroupId',
         :'signing_group_id_metadata' => :'signingGroupIdMetadata',
         :'signing_group_name' => :'signingGroupName',
+        :'signing_group_type' => :'signingGroupType',
         :'signing_group_users' => :'signingGroupUsers',
         :'sms_authentication' => :'smsAuthentication',
         :'social_authentications' => :'socialAuthentications',
@@ -519,6 +523,7 @@ module DocuSign_eSign
         :'signing_group_id' => :'String',
         :'signing_group_id_metadata' => :'PropertyMetadata',
         :'signing_group_name' => :'String',
+        :'signing_group_type' => :'String',
         :'signing_group_users' => :'Array<UserInfo>',
         :'sms_authentication' => :'RecipientSMSAuthentication',
         :'social_authentications' => :'Array<SocialAuthentication>',
@@ -914,6 +919,10 @@ module DocuSign_eSign
         self.signing_group_name = attributes[:'signingGroupName']
       end
 
+      if attributes.has_key?(:'signingGroupType')
+        self.signing_group_type = attributes[:'signingGroupType']
+      end
+
       if attributes.has_key?(:'signingGroupUsers')
         if (value = attributes[:'signingGroupUsers']).is_a?(Array)
           self.signing_group_users = value
@@ -1081,6 +1090,7 @@ module DocuSign_eSign
           signing_group_id == o.signing_group_id &&
           signing_group_id_metadata == o.signing_group_id_metadata &&
           signing_group_name == o.signing_group_name &&
+          signing_group_type == o.signing_group_type &&
           signing_group_users == o.signing_group_users &&
           sms_authentication == o.sms_authentication &&
           social_authentications == o.social_authentications &&
@@ -1106,7 +1116,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_navigation, auto_responded_reason, bulk_recipients_uri, bulk_send_v2_recipient, can_sign_offline, client_user_id, completed_count, consent_details_list, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delegated_by, delegated_to, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_template_id, document_visibility, email, email_metadata, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_id, notary_signer_email_sent, note, note_metadata, offline_attributes, phone_authentication, phone_number, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id, web_form_recipient_view_id, witness_for, witness_for_guid].hash
+      [access_code, access_code_metadata, add_access_code_to_email, additional_notifications, agent_can_edit_email, agent_can_edit_name, allow_system_override_for_locked_recipient, auto_navigation, auto_responded_reason, bulk_recipients_uri, bulk_send_v2_recipient, can_sign_offline, client_user_id, completed_count, consent_details_list, creation_reason, custom_fields, declined_date_time, declined_reason, default_recipient, delegated_by, delegated_to, delivered_date_time, delivery_method, delivery_method_metadata, designator_id, designator_id_guid, document_template_id, document_visibility, email, email_metadata, email_notification, email_recipient_post_signing_url, embedded_recipient_start_url, error_details, excluded_documents, fax_number, fax_number_metadata, first_name, first_name_metadata, full_name, full_name_metadata, id_check_configuration_name, id_check_configuration_name_metadata, id_check_information_input, identity_verification, inherit_email_notification_configuration, is_bulk_recipient, is_bulk_recipient_metadata, last_name, last_name_metadata, locked_recipient_phone_auth_editable, locked_recipient_sms_editable, name, name_metadata, notary_id, notary_signer_email_sent, note, note_metadata, offline_attributes, phone_authentication, phone_number, proof_file, recipient_attachments, recipient_authentication_status, recipient_feature_metadata, recipient_id, recipient_id_guid, recipient_signature_providers, recipient_supplies_tabs, recipient_type, recipient_type_metadata, require_id_lookup, require_id_lookup_metadata, require_signer_certificate, require_sign_on_paper, require_upload_signature, role_name, routing_order, routing_order_metadata, sent_date_time, signature_info, signed_date_time, sign_in_each_location, sign_in_each_location_metadata, signing_group_id, signing_group_id_metadata, signing_group_name, signing_group_type, signing_group_users, sms_authentication, social_authentications, status, status_code, suppress_emails, tabs, template_locked, template_required, total_tab_count, user_id, web_form_recipient_view_id, witness_for, witness_for_guid].hash
     end
 
     # Builds the object from hash
