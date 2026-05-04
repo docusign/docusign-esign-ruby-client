@@ -247,15 +247,6 @@ module DocuSign_eSign
     end
   end
 
-  class ListRecipientNamesByEmailOptions
-    # The email address for the user
-    attr_accessor :email
-
-    def self.default
-      @@default ||= ListRecipientNamesByEmailOptions.new
-    end
-  end
-
   class ListSharedAccessOptions
     # Specifies maximum number of results included in the response. If no value is specified, this defaults to 1000.
     attr_accessor :count
@@ -2142,6 +2133,108 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Gets completion rate for the template
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @return [TemplateCompletionRateResponse]
+    def get_completion_rate_for_template(account_id, template_id)
+      data, _status_code, _headers = get_completion_rate_for_template_with_http_info(account_id, template_id)
+      return data
+    end
+
+    # Gets completion rate for the template
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @return [Array<(TemplateCompletionRateResponse, Fixnum, Hash)>] TemplateCompletionRateResponse data, response status code and response headers
+    def get_completion_rate_for_template_with_http_info(account_id, template_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.get_completion_rate_for_template ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.get_completion_rate_for_template" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling AccountsApi.get_completion_rate_for_template" if template_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/insights/completionRate".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TemplateCompletionRateResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#get_completion_rate_for_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Gets completion rate for the user
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [UserCompletionRateResponse]
+    def get_completion_rate_for_template_owner(account_id)
+      data, _status_code, _headers = get_completion_rate_for_template_owner_with_http_info(account_id)
+      return data
+    end
+
+    # Gets completion rate for the user
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [Array<(UserCompletionRateResponse, Fixnum, Hash)>] UserCompletionRateResponse data, response status code and response headers
+    def get_completion_rate_for_template_owner_with_http_info(account_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountsApi.get_completion_rate_for_template_owner ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.get_completion_rate_for_template_owner" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/insights/completionRate".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'UserCompletionRateResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountsApi#get_completion_rate_for_template_owner\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Gets the Electronic Record and Signature Disclosure.
     # Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, for the requested envelope recipient. This might be different than the current account disclosure depending on account settings, such as branding, and when the account disclosure was last updated. An optional query string can be included to return the language for the disclosure.  
     # @param account_id The external account number (int) or account ID Guid.
@@ -3056,58 +3149,6 @@ module DocuSign_eSign
         :return_type => 'PermissionProfileInformation')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AccountsApi#list_permissions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Gets recipient names associated with an email address.
-    # Retrieves a list of recipients in the specified account that are associated with a email address supplied in the query string.
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param DocuSign_eSign::ListRecipientNamesByEmailOptions Options for modifying the behavior of the function.
-    # @return [RecipientNamesResponse]
-    def list_recipient_names_by_email(account_id, options = DocuSign_eSign::ListRecipientNamesByEmailOptions.default)
-      data, _status_code, _headers = list_recipient_names_by_email_with_http_info(account_id, options)
-      return data
-    end
-
-    # Gets recipient names associated with an email address.
-    # Retrieves a list of recipients in the specified account that are associated with a email address supplied in the query string.
-    # @param account_id The external account number (int) or account ID Guid.
-    # @param DocuSign_eSign::ListRecipientNamesByEmailOptions Options for modifying the behavior of the function.
-    # @return [Array<(RecipientNamesResponse, Fixnum, Hash)>] RecipientNamesResponse data, response status code and response headers
-    def list_recipient_names_by_email_with_http_info(account_id, options = DocuSign_eSign::ListRecipientNamesByEmailOptions.default)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: AccountsApi.list_recipient_names_by_email ..."
-      end
-      # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.list_recipient_names_by_email" if account_id.nil?
-      # resource path
-      local_var_path = "/v2.1/accounts/{accountId}/recipient_names".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
-
-      # query parameters
-      query_params = {}
-      query_params[:'email'] = options.email if !options.email.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'RecipientNamesResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountsApi#list_recipient_names_by_email\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

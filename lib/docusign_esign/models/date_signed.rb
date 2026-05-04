@@ -264,6 +264,9 @@ module DocuSign_eSign
     attr_accessor :template_required_metadata
 
     # 
+    attr_accessor :timestamp_standardized
+
+    # 
     attr_accessor :tooltip
 
     # Metadata that indicates whether the `toolTip` property is editable.
@@ -388,6 +391,7 @@ module DocuSign_eSign
         :'template_locked_metadata' => :'templateLockedMetadata',
         :'template_required' => :'templateRequired',
         :'template_required_metadata' => :'templateRequiredMetadata',
+        :'timestamp_standardized' => :'timestampStandardized',
         :'tooltip' => :'tooltip',
         :'tool_tip_metadata' => :'toolTipMetadata',
         :'underline' => :'underline',
@@ -490,6 +494,7 @@ module DocuSign_eSign
         :'template_locked_metadata' => :'PropertyMetadata',
         :'template_required' => :'String',
         :'template_required_metadata' => :'PropertyMetadata',
+        :'timestamp_standardized' => :'String',
         :'tooltip' => :'String',
         :'tool_tip_metadata' => :'PropertyMetadata',
         :'underline' => :'String',
@@ -848,6 +853,10 @@ module DocuSign_eSign
         self.template_required_metadata = attributes[:'templateRequiredMetadata']
       end
 
+      if attributes.has_key?(:'timestampStandardized')
+        self.timestamp_standardized = attributes[:'timestampStandardized']
+      end
+
       if attributes.has_key?(:'tooltip')
         self.tooltip = attributes[:'tooltip']
       end
@@ -1002,6 +1011,7 @@ module DocuSign_eSign
           template_locked_metadata == o.template_locked_metadata &&
           template_required == o.template_required &&
           template_required_metadata == o.template_required_metadata &&
+          timestamp_standardized == o.timestamp_standardized &&
           tooltip == o.tooltip &&
           tool_tip_metadata == o.tool_tip_metadata &&
           underline == o.underline &&
@@ -1026,7 +1036,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [agreement_attribute, agreement_attribute_locked, anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, caption, caption_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, connected_object_details, custom_tab_id, custom_tab_id_metadata, document_id, document_id_metadata, error_details, extension_data, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, height, height_metadata, italic, italic_metadata, locale_policy, merge_field, merge_field_xml, name, name_metadata, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, smart_contract_information, source, status, status_metadata, tab_fully_qualified_path, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_label_metadata, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, underline, underline_metadata, value, value_metadata, warning_details, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
+      [agreement_attribute, agreement_attribute_locked, anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, caption, caption_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, connected_object_details, custom_tab_id, custom_tab_id_metadata, document_id, document_id_metadata, error_details, extension_data, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, height, height_metadata, italic, italic_metadata, locale_policy, merge_field, merge_field_xml, name, name_metadata, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, smart_contract_information, source, status, status_metadata, tab_fully_qualified_path, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_label, tab_label_metadata, tab_order, tab_order_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, timestamp_standardized, tooltip, tool_tip_metadata, underline, underline_metadata, value, value_metadata, warning_details, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
     end
 
     # Builds the object from hash

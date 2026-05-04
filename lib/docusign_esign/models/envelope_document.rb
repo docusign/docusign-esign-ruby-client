@@ -87,6 +87,9 @@ module DocuSign_eSign
     attr_accessor :is_doc_gen_document
 
     # 
+    attr_accessor :is_edited
+
+    # 
     attr_accessor :is_externally_available
 
     # 
@@ -152,6 +155,7 @@ module DocuSign_eSign
         :'include_in_download_metadata' => :'includeInDownloadMetadata',
         :'is_ace_gen_document' => :'isAceGenDocument',
         :'is_doc_gen_document' => :'isDocGenDocument',
+        :'is_edited' => :'isEdited',
         :'is_externally_available' => :'isExternallyAvailable',
         :'is_flattened' => :'isFlattened',
         :'name' => :'name',
@@ -195,6 +199,7 @@ module DocuSign_eSign
         :'include_in_download_metadata' => :'PropertyMetadata',
         :'is_ace_gen_document' => :'String',
         :'is_doc_gen_document' => :'String',
+        :'is_edited' => :'String',
         :'is_externally_available' => :'String',
         :'is_flattened' => :'String',
         :'name' => :'String',
@@ -325,6 +330,10 @@ module DocuSign_eSign
         self.is_doc_gen_document = attributes[:'isDocGenDocument']
       end
 
+      if attributes.has_key?(:'isEdited')
+        self.is_edited = attributes[:'isEdited']
+      end
+
       if attributes.has_key?(:'isExternallyAvailable')
         self.is_externally_available = attributes[:'isExternallyAvailable']
       end
@@ -422,6 +431,7 @@ module DocuSign_eSign
           include_in_download_metadata == o.include_in_download_metadata &&
           is_ace_gen_document == o.is_ace_gen_document &&
           is_doc_gen_document == o.is_doc_gen_document &&
+          is_edited == o.is_edited &&
           is_externally_available == o.is_externally_available &&
           is_flattened == o.is_flattened &&
           name == o.name &&
@@ -446,7 +456,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [added_recipient_ids, agreement_type, agreement_type_source, attachment_tab_id, authoritative_copy, authoritative_copy_metadata, available_document_types, contains_pdf_form_fields, display, display_metadata, doc_gen_document_status, doc_gen_errors, doc_gen_form_fields, document_base64, document_fields, document_id, document_id_guid, document_template_id, error_details, has_digital_signature, include_in_download, include_in_download_metadata, is_ace_gen_document, is_doc_gen_document, is_externally_available, is_flattened, name, name_metadata, order, pages, signer_must_acknowledge, signer_must_acknowledge_metadata, size_bytes, template_locked, template_required, type, uri].hash
+      [added_recipient_ids, agreement_type, agreement_type_source, attachment_tab_id, authoritative_copy, authoritative_copy_metadata, available_document_types, contains_pdf_form_fields, display, display_metadata, doc_gen_document_status, doc_gen_errors, doc_gen_form_fields, document_base64, document_fields, document_id, document_id_guid, document_template_id, error_details, has_digital_signature, include_in_download, include_in_download_metadata, is_ace_gen_document, is_doc_gen_document, is_edited, is_externally_available, is_flattened, name, name_metadata, order, pages, signer_must_acknowledge, signer_must_acknowledge_metadata, size_bytes, template_locked, template_required, type, uri].hash
     end
 
     # Builds the object from hash

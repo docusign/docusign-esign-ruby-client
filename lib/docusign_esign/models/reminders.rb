@@ -26,13 +26,17 @@ module DocuSign_eSign
     # An interger that sets the interval, in days, between reminder emails.
     attr_accessor :reminder_frequency
 
+    # 
+    attr_accessor :smart_reminder_enabled
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'maximum_reminder_count' => :'maximumReminderCount',
         :'reminder_delay' => :'reminderDelay',
         :'reminder_enabled' => :'reminderEnabled',
-        :'reminder_frequency' => :'reminderFrequency'
+        :'reminder_frequency' => :'reminderFrequency',
+        :'smart_reminder_enabled' => :'smartReminderEnabled'
       }
     end
 
@@ -42,7 +46,8 @@ module DocuSign_eSign
         :'maximum_reminder_count' => :'String',
         :'reminder_delay' => :'String',
         :'reminder_enabled' => :'String',
-        :'reminder_frequency' => :'String'
+        :'reminder_frequency' => :'String',
+        :'smart_reminder_enabled' => :'String'
       }
     end
 
@@ -69,6 +74,10 @@ module DocuSign_eSign
       if attributes.has_key?(:'reminderFrequency')
         self.reminder_frequency = attributes[:'reminderFrequency']
       end
+
+      if attributes.has_key?(:'smartReminderEnabled')
+        self.smart_reminder_enabled = attributes[:'smartReminderEnabled']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -92,7 +101,8 @@ module DocuSign_eSign
           maximum_reminder_count == o.maximum_reminder_count &&
           reminder_delay == o.reminder_delay &&
           reminder_enabled == o.reminder_enabled &&
-          reminder_frequency == o.reminder_frequency
+          reminder_frequency == o.reminder_frequency &&
+          smart_reminder_enabled == o.smart_reminder_enabled
     end
 
     # @see the `==` method
@@ -104,7 +114,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [maximum_reminder_count, reminder_delay, reminder_enabled, reminder_frequency].hash
+      [maximum_reminder_count, reminder_delay, reminder_enabled, reminder_frequency, smart_reminder_enabled].hash
     end
 
     # Builds the object from hash
