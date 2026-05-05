@@ -105,6 +105,9 @@ module DocuSign_eSign
     attr_accessor :include_agreement_type
 
     # 
+    attr_accessor :include_is_edited
+
+    # 
     attr_accessor :include_tabs
 
     def self.default
@@ -166,6 +169,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :is_download
+
+    # 
+    attr_accessor :link_configuration_id
 
     # 
     attr_accessor :modified_from_date
@@ -2166,6 +2172,7 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'include_agreement_type'] = options.include_agreement_type if !options.include_agreement_type.nil?
+      query_params[:'include_is_edited'] = options.include_is_edited if !options.include_is_edited.nil?
       query_params[:'include_tabs'] = options.include_tabs if !options.include_tabs.nil?
 
       # header parameters
@@ -2346,6 +2353,7 @@ module DocuSign_eSign
       query_params[:'include'] = options.include if !options.include.nil?
       query_params[:'is_deleted_template_only'] = options.is_deleted_template_only if !options.is_deleted_template_only.nil?
       query_params[:'is_download'] = options.is_download if !options.is_download.nil?
+      query_params[:'link_configuration_id'] = options.link_configuration_id if !options.link_configuration_id.nil?
       query_params[:'modified_from_date'] = options.modified_from_date if !options.modified_from_date.nil?
       query_params[:'modified_to_date'] = options.modified_to_date if !options.modified_to_date.nil?
       query_params[:'order'] = options.order if !options.order.nil?

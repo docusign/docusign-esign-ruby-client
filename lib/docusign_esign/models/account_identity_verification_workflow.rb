@@ -21,6 +21,9 @@ module DocuSign_eSign
     attr_accessor :default_name
 
     # 
+    attr_accessor :display_order
+
+    # 
     attr_accessor :input_options
 
     # 
@@ -49,6 +52,7 @@ module DocuSign_eSign
       {
         :'default_description' => :'defaultDescription',
         :'default_name' => :'defaultName',
+        :'display_order' => :'displayOrder',
         :'input_options' => :'inputOptions',
         :'is_disabled' => :'isDisabled',
         :'owner_type' => :'ownerType',
@@ -65,6 +69,7 @@ module DocuSign_eSign
       {
         :'default_description' => :'String',
         :'default_name' => :'String',
+        :'display_order' => :'String',
         :'input_options' => :'Array<AccountIdentityInputOption>',
         :'is_disabled' => :'String',
         :'owner_type' => :'String',
@@ -90,6 +95,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'defaultName')
         self.default_name = attributes[:'defaultName']
+      end
+
+      if attributes.has_key?(:'displayOrder')
+        self.display_order = attributes[:'displayOrder']
       end
 
       if attributes.has_key?(:'inputOptions')
@@ -149,6 +158,7 @@ module DocuSign_eSign
       self.class == o.class &&
           default_description == o.default_description &&
           default_name == o.default_name &&
+          display_order == o.display_order &&
           input_options == o.input_options &&
           is_disabled == o.is_disabled &&
           owner_type == o.owner_type &&
@@ -168,7 +178,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_description, default_name, input_options, is_disabled, owner_type, signature_provider, steps, workflow_id, workflow_label, workflow_resource_key].hash
+      [default_description, default_name, display_order, input_options, is_disabled, owner_type, signature_provider, steps, workflow_id, workflow_label, workflow_resource_key].hash
     end
 
     # Builds the object from hash

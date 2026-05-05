@@ -267,6 +267,9 @@ module DocuSign_eSign
     attr_accessor :include_document_size
 
     # 
+    attr_accessor :include_is_edited
+
+    # 
     attr_accessor :include_metadata
 
     # 
@@ -5558,6 +5561,7 @@ module DocuSign_eSign
       query_params[:'include_agreement_type'] = options.include_agreement_type if !options.include_agreement_type.nil?
       query_params[:'include_docgen_formfields'] = options.include_docgen_formfields if !options.include_docgen_formfields.nil?
       query_params[:'include_document_size'] = options.include_document_size if !options.include_document_size.nil?
+      query_params[:'include_is_edited'] = options.include_is_edited if !options.include_is_edited.nil?
       query_params[:'include_metadata'] = options.include_metadata if !options.include_metadata.nil?
       query_params[:'include_tabs'] = options.include_tabs if !options.include_tabs.nil?
       query_params[:'recipient_id'] = options.recipient_id if !options.recipient_id.nil?
