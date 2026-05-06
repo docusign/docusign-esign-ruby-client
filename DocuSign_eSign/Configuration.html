@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class DocuSign_eSign::Configuration - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="../Object.html">Object</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-default">::default</a>
+    <li ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-i-api_key_with_prefix">#api_key_with_prefix</a>
+    <li ><a href="#method-i-auth_settings">#auth_settings</a>
+    <li ><a href="#method-i-base_path-3D">#base_path=</a>
+    <li ><a href="#method-i-base_url">#base_url</a>
+    <li ><a href="#method-i-basic_auth_token">#basic_auth_token</a>
+    <li ><a href="#method-i-configure">#configure</a>
+    <li ><a href="#method-i-host-3D">#host=</a>
+    <li ><a href="#method-i-scheme-3D">#scheme=</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-DocuSign_eSign::Configuration">
+  <h1 id="class-DocuSign_eSign::Configuration" class="class">
+    class DocuSign_eSign::Configuration
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-access_token" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">access_token</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Defines the access token (Bearer) used with OAuth2.</p>
+        </div>
+      </div>
+      <div id="attribute-i-api_key" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">api_key</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Defines API keys used with API Key authentications.</p>
+
+<p>@return [Hash] key: parameter name, value: parameter value (API key)</p>
+
+<p>@example parameter name is “api_key”, API key is “xxx” (e.g. “api_key=xxx” in query string)</p>
+
+<pre class="ruby"><span class="ruby-identifier">config</span>.<span class="ruby-identifier">api_key</span>[<span class="ruby-string">&#39;api_key&#39;</span>] = <span class="ruby-string">&#39;xxx&#39;</span>
+</pre>
+        </div>
+      </div>
+      <div id="attribute-i-api_key_prefix" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">api_key_prefix</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Defines API key prefixes used with API Key authentications.</p>
+
+<p>@return [Hash] key: parameter name, value: API key prefix</p>
+
+<p>@example parameter name is “Authorization”, API key prefix is “Token” (e.g. “Authorization: Token xxx” in headers)</p>
+
+<pre class="ruby"><span class="ruby-identifier">config</span>.<span class="ruby-identifier">api_key_prefix</span>[<span class="ruby-string">&#39;api_key&#39;</span>] = <span class="ruby-string">&#39;Token&#39;</span>
+</pre>
+        </div>
+      </div>
+      <div id="attribute-i-base_path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">base_path</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Defines url base path</p>
+        </div>
+      </div>
+      <div id="attribute-i-cert_file" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">cert_file</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <pre>TLS/SSL setting</pre>
+
+<p>Client certificate file (for client certificate)</p>
+        </div>
+      </div>
+      <div id="attribute-i-debugging" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">debugging</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Set this to enable/disable debugging. When enabled (set to true), HTTP request/response details will be logged with `logger.debug` (see the `logger` attribute). Default to false.</p>
+
+<p>@return [true, false]</p>
+        </div>
+      </div>
+      <div id="attribute-i-force_ending_format" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">force_ending_format</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-host" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">host</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Defines url host</p>
+        </div>
+      </div>
+      <div id="attribute-i-inject_format" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">inject_format</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-key_file" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">key_file</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <pre>TLS/SSL setting</pre>
+
+<p>Client private key file (for client certificate)</p>
+        </div>
+      </div>
+      <div id="attribute-i-logger" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">logger</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Defines the logger used for debugging. Default to `Rails.logger` (when in Rails) or logging to STDOUT.</p>
+
+<p>@return [#debug]</p>
+        </div>
+      </div>
+      <div id="attribute-i-params_encoding" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">params_encoding</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Set this to customize parameters encoding of array parameter with multi collectionFormat. Default to nil.</p>
+
+<p>@see The <a href="Configuration.html#attribute-i-params_encoding"><code>params_encoding</code></a> option of Ethon. Related source code: <a href="https://github.com/typhoeus/ethon/blob/master/lib/ethon/easy/queryable.rb#L96">github.com/typhoeus/ethon/blob/master/lib/ethon/easy/queryable.rb#L96</a></p>
+        </div>
+      </div>
+      <div id="attribute-i-password" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">password</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Defines the password used with HTTP basic authentication.</p>
+
+<p>@return [String]</p>
+        </div>
+      </div>
+      <div id="attribute-i-scheme" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">scheme</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Defines url scheme</p>
+        </div>
+      </div>
+      <div id="attribute-i-ssl_ca_cert" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">ssl_ca_cert</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <pre>TLS/SSL setting</pre>
+
+<p>Set this to customize the certificate file to verify the peer.</p>
+
+<p>@return [String] the path to the certificate file</p>
+
+<p>@see The `cainfo` option of Typhoeus, `–cert` option of libcurl. Related source code: <a href="https://github.com/typhoeus/typhoeus/blob/master/lib/typhoeus/easy_factory.rb#L145">github.com/typhoeus/typhoeus/blob/master/lib/typhoeus/easy_factory.rb#L145</a></p>
+        </div>
+      </div>
+      <div id="attribute-i-temp_folder_path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">temp_folder_path</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Defines the temporary folder to store downloaded files (for API endpoints that have file response). Default to use `Tempfile`.</p>
+
+<p>@return [String]</p>
+        </div>
+      </div>
+      <div id="attribute-i-timeout" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">timeout</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The time limit for HTTP request in seconds. Default to 0 (never times out).</p>
+        </div>
+      </div>
+      <div id="attribute-i-username" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">username</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Defines the username used with HTTP basic authentication.</p>
+
+<p>@return [String]</p>
+        </div>
+      </div>
+      <div id="attribute-i-verify_ssl" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">verify_ssl</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <pre>TLS/SSL setting</pre>
+
+<p>Set this to false to skip verifying SSL certificate when calling API from https server. Default to true.</p>
+
+<p>@note Do NOT set it to false in production code, otherwise you would face multiple types of cryptographic attacks.</p>
+
+<p>@return [true, false]</p>
+        </div>
+      </div>
+      <div id="attribute-i-verify_ssl_host" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">verify_ssl_host</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <pre>TLS/SSL setting</pre>
+
+<p>Set this to false to skip verifying SSL host name Default to true.</p>
+
+<p>@note Do NOT set it to false in production code, otherwise you would face multiple types of cryptographic attacks.</p>
+
+<p>@return [true, false]</p>
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-default" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">default</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>The default <a href="Configuration.html"><code>Configuration</code></a> object.</p>
+
+          <div class="method-source-code" id="default-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/configuration.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">default</span>
+  <span class="ruby-identifier">@@default</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Configuration</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">() { |self| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/configuration.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>
+  <span class="ruby-ivar">@scheme</span> = <span class="ruby-string">&#39;https&#39;</span>
+  <span class="ruby-ivar">@host</span> = <span class="ruby-string">&#39;www.docusign.net&#39;</span>
+  <span class="ruby-ivar">@base_path</span> = <span class="ruby-string">&#39;/restapi&#39;</span>
+  <span class="ruby-ivar">@api_key</span> = {}
+  <span class="ruby-ivar">@api_key_prefix</span> = {}
+  <span class="ruby-ivar">@timeout</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@verify_ssl</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@verify_ssl_host</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@params_encoding</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@cert_file</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@key_file</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@debugging</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@inject_format</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@force_ending_format</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@logger</span> = <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">Rails</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">Rails</span>.<span class="ruby-identifier">logger</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDOUT</span>)
+
+  <span class="ruby-keyword">yield</span>(<span class="ruby-keyword">self</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-api_key_with_prefix" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">api_key_with_prefix</span><span
+            class="method-args">(param_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets API key (with prefix if set). @param [String] param_name the parameter name of API key auth</p>
+
+          <div class="method-source-code" id="api_key_with_prefix-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/configuration.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">api_key_with_prefix</span>(<span class="ruby-identifier">param_name</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_key_prefix</span>[<span class="ruby-identifier">param_name</span>]
+    <span class="ruby-node">&quot;#{@api_key_prefix[param_name]} #{@api_key[param_name]}&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@api_key</span>[<span class="ruby-identifier">param_name</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-auth_settings" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">auth_settings</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns Auth Settings hash for api client.</p>
+
+          <div class="method-source-code" id="auth_settings-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/configuration.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">auth_settings</span>
+  {
+    <span class="ruby-string">&#39;docusignAccessCode&#39;</span> <span class="ruby-operator">=&gt;</span>
+      {
+        <span class="ruby-value">type:</span> <span class="ruby-string">&#39;oauth2&#39;</span>,
+        <span class="ruby-value">in:</span> <span class="ruby-string">&#39;header&#39;</span>,
+        <span class="ruby-value">key:</span> <span class="ruby-string">&#39;Authorization&#39;</span>,
+        <span class="ruby-value">value:</span> <span class="ruby-node">&quot;Bearer #{access_token}&quot;</span>
+      },
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-base_path-3D" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">base_path=</span><span
+            class="method-args">(base_path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="base_path-3D-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/configuration.rb, line 164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">base_path=</span>(<span class="ruby-identifier">base_path</span>)
+  <span class="ruby-comment"># Add leading and trailing slashes to base_path</span>
+  <span class="ruby-ivar">@base_path</span> = <span class="ruby-node">&quot;/#{base_path}&quot;</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\/+/</span>, <span class="ruby-string">&#39;/&#39;</span>)
+  <span class="ruby-ivar">@base_path</span> = <span class="ruby-string">&#39;&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@base_path</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;/&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-base_url" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">base_url</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="base_url-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/configuration.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">base_url</span>
+  <span class="ruby-identifier">url</span> = <span class="ruby-node">&quot;#{scheme}://#{[host, base_path].join(&#39;/&#39;).gsub(/\/+/, &#39;/&#39;)}&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/\/+\z/</span>, <span class="ruby-string">&#39;&#39;</span>)
+  <span class="ruby-constant">Addressable</span><span class="ruby-operator">::</span><span class="ruby-constant">URI</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-identifier">url</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-basic_auth_token" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">basic_auth_token</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets Basic Auth token string</p>
+
+          <div class="method-source-code" id="basic_auth_token-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/configuration.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">basic_auth_token</span>
+  <span class="ruby-string">&#39;Basic &#39;</span> <span class="ruby-operator">+</span> [<span class="ruby-node">&quot;#{username}:#{password}&quot;</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&#39;m&#39;</span>).<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;\r\n&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-configure" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">configure</span><span
+            class="method-args">() { |self| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="configure-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/configuration.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">configure</span>
+  <span class="ruby-keyword">yield</span>(<span class="ruby-keyword">self</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-host-3D" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">host=</span><span
+            class="method-args">(host)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="host-3D-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/configuration.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">host=</span>(<span class="ruby-identifier">host</span>)
+  <span class="ruby-comment"># remove http(s):// and anything after a slash</span>
+  <span class="ruby-ivar">@host</span> = <span class="ruby-identifier">host</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/https?:\/\//</span>, <span class="ruby-string">&#39;&#39;</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;/&#39;</span>).<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-scheme-3D" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">scheme=</span><span
+            class="method-args">(scheme)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="scheme-3D-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/configuration.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scheme=</span>(<span class="ruby-identifier">scheme</span>)
+  <span class="ruby-comment"># remove :// from scheme</span>
+  <span class="ruby-ivar">@scheme</span> = <span class="ruby-identifier">scheme</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/:\/\//</span>, <span class="ruby-string">&#39;&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

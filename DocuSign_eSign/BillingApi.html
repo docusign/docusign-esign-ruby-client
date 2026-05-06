@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class DocuSign_eSign::BillingApi - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="../Object.html">Object</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-i-get_billing_plan">#get_billing_plan</a>
+    <li ><a href="#method-i-get_billing_plan_with_http_info">#get_billing_plan_with_http_info</a>
+    <li ><a href="#method-i-get_credit_card_info">#get_credit_card_info</a>
+    <li ><a href="#method-i-get_credit_card_info_with_http_info">#get_credit_card_info_with_http_info</a>
+    <li ><a href="#method-i-get_downgrade_request_billing_info">#get_downgrade_request_billing_info</a>
+    <li ><a href="#method-i-get_downgrade_request_billing_info_with_http_info">#get_downgrade_request_billing_info_with_http_info</a>
+    <li ><a href="#method-i-get_invoice">#get_invoice</a>
+    <li ><a href="#method-i-get_invoice_with_http_info">#get_invoice_with_http_info</a>
+    <li ><a href="#method-i-get_payment">#get_payment</a>
+    <li ><a href="#method-i-get_payment_with_http_info">#get_payment_with_http_info</a>
+    <li ><a href="#method-i-get_plan">#get_plan</a>
+    <li ><a href="#method-i-get_plan_with_http_info">#get_plan_with_http_info</a>
+    <li ><a href="#method-i-list_billing_plans">#list_billing_plans</a>
+    <li ><a href="#method-i-list_billing_plans_with_http_info">#list_billing_plans_with_http_info</a>
+    <li ><a href="#method-i-list_invoices">#list_invoices</a>
+    <li ><a href="#method-i-list_invoices_past_due">#list_invoices_past_due</a>
+    <li ><a href="#method-i-list_invoices_past_due_with_http_info">#list_invoices_past_due_with_http_info</a>
+    <li ><a href="#method-i-list_invoices_with_http_info">#list_invoices_with_http_info</a>
+    <li ><a href="#method-i-list_payments">#list_payments</a>
+    <li ><a href="#method-i-list_payments_with_http_info">#list_payments_with_http_info</a>
+    <li ><a href="#method-i-make_payment">#make_payment</a>
+    <li ><a href="#method-i-make_payment_with_http_info">#make_payment_with_http_info</a>
+    <li ><a href="#method-i-purchase_envelopes">#purchase_envelopes</a>
+    <li ><a href="#method-i-purchase_envelopes_with_http_info">#purchase_envelopes_with_http_info</a>
+    <li ><a href="#method-i-update_downgrade_account_billing_plan">#update_downgrade_account_billing_plan</a>
+    <li ><a href="#method-i-update_downgrade_account_billing_plan_with_http_info">#update_downgrade_account_billing_plan_with_http_info</a>
+    <li ><a href="#method-i-update_plan">#update_plan</a>
+    <li ><a href="#method-i-update_plan_with_http_info">#update_plan_with_http_info</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-DocuSign_eSign::BillingApi">
+  <h1 id="class-DocuSign_eSign::BillingApi" class="class">
+    class DocuSign_eSign::BillingApi
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-api_client" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">api_client</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(api_client = BillingApi.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">api_client</span> = <span class="ruby-constant">BillingApi</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-ivar">@api_client</span> = <span class="ruby-identifier">api_client</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-get_billing_plan" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_billing_plan</span><span
+            class="method-args">(billing_plan_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Get the billing plan details. Retrieves the billing plan details for the specified billing plan ID. @param billing_plan_id The ID of the billing plan being accessed. @return [BillingPlanResponse]</p>
+
+          <div class="method-source-code" id="get_billing_plan-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_billing_plan</span>(<span class="ruby-identifier">billing_plan_id</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">get_billing_plan_with_http_info</span>(<span class="ruby-identifier">billing_plan_id</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_billing_plan_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_billing_plan_with_http_info</span><span
+            class="method-args">(billing_plan_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Get the billing plan details. Retrieves the billing plan details for the specified billing plan ID. @param billing_plan_id The ID of the billing plan being accessed. @return [Array&lt;(<a href="BillingPlanResponse.html"><code>BillingPlanResponse</code></a>, Fixnum, Hash)&gt;] <a href="BillingPlanResponse.html"><code>BillingPlanResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="get_billing_plan_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_billing_plan_with_http_info</span>(<span class="ruby-identifier">billing_plan_id</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: BillingApi.get_billing_plan ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;billing_plan_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;billing_plan_id&#39; when calling BillingApi.get_billing_plan&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">billing_plan_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/billing_plans/{billingPlanId}&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;billingPlanId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">billing_plan_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;BillingPlanResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: BillingApi#get_billing_plan\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_credit_card_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_credit_card_info</span><span
+            class="method-args">(account_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Get metadata for a given credit card. This method returns information about a credit card associated with an account. @param account_id The external account number (int) or account ID Guid. @return [CreditCardInformation]</p>
+
+          <div class="method-source-code" id="get_credit_card_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_credit_card_info</span>(<span class="ruby-identifier">account_id</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">get_credit_card_info_with_http_info</span>(<span class="ruby-identifier">account_id</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_credit_card_info_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_credit_card_info_with_http_info</span><span
+            class="method-args">(account_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Get metadata for a given credit card. This method returns information about a credit card associated with an account. @param account_id The external account number (int) or account ID Guid. @return [Array&lt;(<a href="CreditCardInformation.html"><code>CreditCardInformation</code></a>, Fixnum, Hash)&gt;] <a href="CreditCardInformation.html"><code>CreditCardInformation</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="get_credit_card_info_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_credit_card_info_with_http_info</span>(<span class="ruby-identifier">account_id</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: BillingApi.get_credit_card_info ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling BillingApi.get_credit_card_info&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/billing_plan/credit_card&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;CreditCardInformation&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: BillingApi#get_credit_card_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_downgrade_request_billing_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_downgrade_request_billing_info</span><span
+            class="method-args">(account_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns downgrade plan information for the specified account.</p>
+
+<p>@param account_id The external account number (int) or account ID Guid. @return [DowngradRequestBillingInfoResponse]</p>
+
+          <div class="method-source-code" id="get_downgrade_request_billing_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_downgrade_request_billing_info</span>(<span class="ruby-identifier">account_id</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">get_downgrade_request_billing_info_with_http_info</span>(<span class="ruby-identifier">account_id</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_downgrade_request_billing_info_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_downgrade_request_billing_info_with_http_info</span><span
+            class="method-args">(account_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns downgrade plan information for the specified account.</p>
+
+<p>@param account_id The external account number (int) or account ID Guid. @return [Array&lt;(<a href="DowngradRequestBillingInfoResponse.html"><code>DowngradRequestBillingInfoResponse</code></a>, Fixnum, Hash)&gt;] <a href="DowngradRequestBillingInfoResponse.html"><code>DowngradRequestBillingInfoResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="get_downgrade_request_billing_info_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_downgrade_request_billing_info_with_http_info</span>(<span class="ruby-identifier">account_id</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: BillingApi.get_downgrade_request_billing_info ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling BillingApi.get_downgrade_request_billing_info&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/billing_plan/downgrade&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;DowngradRequestBillingInfoResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: BillingApi#get_downgrade_request_billing_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_invoice" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_invoice</span><span
+            class="method-args">(account_id, invoice_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Retrieves a billing invoice. Retrieves the specified invoice.   ###### Note: If the `pdfAvailable` property in the response is set to <strong>true</strong>, you can download a PDF version of the invoice. To download the PDF, make the call again and change the value of the `Accept` property in the header to `Accept: application/pdf`.  Privileges required: account administrator  The response returns a list of charges and information about the charges. Quantities are usually shown as &#39;unlimited&#39; or an integer. Amounts are shown in the currency set for the account.  *<strong>Response</strong>* The following table provides a description of the different `chargeName` property values. The information will grow as more chargeable items are added to the system.  | chargeName | Description | | — | — | | id_check | IDÂ Check Charge | | in_person_signing | In Person Signing charge | | envelopes Included | Sent Envelopes for the account | | age_verify | Age verification check | | ofac | OFAC Check | | id_confirm | ID confirmation check | | student_authentication | STAN PIN authentication check | | wet_sign_fax | Pages for returning signed documents by fax | | attachment_fax | Pages for returning attachments by fax | | phone_authentication | Phone authentication charge | | powerforms | <a href="PowerForm.html"><code>PowerForm</code></a> envelopes sent | | signer_payments | Payment processing charge | | outbound_fax | Send by fax charge | | bulk_recipient_envelopes | Bulk Recipient Envelopes sent | | sms_authentications | SMS authentication charge | | saml_authentications | SAML authentication charge | | express_signer_certificate | DocuSign Express Certificate charge | | personal_signer_certificate | Personal <a href="Signer.html"><code>Signer</code></a> Certificate charge | | safe_certificate | SAFE BioPharma <a href="Signer.html"><code>Signer</code></a> Certificate charge | | seats | Included active seats charge | | open_trust_certificate | OpenTrust <a href="Signer.html"><code>Signer</code></a> Certificate charge |  @param account_id The external account number (int) or account ID Guid. @param invoice_id  @return [BillingInvoice]</p>
+
+          <div class="method-source-code" id="get_invoice-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_invoice</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">invoice_id</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">get_invoice_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">invoice_id</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_invoice_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_invoice_with_http_info</span><span
+            class="method-args">(account_id, invoice_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Retrieves a billing invoice. Retrieves the specified invoice.   ###### Note: If the &amp;#x60;pdfAvailable&amp;#x60; property in the response is set to <strong>true</strong>, you can download a PDF version of the invoice. To download the PDF, make the call again and change the value of the &amp;#x60;Accept&amp;#x60; property in the header to &amp;#x60;Accept: application/pdf&amp;#x60;.  Privileges required: account administrator  The response returns a list of charges and information about the charges. Quantities are usually shown as &amp;#39;unlimited&amp;#39; or an integer. Amounts are shown in the currency set for the account.  *<strong>Response</strong>* The following table provides a description of the different &amp;#x60;chargeName&amp;#x60; property values. The information will grow as more chargeable items are added to the system.  | chargeName | Description | | — | — | | id_check | IDÂ Check Charge | | in_person_signing | In Person Signing charge | | envelopes Included | Sent Envelopes for the account | | age_verify | Age verification check | | ofac | OFAC Check | | id_confirm | ID confirmation check | | student_authentication | STAN PIN authentication check | | wet_sign_fax | Pages for returning signed documents by fax | | attachment_fax | Pages for returning attachments by fax | | phone_authentication | Phone authentication charge | | powerforms | <a href="PowerForm.html"><code>PowerForm</code></a> envelopes sent | | signer_payments | Payment processing charge | | outbound_fax | Send by fax charge | | bulk_recipient_envelopes | Bulk Recipient Envelopes sent | | sms_authentications | SMS authentication charge | | saml_authentications | SAML authentication charge | | express_signer_certificate | DocuSign Express Certificate charge | | personal_signer_certificate | Personal <a href="Signer.html"><code>Signer</code></a> Certificate charge | | safe_certificate | SAFE BioPharma <a href="Signer.html"><code>Signer</code></a> Certificate charge | | seats | Included active seats charge | | open_trust_certificate | OpenTrust <a href="Signer.html"><code>Signer</code></a> Certificate charge |  @param account_id The external account number (int) or account ID Guid. @param invoice_id  @return [Array&lt;(<a href="BillingInvoice.html"><code>BillingInvoice</code></a>, Fixnum, Hash)&gt;] <a href="BillingInvoice.html"><code>BillingInvoice</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="get_invoice_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_invoice_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">invoice_id</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: BillingApi.get_invoice ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling BillingApi.get_invoice&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># verify the required parameter &#39;invoice_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;invoice_id&#39; when calling BillingApi.get_invoice&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">invoice_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/billing_invoices/{invoiceId}&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;invoiceId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">invoice_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;BillingInvoice&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: BillingApi#get_invoice\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_payment" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_payment</span><span
+            class="method-args">(account_id, payment_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets billing payment information for a specific payment. Retrieves the information for a specified payment.   Privileges required: account administrator  @param account_id The external account number (int) or account ID Guid. @param payment_id  @return [BillingPaymentItem]</p>
+
+          <div class="method-source-code" id="get_payment-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 283</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_payment</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">payment_id</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">get_payment_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">payment_id</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_payment_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_payment_with_http_info</span><span
+            class="method-args">(account_id, payment_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets billing payment information for a specific payment. Retrieves the information for a specified payment.   Privileges required: account administrator  @param account_id The external account number (int) or account ID Guid. @param payment_id  @return [Array&lt;(<a href="BillingPaymentItem.html"><code>BillingPaymentItem</code></a>, Fixnum, Hash)&gt;] <a href="BillingPaymentItem.html"><code>BillingPaymentItem</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="get_payment_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 293</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_payment_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">payment_id</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: BillingApi.get_payment ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling BillingApi.get_payment&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># verify the required parameter &#39;payment_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;payment_id&#39; when calling BillingApi.get_payment&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">payment_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/billing_payments/{paymentId}&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;paymentId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">payment_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;BillingPaymentItem&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: BillingApi#get_payment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_plan" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_plan</span><span
+            class="method-args">(account_id, options = DocuSign_eSign::GetPlanOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Get Account Billing Plan Retrieves the billing plan information for the specified account, including the current billing plan, successor plans, billing address, and billing credit card.  By default the successor plan and credit card information is included in the response. This information can be excluded from the response by adding the appropriate optional query string with the `setting` set to *<strong>false</strong>*.   Response  The response returns the billing plan information, including the currency code, for the plan. The `billingPlan` and `succesorPlans` property values are the same as those shown in the [ML:Get Billing Plan Details] reference. the `billingAddress` and `creditCardInformation` property values are the same as those shown in the [ML:Update Billing Plan] reference.  ###### Note: When credit card number information is shown, a mask is applied to the response so that only the last 4 digits of the card number are visible.  @param account_id The external account number (int) or account ID Guid. @param <a href="GetPlanOptions.html"><code>DocuSign_eSign::GetPlanOptions</code></a> Options for modifying the behavior of the function. @return [AccountBillingPlanResponse]</p>
+
+          <div class="method-source-code" id="get_plan-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 336</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_plan</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">GetPlanOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">get_plan_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_plan_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_plan_with_http_info</span><span
+            class="method-args">(account_id, options = DocuSign_eSign::GetPlanOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Get Account Billing Plan Retrieves the billing plan information for the specified account, including the current billing plan, successor plans, billing address, and billing credit card.  By default the successor plan and credit card information is included in the response. This information can be excluded from the response by adding the appropriate optional query string with the &amp;#x60;setting&amp;#x60; set to *<strong>false</strong>*.   Response  The response returns the billing plan information, including the currency code, for the plan. The &amp;#x60;billingPlan&amp;#x60; and &amp;#x60;succesorPlans&amp;#x60; property values are the same as those shown in the [ML:Get Billing Plan Details] reference. the &amp;#x60;billingAddress&amp;#x60; and &amp;#x60;creditCardInformation&amp;#x60; property values are the same as those shown in the [ML:Update Billing Plan] reference.  ###### Note: When credit card number information is shown, a mask is applied to the response so that only the last 4 digits of the card number are visible.  @param account_id The external account number (int) or account ID Guid. @param <a href="GetPlanOptions.html"><code>DocuSign_eSign::GetPlanOptions</code></a> Options for modifying the behavior of the function. @return [Array&lt;(<a href="AccountBillingPlanResponse.html"><code>AccountBillingPlanResponse</code></a>, Fixnum, Hash)&gt;] <a href="AccountBillingPlanResponse.html"><code>AccountBillingPlanResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="get_plan_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 346</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_plan_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">GetPlanOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: BillingApi.get_plan ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling BillingApi.get_plan&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/billing_plan&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;include_credit_card_information&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_credit_card_information</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_credit_card_information</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;include_downgrade_information&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_downgrade_information</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_downgrade_information</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;include_metadata&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_metadata</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_metadata</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;include_successor_plans&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_successor_plans</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_successor_plans</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;include_tax_exempt_id&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_tax_exempt_id</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_tax_exempt_id</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;AccountBillingPlanResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: BillingApi#get_plan\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_billing_plans" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_billing_plans</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets the list of available billing plans. Retrieves a list of the billing plans associated with a distributor. @return [BillingPlansResponse]</p>
+
+          <div class="method-source-code" id="list_billing_plans-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 390</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_billing_plans</span>()
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">list_billing_plans_with_http_info</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_billing_plans_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_billing_plans_with_http_info</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets the list of available billing plans. Retrieves a list of the billing plans associated with a distributor. @return [Array&lt;(<a href="BillingPlansResponse.html"><code>BillingPlansResponse</code></a>, Fixnum, Hash)&gt;] <a href="BillingPlansResponse.html"><code>BillingPlansResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="list_billing_plans_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 398</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_billing_plans_with_http_info</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: BillingApi.list_billing_plans ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/billing_plans&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;BillingPlansResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: BillingApi#list_billing_plans\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_invoices" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_invoices</span><span
+            class="method-args">(account_id, options = DocuSign_eSign::ListInvoicesOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Get a <a href="List.html"><code>List</code></a> of Billing Invoices Retrieves a list of invoices for the account. If the from date or to date queries are not specified, the response returns invoices for the last 365 days.  Privileges required: account administrator  @param account_id The external account number (int) or account ID Guid. @param <a href="ListInvoicesOptions.html"><code>DocuSign_eSign::ListInvoicesOptions</code></a> Options for modifying the behavior of the function. @return [BillingInvoicesResponse]</p>
+
+          <div class="method-source-code" id="list_invoices-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 437</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_invoices</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">ListInvoicesOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">list_invoices_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_invoices_past_due" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_invoices_past_due</span><span
+            class="method-args">(account_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Get a list of past due invoices. Returns a list past due invoices for the account and notes if payment can be made through the REST API.   Privileges Required: account administrator @param account_id The external account number (int) or account ID Guid. @return [BillingInvoicesSummary]</p>
+
+          <div class="method-source-code" id="list_invoices_past_due-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 489</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_invoices_past_due</span>(<span class="ruby-identifier">account_id</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">list_invoices_past_due_with_http_info</span>(<span class="ruby-identifier">account_id</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_invoices_past_due_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_invoices_past_due_with_http_info</span><span
+            class="method-args">(account_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Get a list of past due invoices. Returns a list past due invoices for the account and notes if payment can be made through the REST API.   Privileges Required: account administrator @param account_id The external account number (int) or account ID Guid. @return [Array&lt;(<a href="BillingInvoicesSummary.html"><code>BillingInvoicesSummary</code></a>, Fixnum, Hash)&gt;] <a href="BillingInvoicesSummary.html"><code>BillingInvoicesSummary</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="list_invoices_past_due_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 498</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_invoices_past_due_with_http_info</span>(<span class="ruby-identifier">account_id</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: BillingApi.list_invoices_past_due ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling BillingApi.list_invoices_past_due&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/billing_invoices_past_due&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;BillingInvoicesSummary&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: BillingApi#list_invoices_past_due\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_invoices_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_invoices_with_http_info</span><span
+            class="method-args">(account_id, options = DocuSign_eSign::ListInvoicesOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Get a <a href="List.html"><code>List</code></a> of Billing Invoices Retrieves a list of invoices for the account. If the from date or to date queries are not specified, the response returns invoices for the last 365 days.  Privileges required: account administrator  @param account_id The external account number (int) or account ID Guid. @param <a href="ListInvoicesOptions.html"><code>DocuSign_eSign::ListInvoicesOptions</code></a> Options for modifying the behavior of the function. @return [Array&lt;(<a href="BillingInvoicesResponse.html"><code>BillingInvoicesResponse</code></a>, Fixnum, Hash)&gt;] <a href="BillingInvoicesResponse.html"><code>BillingInvoicesResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="list_invoices_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 447</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_invoices_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">ListInvoicesOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: BillingApi.list_invoices ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling BillingApi.list_invoices&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/billing_invoices&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;from_date&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">from_date</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">from_date</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;to_date&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_date</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_date</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;BillingInvoicesResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: BillingApi#list_invoices\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_payments" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_payments</span><span
+            class="method-args">(account_id, options = DocuSign_eSign::ListPaymentsOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets payment information for one or more payments. Retrieves a list containing information about one or more payments. If the from date or to date queries are not used, the response returns payment information for the last 365 days.   Privileges required: account administrator  @param account_id The external account number (int) or account ID Guid. @param <a href="ListPaymentsOptions.html"><code>DocuSign_eSign::ListPaymentsOptions</code></a> Options for modifying the behavior of the function. @return [BillingPaymentsResponse]</p>
+
+          <div class="method-source-code" id="list_payments-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 539</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_payments</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">ListPaymentsOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">list_payments_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_payments_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_payments_with_http_info</span><span
+            class="method-args">(account_id, options = DocuSign_eSign::ListPaymentsOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets payment information for one or more payments. Retrieves a list containing information about one or more payments. If the from date or to date queries are not used, the response returns payment information for the last 365 days.   Privileges required: account administrator  @param account_id The external account number (int) or account ID Guid. @param <a href="ListPaymentsOptions.html"><code>DocuSign_eSign::ListPaymentsOptions</code></a> Options for modifying the behavior of the function. @return [Array&lt;(<a href="BillingPaymentsResponse.html"><code>BillingPaymentsResponse</code></a>, Fixnum, Hash)&gt;] <a href="BillingPaymentsResponse.html"><code>BillingPaymentsResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="list_payments_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 549</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_payments_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">ListPaymentsOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: BillingApi.list_payments ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling BillingApi.list_payments&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/billing_payments&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;from_date&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">from_date</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">from_date</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;to_date&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_date</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_date</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;BillingPaymentsResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: BillingApi#list_payments\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-make_payment" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">make_payment</span><span
+            class="method-args">(account_id, billing_payment_request)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Posts a payment to a past due invoice. Posts a payment to a past due invoice.   ###### Note: This can only be used if the `paymentAllowed` value for a past due invoice is true. This can be determined calling [ML:GetBillingInvoicesPastDue].  The response returns information for a single payment, if a payment ID was used in the endpoint, or a list of payments. If the from date or to date queries or payment ID are not used, the response returns payment information for the last 365 days. If the request was for a single payment ID, the `nextUri` and `previousUri` properties are not returned.  Privileges required: account administrator @param account_id The external account number (int) or account ID Guid. @param billing_payment_request  (optional parameter) @return [BillingPaymentResponse]</p>
+
+          <div class="method-source-code" id="make_payment-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 592</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">make_payment</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">billing_payment_request</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">make_payment_with_http_info</span>(<span class="ruby-identifier">account_id</span>,  <span class="ruby-identifier">billing_payment_request</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-make_payment_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">make_payment_with_http_info</span><span
+            class="method-args">(account_id, billing_payment_request)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Posts a payment to a past due invoice. Posts a payment to a past due invoice.   ###### Note: This can only be used if the &amp;#x60;paymentAllowed&amp;#x60; value for a past due invoice is true. This can be determined calling [ML:GetBillingInvoicesPastDue].  The response returns information for a single payment, if a payment ID was used in the endpoint, or a list of payments. If the from date or to date queries or payment ID are not used, the response returns payment information for the last 365 days. If the request was for a single payment ID, the &amp;#x60;nextUri&amp;#x60; and &amp;#x60;previousUri&amp;#x60; properties are not returned.  Privileges required: account administrator @param account_id The external account number (int) or account ID Guid. @param billing_payment_request  (optional parameter) @return [Array&lt;(<a href="BillingPaymentResponse.html"><code>BillingPaymentResponse</code></a>, Fixnum, Hash)&gt;] <a href="BillingPaymentResponse.html"><code>BillingPaymentResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="make_payment_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 602</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">make_payment_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">billing_payment_request</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: BillingApi.make_payment ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling BillingApi.make_payment&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/billing_payments&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">object_to_http_body</span>(<span class="ruby-identifier">billing_payment_request</span>)
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:POST</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;BillingPaymentResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: BillingApi#make_payment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-purchase_envelopes" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">purchase_envelopes</span><span
+            class="method-args">(account_id, purchased_envelopes_information)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Reserverd: Purchase additional envelopes. Reserved: At this time, this endpoint is limited to DocuSign internal use only. Completes the purchase of envelopes for your account. The actual purchase is done as part of an internal workflow interaction with an envelope vendor. @param account_id The external account number (int) or account ID Guid. @param purchased_envelopes_information  (optional parameter) @return [nil]</p>
+
+          <div class="method-source-code" id="purchase_envelopes-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 643</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">purchase_envelopes</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">purchased_envelopes_information</span>)
+  <span class="ruby-identifier">purchase_envelopes_with_http_info</span>(<span class="ruby-identifier">account_id</span>,  <span class="ruby-identifier">purchased_envelopes_information</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-purchase_envelopes_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">purchase_envelopes_with_http_info</span><span
+            class="method-args">(account_id, purchased_envelopes_information)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Reserverd: Purchase additional envelopes. Reserved: At this time, this endpoint is limited to DocuSign internal use only. Completes the purchase of envelopes for your account. The actual purchase is done as part of an internal workflow interaction with an envelope vendor. @param account_id The external account number (int) or account ID Guid. @param purchased_envelopes_information  (optional parameter) @return [Array&lt;(nil, Fixnum, Hash)&gt;] nil, response status code and response headers</p>
+
+          <div class="method-source-code" id="purchase_envelopes_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 653</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">purchase_envelopes_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">purchased_envelopes_information</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: BillingApi.purchase_envelopes ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling BillingApi.purchase_envelopes&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/billing_plan/purchased_envelopes&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">object_to_http_body</span>(<span class="ruby-identifier">purchased_envelopes_information</span>)
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:PUT</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: BillingApi#purchase_envelopes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-update_downgrade_account_billing_plan" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">update_downgrade_account_billing_plan</span><span
+            class="method-args">(account_id, downgrade_billing_plan_information)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Queues downgrade billing plan request for an account.</p>
+
+<p>@param account_id The external account number (int) or account ID Guid. @param downgrade_billing_plan_information  (optional parameter) @return [DowngradePlanUpdateResponse]</p>
+
+          <div class="method-source-code" id="update_downgrade_account_billing_plan-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 693</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_downgrade_account_billing_plan</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">downgrade_billing_plan_information</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">update_downgrade_account_billing_plan_with_http_info</span>(<span class="ruby-identifier">account_id</span>,  <span class="ruby-identifier">downgrade_billing_plan_information</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-update_downgrade_account_billing_plan_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">update_downgrade_account_billing_plan_with_http_info</span><span
+            class="method-args">(account_id, downgrade_billing_plan_information)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Queues downgrade billing plan request for an account.</p>
+
+<p>@param account_id The external account number (int) or account ID Guid. @param downgrade_billing_plan_information  (optional parameter) @return [Array&lt;(<a href="DowngradePlanUpdateResponse.html"><code>DowngradePlanUpdateResponse</code></a>, Fixnum, Hash)&gt;] <a href="DowngradePlanUpdateResponse.html"><code>DowngradePlanUpdateResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="update_downgrade_account_billing_plan_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 703</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_downgrade_account_billing_plan_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">downgrade_billing_plan_information</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: BillingApi.update_downgrade_account_billing_plan ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling BillingApi.update_downgrade_account_billing_plan&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/billing_plan/downgrade&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">object_to_http_body</span>(<span class="ruby-identifier">downgrade_billing_plan_information</span>)
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:PUT</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;DowngradePlanUpdateResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: BillingApi#update_downgrade_account_billing_plan\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-update_plan" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">update_plan</span><span
+            class="method-args">(account_id, billing_plan_information, options = DocuSign_eSign::UpdatePlanOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Updates the account billing plan. Updates the billing plan information, billing address, and credit card information for the specified account. @param account_id The external account number (int) or account ID Guid. @param billing_plan_information  (optional parameter) @param <a href="UpdatePlanOptions.html"><code>DocuSign_eSign::UpdatePlanOptions</code></a> Options for modifying the behavior of the function. @return [BillingPlanUpdateResponse]</p>
+
+          <div class="method-source-code" id="update_plan-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 745</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_plan</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">billing_plan_information</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">UpdatePlanOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">update_plan_with_http_info</span>(<span class="ruby-identifier">account_id</span>,  <span class="ruby-identifier">billing_plan_information</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-update_plan_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">update_plan_with_http_info</span><span
+            class="method-args">(account_id, billing_plan_information, options = DocuSign_eSign::UpdatePlanOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Updates the account billing plan. Updates the billing plan information, billing address, and credit card information for the specified account. @param account_id The external account number (int) or account ID Guid. @param billing_plan_information  (optional parameter) @param <a href="UpdatePlanOptions.html"><code>DocuSign_eSign::UpdatePlanOptions</code></a> Options for modifying the behavior of the function. @return [Array&lt;(<a href="BillingPlanUpdateResponse.html"><code>BillingPlanUpdateResponse</code></a>, Fixnum, Hash)&gt;] <a href="BillingPlanUpdateResponse.html"><code>BillingPlanUpdateResponse</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="update_plan_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/billing_api.rb, line 756</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_plan_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">billing_plan_information</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">UpdatePlanOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: BillingApi.update_plan ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling BillingApi.update_plan&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/billing_plan&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;preview_billing_plan&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">preview_billing_plan</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">preview_billing_plan</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">object_to_http_body</span>(<span class="ruby-identifier">billing_plan_information</span>)
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:PUT</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;BillingPlanUpdateResponse&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: BillingApi#update_plan\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

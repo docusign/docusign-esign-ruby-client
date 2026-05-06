@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class DocuSign_eSign::AuthenticationApi - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="../Object.html">Object</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-i-delete_social_login">#delete_social_login</a>
+    <li ><a href="#method-i-delete_social_login_with_http_info">#delete_social_login_with_http_info</a>
+    <li ><a href="#method-i-get_o_auth_token">#get_o_auth_token</a>
+    <li ><a href="#method-i-get_o_auth_token_with_http_info">#get_o_auth_token_with_http_info</a>
+    <li ><a href="#method-i-list_social_logins">#list_social_logins</a>
+    <li ><a href="#method-i-list_social_logins_with_http_info">#list_social_logins_with_http_info</a>
+    <li ><a href="#method-i-login">#login</a>
+    <li ><a href="#method-i-login_with_http_info">#login_with_http_info</a>
+    <li ><a href="#method-i-revoke_o_auth_token">#revoke_o_auth_token</a>
+    <li ><a href="#method-i-revoke_o_auth_token_with_http_info">#revoke_o_auth_token_with_http_info</a>
+    <li ><a href="#method-i-update_password">#update_password</a>
+    <li ><a href="#method-i-update_password_with_http_info">#update_password_with_http_info</a>
+    <li ><a href="#method-i-update_social_login">#update_social_login</a>
+    <li ><a href="#method-i-update_social_login_with_http_info">#update_social_login_with_http_info</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-DocuSign_eSign::AuthenticationApi">
+  <h1 id="class-DocuSign_eSign::AuthenticationApi" class="class">
+    class DocuSign_eSign::AuthenticationApi
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-api_client" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">api_client</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(api_client = AuthenticationApi.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">api_client</span> = <span class="ruby-constant">AuthenticationApi</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-ivar">@api_client</span> = <span class="ruby-identifier">api_client</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-delete_social_login" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">delete_social_login</span><span
+            class="method-args">(account_id, user_id, social_account_information)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Deletes user&#39;s social account. Deletes a social account from a use&#39;s account. @param account_id The external account number (int) or account ID Guid. @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing. @param social_account_information  (optional parameter) @return [nil]</p>
+
+          <div class="method-source-code" id="delete_social_login-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_social_login</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">user_id</span>, <span class="ruby-identifier">social_account_information</span>)
+  <span class="ruby-identifier">delete_social_login_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">user_id</span>,  <span class="ruby-identifier">social_account_information</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-delete_social_login_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">delete_social_login_with_http_info</span><span
+            class="method-args">(account_id, user_id, social_account_information)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Deletes user&amp;#39;s social account. Deletes a social account from a use&amp;#39;s account. @param account_id The external account number (int) or account ID Guid. @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing. @param social_account_information  (optional parameter) @return [Array&lt;(nil, Fixnum, Hash)&gt;] nil, response status code and response headers</p>
+
+          <div class="method-source-code" id="delete_social_login_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_social_login_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">user_id</span>, <span class="ruby-identifier">social_account_information</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: AuthenticationApi.delete_social_login ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling AuthenticationApi.delete_social_login&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># verify the required parameter &#39;user_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;user_id&#39; when calling AuthenticationApi.delete_social_login&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">user_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/users/{userId}/social&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;userId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">user_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">object_to_http_body</span>(<span class="ruby-identifier">social_account_information</span>)
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:DELETE</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: AuthenticationApi#delete_social_login\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_o_auth_token" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_o_auth_token</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Creates an authorization token. Creates an OAuth2 authorization server token endpoint. @return [OauthAccess]</p>
+
+          <div class="method-source-code" id="get_o_auth_token-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_o_auth_token</span>()
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">get_o_auth_token_with_http_info</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-get_o_auth_token_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_o_auth_token_with_http_info</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Creates an authorization token. Creates an OAuth2 authorization server token endpoint. @return [Array&lt;(<a href="OauthAccess.html"><code>OauthAccess</code></a>, Fixnum, Hash)&gt;] <a href="OauthAccess.html"><code>OauthAccess</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="get_o_auth_token_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_o_auth_token_with_http_info</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: AuthenticationApi.get_o_auth_token ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/oauth2/token&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:POST</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;OauthAccess&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: AuthenticationApi#get_o_auth_token\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_social_logins" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_social_logins</span><span
+            class="method-args">(account_id, user_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets a list of a user&#39;s social accounts. Retrieves a list of social accounts linked to a user&#39;s account. @param account_id The external account number (int) or account ID Guid. @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing. @return [UserSocialIdResult]</p>
+
+          <div class="method-source-code" id="list_social_logins-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_social_logins</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">user_id</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">list_social_logins_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">user_id</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-list_social_logins_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">list_social_logins_with_http_info</span><span
+            class="method-args">(account_id, user_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets a list of a user&amp;#39;s social accounts. Retrieves a list of social accounts linked to a user&amp;#39;s account. @param account_id The external account number (int) or account ID Guid. @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing. @return [Array&lt;(<a href="UserSocialIdResult.html"><code>UserSocialIdResult</code></a>, Fixnum, Hash)&gt;] <a href="UserSocialIdResult.html"><code>UserSocialIdResult</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="list_social_logins_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_social_logins_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">user_id</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: AuthenticationApi.list_social_logins ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling AuthenticationApi.list_social_logins&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># verify the required parameter &#39;user_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;user_id&#39; when calling AuthenticationApi.list_social_logins&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">user_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/users/{userId}/social&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;userId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">user_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;UserSocialIdResult&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: AuthenticationApi#list_social_logins\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-login" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">login</span><span
+            class="method-args">(options = DocuSign_eSign::LoginOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets login information for a specified user. Retrieves login information for a specified user. Each account that is associated with the login credentials is listed. You can use the returned information to determine whether a user is authenticated and select an account to use in future operations.    The `baseUrl` property, returned in the response, is used in all future API calls as the base of the request URL. The `baseUrl` property contains the DocuSign server, the API version, and the `accountId` property that is used for the login. This request uses your DocuSign credentials to retrieve the account information. @param <a href="LoginOptions.html"><code>DocuSign_eSign::LoginOptions</code></a> Options for modifying the behavior of the function. @return [LoginInformation]</p>
+
+          <div class="method-source-code" id="login-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">login</span>(<span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">LoginOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_status_code</span>, <span class="ruby-identifier">_headers</span> = <span class="ruby-identifier">login_with_http_info</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-login_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">login_with_http_info</span><span
+            class="method-args">(options = DocuSign_eSign::LoginOptions.default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gets login information for a specified user. Retrieves login information for a specified user. Each account that is associated with the login credentials is listed. You can use the returned information to determine whether a user is authenticated and select an account to use in future operations.    The &amp;#x60;baseUrl&amp;#x60; property, returned in the response, is used in all future API calls as the base of the request URL. The &amp;#x60;baseUrl&amp;#x60; property contains the DocuSign server, the API version, and the &amp;#x60;accountId&amp;#x60; property that is used for the login. This request uses your DocuSign credentials to retrieve the account information. @param <a href="LoginOptions.html"><code>DocuSign_eSign::LoginOptions</code></a> Options for modifying the behavior of the function. @return [Array&lt;(<a href="LoginInformation.html"><code>LoginInformation</code></a>, Fixnum, Hash)&gt;] <a href="LoginInformation.html"><code>LoginInformation</code></a> data, response status code and response headers</p>
+
+          <div class="method-source-code" id="login_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">login_with_http_info</span>(<span class="ruby-identifier">options</span> = <span class="ruby-constant">DocuSign_eSign</span><span class="ruby-operator">::</span><span class="ruby-constant">LoginOptions</span>.<span class="ruby-identifier">default</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: AuthenticationApi.login ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/login_information&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;api_password&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">api_password</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">api_password</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;embed_account_id_guid&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">embed_account_id_guid</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">embed_account_id_guid</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;include_account_id_guid&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_account_id_guid</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">include_account_id_guid</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">query_params</span>[<span class="ruby-value">:&#39;login_settings&#39;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">login_settings</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">login_settings</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:GET</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>,
+    <span class="ruby-value">:return_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;LoginInformation&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: AuthenticationApi#login\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-revoke_o_auth_token" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">revoke_o_auth_token</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Revokes an authorization token. Revokes an OAuth2 authorization server token. After the revocation is complete, a caller must re-authenticate to restore access. @return [nil]</p>
+
+          <div class="method-source-code" id="revoke_o_auth_token-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">revoke_o_auth_token</span>()
+  <span class="ruby-identifier">revoke_o_auth_token_with_http_info</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-revoke_o_auth_token_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">revoke_o_auth_token_with_http_info</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Revokes an authorization token. Revokes an OAuth2 authorization server token. After the revocation is complete, a caller must re-authenticate to restore access. @return [Array&lt;(nil, Fixnum, Hash)&gt;] nil, response status code and response headers</p>
+
+          <div class="method-source-code" id="revoke_o_auth_token_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 256</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">revoke_o_auth_token_with_http_info</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: AuthenticationApi.revoke_o_auth_token ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/oauth2/revoke&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:POST</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: AuthenticationApi#revoke_o_auth_token\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-update_password" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">update_password</span><span
+            class="method-args">(login_part, user_password_information)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Updates the password for a specified user. Updates the password for a specified user. @param login_part Currently, only the value *<strong>password</strong>* is supported. @param user_password_information  (optional parameter) @return [nil]</p>
+
+          <div class="method-source-code" id="update_password-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 294</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_password</span>(<span class="ruby-identifier">login_part</span>, <span class="ruby-identifier">user_password_information</span>)
+  <span class="ruby-identifier">update_password_with_http_info</span>(<span class="ruby-identifier">login_part</span>,  <span class="ruby-identifier">user_password_information</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-update_password_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">update_password_with_http_info</span><span
+            class="method-args">(login_part, user_password_information)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Updates the password for a specified user. Updates the password for a specified user. @param login_part Currently, only the value *<strong>password</strong>* is supported. @param user_password_information  (optional parameter) @return [Array&lt;(nil, Fixnum, Hash)&gt;] nil, response status code and response headers</p>
+
+          <div class="method-source-code" id="update_password_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_password_with_http_info</span>(<span class="ruby-identifier">login_part</span>, <span class="ruby-identifier">user_password_information</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: AuthenticationApi.update_password ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;login_part&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;login_part&#39; when calling AuthenticationApi.update_password&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">login_part</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/login_information/{loginPart}&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;loginPart&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">login_part</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">object_to_http_body</span>(<span class="ruby-identifier">user_password_information</span>)
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:PUT</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: AuthenticationApi#update_password\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-update_social_login" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">update_social_login</span><span
+            class="method-args">(account_id, user_id, social_account_information)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Adds social account for a user. Adds a new social account to a user&#39;s account. @param account_id The external account number (int) or account ID Guid. @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing. @param social_account_information  (optional parameter) @return [nil]</p>
+
+          <div class="method-source-code" id="update_social_login-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 345</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_social_login</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">user_id</span>, <span class="ruby-identifier">social_account_information</span>)
+  <span class="ruby-identifier">update_social_login_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">user_id</span>,  <span class="ruby-identifier">social_account_information</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-update_social_login_with_http_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">update_social_login_with_http_info</span><span
+            class="method-args">(account_id, user_id, social_account_information)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Adds social account for a user. Adds a new social account to a user&amp;#39;s account. @param account_id The external account number (int) or account ID Guid. @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing. @param social_account_information  (optional parameter) @return [Array&lt;(nil, Fixnum, Hash)&gt;] nil, response status code and response headers</p>
+
+          <div class="method-source-code" id="update_social_login_with_http_info-source">
+            <pre><span class="ruby-comment"># File lib/docusign_esign/api/authentication_api.rb, line 356</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_social_login_with_http_info</span>(<span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">user_id</span>, <span class="ruby-identifier">social_account_information</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Calling API: AuthenticationApi.update_social_login ...&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># verify the required parameter &#39;account_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;account_id&#39; when calling AuthenticationApi.update_social_login&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># verify the required parameter &#39;user_id&#39; is set</span>
+  <span class="ruby-identifier">fail</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing the required parameter &#39;user_id&#39; when calling AuthenticationApi.update_social_login&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">user_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># resource path</span>
+  <span class="ruby-identifier">local_var_path</span> = <span class="ruby-string">&quot;/v2.1/accounts/{accountId}/users/{userId}/social&quot;</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{format}&#39;</span>,<span class="ruby-string">&#39;json&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;accountId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">account_id</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;{&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;userId&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;}&#39;</span>, <span class="ruby-identifier">user_id</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-comment"># query parameters</span>
+  <span class="ruby-identifier">query_params</span> = {}
+
+  <span class="ruby-comment"># header parameters</span>
+  <span class="ruby-identifier">header_params</span> = {}
+  <span class="ruby-comment"># HTTP header &#39;Accept&#39; (if needed)</span>
+  <span class="ruby-identifier">header_params</span>[<span class="ruby-string">&#39;Accept&#39;</span>] = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">select_header_accept</span>([<span class="ruby-string">&#39;application/json&#39;</span>])
+
+  <span class="ruby-comment"># form parameters</span>
+  <span class="ruby-identifier">form_params</span> = {}
+
+  <span class="ruby-comment"># http body (model)</span>
+  <span class="ruby-identifier">post_body</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">object_to_http_body</span>(<span class="ruby-identifier">social_account_information</span>)
+  <span class="ruby-identifier">auth_names</span> = []
+  <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span> = <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">call_api</span>(<span class="ruby-value">:PUT</span>, <span class="ruby-identifier">local_var_path</span>,
+    <span class="ruby-value">:header_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">header_params</span>,
+    <span class="ruby-value">:query_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">query_params</span>,
+    <span class="ruby-value">:form_params</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">form_params</span>,
+    <span class="ruby-value">:body</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">post_body</span>,
+    <span class="ruby-value">:auth_names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">auth_names</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">debugging</span>
+    <span class="ruby-ivar">@api_client</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;API called: AuthenticationApi#update_social_login\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>, <span class="ruby-identifier">status_code</span>, <span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
