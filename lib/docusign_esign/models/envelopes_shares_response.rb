@@ -26,7 +26,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'shares' => :'Array<EnvelopesSharesResponseItem>'
+        :'shares' => :'Array<EnvelopesShareResponse>'
       }
     end
 

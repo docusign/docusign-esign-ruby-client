@@ -26,6 +26,9 @@ module DocuSign_eSign
     # Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject.
     attr_accessor :email_subject
 
+    # 
+    attr_accessor :prefill_tabs
+
     # An array of powerform recipients.
     attr_accessor :recipients
 
@@ -36,6 +39,7 @@ module DocuSign_eSign
         :'doc_gen_form_fields' => :'docGenFormFields',
         :'email_blurb' => :'emailBlurb',
         :'email_subject' => :'emailSubject',
+        :'prefill_tabs' => :'prefillTabs',
         :'recipients' => :'recipients'
       }
     end
@@ -47,6 +51,7 @@ module DocuSign_eSign
         :'doc_gen_form_fields' => :'Array<BulksendingCopyDocGenFormField>',
         :'email_blurb' => :'String',
         :'email_subject' => :'String',
+        :'prefill_tabs' => :'Array<BulkSendingCopyPrefillTab>',
         :'recipients' => :'Array<BulkSendingCopyRecipient>'
       }
     end
@@ -79,6 +84,12 @@ module DocuSign_eSign
         self.email_subject = attributes[:'emailSubject']
       end
 
+      if attributes.has_key?(:'prefillTabs')
+        if (value = attributes[:'prefillTabs']).is_a?(Array)
+          self.prefill_tabs = value
+        end
+      end
+
       if attributes.has_key?(:'recipients')
         if (value = attributes[:'recipients']).is_a?(Array)
           self.recipients = value
@@ -108,6 +119,7 @@ module DocuSign_eSign
           doc_gen_form_fields == o.doc_gen_form_fields &&
           email_blurb == o.email_blurb &&
           email_subject == o.email_subject &&
+          prefill_tabs == o.prefill_tabs &&
           recipients == o.recipients
     end
 
@@ -120,7 +132,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [custom_fields, doc_gen_form_fields, email_blurb, email_subject, recipients].hash
+      [custom_fields, doc_gen_form_fields, email_blurb, email_subject, prefill_tabs, recipients].hash
     end
 
     # Builds the object from hash

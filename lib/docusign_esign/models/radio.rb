@@ -56,6 +56,9 @@ module DocuSign_eSign
     # Reserved for DocuSign.
     attr_accessor :anchor_tab_processor_version_metadata
 
+    # 
+    attr_accessor :anchor_tab_scope
+
     # Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches.
     attr_accessor :anchor_units
 
@@ -208,6 +211,7 @@ module DocuSign_eSign
         :'anchor_string_metadata' => :'anchorStringMetadata',
         :'anchor_tab_processor_version' => :'anchorTabProcessorVersion',
         :'anchor_tab_processor_version_metadata' => :'anchorTabProcessorVersionMetadata',
+        :'anchor_tab_scope' => :'anchorTabScope',
         :'anchor_units' => :'anchorUnits',
         :'anchor_units_metadata' => :'anchorUnitsMetadata',
         :'anchor_x_offset' => :'anchorXOffset',
@@ -273,6 +277,7 @@ module DocuSign_eSign
         :'anchor_string_metadata' => :'PropertyMetadata',
         :'anchor_tab_processor_version' => :'String',
         :'anchor_tab_processor_version_metadata' => :'PropertyMetadata',
+        :'anchor_tab_scope' => :'String',
         :'anchor_units' => :'String',
         :'anchor_units_metadata' => :'PropertyMetadata',
         :'anchor_x_offset' => :'String',
@@ -383,6 +388,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'anchorTabProcessorVersionMetadata')
         self.anchor_tab_processor_version_metadata = attributes[:'anchorTabProcessorVersionMetadata']
+      end
+
+      if attributes.has_key?(:'anchorTabScope')
+        self.anchor_tab_scope = attributes[:'anchorTabScope']
       end
 
       if attributes.has_key?(:'anchorUnits')
@@ -598,6 +607,7 @@ module DocuSign_eSign
           anchor_string_metadata == o.anchor_string_metadata &&
           anchor_tab_processor_version == o.anchor_tab_processor_version &&
           anchor_tab_processor_version_metadata == o.anchor_tab_processor_version_metadata &&
+          anchor_tab_scope == o.anchor_tab_scope &&
           anchor_units == o.anchor_units &&
           anchor_units_metadata == o.anchor_units_metadata &&
           anchor_x_offset == o.anchor_x_offset &&
@@ -654,7 +664,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, caption, caption_metadata, connected_object_details, error_details, extension_data, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, italic, italic_metadata, locked, locked_metadata, merge_field_xml, page_number, page_number_metadata, required, required_metadata, selected, selected_metadata, status, status_metadata, tab_fully_qualified_path, tab_id, tab_id_metadata, tab_order, tab_order_metadata, underline, underline_metadata, value, value_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
+      [anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_tab_scope, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, bold, bold_metadata, caption, caption_metadata, connected_object_details, error_details, extension_data, font, font_color, font_color_metadata, font_metadata, font_size, font_size_metadata, italic, italic_metadata, locked, locked_metadata, merge_field_xml, page_number, page_number_metadata, required, required_metadata, selected, selected_metadata, status, status_metadata, tab_fully_qualified_path, tab_id, tab_id_metadata, tab_order, tab_order_metadata, underline, underline_metadata, value, value_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
     end
 
     # Builds the object from hash
