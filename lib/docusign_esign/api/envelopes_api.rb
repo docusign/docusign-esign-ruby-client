@@ -244,6 +244,39 @@ module DocuSign_eSign
     end
   end
 
+  class GetSharedEnvelopesOptions
+    # 
+    attr_accessor :count
+
+    # 
+    attr_accessor :from_date
+
+    # 
+    attr_accessor :include
+
+    # 
+    attr_accessor :order
+
+    # 
+    attr_accessor :order_by
+
+    # 
+    attr_accessor :search_text
+
+    # 
+    attr_accessor :start_position
+
+    # 
+    attr_accessor :status
+
+    # 
+    attr_accessor :to_date
+
+    def self.default
+      @@default ||= GetSharedEnvelopesOptions.new
+    end
+  end
+
   class ListAuditEventsOptions
     # Locale setting for the response, e.g., 'en-US'.
     attr_accessor :locale
@@ -682,6 +715,8 @@ module DocuSign_eSign
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
 
       # form parameters
       form_params = {}
@@ -2922,6 +2957,116 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Deletes a single envelope share
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param share_id 
+    # @return [nil]
+    def delete_envelopes_share(account_id, envelope_id, share_id)
+      delete_envelopes_share_with_http_info(account_id, envelope_id, share_id)
+      return nil
+    end
+
+    # Deletes a single envelope share
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param share_id 
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_envelopes_share_with_http_info(account_id, envelope_id, share_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.delete_envelopes_share ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.delete_envelopes_share" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.delete_envelopes_share" if envelope_id.nil?
+      # verify the required parameter 'share_id' is set
+      fail ArgumentError, "Missing the required parameter 'share_id' when calling EnvelopesApi.delete_envelopes_share" if share_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/shares/{shareId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'shareId' + '}', share_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#delete_envelopes_share\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Deletes existing envelopes shares
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param envelopes_shares_request  (optional parameter)
+    # @return [nil]
+    def delete_envelopes_shares(account_id, envelope_id, envelopes_shares_request)
+      delete_envelopes_shares_with_http_info(account_id, envelope_id,  envelopes_shares_request)
+      return nil
+    end
+
+    # Deletes existing envelopes shares
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param envelopes_shares_request  (optional parameter)
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_envelopes_shares_with_http_info(account_id, envelope_id, envelopes_shares_request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.delete_envelopes_shares ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.delete_envelopes_shares" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.delete_envelopes_shares" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/shares".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(envelopes_shares_request)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#delete_envelopes_shares\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Deletes an envelope lock.
     # Deletes the lock from the specified envelope. The `X-DocuSign-Edit` header must be included in the request.
     # @param account_id The external account number (int) or account ID Guid.
@@ -5032,6 +5177,66 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Returns a filtered list of shared envelopes.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param DocuSign_eSign::GetSharedEnvelopesOptions Options for modifying the behavior of the function.
+    # @return [EnvelopesInformation]
+    def get_shared_envelopes(account_id, options = DocuSign_eSign::GetSharedEnvelopesOptions.default)
+      data, _status_code, _headers = get_shared_envelopes_with_http_info(account_id, options)
+      return data
+    end
+
+    # Returns a filtered list of shared envelopes.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param DocuSign_eSign::GetSharedEnvelopesOptions Options for modifying the behavior of the function.
+    # @return [Array<(EnvelopesInformation, Fixnum, Hash)>] EnvelopesInformation data, response status code and response headers
+    def get_shared_envelopes_with_http_info(account_id, options = DocuSign_eSign::GetSharedEnvelopesOptions.default)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_shared_envelopes ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_shared_envelopes" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/shared".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'count'] = options.count if !options.count.nil?
+      query_params[:'from_date'] = options.from_date if !options.from_date.nil?
+      query_params[:'include'] = options.include if !options.include.nil?
+      query_params[:'order'] = options.order if !options.order.nil?
+      query_params[:'order_by'] = options.order_by if !options.order_by.nil?
+      query_params[:'search_text'] = options.search_text if !options.search_text.nil?
+      query_params[:'start_position'] = options.start_position if !options.start_position.nil?
+      query_params[:'status'] = options.status if !options.status.nil?
+      query_params[:'to_date'] = options.to_date if !options.to_date.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'EnvelopesInformation')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_shared_envelopes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get encrypted tabs for envelope.
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -7059,6 +7264,120 @@ module DocuSign_eSign
         :return_type => 'WorkflowStep')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#update_envelope_workflow_step_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Updates a single envelope share
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param share_id 
+    # @param envelopes_share_permission_request  (optional parameter)
+    # @return [EnvelopesShareResponse]
+    def update_envelopes_share(account_id, envelope_id, share_id, envelopes_share_permission_request)
+      data, _status_code, _headers = update_envelopes_share_with_http_info(account_id, envelope_id, share_id,  envelopes_share_permission_request)
+      return data
+    end
+
+    # Updates a single envelope share
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param share_id 
+    # @param envelopes_share_permission_request  (optional parameter)
+    # @return [Array<(EnvelopesShareResponse, Fixnum, Hash)>] EnvelopesShareResponse data, response status code and response headers
+    def update_envelopes_share_with_http_info(account_id, envelope_id, share_id, envelopes_share_permission_request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_envelopes_share ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_envelopes_share" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.update_envelopes_share" if envelope_id.nil?
+      # verify the required parameter 'share_id' is set
+      fail ArgumentError, "Missing the required parameter 'share_id' when calling EnvelopesApi.update_envelopes_share" if share_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/shares/{shareId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'shareId' + '}', share_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(envelopes_share_permission_request)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'EnvelopesShareResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#update_envelopes_share\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Updates existing envelopes shares
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param envelopes_shares_request  (optional parameter)
+    # @return [EnvelopesSharesResponse]
+    def update_envelopes_shares(account_id, envelope_id, envelopes_shares_request)
+      data, _status_code, _headers = update_envelopes_shares_with_http_info(account_id, envelope_id,  envelopes_shares_request)
+      return data
+    end
+
+    # Updates existing envelopes shares
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param envelopes_shares_request  (optional parameter)
+    # @return [Array<(EnvelopesSharesResponse, Fixnum, Hash)>] EnvelopesSharesResponse data, response status code and response headers
+    def update_envelopes_shares_with_http_info(account_id, envelope_id, envelopes_shares_request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.update_envelopes_shares ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.update_envelopes_shares" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.update_envelopes_shares" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/shares".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(envelopes_shares_request)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'EnvelopesSharesResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#update_envelopes_shares\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

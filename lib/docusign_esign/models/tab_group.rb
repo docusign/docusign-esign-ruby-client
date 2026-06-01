@@ -61,6 +61,9 @@ module DocuSign_eSign
     # Reserved for DocuSign.
     attr_accessor :anchor_tab_processor_version_metadata
 
+    # 
+    attr_accessor :anchor_tab_scope
+
     # Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches.
     attr_accessor :anchor_units
 
@@ -299,6 +302,7 @@ module DocuSign_eSign
         :'anchor_string_metadata' => :'anchorStringMetadata',
         :'anchor_tab_processor_version' => :'anchorTabProcessorVersion',
         :'anchor_tab_processor_version_metadata' => :'anchorTabProcessorVersionMetadata',
+        :'anchor_tab_scope' => :'anchorTabScope',
         :'anchor_units' => :'anchorUnits',
         :'anchor_units_metadata' => :'anchorUnitsMetadata',
         :'anchor_x_offset' => :'anchorXOffset',
@@ -394,6 +398,7 @@ module DocuSign_eSign
         :'anchor_string_metadata' => :'PropertyMetadata',
         :'anchor_tab_processor_version' => :'String',
         :'anchor_tab_processor_version_metadata' => :'PropertyMetadata',
+        :'anchor_tab_scope' => :'String',
         :'anchor_units' => :'String',
         :'anchor_units_metadata' => :'PropertyMetadata',
         :'anchor_x_offset' => :'String',
@@ -540,6 +545,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'anchorTabProcessorVersionMetadata')
         self.anchor_tab_processor_version_metadata = attributes[:'anchorTabProcessorVersionMetadata']
+      end
+
+      if attributes.has_key?(:'anchorTabScope')
+        self.anchor_tab_scope = attributes[:'anchorTabScope']
       end
 
       if attributes.has_key?(:'anchorUnits')
@@ -871,6 +880,7 @@ module DocuSign_eSign
           anchor_string_metadata == o.anchor_string_metadata &&
           anchor_tab_processor_version == o.anchor_tab_processor_version &&
           anchor_tab_processor_version_metadata == o.anchor_tab_processor_version_metadata &&
+          anchor_tab_scope == o.anchor_tab_scope &&
           anchor_units == o.anchor_units &&
           anchor_units_metadata == o.anchor_units_metadata &&
           anchor_x_offset == o.anchor_x_offset &&
@@ -955,7 +965,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [agreement_attribute, agreement_attribute_locked, anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, caption, caption_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, connected_object_details, custom_tab_id, custom_tab_id_metadata, document_id, document_id_metadata, error_details, extension_data, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, group_label, group_label_metadata, group_rule, group_rule_metadata, height, height_metadata, maximum_allowed, maximum_allowed_metadata, merge_field, merge_field_xml, minimum_required, minimum_required_metadata, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, smart_contract_information, source, status, status_metadata, tab_fully_qualified_path, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_order, tab_order_metadata, tab_scope, tab_scope_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, validation_message, validation_message_metadata, warning_details, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
+      [agreement_attribute, agreement_attribute_locked, anchor_allow_white_space_in_characters, anchor_allow_white_space_in_characters_metadata, anchor_case_sensitive, anchor_case_sensitive_metadata, anchor_horizontal_alignment, anchor_horizontal_alignment_metadata, anchor_ignore_if_not_present, anchor_ignore_if_not_present_metadata, anchor_match_whole_word, anchor_match_whole_word_metadata, anchor_string, anchor_string_metadata, anchor_tab_processor_version, anchor_tab_processor_version_metadata, anchor_tab_scope, anchor_units, anchor_units_metadata, anchor_x_offset, anchor_x_offset_metadata, anchor_y_offset, anchor_y_offset_metadata, caption, caption_metadata, conditional_parent_label, conditional_parent_label_metadata, conditional_parent_value, conditional_parent_value_metadata, connected_object_details, custom_tab_id, custom_tab_id_metadata, document_id, document_id_metadata, error_details, extension_data, form_order, form_order_metadata, form_page_label, form_page_label_metadata, form_page_number, form_page_number_metadata, group_label, group_label_metadata, group_rule, group_rule_metadata, height, height_metadata, maximum_allowed, maximum_allowed_metadata, merge_field, merge_field_xml, minimum_required, minimum_required_metadata, page_number, page_number_metadata, recipient_id, recipient_id_guid, recipient_id_guid_metadata, recipient_id_metadata, smart_contract_information, source, status, status_metadata, tab_fully_qualified_path, tab_group_labels, tab_group_labels_metadata, tab_id, tab_id_metadata, tab_order, tab_order_metadata, tab_scope, tab_scope_metadata, tab_type, tab_type_metadata, template_locked, template_locked_metadata, template_required, template_required_metadata, tooltip, tool_tip_metadata, validation_message, validation_message_metadata, warning_details, width, width_metadata, x_position, x_position_metadata, y_position, y_position_metadata].hash
     end
 
     # Builds the object from hash

@@ -324,7 +324,7 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param group_id The ID of the group being accessed.
     # @param DocuSign_eSign::ListGroupUsersOptions Options for modifying the behavior of the function.
-    # @return [UsersResponse]
+    # @return [GroupUsersResponse]
     def list_group_users(account_id, group_id, options = DocuSign_eSign::ListGroupUsersOptions.default)
       data, _status_code, _headers = list_group_users_with_http_info(account_id, group_id, options)
       return data
@@ -335,7 +335,7 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param group_id The ID of the group being accessed.
     # @param DocuSign_eSign::ListGroupUsersOptions Options for modifying the behavior of the function.
-    # @return [Array<(UsersResponse, Fixnum, Hash)>] UsersResponse data, response status code and response headers
+    # @return [Array<(GroupUsersResponse, Fixnum, Hash)>] GroupUsersResponse data, response status code and response headers
     def list_group_users_with_http_info(account_id, group_id, options = DocuSign_eSign::ListGroupUsersOptions.default)
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: GroupsApi.list_group_users ..."
@@ -369,7 +369,7 @@ module DocuSign_eSign
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'UsersResponse')
+        :return_type => 'GroupUsersResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: GroupsApi#list_group_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
