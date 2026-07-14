@@ -43,6 +43,12 @@ module DocuSign_eSign
     # 
     attr_accessor :start_date
 
+    # 
+    attr_accessor :task_source
+
+    # 
+    attr_accessor :task_type
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -55,7 +61,9 @@ module DocuSign_eSign
         :'modified_by' => :'modifiedBy',
         :'permission' => :'permission',
         :'principal_user' => :'principalUser',
-        :'start_date' => :'startDate'
+        :'start_date' => :'startDate',
+        :'task_source' => :'taskSource',
+        :'task_type' => :'taskType'
       }
     end
 
@@ -71,7 +79,9 @@ module DocuSign_eSign
         :'modified_by' => :'String',
         :'permission' => :'String',
         :'principal_user' => :'AuthorizationUser',
-        :'start_date' => :'String'
+        :'start_date' => :'String',
+        :'task_source' => :'String',
+        :'task_type' => :'String'
       }
     end
 
@@ -122,6 +132,14 @@ module DocuSign_eSign
       if attributes.has_key?(:'startDate')
         self.start_date = attributes[:'startDate']
       end
+
+      if attributes.has_key?(:'taskSource')
+        self.task_source = attributes[:'taskSource']
+      end
+
+      if attributes.has_key?(:'taskType')
+        self.task_type = attributes[:'taskType']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -151,7 +169,9 @@ module DocuSign_eSign
           modified_by == o.modified_by &&
           permission == o.permission &&
           principal_user == o.principal_user &&
-          start_date == o.start_date
+          start_date == o.start_date &&
+          task_source == o.task_source &&
+          task_type == o.task_type
     end
 
     # @see the `==` method
@@ -163,7 +183,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [agent_user, authorization_id, created, created_by, end_date, modified, modified_by, permission, principal_user, start_date].hash
+      [agent_user, authorization_id, created, created_by, end_date, modified, modified_by, permission, principal_user, start_date, task_source, task_type].hash
     end
 
     # Builds the object from hash

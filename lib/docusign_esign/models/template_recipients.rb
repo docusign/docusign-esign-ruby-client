@@ -16,6 +16,9 @@ module DocuSign_eSign
     # A complex type defining the management and access rights of a recipient assigned assigned as an agent on the document.
     attr_accessor :agents
 
+    # 
+    attr_accessor :authorized_signatories
+
     # A complex type containing information about recipients who should receive a copy of the envelope, but does not need to sign it.
     attr_accessor :carbon_copies
 
@@ -62,6 +65,7 @@ module DocuSign_eSign
     def self.attribute_map
       {
         :'agents' => :'agents',
+        :'authorized_signatories' => :'authorizedSignatories',
         :'carbon_copies' => :'carbonCopies',
         :'certified_deliveries' => :'certifiedDeliveries',
         :'current_routing_order' => :'currentRoutingOrder',
@@ -83,6 +87,7 @@ module DocuSign_eSign
     def self.swagger_types
       {
         :'agents' => :'Array<Agent>',
+        :'authorized_signatories' => :'Array<AuthorizedSignatory>',
         :'carbon_copies' => :'Array<CarbonCopy>',
         :'certified_deliveries' => :'Array<CertifiedDelivery>',
         :'current_routing_order' => :'String',
@@ -111,6 +116,12 @@ module DocuSign_eSign
       if attributes.has_key?(:'agents')
         if (value = attributes[:'agents']).is_a?(Array)
           self.agents = value
+        end
+      end
+
+      if attributes.has_key?(:'authorizedSignatories')
+        if (value = attributes[:'authorizedSignatories']).is_a?(Array)
+          self.authorized_signatories = value
         end
       end
 
@@ -212,6 +223,7 @@ module DocuSign_eSign
       return true if self.equal?(o)
       self.class == o.class &&
           agents == o.agents &&
+          authorized_signatories == o.authorized_signatories &&
           carbon_copies == o.carbon_copies &&
           certified_deliveries == o.certified_deliveries &&
           current_routing_order == o.current_routing_order &&
@@ -237,7 +249,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [agents, carbon_copies, certified_deliveries, current_routing_order, editors, error_details, in_person_signers, intermediaries, notaries, notary_witnesses, participants, recipient_count, seals, signers, witnesses].hash
+      [agents, authorized_signatories, carbon_copies, certified_deliveries, current_routing_order, editors, error_details, in_person_signers, intermediaries, notaries, notary_witnesses, participants, recipient_count, seals, signers, witnesses].hash
     end
 
     # Builds the object from hash

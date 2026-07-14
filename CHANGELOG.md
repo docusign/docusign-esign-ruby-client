@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v7.0.0] - eSignature API v2.1-26.2.01.01 - 2026-07-01
+### Changed
+- Fixed CreateChunkedUpload sending incorrect Content-Type: multipart/form-data instead of application/json.
+- Added support for version v2.1-26.2.01.01 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
 ## [v7.0.0.rc1] - eSignature API v2.1-26.2.00.00 - 2026-06-03
 ### Breaking Changes
 - Groups API: ListGroupUsers, ListGroupUsersAsync, and their WithHttpInfo variants now return GroupUsersResponse

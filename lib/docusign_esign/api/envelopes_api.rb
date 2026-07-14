@@ -715,8 +715,6 @@ module DocuSign_eSign
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
 
       # form parameters
       form_params = {}
@@ -4653,6 +4651,116 @@ module DocuSign_eSign
         :return_type => 'WorkflowStep')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#get_envelope_workflow_step_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Gets a single envelope share by shareId
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param share_id 
+    # @return [EnvelopesShareResponse]
+    def get_envelopes_share(account_id, envelope_id, share_id)
+      data, _status_code, _headers = get_envelopes_share_with_http_info(account_id, envelope_id, share_id)
+      return data
+    end
+
+    # Gets a single envelope share by shareId
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param share_id 
+    # @return [Array<(EnvelopesShareResponse, Fixnum, Hash)>] EnvelopesShareResponse data, response status code and response headers
+    def get_envelopes_share_with_http_info(account_id, envelope_id, share_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_envelopes_share ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_envelopes_share" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_envelopes_share" if envelope_id.nil?
+      # verify the required parameter 'share_id' is set
+      fail ArgumentError, "Missing the required parameter 'share_id' when calling EnvelopesApi.get_envelopes_share" if share_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/shares/{shareId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s).sub('{' + 'shareId' + '}', share_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'EnvelopesShareResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_envelopes_share\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Gets all shares for an envelope
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [EnvelopesSharesResponse]
+    def get_envelopes_shares(account_id, envelope_id)
+      data, _status_code, _headers = get_envelopes_shares_with_http_info(account_id, envelope_id)
+      return data
+    end
+
+    # Gets all shares for an envelope
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [Array<(EnvelopesSharesResponse, Fixnum, Hash)>] EnvelopesSharesResponse data, response status code and response headers
+    def get_envelopes_shares_with_http_info(account_id, envelope_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_envelopes_shares ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_envelopes_shares" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_envelopes_shares" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/shares".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'EnvelopesSharesResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_envelopes_shares\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

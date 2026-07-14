@@ -23,6 +23,9 @@ module DocuSign_eSign
     attr_accessor :description
 
     # 
+    attr_accessor :filter
+
+    # 
     attr_accessor :format
 
     # 
@@ -70,6 +73,7 @@ module DocuSign_eSign
         :'connected_object_details' => :'connectedObjectDetails',
         :'default_value' => :'defaultValue',
         :'description' => :'description',
+        :'filter' => :'filter',
         :'format' => :'format',
         :'fully_qualified_path' => :'fullyQualifiedPath',
         :'hidden' => :'hidden',
@@ -93,15 +97,16 @@ module DocuSign_eSign
         :'connected_object_details' => :'ConnectedObjectDetails',
         :'default_value' => :'String',
         :'description' => :'String',
+        :'filter' => :'Object',
         :'format' => :'DocGenFormat',
         :'fully_qualified_path' => :'String',
-        :'hidden' => :'String',
+        :'hidden' => :'BOOLEAN',
         :'label' => :'String',
         :'name' => :'String',
         :'options' => :'Array<DocGenFormFieldOption>',
         :'order' => :'String',
         :'predefined_validation' => :'String',
-        :'read_only' => :'String',
+        :'read_only' => :'BOOLEAN',
         :'required' => :'String',
         :'row_values' => :'Array<DocGenFormFieldRowValue>',
         :'type' => :'String',
@@ -128,6 +133,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
+      end
+
+      if attributes.has_key?(:'filter')
+        self.filter = attributes[:'filter']
       end
 
       if attributes.has_key?(:'format')
@@ -212,6 +221,7 @@ module DocuSign_eSign
           connected_object_details == o.connected_object_details &&
           default_value == o.default_value &&
           description == o.description &&
+          filter == o.filter &&
           format == o.format &&
           fully_qualified_path == o.fully_qualified_path &&
           hidden == o.hidden &&
@@ -237,7 +247,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [connected_object_details, default_value, description, format, fully_qualified_path, hidden, label, name, options, order, predefined_validation, read_only, required, row_values, type, validation, value].hash
+      [connected_object_details, default_value, description, filter, format, fully_qualified_path, hidden, label, name, options, order, predefined_validation, read_only, required, row_values, type, validation, value].hash
     end
 
     # Builds the object from hash
