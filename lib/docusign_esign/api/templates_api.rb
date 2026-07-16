@@ -1499,6 +1499,108 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Gets completion rate for the template
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @return [TemplateCompletionRateResponse]
+    def get_completion_rate_for_template(account_id, template_id)
+      data, _status_code, _headers = get_completion_rate_for_template_with_http_info(account_id, template_id)
+      return data
+    end
+
+    # Gets completion rate for the template
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param template_id The ID of the template being accessed.
+    # @return [Array<(TemplateCompletionRateResponse, Fixnum, Hash)>] TemplateCompletionRateResponse data, response status code and response headers
+    def get_completion_rate_for_template_with_http_info(account_id, template_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: TemplatesApi.get_completion_rate_for_template ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.get_completion_rate_for_template" if account_id.nil?
+      # verify the required parameter 'template_id' is set
+      fail ArgumentError, "Missing the required parameter 'template_id' when calling TemplatesApi.get_completion_rate_for_template" if template_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/{templateId}/insights/completionRate".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'templateId' + '}', template_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TemplateCompletionRateResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TemplatesApi#get_completion_rate_for_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Gets completion rate for the user
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [UserCompletionRateResponse]
+    def get_completion_rate_for_template_owner(account_id)
+      data, _status_code, _headers = get_completion_rate_for_template_owner_with_http_info(account_id)
+      return data
+    end
+
+    # Gets completion rate for the user
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @return [Array<(UserCompletionRateResponse, Fixnum, Hash)>] UserCompletionRateResponse data, response status code and response headers
+    def get_completion_rate_for_template_owner_with_http_info(account_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: TemplatesApi.get_completion_rate_for_template_owner ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.get_completion_rate_for_template_owner" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/templates/insights/completionRate".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'UserCompletionRateResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TemplatesApi#get_completion_rate_for_template_owner\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Gets PDF documents from a template.
     # Retrieves one or more PDF documents from the specified template.  You can specify the ID of the document to retrieve or can specify `combined` to retrieve all documents in the template as one pdf.
     # @param account_id The external account number (int) or account ID Guid.
@@ -3091,8 +3193,8 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_auto_match_list  (optional parameter)
     # @return [TemplateAutoMatchList]
-    def update_templates(account_id, template_auto_match_list)
-      data, _status_code, _headers = update_templates_with_http_info(account_id,  template_auto_match_list)
+    def update_templates_auto_match(account_id, template_auto_match_list)
+      data, _status_code, _headers = update_templates_auto_match_with_http_info(account_id,  template_auto_match_list)
       return data
     end
 
@@ -3101,12 +3203,12 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_auto_match_list  (optional parameter)
     # @return [Array<(TemplateAutoMatchList, Fixnum, Hash)>] TemplateAutoMatchList data, response status code and response headers
-    def update_templates_with_http_info(account_id, template_auto_match_list)
+    def update_templates_auto_match_with_http_info(account_id, template_auto_match_list)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: TemplatesApi.update_templates ..."
+        @api_client.config.logger.debug "Calling API: TemplatesApi.update_templates_auto_match ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.update_templates" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.update_templates_auto_match" if account_id.nil?
       # resource path
       local_var_path = "/v2.1/accounts/{accountId}/templates".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
@@ -3132,7 +3234,7 @@ module DocuSign_eSign
         :auth_names => auth_names,
         :return_type => 'TemplateAutoMatchList')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TemplatesApi#update_templates\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TemplatesApi#update_templates_auto_match\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3142,8 +3244,8 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_auto_match_list  (optional parameter)
     # @return [TemplateAutoMatchList]
-    def update_templates_auto_match(account_id, template_auto_match_list)
-      data, _status_code, _headers = update_templates_auto_match_with_http_info(account_id,  template_auto_match_list)
+    def update_templates_auto_match_0(account_id, template_auto_match_list)
+      data, _status_code, _headers = update_templates_auto_match_0_with_http_info(account_id,  template_auto_match_list)
       return data
     end
 
@@ -3152,12 +3254,12 @@ module DocuSign_eSign
     # @param account_id The external account number (int) or account ID Guid.
     # @param template_auto_match_list  (optional parameter)
     # @return [Array<(TemplateAutoMatchList, Fixnum, Hash)>] TemplateAutoMatchList data, response status code and response headers
-    def update_templates_auto_match_with_http_info(account_id, template_auto_match_list)
+    def update_templates_auto_match_0_with_http_info(account_id, template_auto_match_list)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: TemplatesApi.update_templates_auto_match ..."
+        @api_client.config.logger.debug "Calling API: TemplatesApi.update_templates_auto_match_0 ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.update_templates_auto_match" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling TemplatesApi.update_templates_auto_match_0" if account_id.nil?
       # resource path
       local_var_path = "/v2.1/accounts/{accountId}/templates/auto_match".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
@@ -3183,7 +3285,7 @@ module DocuSign_eSign
         :auth_names => auth_names,
         :return_type => 'TemplateAutoMatchList')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TemplatesApi#update_templates_auto_match\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TemplatesApi#update_templates_auto_match_0\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

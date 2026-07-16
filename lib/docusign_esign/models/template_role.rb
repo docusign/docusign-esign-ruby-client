@@ -59,6 +59,15 @@ module DocuSign_eSign
     # When set to **true** and the feature is enabled in the sender's account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once).
     attr_accessor :signing_group_id
 
+    # The display name for the signing group.   Maximum Length: 100 characters. 
+    attr_accessor :signing_group_name
+
+    # 
+    attr_accessor :signing_group_type
+
+    # A complex type that contains information about users in the signing group.
+    attr_accessor :signing_group_users
+
     # A list of tabs, which are represented graphically as symbols on documents at the time of signing. Tabs show recipients where to sign, initial, or enter data. They may also display data to the recipients.
     attr_accessor :tabs
 
@@ -80,6 +89,9 @@ module DocuSign_eSign
         :'role_name' => :'roleName',
         :'routing_order' => :'routingOrder',
         :'signing_group_id' => :'signingGroupId',
+        :'signing_group_name' => :'signingGroupName',
+        :'signing_group_type' => :'signingGroupType',
+        :'signing_group_users' => :'signingGroupUsers',
         :'tabs' => :'tabs'
       }
     end
@@ -102,6 +114,9 @@ module DocuSign_eSign
         :'role_name' => :'String',
         :'routing_order' => :'String',
         :'signing_group_id' => :'String',
+        :'signing_group_name' => :'String',
+        :'signing_group_type' => :'String',
+        :'signing_group_users' => :'Array<UserInfo>',
         :'tabs' => :'Tabs'
       }
     end
@@ -178,6 +193,20 @@ module DocuSign_eSign
         self.signing_group_id = attributes[:'signingGroupId']
       end
 
+      if attributes.has_key?(:'signingGroupName')
+        self.signing_group_name = attributes[:'signingGroupName']
+      end
+
+      if attributes.has_key?(:'signingGroupType')
+        self.signing_group_type = attributes[:'signingGroupType']
+      end
+
+      if attributes.has_key?(:'signingGroupUsers')
+        if (value = attributes[:'signingGroupUsers']).is_a?(Array)
+          self.signing_group_users = value
+        end
+      end
+
       if attributes.has_key?(:'tabs')
         self.tabs = attributes[:'tabs']
       end
@@ -216,6 +245,9 @@ module DocuSign_eSign
           role_name == o.role_name &&
           routing_order == o.routing_order &&
           signing_group_id == o.signing_group_id &&
+          signing_group_name == o.signing_group_name &&
+          signing_group_type == o.signing_group_type &&
+          signing_group_users == o.signing_group_users &&
           tabs == o.tabs
     end
 
@@ -228,7 +260,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_code, additional_notifications, client_user_id, default_recipient, delivery_method, email, email_notification, embedded_recipient_start_url, in_person_signer_name, name, phone_number, recipient_signature_providers, role_name, routing_order, signing_group_id, tabs].hash
+      [access_code, additional_notifications, client_user_id, default_recipient, delivery_method, email, email_notification, embedded_recipient_start_url, in_person_signer_name, name, phone_number, recipient_signature_providers, role_name, routing_order, signing_group_id, signing_group_name, signing_group_type, signing_group_users, tabs].hash
     end
 
     # Builds the object from hash

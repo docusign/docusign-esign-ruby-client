@@ -28,6 +28,12 @@ module DocuSign_eSign
     # 
     attr_accessor :start_date
 
+    # 
+    attr_accessor :task_source
+
+    # 
+    attr_accessor :task_type
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -35,7 +41,9 @@ module DocuSign_eSign
         :'authorization_id' => :'authorizationId',
         :'end_date' => :'endDate',
         :'permission' => :'permission',
-        :'start_date' => :'startDate'
+        :'start_date' => :'startDate',
+        :'task_source' => :'taskSource',
+        :'task_type' => :'taskType'
       }
     end
 
@@ -46,7 +54,9 @@ module DocuSign_eSign
         :'authorization_id' => :'String',
         :'end_date' => :'String',
         :'permission' => :'String',
-        :'start_date' => :'String'
+        :'start_date' => :'String',
+        :'task_source' => :'String',
+        :'task_type' => :'String'
       }
     end
 
@@ -77,6 +87,14 @@ module DocuSign_eSign
       if attributes.has_key?(:'startDate')
         self.start_date = attributes[:'startDate']
       end
+
+      if attributes.has_key?(:'taskSource')
+        self.task_source = attributes[:'taskSource']
+      end
+
+      if attributes.has_key?(:'taskType')
+        self.task_type = attributes[:'taskType']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -101,7 +119,9 @@ module DocuSign_eSign
           authorization_id == o.authorization_id &&
           end_date == o.end_date &&
           permission == o.permission &&
-          start_date == o.start_date
+          start_date == o.start_date &&
+          task_source == o.task_source &&
+          task_type == o.task_type
     end
 
     # @see the `==` method
@@ -113,7 +133,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [agent_user, authorization_id, end_date, permission, start_date].hash
+      [agent_user, authorization_id, end_date, permission, start_date, task_source, task_type].hash
     end
 
     # Builds the object from hash
