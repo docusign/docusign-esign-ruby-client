@@ -128,6 +128,9 @@ module DocuSign_eSign
     attr_accessor :envelope_attachments
 
     # 
+    attr_accessor :envelope_classification
+
+    # 
     attr_accessor :envelope_custom_metadata
 
     # 
@@ -174,6 +177,9 @@ module DocuSign_eSign
 
     # 
     attr_accessor :folders
+
+    # 
+    attr_accessor :has_authorized_signatory_recipient
 
     # 
     attr_accessor :has_comments
@@ -323,6 +329,9 @@ module DocuSign_eSign
     attr_accessor :voided_reason
 
     # 
+    attr_accessor :watermark_language
+
+    # 
     attr_accessor :workflow
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -366,6 +375,7 @@ module DocuSign_eSign
         :'enable_wet_sign' => :'enableWetSign',
         :'enforce_signer_visibility' => :'enforceSignerVisibility',
         :'envelope_attachments' => :'envelopeAttachments',
+        :'envelope_classification' => :'envelopeClassification',
         :'envelope_custom_metadata' => :'envelopeCustomMetadata',
         :'envelope_documents' => :'envelopeDocuments',
         :'envelope_id' => :'envelopeId',
@@ -382,6 +392,7 @@ module DocuSign_eSign
         :'folder_ids' => :'folderIds',
         :'folder_name' => :'folderName',
         :'folders' => :'folders',
+        :'has_authorized_signatory_recipient' => :'hasAuthorizedSignatoryRecipient',
         :'has_comments' => :'hasComments',
         :'has_form_data_changed' => :'hasFormDataChanged',
         :'has_wav_file' => :'hasWavFile',
@@ -431,6 +442,7 @@ module DocuSign_eSign
         :'u_sig_state' => :'uSigState',
         :'voided_date_time' => :'voidedDateTime',
         :'voided_reason' => :'voidedReason',
+        :'watermark_language' => :'watermarkLanguage',
         :'workflow' => :'workflow'
       }
     end
@@ -476,6 +488,7 @@ module DocuSign_eSign
         :'enable_wet_sign' => :'String',
         :'enforce_signer_visibility' => :'String',
         :'envelope_attachments' => :'Array<Attachment>',
+        :'envelope_classification' => :'String',
         :'envelope_custom_metadata' => :'EnvelopeCustomMetadata',
         :'envelope_documents' => :'Array<EnvelopeDocument>',
         :'envelope_id' => :'String',
@@ -492,6 +505,7 @@ module DocuSign_eSign
         :'folder_ids' => :'Array<String>',
         :'folder_name' => :'String',
         :'folders' => :'Array<Folder>',
+        :'has_authorized_signatory_recipient' => :'String',
         :'has_comments' => :'String',
         :'has_form_data_changed' => :'String',
         :'has_wav_file' => :'String',
@@ -541,6 +555,7 @@ module DocuSign_eSign
         :'u_sig_state' => :'String',
         :'voided_date_time' => :'String',
         :'voided_reason' => :'String',
+        :'watermark_language' => :'String',
         :'workflow' => :'Workflow'
       }
     end
@@ -709,6 +724,10 @@ module DocuSign_eSign
         end
       end
 
+      if attributes.has_key?(:'envelopeClassification')
+        self.envelope_classification = attributes[:'envelopeClassification']
+      end
+
       if attributes.has_key?(:'envelopeCustomMetadata')
         self.envelope_custom_metadata = attributes[:'envelopeCustomMetadata']
       end
@@ -777,6 +796,10 @@ module DocuSign_eSign
         if (value = attributes[:'folders']).is_a?(Array)
           self.folders = value
         end
+      end
+
+      if attributes.has_key?(:'hasAuthorizedSignatoryRecipient')
+        self.has_authorized_signatory_recipient = attributes[:'hasAuthorizedSignatoryRecipient']
       end
 
       if attributes.has_key?(:'hasComments')
@@ -977,6 +1000,10 @@ module DocuSign_eSign
         self.voided_reason = attributes[:'voidedReason']
       end
 
+      if attributes.has_key?(:'watermarkLanguage')
+        self.watermark_language = attributes[:'watermarkLanguage']
+      end
+
       if attributes.has_key?(:'workflow')
         self.workflow = attributes[:'workflow']
       end
@@ -1038,6 +1065,7 @@ module DocuSign_eSign
           enable_wet_sign == o.enable_wet_sign &&
           enforce_signer_visibility == o.enforce_signer_visibility &&
           envelope_attachments == o.envelope_attachments &&
+          envelope_classification == o.envelope_classification &&
           envelope_custom_metadata == o.envelope_custom_metadata &&
           envelope_documents == o.envelope_documents &&
           envelope_id == o.envelope_id &&
@@ -1054,6 +1082,7 @@ module DocuSign_eSign
           folder_ids == o.folder_ids &&
           folder_name == o.folder_name &&
           folders == o.folders &&
+          has_authorized_signatory_recipient == o.has_authorized_signatory_recipient &&
           has_comments == o.has_comments &&
           has_form_data_changed == o.has_form_data_changed &&
           has_wav_file == o.has_wav_file &&
@@ -1103,6 +1132,7 @@ module DocuSign_eSign
           u_sig_state == o.u_sig_state &&
           voided_date_time == o.voided_date_time &&
           voided_reason == o.voided_reason &&
+          watermark_language == o.watermark_language &&
           workflow == o.workflow
     end
 
@@ -1115,7 +1145,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [access_control_list_base64, allow_comments, allow_markup, allow_reassign, allow_view_history, any_signer, asynchronous, attachments_uri, authoritative_copy, authoritative_copy_default, auto_match, auto_match_specified_by_user, auto_navigation, brand_id, brand_lock, burn_default_tab_data, certificate_uri, completed_date_time, copy_recipient_data, created, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, description, disable_responsive_document, document_base64, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_attachments, envelope_custom_metadata, envelope_documents, envelope_id, envelope_id_stamping, envelope_location, envelope_metadata, envelope_uri, expire_after, expire_date_time, expire_enabled, external_envelope_id, favorited_by_me, folder_id, folder_ids, folder_name, folders, has_comments, has_form_data_changed, has_wav_file, holder, initial_sent_date_time, is21_cfr_part11, is_ace_gen_template, is_doc_gen_template, is_dynamic_envelope, is_signature_provider_envelope, is_ticket_related_envelope, last_modified, last_modified_by, last_modified_date_time, last_used, location, lock_information, message_lock, name, new_password, notification, notification_uri, owner, page_count, password, password_protected, power_form, power_forms, purge_completed_date, purge_request_date, purge_state, recipients, recipients_lock, recipients_uri, sender, sent_date_time, shared, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, template_id, templates_uri, transaction_id, uri, use_disclosure, u_sig_state, voided_date_time, voided_reason, workflow].hash
+      [access_control_list_base64, allow_comments, allow_markup, allow_reassign, allow_view_history, any_signer, asynchronous, attachments_uri, authoritative_copy, authoritative_copy_default, auto_match, auto_match_specified_by_user, auto_navigation, brand_id, brand_lock, burn_default_tab_data, certificate_uri, completed_date_time, copy_recipient_data, created, created_date_time, custom_fields, custom_fields_uri, declined_date_time, deleted_date_time, delivered_date_time, description, disable_responsive_document, document_base64, documents, documents_combined_uri, documents_uri, email_blurb, email_settings, email_subject, enable_wet_sign, enforce_signer_visibility, envelope_attachments, envelope_classification, envelope_custom_metadata, envelope_documents, envelope_id, envelope_id_stamping, envelope_location, envelope_metadata, envelope_uri, expire_after, expire_date_time, expire_enabled, external_envelope_id, favorited_by_me, folder_id, folder_ids, folder_name, folders, has_authorized_signatory_recipient, has_comments, has_form_data_changed, has_wav_file, holder, initial_sent_date_time, is21_cfr_part11, is_ace_gen_template, is_doc_gen_template, is_dynamic_envelope, is_signature_provider_envelope, is_ticket_related_envelope, last_modified, last_modified_by, last_modified_date_time, last_used, location, lock_information, message_lock, name, new_password, notification, notification_uri, owner, page_count, password, password_protected, power_form, power_forms, purge_completed_date, purge_request_date, purge_state, recipients, recipients_lock, recipients_uri, sender, sent_date_time, shared, signer_can_sign_on_mobile, signing_location, status, status_changed_date_time, template_id, templates_uri, transaction_id, uri, use_disclosure, u_sig_state, voided_date_time, voided_reason, watermark_language, workflow].hash
     end
 
     # Builds the object from hash

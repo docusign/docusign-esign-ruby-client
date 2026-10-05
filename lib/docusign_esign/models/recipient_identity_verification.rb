@@ -15,6 +15,9 @@ module DocuSign_eSign
   # Specifies ID Verification applied on an envelope by workflow ID. See the [list](/docs/esign-rest-api/reference/accounts/identityverifications/list/) method in the [IdentityVerifications](/docs/esign-rest-api/reference/accounts/identityverifications/) resource for more information on how to retrieve workflow IDs available for an account. This can be used in addition to other [recipient authentication](https://support.docusign.com/en/guides/ndse-user-guide-recipient-authentication) methods.
   class RecipientIdentityVerification
     # 
+    attr_accessor :has_auto_attached_risk_assessment
+
+    # 
     attr_accessor :input_options
 
     # 
@@ -29,6 +32,7 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'has_auto_attached_risk_assessment' => :'hasAutoAttachedRiskAssessment',
         :'input_options' => :'inputOptions',
         :'workflow_id' => :'workflowId',
         :'workflow_id_metadata' => :'workflowIdMetadata',
@@ -39,6 +43,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'has_auto_attached_risk_assessment' => :'String',
         :'input_options' => :'Array<RecipientIdentityInputOption>',
         :'workflow_id' => :'String',
         :'workflow_id_metadata' => :'PropertyMetadata',
@@ -53,6 +58,10 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'hasAutoAttachedRiskAssessment')
+        self.has_auto_attached_risk_assessment = attributes[:'hasAutoAttachedRiskAssessment']
+      end
 
       if attributes.has_key?(:'inputOptions')
         if (value = attributes[:'inputOptions']).is_a?(Array)
@@ -91,6 +100,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          has_auto_attached_risk_assessment == o.has_auto_attached_risk_assessment &&
           input_options == o.input_options &&
           workflow_id == o.workflow_id &&
           workflow_id_metadata == o.workflow_id_metadata &&
@@ -106,7 +116,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [input_options, workflow_id, workflow_id_metadata, workflow_label].hash
+      [has_auto_attached_risk_assessment, input_options, workflow_id, workflow_id_metadata, workflow_label].hash
     end
 
     # Builds the object from hash

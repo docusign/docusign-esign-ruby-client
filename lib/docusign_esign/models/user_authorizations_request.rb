@@ -16,17 +16,22 @@ module DocuSign_eSign
     # 
     attr_accessor :authorizations
 
+    # 
+    attr_accessor :send_notification
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'authorizations' => :'authorizations'
+        :'authorizations' => :'authorizations',
+        :'send_notification' => :'sendNotification'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'authorizations' => :'Array<UserAuthorizationCreateRequestWithId>'
+        :'authorizations' => :'Array<UserAuthorizationCreateRequestWithId>',
+        :'send_notification' => :'String'
       }
     end
 
@@ -42,6 +47,10 @@ module DocuSign_eSign
         if (value = attributes[:'authorizations']).is_a?(Array)
           self.authorizations = value
         end
+      end
+
+      if attributes.has_key?(:'sendNotification')
+        self.send_notification = attributes[:'sendNotification']
       end
     end
 
@@ -63,7 +72,8 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          authorizations == o.authorizations
+          authorizations == o.authorizations &&
+          send_notification == o.send_notification
     end
 
     # @see the `==` method
@@ -75,7 +85,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [authorizations].hash
+      [authorizations, send_notification].hash
     end
 
     # Builds the object from hash

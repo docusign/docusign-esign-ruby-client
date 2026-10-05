@@ -16,17 +16,22 @@ module DocuSign_eSign
     # Reserved: TBD
     attr_accessor :audit_events
 
+    # 
+    attr_accessor :payment_events
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'audit_events' => :'auditEvents'
+        :'audit_events' => :'auditEvents',
+        :'payment_events' => :'paymentEvents'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'audit_events' => :'Array<EnvelopeAuditEvent>'
+        :'audit_events' => :'Array<EnvelopeAuditEvent>',
+        :'payment_events' => :'Array<PaymentAuditEvent>'
       }
     end
 
@@ -41,6 +46,12 @@ module DocuSign_eSign
       if attributes.has_key?(:'auditEvents')
         if (value = attributes[:'auditEvents']).is_a?(Array)
           self.audit_events = value
+        end
+      end
+
+      if attributes.has_key?(:'paymentEvents')
+        if (value = attributes[:'paymentEvents']).is_a?(Array)
+          self.payment_events = value
         end
       end
     end
@@ -63,7 +74,8 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          audit_events == o.audit_events
+          audit_events == o.audit_events &&
+          payment_events == o.payment_events
     end
 
     # @see the `==` method
@@ -75,7 +87,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [audit_events].hash
+      [audit_events, payment_events].hash
     end
 
     # Builds the object from hash

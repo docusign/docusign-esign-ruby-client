@@ -14,6 +14,9 @@ require 'date'
 module DocuSign_eSign
   class DocGenFormField
     # 
+    attr_accessor :children
+
+    # 
     attr_accessor :connected_object_details
 
     # 
@@ -70,6 +73,7 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'children' => :'children',
         :'connected_object_details' => :'connectedObjectDetails',
         :'default_value' => :'defaultValue',
         :'description' => :'description',
@@ -94,6 +98,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'children' => :'Array<DocGenFormField>',
         :'connected_object_details' => :'ConnectedObjectDetails',
         :'default_value' => :'String',
         :'description' => :'String',
@@ -122,6 +127,12 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'children')
+        if (value = attributes[:'children']).is_a?(Array)
+          self.children = value
+        end
+      end
 
       if attributes.has_key?(:'connectedObjectDetails')
         self.connected_object_details = attributes[:'connectedObjectDetails']
@@ -218,6 +229,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          children == o.children &&
           connected_object_details == o.connected_object_details &&
           default_value == o.default_value &&
           description == o.description &&
@@ -247,7 +259,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [connected_object_details, default_value, description, filter, format, fully_qualified_path, hidden, label, name, options, order, predefined_validation, read_only, required, row_values, type, validation, value].hash
+      [children, connected_object_details, default_value, description, filter, format, fully_qualified_path, hidden, label, name, options, order, predefined_validation, read_only, required, row_values, type, validation, value].hash
     end
 
     # Builds the object from hash

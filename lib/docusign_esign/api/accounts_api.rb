@@ -684,7 +684,7 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Creates ot updates user authorizations
+    # Creates or updates user authorizations
     # 
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
@@ -695,7 +695,7 @@ module DocuSign_eSign
       return data
     end
 
-    # Creates ot updates user authorizations
+    # Creates or updates user authorizations
     # 
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
@@ -1327,7 +1327,7 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
-    # Creates ot updates user authorizations
+    # Deletes user authorizations
     # 
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
@@ -1338,7 +1338,7 @@ module DocuSign_eSign
       return data
     end
 
-    # Creates ot updates user authorizations
+    # Deletes user authorizations
     # 
     # @param account_id The external account number (int) or account ID Guid.
     # @param user_id The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.

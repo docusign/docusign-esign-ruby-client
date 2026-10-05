@@ -26,6 +26,9 @@ module DocuSign_eSign
     # 
     attr_accessor :include
 
+    # 
+    attr_accessor :link_configuration_id
+
     def self.default
       @@default ||= GetOptions.new
     end
@@ -1474,6 +1477,7 @@ module DocuSign_eSign
       # query parameters
       query_params = {}
       query_params[:'include'] = options.include if !options.include.nil?
+      query_params[:'link_configuration_id'] = options.link_configuration_id if !options.link_configuration_id.nil?
 
       # header parameters
       header_params = {}

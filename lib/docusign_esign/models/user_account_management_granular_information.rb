@@ -93,6 +93,12 @@ module DocuSign_eSign
     attr_accessor :can_manage_users_metadata
 
     # 
+    attr_accessor :can_view_only_account_admin_pages
+
+    # 
+    attr_accessor :can_view_only_account_admin_pages_metadata
+
+    # 
     attr_accessor :can_view_users
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -124,6 +130,8 @@ module DocuSign_eSign
         :'can_manage_stamps_metadata' => :'canManageStampsMetadata',
         :'can_manage_users' => :'canManageUsers',
         :'can_manage_users_metadata' => :'canManageUsersMetadata',
+        :'can_view_only_account_admin_pages' => :'canViewOnlyAccountAdminPages',
+        :'can_view_only_account_admin_pages_metadata' => :'canViewOnlyAccountAdminPagesMetadata',
         :'can_view_users' => :'canViewUsers'
       }
     end
@@ -157,6 +165,8 @@ module DocuSign_eSign
         :'can_manage_stamps_metadata' => :'SettingsMetadata',
         :'can_manage_users' => :'String',
         :'can_manage_users_metadata' => :'SettingsMetadata',
+        :'can_view_only_account_admin_pages' => :'String',
+        :'can_view_only_account_admin_pages_metadata' => :'SettingsMetadata',
         :'can_view_users' => :'String'
       }
     end
@@ -273,6 +283,14 @@ module DocuSign_eSign
         self.can_manage_users_metadata = attributes[:'canManageUsersMetadata']
       end
 
+      if attributes.has_key?(:'canViewOnlyAccountAdminPages')
+        self.can_view_only_account_admin_pages = attributes[:'canViewOnlyAccountAdminPages']
+      end
+
+      if attributes.has_key?(:'canViewOnlyAccountAdminPagesMetadata')
+        self.can_view_only_account_admin_pages_metadata = attributes[:'canViewOnlyAccountAdminPagesMetadata']
+      end
+
       if attributes.has_key?(:'canViewUsers')
         self.can_view_users = attributes[:'canViewUsers']
       end
@@ -322,6 +340,8 @@ module DocuSign_eSign
           can_manage_stamps_metadata == o.can_manage_stamps_metadata &&
           can_manage_users == o.can_manage_users &&
           can_manage_users_metadata == o.can_manage_users_metadata &&
+          can_view_only_account_admin_pages == o.can_view_only_account_admin_pages &&
+          can_view_only_account_admin_pages_metadata == o.can_view_only_account_admin_pages_metadata &&
           can_view_users == o.can_view_users
     end
 
@@ -334,7 +354,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [can_manage_account_security_settings, can_manage_account_security_settings_metadata, can_manage_account_settings, can_manage_account_settings_metadata, can_manage_admins, can_manage_admins_metadata, can_manage_connect, can_manage_connect_metadata, can_manage_document_retention, can_manage_document_retention_metadata, can_manage_envelope_transfer, can_manage_envelope_transfer_metadata, can_manage_groups_but_not_users, can_manage_groups_but_not_users_metadata, can_manage_joint_agreements, can_manage_joint_agreements_metadata, can_manage_reporting, can_manage_reporting_metadata, can_manage_sharing, can_manage_sharing_metadata, can_manage_signing_groups, can_manage_signing_groups_metadata, can_manage_stamps, can_manage_stamps_metadata, can_manage_users, can_manage_users_metadata, can_view_users].hash
+      [can_manage_account_security_settings, can_manage_account_security_settings_metadata, can_manage_account_settings, can_manage_account_settings_metadata, can_manage_admins, can_manage_admins_metadata, can_manage_connect, can_manage_connect_metadata, can_manage_document_retention, can_manage_document_retention_metadata, can_manage_envelope_transfer, can_manage_envelope_transfer_metadata, can_manage_groups_but_not_users, can_manage_groups_but_not_users_metadata, can_manage_joint_agreements, can_manage_joint_agreements_metadata, can_manage_reporting, can_manage_reporting_metadata, can_manage_sharing, can_manage_sharing_metadata, can_manage_signing_groups, can_manage_signing_groups_metadata, can_manage_stamps, can_manage_stamps_metadata, can_manage_users, can_manage_users_metadata, can_view_only_account_admin_pages, can_view_only_account_admin_pages_metadata, can_view_users].hash
     end
 
     # Builds the object from hash
