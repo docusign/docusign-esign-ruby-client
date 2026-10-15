@@ -14,6 +14,9 @@ require 'date'
 module DocuSign_eSign
   class DocGenFormFields
     # 
+    attr_accessor :doc_gen_conditional_rules
+
+    # 
     attr_accessor :doc_gen_document_status
 
     # 
@@ -28,6 +31,7 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'doc_gen_conditional_rules' => :'docGenConditionalRules',
         :'doc_gen_document_status' => :'docGenDocumentStatus',
         :'doc_gen_errors' => :'docGenErrors',
         :'doc_gen_form_field_list' => :'docGenFormFieldList',
@@ -38,6 +42,7 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'doc_gen_conditional_rules' => :'Array<DocGenConditionalRule>',
         :'doc_gen_document_status' => :'String',
         :'doc_gen_errors' => :'Array<DocGenSyntaxError>',
         :'doc_gen_form_field_list' => :'Array<DocGenFormField>',
@@ -52,6 +57,12 @@ module DocuSign_eSign
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'docGenConditionalRules')
+        if (value = attributes[:'docGenConditionalRules']).is_a?(Array)
+          self.doc_gen_conditional_rules = value
+        end
+      end
 
       if attributes.has_key?(:'docGenDocumentStatus')
         self.doc_gen_document_status = attributes[:'docGenDocumentStatus']
@@ -92,6 +103,7 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          doc_gen_conditional_rules == o.doc_gen_conditional_rules &&
           doc_gen_document_status == o.doc_gen_document_status &&
           doc_gen_errors == o.doc_gen_errors &&
           doc_gen_form_field_list == o.doc_gen_form_field_list &&
@@ -107,7 +119,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [doc_gen_document_status, doc_gen_errors, doc_gen_form_field_list, document_id].hash
+      [doc_gen_conditional_rules, doc_gen_document_status, doc_gen_errors, doc_gen_form_field_list, document_id].hash
     end
 
     # Builds the object from hash

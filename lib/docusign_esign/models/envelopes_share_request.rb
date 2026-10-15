@@ -22,12 +22,16 @@ module DocuSign_eSign
     # 
     attr_accessor :permission
 
+    # 
+    attr_accessor :share_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'agent_user' => :'agentUser',
         :'custom_message' => :'customMessage',
-        :'permission' => :'permission'
+        :'permission' => :'permission',
+        :'share_id' => :'shareId'
       }
     end
 
@@ -36,7 +40,8 @@ module DocuSign_eSign
       {
         :'agent_user' => :'AuthorizationUser',
         :'custom_message' => :'String',
-        :'permission' => :'String'
+        :'permission' => :'String',
+        :'share_id' => :'String'
       }
     end
 
@@ -58,6 +63,10 @@ module DocuSign_eSign
 
       if attributes.has_key?(:'permission')
         self.permission = attributes[:'permission']
+      end
+
+      if attributes.has_key?(:'shareId')
+        self.share_id = attributes[:'shareId']
       end
     end
 
@@ -81,7 +90,8 @@ module DocuSign_eSign
       self.class == o.class &&
           agent_user == o.agent_user &&
           custom_message == o.custom_message &&
-          permission == o.permission
+          permission == o.permission &&
+          share_id == o.share_id
     end
 
     # @see the `==` method
@@ -93,7 +103,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [agent_user, custom_message, permission].hash
+      [agent_user, custom_message, permission, share_id].hash
     end
 
     # Builds the object from hash

@@ -684,6 +684,57 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Add metadata in the form of GenAndSend to existing envelopes in docusign.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_gen_and_send  (optional parameter)
+    # @return [EnvelopeArchiveSummary]
+    def create_archive_metadata_envelopes(account_id, envelope_gen_and_send)
+      data, _status_code, _headers = create_archive_metadata_envelopes_with_http_info(account_id,  envelope_gen_and_send)
+      return data
+    end
+
+    # Add metadata in the form of GenAndSend to existing envelopes in docusign.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_gen_and_send  (optional parameter)
+    # @return [Array<(EnvelopeArchiveSummary, Fixnum, Hash)>] EnvelopeArchiveSummary data, response status code and response headers
+    def create_archive_metadata_envelopes_with_http_info(account_id, envelope_gen_and_send)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_archive_metadata_envelopes ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_archive_metadata_envelopes" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/archive_metadata".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(envelope_gen_and_send)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'EnvelopeArchiveSummary')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_archive_metadata_envelopes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Initiate a new ChunkedUpload.
     # This method initiates a new chunked upload with the first part of the content.
     # @param account_id The external account number (int) or account ID Guid.
@@ -1567,6 +1618,210 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Generates the document using DocuSign Spring CM template then returns the html content of the document.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_gen_and_send  (optional parameter)
+    # @return [File]
+    def create_gen_and_archive_envelopes(account_id, envelope_gen_and_send)
+      data, _status_code, _headers = create_gen_and_archive_envelopes_with_http_info(account_id,  envelope_gen_and_send)
+      return data
+    end
+
+    # Generates the document using DocuSign Spring CM template then returns the html content of the document.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_gen_and_send  (optional parameter)
+    # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
+    def create_gen_and_archive_envelopes_with_http_info(account_id, envelope_gen_and_send)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_gen_and_archive_envelopes ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_gen_and_archive_envelopes" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/generate_and_archive".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['text/plain'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(envelope_gen_and_send)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_gen_and_archive_envelopes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Generates the document using DocuSign Spring CM template then returns the content of the document based on the return document type.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_gen_and_send  (optional parameter)
+    # @return [File]
+    def create_gen_and_convert_envelopes(account_id, envelope_gen_and_send)
+      data, _status_code, _headers = create_gen_and_convert_envelopes_with_http_info(account_id,  envelope_gen_and_send)
+      return data
+    end
+
+    # Generates the document using DocuSign Spring CM template then returns the content of the document based on the return document type.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_gen_and_send  (optional parameter)
+    # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
+    def create_gen_and_convert_envelopes_with_http_info(account_id, envelope_gen_and_send)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_gen_and_convert_envelopes ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_gen_and_convert_envelopes" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/generate_and_convert".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['text/plain'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(envelope_gen_and_send)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_gen_and_convert_envelopes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Generates multiple document using DocuSign Spring CM template then returns the content of the document based on the return document type.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_gen_and_send  (optional parameter)
+    # @return [GeneratedDocumentsResult]
+    def create_gen_and_convert_multi_envelopes(account_id, envelope_gen_and_send)
+      data, _status_code, _headers = create_gen_and_convert_multi_envelopes_with_http_info(account_id,  envelope_gen_and_send)
+      return data
+    end
+
+    # Generates multiple document using DocuSign Spring CM template then returns the content of the document based on the return document type.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_gen_and_send  (optional parameter)
+    # @return [Array<(GeneratedDocumentsResult, Fixnum, Hash)>] GeneratedDocumentsResult data, response status code and response headers
+    def create_gen_and_convert_multi_envelopes_with_http_info(account_id, envelope_gen_and_send)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_gen_and_convert_multi_envelopes ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_gen_and_convert_multi_envelopes" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/generate_and_convert_multi".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(envelope_gen_and_send)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'GeneratedDocumentsResult')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_gen_and_convert_multi_envelopes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Generates the documents for an envelope using DocuSign Spring CM then creates the envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_gen_and_send  (optional parameter)
+    # @return [EnvelopeSummary]
+    def create_gen_and_send_envelopes(account_id, envelope_gen_and_send)
+      data, _status_code, _headers = create_gen_and_send_envelopes_with_http_info(account_id,  envelope_gen_and_send)
+      return data
+    end
+
+    # Generates the documents for an envelope using DocuSign Spring CM then creates the envelope.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_gen_and_send  (optional parameter)
+    # @return [Array<(EnvelopeSummary, Fixnum, Hash)>] EnvelopeSummary data, response status code and response headers
+    def create_gen_and_send_envelopes_with_http_info(account_id, envelope_gen_and_send)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_gen_and_send_envelopes ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_gen_and_send_envelopes" if account_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/generate_and_send".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(envelope_gen_and_send)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'EnvelopeSummary')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_gen_and_send_envelopes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Submits a batch of historical envelopes for republish to an adhoc config.
     # 
     # @param account_id The external account number (int) or account ID Guid.
@@ -1614,6 +1869,61 @@ module DocuSign_eSign
         :return_type => 'EnvelopePublishTransaction')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#create_historical_envelope_publish_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Add metadata in the form of GenAndSend to existing envelopes in docusign.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param envelope_gen_and_send  (optional parameter)
+    # @return [EnvelopeSummary]
+    def create_link_metadata_envelopes(account_id, envelope_id, envelope_gen_and_send)
+      data, _status_code, _headers = create_link_metadata_envelopes_with_http_info(account_id, envelope_id,  envelope_gen_and_send)
+      return data
+    end
+
+    # Add metadata in the form of GenAndSend to existing envelopes in docusign.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @param envelope_gen_and_send  (optional parameter)
+    # @return [Array<(EnvelopeSummary, Fixnum, Hash)>] EnvelopeSummary data, response status code and response headers
+    def create_link_metadata_envelopes_with_http_info(account_id, envelope_id, envelope_gen_and_send)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.create_link_metadata_envelopes ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.create_link_metadata_envelopes" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.create_link_metadata_envelopes" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/archive_metadata".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(envelope_gen_and_send)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'EnvelopeSummary')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#create_link_metadata_envelopes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3565,6 +3875,59 @@ module DocuSign_eSign
       return data, status_code, headers
     end
 
+    # Return generated html document from archive.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @return [File]
+    def get_archive_document(account_id, document_id)
+      data, _status_code, _headers = get_archive_document_with_http_info(account_id, document_id)
+      return data
+    end
+
+    # Return generated html document from archive.
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param document_id The ID of the document being accessed.
+    # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
+    def get_archive_document_with_http_info(account_id, document_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_archive_document ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_archive_document" if account_id.nil?
+      # verify the required parameter 'document_id' is set
+      fail ArgumentError, "Missing the required parameter 'document_id' when calling EnvelopesApi.get_archive_document" if document_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/archivedocuments/{documentId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'documentId' + '}', document_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['text/plain'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_archive_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Retrieves an attachment from the envelope.
     # Retrieves an attachment from an envelope.
     # @param account_id The external account number (int) or account ID Guid.
@@ -4435,6 +4798,59 @@ module DocuSign_eSign
         :return_type => 'DocumentHtmlDefinitionOriginals')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EnvelopesApi#get_envelope_html_definitions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Gets the permission level the calling user has for an envelope
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [EnvelopesSharePermissionResponse]
+    def get_envelope_permission(account_id, envelope_id)
+      data, _status_code, _headers = get_envelope_permission_with_http_info(account_id, envelope_id)
+      return data
+    end
+
+    # Gets the permission level the calling user has for an envelope
+    # 
+    # @param account_id The external account number (int) or account ID Guid.
+    # @param envelope_id The envelopeId Guid of the envelope being accessed.
+    # @return [Array<(EnvelopesSharePermissionResponse, Fixnum, Hash)>] EnvelopesSharePermissionResponse data, response status code and response headers
+    def get_envelope_permission_with_http_info(account_id, envelope_id)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EnvelopesApi.get_envelope_permission ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling EnvelopesApi.get_envelope_permission" if account_id.nil?
+      # verify the required parameter 'envelope_id' is set
+      fail ArgumentError, "Missing the required parameter 'envelope_id' when calling EnvelopesApi.get_envelope_permission" if envelope_id.nil?
+      # resource path
+      local_var_path = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/shares/permission".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'envelopeId' + '}', envelope_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'EnvelopesSharePermissionResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EnvelopesApi#get_envelope_permission\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

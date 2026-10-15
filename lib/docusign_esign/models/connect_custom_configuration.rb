@@ -123,6 +123,9 @@ module DocuSign_eSign
     attr_accessor :salesforce_call_back_url
 
     # 
+    attr_accessor :salesforce_code_verifier
+
+    # 
     attr_accessor :salesforce_documents_as_content_files
 
     # 
@@ -191,6 +194,7 @@ module DocuSign_eSign
         :'salesforce_api_version' => :'salesforceApiVersion',
         :'salesforce_authcode' => :'salesforceAuthcode',
         :'salesforce_call_back_url' => :'salesforceCallBackUrl',
+        :'salesforce_code_verifier' => :'salesforceCodeVerifier',
         :'salesforce_documents_as_content_files' => :'salesforceDocumentsAsContentFiles',
         :'sender_override' => :'senderOverride',
         :'sender_selectable_items' => :'senderSelectableItems',
@@ -243,6 +247,7 @@ module DocuSign_eSign
         :'salesforce_api_version' => :'String',
         :'salesforce_authcode' => :'String',
         :'salesforce_call_back_url' => :'String',
+        :'salesforce_code_verifier' => :'String',
         :'salesforce_documents_as_content_files' => :'String',
         :'sender_override' => :'String',
         :'sender_selectable_items' => :'Array<String>',
@@ -416,6 +421,10 @@ module DocuSign_eSign
         self.salesforce_call_back_url = attributes[:'salesforceCallBackUrl']
       end
 
+      if attributes.has_key?(:'salesforceCodeVerifier')
+        self.salesforce_code_verifier = attributes[:'salesforceCodeVerifier']
+      end
+
       if attributes.has_key?(:'salesforceDocumentsAsContentFiles')
         self.salesforce_documents_as_content_files = attributes[:'salesforceDocumentsAsContentFiles']
       end
@@ -517,6 +526,7 @@ module DocuSign_eSign
           salesforce_api_version == o.salesforce_api_version &&
           salesforce_authcode == o.salesforce_authcode &&
           salesforce_call_back_url == o.salesforce_call_back_url &&
+          salesforce_code_verifier == o.salesforce_code_verifier &&
           salesforce_documents_as_content_files == o.salesforce_documents_as_content_files &&
           sender_override == o.sender_override &&
           sender_selectable_items == o.sender_selectable_items &&
@@ -538,7 +548,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_envelope_publish, allow_salesforce_publish, all_users, all_users_except, configuration_type, connect_id, delivery_mode, disabled_by, enable_log, enable_o_auth_per_configuration, envelope_events, event_data, events, external_folder_id, external_folder_label, group_ids, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_o_auth, include_sender_accountas_custom_field, include_time_zone_information, integrator_managed, name, o_auth_configuration, password, pause_publish, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
+      [allow_envelope_publish, allow_salesforce_publish, all_users, all_users_except, configuration_type, connect_id, delivery_mode, disabled_by, enable_log, enable_o_auth_per_configuration, envelope_events, event_data, events, external_folder_id, external_folder_label, group_ids, include_certificate_of_completion, include_cert_soap_header, include_document_fields, include_documents, include_envelope_void_reason, include_hmac, include_o_auth, include_sender_accountas_custom_field, include_time_zone_information, integrator_managed, name, o_auth_configuration, password, pause_publish, recipient_events, require_mutual_tls, requires_acknowledgement, salesforce_api_version, salesforce_authcode, salesforce_call_back_url, salesforce_code_verifier, salesforce_documents_as_content_files, sender_override, sender_selectable_items, sf_objects, sign_message_with_x509_certificate, soap_namespace, url_to_publish_to, user_ids, user_name, use_soap_interface].hash
     end
 
     # Builds the object from hash

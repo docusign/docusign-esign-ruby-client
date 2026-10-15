@@ -15,10 +15,19 @@ module DocuSign_eSign
   # Contains information about the current envelope purge configuration for an account, which enables account administrators to purge documents from completed and voided envelopes after a set number of days (`retentionDays`). 
   class EnvelopePurgeConfiguration
     # 
+    attr_accessor :apply_purge_policy_for_unaccounted_recipients
+
+    # 
     attr_accessor :purge_envelopes
 
     # 
+    attr_accessor :purge_envelopes_received
+
+    # 
     attr_accessor :redact_pii
+
+    # 
+    attr_accessor :redact_pii_received
 
     # 
     attr_accessor :remove_tabs_and_envelope_attachments
@@ -29,8 +38,11 @@ module DocuSign_eSign
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'apply_purge_policy_for_unaccounted_recipients' => :'applyPurgePolicyForUnaccountedRecipients',
         :'purge_envelopes' => :'purgeEnvelopes',
+        :'purge_envelopes_received' => :'purgeEnvelopesReceived',
         :'redact_pii' => :'redactPII',
+        :'redact_pii_received' => :'redactPIIReceived',
         :'remove_tabs_and_envelope_attachments' => :'removeTabsAndEnvelopeAttachments',
         :'retention_days' => :'retentionDays'
       }
@@ -39,8 +51,11 @@ module DocuSign_eSign
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'apply_purge_policy_for_unaccounted_recipients' => :'String',
         :'purge_envelopes' => :'String',
+        :'purge_envelopes_received' => :'String',
         :'redact_pii' => :'String',
+        :'redact_pii_received' => :'String',
         :'remove_tabs_and_envelope_attachments' => :'String',
         :'retention_days' => :'String'
       }
@@ -54,12 +69,24 @@ module DocuSign_eSign
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'applyPurgePolicyForUnaccountedRecipients')
+        self.apply_purge_policy_for_unaccounted_recipients = attributes[:'applyPurgePolicyForUnaccountedRecipients']
+      end
+
       if attributes.has_key?(:'purgeEnvelopes')
         self.purge_envelopes = attributes[:'purgeEnvelopes']
       end
 
+      if attributes.has_key?(:'purgeEnvelopesReceived')
+        self.purge_envelopes_received = attributes[:'purgeEnvelopesReceived']
+      end
+
       if attributes.has_key?(:'redactPII')
         self.redact_pii = attributes[:'redactPII']
+      end
+
+      if attributes.has_key?(:'redactPIIReceived')
+        self.redact_pii_received = attributes[:'redactPIIReceived']
       end
 
       if attributes.has_key?(:'removeTabsAndEnvelopeAttachments')
@@ -89,8 +116,11 @@ module DocuSign_eSign
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          apply_purge_policy_for_unaccounted_recipients == o.apply_purge_policy_for_unaccounted_recipients &&
           purge_envelopes == o.purge_envelopes &&
+          purge_envelopes_received == o.purge_envelopes_received &&
           redact_pii == o.redact_pii &&
+          redact_pii_received == o.redact_pii_received &&
           remove_tabs_and_envelope_attachments == o.remove_tabs_and_envelope_attachments &&
           retention_days == o.retention_days
     end
@@ -104,7 +134,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [purge_envelopes, redact_pii, remove_tabs_and_envelope_attachments, retention_days].hash
+      [apply_purge_policy_for_unaccounted_recipients, purge_envelopes, purge_envelopes_received, redact_pii, redact_pii_received, remove_tabs_and_envelope_attachments, retention_days].hash
     end
 
     # Builds the object from hash

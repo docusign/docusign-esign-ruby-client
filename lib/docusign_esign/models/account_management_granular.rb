@@ -94,6 +94,9 @@ module DocuSign_eSign
     # 
     attr_accessor :allow_view_users
 
+    # 
+    attr_accessor :view_only_account_admin_pages
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -123,7 +126,8 @@ module DocuSign_eSign
         :'allow_manage_stamps_metadata' => :'allowManageStampsMetadata',
         :'allow_manage_users' => :'allowManageUsers',
         :'allow_manage_users_metadata' => :'allowManageUsersMetadata',
-        :'allow_view_users' => :'allowViewUsers'
+        :'allow_view_users' => :'allowViewUsers',
+        :'view_only_account_admin_pages' => :'viewOnlyAccountAdminPages'
       }
     end
 
@@ -156,7 +160,8 @@ module DocuSign_eSign
         :'allow_manage_stamps_metadata' => :'SettingsMetadata',
         :'allow_manage_users' => :'String',
         :'allow_manage_users_metadata' => :'SettingsMetadata',
-        :'allow_view_users' => :'String'
+        :'allow_view_users' => :'String',
+        :'view_only_account_admin_pages' => :'String'
       }
     end
 
@@ -275,6 +280,10 @@ module DocuSign_eSign
       if attributes.has_key?(:'allowViewUsers')
         self.allow_view_users = attributes[:'allowViewUsers']
       end
+
+      if attributes.has_key?(:'viewOnlyAccountAdminPages')
+        self.view_only_account_admin_pages = attributes[:'viewOnlyAccountAdminPages']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -321,7 +330,8 @@ module DocuSign_eSign
           allow_manage_stamps_metadata == o.allow_manage_stamps_metadata &&
           allow_manage_users == o.allow_manage_users &&
           allow_manage_users_metadata == o.allow_manage_users_metadata &&
-          allow_view_users == o.allow_view_users
+          allow_view_users == o.allow_view_users &&
+          view_only_account_admin_pages == o.view_only_account_admin_pages
     end
 
     # @see the `==` method
@@ -333,7 +343,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_manage_account_security_settings, allow_manage_account_security_settings_metadata, allow_manage_account_settings, allow_manage_account_settings_metadata, allow_manage_admins, allow_manage_admins_metadata, allow_manage_connect, allow_manage_connect_metadata, allow_manage_document_retention, allow_manage_document_retention_metadata, allow_manage_envelope_transfer, allow_manage_envelope_transfer_metadata, allow_manage_groups_but_not_users, allow_manage_groups_but_not_users_metadata, allow_manage_joint_agreements, allow_manage_joint_agreements_metadata, allow_manage_reporting, allow_manage_reporting_metadata, allow_manage_sharing, allow_manage_sharing_metadata, allow_manage_signing_groups, allow_manage_signing_groups_metadata, allow_manage_stamps, allow_manage_stamps_metadata, allow_manage_users, allow_manage_users_metadata, allow_view_users].hash
+      [allow_manage_account_security_settings, allow_manage_account_security_settings_metadata, allow_manage_account_settings, allow_manage_account_settings_metadata, allow_manage_admins, allow_manage_admins_metadata, allow_manage_connect, allow_manage_connect_metadata, allow_manage_document_retention, allow_manage_document_retention_metadata, allow_manage_envelope_transfer, allow_manage_envelope_transfer_metadata, allow_manage_groups_but_not_users, allow_manage_groups_but_not_users_metadata, allow_manage_joint_agreements, allow_manage_joint_agreements_metadata, allow_manage_reporting, allow_manage_reporting_metadata, allow_manage_sharing, allow_manage_sharing_metadata, allow_manage_signing_groups, allow_manage_signing_groups_metadata, allow_manage_stamps, allow_manage_stamps_metadata, allow_manage_users, allow_manage_users_metadata, allow_view_users, view_only_account_admin_pages].hash
     end
 
     # Builds the object from hash

@@ -92,6 +92,9 @@ module DocuSign_eSign
     # 
     attr_accessor :license_type
 
+    # 
+    attr_accessor :license_types
+
     # Shows the current status of the user's password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  
     attr_accessor :login_status
 
@@ -187,6 +190,7 @@ module DocuSign_eSign
         :'last_name' => :'lastName',
         :'license_status' => :'licenseStatus',
         :'license_type' => :'licenseType',
+        :'license_types' => :'licenseTypes',
         :'login_status' => :'loginStatus',
         :'middle_name' => :'middleName',
         :'password' => :'password',
@@ -241,6 +245,7 @@ module DocuSign_eSign
         :'last_name' => :'String',
         :'license_status' => :'String',
         :'license_type' => :'String',
+        :'license_types' => :'Array<String>',
         :'login_status' => :'String',
         :'middle_name' => :'String',
         :'password' => :'String',
@@ -384,6 +389,12 @@ module DocuSign_eSign
         self.license_type = attributes[:'licenseType']
       end
 
+      if attributes.has_key?(:'licenseTypes')
+        if (value = attributes[:'licenseTypes']).is_a?(Array)
+          self.license_types = value
+        end
+      end
+
       if attributes.has_key?(:'loginStatus')
         self.login_status = attributes[:'loginStatus']
       end
@@ -517,6 +528,7 @@ module DocuSign_eSign
           last_name == o.last_name &&
           license_status == o.license_status &&
           license_type == o.license_type &&
+          license_types == o.license_types &&
           login_status == o.login_status &&
           middle_name == o.middle_name &&
           password == o.password &&
@@ -550,7 +562,7 @@ module DocuSign_eSign
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [activation_access_code, company, connect_configurations, country_code, created_date_time, custom_settings, default_account_id, email, enable_connect_for_user, error_details, first_name, forgotten_password_info, group_list, has_remote_notary, home_address, initials_image_uri, is_admin, is_alternate_admin, is_managed_by_scim, is_membership_managed_by_scim, is_nar_enabled, job_title, last_login, last_name, license_status, license_type, login_status, middle_name, password, password_expiration, permission_profile_id, permission_profile_name, profile_image_uri, send_activation_email, send_activation_on_invalid_login, signature_image_uri, subscribe, suffix_name, title, uri, user_added_to_account_date_time, user_id, user_name, user_profile_last_modified_date, user_settings, user_status, user_type, work_address].hash
+      [activation_access_code, company, connect_configurations, country_code, created_date_time, custom_settings, default_account_id, email, enable_connect_for_user, error_details, first_name, forgotten_password_info, group_list, has_remote_notary, home_address, initials_image_uri, is_admin, is_alternate_admin, is_managed_by_scim, is_membership_managed_by_scim, is_nar_enabled, job_title, last_login, last_name, license_status, license_type, license_types, login_status, middle_name, password, password_expiration, permission_profile_id, permission_profile_name, profile_image_uri, send_activation_email, send_activation_on_invalid_login, signature_image_uri, subscribe, suffix_name, title, uri, user_added_to_account_date_time, user_id, user_name, user_profile_last_modified_date, user_settings, user_status, user_type, work_address].hash
     end
 
     # Builds the object from hash
